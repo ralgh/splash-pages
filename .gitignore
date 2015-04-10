@@ -1,0 +1,11 @@
+
+.DS_Store
+node_modules/*
+e2eserver/node_modules/*
+dist/*
+e2e-dist/*
+Session.vim
+npm-debug.log
+client/main.css
+client/admin-compiled
+client/app-compiled
