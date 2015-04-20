@@ -7,8 +7,8 @@ export default class Page extends React.Component {
       <div>
         <header>
           <ul>
-            <li><Link to="home">Home</Link></li>
-            <li><Link to="about">About</Link></li>
+            <li><Link to="Home">Home</Link></li>
+            <li><Link to="About">About</Link></li>
           </ul>
         </header>
         {this.props.children}

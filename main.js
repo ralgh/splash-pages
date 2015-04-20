@@ -1,150 +1,9 @@
 import React from 'react';
 import Router from 'react-router';
 import express from 'express';
-import ReactIntl from 'react-intl';
-
-import Home from './pages/home';
-import Page from './page';
-import _ from 'lodash';
-
-var IntlMixin = ReactIntl.IntlMixin;
-var FormattedMessage = ReactIntl.FormattedMessage;
-
-var Route = Router.Route;
-var Link = Router.Link;
-var RouteHandler = Router.RouteHandler;
-var DefaultRoute = Router.DefaultRoute;
-var NotFoundRoute = Router.NotFoundRoute;
-
-var app = express();
-
-class App extends React.Component {
-  render() {
-    return (
-      <RouteHandler params={this.props.params} path={this.props.path} />
-    );
-  }
-}
-
-class NotFound extends React.Component {
-  render() {
-    return (
-      <Page params={this.props.params} title="Not Found">
-        <h1>Not found</h1>
-      </Page>
-    );
-  }
-}
-
-var paths = {
-  '/': {
-    en: '/',
-    fr: '/'
-  },
-  '/about': {
-    en: '/about',
-    fr: '/a-propos'
-  }
-};
-
-var DEFAULT_META = '*';
-var EN_GB = 'en-gb';
-var FR_FR = 'fr-fr';
-
-var test = [
-  [Home, {
-    [DEFAULT_META]: {
-      path: '/',
-    },
-    [EN_GB]: {
-      title: 'Home',
-      description: 'Home',
-    },
-    [FR_FR]: {
-      title: 'French home',
-      description: 'French home',
-    }
-  },
-  [
-    ['about', {
-      [EN_GB]: {
-        path: '/about',
-        title: 'About',
-        description: 'About',
-      },
-      [FR_FR]: {
-        path: '/a-propos',
-        title: 'French about',
-        description: 'French about',
-      }
-    }]
-  ]],
-  ['about', {
-    'en-gb': {
-      title: 'Home',
-      description: 'Home',
-    },
-    'fr-fr': {
-      title: 'French home',
-      description: 'French home',
-    }
-  }]
-];
-
-var pages = [{
-  name: 'home',
-  path: '/',
-  locales: {
-    'en-gb': {
-      title: 'Home',
-      description: 'Home',
-    },
-    'fr-fr': {
-      title: 'French home',
-      description: 'French home',
-    }
-  },
-  children: [{
-    name: 'about',
-    locales: {
-      'en-gb': {
-        path: '/about',
-        title: 'About',
-        description: 'About',
-      },
-      'fr-fr': {
-        path: '/a-propos',
-        title: 'French about',
-        description: 'French about',
-      }
-    },
-  }]
-}];
-
-function flattenPagesForLocale(pages, locale) {
-  return pages.reduce(function(pages, page) {
-    page = _.cloneDeep(page);
-    if (!('name' in page)) {
-      throw new Error('page must have a name: ' + Object.keys(page));
-    }
-    if (!('locales' in page)) {
-      throw new Error('page must have locals: ' + page.name);
-    }
-    if (locale in page.locales) {
-      var pageLocale = page.locales[locale];
-      delete page.locales;
-      _.extend(page, pageLocale);
-      if ('children' in page) {
-        page.children = flattenPagesForLocale(page.children, locale);
-      }
-      pages.push(page);
-    }
-    return pages;
-  }, []);
-}
+import {getRoutes} from './routes';
 
 var DEFAULT_LANGUAGE = 'en';
-
 var DEFAULT_REGION = 'gb';
 
 function getLocale(language, region) {
@@ -153,9 +12,7 @@ function getLocale(language, region) {
   return [language, region].join('-');
 }
 
-function localizePath(path, lang) {
-  return lang === DEFAULT_LANGUAGE ? paths[path][lang] : '/' + lang + paths[path][lang];
-}
+var app = express();
 
 function isProduction() {
   return process.env.NODE_ENV === 'production';
@@ -202,35 +59,14 @@ var metadata = {
   }
 }
 
-function renderPageComponent(filename) {
-  var component = require(filename);
-  // Transpiled ES6 may export components as { default: Component }
-  return component.default || component;
-}
-
-function getPageRoutes(language) {
-  return [
-    (<Route name="about"
-     path={localizePath('/about', language)}
-     key="about"
-     handler={renderPageComponent('./pages/about')} />)
-  ];
-}
-
 app.use(express.static(__dirname));
 app.get('/favicon.ico', (req, res) => { res.send('') });
 
 app.use(function(req, res) {
-  var language = req.path.match(/^\/([a-z]{2,2})\//);
-  language = language && language[1] || DEFAULT_LANGUAGE;
-  var routes = (
-    <Route name="home" path={localizePath('/', language)} handler={App}>
-      {getPageRoutes(language)}
-
-      <DefaultRoute handler={Home} />
-      <NotFoundRoute handler={NotFound} />
-    </Route>
-  );
+  var locale = req.path.match(/^\/([a-z]{2,2}\-[a-z]{2,2})\//);
+  locale = locale && locale[1] || getLocale();
+  var language = locale.slice(0, 2);
+  var routes = getRoutes(locale);
 
   Router.run(routes, req.url, function (Handler, state) {
     state.params.lang = language;
@@ -275,7 +111,7 @@ app.use(function(req, res) {
             Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
           <![endif]-->
 
-          ${React.renderToStaticMarkup(<Handler {...state} />)}
+          ${React.renderToString(<Handler {...state} />)}
 
           <script src="/js/main.js"></script>
 

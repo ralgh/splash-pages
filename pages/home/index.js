@@ -43,6 +43,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <Page params={this.props.params} title="Home">
+        <div>Home</div>
         <HomeFr params={this.props.params} />
         <HomeEn params={this.props.params} />
       </Page>
