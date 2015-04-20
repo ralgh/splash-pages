@@ -1,8 +1,8 @@
 import React from 'react';
 import Page from '../../page';
 
-function renderLanguage(props) {
-  if (props.params.lang === props.lang) {
+function renderLocale(currentLocale, props) {
+  if (currentLocale === props.locales) {
     return props.children;
   }
 }
@@ -11,18 +11,24 @@ class Translation extends React.Component {
   render() {
     return (
       <div>
-        {renderLanguage(this.props)}
+        {renderLocale(this.context.locales, this.props)}
       </div>
     );
   }
 }
 
+Translation.contextTypes = {
+  locales: React.PropTypes.oneOfType([
+    React.PropTypes.string.isRequired,
+    React.PropTypes.array.isRequired,
+  ]),
+};
+
 class HomeEn extends React.Component {
   render() {
     return (
-      <Translation lang="en" params={this.props.params}>
-        <h1>Home</h1>
-        <p>{this.props.params.lang}</p>
+      <Translation locales="en-gb">
+        <h1>Home en-gb</h1>
       </Translation>
     );
   }
@@ -31,9 +37,8 @@ class HomeEn extends React.Component {
 class HomeFr extends React.Component {
   render() {
     return (
-      <Translation lang="fr" params={this.props.params}>
+      <Translation locales="fr-fr">
         <h1>Home fr</h1>
-        <p>{this.props.params.lang}</p>
       </Translation>
     );
   }
@@ -42,10 +47,11 @@ class HomeFr extends React.Component {
 export default class Home extends React.Component {
   render() {
     return (
-      <Page params={this.props.params} title="Home">
-        <div>Home</div>
-        <HomeFr params={this.props.params} />
-        <HomeEn params={this.props.params} />
+      <Page>
+        <div>
+        </div>
+        <HomeFr />
+        <HomeEn />
       </Page>
     );
   }

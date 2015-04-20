@@ -2,9 +2,26 @@ import React from 'react';
 import {RouteHandler} from 'react-router';
 
 export default class App extends React.Component {
+  getChildContext() {
+    return {
+      locales: this.props.locales,
+      messages: this.props.messages,
+      formats: this.props.formats,
+    };
+  }
+
   render() {
     return (
-      <RouteHandler params={this.props.params} path={this.props.path} />
+      <RouteHandler {...this.props} path={this.props.path} />
     );
   }
 }
+
+App.childContextTypes = {
+  locales: React.PropTypes.oneOfType([
+    React.PropTypes.string.isRequired,
+    React.PropTypes.array.isRequired
+  ]),
+  messages: React.PropTypes.object.isRequired,
+  formats: React.PropTypes.object.isRequired,
+};
