@@ -1,7 +1,20 @@
+import Intl from 'intl';
+global.Intl = Intl;
+
+import _ from 'lodash';
+
 import React from 'react';
 import Router from 'react-router';
 import express from 'express';
 import {getRoutes} from './routes';
+
+var messages = {
+
+};
+
+var formats = {
+
+};
 
 var DEFAULT_LANGUAGE = 'en';
 var DEFAULT_REGION = 'gb';
@@ -68,8 +81,15 @@ app.use(function(req, res) {
   var language = locale.slice(0, 2);
   var routes = getRoutes(locale);
 
+  function appProps(props) {
+    return _.extend({
+      locales: locale,
+      messages: messages,
+      formats: formats,
+    }, props);
+  }
+
   Router.run(routes, req.url, function (Handler, state) {
-    state.params.lang = language;
     res.send(`
       <!doctype html>
       <html class="no-js" lang=${language}>
@@ -111,7 +131,7 @@ app.use(function(req, res) {
             Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
           <![endif]-->
 
-          ${React.renderToString(<Handler {...state} />)}
+          ${React.renderToString(<Handler {...appProps(state)} />)}
 
           <script src="/js/main.js"></script>
 
