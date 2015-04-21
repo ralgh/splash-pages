@@ -4,24 +4,16 @@ import path from 'path';
 import React from 'react';
 import Router from 'react-router';
 import express from 'express';
+import locale from 'locale';
+
 import {getRoutes} from './routes';
+import localeMessages from '../config/messages';
+import shared from '../config/shared';
+import formats from '../config/formats';
+import {availableLocales, defaultLocale} from '../config/locale';
+import {getIntlMessage} from '../components/intl/intl';
 
-var messages = {
-
-};
-
-var formats = {
-
-};
-
-var DEFAULT_LANGUAGE = 'en';
-var DEFAULT_REGION = 'gb';
-
-function getLocale(language, region) {
-  language = language || DEFAULT_LANGUAGE;
-  region = region || DEFAULT_REGION;
-  return [language, region].join('-');
-}
+process.env.LANG = defaultLocale;
 
 var app = express();
 
@@ -31,14 +23,6 @@ function isProduction() {
 
 function whenProduction(str) {
   return isProduction() ? str : '';
-}
-
-function getDescription(language) {
-  return 'Direct Debit';
-}
-
-function getTitle(language) {
-  return 'GoCardless';
 }
 
 function alternateLanguages(path, language) {
@@ -70,42 +54,59 @@ var metadata = {
   }
 }
 
+app.use(locale(availableLocales));
+
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.get('/favicon.ico', (req, res) => { res.send('') });
 
+function pathLocale(path) {
+  var locale = (path || '').toLowerCase().match(/^\/([a-z]{2,2}\-[a-z]{2,2})\//);
+  if (locale && locale[1]) {
+    locale = new locale.Locale(locale[1]);
+  }
+  return locale;
+}
+
+function normalizeLocale(locale) {
+  locale = _.cloneDeep(locale);
+  locale.normalized = locale.normalized.replace('_', '-');
+  return locale;
+}
+
 app.use(function(req, res) {
-  var locale = req.path.match(/^\/([a-z]{2,2}\-[a-z]{2,2})\//);
-  locale = locale && locale[1] || getLocale();
-  var language = locale.slice(0, 2);
-  var routes = getRoutes(locale);
+  var reqLocale = pathLocale(req.path) || locale.Locale['default'];
+  reqLocale = normalizeLocale(reqLocale);
+  var routes = getRoutes(reqLocale.normalized);
+  var messages = _.merge({}, shared, localeMessages[reqLocale.normalized]);
 
   function appProps(props) {
     return _.extend({
-      locales: locale,
+      locales: reqLocale.normalized,
       messages: messages,
       formats: formats,
     }, props);
   }
 
   Router.run(routes, req.url, function (Handler, state) {
+    // Why so hard?
+    var routeName = _.result(_.find(state.routes.slice().reverse(), 'name'), 'name');
+
     res.send(`
       <!doctype html>
-      <html class="no-js" lang=${language}>
+      <html class="no-js" lang=${reqLocale.language}>
           <head>
             <meta charset="utf-8">
             <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-            <title>${ getTitle(language) }</title>
+            <title>${ getIntlMessage(messages, `${routeName}.title`) }</title>
 
-            <meta name="description" content="${ getDescription(language) }">
+            <meta name="description" content="${ getIntlMessage(messages, `${routeName}.description`) }">
             <meta name="og:image" content="${ metadata.LOGO_URL }">
             <meta name="og:image:secure_url" content="${ metadata.LOGO_URL }">
             <meta name="google-site-verification" content="${ metadata.GOOGLE_SITE_VERIFICATION }">
             <link href="${ metadata.SOCIAL_LINKS.GOOGLE }" rel="publisher">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="canonical" href="https://gocardless.com${req.path}">
-
-            ${ alternateLanguages(req.path, language) }
 
             <!--[if lt IE 9]>
             <script>
