@@ -1,28 +1,6 @@
 import React from 'react';
-import Page from '../../page';
-
-function renderLocale(currentLocale, props) {
-  if (currentLocale === props.locales) {
-    return props.children;
-  }
-}
-
-class Translation extends React.Component {
-  render() {
-    return (
-      <div>
-        {renderLocale(this.context.locales, this.props)}
-      </div>
-    );
-  }
-}
-
-Translation.contextTypes = {
-  locales: React.PropTypes.oneOfType([
-    React.PropTypes.string.isRequired,
-    React.PropTypes.array.isRequired,
-  ]),
-};
+import Page from '../../components/page/page';
+import Translation from '../../components/translation/translation';
 
 class HomeEn extends React.Component {
   render() {
@@ -48,8 +26,6 @@ export default class Home extends React.Component {
   render() {
     return (
       <Page>
-        <div>
-        </div>
         <HomeFr />
         <HomeEn />
       </Page>

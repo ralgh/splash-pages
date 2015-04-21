@@ -4,13 +4,13 @@ import _ from 'lodash';
 import React from 'react';
 import {Route, DefaultRoute, NotFoundRoute, Redirect} from 'react-router';
 
-import App from './pages/app';
-import NotFound from './pages/not-found';
-import FAQMerchants from './pages/faq/merchants';
+import App from '../components/app/app';
+import NotFound from '../pages/not-found';
+import FAQMerchants from '../pages/faq/merchants';
 
-import Home from './pages/home';
-import About from './pages/about';
-import Pricing from './pages/pricing';
+import Home from '../pages/home';
+import About from '../pages/about';
+import Pricing from '../pages/pricing';
 
 // Route Signature:
 // [routeName:String, {

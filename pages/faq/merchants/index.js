@@ -1,5 +1,5 @@
 import React from 'react';
-import Page from '../../../page';
+import Page from '../../../components/page/page';
 
 export default class FAQMerchants extends React.Component {
   render() {

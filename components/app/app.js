@@ -12,7 +12,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <RouteHandler {...this.props} path={this.props.path} />
+      <RouteHandler {...this.props} />
     );
   }
 }

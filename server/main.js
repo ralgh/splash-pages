@@ -1,7 +1,5 @@
-import Intl from 'intl';
-global.Intl = Intl;
-
 import _ from 'lodash';
+import path from 'path';
 
 import React from 'react';
 import Router from 'react-router';
@@ -72,7 +70,7 @@ var metadata = {
   }
 }
 
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, '..', 'public')));
 app.get('/favicon.ico', (req, res) => { res.send('') });
 
 app.use(function(req, res) {
@@ -132,8 +130,6 @@ app.use(function(req, res) {
           <![endif]-->
 
           ${React.renderToString(<Handler {...appProps(state)} />)}
-
-          <script src="/js/main.js"></script>
 
           <!-- Google Tag Manager -->
           <script>
