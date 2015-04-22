@@ -14,7 +14,7 @@ import About from '../pages/about';
 
 import Pricing from '../pages/pricing';
 
-import {availableLocales, defaultLocale} from '../config/locale';
+import {availableLocales, defaultLocale} from '../../config/locale';
 
 var config = [
     [Home, {

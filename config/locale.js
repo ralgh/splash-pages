@@ -10,7 +10,7 @@ function validateLocale(locale) {
   return locale;
 }
 
-export var availableLocales = glob.sync(path.join(__dirname, '..', 'messages', '*-*.js'))
+export var availableLocales = glob.sync(path.join(__dirname, '..', 'app', 'messages', '*-*.js'))
   .map(function (file) {
     return path.basename(file, '.js');
   })

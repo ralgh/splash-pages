@@ -13,7 +13,7 @@ function langFromLocale(locale) {
 var availableLanguages = availableLocales.map(langFromLocale);
 
 availableLocales.concat(availableLanguages).map(function(locale) {
-  var filePath = path.join(__dirname, '..', 'messages', locale + '.js');
+  var filePath = path.join(__dirname, '..', 'app', 'messages', locale + '.js');
   var exists;
   try {
     var stat = fs.statSync(filePath);
