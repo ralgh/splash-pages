@@ -9,7 +9,9 @@ import NotFound from '../pages/not-found';
 import FAQMerchants from '../pages/faq/merchants';
 
 import Home from '../pages/home';
+
 import About from '../pages/about';
+
 import Pricing from '../pages/pricing';
 
 // Route Signature:

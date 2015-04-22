@@ -3,7 +3,9 @@
   "author": "GoCardless",
   "version": "0.0.1",
   "description": "React",
-  "scripts": {},
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "babel": "^5.0.12",
     "body-parser": "^1.12.3",

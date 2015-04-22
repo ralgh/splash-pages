@@ -33,7 +33,7 @@ function LocaleObject(locale) {
 }
 
 
-var scriptTags = ['vendor/systemjs/build/system.min.js', 'vendor/es6-module-loader/es6-module-loader.js'];
+var scriptTags = ['vendor/system.js'];
 var cssLinks = ['css/main.css'];
 
 function render(req, res, next) {

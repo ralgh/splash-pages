@@ -72,9 +72,12 @@ class HtmlDocument extends React.Component {
           <Footer />
 
           { script.map((src, k) => <script key={k} src={src} />) }
+          <script>
+            System.import('app/js/main')
+          </script>
 
           { config.google.tag_manager &&
-            <div id="iewarn" dangerouslySetInnerHTML={{__html: googletagmanager.replace("{TAG_ID}", config.google.tag_manager)}} />
+            <div id="googletagmanager" dangerouslySetInnerHTML={{__html: googletagmanager.replace("{TAG_ID}", config.google.tag_manager)}} />
           }
 
         </body>
