@@ -3,10 +3,9 @@ import React from 'react';
 import Router from 'react-router';
 import locale from 'locale';
 
-import HtmlDocument from '../components/html-document';
+import HtmlDocument from '../components/html-document/html-document';
 import {getRoutes} from './routes';
 import localeMessages from '../config/messages';
-import shared from '../config/shared';
 import config from '../config';
 import formats from '../config/formats';
 import {availableLocales, defaultLocale} from '../config/locale';
@@ -36,7 +35,11 @@ function normalizeLocale(locale) {
 }
 
 function render(req, res, next) {
-  var reqLocale = pathLocale(req.path);
+  var reqPath = req.path.toLowerCase().replace(/^\/|\/$/g, '');
+  reqPath = '/' + reqPath;
+  var reqUrl = req.url.toLowerCase();
+
+  var reqLocale = pathLocale(reqPath);
   reqLocale = normalizeLocale(reqLocale);
   var routes = getRoutes(reqLocale.normalized);
   var messages = _.cloneDeep(localeMessages[reqLocale.normalized]);
@@ -48,11 +51,11 @@ function render(req, res, next) {
       messages: messages,
       formats: formats,
       config: config,
-      path: req.path,
+      path: reqPath,
     }, props);
   }
 
-  Router.run(routes, req.url, function(Handler, state) {
+  Router.run(routes, reqUrl, function(Handler, state) {
     var stateName = _.result(_.find(state.routes.slice().reverse(), 'name'), 'name');;
     var stateProps = {
       stateName: stateName,
