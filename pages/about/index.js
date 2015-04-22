@@ -1,5 +1,7 @@
 import React from 'react';
 import Page from '../../components/page/page';
+import Translation from '../../components/translation/translation';
+import IntlMessage from '../../components/intl-message/intl-message';
 
 class AboutEn extends React.Component {
   render() {

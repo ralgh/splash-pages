@@ -18,15 +18,16 @@ var scriptTags = ['vendor/systemjs/build/system.min.js', 'vendor/es6-module-load
 var cssLinks = ['css/main.css'];
 
 function pathLocale(path) {
-  var locale = (path || '').toLowerCase().match(/^\/([a-z]{2,2}\-[a-z]{2,2})\//);
-  if (locale && locale[1]) {
-    locale = new locale.Locale(locale[1]);
+  var localePath = (path || '').toLowerCase().match(/^\/([a-z]{2,2}\-[a-z]{2,2})\//);
+  var foundLocale = locale.Locale['default'];
+  if (localePath && localePath[1]) {
+    foundLocale = new locale.Locale(localePath[1]);
   }
-  return locale;
+  return foundLocale;
 }
 
-var scriptTags = ['vendor/system.js'];
-var cssLinks = ['css/main.css'];
+var scriptTags = ['/vendor/system.js', 'js/loader.js'];
+var cssLinks = ['/css/main.css'];
 
 function normalizeLocale(locale) {
   locale = _.cloneDeep(locale);
@@ -35,7 +36,7 @@ function normalizeLocale(locale) {
 }
 
 function render(req, res, next) {
-  var reqLocale = pathLocale(req.path) || locale.Locale['default'];
+  var reqLocale = pathLocale(req.path);
   reqLocale = normalizeLocale(reqLocale);
   var routes = getRoutes(reqLocale.normalized);
   var messages = _.cloneDeep(localeMessages[reqLocale.normalized]);

@@ -9,9 +9,9 @@ const server = express();
 
 server.use(locale(availableLocales));
 
-server.use(render);
-
 server.use(express.static(path.join(__dirname, '..', 'public')));
+
+server.use(render);
 
 server.use((err, req, res, next) => {
   console.log('Error on request %s %s', req.method, req.url);
