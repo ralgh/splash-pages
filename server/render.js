@@ -3,13 +3,13 @@ import React from 'react';
 import Router from 'react-router';
 import locale from 'locale';
 
-import HtmlDocument from '../components/html-document/html-document';
-import {getRoutes} from './routes';
+import HtmlDocument from '../app/components/html-document/html-document';
+import {getRoutes} from '../app/router/routes';
 import localeMessages from '../config/messages';
 import config from '../config';
 import formats from '../config/formats';
 import {availableLocales, defaultLocale} from '../config/locale';
-import {getIntlMessage} from '../components/intl/intl';
+import {getIntlMessage} from '../app/components/intl/intl';
 
 process.env.LANG = defaultLocale;
 
