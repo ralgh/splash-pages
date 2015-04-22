@@ -12,74 +12,49 @@ import Home from '../pages/home';
 import About from '../pages/about';
 import Pricing from '../pages/pricing';
 
-// Route Signature:
-// [routeName:String, {
-//     /* routeOptions: handler */
-// }:Object, { /* locale config */ }:Object, [nested routes]:Array]
-
-var LOCALE_DEFAULTS = '*-*';
-var EN_GB = 'en-gb';
-var FR_FR = 'fr-fr';
-
-var ALLOWED_LOCALES = [EN_GB, FR_FR];
+import {availableLocales, defaultLocale} from '../config/locale';
 
 var config = [
     [Home, {
-        [LOCALE_DEFAULTS]: {
+        'en-GB': {
             path: '/',
         },
-        [EN_GB]: {
-            title: 'Home',
-            description: 'Home',
-        },
-        [FR_FR]: {
-            title: 'French home',
-            description: 'French home',
+        'fr-FR': {
+            path: '/',
         }
-    }, [
-        [Pricing, {
-            [EN_GB]: {
-                path: '/pricing',
-                title: 'Pricing',
-                description: 'Pricing',
-            },
-            [FR_FR]: {
-                path: '/tarifs',
-                title: 'French pricing',
-                description: 'French pricing',
-            }
-        }]
-    ]],
-    [About, {
-        [EN_GB]: {
-            path: '/about',
-            title: 'Home',
-            description: 'Home',
+    }],
+    [Pricing, {
+        'en-GB': {
+            path: '/pricing',
         },
-        [FR_FR]: {
+        'fr-FR': {
+            path: '/tarifs',
+        }
+    }],
+    [About, {
+        'en-GB': {
+            path: '/about',
+        },
+        'fr-FR': {
             path: '/a-propos',
-            title: 'French home',
-            description: 'French home',
         }
     }],
     [null, {
-        [EN_GB]: {
+        'en-GB': {
             path: '/faq',
             redirectTo: FAQMerchants,
         }
     }],
     [FAQMerchants, {
-        [EN_GB]: {
+        'en-GB': {
             path: '/faq/merchants',
-            title: 'FAQMerchants',
-            description: 'FAQMerchants',
         }
     }],
 ];
 
 function pathToLocale(path, locale) {
-  if (locale === EN_GB) return url.resolve('/', path);
-  return ['/', locale, path].join('/').replace(/\/\//g, '/');
+  if (locale === defaultLocale) return url.resolve('/', path);
+  return ['/', locale.toLowerCase(), path].join('/').replace(/\/\//g, '/');
 }
 
 function validatePages(pages) {
@@ -87,8 +62,8 @@ function validatePages(pages) {
 }
 
 function validateLocale(locale) {
-  if (!_.contains(ALLOWED_LOCALES, locale)) {
-    throw new TypeError(`Locale not allowed: ${locale} [${ALLOWED_LOCALES.join(', ')}]`);
+  if (!_.contains(availableLocales, locale)) {
+    throw new TypeError(`Locale not allowed: ${locale} [${availableLocales.join(', ')}]`);
   }
 }
 
@@ -98,7 +73,7 @@ function flattenPagesForLocale(pages, locale) {
   return pages.reduce(function(pages, page) {
     page = _.cloneDeep(page);
     if (locale in page[1]) {
-      page[1] = _.extend(page[1][LOCALE_DEFAULTS ] || {}, page[1][locale]);
+      page[1] = page[1][locale];
       page[1].path = pathToLocale(page[1].path, locale);
       if (_.isArray(page[2])) {
         page[2] = flattenPagesForLocale(page[2], locale);

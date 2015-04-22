@@ -1,6 +1,7 @@
 import React from 'react';
 import Page from '../../components/page/page';
 import Translation from '../../components/translation/translation';
+import IntlMessage from '../../components/intl-message/intl-message';
 
 class HomeEn extends React.Component {
   render() {
@@ -26,6 +27,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <Page>
+        <IntlMessage message='cta_pro' />
         <HomeFr />
         <HomeEn />
       </Page>

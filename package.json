@@ -9,7 +9,9 @@
   "dependencies": {
     "babel": "^5.0.12",
     "express": "^4.12.3",
+    "glob": "^5.0.5",
     "intl": "^0.1.4",
+    "locale": "0.0.20",
     "lodash": "^3.6.0",
     "react": "^0.13.1",
     "react-intl": "^1.2.0"
