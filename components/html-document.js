@@ -4,45 +4,72 @@ import browsehappy from "./layout-static/browsehappy.js";
 import ieoldtags from "./layout-static/create-tags.js";
 import googletagmanager from "./layout-static/google-tag-manager.js";
 
+import {getIntlMessage} from './intl/intl';
+
 import Header from './header';
 import Footer from './footer';
 
-
 class HtmlDocument extends React.Component {
-
   static propTypes = {
-    locale: PropTypes.object.isRequired,
-    lang: PropTypes.string.isRequired,
+    locales: React.PropTypes.oneOfType([
+      React.PropTypes.string.isRequired,
+      React.PropTypes.array.isRequired,
+    ]),
+    language: PropTypes.string.isRequired,
+    messages: PropTypes.object.isRequired,
+    formats: PropTypes.object.isRequired,
     config: PropTypes.object.isRequired,
     markup: PropTypes.string.isRequired,
     script: PropTypes.arrayOf(PropTypes.string),
     css: PropTypes.arrayOf(PropTypes.string),
-    path: React.PropTypes.string
+    path: React.PropTypes.string.isRequired,
+    stateName: React.PropTypes.string.isRequired,
   }
 
   static defaultProps = {
     script: [],
-    css: []
+    css: [],
+  }
+
+  static childContextTypes = {
+    locales: React.PropTypes.oneOfType([
+      React.PropTypes.string.isRequired,
+      React.PropTypes.array.isRequired,
+    ]),
+    language: PropTypes.string.isRequired,
+    messages: React.PropTypes.object.isRequired,
+    formats: React.PropTypes.object.isRequired,
+  };
+
+  getChildContext() {
+    const { locales, messages, formats, language } = this.props;
+
+    return {
+      locales: locales,
+      language: language,
+      messages: messages,
+      formats: formats,
+    };
   }
 
   render() {
-    const { locale, markup, script, css, lang, config, path } = this.props;
+    const { messages, stateName, markup, script, css, language, config, path } = this.props;
 
     return (
-      <html className="no-js" lang={lang}>
+      <html className="no-js" lang={language}>
         <head>
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 
-          <title>{ locale.getMeta('site_title') }</title>
+          <title>{ getIntlMessage(messages, `${stateName}.title`) }</title>
 
-          <meta name="description" content={ locale.getMeta('meta_description') } />
+          <meta name="description" content={ getIntlMessage(messages, `${stateName}.description`) } />
           <meta property="og:type" content="website" />
           <meta name="og:image" content={ config.logo_url } />
           <meta name="og:image:secure_url" content={ config.logo_url} />
-          <meta property="og:site_name" content={ locale.getMeta('site_name') } />
-          <meta property="og:title" content={ locale.getMeta('site_title') } />
-          <meta property="og:description" content={ locale.getMeta('meta_description') } />
+          <meta property="og:site_name" content={ getIntlMessage(messages, `${stateName}.title`) } />
+          <meta property="og:title" content={ getIntlMessage(messages, `${stateName}.title`) } />
+          <meta property="og:description" content={ getIntlMessage(messages, `${stateName}.description`) } />
           <meta property="og:url" content={config.site_root + path} />
           <link rel="canonical" href={config.site_root + path} />
 
@@ -50,12 +77,11 @@ class HtmlDocument extends React.Component {
             <link key={k} rel="stylesheet" type="text/css" href={href} />)
           }
 
-          { config.google.tracking_id &&
+          { config.google.trackingId &&
             <script dangerouslySetInnerHTML={{__html: ga.replace("{trackingId}", config.google.trackingId)}} />
           }
 
           <script dangerouslySetInnerHTML={{__html: ieoldtags}} />
-
         </head>
 
         <body>
@@ -74,7 +100,7 @@ class HtmlDocument extends React.Component {
           { script.map((src, k) => <script key={k} src={src} />) }
 
           { config.google.tag_manager &&
-            <div id="iewarn" dangerouslySetInnerHTML={{__html: googletagmanager.replace("{TAG_ID}", config.google.tag_manager)}} />
+            <div dangerouslySetInnerHTML={{__html: googletagmanager.replace("{TAG_ID}", config.google.tag_manager)}} />
           }
 
         </body>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 function renderLocale(currentLocale, props) {
-  if (currentLocale === props.locales) {
+  if (currentLocale.toLowerCase() === props.locales.toLowerCase()) {
     return props.children;
   }
 }
