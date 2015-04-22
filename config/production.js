@@ -1,13 +1,6 @@
-// App config the for production environment.
-// Do not require this directly. Use ./config instead.
-
 export default {
-  tracking_id: "UA-",
-  site_root: 'https://gocardless.com/',
-  logo_url: '',
-  google: {
-    site_verification: 'asdf',
-    social_links: 'asdf',
-    tag_manager: 'asdf'
-  }
+  mixpanel_token: '0ebe37c4ed96a0432e989cc20ca1db04',
+  google_tag_manager_id: 'GTM-PRFKNC',
+  optimizely_id: '125150657',
+  site_root: 'https://gocardless.com',
 }

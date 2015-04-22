@@ -1,13 +1,13 @@
 import React, { PropTypes } from "react";
 
-import browsehappy from "./layout-static/browsehappy.js";
-import ieoldtags from "./layout-static/create-tags.js";
-import googletagmanager from "./layout-static/google-tag-manager.js";
+import browseHappy from "../layout-static/browse-happy.js";
+import createHTML5Tags from "../layout-static/create-html5-tags.js";
+import GTM from "../layout-static/google-tag-manager.js";
 
-import {getIntlMessage} from './intl/intl';
+import {getIntlMessage} from '../intl/intl';
 
-import Header from './header';
-import Footer from './footer';
+import Header from '../header/header';
+import Footer from '../footer/footer';
 
 class HtmlDocument extends React.Component {
   static propTypes = {
@@ -61,37 +61,29 @@ class HtmlDocument extends React.Component {
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 
-          <title>{ getIntlMessage(messages, `${stateName}.title`) }</title>
+          <title>{ getIntlMessage(messages, `${stateName}.title`) } - { config.site_name }</title>
 
           <meta name="description" content={ getIntlMessage(messages, `${stateName}.description`) } />
           <meta property="og:type" content="website" />
-          <meta name="og:image" content={ config.logo_url } />
-          <meta name="og:image:secure_url" content={ config.logo_url} />
-          <meta property="og:site_name" content={ getIntlMessage(messages, `${stateName}.title`) } />
-          <meta property="og:title" content={ getIntlMessage(messages, `${stateName}.title`) } />
-          <meta property="og:description" content={ getIntlMessage(messages, `${stateName}.description`) } />
-          <meta property="og:url" content={config.site_root + path} />
-          <link rel="canonical" href={config.site_root + path} />
+          <meta name="og:image" content={ config.logo_url_square } />
+          <meta name="og:image:secure_url" content={ config.logo_url_square } />
+          <meta name="google-site-verification" content={ config.google_site_verification } />
+          <link rel="canonical" href={ config.site_root + path } />
 
           { css.map((href, k) =>
             <link key={k} rel="stylesheet" type="text/css" href={href} />)
           }
 
-          { config.google.trackingId &&
-            <script dangerouslySetInnerHTML={{__html: ga.replace("{trackingId}", config.google.trackingId)}} />
-          }
-
-          <script dangerouslySetInnerHTML={{__html: ieoldtags}} />
+          <script dangerouslySetInnerHTML={{__html: createHTML5Tags}} />
         </head>
 
         <body>
-          { config.optimizely &&
-            <script src="//cdn.optimizely.com/js/${config.optimizely}.js"></script>
+          { config.optimizely_id &&
+            <script src="//cdn.optimizely.com/js/${config.optimizely_id}.js"></script>
           }
+          <div dangerouslySetInnerHTML={{__html: browseHappy}} />
 
           <Header />
-
-          <div id="iewarn" dangerouslySetInnerHTML={{__html: browsehappy}} />
 
           <div id="root" dangerouslySetInnerHTML={{__html: markup}} />
 
@@ -99,10 +91,9 @@ class HtmlDocument extends React.Component {
 
           { script.map((src, k) => <script key={k} src={src} />) }
 
-          { config.google.tag_manager &&
-            <div dangerouslySetInnerHTML={{__html: googletagmanager.replace("{TAG_ID}", config.google.tag_manager)}} />
+          { config.google_tag_manager_id &&
+            <div dangerouslySetInnerHTML={{__html: GTM.replace("{TAG_ID}", config.google_tag_manager_id)}} />
           }
-
         </body>
       </html>
     );
