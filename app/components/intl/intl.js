@@ -13,4 +13,4 @@ export function getIntlMessage(messages, path) {
   }
 
   return message;
-};
+}

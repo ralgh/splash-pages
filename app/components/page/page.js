@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 
-export default class Page extends React.Component {
+class Page extends React.Component {
   render() {
     return (
       <div>
@@ -15,3 +15,5 @@ export default class Page extends React.Component {
     );
   }
 }
+
+export default Page;

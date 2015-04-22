@@ -1,7 +1,16 @@
 import React from 'react';
 import {RouteHandler} from 'react-router';
 
-export default class App extends React.Component {
+class App extends React.Component {
+  static childContextTypes = {
+    locales: React.PropTypes.oneOfType([
+      React.PropTypes.string.isRequired,
+      React.PropTypes.array.isRequired
+    ]),
+    messages: React.PropTypes.object.isRequired,
+    formats: React.PropTypes.object.isRequired,
+  }
+
   getChildContext() {
     return {
       locales: this.props.locales,
@@ -17,11 +26,4 @@ export default class App extends React.Component {
   }
 }
 
-App.childContextTypes = {
-  locales: React.PropTypes.oneOfType([
-    React.PropTypes.string.isRequired,
-    React.PropTypes.array.isRequired
-  ]),
-  messages: React.PropTypes.object.isRequired,
-  formats: React.PropTypes.object.isRequired,
-};
+export default App;

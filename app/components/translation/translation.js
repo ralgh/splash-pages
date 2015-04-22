@@ -6,7 +6,14 @@ function renderLocale(currentLocale, props) {
   }
 }
 
-export default class Translation extends React.Component {
+class Translation extends React.Component {
+  static contextTypes = {
+    locales: React.PropTypes.oneOfType([
+      React.PropTypes.string.isRequired,
+      React.PropTypes.array.isRequired,
+    ]),
+  }
+
   render() {
     return (
       <div>
@@ -16,9 +23,4 @@ export default class Translation extends React.Component {
   }
 }
 
-Translation.contextTypes = {
-  locales: React.PropTypes.oneOfType([
-    React.PropTypes.string.isRequired,
-    React.PropTypes.array.isRequired,
-  ]),
-};
+export default Translation;
