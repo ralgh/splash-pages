@@ -1,78 +1,77 @@
-import React from "react";
-import HtmlDocument from "../components/html-document";
-import Router from 'react-router';
-import {getRoutes} from './routes';
-import config from '../config';
 import _ from 'lodash';
+import React from 'react';
+import Router from 'react-router';
+import locale from 'locale';
 
-// todo move
-var messages = {
+import HtmlDocument from '../components/html-document';
+import {getRoutes} from './routes';
+import localeMessages from '../config/messages';
+import shared from '../config/shared';
+import config from '../config';
+import formats from '../config/formats';
+import {availableLocales, defaultLocale} from '../config/locale';
+import {getIntlMessage} from '../components/intl/intl';
 
-};
+process.env.LANG = defaultLocale;
 
-var formats = {
+var scriptTags = ['vendor/systemjs/build/system.min.js', 'vendor/es6-module-loader/es6-module-loader.js'];
+var cssLinks = ['css/main.css'];
 
-};
-
-
-var DEFAULT_LANGUAGE = 'en';
-var DEFAULT_REGION = 'gb';
-
-function getLocale(language, region) {
-  language = language || DEFAULT_LANGUAGE;
-  region = region || DEFAULT_REGION;
-  return [language, region].join('-');
-}
-
-// end move
-
-function LocaleObject(locale) {
-  this.getMeta = function(a) {
-    return 'hi :)';
+function pathLocale(path) {
+  var locale = (path || '').toLowerCase().match(/^\/([a-z]{2,2}\-[a-z]{2,2})\//);
+  if (locale && locale[1]) {
+    locale = new locale.Locale(locale[1]);
   }
+  return locale;
 }
-
 
 var scriptTags = ['vendor/system.js'];
 var cssLinks = ['css/main.css'];
 
+function normalizeLocale(locale) {
+  locale = _.cloneDeep(locale);
+  locale.normalized = locale.normalized.replace('_', '-');
+  return locale;
+}
+
 function render(req, res, next) {
-  var locale = req.path.match(/^\/([a-z]{2,2}\-[a-z]{2,2})\//);
-  locale = locale && locale[1] || getLocale();
-  var language = locale.slice(0, 2);
-  var routes = getRoutes(locale);
+  var reqLocale = pathLocale(req.path) || locale.Locale['default'];
+  reqLocale = normalizeLocale(reqLocale);
+  var routes = getRoutes(reqLocale.normalized);
+  var messages = _.cloneDeep(localeMessages[reqLocale.normalized]);
 
   function appProps(props) {
     return _.extend({
-      locales: locale,
+      locales: reqLocale.normalized,
+      language: reqLocale.language,
       messages: messages,
       formats: formats,
-      config: config
+      config: config,
+      path: req.path,
     }, props);
   }
 
   Router.run(routes, req.url, function(Handler, state) {
+    var stateName = _.result(_.find(state.routes.slice().reverse(), 'name'), 'name');;
+    var stateProps = {
+      stateName: stateName,
+    }
 
-    const markup = React.renderToString(<Handler {...appProps(state)} />);
+    const markup = React.renderToString(<Handler {...appProps(stateProps)} />);
 
     // The application component is rendered to static markup
     // and sent as response.
     const html = React.renderToStaticMarkup(
       <HtmlDocument
-        locale={new LocaleObject(locale)}
-        lang={language}
         markup={markup}
         script={scriptTags}
         css={cssLinks}
-        config={config}
-        path={req.path}
+        {...appProps(stateProps)}
       />
     );
-    const doctype = "<!DOCTYPE html>";
+    const doctype = '<!DOCTYPE html>';
     res.send(doctype + html);
   });
-
 }
-
 
 export default render;
