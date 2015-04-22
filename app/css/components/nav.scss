@@ -1,0 +1,40 @@
+.nav {
+  &:before,
+  &:after {
+    display: table;
+    content: " ";
+  }
+  &:after {
+    clear: both;
+  }
+  font-family: $font-family-heading;
+  color: $header-color;
+}
+
+.nav__item {
+  margin-right: $space-medium;
+  float: left;
+  display: block;
+}
+
+.nav__item-link {
+  height: 17px; // matching logo height
+  line-height: 17px; //matches above
+  position: relative;
+}
+
+.nav__item-link:hover {
+  text-decoration: underline;
+}
+
+@include breakpoint-medium {
+  .nav__item.has-breakpoint-md {
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+@include breakpoint-small {
+  .nav__item.has-breakpoint-sm {
+    border-bottom: 1px solid #ddd;
+  }
+}

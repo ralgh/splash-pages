@@ -1,0 +1,59 @@
+// Display utilities
+
+.u-inline {
+  display: inline;
+}
+
+.u-inline-block {
+  display: inline-block;
+}
+
+.u-block {
+  display: block;
+}
+
+.u-hidden {
+  display: none;
+}
+
+// Responsive states:
+
+@include breakpoint-medium {
+
+  .u-md-display-block {
+    display: block;
+  }
+
+  .u-md-display-inline {
+    display: inline;
+  }
+
+  .u-md-display-inline-block {
+    display: inline-block;
+  }
+
+  .u-md-hidden {
+    display: none;
+  }
+
+}
+
+@include breakpoint-small {
+
+  .u-sm-display-block {
+    display: block;
+  }
+
+  .u-sm-display-inline {
+    display: inline;
+  }
+
+  .u-sm-display-inline-block {
+    display: inline-block;
+  }
+
+  .u-sm-hidden {
+    display: none;
+  }
+
+}

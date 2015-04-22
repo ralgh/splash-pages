@@ -13,9 +13,6 @@ import {getIntlMessage} from '../app/components/intl/intl';
 
 process.env.LANG = defaultLocale;
 
-var scriptTags = ['vendor/systemjs/build/system.min.js', 'vendor/es6-module-loader/es6-module-loader.js'];
-var cssLinks = ['css/main.css'];
-
 function pathLocale(path) {
   var localePath = (path || '').toLowerCase().match(/^\/([a-z]{2,2}\-[a-z]{2,2})\//);
   var foundLocale = locale.Locale['default'];
@@ -26,7 +23,7 @@ function pathLocale(path) {
 }
 
 var scriptTags = ['/vendor/system.js', 'js/loader.js'];
-var cssLinks = ['/css/main.css'];
+var cssLinks = ['/css/main.css', '/css/fonts.css'];
 
 function normalizeLocale(locale) {
   locale = _.cloneDeep(locale);

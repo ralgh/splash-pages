@@ -64,7 +64,7 @@ class HtmlDocument extends React.Component {
           <title>{ getIntlMessage(messages, `${stateName}.title`) } - { config.site_name }</title>
 
           <meta name="description" content={ getIntlMessage(messages, `${stateName}.description`) } />
-          <meta property="og:type" content="website" />
+          <link href={ config.social_links.google } rel="publisher" />
           <meta name="og:image" content={ config.logo_url_square } />
           <meta name="og:image:secure_url" content={ config.logo_url_square } />
           <meta name="google-site-verification" content={ config.google_site_verification } />

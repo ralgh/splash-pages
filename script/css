@@ -1,0 +1,17 @@
+#!/bin/bash
+# Usage: script/css
+
+set -e errexit
+
+mkdir -p public/css
+rm -r public/css
+
+# main
+node_modules/.bin/node-sass --include-path app/css --output-style nested --source-comments=normal \
+  app/css/main.scss --output public/css
+node_modules/.bin/autoprefixer --browsers "last 2 versions" public/css/main.css
+
+# greenhouse-forms
+node_modules/.bin/node-sass --include-path app/css --output-style nested --source-comments=normal \
+  app/css/greenhouse-forms.scss --output public/css
+node_modules/.bin/autoprefixer --browsers "last 2 versions" public/css/greenhouse-forms.css

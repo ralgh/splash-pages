@@ -23,5 +23,5 @@ server.use((err, req, res, next) => {
 server.set('port', process.env.PORT || 3000);
 
 server.listen(server.get('port'), () => {
-  console.log(`Express ${server.get('env')} server listening on ${server.get('port')}`);
+  console.log(`Express ${server.get('env')} server listening on http://localhost:${server.get('port')}`);
 });

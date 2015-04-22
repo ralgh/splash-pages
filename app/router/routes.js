@@ -1,5 +1,3 @@
-import url from 'url';
-
 import _ from 'lodash';
 import React from 'react';
 import {Route, DefaultRoute, NotFoundRoute, Redirect} from 'react-router';
@@ -55,7 +53,7 @@ var config = [
 ];
 
 function pathToLocale(path, locale) {
-  if (locale === defaultLocale) return url.resolve('/', path);
+  if (locale === defaultLocale) return path;
   return ['/', locale.toLowerCase(), path].join('/').replace(/\/\//g, '/');
 }
 
