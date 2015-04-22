@@ -7,6 +7,3 @@ dist/*
 e2e-dist/*
 Session.vim
 npm-debug.log
-client/main.css
-client/admin-compiled
-client/app-compiled
