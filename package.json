@@ -10,8 +10,26 @@
     "cookie-parser": "^1.3.4",
     "express": "^4.12.3",
     "intl": "^0.1.4",
+    "jspm": "^0.15.3",
     "lodash": "^3.7.0",
     "react": "^0.13.1",
     "react-intl": "^1.2.0"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "vendor",
+      "packages": "public/vendor"
+    },
+    "configFile": "config/jspm.config.js",
+    "dependencies": {
+      "lodash": "npm:lodash@^3.5.0",
+      "react": "npm:react@^0.13.1",
+      "react-router": "npm:react-router@^0.13.2"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.0.12",
+      "babel-runtime": "npm:babel-runtime@^5.0.12",
+      "core-js": "npm:core-js@^0.8.1"
+    }
   }
 }
