@@ -14,7 +14,7 @@ export default class IntlLink extends React.Component {
 
   render() {
     return (
-      <Link {...this.props}><IntlMessage message={this.props.message}>{this.props.children}</IntlMessage></Link>
+      <Link {...this.props}><IntlMessage message={this.props.message} /></Link>
     );
   }
 }
