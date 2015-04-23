@@ -5,6 +5,7 @@
   "description": "React",
   "scripts": {
     "start": "nodemon index.js",
+    "build": "jspm bundle-sfx app/client/bootstrap --minify --skip-source-maps --output public/build.js"
     "lint": "eslint . || true",
     "test": "./script/test"
   },
@@ -31,7 +32,6 @@
   },
   "jspm": {
     "directories": {
-      "baseURL": "vendor",
       "packages": "public/vendor"
     },
     "configFile": "public/jspm.config.js",

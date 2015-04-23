@@ -159,7 +159,7 @@ class Footer extends React.Component {
                       <hr className="u-margin-Vs" />
                       <div className="u-padding-Vxs u-padding-Hm">
                         <p className="u-color-p"><IntlMessage message="footer.eruope_cta" />{','}</p>
-                        <p className="u-color-p"><Link to="Europe"><IntlMessage message="footer.eruope_link" /></Link>
+                        <p className="u-color-p"><Link to="Europe"><IntlMessage message="footer.europe_link" /></Link>
                           <IntlMessage message="footer.europe_description" /></p>
                       </div>
                     </LinkExists>
