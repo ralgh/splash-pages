@@ -72,7 +72,7 @@ class Footer extends React.Component {
                   <span itemProp="addressCountry" content=""></span>
                 </span>
                 <span itemProp="telephone" content=""></span>,
-                <a href="mailto:{{ GOCARDLESS.GB.SUPPORT.EMAIL }}" className="u-link-clean u-link-invert" itemProp="email"></a>
+                <a href="mailto:" className="u-link-clean u-link-invert" itemProp="email"></a>
               </p>
               <p className="u-text-heading u-text-xxs u-color-invert">
                 GoCardless is a Bacs approved bureau and is regulated by the Financial Conduct Authority as an Authorised Payment Institution.

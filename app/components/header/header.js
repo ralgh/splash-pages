@@ -31,7 +31,7 @@ class Header extends React.Component {
     const isInverted = this.props.isInverted;
 
     return (
-      <div>
+      <div className="site-header site-header--invert u-relative u-cf">
         <div className="u-pull-start">
           <a href="/" id="track-nav-home" className="header-logo u-relative u-block u-padding-Vl">
             <img ng-gc-svg-injector className="site-logo__image u-fill-primary" data-src="/images/logos/site-logo.svg" />
