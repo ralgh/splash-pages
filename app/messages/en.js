@@ -17,4 +17,4 @@ export default {
     title: 'FAQ Merchants',
     description: 'FAQ Merchants',
   }
-}
+};
