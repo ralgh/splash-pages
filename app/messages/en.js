@@ -1,6 +1,8 @@
 export default {
-  cta_basic: 'Start taking payments',
-  cta_pro: 'Contact sales',
+  cta: {
+    basic: 'Start taking payments',
+    pro: 'Contact sales',
+  },
   Pricing: {
     title: 'Pricing',
     description: 'Pricing',
@@ -8,15 +10,15 @@ export default {
   About: {
     title: 'About',
     description: 'About',
-    link: 'about'
+    link: 'about',
   },
   Home: {
     title: 'Home',
     description: 'Home',
-    link: "home page"
+    link: 'home page',
   },
   FAQMerchants: {
     title: 'FAQ Merchants',
     description: 'FAQ Merchants',
   }
-}
+};

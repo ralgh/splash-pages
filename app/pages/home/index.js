@@ -27,7 +27,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <Page>
-        <IntlMessage message='cta_pro' />
+        <IntlMessage message='cta.pro' />
         <HomeFr />
         <HomeEn />
       </Page>

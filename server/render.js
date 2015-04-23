@@ -8,8 +8,7 @@ import {getRoutes} from '../app/router/routes';
 import localeMessages from '../config/messages';
 import config from '../config';
 import formats from '../config/formats';
-import {availableLocales, defaultLocale} from '../config/locale';
-import {getIntlMessage} from '../app/components/intl/intl';
+import {defaultLocale} from '../config/locale';
 
 process.env.LANG = defaultLocale;
 
@@ -18,7 +17,7 @@ var cssLinks = ['css/main.css'];
 
 function pathLocale(path) {
   var localePath = (path || '').toLowerCase().match(/^\/([a-z]{2,2}\-[a-z]{2,2})\//);
-  var foundLocale = locale.Locale['default'];
+  var foundLocale = locale.Locale.default;
   if (localePath && localePath[1]) {
     foundLocale = new locale.Locale(localePath[1]);
   }
@@ -28,13 +27,13 @@ function pathLocale(path) {
 var scriptTags = ['/vendor/system.js', 'js/loader.js'];
 var cssLinks = ['/css/main.css'];
 
-function normalizeLocale(locale) {
-  locale = _.cloneDeep(locale);
-  locale.normalized = locale.normalized.replace('_', '-');
-  return locale;
+function normalizeLocale(localeData) {
+  localeData = _.cloneDeep(localeData);
+  localeData.normalized = localeData.normalized.replace('_', '-');
+  return localeData;
 }
 
-function render(req, res, next) {
+function render(req, res) {
   var reqPath = req.path.toLowerCase().replace(/^\/|\/$/g, '');
   reqPath = '/' + reqPath;
   var reqUrl = req.url.toLowerCase();
@@ -56,10 +55,10 @@ function render(req, res, next) {
   }
 
   Router.run(routes, reqUrl, function(Handler, state) {
-    var stateName = _.result(_.find(state.routes.slice().reverse(), 'name'), 'name');;
+    var stateName = _.result(_.find(state.routes.slice().reverse(), 'name'), 'name');
     var stateProps = {
       stateName: stateName,
-    }
+    };
 
     const markup = React.renderToString(<Handler {...appProps(stateProps)} />);
 

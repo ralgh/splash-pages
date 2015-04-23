@@ -1,5 +1,7 @@
 export default {
-  cta_pro: 'FR PRO',
+  cta: {
+    pro: 'FR PRO',
+  },
   Home: {
     title: 'French home',
     description: 'French home',
@@ -14,4 +16,4 @@ export default {
     title: 'Tarifs',
     description: 'Tarifs',
   }
-}
+};
