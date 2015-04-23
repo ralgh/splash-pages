@@ -7,7 +7,12 @@ class LinkExists extends React.Component {
   };
 
   render() {
-    var hasLink = !!(this.context.router.makeHref(this.props.to, this.props.params, this.props.query));
+    var hasLink = false;
+    // If an exception is thrown, assume the link isn't found.
+    try {
+      hasLink = !!(this.context.router.makePath(this.props.to, this.props.params, this.props.query));
+    } catch (e) { };
+
     return (
       <div>{ hasLink && this.props.children }</div>
     )
