@@ -19,7 +19,6 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.1.11",
     "classnames": "npm:classnames@1.2.1",
     "core-js": "npm:core-js@0.8.4",
-    "g00fy-/jspm-jsx-babel": "github:g00fy-/jspm-jsx-babel@0.0.1",
     "jsx": "github:floatdrop/plugin-jsx@1.1.0",
     "locale": "npm:locale@0.0.20",
     "lodash": "npm:lodash@3.7.0",
@@ -373,6 +372,9 @@ System.config({
     "npm:randombytes@2.0.1": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.1"
+    },
+    "npm:punycode@1.3.2": {
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:react-intl@1.2.0": {

@@ -1,5 +1,6 @@
 export default {
   siteName: 'GoCardless',
+  companyName: 'GoCardless Ltd.',
   logoUrlSquare: 'https://gocardless.com/images/logos/gocardless-square.png',
   googleSiteVerification: 'Y80kah87ghJhwiDqw-5ap234p9wCcGt6kMRxvnamtHU',
   socialLinks: {
@@ -59,5 +60,5 @@ export default {
     'Corinne Thompson',
     'Matt Thomson',
     'James Walker',
-  ]
+  ],
 };

@@ -1,3 +1,4 @@
+import React from 'react';
 import _ from 'lodash';
 import Router from 'react-router';
 var {Route, DefaultRoute, NotFoundRoute, Redirect} = Router;
@@ -17,6 +18,12 @@ import Home from '../pages/home/index';
 import About from '../pages/about/index';
 
 import Pricing from '../pages/pricing/index';
+
+import NotFound from '../pages/not-found/not-found';
+import FaqMerchants from '../pages/faq/merchants/merchants';
+import Home from '../pages/home/home';
+import About from '../pages/about/about';
+import Pricing from '../pages/pricing/pricing';
 
 import {availableLocales, defaultLocale} from '../helpers/locale-helper/locale-helper';
 
@@ -67,6 +74,10 @@ function pathToLocale(path, locale) {
   if (locale === defaultLocale) {
     return path;
   }
+}
+
+function pathToLocale(path, locale) {
+  if (locale === defaultLocale) { return path; }
   return ['/', locale.toLowerCase(), path].join('/').replace(/\/\//g, '/');
 }
 

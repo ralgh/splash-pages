@@ -15,8 +15,6 @@ export default {
     eruope_link: 'learn more',
     eruope_description: 'about upcoming countries',
   },
-  cta_basic: 'Start taking payments',
-  cta_pro: 'Contact sales',
   postal_address: {
     street_address: '338-346 Goswell Road',
     address_locality: 'London',

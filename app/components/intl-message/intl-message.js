@@ -4,6 +4,8 @@ import ReactIntl from 'react-intl';
 var { FormattedMessage } = ReactIntl;
 
 class IntlMessage extends React.Component {
+  displayName = 'IntlMessage'
+
   static propTypes = {
     message: React.PropTypes.string.isRequired,
   }

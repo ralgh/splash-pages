@@ -11,11 +11,19 @@ import config from '../config';
 import formats from '../config/formats';
 
 
-var scriptTags = ['vendor/systemjs/build/system.min.js', 'vendor/es6-module-loader/es6-module-loader.js'];
+var scriptTags = [
+  'vendor/systemjs/build/system.min.js',
+  'vendor/es6-module-loader/es6-module-loader.js',
+  '/jspm.config.js',
+  '/client/loader.js'
+];
 var cssLinks = ['css/main.css'];
 
-var scriptTags = ['/vendor/system.js', '/jspm.config.js', '/client/loader.js'];
-var cssLinks = ['/css/main.css'];
+function normalizeLocale(localeData) {
+  localeData = _.cloneDeep(localeData);
+  localeData.normalized = localeData.normalized.replace('_', '-');
+  return localeData;
+}
 
 function normalizeUrl(urlStr) {
   urlStr = urlStr.toLowerCase() || '';
@@ -53,15 +61,14 @@ function render(req, res) {
       res.redirect(302, destination);
     },
     onError: function(err){
-      res.status(500).send('Something bad happened');
-      throw err;
+      next(err);
     },
     routes: routes,
-    location: reqUrl
+    location: reqUrl,
   });
 
   router.run(function(Handler, state) {
-    var stateName = _.result(_.find(state.routes.slice().reverse(), 'name'), 'name');;
+    var stateName = _.result(_.find(state.routes.slice().reverse(), 'name'), 'name');
     var stateProps = {
       stateName: stateName,
     };

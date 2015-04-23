@@ -4,6 +4,7 @@ import _ from 'lodash';
 import browseHappy from '../layout-static/browse-happy.js';
 import createHTML5Tags from '../layout-static/create-html5-tags.js';
 import GTM from '../layout-static/google-tag-manager.js';
+import websiteSchema from '../layout-static/website-schema.js';
 
 import {getIntlMessage} from '../intl/intl';
 import {availableLocales} from '../../helpers/locale-helper/locale-helper';
@@ -23,7 +24,7 @@ function buildSchemaDotOrgOrganization(metadata) {
     'logo': metadata.logo_url_square,
     'sameAs': [],
     'contactPoint': [],
-  }
+  };
 
   // Add social network links to sameAs
   Object.keys(metadata.socialLinks).forEach(function(network) {
@@ -41,20 +42,22 @@ function buildSchemaDotOrgOrganization(metadata) {
     contactTypes.forEach(function(contactType) {
       organization.contactPoint.push(
         {
-          '@type' : 'ContactPoint',
-          'telephone' : localeMessages[locale].phone_full,
-          'email' : localeMessages[locale].email,
-          'contactType' : contactType,
-          'areaServed' : countryCode
+          '@type': 'ContactPoint',
+          'telephone': localeMessages[locale].phone_full,
+          'email': localeMessages[locale].email,
+          'contactType': contactType,
+          'areaServed': countryCode,
         }
       );
-    })
+    });
   });
 
   return organization;
 }
 
 class HtmlDocument extends React.Component {
+  displayName = 'HtmlDocument'
+
   static propTypes = {
     locales: React.PropTypes.oneOfType([
       React.PropTypes.string.isRequired,
@@ -126,8 +129,8 @@ class HtmlDocument extends React.Component {
         </head>
 
         <body>
-          { config.optimizely_id &&
-            <script src='//cdn.optimizely.com/js/${config.optimizely_id}.js'></script>
+          { config.optimizelyId &&
+            <script src='//cdn.optimizely.com/js/${config.optimizelyId}.js'></script>
           }
           <div dangerouslySetInnerHTML={{__html: browseHappy}} />
 
@@ -138,7 +141,12 @@ class HtmlDocument extends React.Component {
           { script.map((src, k) => <script key={k} src={src} />) }
 
           { isHome &&
-            <script type="application/ld+json"
+            <script type='application/ld+json'
+              dangerouslySetInnerHTML={{__html: websiteSchema.replace('{PAGE}', path) }} />
+          }
+
+          { isHome &&
+            <script type='application/ld+json'
               dangerouslySetInnerHTML={{__html: JSON.stringify(buildSchemaDotOrgOrganization(metadata)) }} />
           }
 
