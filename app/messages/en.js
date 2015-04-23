@@ -3,6 +3,7 @@ export default {
     our_products: 'Our products',
     login_btn: 'Login',
   },
+  contact_types: ['customer support', 'sales'],
   footer: {
     description: 'GoCardless is a Bacs approved bureau and is regulated by the Financial Conduct Authority as an Authorised Payment Institution.',
     currently_viewing: 'Currently viewing',
