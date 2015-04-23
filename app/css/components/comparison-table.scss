@@ -1,0 +1,9 @@
+.comparison-table__row {
+  border-top: 1px solid $gray-darken;
+}
+
+.comparison-table__cell {
+  width: 33%;
+  padding: $space-small;
+  border-right: 1px solid $gray-darken;
+}

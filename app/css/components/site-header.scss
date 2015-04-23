@@ -1,0 +1,7 @@
+@import 'mixins/breakpoints-mixin';
+
+.site-header {
+  max-width: $site-max-width;
+  min-width: $site-min-width;
+  z-index: 1;
+}

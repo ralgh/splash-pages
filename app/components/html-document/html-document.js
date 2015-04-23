@@ -1,14 +1,63 @@
 import React, { PropTypes } from 'react';
+import _ from 'lodash';
 
 import browseHappy from '../layout-static/browse-happy.js';
 import createHTML5Tags from '../layout-static/create-html5-tags.js';
 import GTM from '../layout-static/google-tag-manager.js';
+import websiteSchema from '../layout-static/website-schema.js';
 
 import {getIntlMessage} from '../intl/intl';
+import {availableLocales} from '../../../config/locale';
+import localeMessages from '../../../config/messages';
 
+// Documentation from Google:
+//   https://developers.google.com/structured-data/customize/overview
+// Google's tool for validating the output:
+//   https://developers.google.com/structured-data/testing-tool/
+// Original Schema:
+//   http://schema.org/Organization
+function buildSchemaDotOrgOrganization(metadata) {
+  var organization = {
+    '@context': 'http://schema.org',
+    '@type': 'Organization',
+    'url': 'https://gocardless.com/',
+    'logo': metadata.logoUrlSquare,
+    'sameAs': [],
+    'contactPoint': [],
+  };
 
+  // Add social network links to sameAs
+  Object.keys(metadata.socialLinks).forEach(function(network) {
+    organization.sameAs.push(metadata.socialLinks[network]);
+  });
+
+  // Add contact details for office in each country
+  // See https://support.google.com/webmasters/answer/4620709?hl=en for supported contactType
+  availableLocales.map(function(locale) {
+    return [locale.slice(3, 5), locale];
+  }).forEach(function(countryCodeLocale) {
+    var countryCode = countryCodeLocale[0];
+    var locale = countryCodeLocale[1];
+    var contactTypes = localeMessages[locale].contact_types;
+    contactTypes.forEach(function(contactType) {
+      organization.contactPoint.push(
+        {
+          '@type': 'ContactPoint',
+          'telephone': localeMessages[locale].phone_full,
+          'email': localeMessages[locale].email,
+          'contactType': contactType,
+          'areaServed': countryCode,
+        }
+      );
+    });
+  });
+
+  return organization;
+}
 
 class HtmlDocument extends React.Component {
+  displayName = 'HtmlDocument'
+
   static propTypes = {
     locales: PropTypes.oneOfType([
       PropTypes.string.isRequired,
@@ -53,6 +102,8 @@ class HtmlDocument extends React.Component {
 
   render() {
     const { messages, stateName, markup, script, css, language, config, path } = this.props;
+    const isHome = stateName === 'Home';
+    const metadata = _.merge({}, messages, config);
 
     return (
       <html className='no-js' lang={language}>
@@ -60,14 +111,14 @@ class HtmlDocument extends React.Component {
           <meta charSet='utf-8' />
           <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no' />
 
-          <title>{ getIntlMessage(messages, `${stateName}.title`) } - { config.site_name }</title>
+          <title>{ getIntlMessage(messages, `${stateName}.title`) } - { config.siteName }</title>
 
           <meta name='description' content={ getIntlMessage(messages, `${stateName}.description`) } />
-          <meta property='og:type' content='website' />
-          <meta name='og:image' content={ config.logo_url_square } />
-          <meta name='og:image:secure_url' content={ config.logo_url_square } />
-          <meta name='google-site-verification' content={ config.google_site_verification } />
-          <link rel='canonical' href={ config.site_root + path } />
+          <link href={ config.socialLinks.google } rel='publisher' />
+          <meta name='og:image' content={ config.logoUrlSquare } />
+          <meta name='og:image:secure_url' content={ config.logoUrlSquare } />
+          <meta name='google-site-verification' content={ config.googleSiteVerification } />
+          <link rel='canonical' href={ config.siteRoot + path } />
 
           { css.map((href, k) =>
             <link key={k} rel='stylesheet' type='text/css' href={href} />)
@@ -77,8 +128,8 @@ class HtmlDocument extends React.Component {
         </head>
 
         <body>
-          { config.optimizely_id &&
-            <script src='//cdn.optimizely.com/js/${config.optimizely_id}.js'></script>
+          { config.optimizelyId &&
+            <script src='//cdn.optimizely.com/js/${config.optimizelyId}.js'></script>
           }
           <div dangerouslySetInnerHTML={{__html: browseHappy}} />
 
@@ -86,8 +137,18 @@ class HtmlDocument extends React.Component {
 
           { script.map((src, k) => <script key={k} src={src} />) }
 
-          { config.google_tag_manager_id &&
-            <div dangerouslySetInnerHTML={{__html: GTM.replace('{TAG_ID}', config.google_tag_manager_id)}} />
+          { isHome &&
+            <script type='application/ld+json'
+              dangerouslySetInnerHTML={{__html: websiteSchema.replace('{PAGE}', path) }} />
+          }
+
+          { isHome &&
+            <script type='application/ld+json'
+              dangerouslySetInnerHTML={{__html: JSON.stringify(buildSchemaDotOrgOrganization(metadata)) }} />
+          }
+
+          { config.googleTagManagerId &&
+            <div dangerouslySetInnerHTML={{__html: GTM.replace('{TAG_ID}', config.googleTagManagerId)}} />
           }
         </body>
       </html>

@@ -1,6 +1,5 @@
-
 var data = {
-  hi: 'name'
+  hi: 'name',
 };
 
 export default data;

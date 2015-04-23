@@ -1,17 +1,13 @@
-import url from 'url';
-
+import React from 'react';
 import _ from 'lodash';
 import {Route, DefaultRoute, NotFoundRoute, Redirect} from 'react-router';
 
 import App from '../components/app/app';
-import NotFound from '../pages/not-found';
-import FAQMerchants from '../pages/faq/merchants';
-
-import Home from '../pages/home';
-
-import About from '../pages/about';
-
-import Pricing from '../pages/pricing';
+import NotFound from '../pages/not-found/not-found';
+import FaqMerchants from '../pages/faq/merchants/merchants';
+import Home from '../pages/home/home';
+import About from '../pages/about/about';
+import Pricing from '../pages/pricing/pricing';
 
 import {availableLocales, defaultLocale} from '../../config/locale';
 
@@ -22,41 +18,39 @@ var config = [
         },
         'fr-FR': {
             path: '/',
-        }
-    }],
+        },
+    }, ],
     [Pricing, {
         'en-GB': {
             path: '/pricing',
         },
         'fr-FR': {
             path: '/tarifs',
-        }
-    }],
+        },
+    }, ],
     [About, {
         'en-GB': {
             path: '/about',
         },
         'fr-FR': {
             path: '/a-propos',
-        }
-    }],
+        },
+    }, ],
     [null, {
         'en-GB': {
             path: '/faq',
-            redirectTo: FAQMerchants,
-        }
-    }],
-    [FAQMerchants, {
+            redirectTo: FaqMerchants,
+        },
+    }, ],
+    [FaqMerchants, {
         'en-GB': {
             path: '/faq/merchants',
-        }
-    }],
+        },
+    }, ],
 ];
 
 function pathToLocale(path, locale) {
-  if (locale === defaultLocale) {
-    return url.resolve('/', path);
-  }
+  if (locale === defaultLocale) { return path; }
   return ['/', locale.toLowerCase(), path].join('/').replace(/\/\//g, '/');
 }
 
@@ -78,6 +72,8 @@ function flattenPagesForLocale(pages, locale) {
     if (locale in page[1]) {
       page[1] = page[1][locale];
       page[1].path = pathToLocale(page[1].path, locale);
+      page[1].path = page[1].path.replace(/^\/|\/$/g, '');
+      page[1].path = '/' + page[1].path;
       if (_.isArray(page[2])) {
         page[2] = flattenPagesForLocale(page[2], locale);
       }
@@ -96,7 +92,7 @@ function getRoutesForPages(pages) {
           key={page[1].path}>
           {page[2] && getRoutesForPages(page[2]) || null}
         </Redirect>
-      )];
+      ), ];
     } else {
       return [(
         <Route name={page[0].name}
@@ -105,7 +101,7 @@ function getRoutesForPages(pages) {
                {...page[1]}>
           {page[2] && getRoutesForPages(page[2]) || null}
         </Route>
-      )];
+      ), ];
     }
   });
 }

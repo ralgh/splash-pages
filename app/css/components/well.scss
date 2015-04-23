@@ -1,0 +1,49 @@
+.well {
+  padding: 15px $gutter-space-base;
+  background: $well-background;
+  border: 1px solid $well-border;
+  border-radius: $border-radius-base;
+}
+
+.well--border {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.well--no-border-radius {
+  border-radius: 0;
+}
+
+.well--border-item {
+  border-left: 1px solid $well-border;
+  padding-top: 14px;
+  padding-bottom: 14px;
+
+  &:first-child {
+    border-left: none;
+  }
+}
+
+.well--hollow {
+  box-shadow: none;
+  border: 3px dashed $black-blue-invert-secondary;
+  background: transparent;
+}
+
+.well--hollow-red {
+  box-shadow: none;
+  border: 1px solid $secondary-color;
+  background: transparent;
+}
+
+.well--hollow-blue {
+  box-shadow: none;
+  border: 1px solid $primary-color;
+  background: transparent;
+}
+
+.well--shadow {
+  border: 0 solid transparent;
+  background-color: #FCFAEB;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}

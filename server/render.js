@@ -1,3 +1,5 @@
+import url from 'url';
+
 import _ from 'lodash';
 import React from 'react';
 import Router from 'react-router';
@@ -12,11 +14,8 @@ import {defaultLocale} from '../config/locale';
 
 process.env.LANG = defaultLocale;
 
-var scriptTags = ['vendor/systemjs/build/system.min.js', 'vendor/es6-module-loader/es6-module-loader.js'];
-var cssLinks = ['css/main.css'];
-
 function pathLocale(path) {
-  var localePath = (path || '').toLowerCase().match(/^\/([a-z]{2,2}\-[a-z]{2,2})\//);
+  var localePath = (path || '').toLowerCase().match(/^\/([a-z]{2,2}\-[a-z]{2,2})/);
   var foundLocale = locale.Locale.default;
   if (localePath && localePath[1]) {
     foundLocale = new locale.Locale(localePath[1]);
@@ -25,7 +24,7 @@ function pathLocale(path) {
 }
 
 var scriptTags = ['/vendor/system.js', 'js/loader.js'];
-var cssLinks = ['/css/main.css'];
+var cssLinks = ['/css/main.css', '/css/fonts.css'];
 
 function normalizeLocale(localeData) {
   localeData = _.cloneDeep(localeData);
@@ -33,10 +32,17 @@ function normalizeLocale(localeData) {
   return localeData;
 }
 
-function render(req, res) {
-  var reqPath = req.path.toLowerCase().replace(/^\/|\/$/g, '');
-  reqPath = '/' + reqPath;
-  var reqUrl = req.url.toLowerCase();
+function normalizeUrl(urlStr) {
+  urlStr = urlStr.toLowerCase() || '';
+  var parsedUrl = url.parse(urlStr);
+  parsedUrl.pathname = parsedUrl.pathname.replace(/^\/|\/$/g, '');
+  parsedUrl.pathname = '/' + parsedUrl.pathname;
+  return url.format(parsedUrl);
+}
+
+function render(req, res, next) {
+  var reqUrl = normalizeUrl(req.url);
+  var reqPath = url.parse(reqUrl).path;
 
   var reqLocale = pathLocale(reqPath);
   reqLocale = normalizeLocale(reqLocale);
@@ -54,7 +60,20 @@ function render(req, res) {
     }, props);
   }
 
-  Router.run(routes, reqUrl, function(Handler, state) {
+  var router = Router.create({
+    onAbort: function(abortReason){
+      var destination = router.makePath(abortReason.to, abortReason.params, abortReason.query);
+      console.log('Redirecting to:', destination);
+      res.redirect(302, destination);
+    },
+    onError: function(err){
+      next(err);
+    },
+    routes: routes,
+    location: reqUrl,
+  });
+
+  router.run(function(Handler, state) {
     var stateName = _.result(_.find(state.routes.slice().reverse(), 'name'), 'name');
     var stateProps = {
       stateName: stateName,
