@@ -3,6 +3,7 @@ import IntlMessage from '../intl-message/intl-message';
 import { Link } from 'react-router';
 
 export default class IntlLink extends React.Component {
+  displayName = 'IntlLink'
 
   static contextTypes = {
     router: PropTypes.func.isRequired

@@ -7,6 +7,8 @@ function renderLocale(currentLocale, props) {
 }
 
 class Translation extends React.Component {
+  displayName = 'Translation'
+
   static contextTypes = {
     locales: React.PropTypes.oneOfType([
       React.PropTypes.string.isRequired,

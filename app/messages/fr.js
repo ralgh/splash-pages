@@ -11,7 +11,9 @@ export default {
     eruope_link: 'en apprendre plus',
     eruope_description: 'sur notre expansion',
   },
-  cta_pro: 'FR PRO',
+  cta: {
+    pro: 'FR PRO',
+  },
   postal_address: {
     street_address: '338-346 Goswell Road',
     address_locality: 'Londres',

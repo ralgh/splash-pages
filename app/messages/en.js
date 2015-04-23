@@ -11,8 +11,6 @@ export default {
     eruope_link: 'learn more',
     eruope_description: 'about upcoming countries',
   },
-  cta_basic: 'Start taking payments',
-  cta_pro: 'Contact sales',
   postal_address: {
     street_address: '338-346 Goswell Road',
     address_locality: 'London',
@@ -23,6 +21,10 @@ export default {
   phone_full: '+44 20 7183 8674',
   phone_local: '020 7183 8674',
   email: 'help@gocardless.com',
+  cta: {
+    basic: 'Start taking payments',
+    pro: 'Contact sales',
+  },
   Pricing: {
     title: 'Pricing',
     description: 'Pricing',
@@ -90,4 +92,4 @@ export default {
   Help: {
     title: 'Support',
   },
-}
+};

@@ -1,21 +1,33 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import ReactRouter from 'react-router';
+var {Route} = ReactRouter;
 
 class LinkExists extends React.Component {
+  displayName = 'LinkExists'
 
   static contextTypes = {
-    router: PropTypes.func.isRequired
-  };
+    router: React.PropTypes.func.isRequired
+  }
+
+  static propTypes = {
+    children: React.PropTypes.node.isRequired,
+    to: React.PropTypes.oneOfType([ React.PropTypes.string, React.PropTypes.instanceOf(Route)]).isRequired,
+    params: React.PropTypes.object,
+    query: React.PropTypes.object,
+  }
 
   render() {
-    var hasLink = false;
+    var hasLink;
     // If an exception is thrown, assume the link isn't found.
     try {
       hasLink = !!(this.context.router.makePath(this.props.to, this.props.params, this.props.query));
-    } catch (e) { };
+    } catch (e) {
+      hasLink = false;
+    }
 
     return (
       <div>{ hasLink && this.props.children }</div>
-    )
+    );
   }
 }
 

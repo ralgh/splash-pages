@@ -21,14 +21,14 @@ function buildSchemaDotOrgOrganization(metadata) {
     '@context': 'http://schema.org',
     '@type': 'Organization',
     'url': 'https://gocardless.com/',
-    'logo': metadata.logo_url_square,
-    'sameAs' : [],
-    'contactPoint' : [],
-  }
+    'logo': metadata.logoUrlSquare,
+    'sameAs': [],
+    'contactPoint': [],
+  };
 
   // Add social network links to sameAs
-  Object.keys(metadata.social_links).forEach(function(network) {
-    organization.sameAs.push(metadata.social_links[network]);
+  Object.keys(metadata.socialLinks).forEach(function(network) {
+    organization.sameAs.push(metadata.socialLinks[network]);
   });
 
   // Add contact details for office in each country
@@ -42,20 +42,22 @@ function buildSchemaDotOrgOrganization(metadata) {
     contactTypes.forEach(function(contactType) {
       organization.contactPoint.push(
         {
-          '@type' : 'ContactPoint',
-          'telephone' : localeMessages[locale].phone_full,
-          'email' : localeMessages[locale].email,
-          'contactType' : contactType,
-          'areaServed' : countryCode
+          '@type': 'ContactPoint',
+          'telephone': localeMessages[locale].phone_full,
+          'email': localeMessages[locale].email,
+          'contactType': contactType,
+          'areaServed': countryCode,
         }
       );
-    })
+    });
   });
 
   return organization;
 }
 
 class HtmlDocument extends React.Component {
+  displayName = 'HtmlDocument'
+
   static propTypes = {
     locales: PropTypes.oneOfType([
       PropTypes.string.isRequired,
@@ -104,49 +106,49 @@ class HtmlDocument extends React.Component {
     const metadata = _.merge({}, messages, config);
 
     return (
-      <html className="no-js" lang={language}>
+      <html className='no-js' lang={language}>
         <head>
-          <meta charSet="utf-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+          <meta charSet='utf-8' />
+          <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no' />
 
-          <title>{ getIntlMessage(messages, `${stateName}.title`) } - { config.site_name }</title>
+          <title>{ getIntlMessage(messages, `${stateName}.title`) } - { config.siteName }</title>
 
-          <meta name="description" content={ getIntlMessage(messages, `${stateName}.description`) } />
-          <link href={ config.social_links.google } rel="publisher" />
-          <meta name="og:image" content={ config.logo_url_square } />
-          <meta name="og:image:secure_url" content={ config.logo_url_square } />
-          <meta name="google-site-verification" content={ config.google_site_verification } />
-          <link rel="canonical" href={ config.site_root + path } />
+          <meta name='description' content={ getIntlMessage(messages, `${stateName}.description`) } />
+          <link href={ config.socialLinks.google } rel='publisher' />
+          <meta name='og:image' content={ config.logoUrlSquare } />
+          <meta name='og:image:secure_url' content={ config.logoUrlSquare } />
+          <meta name='google-site-verification' content={ config.googleSiteVerification } />
+          <link rel='canonical' href={ config.siteRoot + path } />
 
           { css.map((href, k) =>
-            <link key={k} rel="stylesheet" type="text/css" href={href} />)
+            <link key={k} rel='stylesheet' type='text/css' href={href} />)
           }
 
           <script dangerouslySetInnerHTML={{__html: createHTML5Tags}} />
         </head>
 
         <body>
-          { config.optimizely_id &&
-            <script src="//cdn.optimizely.com/js/${config.optimizely_id}.js"></script>
+          { config.optimizelyId &&
+            <script src='//cdn.optimizely.com/js/${config.optimizelyId}.js'></script>
           }
           <div dangerouslySetInnerHTML={{__html: browseHappy}} />
 
-          <div id="root" dangerouslySetInnerHTML={{__html: markup}} />
+          <div id='root' dangerouslySetInnerHTML={{__html: markup}} />
 
           { script.map((src, k) => <script key={k} src={src} />) }
 
           { isHome &&
-            <script type="application/ld+json"
-              dangerouslySetInnerHTML={{__html: websiteSchema.replace("{PAGE}", path) }} />
+            <script type='application/ld+json'
+              dangerouslySetInnerHTML={{__html: websiteSchema.replace('{PAGE}', path) }} />
           }
 
           { isHome &&
-            <script type="application/ld+json"
+            <script type='application/ld+json'
               dangerouslySetInnerHTML={{__html: JSON.stringify(buildSchemaDotOrgOrganization(metadata)) }} />
           }
 
-          { config.google_tag_manager_id &&
-            <div dangerouslySetInnerHTML={{__html: GTM.replace("{TAG_ID}", config.google_tag_manager_id)}} />
+          { config.googleTagManagerId &&
+            <div dangerouslySetInnerHTML={{__html: GTM.replace('{TAG_ID}', config.googleTagManagerId)}} />
           }
         </body>
       </html>
