@@ -1,3 +1,5 @@
+import url from 'url';
+
 import _ from 'lodash';
 import React from 'react';
 import Router from 'react-router';
@@ -14,7 +16,7 @@ import {getIntlMessage} from '../app/components/intl/intl';
 process.env.LANG = defaultLocale;
 
 function pathLocale(path) {
-  var localePath = (path || '').toLowerCase().match(/^\/([a-z]{2,2}\-[a-z]{2,2})\//);
+  var localePath = (path || '').toLowerCase().match(/^\/([a-z]{2,2}\-[a-z]{2,2})/);
   var foundLocale = locale.Locale['default'];
   if (localePath && localePath[1]) {
     foundLocale = new locale.Locale(localePath[1]);
@@ -31,10 +33,17 @@ function normalizeLocale(locale) {
   return locale;
 }
 
+function normalizeUrl(urlStr) {
+  urlStr = urlStr.toLowerCase() || '';
+  var parsedUrl = url.parse(urlStr);
+  parsedUrl.pathname = parsedUrl.pathname.replace(/^\/|\/$/g, '');
+  parsedUrl.pathname = '/' + parsedUrl.pathname;
+  return url.format(parsedUrl);
+}
+
 function render(req, res, next) {
-  var reqPath = req.path.toLowerCase().replace(/^\/|\/$/g, '');
-  reqPath = '/' + reqPath;
-  var reqUrl = req.url.toLowerCase();
+  var reqUrl = normalizeUrl(req.url);
+  var reqPath = url.parse(reqUrl).path;
 
   var reqLocale = pathLocale(reqPath);
   reqLocale = normalizeLocale(reqLocale);
@@ -52,7 +61,21 @@ function render(req, res, next) {
     }, props);
   }
 
-  Router.run(routes, reqUrl, function(Handler, state) {
+  var router = Router.create({
+    onAbort: function(abortReason){
+      var destination = router.makePath(abortReason.to, abortReason.params, abortReason.query);
+      console.log('Redirecting to:', destination);
+      res.redirect(302, destination);
+    },
+    onError: function(err){
+      res.status(500).send('Something bad happened');
+      throw err;
+    },
+    routes: routes,
+    location: reqUrl
+  });
+
+  router.run(function(Handler, state) {
     var stateName = _.result(_.find(state.routes.slice().reverse(), 'name'), 'name');;
     var stateProps = {
       stateName: stateName,

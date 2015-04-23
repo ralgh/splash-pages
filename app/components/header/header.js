@@ -1,7 +1,35 @@
-import React from "react";
+import React from 'react';
+import classNames from 'classnames';
 
 class Header extends React.Component {
   render() {
+    const products = (
+      <ul className="u-text-xxs u-padding-Vxs">
+        <li>
+          <a href="/features" id="track-nav-features" className="u-link-complex u-link-clean u-padding-Vxs u-padding-Hm u-block">
+            <span className="u-link-complex-target u-text-semi">GoCardless</span>
+            <p className="u-color-p">Simple recurring payments</p>
+          </a>
+        </li>
+        <hr className="u-margin-Vxs" />
+        <li>
+          <a href="/pro" id="track-nav-pro" className="u-link-complex u-link-clean u-padding-Vxs u-padding-Hm u-block">
+            <span className="u-link-complex-target u-text-semi">GoCardless Pro</span>
+            <p className="u-color-p">Total control over Direct Debit</p>
+          </a>
+        </li>
+        <hr className="u-margin-Vs" />
+        <li>
+          <a href="/partners" id="track-nav-partners" className="u-link-complex u-padding-Vxs u-padding-Hm u-block">
+            <span className="u-link-complex-target u-text-semi">Partner with us</span>
+            <p className="u-color-p">Offer GoCardless to your users</p>
+          </a>
+        </li>
+      </ul>
+    );
+
+    const isInverted = this.props.isInverted;
+
     return (
       <div>
         <div className="u-pull-start">
@@ -19,28 +47,7 @@ class Header extends React.Component {
                   </div>
                 </a>
                 <popover-content className="popover popover--large">
-                  <ul className="u-text-xxs u-padding-Vxs">
-                    <li>
-                      <a href="/features" id="track-nav-features" className="u-link-complex u-link-clean u-padding-Vxs u-padding-Hm u-block">
-                        <span className="u-link-complex-target u-text-semi">GoCardless</span>
-                        <p className="u-color-p">Simple recurring payments</p>
-                      </a>
-                    </li>
-                    <hr className="u-margin-Vxs" />
-                    <li>
-                      <a href="/pro" id="track-nav-pro" className="u-link-complex u-link-clean u-padding-Vxs u-padding-Hm u-block">
-                        <span className="u-link-complex-target u-text-semi">GoCardless Pro</span>
-                        <p className="u-color-p">Total control over Direct Debit</p>
-                      </a>
-                    </li>
-                    <hr className="u-margin-Vs" />
-                    <li>
-                      <a href="/partners" id="track-nav-partners" className="u-link-complex u-padding-Vxs u-padding-Hm u-block">
-                        <span className="u-link-complex-target u-text-semi">Partner with us</span>
-                        <p className="u-color-p">Offer GoCardless to your users</p>
-                      </a>
-                    </li>
-                  </ul>
+                  {products}
                 </popover-content>
               </popover-container>
             </div>
@@ -66,28 +73,7 @@ class Header extends React.Component {
                   </div>
                 </a>
                 <popover-content className="popover">
-                  <ul className="u-text-xxs u-padding-Vxs">
-                    <li>
-                      <a href="/features" id="track-nav-features" className="u-link-complex u-link-clean u-padding-Vxs u-padding-Hm u-block">
-                        <span className="u-link-complex-target u-text-semi">GoCardless</span>
-                        <p className="u-color-p">Simple recurring payments</p>
-                      </a>
-                    </li>
-                    <hr className="u-margin-Vxs" />
-                    <li>
-                      <a href="/pro" id="track-nav-pro" className="u-link-complex u-link-clean u-padding-Vxs u-padding-Hm u-block">
-                        <span className="u-link-complex-target u-text-semi">GoCardless Pro</span>
-                        <p className="u-color-p">Total control over Direct Debit</p>
-                      </a>
-                    </li>
-                    <hr className="u-margin-Vs" />
-                    <li>
-                      <a href="/partners" id="track-nav-partners" className="u-link-complex u-padding-Vxs u-padding-Hm u-block">
-                        <span className="u-link-complex-target u-text-semi">Partner with us</span>
-                        <p className="u-color-p">Offer GoCardless to your users</p>
-                      </a>
-                    </li>
-                  </ul>
+                  {products}
                 </popover-content>
               </popover-container>
             </div>

@@ -75,6 +75,8 @@ function flattenPagesForLocale(pages, locale) {
     if (locale in page[1]) {
       page[1] = page[1][locale];
       page[1].path = pathToLocale(page[1].path, locale);
+      page[1].path = page[1].path.replace(/^\/|\/$/g, '');
+      page[1].path = '/' + page[1].path;
       if (_.isArray(page[2])) {
         page[2] = flattenPagesForLocale(page[2], locale);
       }
