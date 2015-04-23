@@ -6,7 +6,7 @@ gulp.task('lint', function() {
       'app/**/*.js',
       'server/*.js'
     ])
-    .pipe(eslint({ config: './.eslint' }))
+    .pipe(eslint({ config: './.eslintrc' }))
     .pipe(eslint.format())
 });
 

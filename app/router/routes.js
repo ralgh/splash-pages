@@ -1,7 +1,6 @@
 import url from 'url';
 
 import _ from 'lodash';
-import React from 'react';
 import {Route, DefaultRoute, NotFoundRoute, Redirect} from 'react-router';
 
 import App from '../components/app/app';
@@ -55,12 +54,14 @@ var config = [
 ];
 
 function pathToLocale(path, locale) {
-  if (locale === defaultLocale) return url.resolve('/', path);
+  if (locale === defaultLocale) {
+    return url.resolve('/', path);
+  }
   return ['/', locale.toLowerCase(), path].join('/').replace(/\/\//g, '/');
 }
 
 function validatePages(pages) {
-  return;
+  return (pages.length !== 0);
 }
 
 function validateLocale(locale) {
@@ -72,7 +73,7 @@ function validateLocale(locale) {
 function flattenPagesForLocale(pages, locale) {
   validatePages(pages);
   validateLocale(locale);
-  return pages.reduce(function(pages, page) {
+  return pages.reduce(function(pagesInner, page) {
     page = _.cloneDeep(page);
     if (locale in page[1]) {
       page[1] = page[1][locale];
@@ -80,9 +81,9 @@ function flattenPagesForLocale(pages, locale) {
       if (_.isArray(page[2])) {
         page[2] = flattenPagesForLocale(page[2], locale);
       }
-      pages.push(page);
+      pagesInner.push(page);
     }
-    return pages;
+    return pagesInner;
   }, []);
 }
 

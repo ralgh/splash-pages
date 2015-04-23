@@ -1,3 +1,5 @@
 export default {
-  cta_pro: 'Contact sales IE'
+  cta: {
+    pro: 'Contact sales IE'
+  }
 };
