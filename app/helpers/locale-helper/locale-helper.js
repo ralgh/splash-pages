@@ -33,7 +33,7 @@ if (typeof window === 'undefined') {
   var path = require('path');
 
   availableLocales = glob.sync(path.join(__dirname, '..', '..', 'messages', '*-*.js'))
-  .map(function (file) {
+  .map(function(file) {
     return path.basename(file, '.js');
   })
   .map(validateLocale);

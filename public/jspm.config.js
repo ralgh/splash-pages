@@ -9,6 +9,7 @@ System.config({
 System.config({
   "map": {
     "babel": "npm:babel-core@5.1.11",
+    "babel-runtime": "npm:babel-runtime@5.1.11",
     "classnames": "npm:classnames@1.2.1",
     "core-js": "npm:core-js@0.8.4",
     "locale": "npm:locale@0.0.20",

@@ -18,46 +18,46 @@ import Pricing from '../pages/pricing/pricing';
 import {availableLocales, defaultLocale} from '../helpers/locale-helper/locale-helper';
 
 var config = [
-    [Home, {
-        'en-GB': {
-            path: '/',
-        },
-        'fr-FR': {
-            path: '/',
-        },
+  [Home, {
+      'en-GB': {
+          path: '/',
       },
-    ],
-    [Pricing, {
-        'en-GB': {
-            path: '/pricing',
-        },
-        'fr-FR': {
-            path: '/tarifs',
-        },
+      'fr-FR': {
+          path: '/',
       },
-    ],
-    [About, {
-        'en-GB': {
-            path: '/about',
-        },
-        'fr-FR': {
-            path: '/a-propos',
-        },
+    },
+  ],
+  [Pricing, {
+      'en-GB': {
+          path: '/pricing',
       },
-    ],
-    [null, {
-        'en-GB': {
-            path: '/faq',
-            redirectTo: FaqMerchants,
-        },
+      'fr-FR': {
+          path: '/tarifs',
       },
-    ],
-    [FaqMerchants, {
-        'en-GB': {
-            path: '/faq/merchants',
-        },
+    },
+  ],
+  [About, {
+      'en-GB': {
+          path: '/about',
       },
-    ],
+      'fr-FR': {
+          path: '/a-propos',
+      },
+    },
+  ],
+  [null, {
+      'en-GB': {
+          path: '/faq',
+          redirectTo: FaqMerchants,
+      },
+    },
+  ],
+  [FaqMerchants, {
+      'en-GB': {
+          path: '/faq/merchants',
+      },
+    },
+  ],
 ];
 
 function pathToLocale(path, locale) {

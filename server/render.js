@@ -43,12 +43,12 @@ function render(req, res, next) {
   }
 
   var router = Router.create({
-    onAbort: function(abortReason){
+    onAbort: function(abortReason) {
       var destination = router.makePath(abortReason.to, abortReason.params, abortReason.query);
       console.log('Redirecting to:', destination);
       res.redirect(302, destination);
     },
-    onError: function(err){
+    onError: function(err) {
       next(err);
     },
     routes: routes,

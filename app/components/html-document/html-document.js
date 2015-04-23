@@ -20,10 +20,10 @@ function buildSchemaDotOrgOrganization(metadata) {
   var organization = {
     '@context': 'http://schema.org',
     '@type': 'Organization',
-    'url': 'https://gocardless.com/',
-    'logo': metadata.logo_url_square,
-    'sameAs': [],
-    'contactPoint': [],
+    url: 'https://gocardless.com/',
+    log: metadata.logo_url_square,
+    sameAs: [],
+    contactPoint: [],
   };
 
   // Add social network links to sameAs
@@ -43,10 +43,10 @@ function buildSchemaDotOrgOrganization(metadata) {
       organization.contactPoint.push(
         {
           '@type': 'ContactPoint',
-          'telephone': localeMessages[locale].phone_full,
-          'email': localeMessages[locale].email,
-          'contactType': contactType,
-          'areaServed': countryCode,
+          telephone: localeMessages[locale].phone_full,
+          email: localeMessages[locale].email,
+          contactType: contactType,
+          areaServed: countryCode,
         }
       );
     });
@@ -125,16 +125,16 @@ class HtmlDocument extends React.Component {
             <link key={k} rel='stylesheet' type='text/css' href={href} />)
           }
 
-          <script dangerouslySetInnerHTML={{__html: createHTML5Tags}} />
+          <script dangerouslySetInnerHTML={{ __html: createHTML5Tags }} />
         </head>
 
         <body>
           { config.optimizelyId &&
             <script src='//cdn.optimizely.com/js/${config.optimizelyId}.js'></script>
           }
-          <div dangerouslySetInnerHTML={{__html: browseHappy}} />
+          <div dangerouslySetInnerHTML={{ __html: browseHappy }} />
 
-          <div id='root' dangerouslySetInnerHTML={{__html: markup}} />
+          <div id='root' dangerouslySetInnerHTML={{ __html: markup }} />
 
           <script dangerouslySetInnerHTML={{__html: 'window.app=' + JSON.stringify(this.props.dataRender) + ';' }} />
 
@@ -142,16 +142,16 @@ class HtmlDocument extends React.Component {
 
           { isHome &&
             <script type='application/ld+json'
-              dangerouslySetInnerHTML={{__html: websiteSchema.replace('{PAGE}', path) }} />
+              dangerouslySetInnerHTML={{ __html: websiteSchema.replace('{PAGE}', path) }} />
           }
 
           { isHome &&
             <script type='application/ld+json'
-              dangerouslySetInnerHTML={{__html: JSON.stringify(buildSchemaDotOrgOrganization(metadata)) }} />
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(buildSchemaDotOrgOrganization(metadata)) }} />
           }
 
           { config.googleTagManagerId &&
-            <div dangerouslySetInnerHTML={{__html: GTM.replace('{TAG_ID}', config.googleTagManagerId )}} />
+            <div dangerouslySetInnerHTML={{__html: GTM.replace('{TAG_ID}', config.googleTagManagerId) }} />
           }
         </body>
       </html>

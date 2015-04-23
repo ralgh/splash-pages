@@ -7,4 +7,4 @@ dist/*
 e2e-dist/*
 Session.vim
 npm-debug.log
-public/jspm.config.js
+./public/jspm.config.js
