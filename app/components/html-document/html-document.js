@@ -6,14 +6,13 @@ import GTM from "../layout-static/google-tag-manager.js";
 
 import {getIntlMessage} from '../intl/intl';
 
-import Header from '../header/header';
-import Footer from '../footer/footer';
+
 
 class HtmlDocument extends React.Component {
   static propTypes = {
-    locales: React.PropTypes.oneOfType([
-      React.PropTypes.string.isRequired,
-      React.PropTypes.array.isRequired,
+    locales: PropTypes.oneOfType([
+      PropTypes.string.isRequired,
+      PropTypes.array.isRequired,
     ]),
     language: PropTypes.string.isRequired,
     messages: PropTypes.object.isRequired,
@@ -83,11 +82,7 @@ class HtmlDocument extends React.Component {
           }
           <div dangerouslySetInnerHTML={{__html: browseHappy}} />
 
-          <Header />
-
           <div id="root" dangerouslySetInnerHTML={{__html: markup}} />
-
-          <Footer />
 
           { script.map((src, k) => <script key={k} src={src} />) }
 

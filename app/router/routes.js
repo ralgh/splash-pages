@@ -4,7 +4,7 @@ import {Route, DefaultRoute, NotFoundRoute, Redirect} from 'react-router';
 
 import App from '../components/app/app';
 import NotFound from '../pages/not-found';
-import FAQMerchants from '../pages/faq/merchants';
+import FaqMerchants from '../pages/faq/merchants';
 
 import Home from '../pages/home';
 
@@ -42,10 +42,10 @@ var config = [
     [null, {
         'en-GB': {
             path: '/faq',
-            redirectTo: FAQMerchants,
+            redirectTo: FaqMerchants,
         }
     }],
-    [FAQMerchants, {
+    [FaqMerchants, {
         'en-GB': {
             path: '/faq/merchants',
         }
