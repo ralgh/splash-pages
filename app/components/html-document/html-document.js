@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 import browseHappy from '../layout-static/browse-happy.js';
 import createHTML5Tags from '../layout-static/create-html5-tags.js';
@@ -7,20 +7,20 @@ import GTM from '../layout-static/google-tag-manager.js';
 import {getIntlMessage} from '../intl/intl';
 
 
-
 class HtmlDocument extends React.Component {
   static propTypes = {
-    locales: PropTypes.oneOfType([
-      PropTypes.string.isRequired,
-      PropTypes.array.isRequired,
+    locales: React.PropTypes.oneOfType([
+      React.PropTypes.string.isRequired,
+      React.PropTypes.array.isRequired,
     ]),
-    language: PropTypes.string.isRequired,
-    messages: PropTypes.object.isRequired,
-    formats: PropTypes.object.isRequired,
-    config: PropTypes.object.isRequired,
-    markup: PropTypes.string.isRequired,
-    script: PropTypes.arrayOf(PropTypes.string),
-    css: PropTypes.arrayOf(PropTypes.string),
+    language: React.PropTypes.string.isRequired,
+    messages: React.PropTypes.object.isRequired,
+    formats: React.PropTypes.object.isRequired,
+    config: React.PropTypes.object.isRequired,
+    markup: React.PropTypes.string.isRequired,
+    script: React.PropTypes.arrayOf(React.PropTypes.string),
+    css: React.PropTypes.arrayOf(React.PropTypes.string),
+    dataRender: React.PropTypes.object.isRequired,
     path: React.PropTypes.string.isRequired,
     stateName: React.PropTypes.string.isRequired,
   }
@@ -35,7 +35,7 @@ class HtmlDocument extends React.Component {
       React.PropTypes.string.isRequired,
       React.PropTypes.array.isRequired,
     ]),
-    language: PropTypes.string.isRequired,
+    language: React.PropTypes.string.isRequired,
     messages: React.PropTypes.object.isRequired,
     formats: React.PropTypes.object.isRequired,
   };
@@ -60,14 +60,14 @@ class HtmlDocument extends React.Component {
           <meta charSet='utf-8' />
           <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no' />
 
-          <title>{ getIntlMessage(messages, `${stateName}.title`) } - { config.site_name }</title>
+          <title>{ getIntlMessage(messages, `${stateName}.title`) } - { config.siteName }</title>
 
           <meta name='description' content={ getIntlMessage(messages, `${stateName}.description`) } />
           <meta property='og:type' content='website' />
-          <meta name='og:image' content={ config.logo_url_square } />
-          <meta name='og:image:secure_url' content={ config.logo_url_square } />
-          <meta name='google-site-verification' content={ config.google_site_verification } />
-          <link rel='canonical' href={ config.site_root + path } />
+          <meta name='og:image' content={ config.logoUrlSquare } />
+          <meta name='og:image:secure_url' content={ config.logoUrlSquare } />
+          <meta name='google-site-verification' content={ config.googleSiteVerification } />
+          <link rel='canonical' href={ config.siteRoot + path } />
 
           { css.map((href, k) =>
             <link key={k} rel='stylesheet' type='text/css' href={href} />)
@@ -84,10 +84,12 @@ class HtmlDocument extends React.Component {
 
           <div id='root' dangerouslySetInnerHTML={{__html: markup}} />
 
+          <script dangerouslySetInnerHTML={{__html: 'window.app=' + JSON.stringify(this.props.dataRender) + ';' }} />
+
           { script.map((src, k) => <script key={k} src={src} />) }
 
-          { config.google_tag_manager_id &&
-            <div dangerouslySetInnerHTML={{__html: GTM.replace('{TAG_ID}', config.google_tag_manager_id)}} />
+          { config.googleTagManagerIxd &&
+            <div dangerouslySetInnerHTML={{__html: GTM.replace('{TAG_ID}', config.googleTagManagerId)}} />
           }
         </body>
       </html>

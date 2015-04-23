@@ -1,9 +1,9 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 class LinkExists extends React.Component {
 
   static contextTypes = {
-    router: PropTypes.func.isRequired
+    router: React.PropTypes.func.isRequired
   };
 
   render() {

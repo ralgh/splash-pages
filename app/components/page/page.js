@@ -5,7 +5,7 @@ import Footer from '../footer/footer';
 class Page extends React.Component {
   render() {
     return (
-      <div>
+      <div className="test">
         <Header />
         {this.props.children}
         <Footer />

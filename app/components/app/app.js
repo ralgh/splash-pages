@@ -1,5 +1,6 @@
 import React from 'react';
-import {RouteHandler} from 'react-router';
+import Router from 'react-router';
+var {RouteHandler} = Router;
 
 class App extends React.Component {
   static childContextTypes = {

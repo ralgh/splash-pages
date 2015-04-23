@@ -1,6 +1,6 @@
 import React from 'react';
-import IntlLink from '../links/intl-link';
-import LinkExists from '../links/link-exists';
+import IntlLink from '../intl-link/intl-link';
+import LinkExists from '../link-exists/link-exists';
 
 class Header extends React.Component {
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import Page from '../../components/page/page';
+import LikeButton from '../../components/like-button/like-button';
 import Translation from '../../components/translation/translation';
 import IntlMessage from '../../components/intl-message/intl-message';
 
@@ -30,6 +31,7 @@ export default class Home extends React.Component {
         <IntlMessage message='cta.pro' />
         <HomeFr />
         <HomeEn />
+        <LikeButton />
       </Page>
     );
   }

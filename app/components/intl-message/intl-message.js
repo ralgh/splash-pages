@@ -1,6 +1,7 @@
 import React from 'react';
 import {getIntlMessage} from '../intl/intl';
-import {FormattedMessage} from 'react-intl';
+import ReactIntl from 'react-intl';
+var { FormattedMessage } = ReactIntl;
 
 class IntlMessage extends React.Component {
   static propTypes = {

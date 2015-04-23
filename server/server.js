@@ -3,13 +3,14 @@ import express from 'express';
 import locale from 'locale';
 
 import render from './render';
-import {availableLocales} from '../config/locale';
+import {availableLocales} from '../app/helpers/locale-helper/locale-helper';
 
 const server = express();
 
 server.use(locale(availableLocales));
 
 server.use(express.static(path.join(__dirname, '..', 'public')));
+server.use(express.static(path.join(__dirname, '..', 'app')));
 
 server.use(render);
 

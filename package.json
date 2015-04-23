@@ -5,7 +5,7 @@
   "description": "React",
   "scripts": {
     "start": "nodemon index.js",
-    "lint": "eslint ."
+    "lint": "eslint . || true"
   },
   "dependencies": {
     "babel": "^5.1.11",

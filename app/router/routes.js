@@ -1,19 +1,25 @@
 import url from 'url';
 
 import _ from 'lodash';
-import {Route, DefaultRoute, NotFoundRoute, Redirect} from 'react-router';
+import Router from 'react-router';
+var {Route, DefaultRoute, NotFoundRoute, Redirect} = Router;
+
+// This is internally used within jsx, so ignore the unused error.
+/*eslint-disable */
+import React from 'react';
+/*eslint-enable */
 
 import App from '../components/app/app';
-import NotFound from '../pages/not-found';
-import FAQMerchants from '../pages/faq/merchants';
+import NotFound from '../pages/not-found/index';
+import FAQMerchants from '../pages/faq/merchants/index';
 
-import Home from '../pages/home';
+import Home from '../pages/home/index';
 
-import About from '../pages/about';
+import About from '../pages/about/index';
 
-import Pricing from '../pages/pricing';
+import Pricing from '../pages/pricing/index';
 
-import {availableLocales, defaultLocale} from '../../config/locale';
+import {availableLocales, defaultLocale} from '../helpers/locale-helper/locale-helper';
 
 var config = [
     [Home, {
@@ -22,35 +28,40 @@ var config = [
         },
         'fr-FR': {
             path: '/',
-        }
-    }],
+        },
+      },
+    ],
     [Pricing, {
         'en-GB': {
             path: '/pricing',
         },
         'fr-FR': {
             path: '/tarifs',
-        }
-    }],
+        },
+      },
+    ],
     [About, {
         'en-GB': {
             path: '/about',
         },
         'fr-FR': {
             path: '/a-propos',
-        }
-    }],
+        },
+      },
+    ],
     [null, {
         'en-GB': {
             path: '/faq',
             redirectTo: FAQMerchants,
-        }
-    }],
+        },
+      },
+    ],
     [FAQMerchants, {
         'en-GB': {
             path: '/faq/merchants',
-        }
-    }],
+        },
+      },
+    ],
 ];
 
 function pathToLocale(path, locale) {
@@ -90,22 +101,26 @@ function flattenPagesForLocale(pages, locale) {
 function getRoutesForPages(pages) {
   return pages.map(function(page) {
     if (page[0] === null) {
-      return [(
-        <Redirect from={page[1].path}
-          to={page[1].redirectTo.name || page[1].redirectTo}
-          key={page[1].path}>
-          {page[2] && getRoutesForPages(page[2]) || null}
-        </Redirect>
-      )];
+      return [
+        (
+          <Redirect from={page[1].path}
+            to={page[1].redirectTo.name || page[1].redirectTo}
+            key={page[1].path}>
+            {page[2] && getRoutesForPages(page[2]) || null}
+          </Redirect>
+        ),
+      ];
     } else {
-      return [(
-        <Route name={page[0].name}
-               key={page[0].name}
-               handler={page[0]}
-               {...page[1]}>
-          {page[2] && getRoutesForPages(page[2]) || null}
-        </Route>
-      )];
+      return [
+        (
+          <Route name={page[0].name}
+                 key={page[0].name}
+                 handler={page[0]}
+                 {...page[1]}>
+            {page[2] && getRoutesForPages(page[2]) || null}
+          </Route>
+        ),
+      ];
     }
   });
 }

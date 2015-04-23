@@ -1,15 +1,16 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import IntlMessage from '../intl-message/intl-message';
-import { Link } from 'react-router';
+import Router from 'react-router';
+var { Link } = Router;
 
 export default class IntlLink extends React.Component {
 
   static contextTypes = {
-    router: PropTypes.func.isRequired
+    router: React.PropTypes.func.isRequired
   };
 
   static propTypes = {
-    message: PropTypes.string.isRequired,
+    message: React.PropTypes.string.isRequired,
   };
 
   render() {

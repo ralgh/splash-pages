@@ -1,37 +1,20 @@
 import _ from 'lodash';
 import React from 'react';
 import Router from 'react-router';
-import locale from 'locale';
-
+import {pathLocale, normalizeLocale} from '../app/helpers/locale-helper/locale-helper';
 import HtmlDocument from '../app/components/html-document/html-document';
 import {getRoutes} from '../app/router/routes';
 import localeMessages from '../config/messages';
 import config from '../config';
 import formats from '../config/formats';
-import {defaultLocale} from '../config/locale';
+import {availableLocales} from '../app/helpers/locale-helper/locale-helper';
 
-process.env.LANG = defaultLocale;
 
 var scriptTags = ['vendor/systemjs/build/system.min.js', 'vendor/es6-module-loader/es6-module-loader.js'];
 var cssLinks = ['css/main.css'];
 
-function pathLocale(path) {
-  var localePath = (path || '').toLowerCase().match(/^\/([a-z]{2,2}\-[a-z]{2,2})\//);
-  var foundLocale = locale.Locale.default;
-  if (localePath && localePath[1]) {
-    foundLocale = new locale.Locale(localePath[1]);
-  }
-  return foundLocale;
-}
-
-var scriptTags = ['/vendor/system.js', 'js/loader.js'];
+var scriptTags = ['/vendor/system.js', '/jspm.config.js', '/client/loader.js'];
 var cssLinks = ['/css/main.css'];
-
-function normalizeLocale(localeData) {
-  localeData = _.cloneDeep(localeData);
-  localeData.normalized = localeData.normalized.replace('_', '-');
-  return localeData;
-}
 
 function render(req, res) {
   var reqPath = req.path.toLowerCase().replace(/^\/|\/$/g, '');
@@ -51,6 +34,7 @@ function render(req, res) {
       formats: formats,
       config: config,
       path: reqPath,
+      availableLocales: availableLocales,
     }, props);
   }
 
@@ -69,6 +53,7 @@ function render(req, res) {
         markup={markup}
         script={scriptTags}
         css={cssLinks}
+        dataRender={appProps(stateProps)}
         {...appProps(stateProps)}
       />
     );
