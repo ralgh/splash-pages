@@ -8,10 +8,12 @@ export default {
   About: {
     title: 'About',
     description: 'About',
+    link: 'about'
   },
   Home: {
     title: 'Home',
     description: 'Home',
+    link: "home page"
   },
   FAQMerchants: {
     title: 'FAQ Merchants',

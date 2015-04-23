@@ -1,16 +1,15 @@
 import React from 'react';
 import {Link} from 'react-router';
+import Header from '../header/header';
+import Footer from '../footer/footer';
 
 class Page extends React.Component {
   render() {
     return (
       <div>
-        <header>
-          <ul>
-            <li><Link to="About">About</Link></li>
-          </ul>
-        </header>
+        <Header />
         {this.props.children}
+        <Footer />
       </div>
     );
   }
