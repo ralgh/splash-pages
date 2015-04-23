@@ -8,14 +8,6 @@ function renderApp(){
   var routes = getRoutes(appState.locales);
   var mountNode = document.getElementById('root');
 
-  /*
-  Router.run(routes, Router.HistoryLocation, function(Handler) {
-    React.render(<Handler {...appState} />, mountNode, () => {
-      console.log('Application has been mounted.');
-    });
-  });
-  */
-
   var router = Router.create({
     onAbort: function(abortReason){
       var destination = router.makePath(abortReason.to, abortReason.params, abortReason.query);

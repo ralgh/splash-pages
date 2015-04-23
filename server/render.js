@@ -10,20 +10,8 @@ import localeMessages from '../config/messages';
 import config from '../config';
 import formats from '../config/formats';
 
-
-var scriptTags = [
-  'vendor/systemjs/build/system.min.js',
-  'vendor/es6-module-loader/es6-module-loader.js',
-  '/jspm.config.js',
-  '/client/loader.js'
-];
-var cssLinks = ['css/main.css'];
-
-function normalizeLocale(localeData) {
-  localeData = _.cloneDeep(localeData);
-  localeData.normalized = localeData.normalized.replace('_', '-');
-  return localeData;
-}
+var scriptTags = ['/vendor/system.js', '/jspm.config.js', '/client/loader.js'];
+var cssLinks = ['/css/main.css'];
 
 function normalizeUrl(urlStr) {
   urlStr = urlStr.toLowerCase() || '';
@@ -33,7 +21,7 @@ function normalizeUrl(urlStr) {
   return url.format(parsedUrl);
 }
 
-function render(req, res) {
+function render(req, res, next) {
   var reqUrl = normalizeUrl(req.url);
   var reqPath = url.parse(reqUrl).path;
 

@@ -151,7 +151,7 @@ class HtmlDocument extends React.Component {
           }
 
           { config.googleTagManagerId &&
-            <div dangerouslySetInnerHTML={{__html: GTM.replace("{TAG_ID}", config.google_tag_manager_id)}} />
+            <div dangerouslySetInnerHTML={{__html: GTM.replace('{TAG_ID}', config.googleTagManagerId )}} />
           }
         </body>
       </html>

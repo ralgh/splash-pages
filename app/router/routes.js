@@ -1,4 +1,3 @@
-import React from 'react';
 import _ from 'lodash';
 import Router from 'react-router';
 var {Route, DefaultRoute, NotFoundRoute, Redirect} = Router;
@@ -9,15 +8,6 @@ import React from 'react';
 /*eslint-enable */
 
 import App from '../components/app/app';
-
-import NotFound from '../pages/not-found/index';
-import FaqMerchants from '../pages/faq/merchants/index';
-
-import Home from '../pages/home/index';
-
-import About from '../pages/about/index';
-
-import Pricing from '../pages/pricing/index';
 
 import NotFound from '../pages/not-found/not-found';
 import FaqMerchants from '../pages/faq/merchants/merchants';

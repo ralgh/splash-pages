@@ -34,7 +34,7 @@
       "baseURL": "vendor",
       "packages": "public/vendor"
     },
-    "configFile": "config/jspm.config.js",
+    "configFile": "public/jspm.config.js",
     "dependencies": {
       "babel": "npm:babel-core@^5.1.11",
       "classnames": "npm:classnames@^1.2.1",
@@ -49,7 +49,9 @@
     "devDependencies": {
       "babel": "npm:babel-core@^5.1.11",
       "babel-runtime": "npm:babel-runtime@^5.0.12",
-      "core-js": "npm:core-js@^0.8.1"
+      "core-js": "npm:core-js@^0.8.1",
+      "traceur": "github:jmcriffey/bower-traceur@0.0.87",
+      "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.87"
     }
   }
 }
