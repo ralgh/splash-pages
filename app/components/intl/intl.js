@@ -3,7 +3,7 @@ export function getIntlMessage(messages, path) {
   var message;
 
   try {
-    message = pathParts.reduce(function (obj, pathPart) {
+    message = pathParts.reduce(function(obj, pathPart) {
       return obj[pathPart];
     }, messages);
   } finally {

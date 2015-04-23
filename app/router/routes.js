@@ -19,7 +19,7 @@ var config = [
         'fr-FR': {
             path: '/',
         },
-    }, ],
+    },],
     [Pricing, {
         'en-GB': {
             path: '/pricing',
@@ -27,7 +27,7 @@ var config = [
         'fr-FR': {
             path: '/tarifs',
         },
-    }, ],
+    },],
     [About, {
         'en-GB': {
             path: '/about',
@@ -35,18 +35,18 @@ var config = [
         'fr-FR': {
             path: '/a-propos',
         },
-    }, ],
+    },],
     [null, {
         'en-GB': {
             path: '/faq',
             redirectTo: FaqMerchants,
         },
-    }, ],
+    },],
     [FaqMerchants, {
         'en-GB': {
             path: '/faq/merchants',
         },
-    }, ],
+    },],
 ];
 
 function pathToLocale(path, locale) {
@@ -92,7 +92,7 @@ function getRoutesForPages(pages) {
           key={page[1].path}>
           {page[2] && getRoutesForPages(page[2]) || null}
         </Redirect>
-      ), ];
+      ),];
     } else {
       return [(
         <Route name={page[0].name}
@@ -101,7 +101,7 @@ function getRoutesForPages(pages) {
                {...page[1]}>
           {page[2] && getRoutesForPages(page[2]) || null}
         </Route>
-      ), ];
+      ),];
     }
   });
 }
