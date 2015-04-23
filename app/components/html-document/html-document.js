@@ -1,11 +1,58 @@
 import React from 'react';
+import _ from 'lodash';
 
 import browseHappy from '../layout-static/browse-happy.js';
 import createHTML5Tags from '../layout-static/create-html5-tags.js';
 import GTM from '../layout-static/google-tag-manager.js';
 
 import {getIntlMessage} from '../intl/intl';
+import {availableLocales} from '../../helpers/locale-helper/locale-helper';
+import localeMessages from '../../../config/messages';
 
+// Documentation from Google:
+//   https://developers.google.com/structured-data/customize/overview
+// Google's tool for validating the output:
+//   https://developers.google.com/structured-data/testing-tool/
+// Original Schema:
+//   http://schema.org/Organization
+function buildSchemaDotOrgOrganization(metadata) {
+  var organization = {
+    '@context': 'http://schema.org',
+    '@type': 'Organization',
+    'url': 'https://gocardless.com/',
+    'logo': metadata.logo_url_square,
+    'sameAs': [],
+    'contactPoint': [],
+  }
+
+  // Add social network links to sameAs
+  Object.keys(metadata.socialLinks).forEach(function(network) {
+    organization.sameAs.push(metadata.socialLinks[network]);
+  });
+
+  // Add contact details for office in each country
+  // See https://support.google.com/webmasters/answer/4620709?hl=en for supported contactType
+  availableLocales.map(function(locale) {
+    return [locale.slice(3, 5), locale];
+  }).forEach(function(countryCodeLocale) {
+    var countryCode = countryCodeLocale[0];
+    var locale = countryCodeLocale[1];
+    var contactTypes = localeMessages[locale].contact_types;
+    contactTypes.forEach(function(contactType) {
+      organization.contactPoint.push(
+        {
+          '@type' : 'ContactPoint',
+          'telephone' : localeMessages[locale].phone_full,
+          'email' : localeMessages[locale].email,
+          'contactType' : contactType,
+          'areaServed' : countryCode
+        }
+      );
+    })
+  });
+
+  return organization;
+}
 
 class HtmlDocument extends React.Component {
   static propTypes = {
@@ -53,6 +100,8 @@ class HtmlDocument extends React.Component {
 
   render() {
     const { messages, stateName, markup, script, css, language, config, path } = this.props;
+    const isHome = stateName === 'Home';
+    const metadata = _.merge({}, messages, config);
 
     return (
       <html className='no-js' lang={language}>
@@ -62,12 +111,12 @@ class HtmlDocument extends React.Component {
 
           <title>{ getIntlMessage(messages, `${stateName}.title`) } - { config.siteName }</title>
 
-          <meta name='description' content={ getIntlMessage(messages, `${stateName}.description`) } />
-          <meta property='og:type' content='website' />
-          <meta name='og:image' content={ config.logoUrlSquare } />
-          <meta name='og:image:secure_url' content={ config.logoUrlSquare } />
-          <meta name='google-site-verification' content={ config.googleSiteVerification } />
-          <link rel='canonical' href={ config.siteRoot + path } />
+          <meta name="description" content={ getIntlMessage(messages, `${stateName}.description`) } />
+          <link href={ config.socialLinks.google } rel="publisher" />
+          <meta name="og:image" content={ config.logoUrlSquare } />
+          <meta name="og:image:secure_url" content={ config.logoUrlSquare } />
+          <meta name="google-site-verification" content={ config.googleSiteVerification } />
+          <link rel="canonical" href={ config.siteRoot + path } />
 
           { css.map((href, k) =>
             <link key={k} rel='stylesheet' type='text/css' href={href} />)
@@ -88,8 +137,13 @@ class HtmlDocument extends React.Component {
 
           { script.map((src, k) => <script key={k} src={src} />) }
 
-          { config.googleTagManagerIxd &&
-            <div dangerouslySetInnerHTML={{__html: GTM.replace('{TAG_ID}', config.googleTagManagerId)}} />
+          { isHome &&
+            <script type="application/ld+json"
+              dangerouslySetInnerHTML={{__html: JSON.stringify(buildSchemaDotOrgOrganization(metadata)) }} />
+          }
+
+          { config.googleTagManagerId &&
+            <div dangerouslySetInnerHTML={{__html: GTM.replace("{TAG_ID}", config.google_tag_manager_id)}} />
           }
         </body>
       </html>

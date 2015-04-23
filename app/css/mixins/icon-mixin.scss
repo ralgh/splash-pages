@@ -1,0 +1,7 @@
+@mixin icon($image_name, $width, $height, $extension: ".png") {
+  @include at2x($image_name, $width, $height, $extension);
+  display: inline-block;
+  height: $height;
+  width: $width;
+  background-repeat: no-repeat;
+}

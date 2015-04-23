@@ -1,0 +1,146 @@
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 25px;
+  line-height: 43px;
+  min-height: 43px;
+  white-space: nowrap;
+  border-style: solid;
+  border-width: 2px;
+  background-color: $primary-color;
+  border-color: $primary-color;
+  border-radius: $border-radius-base;
+  text-align: center;
+  font-size: $font-size-xxsmall;
+  font-family: $font-family-label;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  text-transform: uppercase;
+
+  &:hover,
+  &:active {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.btn:active,
+.btn--active {
+  background-color: $primary-color-darken;
+}
+
+.btn[disabled],
+.btn--disabled,
+.btn[disabled]:hover,
+.btn--disabled:hover,
+.btn[disabled]:active,
+.btn--disabled:active {
+  cursor: default;
+  background: transparent;
+  background-color: transparent;
+  background-image: transparent;
+  color: $gray;
+  border-color: #DDD;
+  text-decoration: none;
+}
+
+// Sizes
+
+.btn--small {
+  padding-left: 15px;
+  padding-right: 15px;
+  line-height: 30px;
+  min-height: 32px;
+  border-width: 1px;
+}
+
+// Depends on .btn
+
+.btn--info {
+  color: white;
+  background: $secondary-color;
+  border-color: $secondary-color;
+}
+
+.btn--info:active,
+.btn--info--active {
+  background: darken($secondary-color, 5%);
+  border-color: darken($secondary-color, 5%);
+}
+
+.btn--info-hollow {
+  border-color: $secondary-color;
+  background: transparent;
+  color: $secondary-color;
+
+  &:hover {
+    color: $secondary-color;
+  }
+}
+
+.btn--info-hollow:active,
+.btn--info-hollow--active {
+  background: none;
+  border-color: darken($secondary-color, 5%);
+}
+
+.btn--invert {
+  border-color: white;
+  background: white;
+  color: $primary-color;
+
+  &:hover {
+    color: $primary-color;
+  }
+
+  &:active {
+    background: white;
+  }
+
+}
+
+.btn--hollow {
+  border-color: $primary-color;
+  background: transparent;
+  color: $primary-color;
+
+  &:hover {
+    color: $primary-color;
+  }
+
+  &:active {
+    color: $primary-color;
+  }
+
+}
+
+.btn--invert-hollow {
+  border-color: white;
+  background: transparent;
+  color: white;
+}
+
+.btn--hollow:active,
+.btn--hollow--active {
+  background: none;
+  border-color: darken($primary-color, 5%);
+}
+
+// Depends on .btn
+
+.btn--block {
+  display: block;
+  width: 100%;
+}
+
+.btn--large {
+  border-radius: $border-radius-double;
+  font-size: $font-size-medium;
+  border-width: 2px;
+  line-height: 44px;
+}

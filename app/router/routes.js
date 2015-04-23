@@ -1,5 +1,3 @@
-import url from 'url';
-
 import _ from 'lodash';
 import Router from 'react-router';
 var {Route, DefaultRoute, NotFoundRoute, Redirect} = Router;
@@ -10,8 +8,9 @@ import React from 'react';
 /*eslint-enable */
 
 import App from '../components/app/app';
+
 import NotFound from '../pages/not-found/index';
-import FAQMerchants from '../pages/faq/merchants/index';
+import FaqMerchants from '../pages/faq/merchants/index';
 
 import Home from '../pages/home/index';
 
@@ -52,11 +51,11 @@ var config = [
     [null, {
         'en-GB': {
             path: '/faq',
-            redirectTo: FAQMerchants,
+            redirectTo: FaqMerchants,
         },
       },
     ],
-    [FAQMerchants, {
+    [FaqMerchants, {
         'en-GB': {
             path: '/faq/merchants',
         },
@@ -66,7 +65,7 @@ var config = [
 
 function pathToLocale(path, locale) {
   if (locale === defaultLocale) {
-    return url.resolve('/', path);
+    return path;
   }
   return ['/', locale.toLowerCase(), path].join('/').replace(/\/\//g, '/');
 }
@@ -89,6 +88,8 @@ function flattenPagesForLocale(pages, locale) {
     if (locale in page[1]) {
       page[1] = page[1][locale];
       page[1].path = pathToLocale(page[1].path, locale);
+      page[1].path = page[1].path.replace(/^\/|\/$/g, '');
+      page[1].path = '/' + page[1].path;
       if (_.isArray(page[2])) {
         page[2] = flattenPagesForLocale(page[2], locale);
       }

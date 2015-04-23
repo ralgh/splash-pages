@@ -5,9 +5,11 @@ import Footer from '../footer/footer';
 class Page extends React.Component {
   render() {
     return (
-      <div className="test">
+      <div className="site-wrapper">
         <Header />
-        {this.props.children}
+          <div className="site-container u-text-center u-padding-Vxxl">
+            {this.props.children}
+          </div>
         <Footer />
       </div>
     );

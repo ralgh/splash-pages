@@ -17,6 +17,7 @@ System.config({
   "map": {
     "babel": "npm:babel-core@5.1.11",
     "babel-runtime": "npm:babel-runtime@5.1.11",
+    "classnames": "npm:classnames@1.2.1",
     "core-js": "npm:core-js@0.8.4",
     "g00fy-/jspm-jsx-babel": "github:g00fy-/jspm-jsx-babel@0.0.1",
     "jsx": "github:floatdrop/plugin-jsx@1.1.0",
@@ -134,6 +135,9 @@ System.config({
       "is-array": "npm:is-array@1.0.1"
     },
     "npm:classnames@1.1.4": {
+      "assert": "github:jspm/nodelibs-assert@0.1.0"
+    },
+    "npm:classnames@1.2.1": {
       "assert": "github:jspm/nodelibs-assert@0.1.0"
     },
     "npm:commander@2.5.1": {

@@ -1,0 +1,221 @@
+// Text styles
+
+.u-text-heading,
+.u-text-subheading,
+.u-text-label {
+  text-rendering: optimizeLegibility;
+  font-weight: 400;
+}
+
+.u-text-heavy {
+  font-weight: 700;
+}
+
+.u-text-semi {
+  font-weight: 500;
+}
+
+.u-text-normal {
+  font-weight: 400;
+}
+
+.u-text-light {
+  font-weight: 200;
+}
+
+.u-text-heading {
+  font-family: $font-family-heading;
+  color: $header-color;
+}
+
+.u-text-heading-light {
+  @extend .u-text-light;
+  @extend .u-text-heading;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+}
+
+.u-text-subheading {
+  font-family: $font-family-heading;
+  color: $subheader-color;
+}
+
+.u-text-label {
+  font-family: $font-family-label;
+}
+
+.u-text-no-smoothing {
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+}
+
+// Text sizes
+
+.u-text-xxl {
+  font-size: $font-size-xxlarge;
+}
+
+h1, .u-text-xl {
+  font-size: $font-size-xlarge;
+}
+
+h2, .u-text-l {
+  font-size: $font-size-large;
+}
+
+h3, .u-text-m {
+  font-size: $font-size-medium;
+}
+
+h4, .u-text-s {
+  font-size: $font-size-small;
+}
+
+h5, .u-text-xs {
+  font-size: $font-size-xsmall;
+}
+
+h6, .u-text-xxs {
+  font-size: $font-size-xxsmall;
+}
+
+.u-text-xxxs {
+  font-size: $font-size-xxxsmall;
+}
+
+// Horizontal text alignment
+
+.u-text-center {
+  text-align: center;
+}
+
+.u-text-start {
+  text-align: left;
+}
+
+.u-text-end {
+  text-align: right;
+}
+
+@include breakpoint-medium {
+  .u-md-text-center {
+    text-align: center;
+  }
+}
+
+@include breakpoint-small {
+  .u-sm-text-center {
+    text-align: center;
+  }
+}
+
+// Text utilities
+
+.u-text-transform-none {
+  text-transform: none;
+}
+
+.u-text-upcase {
+  text-transform: uppercase;
+}
+
+.u-text-underline {
+  text-decoration: underline;
+}
+
+// Text truncation
+//
+// Prevent text from wrapping onto multiple lines, and truncate with an
+// ellipsis.
+//
+// 1. Ensure that the node has a maximum width after which truncation can
+//    occur.
+// 2. Fix for IE 8/9 if `word-wrap: break-word` is in effect on ancestor
+//    nodes.
+///
+
+.u-text-truncate {
+  max-width: 100%; // 1
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal; // 2
+}
+
+// Word breaking
+//
+// Break strings when their length exceeds the width of their container.
+
+.u-text-break {
+  word-break: break-all;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+@include breakpoint-medium {
+  .u-md-text-xxl {
+    font-size: $font-size-xxlarge;
+  }
+
+  .u-md-text-xl {
+    font-size: $font-size-xlarge;
+  }
+
+  .u-md-text-l {
+    font-size: $font-size-large;
+  }
+
+  .u-md-text-m {
+    font-size: $font-size-medium;
+  }
+
+  .u-md-text-s {
+    font-size: $font-size-small;
+  }
+
+  .u-md-text-xs {
+    font-size: $font-size-xsmall;
+  }
+
+  .u-md-text-xxs {
+    font-size: $font-size-xxsmall;
+  }
+
+  .u-md-text-xxxs {
+    font-size: $font-size-xxxsmall;
+  }
+}
+
+@include breakpoint-small {
+  .u-sm-text-xxl {
+    font-size: $font-size-xxlarge;
+  }
+
+  .u-sm-text-xl {
+    font-size: $font-size-xlarge;
+  }
+
+  .u-sm-text-l {
+    font-size: $font-size-large;
+  }
+
+  .u-sm-text-m {
+    font-size: $font-size-medium;
+  }
+
+  .u-sm-text-s {
+    font-size: $font-size-small;
+  }
+
+  .u-sm-text-xs {
+    font-size: $font-size-xsmall;
+  }
+
+  .u-sm-text-xxs {
+    font-size: $font-size-xxsmall;
+  }
+
+  .u-sm-text-xxxs {
+    font-size: $font-size-xxxsmall;
+  }
+}
