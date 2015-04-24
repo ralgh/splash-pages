@@ -1,6 +1,13 @@
 import {availableLocales} from '../locale-helper/locale-helper';
 
-var hasNativeIntl = !!global.Intl;
+var polyfillGlobal;
+if (typeof global === 'undefined') {
+  polyfillGlobal = window;
+} else {
+  polyfillGlobal = global;
+}
+
+var hasNativeIntl = !!polyfillGlobal.Intl;
 
 // `Intl` exists, but it doesn't have the data we need, so load the polyfill
 // and replace the constructors with need with the polyfill's.
@@ -10,9 +17,9 @@ var hasNativeLocaleData = hasNativeIntl &&
   });
 
 if (!hasNativeIntl) {
-  global.Intl = require('intl');
+  polyfillGlobal.Intl = System.import('intl');
 } else if (!hasNativeLocaleData) {
-  var IntlPolyfill = require('intl');
+  var IntlPolyfill = System.import('intl');
   Intl.NumberFormat = IntlPolyfill.NumberFormat;
   Intl.DateTimeFormat = IntlPolyfill.DateTimeFormat;
 }

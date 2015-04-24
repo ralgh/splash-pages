@@ -1,8 +1,9 @@
 import path from 'path';
 import express from 'express';
 import locale from 'locale';
+import compression from 'compression';
 
-import render from './render';
+import {render} from './render';
 import {availableLocales} from '../app/helpers/locale-helper/locale-helper';
 
 const server = express();
@@ -12,7 +13,8 @@ server.use(locale(availableLocales));
 server.use(express.static(path.join(__dirname, '..', 'public')));
 server.use(express.static(path.join(__dirname, '..', 'app')));
 
-server.use(render);
+server.use(render(server));
+server.use(compression());
 
 server.use((err, req, res) => {
   console.log('Error on request %s %s', req.method, req.url);

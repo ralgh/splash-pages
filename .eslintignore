@@ -1,4 +1,5 @@
 node_modules
-public/vendor
 app/messages
 public/jspm.config.js
+app/vendor
+app/jspm.config.js

@@ -108,7 +108,7 @@ function getRoutesForPages(pages) {
           <Redirect from={page[1].path}
             to={page[1].redirectTo.name || page[1].redirectTo}
             key={page[1].path}>
-            {page[2] && getRoutesForPages(page[2], availableLocales) || null}
+            {page[2] && getRoutesForPages(page[2]) || null}
           </Redirect>
         ),
       ];
@@ -119,7 +119,7 @@ function getRoutesForPages(pages) {
                  key={page[0].name}
                  handler={page[0]}
                  {...page[1]}>
-            {page[2] && getRoutesForPages(page[2], availableLocales) || null}
+            {page[2] && getRoutesForPages(page[2]) || null}
           </Route>
         ),
       ];

@@ -1,0 +1,33 @@
+#!/usr/bin/env node
+
+require('../index');
+
+var server = flo(options.root, {
+  port: options.port,
+  host: options.host,
+  verbose: options.verbose,
+  glob: options.glob,
+  useWatchman: true,
+}, function resolver(filepath, callback) {
+  // Minimal debugging
+  if (!options.verbose) {
+    console.log('File changed: %s', filepath);
+  }
+
+  if (isIgnorePath(filepath)) {
+    return;
+  }
+
+  handleCompile(filepath, function(err, compiledFile, reload) {
+    if (err) {
+      console.error('Failed to load %s', filepath);
+      console.error(err);
+      return;
+    }
+    callback({
+      resourceURL: compiledFile,
+      contents: fs.readFileSync(rootPath(compiledFile)).toString(),
+      reload: reload
+    });
+  });
+});

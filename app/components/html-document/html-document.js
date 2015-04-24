@@ -131,7 +131,7 @@ class HtmlDocument extends React.Component {
 
         <body>
           { config.optimizelyId &&
-            <script src='//cdn.optimizely.com/js/${config.optimizelyId}.js'></script>
+            <script src='//cdn.optimizely.com/js/{config.optimizelyId}.js'></script>
           }
           <div dangerouslySetInnerHTML={{ __html: browseHappy }} />
 

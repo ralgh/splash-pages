@@ -2,9 +2,11 @@
 .DS_Store
 node_modules/*
 e2eserver/node_modules/*
-public/vendor/*
+app/vendor/*
 dist/*
 e2e-dist/*
 Session.vim
 npm-debug.log
-public/build.js
+
+app/build.js
+app/build.js.map
