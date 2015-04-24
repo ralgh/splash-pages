@@ -3,10 +3,11 @@ import url from 'url';
 import _ from 'lodash';
 import React from 'react';
 import Router from 'react-router';
-import {pathLocale, normalizeLocale, availableLocales} from '../app/helpers/locale-helper/locale-helper';
+import {pathLocale, normalizeLocale} from '../app/helpers/locale-helper/locale-helper';
 import HtmlDocument from '../app/components/html-document/html-document';
 import {getRoutes} from '../app/router/routes';
 import localeMessages from '../config/messages';
+import availableLocales from '../config/available-locales';
 import config from '../config';
 import formats from '../config/formats';
 
@@ -27,7 +28,7 @@ function render(req, res, next) {
 
   var reqLocale = pathLocale(reqPath);
   reqLocale = normalizeLocale(reqLocale);
-  var routes = getRoutes(reqLocale.normalized);
+  var routes = getRoutes(reqLocale.normalized, availableLocales);
   var messages = _.cloneDeep(localeMessages[reqLocale.normalized]);
 
   function appProps(props) {

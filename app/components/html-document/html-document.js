@@ -7,7 +7,6 @@ import GTM from '../layout-static/google-tag-manager.js';
 import websiteSchema from '../layout-static/website-schema.js';
 
 import {getIntlMessage} from '../intl/intl';
-import {availableLocales} from '../../helpers/locale-helper/locale-helper';
 import localeMessages from '../../../config/messages';
 
 // Documentation from Google:
@@ -16,12 +15,12 @@ import localeMessages from '../../../config/messages';
 //   https://developers.google.com/structured-data/testing-tool/
 // Original Schema:
 //   http://schema.org/Organization
-function buildSchemaDotOrgOrganization(metadata) {
+function buildSchemaDotOrgOrganization(metadata, availableLocales) {
   var organization = {
     '@context': 'http://schema.org',
     '@type': 'Organization',
     url: 'https://gocardless.com/',
-    log: metadata.logo_url_square,
+    logo: metadata.logoUrlSquare,
     sameAs: [],
     contactPoint: [],
   };
@@ -73,6 +72,7 @@ class HtmlDocument extends React.Component {
     dataRender: React.PropTypes.object.isRequired,
     path: React.PropTypes.string.isRequired,
     stateName: React.PropTypes.string.isRequired,
+    availableLocales: React.PropTypes.array.isRequired,
   }
 
   static defaultProps = {
@@ -102,9 +102,10 @@ class HtmlDocument extends React.Component {
   }
 
   render() {
-    const { messages, stateName, markup, script, css, language, config, path } = this.props;
+    const { messages, stateName, markup, script, css, language, config, path, availableLocales } = this.props;
     const isHome = stateName === 'Home';
     const metadata = _.merge({}, messages, config);
+    const schemaDotOrgOrganisation = buildSchemaDotOrgOrganization(metadata, availableLocales);
 
     return (
       <html className='no-js' lang={language}>
@@ -114,12 +115,12 @@ class HtmlDocument extends React.Component {
 
           <title>{ getIntlMessage(messages, `${stateName}.title`) } - { config.siteName }</title>
 
-          <meta name="description" content={ getIntlMessage(messages, `${stateName}.description`) } />
-          <link href={ config.socialLinks.google } rel="publisher" />
-          <meta name="og:image" content={ config.logoUrlSquare } />
-          <meta name="og:image:secure_url" content={ config.logoUrlSquare } />
-          <meta name="google-site-verification" content={ config.googleSiteVerification } />
-          <link rel="canonical" href={ config.siteRoot + path } />
+          <meta name='description' content={ getIntlMessage(messages, `${stateName}.description`) } />
+          <link href={ config.socialLinks.google } rel='publisher' />
+          <meta name='og:image' content={ config.logoUrlSquare } />
+          <meta name='og:image:secure_url' content={ config.logoUrlSquare } />
+          <meta name='google-site-verification' content={ config.googleSiteVerification } />
+          <link rel='canonical' href={ config.siteRoot + path } />
 
           { css.map((href, k) =>
             <link key={k} rel='stylesheet' type='text/css' href={href} />)
@@ -147,7 +148,7 @@ class HtmlDocument extends React.Component {
 
           { isHome &&
             <script type='application/ld+json'
-              dangerouslySetInnerHTML={{ __html: JSON.stringify(buildSchemaDotOrgOrganization(metadata)) }} />
+              dangerouslySetInnerHTML={{ __html: schemaDotOrgOrganisation }} />
           }
 
           { config.googleTagManagerId &&

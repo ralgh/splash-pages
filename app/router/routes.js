@@ -15,7 +15,7 @@ import Home from '../pages/home/home';
 import About from '../pages/about/about';
 import Pricing from '../pages/pricing/pricing';
 
-import {availableLocales, defaultLocale} from '../helpers/locale-helper/locale-helper';
+import {defaultLocale} from '../helpers/locale-helper/locale-helper';
 
 var config = [
   [Home, {
@@ -75,15 +75,15 @@ function validatePages(pages) {
   return (pages.length !== 0);
 }
 
-function validateLocale(locale) {
+function validateLocale(locale, availableLocales) {
   if (!_.contains(availableLocales, locale)) {
     throw new TypeError(`Locale not allowed: ${locale} [${availableLocales.join(', ')}]`);
   }
 }
 
-function flattenPagesForLocale(pages, locale) {
+function flattenPagesForLocale(pages, locale, availableLocales) {
   validatePages(pages);
-  validateLocale(locale);
+  validateLocale(locale, availableLocales);
   return pages.reduce(function(pagesInner, page) {
     page = _.cloneDeep(page);
     if (locale in page[1]) {
@@ -108,7 +108,7 @@ function getRoutesForPages(pages) {
           <Redirect from={page[1].path}
             to={page[1].redirectTo.name || page[1].redirectTo}
             key={page[1].path}>
-            {page[2] && getRoutesForPages(page[2]) || null}
+            {page[2] && getRoutesForPages(page[2], availableLocales) || null}
           </Redirect>
         ),
       ];
@@ -119,7 +119,7 @@ function getRoutesForPages(pages) {
                  key={page[0].name}
                  handler={page[0]}
                  {...page[1]}>
-            {page[2] && getRoutesForPages(page[2]) || null}
+            {page[2] && getRoutesForPages(page[2], availableLocales) || null}
           </Route>
         ),
       ];
@@ -133,8 +133,8 @@ function defaultRouteParams(route) {
   return route;
 }
 
-export function getRoutes(locale) {
-  var pages = flattenPagesForLocale(config, locale);
+export function getRoutes(locale, availableLocales) {
+  var pages = flattenPagesForLocale(config, locale, availableLocales);
 
   return (
     <Route name={pages[0][0].name} path={pages[0][1].path} handler={App}>

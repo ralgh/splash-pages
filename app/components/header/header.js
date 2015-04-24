@@ -42,10 +42,10 @@ class Header extends React.Component {
     // const isInverted = this.props.isInverted;
 
     return (
-      <div className="site-header site-header--invert u-relative u-cf">
-        <div className="u-pull-start">
-          <Link to="Home" id="track-nav-home" className="header-logo u-relative u-block u-padding-Vl">
-            <img className="site-logo__image u-fill-primary" src="/images/logos/site-logo.svg" />
+      <div className='site-header site-header--invert u-relative u-cf'>
+        <div className='u-pull-start'>
+          <Link to='Home' id='track-nav-home' className='header-logo u-relative u-block u-padding-Vl'>
+            <img className='site-logo__image u-fill-primary' src='/images/logos/site-logo.svg' />
           </Link>
         </div>
         <div className='u-pull-end align-btn-small'>

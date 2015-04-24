@@ -109,19 +109,19 @@ class Footer extends React.Component {
               </div>
             </ul>
           </div>
-          <div className="grid__cell u-size-1of2">
-            <div className="u-size-2of3 u-pull-end">
-              <p className="u-text-heading u-text-xxs u-color-invert u-margin-Bm" itemScope itemType="http://schema.org/Organization">
-                <span itemProp="name">GoCardless Ltd.</span>
-                <meta itemProp="url" content="" />
-                <span itemProp="address" itemScope itemType="http://schema.org/PostalAddress">
-                  <span itemProp="streetAddress"><IntlMessage message="postal_address.street_address" /></span><span>{','} </span>
-                  <span itemProp="addressLocality"><IntlMessage message="postal_address.address_locality" /></span><span>{','} </span>
-                  <span itemProp="postalCode"><IntlMessage message="postal_address.postal_code" /></span><span>{','} </span>
-                  <span itemProp="addressCountry" content=""><IntlMessage message="postal_address.address_country_iso" /></span>
+          <div className='grid__cell u-size-1of2'>
+            <div className='u-size-2of3 u-pull-end'>
+              <p className='u-text-heading u-text-xxs u-color-invert u-margin-Bm' itemScope itemType='http://schema.org/Organization'>
+                <span itemProp='name'>GoCardless Ltd.</span>
+                <meta itemProp='url' content='' />
+                <span itemProp='address' itemScope itemType='http://schema.org/PostalAddress'>
+                  <span itemProp='streetAddress'><IntlMessage message='postal_address.street_address' /></span><span>{','} </span>
+                  <span itemProp='addressLocality'><IntlMessage message='postal_address.address_locality' /></span><span>{','} </span>
+                  <span itemProp='postalCode'><IntlMessage message='postal_address.postal_code' /></span><span>{','} </span>
+                  <span itemProp='addressCountry' content=''><IntlMessage message='postal_address.address_country_iso' /></span>
                 </span>
-                <span itemProp="telephone" content=""><IntlMessage message="phone_full" /></span><span>{','} </span>
-                <a href="mailto:" className="u-link-clean u-link-invert" itemProp="email"><IntlMessage message="email" /></a>
+                <span itemProp='telephone' content=''><IntlMessage message='phone_full' /></span><span>{','} </span>
+                <a href='mailto:' className='u-link-clean u-link-invert' itemProp='email'><IntlMessage message='email' /></a>
               </p>
               <p className='u-text-heading u-text-xxs u-color-invert'>
                 <IntlMessage message='footer.description' />
@@ -140,13 +140,13 @@ class Footer extends React.Component {
                     United Kingdom
                   </span>
                 </a>
-                <popover-content className="popover popover--above">
-                  <ul className="u-text-xxs u-text-start u-padding-Vxs">
-                    <li className="u-text-semi">
-                      <span className="u-padding-Vxs u-padding-Hm u-block">
-                        <img src="/images/icons/uk-flag-icon@2x.png" className="flag-icon--popover u-margin-Rs" alt="United Kingdom Flag" />
-                        <span className="u-color-p">United Kingdom</span>
-                        <img src="/images/icons/checkmark-icon.svg" className="u-fill-dark-green u-margin-Ls u-pull-end u-inline" alt="✓" />
+                <popover-content className='popover popover--above'>
+                  <ul className='u-text-xxs u-text-start u-padding-Vxs'>
+                    <li className='u-text-semi'>
+                      <span className='u-padding-Vxs u-padding-Hm u-block'>
+                        <img src='/images/icons/uk-flag-icon@2x.png' className='flag-icon--popover u-margin-Rs' alt='United Kingdom Flag' />
+                        <span className='u-color-p'>United Kingdom</span>
+                        <img src='/images/icons/checkmark-icon.svg' className='u-fill-dark-green u-margin-Ls u-pull-end u-inline' alt='✓' />
                       </span>
                     </li>
                     <li className='u-text-semi'>
@@ -155,12 +155,12 @@ class Footer extends React.Component {
                         <span className='u-link-complex-target'>France</span>
                       </a>
                     </li>
-                    <LinkExists to="Europe">
-                      <hr className="u-margin-Vs" />
-                      <div className="u-padding-Vxs u-padding-Hm">
-                        <p className="u-color-p"><IntlMessage message="footer.eruope_cta" />{','}</p>
-                        <p className="u-color-p"><Link to="Europe"><IntlMessage message="footer.europe_link" /></Link>
-                          <IntlMessage message="footer.europe_description" /></p>
+                    <LinkExists to='Europe'>
+                      <hr className='u-margin-Vs' />
+                      <div className='u-padding-Vxs u-padding-Hm'>
+                        <p className='u-color-p'><IntlMessage message='footer.eruope_cta' />{','}</p>
+                        <p className='u-color-p'><Link to='Europe'><IntlMessage message='footer.europe_link' /></Link>
+                          <IntlMessage message='footer.europe_description' /></p>
                       </div>
                     </LinkExists>
                   </ul>

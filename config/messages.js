@@ -2,7 +2,7 @@ import _ from 'lodash';
 import fs from 'fs';
 import path from 'path';
 
-import {availableLocales} from '../app/helpers/locale-helper/locale-helper';
+import availableLocales from './available-locales';
 
 var langLocales = {};
 

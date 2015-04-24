@@ -20,25 +20,10 @@ export function normalizeLocale(localeData) {
   return localeData;
 }
 
-function validateLocale(localeToValidate) {
+export function validateLocale(localeToValidate) {
   if (!localeToValidate.match(/[a-z]{2,2}\-[A-Z]{2,2}/)) {
     throw new Error(`Locale not valid ${localeToValidate}`);
   }
   return localeToValidate;
 }
-
-var availableLocales = [];
-if (typeof window === 'undefined') {
-  var glob = require('glob');
-  var path = require('path');
-
-  availableLocales = glob.sync(path.join(__dirname, '..', '..', 'messages', '*-*.js'))
-  .map(function(file) {
-    return path.basename(file, '.js');
-  })
-  .map(validateLocale);
-} else {
-  availableLocales = window.app.availableLocales;
-}
-export var availableLocales = availableLocales;
 
