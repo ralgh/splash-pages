@@ -5,7 +5,6 @@ import MobileIcon from '../../icons/icon/mobile';
 import CheckmarkIcon from '../../icons/icon/checkmark';
 import MoneyFlowerIcon from '../../icons/icon/money-flower';
 
-
 export default class HomeEn extends React.Component {
   displayName = 'HomeEn'
 

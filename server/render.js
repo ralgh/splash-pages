@@ -21,28 +21,14 @@ function normalizeUrl(urlStr) {
 
 export function render(app) {
   var assetsLookup = {
-    js: {
-      production: [
-        '/build.js',
-      ],
-      development: [
-        '/vendor/system.js',
-        '/jspm.config.js',
-        '/client/loader.js',
-      ],
-    },
-    css: {
-      production: [
-        '/css/main.css',
-      ],
-      development: [
-        '/css/main.css',
-      ],
-    },
+    js: [
+      '/vendor/system.js',
+      '/jspm.config.js',
+    ],
+    css: [
+      '/css/main.css',
+    ],
   };
-
-  var scriptTags = assetsLookup.js[app.get('env')];
-  var cssLinks = assetsLookup.css[app.get('env')];
 
   return function(req, res, next) {
     var reqUrl = normalizeUrl(req.url);
@@ -91,8 +77,8 @@ export function render(app) {
       const html = React.renderToStaticMarkup(
         <HtmlDocument
           markup={markup}
-          script={scriptTags}
-          css={cssLinks}
+          script={assetsLookup.js}
+          css={assetsLookup.css}
           dataRender={appProps(stateProps)}
           {...appProps(stateProps)}
         />

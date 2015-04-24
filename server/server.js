@@ -14,7 +14,10 @@ server.use(express.static(path.join(__dirname, '..', 'public')));
 server.use(express.static(path.join(__dirname, '..', 'app')));
 
 server.use(render(server));
-server.use(compression());
+
+if (server.env == 'production') {
+  server.use(compression());
+};
 
 server.use((err, req, res) => {
   console.log('Error on request %s %s', req.method, req.url);
