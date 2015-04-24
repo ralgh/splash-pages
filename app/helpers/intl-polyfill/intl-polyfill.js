@@ -16,10 +16,18 @@ var hasNativeLocaleData = hasNativeIntl &&
     return Intl.NumberFormat.supportedLocalesOf(locale)[0] === locale;
   });
 
+function doImport(name) {
+  if (typeof window === 'undefined') {
+    return require(name);
+  } else {
+    return System.import(name);
+  }
+}
+
 if (!hasNativeIntl) {
-  polyfillGlobal.Intl = System.import('intl');
+  polyfillGlobal.Intl = doImport('intl');
 } else if (!hasNativeLocaleData) {
-  var IntlPolyfill = System.import('intl');
+  var IntlPolyfill = doImport('intl');
   Intl.NumberFormat = IntlPolyfill.NumberFormat;
   Intl.DateTimeFormat = IntlPolyfill.DateTimeFormat;
 }

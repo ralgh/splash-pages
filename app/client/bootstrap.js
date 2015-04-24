@@ -2,6 +2,7 @@ import React from 'react';
 import Router from 'react-router';
 import {getRoutes} from '../router/routes';
 import _ from 'lodash';
+
 // Mark svg-injector as a dependency.
 import 'svg-injector';
 // Import the intl polyfill if we need it.

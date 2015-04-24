@@ -9,14 +9,13 @@ class SvgInjector extends React.Component {
 
   componentDidMount() {
     if (typeof window !== 'undefined') {
-      System.import('svg-injector').then((SVGInjectorLib) => {
-        SVGInjectorLib([React.findDOMNode(this)], this.props);
+      System.import('svg-injector').then((svgInjectorLib) => {
+        svgInjectorLib([React.findDOMNode(this)], this.props);
       });
     }
   }
 
   render() {
-    var imgProps = this.props;
     return (
       <div {...this.props} />
     );
