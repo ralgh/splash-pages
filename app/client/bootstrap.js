@@ -6,7 +6,7 @@ import _ from 'lodash';
 // Mark svg-injector as a dependency.
 import 'svg-injector';
 // Import the intl polyfill if we need it.
-import '../helpers/intl-polyfill/intl-polyfill';
+//import '../helpers/intl-polyfill/intl-polyfill';
 
 function renderApp() {
   var appState = window.app;

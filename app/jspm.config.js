@@ -14,7 +14,7 @@ System.config({
     "github:*": "vendor/github/*.js",
     "npm:*": "vendor/npm/*.js"
   },
-  "bundles": {
+  "bundlesz": {
     "build": [
       "npm:process@0.10.1/browser",
       "npm:react@0.13.2/lib/PooledClass",
@@ -164,7 +164,6 @@ System.config({
       "pages/pricing/pricing",
       "npm:locale@0.0.20/lib/index",
       "npm:svg-injector@1.1.2/svg-injector",
-      "helpers/intl-polyfill/intl-polyfill",
       "npm:process@0.10.1",
       "npm:react@0.13.2/lib/warning",
       "npm:react@0.13.2/lib/ReactInstanceHandles",

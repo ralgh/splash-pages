@@ -3,7 +3,7 @@ import Router from 'react-router';
 var { Link } = Router;
 import IntlMessage from '../intl-message/intl-message';
 import LinkExists from '../link-exists/link-exists';
-import SvgInjector from '../svg-injector/svg-injector';
+import Logo from '../../icons/icon/logo';
 
 class Header extends React.Component {
   displayName = 'Header'
@@ -46,7 +46,7 @@ class Header extends React.Component {
       <div className='site-header site-header--invert u-relative u-cf'>
         <div className='u-pull-start'>
           <Link to='Home' id='track-nav-home' className='header-logo u-relative u-block u-padding-Vl'>
-            <SvgInjector className='site-logo__image u-fill-primary' src='/images/logos/site-logo.svg' />
+            <Logo />
           </Link>
         </div>
         <div className='u-pull-end align-btn-small'>
