@@ -1,5 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router';
+import Router from 'react-router';
+var { Link } = Router;
 import IntlMessage from '../intl-message/intl-message';
 import LinkExists from '../link-exists/link-exists';
 
@@ -44,7 +45,7 @@ class Header extends React.Component {
       <div className='site-header site-header--invert u-relative u-cf'>
         <div className='u-pull-start'>
           <Link to='Home' id='track-nav-home' className='header-logo u-relative u-block u-padding-Vl'>
-            <img ng-gc-svg-injector className='site-logo__image u-fill-primary' data-src='/images/logos/site-logo.svg' />
+            <img className='site-logo__image u-fill-primary' src='/images/logos/site-logo.svg' />
           </Link>
         </div>
         <div className='u-pull-end align-btn-small'>

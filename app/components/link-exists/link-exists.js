@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactRouter from 'react-router';
-var {Route} = ReactRouter;
+var { Route } = ReactRouter;
 
 class LinkExists extends React.Component {
   displayName = 'LinkExists'
 
   static contextTypes = {
     router: React.PropTypes.func.isRequired
-  }
+  };
 
   static propTypes = {
     children: React.PropTypes.node.isRequired,

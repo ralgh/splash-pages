@@ -1,4 +1,4 @@
-import {availableLocales} from '../config/locale';
+import {availableLocales} from '../locale-helper/locale-helper';
 
 var hasNativeIntl = !!global.Intl;
 

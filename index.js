@@ -1,5 +1,5 @@
 require('babel/register');
 
-require('./server/intl-pollyfil');
+require('./app/helpers/intl-polyfill/intl-polyfill');
 
 require('./server/server');

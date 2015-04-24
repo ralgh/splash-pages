@@ -1,34 +1,40 @@
 System.config({
-  "baseURL": "/",
-  "transpiler": "babel",
-  "babelOptions": {
-    "optional": [
-      "runtime"
-    ]
+  baseURL: '/',
+  transpiler: 'babel',
+  babelOptions: {
+    optional: [
+      'runtime',
+      'es7.classProperties',
+    ],
+    stage: 0,
+    blacklist: [],
   },
-  "paths": {
-    "*": "*.js",
-    "github:*": "../public/vendor/github/*.js",
-    "npm:*": "../public/vendor/npm/*.js"
-  }
+  paths: {
+    '*': '*.js',
+    'github:*': '/vendor/github/*.js',
+    'npm:*': '/vendor/npm/*.js',
+  },
 });
 
 System.config({
   "map": {
     "babel": "npm:babel-core@5.1.11",
     "babel-runtime": "npm:babel-runtime@5.1.11",
+    "classnames": "npm:classnames@1.2.1",
     "core-js": "npm:core-js@0.8.4",
     "locale": "npm:locale@0.0.20",
     "lodash": "npm:lodash@3.7.0",
     "react": "npm:react@0.13.2",
     "react-intl": "npm:react-intl@1.2.0",
     "react-router": "npm:react-router@0.13.2",
+    "traceur": "github:jmcriffey/bower-traceur@0.0.87",
+    "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.87",
     "url": "npm:url@0.10.3",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },
     "github:jspm/nodelibs-buffer@0.1.0": {
-      "buffer": "npm:buffer@3.2.0"
+      "buffer": "npm:buffer@3.2.1"
     },
     "github:jspm/nodelibs-events@0.1.0": {
       "events-browserify": "npm:events-browserify@0.0.1"
@@ -65,12 +71,15 @@ System.config({
     "npm:assert@1.3.0": {
       "util": "npm:util@0.10.3"
     },
-    "npm:buffer@3.2.0": {
+    "npm:buffer@3.2.1": {
       "base64-js": "npm:base64-js@0.0.8",
       "ieee754": "npm:ieee754@1.1.4",
       "is-array": "npm:is-array@1.0.1"
     },
     "npm:classnames@1.1.4": {
+      "assert": "github:jspm/nodelibs-assert@0.1.0"
+    },
+    "npm:classnames@1.2.1": {
       "assert": "github:jspm/nodelibs-assert@0.1.0"
     },
     "npm:core-js@0.8.4": {

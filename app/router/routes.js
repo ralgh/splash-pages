@@ -1,53 +1,70 @@
-import React from 'react';
 import _ from 'lodash';
-import {Route, DefaultRoute, NotFoundRoute, Redirect} from 'react-router';
+import Router from 'react-router';
+var {Route, DefaultRoute, NotFoundRoute, Redirect} = Router;
+
+// This is internally used within jsx, so ignore the unused error.
+/*eslint-disable */
+import React from 'react';
+/*eslint-enable */
 
 import App from '../components/app/app';
+
 import NotFound from '../pages/not-found/not-found';
 import FaqMerchants from '../pages/faq/merchants/merchants';
 import Home from '../pages/home/home';
 import About from '../pages/about/about';
 import Pricing from '../pages/pricing/pricing';
 
-import {availableLocales, defaultLocale} from '../../config/locale';
+import {defaultLocale} from '../helpers/locale-helper/locale-helper';
 
 var config = [
-    [Home, {
-        'en-GB': {
-            path: '/',
-        },
-        'fr-FR': {
-            path: '/',
-        },
-    },],
-    [Pricing, {
-        'en-GB': {
-            path: '/pricing',
-        },
-        'fr-FR': {
-            path: '/tarifs',
-        },
-    },],
-    [About, {
-        'en-GB': {
-            path: '/about',
-        },
-        'fr-FR': {
-            path: '/a-propos',
-        },
-    },],
-    [null, {
-        'en-GB': {
-            path: '/faq',
-            redirectTo: FaqMerchants,
-        },
-    },],
-    [FaqMerchants, {
-        'en-GB': {
-            path: '/faq/merchants',
-        },
-    },],
+  [Home, {
+      'en-GB': {
+          path: '/',
+      },
+      'fr-FR': {
+          path: '/',
+      },
+    },
+  ],
+  [Pricing, {
+      'en-GB': {
+          path: '/pricing',
+      },
+      'fr-FR': {
+          path: '/tarifs',
+      },
+    },
+  ],
+  [About, {
+      'en-GB': {
+          path: '/about',
+      },
+      'fr-FR': {
+          path: '/a-propos',
+      },
+    },
+  ],
+  [null, {
+      'en-GB': {
+          path: '/faq',
+          redirectTo: FaqMerchants,
+      },
+    },
+  ],
+  [FaqMerchants, {
+      'en-GB': {
+          path: '/faq/merchants',
+      },
+    },
+  ],
 ];
+
+function pathToLocale(path, locale) {
+  if (locale === defaultLocale) {
+    return path;
+  }
+}
 
 function pathToLocale(path, locale) {
   if (locale === defaultLocale) { return path; }
@@ -58,15 +75,15 @@ function validatePages(pages) {
   return (pages.length !== 0);
 }
 
-function validateLocale(locale) {
+function validateLocale(locale, availableLocales) {
   if (!_.contains(availableLocales, locale)) {
     throw new TypeError(`Locale not allowed: ${locale} [${availableLocales.join(', ')}]`);
   }
 }
 
-function flattenPagesForLocale(pages, locale) {
+function flattenPagesForLocale(pages, locale, availableLocales) {
   validatePages(pages);
-  validateLocale(locale);
+  validateLocale(locale, availableLocales);
   return pages.reduce(function(pagesInner, page) {
     page = _.cloneDeep(page);
     if (locale in page[1]) {
@@ -86,22 +103,26 @@ function flattenPagesForLocale(pages, locale) {
 function getRoutesForPages(pages) {
   return pages.map(function(page) {
     if (page[0] === null) {
-      return [(
-        <Redirect from={page[1].path}
-          to={page[1].redirectTo.name || page[1].redirectTo}
-          key={page[1].path}>
-          {page[2] && getRoutesForPages(page[2]) || null}
-        </Redirect>
-      ),];
+      return [
+        (
+          <Redirect from={page[1].path}
+            to={page[1].redirectTo.name || page[1].redirectTo}
+            key={page[1].path}>
+            {page[2] && getRoutesForPages(page[2], availableLocales) || null}
+          </Redirect>
+        ),
+      ];
     } else {
-      return [(
-        <Route name={page[0].name}
-               key={page[0].name}
-               handler={page[0]}
-               {...page[1]}>
-          {page[2] && getRoutesForPages(page[2]) || null}
-        </Route>
-      ),];
+      return [
+        (
+          <Route name={page[0].name}
+                 key={page[0].name}
+                 handler={page[0]}
+                 {...page[1]}>
+            {page[2] && getRoutesForPages(page[2], availableLocales) || null}
+          </Route>
+        ),
+      ];
     }
   });
 }
@@ -112,8 +133,8 @@ function defaultRouteParams(route) {
   return route;
 }
 
-export function getRoutes(locale) {
-  var pages = flattenPagesForLocale(config, locale);
+export function getRoutes(locale, availableLocales) {
+  var pages = flattenPagesForLocale(config, locale, availableLocales);
 
   return (
     <Route name={pages[0][0].name} path={pages[0][1].path} handler={App}>

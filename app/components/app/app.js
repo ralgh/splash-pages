@@ -1,5 +1,6 @@
 import React from 'react';
-import {RouteHandler} from 'react-router';
+import Router from 'react-router';
+var {RouteHandler} = Router;
 
 class App extends React.Component {
   displayName = 'App'
@@ -11,6 +12,7 @@ class App extends React.Component {
     ]),
     messages: React.PropTypes.object.isRequired,
     formats: React.PropTypes.object.isRequired,
+    availableLocales: React.PropTypes.array.isRequired,
   }
 
   static propTypes = {
@@ -27,6 +29,7 @@ class App extends React.Component {
       locales: this.props.locales,
       messages: this.props.messages,
       formats: this.props.formats,
+      availableLocales: this.props.availableLocales,
     };
   }
 

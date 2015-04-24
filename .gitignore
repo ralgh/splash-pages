@@ -7,3 +7,4 @@ dist/*
 e2e-dist/*
 Session.vim
 npm-debug.log
+public/build.js

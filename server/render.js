@@ -3,34 +3,16 @@ import url from 'url';
 import _ from 'lodash';
 import React from 'react';
 import Router from 'react-router';
-import locale from 'locale';
-
+import {pathLocale, normalizeLocale} from '../app/helpers/locale-helper/locale-helper';
 import HtmlDocument from '../app/components/html-document/html-document';
 import {getRoutes} from '../app/router/routes';
 import localeMessages from '../config/messages';
+import availableLocales from '../config/available-locales';
 import config from '../config';
 import formats from '../config/formats';
-import {defaultLocale} from '../config/locale';
 
-process.env.LANG = defaultLocale;
-
-function pathLocale(path) {
-  var localePath = (path || '').toLowerCase().match(/^\/([a-z]{2,2}\-[a-z]{2,2})/);
-  var foundLocale = locale.Locale.default;
-  if (localePath && localePath[1]) {
-    foundLocale = new locale.Locale(localePath[1]);
-  }
-  return foundLocale;
-}
-
-var scriptTags = ['/vendor/system.js', 'js/loader.js'];
-var cssLinks = ['/css/main.css', '/css/fonts.css'];
-
-function normalizeLocale(localeData) {
-  localeData = _.cloneDeep(localeData);
-  localeData.normalized = localeData.normalized.replace('_', '-');
-  return localeData;
-}
+var scriptTags = ['/vendor/system.js', '/jspm.config.js', '/client/loader.js'];
+var cssLinks = ['/css/main.css'];
 
 function normalizeUrl(urlStr) {
   urlStr = urlStr.toLowerCase() || '';
@@ -46,7 +28,7 @@ function render(req, res, next) {
 
   var reqLocale = pathLocale(reqPath);
   reqLocale = normalizeLocale(reqLocale);
-  var routes = getRoutes(reqLocale.normalized);
+  var routes = getRoutes(reqLocale.normalized, availableLocales);
   var messages = _.cloneDeep(localeMessages[reqLocale.normalized]);
 
   function appProps(props) {
@@ -57,6 +39,7 @@ function render(req, res, next) {
       formats: formats,
       config: config,
       path: reqPath,
+      availableLocales: availableLocales,
     }, props);
   }
 
@@ -88,6 +71,7 @@ function render(req, res, next) {
         markup={markup}
         script={scriptTags}
         css={cssLinks}
+        dataRender={appProps(stateProps)}
         {...appProps(stateProps)}
       />
     );
