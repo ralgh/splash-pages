@@ -46,7 +46,7 @@ class Header extends React.Component {
       <div className='site-header site-header--invert u-relative u-cf'>
         <div className='u-pull-start'>
           <Link to='Home' id='track-nav-home' className='header-logo u-relative u-block u-padding-Vl'>
-            <Logo />
+            <Logo className='site-logo__image u-fill-invert' />
           </Link>
         </div>
         <div className='u-pull-end align-btn-small'>

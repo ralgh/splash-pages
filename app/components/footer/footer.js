@@ -5,6 +5,7 @@ var { Link } = Router;
 import IntlLink from '../intl-link/intl-link';
 import IntlMessage from '../intl-message/intl-message';
 import LinkExists from '../link-exists/link-exists';
+import CheckmarkIcon from '../../icons/icon/checkmark';
 
 class Footer extends React.Component {
   displayName = 'Footer'
@@ -146,7 +147,7 @@ class Footer extends React.Component {
                       <span className='u-padding-Vxs u-padding-Hm u-block'>
                         <img src='/images/icons/uk-flag-icon@2x.png' className='flag-icon--popover u-margin-Rs' alt='United Kingdom Flag' />
                         <span className='u-color-p'>United Kingdom</span>
-                        <img src='/images/icons/checkmark-icon.svg' className='u-fill-dark-green u-margin-Ls u-pull-end u-inline' alt='✓' />
+                        <CheckmarkIcon className='u-fill-dark-green u-margin-Ls u-pull-end u-inline' />
                       </span>
                     </li>
                     <li className='u-text-semi'>
