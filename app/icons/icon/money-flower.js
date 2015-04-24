@@ -3,6 +3,10 @@ import React from 'react';
 export default class MoneyFlower extends React.Component {
   displayName = 'MoneyFlower'
 
+  static propTypes = {
+    className: React.PropTypes.string.isRequired
+  };
+
   render() {
     return (
       <svg className={this.props.className} width="76" height="76" viewBox="0 0 76 76" xmlns="http://www.w3.org/2000/svg">

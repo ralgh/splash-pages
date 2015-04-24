@@ -22,14 +22,25 @@ function normalizeUrl(urlStr) {
 export function render(app) {
   var assetsLookup = {
     js: {
-      production:  ['/build.js'],
-      development: ['/vendor/system.js', '/jspm.config.js', '/client/loader.js']
+      production: [
+        '/build.js',
+      ],
+      development: [
+        '/vendor/system.js',
+        '/jspm.config.js',
+        '/client/loader.js',
+      ],
     },
     css: {
-      production: ['/css/main.css'],
-      development: ['/css/main.css']
-    }
+      production: [
+        '/css/main.css',
+      ],
+      development: [
+        '/css/main.css',
+      ],
+    },
   };
+
   var scriptTags = assetsLookup.js[app.get('env')];
   var cssLinks = assetsLookup.css[app.get('env')];
 
@@ -89,5 +100,5 @@ export function render(app) {
       const doctype = '<!DOCTYPE html>';
       res.send(doctype + html);
     });
-  }
+  };
 }

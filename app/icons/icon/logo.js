@@ -3,6 +3,10 @@ import React from 'react';
 export default class Logo extends React.Component {
   displayName = 'Logo'
 
+  static propTypes = {
+    className: React.PropTypes.string.isRequired
+  };
+
   render() {
     return (
       <svg className={this.props.className} role="link" aria-label="GoCardless" width="157" height="16" viewBox="0 0 157 16" xmlns="http://www.w3.org/2000/svg">

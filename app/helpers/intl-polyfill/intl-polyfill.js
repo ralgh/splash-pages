@@ -1,6 +1,4 @@
-
-export default function (availableLocales) {
-
+export default function(availableLocales) {
   var polyfillGlobal;
   if (typeof global === 'undefined') {
     polyfillGlobal = window;
@@ -27,7 +25,7 @@ export default function (availableLocales) {
   }
 
   if (!hasNativeIntl) {
-     doImport('intl', (intlReq) => {
+    doImport('intl', (intlReq) => {
       polyfillGlobal.Intl = intlReq;
     });
   } else if (!hasNativeLocaleData) {
