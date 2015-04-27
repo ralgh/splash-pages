@@ -8,6 +8,7 @@ import websiteSchema from '../layout-static/website-schema.js';
 
 import {getIntlMessage} from '../intl/intl';
 import localeMessages from '../../../config/messages';
+import {homeRoute} from '../../router/routes';
 
 // Documentation from Google:
 //   https://developers.google.com/structured-data/customize/overview
@@ -103,7 +104,7 @@ class HtmlDocument extends React.Component {
 
   render() {
     const { messages, stateName, markup, script, css, language, config, path, availableLocales } = this.props;
-    const isHome = stateName === 'Home';
+    const isHome = stateName === homeRoute;
     const metadata = _.merge({}, messages, config);
     const schemaDotOrgOrganisation = buildSchemaDotOrgOrganization(metadata, availableLocales);
 

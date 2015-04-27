@@ -22,6 +22,7 @@ class App extends React.Component {
     ]),
     messages: React.PropTypes.object.isRequired,
     formats: React.PropTypes.object.isRequired,
+    availableLocales: React.PropTypes.array.isRequired,
   }
 
   getChildContext() {
