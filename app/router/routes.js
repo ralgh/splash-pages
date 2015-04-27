@@ -17,8 +17,10 @@ import Pricing from '../pages/pricing/pricing';
 
 import {defaultLocale} from '../helpers/locale-helper/locale-helper';
 
+export var homeRoute = 'home';
+
 var config = [
-  [Home, {
+  [Home, { name: homeRoute }, {
       'en-GB': {
           path: '/',
       },
@@ -27,7 +29,7 @@ var config = [
       },
     },
   ],
-  [Pricing, {
+  [Pricing, { name: 'pricing' }, {
       'en-GB': {
           path: '/pricing',
       },
@@ -36,7 +38,7 @@ var config = [
       },
     },
   ],
-  [About, {
+  [About, { name: 'about' }, {
       'en-GB': {
           path: '/about',
       },
@@ -45,14 +47,14 @@ var config = [
       },
     },
   ],
-  [null, {
+  [null, null, {
       'en-GB': {
           path: '/faq',
-          redirectTo: FaqMerchants,
+          redirectTo: 'faq_merchants',
       },
     },
   ],
-  [FaqMerchants, {
+  [FaqMerchants, { name: 'faq_merchants' }, {
       'en-GB': {
           path: '/faq/merchants',
       },
@@ -86,13 +88,13 @@ function flattenPagesForLocale(pages, locale, availableLocales) {
   validateLocale(locale, availableLocales);
   return pages.reduce(function(pagesInner, page) {
     page = _.cloneDeep(page);
-    if (locale in page[1]) {
-      page[1] = page[1][locale];
-      page[1].path = pathToLocale(page[1].path, locale);
-      page[1].path = page[1].path.replace(/^\/|\/$/g, '');
-      page[1].path = '/' + page[1].path;
-      if (_.isArray(page[2])) {
-        page[2] = flattenPagesForLocale(page[2], locale);
+    if (locale in page[2]) {
+      page[2] = page[2][locale];
+      page[2].path = pathToLocale(page[2].path, locale);
+      page[2].path = page[2].path.replace(/^\/|\/$/g, '');
+      page[2].path = '/' + page[2].path;
+      if (_.isArray(page[3])) {
+        page[3] = flattenPagesForLocale(page[3], locale, availableLocales);
       }
       pagesInner.push(page);
     }
@@ -100,26 +102,27 @@ function flattenPagesForLocale(pages, locale, availableLocales) {
   }, []);
 }
 
-function getRoutesForPages(pages) {
+function getRoutesForPages(pages, availableLocales) {
   return pages.map(function(page) {
     if (page[0] === null) {
       return [
         (
-          <Redirect from={page[1].path}
-            to={page[1].redirectTo.name || page[1].redirectTo}
-            key={page[1].path}>
-            {page[2] && getRoutesForPages(page[2], availableLocales) || null}
+          <Redirect
+            from={page[2].path}
+            to={page[2].redirectTo}
+            key={page[2].name + '_redirect'}>
+            {page[3] && getRoutesForPages(page[3], availableLocales) || null}
           </Redirect>
         ),
       ];
     } else {
       return [
         (
-          <Route name={page[0].name}
-                 key={page[0].name}
-                 handler={page[0]}
-                 {...page[1]}>
-            {page[2] && getRoutesForPages(page[2], availableLocales) || null}
+          <Route key={page[1].name}
+            name={page[1].name}
+            path={page[2].path}
+            handler={page[0]}>
+            {page[3] && getRoutesForPages(page[3], availableLocales) || null}
           </Route>
         ),
       ];
@@ -127,20 +130,13 @@ function getRoutesForPages(pages) {
   });
 }
 
-function defaultRouteParams(route) {
-  route = _.cloneDeep(route);
-  delete route.path;
-  return route;
-}
-
 export function getRoutes(locale, availableLocales) {
   var pages = flattenPagesForLocale(config, locale, availableLocales);
-
   return (
-    <Route name={pages[0][0].name} path={pages[0][1].path} handler={App}>
-      {getRoutesForPages(pages.slice(1))}
+    <Route path={pages[0][2].path} handler={App}>
+      {getRoutesForPages(pages.slice(1), availableLocales)}
 
-      <DefaultRoute handler={pages[0][0]} {...defaultRouteParams(pages[0][1])} />
+      <DefaultRoute handler={pages[0][0]} name={pages[0][1].name} />
       <NotFoundRoute handler={NotFound} />
     </Route>
   );

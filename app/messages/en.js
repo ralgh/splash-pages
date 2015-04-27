@@ -25,71 +25,71 @@ export default {
   phone_full: '+44 20 7183 8674',
   phone_local: '020 7183 8674',
   email: 'help@gocardless.com',
-  Pricing: {
+  pricing: {
     title: 'Pricing',
     description: 'Pricing',
   },
-  About: {
+  about: {
     title: 'About us',
     description: 'About us',
     link: 'about'
   },
-  Home: {
+  home: {
     title: 'Home',
     description: 'GoCardless',
     link: "home page"
   },
-  ContactSales: {
+  contact_sales: {
     title: 'Contact Sales',
     description: 'Contact Sales'
   },
-  Features: {
+  features: {
     title: 'GoCardless',
     description: 'GoCardless',
     explainer: 'Simple recurring payments'
   },
-  FaqMerchants: {
+  faq_merchants: {
     title: 'FAQ',
     description: 'FAQ',
   },
-  FeaturesApi: {
+  features_api: {
     title: 'API',
     description: 'API',
   },
-  Security: {
+  security: {
     title: 'Security',
     description: 'Security',
   },
-  Europe: {
+  europe: {
     title: 'SEPA',
     description: 'SEPA',
   },
-  Legal: {
+  legal: {
     title: 'Legal',
     description: 'Legal',
   },
-  Pro: {
+  pro: {
     title: 'GoCardless Pro',
     explainer: 'Total control over Direct Debit',
   },
-  Partners: {
+  partners: {
     title: 'Partners',
     explainer: 'Offer GoCardless to your users',
   },
-  Jobs: {
+  jobs: {
     title: 'Jobs',
   },
-  ProDocs: {
+  pro_docs: {
     title: 'Pro API',
   },
-  Blog: {
+  blog: {
     title: 'Blog',
   },
-  Guides: {
+  guides: {
     title: 'Guides',
     path: '/guides',
   },
-  Help: {
+  help: {
     title: 'Support',
   },
 };

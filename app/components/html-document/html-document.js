@@ -8,6 +8,7 @@ import websiteSchema from '../layout-static/website-schema.js';
 
 import {getIntlMessage} from '../intl/intl';
 import localeMessages from '../../../config/messages';
+import {homeRoute} from '../../router/routes';
 
 // Documentation from Google:
 //   https://developers.google.com/structured-data/customize/overview
@@ -103,9 +104,20 @@ class HtmlDocument extends React.Component {
 
   render() {
     const { messages, stateName, markup, script, css, language, config, path, availableLocales } = this.props;
-    const isHome = stateName === 'Home';
+    const isHome = stateName === homeRoute;
     const metadata = _.merge({}, messages, config);
     const schemaDotOrgOrganisation = buildSchemaDotOrgOrganization(metadata, availableLocales);
+
+    var title;
+    var description;
+    if (!isHome && stateName) {
+      title = getIntlMessage(messages, `${stateName}.title`) + `- ${ config.siteName }`;
+    } else {
+      title = config.siteName;
+    }
+    if (stateName) {
+      description = getIntlMessage(messages, `${stateName}.description`);
+    }
 
     return (
       <html className='no-js' lang={language}>
@@ -113,9 +125,9 @@ class HtmlDocument extends React.Component {
           <meta charSet='utf-8' />
           <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no' />
 
-          <title>{ getIntlMessage(messages, `${stateName}.title`) } - { config.siteName }</title>
+          <title>{ title }</title>
 
-          <meta name='description' content={ getIntlMessage(messages, `${stateName}.description`) } />
+          <meta name='description' content={ description } />
           <link href={ config.socialLinks.google } rel='publisher' />
           <meta name='og:image' content={ config.logoUrlSquare } />
           <meta name='og:image:secure_url' content={ config.logoUrlSquare } />
