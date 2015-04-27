@@ -133,7 +133,7 @@ function getRoutesForPages(pages, availableLocales) {
 export function getRoutes(locale, availableLocales) {
   var pages = flattenPagesForLocale(config, locale, availableLocales);
   return (
-    <Route name='app' path={pages[0][2].path} handler={App}>
+    <Route path={pages[0][2].path} handler={App}>
       {getRoutesForPages(pages.slice(1), availableLocales)}
 
       <DefaultRoute handler={pages[0][0]} name={pages[0][1].name} />

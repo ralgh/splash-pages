@@ -108,15 +108,26 @@ class HtmlDocument extends React.Component {
     const metadata = _.merge({}, messages, config);
     const schemaDotOrgOrganisation = buildSchemaDotOrgOrganization(metadata, availableLocales);
 
+    var title;
+    var description;
+    if (!isHome && stateName) {
+      title = getIntlMessage(messages, `${stateName}.title`) + `- ${ config.siteName }`;
+    } else {
+      title = config.siteName;
+    }
+    if (stateName) {
+      description = getIntlMessage(messages, `${stateName}.description`);
+    }
+
     return (
       <html className='no-js' lang={language}>
         <head>
           <meta charSet='utf-8' />
           <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no' />
 
-          <title>{ getIntlMessage(messages, `${stateName}.title`) } - { config.siteName }</title>
+          <title>{ title }</title>
 
-          <meta name='description' content={ getIntlMessage(messages, `${stateName}.description`) } />
+          <meta name='description' content={ description } />
           <link href={ config.socialLinks.google } rel='publisher' />
           <meta name='og:image' content={ config.logoUrlSquare } />
           <meta name='og:image:secure_url' content={ config.logoUrlSquare } />
