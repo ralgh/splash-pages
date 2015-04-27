@@ -12,7 +12,7 @@ import config from '../config';
 import formats from '../config/formats';
 
 var scriptTags = ['/vendor/system.js', '/jspm.config.js', '/client/loader.js'];
-var cssLinks = ['/css/main.css'];
+var cssLinks = ['/css/main.css', '/css/fonts.css'];
 
 function normalizeUrl(urlStr) {
   urlStr = urlStr.toLowerCase() || '';
