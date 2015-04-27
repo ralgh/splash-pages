@@ -25,6 +25,12 @@ export default {
   phone_full: '+44 20 7183 8674',
   phone_local: '020 7183 8674',
   email: 'help@gocardless.com',
+  country_names: {
+    'en-GB': 'United Kingdom',
+    'en-IE': 'Ireland',
+    'fr-FR': 'France',
+    'fr-BE': 'Belgium',
+  },
   Pricing: {
     title: 'Pricing',
     description: 'Pricing',

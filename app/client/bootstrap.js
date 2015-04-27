@@ -14,9 +14,9 @@ function renderApp() {
   });
 
   router.run(function(Handler, state) {
-    var stateName = _.result(_.find(state.routes.slice().reverse(), 'name'), 'name');
+    var routeName = _.result(_.find(state.routes.slice().reverse(), 'name'), 'name');
     var stateProps = _.extend(appState, {
-      stateName: stateName,
+      routeName: routeName,
     });
 
     React.render(<Handler {...stateProps} />, mountNode, () => {

@@ -2,6 +2,7 @@ export default {
   cta: {
     pro: 'FR PRO',
   },
+  country: 'France',
   Home: {
     title: 'French home',
     description: 'French home',

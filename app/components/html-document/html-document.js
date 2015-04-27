@@ -8,6 +8,8 @@ import websiteSchema from '../layout-static/website-schema.js';
 
 import {getIntlMessage} from '../intl/intl';
 import localeMessages from '../../../config/messages';
+import {getLocalesForRouteName} from '../../router/routes';
+import {defaultLocale} from '../../helpers/locale-helper/locale-helper';
 
 // Documentation from Google:
 //   https://developers.google.com/structured-data/customize/overview
@@ -54,6 +56,20 @@ function buildSchemaDotOrgOrganization(metadata, availableLocales) {
   return organization;
 }
 
+function relAlternateLinks(root, path, locales) {
+  var defaultPath = locales[defaultLocale].path;
+  var alternates = Object.keys(locales).map(function(locale) {
+    var localePath = locales[locale].path;
+    return <link rel='alternate' hrefLang={locale} href={ root + localePath } key={locale} />;
+  });
+  if (defaultPath) {
+    alternates.unshift(
+      <link rel='alternate' href={root + defaultPath} hrefLang='x-default' key='x-default' />
+    );
+  }
+  return alternates;
+}
+
 class HtmlDocument extends React.Component {
   displayName = 'HtmlDocument'
 
@@ -62,17 +78,18 @@ class HtmlDocument extends React.Component {
       React.PropTypes.string.isRequired,
       React.PropTypes.array.isRequired,
     ]),
-    language: React.PropTypes.string.isRequired,
     messages: React.PropTypes.object.isRequired,
     formats: React.PropTypes.object.isRequired,
+    language: React.PropTypes.string.isRequired,
+    routeName: React.PropTypes.string.isRequired,
+    availableLocales: React.PropTypes.array.isRequired,
+    router: React.PropTypes.func.isRequired,
+    path: React.PropTypes.string.isRequired,
+    dataRender: React.PropTypes.object.isRequired,
     config: React.PropTypes.object.isRequired,
     markup: React.PropTypes.string.isRequired,
     script: React.PropTypes.arrayOf(React.PropTypes.string),
     css: React.PropTypes.arrayOf(React.PropTypes.string),
-    dataRender: React.PropTypes.object.isRequired,
-    path: React.PropTypes.string.isRequired,
-    stateName: React.PropTypes.string.isRequired,
-    availableLocales: React.PropTypes.array.isRequired,
   }
 
   static defaultProps = {
@@ -85,27 +102,37 @@ class HtmlDocument extends React.Component {
       React.PropTypes.string.isRequired,
       React.PropTypes.array.isRequired,
     ]),
-    language: React.PropTypes.string.isRequired,
     messages: React.PropTypes.object.isRequired,
     formats: React.PropTypes.object.isRequired,
+    language: React.PropTypes.string.isRequired,
+    routeName: React.PropTypes.string.isRequired,
+    availableLocales: React.PropTypes.array.isRequired,
+    router: React.PropTypes.func.isRequired,
+    path: React.PropTypes.string.isRequired,
   };
 
   getChildContext() {
-    const { locales, messages, formats, language } = this.props;
+    const { locales, messages, formats, language, routeName, availableLocales, router, path } = this.props;
 
     return {
       locales: locales,
-      language: language,
       messages: messages,
       formats: formats,
+      language: language,
+      routeName: routeName,
+      availableLocales: availableLocales,
+      router: router,
+      path: path,
     };
   }
 
   render() {
-    const { messages, stateName, markup, script, css, language, config, path, availableLocales } = this.props;
-    const isHome = stateName === 'Home';
+    const { messages, routeName, markup, script, css, language, config, path, availableLocales } = this.props;
+    const isHome = routeName === 'Home';
     const metadata = _.merge({}, messages, config);
     const schemaDotOrgOrganisation = buildSchemaDotOrgOrganization(metadata, availableLocales);
+    const routeLocales = getLocalesForRouteName(routeName);
+    const pageHref = config.siteRoot + path;
 
     return (
       <html className='no-js' lang={language}>
@@ -113,14 +140,16 @@ class HtmlDocument extends React.Component {
           <meta charSet='utf-8' />
           <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no' />
 
-          <title>{ getIntlMessage(messages, `${stateName}.title`) } - { config.siteName }</title>
+          <title>{ getIntlMessage(messages, `${routeName}.title`) } - { config.siteName }</title>
 
-          <meta name='description' content={ getIntlMessage(messages, `${stateName}.description`) } />
+          <meta name='description' content={ getIntlMessage(messages, `${routeName}.description`) } />
           <link href={ config.socialLinks.google } rel='publisher' />
           <meta name='og:image' content={ config.logoUrlSquare } />
           <meta name='og:image:secure_url' content={ config.logoUrlSquare } />
           <meta name='google-site-verification' content={ config.googleSiteVerification } />
-          <link rel='canonical' href={ config.siteRoot + path } />
+          <link rel='canonical' href={ pageHref } />
+
+          { relAlternateLinks(config.siteRoot, path, routeLocales) }
 
           { css.map((href, k) =>
             <link key={k} rel='stylesheet' type='text/css' href={href} />)

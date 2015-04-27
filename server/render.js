@@ -27,6 +27,7 @@ function render(req, res, next) {
   var reqPath = url.parse(reqUrl).path;
 
   var reqLocale = pathLocale(reqPath);
+  console.log(reqLocale)
   reqLocale = normalizeLocale(reqLocale);
   var routes = getRoutes(reqLocale.normalized, availableLocales);
   var messages = _.cloneDeep(localeMessages[reqLocale.normalized]);
@@ -57,9 +58,9 @@ function render(req, res, next) {
   });
 
   router.run(function(Handler, state) {
-    var stateName = _.result(_.find(state.routes.slice().reverse(), 'name'), 'name');
+    var routeName = _.result(_.find(state.routes.slice().reverse(), 'name'), 'name');
     var stateProps = {
-      stateName: stateName,
+      routeName: routeName,
     };
 
     const markup = React.renderToString(<Handler {...appProps(stateProps)} />);
@@ -71,6 +72,7 @@ function render(req, res, next) {
         markup={markup}
         script={scriptTags}
         css={cssLinks}
+        router={router}
         dataRender={appProps(stateProps)}
         {...appProps(stateProps)}
       />

@@ -12,6 +12,8 @@ class App extends React.Component {
     ]),
     messages: React.PropTypes.object.isRequired,
     formats: React.PropTypes.object.isRequired,
+    language: React.PropTypes.string.isRequired,
+    routeName: React.PropTypes.string.isRequired,
     availableLocales: React.PropTypes.array.isRequired,
   }
 
@@ -22,14 +24,21 @@ class App extends React.Component {
     ]),
     messages: React.PropTypes.object.isRequired,
     formats: React.PropTypes.object.isRequired,
+    language: React.PropTypes.string.isRequired,
+    routeName: React.PropTypes.string.isRequired,
+    availableLocales: React.PropTypes.array.isRequired,
   }
 
   getChildContext() {
+    const { locales, messages, formats, language, routeName, availableLocales } = this.props;
+
     return {
-      locales: this.props.locales,
-      messages: this.props.messages,
-      formats: this.props.formats,
-      availableLocales: this.props.availableLocales,
+      locales: locales,
+      messages: messages,
+      formats: formats,
+      language: language,
+      routeName: routeName,
+      availableLocales: availableLocales,
     };
   }
 

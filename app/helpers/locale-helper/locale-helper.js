@@ -3,15 +3,13 @@ import _ from 'lodash';
 
 export var defaultLocale = 'en-GB';
 
-export function pathLocale(testPath) {
-  var localePath = (testPath || '').toLowerCase().match(/^\/([a-z]{2,2}\-[a-z]{2,2})\//);
-  //var foundLocale = locale.Locale.default;
-  var foundLocale = new locale.Locale(defaultLocale);
-  locale.Locale.default = foundLocale;
+export function pathLocale(path) {
+  var localePath = (path || '').toLowerCase().match(/^\/([a-z]{2,2}\-[a-z]{2,2})/);
+  var foundLocale;
   if (localePath && localePath[1]) {
     foundLocale = new locale.Locale(localePath[1]);
   }
-  return foundLocale;
+  return foundLocale || new locale.Locale(defaultLocale);
 }
 
 export function normalizeLocale(localeData) {

@@ -21,6 +21,12 @@ export default {
     address_country: '',
     address_country_iso: 'GB',
   },
+  country_names: {
+    'en-GB': 'Royaume-Uni',
+    'en-IE': 'Irlande',
+    'fr-FR': 'France',
+    'fr-BE': 'Belgique',
+  },
   ContactSales: {
     title: 'Contactez-nous',
     description: 'Contactez-nous'

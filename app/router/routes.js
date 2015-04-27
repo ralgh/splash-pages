@@ -17,6 +17,8 @@ import Pricing from '../pages/pricing/pricing';
 
 import {defaultLocale} from '../helpers/locale-helper/locale-helper';
 
+class Ball {}
+
 var config = [
   [Home, {
       'en-GB': {
@@ -61,14 +63,15 @@ var config = [
 ];
 
 function pathToLocale(path, locale) {
+  var localePath;
   if (locale === defaultLocale) {
-    return path;
+    localePath = path;
+  } else {
+    localePath = ['/', locale.toLowerCase(), path].join('/').replace(/\/\//g, '/');
   }
-}
-
-function pathToLocale(path, locale) {
-  if (locale === defaultLocale) { return path; }
-  return ['/', locale.toLowerCase(), path].join('/').replace(/\/\//g, '/');
+  localePath = localePath.replace(/^\/|\/$/g, '');
+  localePath = '/' + localePath;
+  return localePath;
 }
 
 function validatePages(pages) {
@@ -89,10 +92,8 @@ function flattenPagesForLocale(pages, locale, availableLocales) {
     if (locale in page[1]) {
       page[1] = page[1][locale];
       page[1].path = pathToLocale(page[1].path, locale);
-      page[1].path = page[1].path.replace(/^\/|\/$/g, '');
-      page[1].path = '/' + page[1].path;
       if (_.isArray(page[2])) {
-        page[2] = flattenPagesForLocale(page[2], locale);
+        page[2] = flattenPagesForLocale(page[2], locale, availableLocales);
       }
       pagesInner.push(page);
     }
@@ -100,7 +101,7 @@ function flattenPagesForLocale(pages, locale, availableLocales) {
   }, []);
 }
 
-function getRoutesForPages(pages) {
+function getRoutesForPages(pages, availableLocales) {
   return pages.map(function(page) {
     if (page[0] === null) {
       return [
@@ -133,12 +134,36 @@ function defaultRouteParams(route) {
   return route;
 }
 
+function findRelatedForRouteName(pages, routeName) {
+  var foundPage;
+  pages.some(function(page, index) {
+    if (page[0] && page[0].name === routeName) {
+      foundPage = pages[index];
+    } else if (_.isArray(page[2])) {
+      foundPage = findRelatedForRouteName(page[2], routeName);
+    }
+    return !!(foundPage);
+  });
+  if (foundPage) {
+    foundPage = foundPage[1];
+    foundPage = _.cloneDeep(foundPage);
+    Object.keys(foundPage).forEach(function(locale) {
+      foundPage[locale].path = pathToLocale(foundPage[locale].path, locale);
+    });
+  }
+  return foundPage;
+}
+
+export function getLocalesForRouteName(routeName) {
+  return findRelatedForRouteName(config, routeName);
+}
+
 export function getRoutes(locale, availableLocales) {
   var pages = flattenPagesForLocale(config, locale, availableLocales);
 
   return (
     <Route name={pages[0][0].name} path={pages[0][1].path} handler={App}>
-      {getRoutesForPages(pages.slice(1))}
+      {getRoutesForPages(pages.slice(1), availableLocales)}
 
       <DefaultRoute handler={pages[0][0]} {...defaultRouteParams(pages[0][1])} />
       <NotFoundRoute handler={NotFound} />
