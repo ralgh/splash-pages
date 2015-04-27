@@ -10,6 +10,7 @@ import {getIntlMessage} from '../intl/intl';
 import localeMessages from '../../../config/messages';
 import {getLocalesForRouteName} from '../../router/routes';
 import {defaultLocale} from '../../helpers/locale-helper/locale-helper';
+import {homeRoute} from '../../router/routes';
 
 // Documentation from Google:
 //   https://developers.google.com/structured-data/customize/overview
@@ -128,11 +129,22 @@ class HtmlDocument extends React.Component {
 
   render() {
     const { messages, routeName, markup, script, css, language, config, path, availableLocales } = this.props;
-    const isHome = routeName === 'Home';
+    const isHome = routeName === homeRoute;
     const metadata = _.merge({}, messages, config);
     const schemaDotOrgOrganisation = buildSchemaDotOrgOrganization(metadata, availableLocales);
     const routeLocales = getLocalesForRouteName(routeName);
     const pageHref = config.siteRoot + path;
+
+    var title;
+    var description;
+    if (!isHome && routeName) {
+      title = getIntlMessage(messages, `${routeName}.title`) + `- ${ config.siteName }`;
+    } else {
+      title = config.siteName;
+    }
+    if (routeName) {
+      description = getIntlMessage(messages, `${routeName}.description`);
+    }
 
     return (
       <html className='no-js' lang={language}>
@@ -140,9 +152,9 @@ class HtmlDocument extends React.Component {
           <meta charSet='utf-8' />
           <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no' />
 
-          <title>{ getIntlMessage(messages, `${routeName}.title`) } - { config.siteName }</title>
+          <title>{ title }</title>
 
-          <meta name='description' content={ getIntlMessage(messages, `${routeName}.description`) } />
+          <meta name='description' content={ description } />
           <link href={ config.socialLinks.google } rel='publisher' />
           <meta name='og:image' content={ config.logoUrlSquare } />
           <meta name='og:image:secure_url' content={ config.logoUrlSquare } />

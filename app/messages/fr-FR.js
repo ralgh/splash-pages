@@ -3,17 +3,17 @@ export default {
     pro: 'FR PRO',
   },
   country: 'France',
-  Home: {
+  home: {
     title: 'French home',
     description: 'French home',
     link: 'fr home'
   },
-  About: {
+  about: {
     title: 'French about',
     description: 'French about',
     link: 'a-propos'
   },
-  Pricing: {
+  pricing: {
     title: 'Tarifs',
     description: 'Tarifs',
   },

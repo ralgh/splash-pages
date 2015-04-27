@@ -27,51 +27,51 @@ export default {
     'fr-FR': 'France',
     'fr-BE': 'Belgique',
   },
-  ContactSales: {
+  contact_sales: {
     title: 'Contactez-nous',
     description: 'Contactez-nous'
   },
-  Home: {
+  home: {
     title: 'French home',
     description: 'French home',
     link: 'fr home'
   },
-  About: {
+  about: {
     title: 'A propos',
     description: 'A propos',
     link: 'a-propos'
   },
-  Pricing: {
+  pricing: {
     title: 'Tarifs',
     description: 'Tarifs',
   },
-  Legal: {
+  legal: {
     title: 'Légal',
     description: 'Légal',
   },
-  Jobs: {
+  jobs: {
     title: 'Jobs',
   },
-  Pro: {
+  pro: {
     title: 'GoCardless Pro',
     explainer: 'fr',
   },
-  ProDocs: {
+  pro_docs: {
     title: 'Pro API',
   },
-  Security: {
+  security: {
     title: 'Sécurité',
     description: 'Sécurité',
   },
-  Blog: {
+  blog: {
     title: 'Blog',
   },
-  Guides: {
+  guides: {
     title: 'Guide SEPA',
     description: 'Guide SEPA',
     path: '/fr/guides/sepa',
   },
-  Help: {
+  help: {
     title: 'Support',
   },
 }

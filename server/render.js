@@ -27,7 +27,6 @@ function render(req, res, next) {
   var reqPath = url.parse(reqUrl).path;
 
   var reqLocale = pathLocale(reqPath);
-  console.log(reqLocale)
   reqLocale = normalizeLocale(reqLocale);
   var routes = getRoutes(reqLocale.normalized, availableLocales);
   var messages = _.cloneDeep(localeMessages[reqLocale.normalized]);
