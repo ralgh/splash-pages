@@ -5,7 +5,7 @@ var { Link } = Router;
 import IntlLink from '../intl-link/intl-link';
 import IntlMessage from '../intl-message/intl-message';
 import LinkExists from '../link-exists/link-exists';
-import CheckmarkIcon from '../../icons/icon/checkmark';
+import CheckmarkIcon from '../../icons/svg/checkmark';
 
 class Footer extends React.Component {
   displayName = 'Footer'

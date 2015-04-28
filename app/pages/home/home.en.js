@@ -1,13 +1,13 @@
 import React from 'react';
 import Translation from '../../components/translation/translation';
 
-import MobileIcon from '../../icons/icon/mobile';
-import CheckListIcon from '../../icons/icon/checklist';
-import MoneyFlowerIcon from '../../icons/icon/money-flower';
+import MobileIcon from '../../icons/svg/mobile';
+import CheckListIcon from '../../icons/svg/checklist';
+import MoneyFlowerIcon from '../../icons/svg/money-flower';
 
-import ProIcon from '../../icons/icon/pro';
-import ShopIcon from '../../icons/icon/shop';
-import IntegrationsIcon from '../../icons/icon/integrations';
+import ProIcon from '../../icons/svg/pro';
+import ShopIcon from '../../icons/svg/shop';
+import IntegrationsIcon from '../../icons/svg/integrations';
 
 import Router from 'react-router';
 var { Link } = Router;
