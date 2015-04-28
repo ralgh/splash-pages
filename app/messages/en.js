@@ -38,7 +38,9 @@ export default {
   about: {
     title: 'About us',
     description: 'About us',
-    link: 'about'
+    link: 'about',
+    header1: 'We\'re creating a new payment',
+    header2: 'network for the internet',
   },
   home: {
     title: 'Home',
