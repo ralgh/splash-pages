@@ -2,6 +2,12 @@ export default {
   cta: {
     basic: 'Start taking payments',
     pro: 'Contact sales',
+    pro_signup: 'Sign Up Now',
+    more: 'Learn More',
+  },
+  hero: {
+    header: 'Recurring payments made simple',
+    desc: 'GoCardless makes collecting by Direct Debit easy for everyone from individiuals to multi-national corporations',
   },
   header: {
     our_products: 'Our products',

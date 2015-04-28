@@ -2105,9 +2105,15 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 
 /* line 3, /Users/iain/projects/react-splash-pages/app/css/components/site-header.scss */
 .site-header {
+  margin: 0 auto;
   max-width: 980px;
   min-width: 860px;
   z-index: 1; }
+
+/* line 10, /Users/iain/projects/react-splash-pages/app/css/components/site-header.scss */
+.site-header-wrapper {
+  position: absolute;
+  width: 100%; }
 
 /* Makes sure full width of content is taken
 into account when resized on mobile */

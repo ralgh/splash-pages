@@ -15,7 +15,7 @@ class Header extends React.Component {
           <li>
             <Link to='features' id='track-nav-features' className='u-link-complex u-link-clean u-padding-Vxs u-padding-Hm u-block'>
               <span className='u-link-complex-target u-text-semi'><IntlMessage message='features.title' /></span>
-              <p className='u-color-p'><IntlMessage message='features.explainer' /></p>
+              <p className='u-color-invert'><IntlMessage message='features.explainer' /></p>
             </Link>
           </li>
           <hr className='u-margin-Vxs' />
@@ -24,16 +24,16 @@ class Header extends React.Component {
           <li>
             <Link to='pro' id='track-nav-pro' className='u-link-complex u-link-clean u-padding-Vxs u-padding-Hm u-block'>
               <span className='u-link-complex-target u-text-semi'><IntlMessage message='pro.title' /></span>
-              <p className='u-color-p'><IntlMessage message='pro.explainer' /></p>
+              <p className='u-color-invert'><IntlMessage message='pro.explainer' /></p>
             </Link>
           </li>
           <hr className='u-margin-Vxs' />
         </LinkExists>
         <LinkExists to='partners'>
           <li>
-            <Link to='partners' id='track-nav-partners' className='u-link-complex u-link-clean u-padding-Vxs u-padding-Hm u-block'>
+            <Link to='partners' id='track-nav-partners' className='u-link-complex uLinki-link-clean u-padding-Vxs u-padding-Hm u-block'>
               <span className='u-link-complex-target u-text-semi'><IntlMessage message='Partner.title' /></span>
-              <p className='u-color-p'><IntlMessage message='Partner.explainer' /></p>
+              <p className='u-color-invert'><IntlMessage message='Partner.explainer' /></p>
             </Link>
           </li>
         </LinkExists>
@@ -43,52 +43,54 @@ class Header extends React.Component {
     // const isInverted = this.props.isInverted;
 
     return (
-      <div className='site-header site-header--invert u-relative u-cf'>
-        <div className='u-pull-start'>
-          <Link to='home' id='track-nav-home' className='header-logo u-relative u-block u-padding-Vl'>
-            <Logo className='site-logo__image u-fill-invert' />
-          </Link>
-        </div>
-        <div className='u-pull-end align-btn-small'>
-          <nav className='nav u-pull-start u-color-primary u-text-xxs u-text-light u-text-no-smoothing'>
-            <div className='nav__item u-relative'>
-              <popover-container>
-                <span popover-toggle id='track-nav-products' className='u-padding-Vl u-block u-link-clean'>
-                  <div className='nav__item-link popover-link'>
-                    <IntlMessage message='header.our_products' />
-                  </div>
-                </span>
-                <popover-content className='popover popover--large'>
-                  {products}
-                </popover-content>
-              </popover-container>
-            </div>
-            <div className='nav__item u-relative'>
-              <LinkExists to='about'>
-                <Link to='about' id='track-nav-pricing' className='u-padding-Vl u-block u-link-clean u-link-primary'>
-                  <div className='nav__item-link'>
-                    <IntlMessage message='about.title' />
-                  </div>
-                </Link>
-              </LinkExists>
-            </div>
-            <div className='nav__item u-relative'>
-              <LinkExists to='stories'>
-                <Link to='stories' id='track-nav-stories' className='u-padding-Vl u-block u-link-clean u-link-primary'>
-                  <div className='nav__item-link'>
-                    <IntlMessage message='stories.title' />
-                  </div>
-                </Link>
-              </LinkExists>
-            </div>
-          </nav>
-          <ul className='u-cf u-pull-start'>
-            <li className='u-pull-start'>
-              <a href='/users/sign_in' id='track-nav-sign-in' className='nav-btn btn btn--small btn--hollow u-text-light u-text-xxs u-relative u-text-transform-none u-text-no-smoothing'>
-                <IntlMessage message='header.login_btn' />
-              </a>
-            </li>
-          </ul>
+      <div className='site-header-wrapper'>
+        <div className='site-header site-header--invert u-relative u-cf'>
+          <div className='u-pull-start'>
+            <Link to='home' id='track-nav-home' className='header-logo u-relative u-block u-padding-Vl'>
+              <Logo className='site-logo__image u-fill-invert' />
+            </Link>
+          </div>
+          <div className='u-pull-end align-btn-small'>
+            <nav className='nav u-pull-start u-color-primary u-text-xxs u-text-light u-text-no-smoothing'>
+              <div className='nav__item u-relative'>
+                <popover-container>
+                  <span popover-toggle id='track-nav-products' className='u-padding-Vl u-block u-link-clean u-link-invert'>
+                    <div className='nav__item-link popover-link popover-link--invert'>
+                      <IntlMessage message='header.our_products' />
+                    </div>
+                  </span>
+                  <popover-content className='popover popover--large'>
+                    {products}
+                  </popover-content>
+                </popover-container>
+              </div>
+              <div className='nav__item u-relative'>
+                <LinkExists to='about'>
+                  <Link to='about' id='track-nav-pricing' className='u-padding-Vl u-block u-link-clean u-link-invert'>
+                    <div className='nav__item-link'>
+                      <IntlMessage message='about.title' />
+                    </div>
+                  </Link>
+                </LinkExists>
+              </div>
+              <div className='nav__item u-relative'>
+                <LinkExists to='stories'>
+                  <Link to='stories' id='track-nav-stories' className='u-padding-Vl u-block u-link-clean u-link-invert'>
+                    <div className='nav__item-link'>
+                      <IntlMessage message='stories.title' />
+                    </div>
+                  </Link>
+                </LinkExists>
+              </div>
+            </nav>
+            <ul className='u-cf u-pull-start'>
+              <li className='u-pull-start'>
+                <a href='/users/sign_in' id='track-nav-sign-in' className='nav-btn btn btn--small btn--invert-hollow u-text-light u-text-xxs u-relative u-text-transform-none u-text-no-smoothing'>
+                  <IntlMessage message='header.login_btn' />
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     );

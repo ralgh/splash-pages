@@ -33,17 +33,25 @@ function ServerProcess() {
     console.log(colours.grey('Child process closed: '), code);
     this.alive = false;
   };
-  this.pipeout = function(child, stream, colour) {
+  this.pipeout = function(child, stream, colour, error) {
+    var self = this;
     child.on('data', function(msg) {
       stream.write(colour(msg));
+      if (error) {
+        self.lastError += msg;
+        self.lastErrorTime = (new Date()).getTime();
+      }
     });
   };
   this.start = function() {
     var env = process.env;
+    var self = this;
     env.PORT = config.dev_port;
+    this.lastRestart = (new Date()).getTime();
     this.child = ChildProcess.spawn(config.runner_command, config.runner_args, {env: env});
-    this.pipeout(this.child.stdout, process.stdout, colours.grey);
-    this.pipeout(this.child.stderr, process.stderr, colours.red);
+    this.lastError = '';
+    this.pipeout(this.child.stdout, process.stdout, colours.grey, false);
+    this.pipeout(this.child.stderr, process.stderr, colours.red, true);
     this.child.on('error', this.onerror);
     this.child.on('close', this.onclose);
     this.alive = true;
@@ -59,10 +67,21 @@ function ServerProcess() {
     console.log(colours.cyan('[ restarting web server ]'));
     this.start();
   };
+  this.hasError = function() {
+    return (this.lastRestart <= this.lastErrorTime);
+  }
+  this.getError = function() {
+    return this.hasError() ? this.lastError : '';
+  }
 }
+
 
 var serverProcess = new ServerProcess();
 serverProcess.start();
+
+process.on('beforeExit', function() {
+  serverProcess.kill();
+});
 
 var server = express();
 
@@ -80,7 +99,13 @@ proxy.on('error', function(err, req, res) {
   if (err.code !== 'ECONNREFUSED') {
     console.log(err);
   }
-  res.send(config.loading_site);
+  if (!serverProcess.hasError()) {
+    res.send(config.loading_site);
+  } else {
+    var errorMessage = serverProcess.getError();
+    errorMessage = errorMessage.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    res.send('<style>body{font-family:helvetica;}</style><h3>Server Error:</h3><pre><code>' + errorMessage + '</code></pre>');
+  }
 });
 
 server.use(function(req, res) {

@@ -29,6 +29,8 @@ export function render(app) {
       ],
       css: [
         '/css/main.css',
+        '/css/fonts.css',
+        '/css/greenhouse-forms.css',
       ],
     },
     production: {
@@ -37,7 +39,7 @@ export function render(app) {
         '/jspm.config.prod.js',
       ],
       css: [
-        '/css/main.css',
+        '/css/all.css',
       ],
     },
   };
