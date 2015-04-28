@@ -33,7 +33,9 @@ export default {
   about: {
     title: 'A propos',
     description: 'A propos',
-    link: 'a-propos'
+    link: 'a-propos',
+    header1: 'Simplifions les paiements récurrents',
+    header2: '',
   },
   pricing: {
     title: 'Tarifs',

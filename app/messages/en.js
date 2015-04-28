@@ -68,6 +68,10 @@ export default {
     title: 'Security',
     description: 'Security',
   },
+  stories: {
+    title: 'Stories',
+    description: 'Stories',
+  },
   europe: {
     title: 'SEPA',
     description: 'SEPA',

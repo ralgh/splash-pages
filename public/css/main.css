@@ -1529,13 +1529,14 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 
 /* line 1, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
 .page-hero {
-  background: #498EE0; }
+  background: #498EE0;
+  padding-top: 76px; }
 
-/* line 5, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
+/* line 6, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
 .page-hero__container {
   height: 100%; }
 
-/* line 9, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
+/* line 10, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
 .page-hero__inner {
   display: table;
   height: 100%;
@@ -1543,110 +1544,110 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   position: relative;
   top: -76px; }
 
-/* line 17, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
+/* line 18, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
 .page-hero__text {
   display: table-cell;
   vertical-align: middle;
   height: 100%;
   width: 100%; }
 
-/* line 24, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
+/* line 25, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
 .page-hero--home {
   background: #498EE0 url('/images/hero/new-home-hero.jpg');
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat; }
 
-/* line 31, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
+/* line 32, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
 .page-hero--creative-industries {
   background: #498EE0 url('/images/hero/hero-creative-industries.jpg');
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat; }
 
-/* line 38, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
+/* line 39, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
 .page-hero--lending {
   background: #498EE0 url('/images/hero/hero-lending.jpg');
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat; }
 
-/* line 45, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
+/* line 46, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
 .page-hero--gyms {
   background: #498EE0 url('/images/hero/hero-gyms.jpg');
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat; }
 
-/* line 52, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
+/* line 53, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
 .page-hero--professional-services {
   background: #498EE0 url('/images/hero/hero-professional-services.jpg');
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat; }
 
-/* line 59, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
+/* line 60, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
 .page-hero--property {
   background: #498EE0 url('/images/hero/hero-property.jpg');
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat; }
 
-/* line 66, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
+/* line 67, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
 .page-hero--saas {
   background: #498EE0 url('/images/hero/hero-saas.jpg');
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat; }
 
-/* line 73, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
+/* line 74, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
 .page-hero--sports-clubs {
   background: #498EE0 url('/images/hero/hero-sports-clubs.jpg');
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat; }
 
-/* line 80, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
+/* line 81, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
 .page-hero--europe {
   background: #498EE0 url('/images/hero/new-europe-hero.jpg');
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat; }
 
-/* line 87, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
+/* line 88, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
 .page-hero--pricing {
   background: #5E6E81; }
 
-/* line 91, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
+/* line 92, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
 .page-hero--pro {
   background: #5E6E81 url('/images/hero/pro-hero.jpg');
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat; }
 
-/* line 98, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
+/* line 99, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
 .page-hero--about {
   background: #498EE0 url('/images/hero/about-hero.jpg');
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat; }
 
-/* line 105, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
+/* line 106, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
 .page-hero--team {
   background: #498EE0 url('/images/hero/hero-team.jpg');
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat; }
 
-/* line 112, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
+/* line 113, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
 .page-hero--large {
   height: 585px; }
 
-/* line 116, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
+/* line 117, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
 .page-hero--medium {
   height: 470px; }
 
-/* line 120, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
+/* line 121, /Users/iain/projects/react-splash-pages/app/css/components/page-hero.scss */
 .page-hero--small {
   height: 165px; }
 

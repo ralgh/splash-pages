@@ -111,7 +111,7 @@ class HtmlDocument extends React.Component {
     var title;
     var description;
     if (!isHome && stateName) {
-      title = getIntlMessage(messages, `${stateName}.title`) + `- ${ config.siteName }`;
+      title = getIntlMessage(messages, `${stateName}.title`) + ` - ${ config.siteName }`;
     } else {
       title = config.siteName;
     }
