@@ -11,27 +11,27 @@ class Header extends React.Component {
   render() {
     const products = (
       <ul className='u-text-xxs u-padding-Vxs'>
-        <LinkExists to='Features'>
+        <LinkExists to='features'>
           <li>
-            <Link to='Features' id='track-nav-features' className='u-link-complex u-link-clean u-padding-Vxs u-padding-Hm u-block'>
-              <span className='u-link-complex-target u-text-semi'><IntlMessage message='Features.title' /></span>
-              <p className='u-color-p'><IntlMessage message='Features.explainer' /></p>
+            <Link to='features' id='track-nav-features' className='u-link-complex u-link-clean u-padding-Vxs u-padding-Hm u-block'>
+              <span className='u-link-complex-target u-text-semi'><IntlMessage message='features.title' /></span>
+              <p className='u-color-p'><IntlMessage message='features.explainer' /></p>
             </Link>
           </li>
           <hr className='u-margin-Vxs' />
         </LinkExists>
-        <LinkExists to='Pro'>
+        <LinkExists to='pro'>
           <li>
-            <Link to='Pro' id='track-nav-pro' className='u-link-complex u-link-clean u-padding-Vxs u-padding-Hm u-block'>
-              <span className='u-link-complex-target u-text-semi'><IntlMessage message='Pro.title' /></span>
-              <p className='u-color-p'><IntlMessage message='Pro.explainer' /></p>
+            <Link to='pro' id='track-nav-pro' className='u-link-complex u-link-clean u-padding-Vxs u-padding-Hm u-block'>
+              <span className='u-link-complex-target u-text-semi'><IntlMessage message='pro.title' /></span>
+              <p className='u-color-p'><IntlMessage message='pro.explainer' /></p>
             </Link>
           </li>
           <hr className='u-margin-Vxs' />
         </LinkExists>
-        <LinkExists to='Partners'>
+        <LinkExists to='partners'>
           <li>
-            <Link to='Partners' id='track-nav-partners' className='u-link-complex u-link-clean u-padding-Vxs u-padding-Hm u-block'>
+            <Link to='partners' id='track-nav-partners' className='u-link-complex u-link-clean u-padding-Vxs u-padding-Hm u-block'>
               <span className='u-link-complex-target u-text-semi'><IntlMessage message='Partner.title' /></span>
               <p className='u-color-p'><IntlMessage message='Partner.explainer' /></p>
             </Link>
@@ -45,7 +45,7 @@ class Header extends React.Component {
     return (
       <div className='site-header site-header--invert u-relative u-cf'>
         <div className='u-pull-start'>
-          <Link to='Home' id='track-nav-home' className='header-logo u-relative u-block u-padding-Vl'>
+          <Link to='home' id='track-nav-home' className='header-logo u-relative u-block u-padding-Vl'>
             <Logo className='site-logo__image u-fill-invert' />
           </Link>
         </div>
@@ -64,19 +64,19 @@ class Header extends React.Component {
               </popover-container>
             </div>
             <div className='nav__item u-relative'>
-              <LinkExists to='About'>
-                <Link to='About' id='track-nav-pricing' className='u-padding-Vl u-block u-link-clean u-link-primary'>
+              <LinkExists to='about'>
+                <Link to='about' id='track-nav-pricing' className='u-padding-Vl u-block u-link-clean u-link-primary'>
                   <div className='nav__item-link'>
-                    <IntlMessage message='About.title' />
+                    <IntlMessage message='about.title' />
                   </div>
                 </Link>
               </LinkExists>
             </div>
             <div className='nav__item u-relative'>
-              <LinkExists to='Stories'>
-                <Link to='Stories' id='track-nav-stories' className='u-padding-Vl u-block u-link-clean u-link-primary'>
+              <LinkExists to='stories'>
+                <Link to='stories' id='track-nav-stories' className='u-padding-Vl u-block u-link-clean u-link-primary'>
                   <div className='nav__item-link'>
-                    <IntlMessage message='Stories.title' />
+                    <IntlMessage message='stories.title' />
                   </div>
                 </Link>
               </LinkExists>

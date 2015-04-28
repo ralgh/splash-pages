@@ -17,93 +17,93 @@ class Footer extends React.Component {
           <div className='grid__cell u-size-1of2'>
             <ul className='grid u-text-heading u-text-semi'>
               <div className='grid__cell u-size-1of3 u-text-xxs'>
-                <LinkExists to='Features'>
+                <LinkExists to='features'>
                   <li>
-                    <IntlLink to='Features' message='Features.title'
+                    <IntlLink to='features' message='features.title'
                       id='track-footer-features' className='u-link-clean u-link-invert' />
                   </li>
                 </LinkExists>
-                <LinkExists to='Pro'>
+                <LinkExists to='pro'>
                   <li>
-                    <IntlLink to='Pro' message='Pro.title'
+                    <IntlLink to='pro' message='pro.title'
                       id='track-footer-pro' className='u-link-clean u-link-invert' />
                   </li>
                 </LinkExists>
-                <LinkExists to='Partners'>
+                <LinkExists to='partners'>
                   <li>
-                    <IntlLink to='Partners' message='Partners.title'
+                    <IntlLink to='partners' message='partners.title'
                       id='track-footer-partners' className='u-link-clean u-link-invert' />
                   </li>
                 </LinkExists>
-                <LinkExists to='Pricing'>
+                <LinkExists to='pricing'>
                   <li>
-                    <IntlLink to='Pricing' message='Pricing.title'
+                    <IntlLink to='pricing' message='pricing.title'
                       id='track-footer-pricing' className='u-link-clean u-link-invert' />
                   </li>
                 </LinkExists>
                 <li>
                   <a href='/guides' id='track-footer-guides' className='u-link-clean u-link-invert'>
-                    <IntlMessage message='Guides.title' />
+                    <IntlMessage message='guides.title' />
                   </a>
                 </li>
               </div>
               <div className='grid__cell u-size-1of3 u-text-xxs'>
                 <li>
                   <a href='https://help.gocardless.com' id='track-footer-help' className='u-link-clean u-link-invert'>
-                    <IntlMessage message='Help.title' />
+                    <IntlMessage message='help.title' />
                   </a>
                 </li>
-                <LinkExists to='FaqMerchants'>
+                <LinkExists to='faq_merchants'>
                   <li>
-                    <IntlLink to='FaqMerchants' message='FaqMerchants.title'
+                    <IntlLink to='faq_merchants' message='faq_merchants.title'
                       id='track-footer-faq' className='u-link-clean u-link-invert' />
                   </li>
                 </LinkExists>
-                <LinkExists to='FeaturesApi'>
+                <LinkExists to='features_api'>
                   <li>
-                    <IntlLink to='FeaturesApi' message='FeaturesApi.title'
+                    <IntlLink to='features_api' message='features_api.title'
                       id='track-footer-api' className='u-link-clean u-link-invert' />
                   </li>
                 </LinkExists>
                 <li>
                   <a href='https://developer.gocardless.com/pro' id='track-footer-pro-api' className='u-link-clean u-link-invert'>
-                    <IntlMessage message='ProDocs.title' />
+                    <IntlMessage message='pro_docs.title' />
                   </a>
                 </li>
-                <LinkExists to='Security'>
+                <LinkExists to='security'>
                   <li>
-                    <IntlLink to='Security' message='Security.title'
+                    <IntlLink to='security' message='security.title'
                       id='track-footer-security' className='u-link-clean u-link-invert' />
                   </li>
                 </LinkExists>
               </div>
               <div className='grid__cell u-size-1of3 u-text-xxs'>
-                <LinkExists to='Europe'>
+                <LinkExists to='europe'>
                   <li>
-                    <IntlLink to='Europe' message='Europe.title'
+                    <IntlLink to='europe' message='europe.title'
                       id='track-footer-europe' className='u-link-clean u-link-invert' />
                   </li>
                 </LinkExists>
-                <LinkExists to='Legal'>
+                <LinkExists to='legal'>
                   <li>
-                    <IntlLink to='Legal' message='Legal.title'
+                    <IntlLink to='legal' message='legal.title'
                       id='track-footer-legal' className='u-link-clean u-link-invert' />
                   </li>
                 </LinkExists>
                 <li>
                   <a href='https://blog.gocardless.com' id='track-footer-blog' className='u-link-clean u-link-invert'>
-                    <IntlMessage message='Blog.title' />
+                    <IntlMessage message='blog.title' />
                   </a>
                 </li>
-                <LinkExists to='About'>
+                <LinkExists to='about'>
                   <li>
-                    <IntlLink to='About' message='About.title'
+                    <IntlLink to='about' message='about.title'
                       id='track-footer-about' className='u-link-clean u-link-invert' />
                   </li>
                 </LinkExists>
-                <LinkExists to='About'>
+                <LinkExists to='about'>
                   <li>
-                    <IntlLink to='About' message='Jobs.title'
+                    <IntlLink to='about' message='jobs.title'
                       id='track-footer-jobs' className='u-link-clean u-link-invert' />
                   </li>
                 </LinkExists>
@@ -156,11 +156,11 @@ class Footer extends React.Component {
                         <span className='u-link-complex-target'>France</span>
                       </a>
                     </li>
-                    <LinkExists to='Europe'>
+                    <LinkExists to='europe'>
                       <hr className='u-margin-Vs' />
                       <div className='u-padding-Vxs u-padding-Hm'>
                         <p className='u-color-p'><IntlMessage message='footer.eruope_cta' />{','}</p>
-                        <p className='u-color-p'><Link to='Europe'><IntlMessage message='footer.europe_link' /></Link>
+                        <p className='u-color-p'><Link to='europe'><IntlMessage message='footer.europe_link' /></Link>
                           <IntlMessage message='footer.europe_description' /></p>
                       </div>
                     </LinkExists>
