@@ -4,6 +4,8 @@ import locale from 'locale';
 import compression from 'compression';
 
 import {render} from './render';
+
+
 import {availableLocales} from '../app/helpers/locale-helper/locale-helper';
 
 const server = express();
@@ -15,9 +17,8 @@ server.use(express.static(path.join(__dirname, '..', 'app')));
 
 server.use(render(server));
 
-if (server.env == 'production') {
-  server.use(compression());
-};
+server.use(compression());
+
 
 server.use((err, req, res) => {
   console.log('Error on request %s %s', req.method, req.url);
@@ -25,6 +26,7 @@ server.use((err, req, res) => {
   console.log(err.stack);
   res.status(500).send('Something bad happened');
 });
+
 
 server.set('port', process.env.PORT || 3000);
 

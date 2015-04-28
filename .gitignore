@@ -8,5 +8,4 @@ e2e-dist/*
 Session.vim
 npm-debug.log
 
-app/build.js
-app/build.js.map
+app/bundles

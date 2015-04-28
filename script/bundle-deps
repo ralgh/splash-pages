@@ -1,0 +1,40 @@
+#!/usr/bin/env node
+
+var exec = require('child_process').exec;
+
+var fs = require('fs');
+var packageFile = JSON.parse(fs.readFileSync('package.json'));
+
+var deps = Object.keys(packageFile['jspm']['dependencies']);
+
+if (process.argv.length > 2) {
+  var lastArg = process.argv[2];
+  if (lastArg === '--if-needed') {
+    var depsStat = fs.statSync('./bundles/deps.js');
+    var pkgStat = fs.statSync('./package.json');
+    if (pkgStat.mtime <= depsStat.mtime) {
+      console.log('packing deps not needed, exiting. ');
+      process.exit();
+    }
+  }
+};
+
+var ignoreDeps = packageFile['jspm']['ignoreDepBundle'];
+if (ignoreDeps) {
+  deps = deps.filter(function(dep) {
+    return (ignoreDeps.indexOf(dep) !== -1);
+  })
+}
+
+var args = ['./node_modules/.bin/jspm', 'bundle', '--minify', deps.join(' + '), 'bundles/deps.js'].join(' ');
+
+console.log('Building bundle with new deps (should take about 20s)');
+
+exec(args, function(err, stdout, stderr) {
+    if (stderr) {
+      console.error(stderr);
+    } else {
+      console.log('created bundle');
+      console.log(stdout);
+    }
+});

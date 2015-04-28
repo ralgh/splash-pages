@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e errexit
+
+ulimit -n 10240
+
+./script/css
+
+./script/bundle-deps --if-needed
+
+node ./script/lib/watch.js &
+
+node ./script/lib/dev-server.js

@@ -21,13 +21,25 @@ function normalizeUrl(urlStr) {
 
 export function render(app) {
   var assetsLookup = {
-    js: [
-      '/vendor/system.js',
-      '/jspm.config.js',
-    ],
-    css: [
-      '/css/main.css',
-    ],
+    development: {
+      js: [
+        '/vendor/system.js',
+        '/jspm.config.dev.js',
+        '/bundles/deps.js',
+      ],
+      css: [
+        '/css/main.css',
+      ],
+    },
+    production: {
+      js: [
+        '/vendor/system.js',
+        '/jspm.config.prod.js',
+      ],
+      css: [
+        '/css/main.css',
+      ],
+    },
   };
 
   return function(req, res, next) {
@@ -71,14 +83,15 @@ export function render(app) {
       };
 
       const markup = React.renderToString(<Handler {...appProps(stateProps)} />);
+      const env = app.get('env');
 
       // The application component is rendered to static markup
       // and sent as response.
       const html = React.renderToStaticMarkup(
         <HtmlDocument
           markup={markup}
-          script={assetsLookup.js}
-          css={assetsLookup.css}
+          script={assetsLookup[env].js}
+          css={assetsLookup[env].css}
           dataRender={appProps(stateProps)}
           {...appProps(stateProps)}
         />

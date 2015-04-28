@@ -1,7 +1,5 @@
 node_modules
 app/messages
-public/jspm.config.js
 app/vendor
-app/jspm.config.js
-app/build.js
-app/build.js.map
+app/jspm.config*.js
+app/bundles
