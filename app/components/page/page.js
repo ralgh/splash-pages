@@ -7,12 +7,17 @@ class Page extends React.Component {
 
   static propTypes = {
     children: React.PropTypes.node.isRequired,
+    isInverted: React.PropTypes.bool,
+  }
+
+  static defaultProps = {
+    isInverted: true,
   }
 
   render() {
     return (
       <div className="site-wrapper">
-        <Header />
+        <Header isInverted={this.props.isInverted} />
         {this.props.children}
         <Footer />
       </div>

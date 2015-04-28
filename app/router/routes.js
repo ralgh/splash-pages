@@ -14,6 +14,7 @@ import FaqMerchants from '../pages/faq/merchants/merchants';
 import Home from '../pages/home/home';
 import About from '../pages/about/about';
 import Pricing from '../pages/pricing/pricing';
+import Stories from '../pages/stories/stories';
 
 import {defaultLocale} from '../helpers/locale-helper/locale-helper';
 
@@ -47,6 +48,11 @@ var config = [
       },
     },
   ],
+  [Stories, {name: 'stories'}, {
+    'en-GB': {
+      path: '/stories'
+    }
+  }],
   [null, null, {
       'en-GB': {
           path: '/faq',
