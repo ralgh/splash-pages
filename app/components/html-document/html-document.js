@@ -11,51 +11,7 @@ import localeMessages from '../../../config/messages';
 import {getLocalesForRouteName} from '../../router/routes';
 import {defaultLocale} from '../../helpers/locale-helper/locale-helper';
 import {homeRoute} from '../../router/routes';
-
-// Documentation from Google:
-//   https://developers.google.com/structured-data/customize/overview
-// Google's tool for validating the output:
-//   https://developers.google.com/structured-data/testing-tool/
-// Original Schema:
-//   http://schema.org/Organization
-function buildSchemaDotOrgOrganization(metadata, availableLocales) {
-  var organization = {
-    '@context': 'http://schema.org',
-    '@type': 'Organization',
-    url: 'https://gocardless.com/',
-    logo: metadata.logoUrlSquare,
-    sameAs: [],
-    contactPoint: [],
-  };
-
-  // Add social network links to sameAs
-  Object.keys(metadata.socialLinks).forEach(function(network) {
-    organization.sameAs.push(metadata.socialLinks[network]);
-  });
-
-  // Add contact details for office in each country
-  // See https://support.google.com/webmasters/answer/4620709?hl=en for supported contactType
-  availableLocales.map(function(locale) {
-    return [locale.slice(3, 5), locale];
-  }).forEach(function(countryCodeLocale) {
-    var countryCode = countryCodeLocale[0];
-    var locale = countryCodeLocale[1];
-    var contactTypes = localeMessages[locale].contact_types;
-    contactTypes.forEach(function(contactType) {
-      organization.contactPoint.push(
-        {
-          '@type': 'ContactPoint',
-          telephone: localeMessages[locale].phone_full,
-          email: localeMessages[locale].email,
-          contactType: contactType,
-          areaServed: countryCode,
-        }
-      );
-    });
-  });
-
-  return organization;
-}
+import {buildSchemaDotOrgForOrganization} from '../../../config/schema-dot-org';
 
 function relAlternateLinks(root, path, locales) {
   var defaultPath = locales[defaultLocale].path;
@@ -110,10 +66,11 @@ class HtmlDocument extends React.Component {
     availableLocales: React.PropTypes.array.isRequired,
     router: React.PropTypes.func.isRequired,
     path: React.PropTypes.string.isRequired,
+    config: React.PropTypes.object.isRequired,
   };
 
   getChildContext() {
-    const { locales, messages, formats, language, routeName, availableLocales, router, path } = this.props;
+    const { locales, messages, formats, language, routeName, availableLocales, router, path, config } = this.props;
 
     return {
       locales: locales,
@@ -124,27 +81,17 @@ class HtmlDocument extends React.Component {
       availableLocales: availableLocales,
       router: router,
       path: path,
+      config: config,
     };
   }
 
   render() {
-    const { messages, routeName, markup, script, css, language, config, path, availableLocales } = this.props;
+    const { messages, routeName, language, config, path, availableLocales, markup, script, css } = this.props;
     const isHome = routeName === homeRoute;
-    const metadata = _.merge({}, messages, config);
-    const schemaDotOrgOrganisation = buildSchemaDotOrgOrganization(metadata, availableLocales);
+    const schemaDotOrgOrganisation = buildSchemaDotOrgForOrganization(localeMessages, availableLocales, config);
     const routeLocales = getLocalesForRouteName(routeName);
     const pageHref = config.siteRoot + path;
-
-    var title;
-    var description;
-    if (!isHome && routeName) {
-      title = getIntlMessage(messages, `${routeName}.title`) + `- ${ config.siteName }`;
-    } else {
-      title = config.siteName;
-    }
-    if (routeName) {
-      description = getIntlMessage(messages, `${routeName}.description`);
-    }
+    const title = isHome ? config.siteName : `${getIntlMessage(messages, `${routeName}.title`)} - ${ config.siteName }`;
 
     return (
       <html className='no-js' lang={language}>
@@ -154,46 +101,45 @@ class HtmlDocument extends React.Component {
 
           <title>{ title }</title>
 
-          <meta name='description' content={ description } />
+          <meta name='description' content={ getIntlMessage(messages, `${routeName}.description`) } />
           <link href={ config.socialLinks.google } rel='publisher' />
           <meta name='og:image' content={ config.logoUrlSquare } />
           <meta name='og:image:secure_url' content={ config.logoUrlSquare } />
           <meta name='google-site-verification' content={ config.googleSiteVerification } />
           <link rel='canonical' href={ pageHref } />
 
-          { relAlternateLinks(config.siteRoot, path, routeLocales) }
+          { routeLocales &&
+              relAlternateLinks(config.siteRoot, path, routeLocales) }
 
-          { css.map((href, k) =>
-            <link key={k} rel='stylesheet' type='text/css' href={href} />)
-          }
+          { css.map((href, k) => <link key={k} rel='stylesheet' href={href} />) }
 
           <script dangerouslySetInnerHTML={{ __html: createHTML5Tags }} />
         </head>
 
         <body>
           { config.optimizelyId &&
-            <script src='//cdn.optimizely.com/js/${config.optimizelyId}.js'></script>
+              <script src='//cdn.optimizely.com/js/{config.optimizelyId}.js'></script>
           }
           <div dangerouslySetInnerHTML={{ __html: browseHappy }} />
 
           <div id='root' dangerouslySetInnerHTML={{ __html: markup }} />
 
-          <script dangerouslySetInnerHTML={{__html: 'window.app=' + JSON.stringify(this.props.dataRender) + ';' }} />
+          <script dangerouslySetInnerHTML={{ __html: 'window.app=' + JSON.stringify(this.props.dataRender) + ';' }} />
 
           { script.map((src, k) => <script key={k} src={src} />) }
 
           { isHome &&
-            <script type='application/ld+json'
-              dangerouslySetInnerHTML={{ __html: websiteSchema.replace('{PAGE}', path) }} />
+              <script type='application/ld+json'
+                dangerouslySetInnerHTML={{ __html: websiteSchema.replace('{PAGE}', path) }} />
           }
 
           { isHome &&
-            <script type='application/ld+json'
-              dangerouslySetInnerHTML={{ __html: schemaDotOrgOrganisation }} />
+              <script type='application/ld+json'
+                dangerouslySetInnerHTML={{ __html: schemaDotOrgOrganisation }} />
           }
 
           { config.googleTagManagerId &&
-            <div dangerouslySetInnerHTML={{__html: GTM.replace('{TAG_ID}', config.googleTagManagerId) }} />
+              <div dangerouslySetInnerHTML={{__html: GTM.replace('{TAG_ID}', config.googleTagManagerId) }} />
           }
         </body>
       </html>

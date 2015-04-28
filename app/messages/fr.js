@@ -31,6 +31,10 @@ export default {
     title: 'Contactez-nous',
     description: 'Contactez-nous'
   },
+  not_found: {
+    title: 'Pas Trouvé',
+    description: 'Vous ne trouvez pas votre page',
+  },
   home: {
     title: 'French home',
     description: 'French home',

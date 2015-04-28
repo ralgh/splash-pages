@@ -15,6 +15,7 @@ class App extends React.Component {
     language: React.PropTypes.string.isRequired,
     routeName: React.PropTypes.string.isRequired,
     availableLocales: React.PropTypes.array.isRequired,
+    config: React.PropTypes.object.isRequired,
   }
 
   static propTypes = {
@@ -27,10 +28,11 @@ class App extends React.Component {
     language: React.PropTypes.string.isRequired,
     routeName: React.PropTypes.string.isRequired,
     availableLocales: React.PropTypes.array.isRequired,
+    config: React.PropTypes.object.isRequired,
   }
 
   getChildContext() {
-    const { locales, messages, formats, language, routeName, availableLocales } = this.props;
+    const { locales, messages, formats, language, routeName, availableLocales, config } = this.props;
 
     return {
       locales: locales,
@@ -39,6 +41,7 @@ class App extends React.Component {
       language: language,
       routeName: routeName,
       availableLocales: availableLocales,
+      config: config,
     };
   }
 

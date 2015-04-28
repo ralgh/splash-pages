@@ -31,6 +31,10 @@ export default {
     'fr-FR': 'France',
     'fr-BE': 'Belgium',
   },
+  not_found: {
+    title: 'Not Found',
+    description: 'Page Not Found',
+  },
   pricing: {
     title: 'Pricing',
     description: 'Pricing',

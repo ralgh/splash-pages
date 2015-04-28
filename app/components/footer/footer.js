@@ -1,12 +1,24 @@
 import React from 'react';
 import _ from 'lodash';
 import Router from 'react-router';
-var {Link} = Router;
+const {Link} = Router;
 import IntlLink from '../intl-link/intl-link';
 import IntlMessage from '../intl-message/intl-message';
 import LinkExists from '../link-exists/link-exists';
 import {getLocalesForRouteName} from '../../router/routes';
 import {getIntlMessage} from '../intl/intl';
+import Popover from '../popover/popover';
+
+function buildAvailableLocales(currentLocale, siteLocales, messages) {
+  const availableLocales = Object.keys(siteLocales).map(function(locale) {
+    const isActive = currentLocale === locale;
+    const path = siteLocales[locale].path;
+    const name = getIntlMessage(messages, `country_names.${locale}`);
+    return {locale, isActive, path, name};
+  });
+
+  return _.sortBy(availableLocales, 'name');
+}
 
 class Footer extends React.Component {
   displayName = 'Footer'
@@ -20,14 +32,8 @@ class Footer extends React.Component {
   render() {
     const {routeName, locales, messages} = this.context;
 
-    var siteLocales = _.merge({}, getLocalesForRouteName('Home'), getLocalesForRouteName(routeName));
-
-    var availableLocales = _.sortBy(Object.keys(siteLocales).map(function(locale) {
-      var isActive = locales === locale;
-      var path = siteLocales[locale].path;
-      var name = getIntlMessage(messages, `country_names.${locale}`);
-      return {locale, isActive, path, name};
-    }), 'name');
+    const siteLocales = _.merge({}, getLocalesForRouteName('Home'), getLocalesForRouteName(routeName));
+    const availableLocales = buildAvailableLocales(locales, siteLocales, messages);
 
     return (
       <div className='page-footer u-color-invert u-padding-Tl'>
@@ -153,48 +159,49 @@ class Footer extends React.Component {
             <span className='u-text-light u-text-no-smoothing'><IntlMessage message='footer.currently_viewing' /></span>
             <img src={ `/images/icons/${ locales.toLowerCase() }-flag-icon@2x.png` } className='flag-icon u-margin-Hs' alt />
             <span className='u-relative'>
-              <popover-container>
-                <a popover-toggle href='#' className='u-text-semi u-link-invert'>
-                  <span className='popover-link popover-link--invert'>
-                    <IntlMessage message='country' />
-                  </span>
-                </a>
-                <ul className='u-text-xxs u-text-start u-padding-Vxs'>
-                  {
-                    availableLocales.map(function(locale) {
-                      return (
-                        <li className='u-text-semi' key={locale.name}>
-                          {
-                            locale.isActive && (
-                              <span className='u-padding-Vxs u-padding-Hm u-block'>
-                                <img src={ `/images/icons/${ locale.locale.toLowerCase() }-flag-icon@2x.png` } className='flag-icon--popover u-margin-Rs' alt={ locale.name } />
-                                <span className='u-color-p'>{ locale.name }</span>
-                                <img src='/images/icons/checkmark-icon.svg' className='u-fill-dark-green u-margin-Ls u-pull-end u-inline' alt='✓' />
-                              </span>
-                            ) || (
-                              <a className='u-padding-Vxs u-padding-Hm u-block u-link-complex' href={ locale.path }>
-                                <img src={ `/images/icons/${ locale.locale.toLowerCase() }-flag-icon@2x.png` } className='flag-icon--popover u-margin-Rs' alt={ locale.name } />
-                                <span className='u-link-complex-target'>{ locale.name }</span>
-                              </a>
-                            )
-                          }
-                        </li>
-                      );
-                    })
-                  }
+              <Popover toggle={
+                  (<a popover-toggle href='#' className='u-text-semi u-link-invert'>
+                     <span className='popover-link popover-link--invert'>
+                       <IntlMessage message='country' />
+                     </span>
+                   </a>)
+                }>
+                <div className='popover popover--above'>
+                  <ul className='u-text-xxs u-text-start u-padding-Vxs'>
+                    {
+                      availableLocales.map(function(locale) {
+                        return (
+                          <li className='u-text-semi' key={locale.name}>
+                            {
+                              locale.isActive && (
+                                <span className='u-padding-Vxs u-padding-Hm u-block'>
+                                  <img src={ `/images/icons/${ locale.locale.toLowerCase() }-flag-icon@2x.png` } className='flag-icon--popover u-margin-Rs' alt={ locale.name } />
+                                  <span className='u-color-p'>{ locale.name }</span>
+                                  <img src='/images/icons/checkmark-icon.svg' className='u-fill-dark-green u-margin-Ls u-pull-end u-inline' alt='✓' />
+                                </span>
+                              ) || (
+                                <a className='u-padding-Vxs u-padding-Hm u-block u-link-complex' href={ locale.path }>
+                                  <img src={ `/images/icons/${ locale.locale.toLowerCase() }-flag-icon@2x.png` } className='flag-icon--popover u-margin-Rs' alt={ locale.name } />
+                                  <span className='u-link-complex-target'>{ locale.name }</span>
+                                </a>
+                              )
+                            }
+                          </li>
+                        );
+                      })
+                    }
 
-                  <LinkExists to='europe'>
-                    <hr className='u-margin-Vs' />
-                    <div className='u-padding-Vxs u-padding-Hm'>
-                      <p className='u-color-p'><IntlMessage message='footer.eruope_cta' />{','}</p>
-                      <p className='u-color-p'><Link to='europe'><IntlMessage message='footer.europe_link' /></Link>
-                        <IntlMessage message='footer.europe_description' /></p>
-                    </div>
-                  </LinkExists>
-                </ul>
-                <popover-content className='popover popover--above'>
-                </popover-content>
-              </popover-container>
+                    <LinkExists to='europe'>
+                      <hr className='u-margin-Vs' />
+                      <div className='u-padding-Vxs u-padding-Hm'>
+                        <p className='u-color-p'><IntlMessage message='footer.eruope_cta' />{','}</p>
+                        <p className='u-color-p'><Link to='europe'><IntlMessage message='footer.europe_link' /></Link>
+                          <IntlMessage message='footer.europe_description' /></p>
+                      </div>
+                    </LinkExists>
+                  </ul>
+                </div>
+              </Popover>
             </span>
           </div>
         </div>
