@@ -60,7 +60,7 @@ function render(req, res, next) {
   });
 
   router.run(function(Handler, state) {
-    const routeName = _.result(_.find(state.routes.slice().reverse(), 'name'), 'name');
+    const routeName = _.result(_.findLast(state.routes.slice(), 'name'), 'name');
     const stateProps = {
       routeName: routeName || 'not_found',
     };

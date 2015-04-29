@@ -13,7 +13,7 @@ function renderApp() {
 
   router.run(function(Handler, state) {
     const mountNode = document.getElementById('root');
-    const routeName = _.result(_.find(state.routes.slice().reverse(), 'name'), 'name');
+    const routeName = _.result(_.findLast(state.routes.slice(), 'name'), 'name');
     const stateProps = _.extend(appState, {
       routeName: routeName || 'not_found',
     });
