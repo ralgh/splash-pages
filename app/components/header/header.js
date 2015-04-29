@@ -40,7 +40,7 @@ class Header extends React.Component {
       </ul>
     );
 
-    // const isInverted = this.props.isInverted;
+    const isInverted = this.props.isInverted;
 
     return (
       <div className='site-header-wrapper'>
