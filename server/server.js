@@ -10,9 +10,6 @@ import {availableLocales} from '../app/helpers/locale-helper/locale-helper';
 
 const app = express();
 
-app.set('views', path.join(__dirname, '..', 'views'));
-app.set('view engine', 'ejs');
-
 app.use(locale(availableLocales));
 
 app.use(favicon(path.join(__dirname, '..', 'public', 'favicon.ico')));
@@ -29,11 +26,15 @@ app.use(function(req, res, next) {
 });
 
 app.use(function(err, req, res) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: err,
-  });
+  console.error('Error on request %s %s', req.method, req.url);
+  console.error(err);
+  console.error(err.stack);
+
+  res.status(err.status || 500).send(`
+    <h1>${ err.message }</h1>
+    <h2>${ err.status }</h2>
+    <pre>${ err.stack }</pre>
+  `);
 });
 
 const port = normalizePort(process.env.PORT || '3000');
