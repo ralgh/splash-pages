@@ -18,15 +18,15 @@ System.config({
 
 System.config({
   "map": {
-    "babel": "npm:babel-core@5.1.11",
-    "babel-runtime": "npm:babel-runtime@5.1.11",
-    "classnames": "npm:classnames@1.2.1",
-    "core-js": "npm:core-js@0.8.4",
+    "babel": "npm:babel-core@5.1.13",
+    "babel-runtime": "npm:babel-runtime@5.1.13",
+    "classnames": "npm:classnames@1.2.2",
+    "core-js": "npm:core-js@0.9.4",
     "locale": "npm:locale@0.0.20",
     "lodash": "npm:lodash@3.7.0",
     "react": "npm:react@0.13.2",
     "react-intl": "npm:react-intl@1.2.0",
-    "react-router": "npm:react-router@0.13.2",
+    "react-router": "npm:react-router@0.13.3",
     "traceur": "github:jmcriffey/bower-traceur@0.0.87",
     "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.87",
     "url": "npm:url@0.10.3",
@@ -82,7 +82,13 @@ System.config({
     "npm:classnames@1.2.1": {
       "assert": "github:jspm/nodelibs-assert@0.1.0"
     },
+    "npm:classnames@1.2.2": {
+      "assert": "github:jspm/nodelibs-assert@0.1.0"
+    },
     "npm:core-js@0.8.4": {
+      "process": "github:jspm/nodelibs-process@0.1.1"
+    },
+    "npm:core-js@0.9.4": {
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:core-util-is@1.0.1": {
@@ -139,6 +145,12 @@ System.config({
     },
     "npm:react-router@0.13.2": {
       "classnames": "npm:classnames@1.1.4",
+      "object-assign": "npm:object-assign@2.0.0",
+      "process": "github:jspm/nodelibs-process@0.1.1",
+      "qs": "npm:qs@2.4.1",
+      "react": "npm:react@0.13.2"
+    },
+    "npm:react-router@0.13.3": {
       "object-assign": "npm:object-assign@2.0.0",
       "process": "github:jspm/nodelibs-process@0.1.1",
       "qs": "npm:qs@2.4.1",
