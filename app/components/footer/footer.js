@@ -159,48 +159,48 @@ class Footer extends React.Component {
             <span className='u-text-light u-text-no-smoothing'><IntlMessage message='footer.currently_viewing' /></span>
             <img src={ `/images/icons/${ locales.toLowerCase() }-flag-icon@2x.png` } className='flag-icon u-margin-Hs' alt />
             <span className='u-relative'>
-              <Popover toggle={
+              <Popover className='popover--above' toggle={
                   (<a popover-toggle href='#' className='u-text-semi u-link-invert'>
                      <span className='popover-link popover-link--invert'>
                        <IntlMessage message='country' />
                      </span>
                    </a>)
                 }>
-                <div className='popover popover--above'>
-                  <ul className='u-text-xxs u-text-start u-padding-Vxs'>
-                    {
-                      availableLocales.map(function(locale) {
-                        return (
-                          <li className='u-text-semi' key={locale.name}>
-                            {
-                              locale.isActive && (
-                                <span className='u-padding-Vxs u-padding-Hm u-block'>
-                                  <img src={ `/images/icons/${ locale.locale.toLowerCase() }-flag-icon@2x.png` } className='flag-icon--popover u-margin-Rs' alt={ locale.name } />
-                                  <span className='u-color-p'>{ locale.name }</span>
-                                  <img src='/images/icons/checkmark-icon.svg' className='u-fill-dark-green u-margin-Ls u-pull-end u-inline' alt='✓' />
-                                </span>
-                              ) || (
-                                <a className='u-padding-Vxs u-padding-Hm u-block u-link-complex' href={ locale.path }>
-                                  <img src={ `/images/icons/${ locale.locale.toLowerCase() }-flag-icon@2x.png` } className='flag-icon--popover u-margin-Rs' alt={ locale.name } />
-                                  <span className='u-link-complex-target'>{ locale.name }</span>
-                                </a>
-                              )
-                            }
-                          </li>
-                        );
-                      })
-                    }
+                <ul className='u-text-xxs u-text-start u-padding-Vxs'>
+                  {
+                    availableLocales.map(function(locale) {
+                      const flagSrc = `/images/icons/${ locale.locale.toLowerCase() }-flag-icon@2x.png`;
 
-                    <LinkExists to='europe'>
-                      <hr className='u-margin-Vs' />
-                      <div className='u-padding-Vxs u-padding-Hm'>
-                        <p className='u-color-p'><IntlMessage message='footer.eruope_cta' />{','}</p>
-                        <p className='u-color-p'><Link to='europe'><IntlMessage message='footer.europe_link' /></Link>
-                          <IntlMessage message='footer.europe_description' /></p>
-                      </div>
-                    </LinkExists>
-                  </ul>
-                </div>
+                      return (
+                        <li className='u-text-semi' key={locale.name}>
+                          {
+                            locale.isActive && (
+                              <span className='u-padding-Vxs u-padding-Hm u-block'>
+                                <img src={ flagSrc } className='flag-icon--popover u-margin-Rs' alt={ locale.name } />
+                                <span className='u-color-p'>{ locale.name }</span>
+                                <img src='/images/icons/checkmark-icon.svg' className='u-fill-dark-green u-margin-Ls u-pull-end u-inline' alt='✓' />
+                              </span>
+                            ) || (
+                              <a className='u-padding-Vxs u-padding-Hm u-block u-link-complex' href={ locale.path }>
+                                <img src={ flagSrc } className='flag-icon--popover u-margin-Rs' alt={ locale.name } />
+                                <span className='u-link-complex-target'>{ locale.name }</span>
+                              </a>
+                            )
+                          }
+                        </li>
+                      );
+                    })
+                  }
+
+                  <LinkExists to='europe'>
+                    <hr className='u-margin-Vs' />
+                    <div className='u-padding-Vxs u-padding-Hm'>
+                      <p className='u-color-p'><IntlMessage message='footer.eruope_cta' />{','}</p>
+                      <p className='u-color-p'><Link to='europe'><IntlMessage message='footer.europe_link' /></Link>
+                        <IntlMessage message='footer.europe_description' /></p>
+                    </div>
+                  </LinkExists>
+                </ul>
               </Popover>
             </span>
           </div>

@@ -1,5 +1,4 @@
 import React from 'react';
-import _ from 'lodash';
 
 import browseHappy from '../layout-static/browse-happy.js';
 import createHTML5Tags from '../layout-static/create-html5-tags.js';
@@ -15,15 +14,18 @@ import {buildSchemaDotOrgForOrganization} from '../../../config/schema-dot-org';
 
 function relAlternateLinks(root, path, locales) {
   var defaultPath = locales[defaultLocale].path;
+
   var alternates = Object.keys(locales).map(function(locale) {
     var localePath = locales[locale].path;
     return <link rel='alternate' hrefLang={locale} href={ root + localePath } key={locale} />;
   });
+
   if (defaultPath) {
     alternates.unshift(
       <link rel='alternate' href={root + defaultPath} hrefLang='x-default' key='x-default' />
     );
   }
+
   return alternates;
 }
 

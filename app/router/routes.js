@@ -129,22 +129,18 @@ function getRoutesForPages(pages, availableLocales) {
   });
 }
 
-function defaultRouteParams(route) {
-  route = _.cloneDeep(route);
-  delete route.path;
-  return route;
-}
-
 function findRelatedForRouteName(pages, routeName) {
   var foundPage;
+
   pages.some(function(page, index) {
     if (page[1] && page[1].name === routeName) {
       foundPage = pages[index];
     } else if (_.isArray(page[3])) {
       foundPage = findRelatedForRouteName(page[3], routeName);
     }
-    return !!(foundPage);
+    return !!foundPage;
   });
+
   if (foundPage) {
     foundPage = foundPage[2];
     foundPage = _.cloneDeep(foundPage);
@@ -152,6 +148,7 @@ function findRelatedForRouteName(pages, routeName) {
       foundPage[locale].path = pathToLocale(foundPage[locale].path, locale);
     });
   }
+
   return foundPage;
 }
 

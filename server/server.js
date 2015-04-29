@@ -21,18 +21,18 @@ app.use(express.static(path.join(__dirname, '..', 'app')));
 
 app.use(render);
 
-// catch 404 and forward to error handler
+// Catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+  const err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
 
-app.use(function(err, req, res, next) {
+app.use(function(err, req, res) {
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,
-    error: err
+    error: err,
   });
 });
 
@@ -75,20 +75,16 @@ server.on('listening', function onListening() {
 });
 
 function normalizePort(val) {
-  const port = parseInt(val, 10);
+  const portNum = parseInt(val, 10);
 
-  if (Number.isNaN(port)) {
-    // named pipe
+  // named pipe
+  if (Number.isNaN(portNum)) {
     return val;
   }
 
-  if (port >= 0) {
-    // port number
-    return port;
+  if (portNum >= 0) {
+    return portNum;
   }
 
   return false;
 }
-
-
-

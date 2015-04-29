@@ -22,9 +22,10 @@ function normalizeUrl(urlStr) {
 }
 
 function render(req, res, next) {
-  if (!req.headers['accept'] || !req.accepts('html')) {
-    return next();
-  }
+  const isHtml = req.headers.accept && req.accepts('html');
+
+  // Skip not found assets
+  if (!isHtml) { return next(); }
 
   const reqUrl = normalizeUrl(req.url);
   const reqPath = url.parse(reqUrl).path;
