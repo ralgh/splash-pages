@@ -1,11 +1,11 @@
 {
-  "site_port": "4444",
+  "sitePort": "4444",
   "notify": "http://localhost:4440/_server/restart-server",
-  "dev_port": "4004",
+  "devPort": "4004",
   "hostname": "localhost",
   "watchroot": "./app",
-  "runner_command": "node",
-  "runner_args": ["./index.js"],
-  "loading_site": "waiting on server restart.... <script>setTimeout('window.location.reload()', 700);</script>",
-  "dev_target": "http://localhost:4004"
+  "runnerCommand": "node",
+  "runnerArgs": ["./index.js"],
+  "loadingSite": "waiting on server restart.... <script>setTimeout('window.location.reload()', 700);</script>",
+  "devTarget": "http://localhost:4004"
 }

@@ -40,8 +40,8 @@ function ServerProcess(serverConfig) {
   };
   this.start = function() {
     var env = process.env;
-    env.PORT = serverConfig.dev_port;
-    this.child = ChildProcess.spawn(serverConfig.runner_command, serverConfig.runner_args, {env: env});
+    env.PORT = serverConfig.devPort;
+    this.child = ChildProcess.spawn(serverConfig.runnerCommand, serverConfig.runnerArgs, {env: env});
     this.pipeout(this.child.stdout, process.stdout, colours.grey);
     this.pipeout(this.child.stderr, process.stderr, colours.red);
     this.child.on('error', this.onerror);
@@ -65,9 +65,9 @@ var serverProcess = new ServerProcess(config);
 serverProcess.start();
 
 var builderProcess = new ServerProcess({
-  'port': '3001',
-  'runner_command': './node_modules/.bin/babel-node',
-  'runner_args': ['./webpack/server.js'],
+  port: '3001',
+  runnerCommand: './node_modules/.bin/babel-node',
+  runnerArgs: ['./webpack/server.js'],
 });
 builderProcess.start();
 
@@ -87,11 +87,11 @@ proxy.on('error', function(err, req, res) {
   if (err.code !== 'ECONNREFUSED') {
     console.log(err);
   }
-  res.send(config.loading_site);
+  res.send(config.loadingSite);
 });
 
 server.use(function(req, res) {
-  proxy.web(req, res, { target: config.dev_target });
+  proxy.web(req, res, { target: config.devTarget });
 });
 
 server.listen(options.port);

@@ -1,8 +1,8 @@
 // A webpack plugin to notify errors and warning when compiling
 
+// BELLs when something goes wrong!
 function notifyError(error) {
-  // BELLs when something goes wrong!
-  console.log("\x07" + error);
+  console.log('\x07' + error);
 }
 
 function notifyWarning(warning) {
@@ -18,7 +18,7 @@ function notifyStats(stats) {
   } else {
     console.log(stats.toString({
       chunks: false,
-      colors: true
+      colors: true,
     }));
   }
 }
