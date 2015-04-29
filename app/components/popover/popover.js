@@ -10,6 +10,10 @@ class Popover extends React.Component {
     className: React.PropTypes.string,
   }
 
+  static keyCodes = {
+    ESC: 27
+  }
+
   constructor(props) {
     super(props);
     this.state = { isActive: false };
@@ -29,7 +33,7 @@ class Popover extends React.Component {
   }
 
   handleKeyDown(event) {
-    if (event.which === 27) {
+    if (event.which === Popover.keyCodes.ESC) {
       this.hide();
     }
   }
