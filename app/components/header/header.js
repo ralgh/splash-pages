@@ -63,7 +63,7 @@ class Header extends React.Component {
             <nav className='nav u-pull-start u-color-primary u-text-xxs u-text-light u-text-no-smoothing'>
               <div className='nav__item u-relative'>
                 <popover-container>
-                  <span popover-toggle id='track-nav-products' className={'u-padding-Vl u-block u-link-clean ' + linkClass}>
+                  <span popover-toggle id='track-nav-products' className={`u-padding-Vl u-block u-link-clean ${linkClass}`}>
                     <div className='nav__item-link popover-link popover-link--invert'>
                       <IntlMessage message='header.our_products' />
                     </div>
@@ -75,7 +75,7 @@ class Header extends React.Component {
               </div>
               <div className='nav__item u-relative'>
                 <LinkExists to='about'>
-                  <Link to='about' id='track-nav-pricing' className={'u-padding-Vl u-block u-link-clean ${linkClass}'}>
+                  <Link to='about' id='track-nav-pricing' className={`u-padding-Vl u-block u-link-clean ${linkClass}`}>
                     <div className='nav__item-link'>
                       <IntlMessage message='about.title' />
                     </div>
@@ -84,7 +84,7 @@ class Header extends React.Component {
               </div>
               <div className='nav__item u-relative'>
                 <LinkExists to='stories'>
-                  <Link to='stories' id='track-nav-stories' className={'u-padding-Vl u-block u-link-clean ${linkClass}'}>
+                  <Link to='stories' id='track-nav-stories' className={`u-padding-Vl u-block u-link-clean ${linkClass}`}>
                     <div className='nav__item-link'>
                       <IntlMessage message='stories.title' />
                     </div>
@@ -94,7 +94,7 @@ class Header extends React.Component {
             </nav>
             <ul className='u-cf u-pull-start'>
               <li className='u-pull-start'>
-                <a href='/users/sign_in' id='track-nav-sign-in' className={'nav-btn btn btn--small ${isInverted ? "btn--invert-hollow" : "btn--hollow"} u-text-light u-text-xxs u-relative u-text-transform-none u-text-no-smoothing'}>
+                <a href='/users/sign_in' id='track-nav-sign-in' className={`nav-btn btn btn--small ${isInverted ? "btn--invert-hollow" : "btn--hollow"} u-text-light u-text-xxs u-relative u-text-transform-none u-text-no-smoothing`}>
                   <IntlMessage message='header.login_btn' />
                 </a>
               </li>

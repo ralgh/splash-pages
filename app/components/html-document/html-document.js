@@ -153,9 +153,6 @@ class HtmlDocument extends React.Component {
 
           { script.map((src, k) => <script key={k} src={src} />) }
 
-          <script type='application/javascript'
-            dangerouslySetInnerHTML={{ __html: 'System.import("client/bootstrap");' }} />
-
           { isHome &&
             <script type='application/ld+json'
               dangerouslySetInnerHTML={{ __html: websiteSchema.replace('{PAGE}', path) }} />

@@ -11,6 +11,13 @@ import availableLocales from '../config/available-locales';
 import config from '../config';
 import formats from '../config/formats';
 
+import path from 'path';
+import fs from 'fs';
+
+function getWebpackPaths() {
+  return JSON.parse(fs.readFileSync(path.join(__dirname, '/../app/bundles/webpack-stats.json')));
+}
+
 function normalizeUrl(urlStr) {
   urlStr = urlStr.toLowerCase() || '';
   var parsedUrl = url.parse(urlStr);
@@ -19,86 +26,61 @@ function normalizeUrl(urlStr) {
   return url.format(parsedUrl);
 }
 
-export function render(env) {
-  var assetsLookup = {
-    development: {
-      js: [
-        '/vendor/system.js',
-        '/jspm.config.dev.js',
-        '/bundles/deps.js',
-      ],
-      css: [
-        '/css/main.css',
-        '/css/fonts.css',
-        '/css/greenhouse-forms.css',
-      ],
+export function render(req, res, next) {
+  var reqUrl = normalizeUrl(req.url);
+  var reqPath = url.parse(reqUrl).path;
+
+  var reqLocale = pathLocale(reqPath);
+  reqLocale = normalizeLocale(reqLocale);
+  var routes = getRoutes(reqLocale.normalized, availableLocales);
+  var messages = _.cloneDeep(localeMessages[reqLocale.normalized]);
+
+  function appProps(props) {
+    return _.extend({
+      locales: reqLocale.normalized,
+      language: reqLocale.language,
+      messages: messages,
+      formats: formats,
+      config: config,
+      path: reqPath,
+      availableLocales: availableLocales,
+    }, props);
+  }
+
+  var router = Router.create({
+    onAbort: function(abortReason) {
+      var destination = router.makePath(abortReason.to, abortReason.params, abortReason.query);
+      console.log('Redirecting to:', destination);
+      res.redirect(302, destination);
     },
-    production: {
-      js: [
-        '/vendor/system.js',
-        '/jspm.config.prod.js',
-      ],
-      css: [
-        '/css/all.css',
-      ],
+    onError: function(err) {
+      next(err);
     },
-  };
+    routes: routes,
+    location: reqUrl,
+  });
 
-  return function(req, res, next) {
-    var reqUrl = normalizeUrl(req.url);
-    var reqPath = url.parse(reqUrl).path;
+  router.run(function(Handler, state) {
+    var stateName = _.result(_.find(state.routes.slice().reverse(), 'name'), 'name');
+    var stateProps = {
+      stateName: stateName,
+    };
 
-    var reqLocale = pathLocale(reqPath);
-    reqLocale = normalizeLocale(reqLocale);
-    var routes = getRoutes(reqLocale.normalized, availableLocales);
-    var messages = _.cloneDeep(localeMessages[reqLocale.normalized]);
+    const markup = React.renderToString(<Handler {...appProps(stateProps)} />);
+    const webpackUrls = getWebpackPaths();
 
-    function appProps(props) {
-      return _.extend({
-        locales: reqLocale.normalized,
-        language: reqLocale.language,
-        messages: messages,
-        formats: formats,
-        config: config,
-        path: reqPath,
-        availableLocales: availableLocales,
-      }, props);
-    }
-
-    var router = Router.create({
-      onAbort: function(abortReason) {
-        var destination = router.makePath(abortReason.to, abortReason.params, abortReason.query);
-        console.log('Redirecting to:', destination);
-        res.redirect(302, destination);
-      },
-      onError: function(err) {
-        next(err);
-      },
-      routes: routes,
-      location: reqUrl,
-    });
-
-    router.run(function(Handler, state) {
-      var stateName = _.result(_.find(state.routes.slice().reverse(), 'name'), 'name');
-      var stateProps = {
-        stateName: stateName,
-      };
-
-      const markup = React.renderToString(<Handler {...appProps(stateProps)} />);
-
-      // The application component is rendered to static markup
-      // and sent as response.
-      const html = React.renderToStaticMarkup(
-        <HtmlDocument
-          markup={markup}
-          script={assetsLookup[env].js}
-          css={assetsLookup[env].css}
-          dataRender={appProps(stateProps)}
-          {...appProps(stateProps)}
-        />
-      );
-      const doctype = '<!DOCTYPE html>';
-      res.send(doctype + html);
-    });
-  };
+    // The application component is rendered to static markup
+    // and sent as response.
+    const html = React.renderToStaticMarkup(
+      <HtmlDocument
+        markup={markup}
+        script={webpackUrls.script}
+        css={webpackUrls.css}
+        dataRender={appProps(stateProps)}
+        {...appProps(stateProps)}
+      />
+    );
+    const doctype = '<!DOCTYPE html>';
+    res.send(doctype + html);
+  });
 }
