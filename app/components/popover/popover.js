@@ -43,6 +43,8 @@ class Popover extends React.Component {
   show() {
     this.setState({ isActive: true });
 
+    // Wait until the element is focusable and prevent the opening click
+    // closing when it bubbles to the window
     setTimeout(() => {
       window.addEventListener('click', this.handleDocumentClick);
       this.findContentNode().focus();
