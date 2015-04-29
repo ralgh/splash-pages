@@ -3,7 +3,7 @@ import url from 'url';
 import _ from 'lodash';
 import React from 'react';
 import Router from 'react-router';
-import {pathLocale, normalizeLocale} from '../app/helpers/locale-helper/locale-helper';
+import {pathToLocale} from '../app/helpers/locale-helper/locale-helper';
 import HtmlDocument from '../app/components/html-document/html-document';
 import {getRoutes} from '../app/router/routes';
 import localeMessages from '../config/messages';
@@ -11,25 +11,27 @@ import availableLocales from '../config/available-locales';
 import config from '../config';
 import formats from '../config/formats';
 
-var scriptTags = ['/vendor/system.js', '/jspm.config.js', '/client/loader.js'];
-var cssLinks = ['/css/main.css', '/css/fonts.css'];
+const scriptTags = ['/vendor/system.js', '/jspm.config.js', '/client/loader.js'];
+const cssLinks = ['/css/main.css', '/css/fonts.css'];
 
 function normalizeUrl(urlStr) {
-  urlStr = urlStr.toLowerCase() || '';
-  var parsedUrl = url.parse(urlStr);
+  var parsedUrl = url.parse((urlStr || '').toLowerCase());
   parsedUrl.pathname = parsedUrl.pathname.replace(/^\/|\/$/g, '');
   parsedUrl.pathname = '/' + parsedUrl.pathname;
   return url.format(parsedUrl);
 }
 
 function render(req, res, next) {
-  var reqUrl = normalizeUrl(req.url);
-  var reqPath = url.parse(reqUrl).path;
+  const isHtml = req.headers.accept && req.accepts('html');
 
-  var reqLocale = pathLocale(reqPath);
-  reqLocale = normalizeLocale(reqLocale);
-  var routes = getRoutes(reqLocale.normalized, availableLocales);
-  var messages = _.cloneDeep(localeMessages[reqLocale.normalized]);
+  // Skip not found assets
+  if (!isHtml) { return next(); }
+
+  const reqUrl = normalizeUrl(req.url);
+  const reqPath = url.parse(reqUrl).path;
+  const reqLocale = pathToLocale(reqPath, availableLocales);
+  const routes = getRoutes(reqLocale.normalized, availableLocales);
+  const messages = _.cloneDeep(localeMessages[reqLocale.normalized]);
 
   function appProps(props) {
     return _.extend({
@@ -43,9 +45,10 @@ function render(req, res, next) {
     }, props);
   }
 
-  var router = Router.create({
+  const router = Router.create({
     onAbort: function(abortReason) {
-      var destination = router.makePath(abortReason.to, abortReason.params, abortReason.query);
+      const destination = router.makePath(abortReason.to,
+        abortReason.params, abortReason.query);
       console.log('Redirecting to:', destination);
       res.redirect(302, destination);
     },
@@ -57,9 +60,9 @@ function render(req, res, next) {
   });
 
   router.run(function(Handler, state) {
-    var stateName = _.result(_.find(state.routes.slice().reverse(), 'name'), 'name');
-    var stateProps = {
-      stateName: stateName,
+    const routeName = _.result(_.findLast(state.routes.slice(), 'name'), 'name');
+    const stateProps = {
+      routeName: routeName || 'not_found',
     };
 
     const markup = React.renderToString(<Handler {...appProps(stateProps)} />);
@@ -71,9 +74,9 @@ function render(req, res, next) {
         markup={markup}
         script={scriptTags}
         css={cssLinks}
+        router={router}
         dataRender={appProps(stateProps)}
-        {...appProps(stateProps)}
-      />
+        {...appProps(stateProps)} />
     );
     const doctype = '<!DOCTYPE html>';
     res.send(doctype + html);

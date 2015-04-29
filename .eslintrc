@@ -103,5 +103,7 @@
     "strict": 2,
     "use-isnan": 2,
     "valid-typeof": 2,
-    "wrap-iife": 2,    }
+    "wrap-iife": 2,
+    "no-process-exit": 0
+  }
 }

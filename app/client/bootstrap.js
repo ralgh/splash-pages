@@ -4,19 +4,18 @@ import {getRoutes} from '../router/routes';
 import _ from 'lodash';
 
 function renderApp() {
-  var appState = window.app;
-  var routes = getRoutes(appState.locales, appState.availableLocales);
-  var mountNode = document.getElementById('root');
-
-  var router = Router.create({
+  const appState = window.app;
+  const routes = getRoutes(appState.locales, appState.availableLocales);
+  const router = Router.create({
     routes: routes,
     location: Router.HistoryLocation,
   });
 
   router.run(function(Handler, state) {
-    var stateName = _.result(_.find(state.routes.slice().reverse(), 'name'), 'name');
-    var stateProps = _.extend(appState, {
-      stateName: stateName,
+    const mountNode = document.getElementById('root');
+    const routeName = _.result(_.findLast(state.routes.slice(), 'name'), 'name');
+    const stateProps = _.extend(appState, {
+      routeName: routeName || 'not_found',
     });
 
     React.render(<Handler {...stateProps} />, mountNode, () => {
