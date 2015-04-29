@@ -1,6 +1,0 @@
-#!/bin/sh
-
-cp app/jspm.config.dev.js app/jspm.config.backup.js
-jspm bundle --minify client/bootstrap --inject app/bundles/prod.js
-mv app/jspm.config.dev.js app/jspm.config.prod.js
-mv app/jspm.config.backup.js app/jspm.config.dev.js

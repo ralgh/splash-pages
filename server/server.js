@@ -15,7 +15,7 @@ server.use(locale(availableLocales));
 server.use(express.static(path.join(__dirname, '..', 'public')));
 server.use(express.static(path.join(__dirname, '..', 'app')));
 
-server.use(render(server));
+server.use(render);
 
 server.use(compression());
 

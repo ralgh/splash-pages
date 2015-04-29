@@ -23,7 +23,7 @@ var options = {
   port: argv.p || argv.port || 4440,
 };
 
-function ServerProcess() {
+function ServerProcess(serverConfig) {
   this.alive = false;
   this.onerror = function(err) {
     console.log(colours.red('Child process error: '), err);
@@ -40,8 +40,8 @@ function ServerProcess() {
   };
   this.start = function() {
     var env = process.env;
-    env.PORT = config.dev_port;
-    this.child = ChildProcess.spawn(config.runner_command, config.runner_args, {env: env});
+    env.PORT = serverConfig.dev_port;
+    this.child = ChildProcess.spawn(serverConfig.runner_command, serverConfig.runner_args, {env: env});
     this.pipeout(this.child.stdout, process.stdout, colours.grey);
     this.pipeout(this.child.stderr, process.stderr, colours.red);
     this.child.on('error', this.onerror);
@@ -61,8 +61,15 @@ function ServerProcess() {
   };
 }
 
-var serverProcess = new ServerProcess();
+var serverProcess = new ServerProcess(config);
 serverProcess.start();
+
+var builderProcess = new ServerProcess({
+  'port': '3001',
+  'runner_command': './node_modules/.bin/babel-node',
+  'runner_args': ['./webpack/server.js'],
+});
+builderProcess.start();
 
 var server = express();
 

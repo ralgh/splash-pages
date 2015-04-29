@@ -10,6 +10,10 @@ export default class AboutEn extends React.Component {
         <h1>About</h1>
         <p>
           GoCardless is the UK’s leading direct debit provider.
+          GoCardless is the UK’s leading direct debit provider.
+          <br />
+          GoCardless is the UK’s leading direct debit provider.
+          GoCardless is the UK’s leading direct debit provider.
           GoCardless is the UK’s leading Direct Debit provider.
           We collect more than half a billion pounds each year for over 30,000 businesses and organisations
           including Greater Anglia Trains, Crowdcube and Funding Circle, with year-on-year growth of 600%.
