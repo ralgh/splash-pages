@@ -52,11 +52,11 @@ class Header extends React.Component {
     const linkClass = isInverted ? 'u-link-invert' : 'u-link-default';
 
     return (
-      <div className='site-header-wrapper'>
+      <div className={isInverted && 'site-header-wrapper'}>
         <div className='site-header site-header--invert u-relative u-cf'>
           <div className='u-pull-start'>
             <Link to='home' id='track-nav-home' className='header-logo u-relative u-block u-padding-Vl'>
-              <Logo className='site-logo__image u-fill-invert' />
+              <Logo className={'site-logo__image ${isInverted ? "u-fill-invert" : "u-fill-primary"}'} />
             </Link>
           </div>
           <div className='u-pull-end align-btn-small'>

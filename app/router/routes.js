@@ -15,6 +15,7 @@ import Home from '../pages/home/home';
 import About from '../pages/about/about';
 import Pricing from '../pages/pricing/pricing';
 import Stories from '../pages/stories/stories';
+import Story from '../pages/stories/story';
 
 import {defaultLocale} from '../helpers/locale-helper/locale-helper';
 
@@ -53,19 +54,22 @@ var config = [
       path: '/stories'
     }
   }],
+  [Story, {name: 'story'}, {
+    'en-GB': {
+      path: '/stories/:storyId',
+    },
+  }],
   [null, null, {
       'en-GB': {
           path: '/faq',
           redirectTo: 'faq_merchants',
       },
-    },
-  ],
+  }],
   [FaqMerchants, { name: 'faq_merchants' }, {
       'en-GB': {
           path: '/faq/merchants',
       },
-    },
-  ],
+  }],
 ];
 
 function pathToLocale(path, locale) {

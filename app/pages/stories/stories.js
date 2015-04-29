@@ -2,6 +2,9 @@ import React from 'react';
 import Page from '../../components/page/page';
 import StartTakingPaymentsCTA from '../../components/start-taking-payments/start-taking-payments';
 
+import ReactRouter from 'react-router';
+var { Link } = ReactRouter;
+
 import AllStories from './stories-data';
 
 var EnStories = AllStories['en'];
@@ -71,7 +74,7 @@ export default class Stories extends React.Component {
           <div className='grid u-padding-Vxl'>
             {SmallBlurbStories.map(function(storyKey) {
               return (
-                <a key={storyKey} href={'/stories/' + storyKey} className='grid__cell u-size-1of3 u-link-clean u-padding-Rxs u-padding-Bm'>
+                <Link key={storyKey} to='story' params={{storyId: storyKey}} className='grid__cell u-size-1of3 u-link-clean u-padding-Rxs u-padding-Bm'>
                   <div className='product-grid__container u-text-center u-padding-Vl'>
                     <i role='img' aria-label={storyKey} className={EnStories[storyKey].blurb.img}></i>
                     <p className='u-size-3of4 u-center u-color-p u-margin-Txxs'>
@@ -79,7 +82,7 @@ export default class Stories extends React.Component {
                     </p>
                   </div>
                   <div className='stories-item__btn btn u-size-full'>Read the case study</div>
-                </a>
+                </Link>
               );
             })}
           </div>

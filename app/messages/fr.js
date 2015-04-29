@@ -37,6 +37,10 @@ export default {
     header1: 'Simplifions les paiements récurrents',
     header2: '',
   },
+  story: {
+    title: 'Story',
+    description: 'customer stories',
+  },
   pricing: {
     title: 'Tarifs',
     description: 'Tarifs',

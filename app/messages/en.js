@@ -51,6 +51,10 @@ export default {
     title: 'Contact Sales',
     description: 'Contact Sales'
   },
+  story: {
+    title: 'Story',
+    description: 'customer stories',
+  },
   features: {
     title: 'GoCardless',
     description: 'GoCardless',
