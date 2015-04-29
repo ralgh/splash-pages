@@ -19,7 +19,7 @@ function normalizeUrl(urlStr) {
   return url.format(parsedUrl);
 }
 
-export function render(app) {
+export function render(env) {
   var assetsLookup = {
     development: {
       js: [
@@ -85,7 +85,6 @@ export function render(app) {
       };
 
       const markup = React.renderToString(<Handler {...appProps(stateProps)} />);
-      const env = app.get('env');
 
       // The application component is rendered to static markup
       // and sent as response.
