@@ -1,9 +1,6 @@
 import React from 'react';
 import Translation from '../../components/translation/translation';
 
-import Router from 'react-router';
-var { Link } = Router;
-
 export default class PricingEn extends React.Component {
   displayName = 'PricingEn'
 

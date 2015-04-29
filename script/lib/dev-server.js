@@ -45,7 +45,6 @@ function ServerProcess() {
   };
   this.start = function() {
     var env = process.env;
-    var self = this;
     env.PORT = config.dev_port;
     this.lastRestart = (new Date()).getTime();
     this.child = ChildProcess.spawn(config.runner_command, config.runner_args, {env: env});
@@ -69,10 +68,10 @@ function ServerProcess() {
   };
   this.hasError = function() {
     return (this.lastRestart <= this.lastErrorTime);
-  }
+  };
   this.getError = function() {
     return this.hasError() ? this.lastError : '';
-  }
+  };
 }
 
 
