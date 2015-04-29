@@ -23,7 +23,7 @@ var options = {
   port: argv.p || argv.port || 4440,
 };
 
-function ServerProcess() {
+function ServerProcess(serverConfig) {
   this.alive = false;
   this.onerror = function(err) {
     console.log(colours.red('Child process error: '), err);
@@ -45,10 +45,10 @@ function ServerProcess() {
   };
   this.start = function() {
     var env = process.env;
-    var self = this;
     env.PORT = config.dev_port;
     this.lastRestart = (new Date()).getTime();
-    this.child = ChildProcess.spawn(config.runner_command, config.runner_args, {env: env});
+    env.PORT = serverConfig.devPort;
+    this.child = ChildProcess.spawn(serverConfig.runnerCommand, serverConfig.runnerArgs, {env: env});
     this.lastError = '';
     this.pipeout(this.child.stdout, process.stdout, colours.grey, false);
     this.pipeout(this.child.stderr, process.stderr, colours.red, true);
@@ -69,18 +69,26 @@ function ServerProcess() {
   };
   this.hasError = function() {
     return (this.lastRestart <= this.lastErrorTime);
-  }
+  };
   this.getError = function() {
     return this.hasError() ? this.lastError : '';
-  }
+  };
 }
 
 
-var serverProcess = new ServerProcess();
+var serverProcess = new ServerProcess(config);
 serverProcess.start();
+
+var builderProcess = new ServerProcess({
+  port: '3001',
+  runnerCommand: './node_modules/.bin/babel-node',
+  runnerArgs: ['./webpack/server.js'],
+});
+builderProcess.start();
 
 process.on('beforeExit', function() {
   serverProcess.kill();
+  builderProcess.kill();
 });
 
 var server = express();
@@ -100,7 +108,7 @@ proxy.on('error', function(err, req, res) {
     console.log(err);
   }
   if (!serverProcess.hasError()) {
-    res.send(config.loading_site);
+    res.send(config.loadingSite);
   } else {
     var errorMessage = serverProcess.getError();
     errorMessage = errorMessage.replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -109,8 +117,9 @@ proxy.on('error', function(err, req, res) {
 });
 
 server.use(function(req, res) {
-  proxy.web(req, res, { target: config.dev_target });
+  proxy.web(req, res, { target: config.devTarget });
 });
 
 server.listen(options.port);
 console.log(colours.yellow('Dev Server Listening on http://0.0.0.0:' + options.port + '/'));
+
