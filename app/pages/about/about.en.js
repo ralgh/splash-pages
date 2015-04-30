@@ -80,7 +80,7 @@ export default class AboutEn extends React.Component {
               </div>
               <div className='grid__cell u-size-2of3'>
                   <span className='u-text-heavy u-color-heading'>GoCardless is: </span><span className='u-color-p'>
-                  {team.join("                   \n")}
+                  {team.join('\n')}
                 </span>
               </div>
             </div>

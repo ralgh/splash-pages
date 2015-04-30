@@ -94,7 +94,7 @@ class Header extends React.Component {
             </nav>
             <ul className='u-cf u-pull-start'>
               <li className='u-pull-start'>
-                <a href='/users/sign_in' id='track-nav-sign-in' className={`nav-btn btn btn--small ${isInverted ? "btn--invert-hollow" : "btn--hollow"} u-text-light u-text-xxs u-relative u-text-transform-none u-text-no-smoothing`}>
+                <a href='/users/sign_in' id='track-nav-sign-in' className={`nav-btn btn btn--small ${isInverted ? 'btn--invert-hollow' : 'btn--hollow'} u-text-light u-text-xxs u-relative u-text-transform-none u-text-no-smoothing`}>
                   <IntlMessage message='header.login_btn' />
                 </a>
               </li>
