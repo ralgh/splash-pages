@@ -1,8 +1,8 @@
 import WebpackDevServer from 'webpack-dev-server';
 import webpack from 'webpack';
 import devConfig from './dev.config';
-import nodemon from 'nodemon';
 import fs from 'fs';
+import path from 'path';
 
 const devEnv = require('../config/dev-environment');
 
@@ -16,8 +16,8 @@ console.log('proxyPath', proxyPath);
 
 const serverOptions = {
   contentBase: `http://${WEBPACK_HOST}:${WEBPACK_PORT}`,
-  quiet: false,
-  noInfo: false,
+  quiet: true,
+  noInfo: true,
   hot: true,
   publicPath: config.output.publicPath,
   proxy: {
@@ -32,14 +32,12 @@ webpackDevServer.listen(WEBPACK_PORT, WEBPACK_HOST, () => {
   console.log('Webpack development server listening on %s:%s', WEBPACK_HOST, WEBPACK_PORT);
 });
 
-compiler.watch(100, function(err, stats) {
-  if (!err) {
-    var updateTime = (new Date()).getTime().toString();
-    fs.writeFile(path.join('..', 'restart.txt'), updateTime, function(err){
-      if (err) {
-        console.error(err);
-      }
-    });
-  }
+compiler.plugin('done', function(stats) {
+  var updateTime = (new Date()).getTime().toString();
+  fs.writeFile(path.join('..', 'restart.txt'), updateTime, function(err){
+    if (err) {
+      console.error(err);
+    }
+  });
 });
 

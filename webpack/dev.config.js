@@ -27,7 +27,7 @@ export default function(WEBPACK_HOST, WEBPACK_PORT) {
         { test: /\.(jpe?g|png|gif|svg)$/, loader: 'file' },
         { test: /\.js$/, exclude: /node_modules/, loaders: ['react-hot', 'babel-loader'] },
         { test: /\.scss$/, loader: 'style!css!sass' },
-        { test: /\.css$/, loader: 'style!css!raw!' },
+        { test: /\.css$/, loader: 'style!css!raw' },
       ],
     },
     progress: true,
