@@ -185,7 +185,7 @@ class Footer extends React.Component {
                               <span className='u-padding-Vxs u-padding-Hm u-block'>
                                 <img src={ flagSrc } className='flag-icon--popover u-margin-Rs' alt={ locale.name } />
                                 <span className='u-color-p'>{ locale.name }</span>
-                                <img src='/images/icons/checkmark-icon.svg' className='u-fill-dark-green u-margin-Ls u-pull-end u-inline' alt='✓' />
+                                <CheckmarkIcon className='u-fill-dark-green u-margin-Ls u-pull-end u-inline' alt='✓' />
                               </span>
                             ) || (
                               <a className='u-padding-Vxs u-padding-Hm u-block u-link-complex' href={ locale.path }>
