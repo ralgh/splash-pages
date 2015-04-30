@@ -3,4 +3,4 @@
 
 set -e errexit
 
-./script/lint
+node_modules/.bin/eslint .

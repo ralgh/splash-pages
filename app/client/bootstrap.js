@@ -3,7 +3,7 @@ import Router from 'react-router';
 import {getRoutes} from '../router/routes';
 import _ from 'lodash';
 
-import intlPolyfill from '../helpers/intl-polyfill/intl-polyfill';
+import { loadIntlPolyfill } from '../helpers/intl-polyfill/intl-polyfill';
 
 // Load CSS in dev mode dynamically.
 if (process.env.BROWSER) {
@@ -34,6 +34,7 @@ function renderApp() {
   });
 }
 
-intlPolyfill(window.app.availableLocales);
+loadIntlPolyfill(window.app.availableLocales);
 
 renderApp();
+

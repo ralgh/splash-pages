@@ -4,7 +4,7 @@ export default class CheckMark extends React.Component {
   displayName = 'CheckMark'
 
   static propTypes = {
-    className: React.PropTypes.string.isRequired
+    className: React.PropTypes.string.isRequired,
   };
 
   render() {

@@ -32,9 +32,9 @@ webpackDevServer.listen(WEBPACK_PORT, WEBPACK_HOST, () => {
   console.log('Webpack development server listening on %s:%s', WEBPACK_HOST, WEBPACK_PORT);
 });
 
-compiler.plugin('done', function(stats) {
+compiler.plugin('done', function() {
   var updateTime = (new Date()).getTime().toString();
-  fs.writeFile(path.join('..', 'restart.txt'), updateTime, function(err){
+  fs.writeFile(path.join('..', 'restart.txt'), updateTime, function(err) {
     if (err) {
       console.error(err);
     }

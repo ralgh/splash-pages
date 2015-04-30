@@ -8,7 +8,6 @@ var colours = require('colors/safe');
 
 var argv = require('minimist')(process.argv.slice(2));
 
-var fs = require('fs');
 var path = require('path');
 var compression = require('compression');
 var ChildProcess = require('child_process');
@@ -65,7 +64,7 @@ function ServerProcess(serverConfig) {
 
 var serverProcess = new ServerProcess({
   runnerCommand: 'node',
-  runnerArgs: ['./index'],  
+  runnerArgs: ['./index'],
 });
 serverProcess.start();
 
