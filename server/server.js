@@ -33,6 +33,12 @@ app.use(function(err, req, res) {
   `);
 });
 
+app.use(function(req, res, next) {
+  const err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
+
 const server = http.createServer(app);
 
 function portType(portPipe) {

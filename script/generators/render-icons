@@ -1,5 +1,7 @@
-var fs = require('fs');
-var glob = require('glob');
+#!/usr/bin/env babel-node
+
+import fs from 'fs';
+import glob from 'glob';
 
 function renderIcon(className, svgIcon) {
   svgIcon = svgIcon.replace(/<svg /, '<svg className={this.props.className} ');
