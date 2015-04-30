@@ -35,20 +35,36 @@ app.use(render);
 app.use(compression());
 app.set('port', normalisePort(devEnv.backendPort || process.env.PORT));
 
-// Catch 404 and forward to error handler
 app.use(function(req, res, next) {
   const err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
 
-app.use(function(err, req, res) {
+function logErrors(err, req, res, next) {
+  console.error(err.stack);
+  next(err);
+}
+
+function clientErrorHandler(err, req, res, next) {
+  if (req.xhr) {
+    res.status(err.status || 500).send({ error: 'Something blew up!' });
+  } else {
+    next(err);
+  }
+}
+
+function errorHandler(err, req, res) {
   res.status(err.status || 500).send(`
     <h1>${ err.message }</h1>
     <h2>${ err.status }</h2>
     <pre>${ err.stack }</pre>
   `);
-});
+}
+
+app.use(logErrors);
+app.use(clientErrorHandler);
+app.use(errorHandler);
 
 const server = http.createServer(app);
 

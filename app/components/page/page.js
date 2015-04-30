@@ -13,9 +13,7 @@ class Page extends React.Component {
     return (
       <div className="site-wrapper">
         <Header />
-          <div className="site-container u-text-center u-padding-Vxxl">
-            {this.props.children}
-          </div>
+        {this.props.children}
         <Footer />
       </div>
     );

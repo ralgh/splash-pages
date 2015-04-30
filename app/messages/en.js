@@ -2,6 +2,12 @@ export default {
   cta: {
     basic: 'Start taking payments',
     pro: 'Contact sales',
+    pro_signup: 'Sign Up Now',
+    more: 'Learn More',
+  },
+  hero: {
+    header: 'Recurring payments made simple',
+    desc: 'GoCardless makes collecting by Direct Debit easy for everyone from individiuals to multi-national corporations',
   },
   header: {
     our_products: 'Our products',
@@ -42,7 +48,9 @@ export default {
   about: {
     title: 'About us',
     description: 'About us',
-    link: 'about'
+    link: 'about',
+    header1: 'We\'re creating a new payment',
+    header2: 'network for the internet',
   },
   home: {
     title: 'Home',
@@ -69,6 +77,10 @@ export default {
   security: {
     title: 'Security',
     description: 'Security',
+  },
+  stories: {
+    title: 'Stories',
+    description: 'Stories',
   },
   europe: {
     title: 'SEPA',

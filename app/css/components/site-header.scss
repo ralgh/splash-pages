@@ -1,7 +1,13 @@
 @import '../mixins/breakpoints-mixin';
 
 .site-header {
+  margin: 0 auto;
   max-width: $site-max-width;
   min-width: $site-min-width;
   z-index: 1;
+}
+
+.site-header-wrapper {
+  position: absolute;
+  width: 100%;
 }

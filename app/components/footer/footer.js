@@ -6,7 +6,7 @@ import IntlLink from '../intl-link/intl-link';
 import IntlMessage from '../intl-message/intl-message';
 import LinkExists from '../link-exists/link-exists';
 
-import CheckmarkIcon from '../../icons/icon/checkmark';
+import CheckmarkIcon from '../../icons/svg/checkmark';
 
 import {getLocalesForRouteName, homeRoute} from '../../router/routes';
 import {getIntlMessage} from '../intl/intl';

@@ -1,5 +1,7 @@
 import React from 'react';
 import Page from '../../components/page/page';
+import PricingEn from './pricing.en';
+import PricingFr from './pricing.fr';
 
 export default class Pricing extends React.Component {
   displayName = 'Pricing'
@@ -7,7 +9,8 @@ export default class Pricing extends React.Component {
   render() {
     return (
       <Page>
-        <h1>Pricing</h1>
+        <PricingEn />
+        <PricingFr />
       </Page>
     );
   }
