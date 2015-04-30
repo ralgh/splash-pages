@@ -3,6 +3,7 @@ import webpack from 'webpack';
 import devConfig from './dev.config';
 import fs from 'fs';
 import path from 'path';
+import touch from 'touch';
 
 const devEnv = require('../config/dev-environment');
 
@@ -33,8 +34,7 @@ webpackDevServer.listen(WEBPACK_PORT, WEBPACK_HOST, () => {
 });
 
 compiler.plugin('done', function() {
-  var updateTime = (new Date()).getTime().toString();
-  fs.writeFile(path.join(__dirname, '..', 'restart.txt'), updateTime, function(err) {
+  touch(path.join(__dirname, '..', 'restart.txt'), {mtime: true}, function(err) {
     if (err) {
       console.error(err);
     }
