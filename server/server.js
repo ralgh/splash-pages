@@ -42,15 +42,17 @@ app.set('port', port);
 
 const server = http.createServer(app);
 
+function portType(portPipe) {
+  return typeof portPipe === 'string' ? 'Pipe ' + portPipe : 'Port ' + portPipe;
+}
+
 server.listen(port);
 server.on('error', function onError(error) {
   if (error.syscall !== 'listen') {
     throw error;
   }
 
-  const bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
+  const bind = portType(port);
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
@@ -69,23 +71,17 @@ server.on('error', function onError(error) {
 
 server.on('listening', function onListening() {
   const addr = server.address();
-  const bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
-  console.log('Listening on http://localhost:' + bind);
+  const bind = typeof addr === 'string' ? addr : addr.port;
+  const type = portType(bind);
+  console.log(`Listening on http:\/\/localhost:${bind} (${type})`);
 });
 
 function normalizePort(val) {
   const portNum = parseInt(val, 10);
 
   // named pipe
-  if (Number.isNaN(portNum)) {
-    return val;
-  }
-
-  if (portNum >= 0) {
-    return portNum;
-  }
+  if (Number.isNaN(portNum)) { return val; }
+  if (portNum >= 0) { return portNum; }
 
   return false;
 }
