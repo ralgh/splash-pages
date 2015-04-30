@@ -6,6 +6,6 @@ set -e errexit
 
 ulimit -n 10240
 
-nodemon ./index.js --ignore '*' --watch ./restart.txt --ext txt &
+nodemon ./index.js --watch 'env' --ext 'txt' &
 
 babel-node ./webpack/server.js
