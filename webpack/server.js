@@ -33,8 +33,9 @@ webpackDevServer.listen(WEBPACK_PORT, WEBPACK_HOST, () => {
   console.log('Webpack development server listening on %s:%s', WEBPACK_HOST, WEBPACK_PORT);
 });
 
-compiler.plugin('done', function() {
-  touch(path.join(__dirname, '..', 'restart.txt'), {mtime: true}, function(err) {
+compiler.plugin('compile', function() {
+  console.log('compiling - writing update file');
+  touch(path.join(__dirname, '..', 'env', 'restart.txt'), { mtime: true }, function(err) {
     if (err) {
       console.error(err);
     }
