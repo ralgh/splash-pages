@@ -1,0 +1,8 @@
+#!/bin/bash
+# Usage: script/run-production
+
+set -e errexit
+
+ulimit -n 10240
+
+node ./index.js

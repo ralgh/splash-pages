@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "description": "React",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "./script/start",
+    "run-production": "./script/run-production",
     "build": "jspm bundle-sfx app/client/bootstrap --minify --skip-source-maps --output public/build.js",
     "lint": "eslint . || true",
     "test": "./script/test"
