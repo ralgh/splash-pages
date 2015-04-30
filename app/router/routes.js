@@ -73,14 +73,15 @@ var config = [
 ];
 
 function pathToLocale(path, locale) {
+  var localePath;
   if (locale === defaultLocale) {
-    return path;
+    localePath = path;
+  } else {
+    localePath = ['/', locale.toLowerCase(), path].join('/').replace(/\/\//g, '/');
   }
-}
-
-function pathToLocale(path, locale) {
-  if (locale === defaultLocale) { return path; }
-  return ['/', locale.toLowerCase(), path].join('/').replace(/\/\//g, '/');
+  localePath = localePath.replace(/^\/|\/$/g, '');
+  localePath = '/' + localePath;
+  return localePath;
 }
 
 function validatePages(pages) {
@@ -101,8 +102,6 @@ function flattenPagesForLocale(pages, locale, availableLocales) {
     if (locale in page[2]) {
       page[2] = page[2][locale];
       page[2].path = pathToLocale(page[2].path, locale);
-      page[2].path = page[2].path.replace(/^\/|\/$/g, '');
-      page[2].path = '/' + page[2].path;
       if (_.isArray(page[3])) {
         page[3] = flattenPagesForLocale(page[3], locale, availableLocales);
       }
@@ -120,7 +119,7 @@ function getRoutesForPages(pages, availableLocales) {
           <Redirect
             from={page[2].path}
             to={page[2].redirectTo}
-            key={page[2].name + '_redirect'}>
+            key={page[2].redirectTo + '_redirect'}>
             {page[3] && getRoutesForPages(page[3], availableLocales) || null}
           </Redirect>
         ),
@@ -138,6 +137,33 @@ function getRoutesForPages(pages, availableLocales) {
       ];
     }
   });
+}
+
+function findRelatedForRouteName(pages, routeName) {
+  var foundPage;
+
+  pages.some(function(page, index) {
+    if (page[1] && page[1].name === routeName) {
+      foundPage = pages[index];
+    } else if (_.isArray(page[3])) {
+      foundPage = findRelatedForRouteName(page[3], routeName);
+    }
+    return !!foundPage;
+  });
+
+  if (foundPage) {
+    foundPage = foundPage[2];
+    foundPage = _.cloneDeep(foundPage);
+    Object.keys(foundPage).forEach(function(locale) {
+      foundPage[locale].path = pathToLocale(foundPage[locale].path, locale);
+    });
+  }
+
+  return foundPage;
+}
+
+export function getLocalesForRouteName(routeName) {
+  return findRelatedForRouteName(config, routeName);
 }
 
 export function getRoutes(locale, availableLocales) {

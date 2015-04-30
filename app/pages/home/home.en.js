@@ -17,7 +17,7 @@ export default class HomeEn extends React.Component {
 
   render() {
     return (
-      <Translation locales='en-gb'>
+      <Translation locales='en-GB'>
         <div className='site-container u-text-center u-padding-Vxxl' id='learn-more'>
           <div className='u-padding-Vxl'>
             <div className='u-size-2of3 u-center'>

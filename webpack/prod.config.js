@@ -1,5 +1,3 @@
-// Webpack config for creating the production bundle.
-
 require('babel/register');
 
 var path = require('path');
@@ -31,22 +29,16 @@ module.exports = {
   },
   progress: true,
   plugins: [
-
-    // css files from the extract-text-plugin loader
     new ExtractTextPlugin('[name]-[chunkhash].css'),
 
-    // set global vars
+    // set process.env to reflect the browser or server values
     new webpack.DefinePlugin({
       'process.env': {
         BROWSER: JSON.stringify(true),
-
-        // used to know we are on browser
         NODE_ENV: JSON.stringify('production'),
-
       },
     }),
 
-    // optimizations
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({
@@ -55,8 +47,6 @@ module.exports = {
         },
     }),
 
-    // stats
     function() { this.plugin('done', writeStats); },
-
   ],
 };

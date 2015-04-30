@@ -3,8 +3,7 @@ import Router from 'react-router';
 import {getRoutes} from '../router/routes';
 import _ from 'lodash';
 
-// Import the intl polyfill if we need it.
-import intlPolyfill from '../helpers/intl-polyfill/intl-polyfill';
+import { loadIntlPolyfill } from '../helpers/intl-polyfill/intl-polyfill';
 
 // Load CSS in dev mode dynamically.
 if (process.env.BROWSER) {
@@ -14,19 +13,18 @@ if (process.env.BROWSER) {
 }
 
 function renderApp() {
-  var appState = window.app;
-  var routes = getRoutes(appState.locales, appState.availableLocales);
-  var mountNode = document.getElementById('root');
-
-  var router = Router.create({
+  const appState = window.app;
+  const routes = getRoutes(appState.locales, appState.availableLocales);
+  const router = Router.create({
     routes: routes,
     location: Router.HistoryLocation,
   });
 
   router.run(function(Handler, state) {
-    var stateName = _.result(_.find(state.routes.slice().reverse(), 'name'), 'name');
-    var stateProps = _.extend(appState, {
-      stateName: stateName,
+    const mountNode = document.getElementById('root');
+    const routeName = _.result(_.findLast(state.routes.slice(), 'name'), 'name');
+    const stateProps = _.extend(appState, {
+      routeName: routeName || 'not_found',
     });
 
     React.render(<Handler {...stateProps} />, mountNode, () => {
@@ -35,6 +33,7 @@ function renderApp() {
   });
 }
 
-intlPolyfill(window.app.availableLocales);
+loadIntlPolyfill(window.app.availableLocales);
 
 renderApp();
+

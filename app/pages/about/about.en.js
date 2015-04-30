@@ -6,7 +6,7 @@ export default class AboutEn extends React.Component {
 
   render() {
     return (
-      <Translation locales='en-gb'>
+      <Translation locales='en-GB'>
         <div className='sticky-nav'>
           <div ng-gc-sticky-nav='' className='sticky-nav__inner u-background-light-gray u-text-heading u-text-xxs u-text-light u-text-no-smoothing'>
             <div className='site-container u-padding-Vm'>

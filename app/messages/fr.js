@@ -21,9 +21,19 @@ export default {
     address_country: '',
     address_country_iso: 'GB',
   },
+  country_names: {
+    'en-GB': 'Royaume-Uni',
+    'en-IE': 'Irlande',
+    'fr-FR': 'France',
+    'fr-BE': 'Belgique',
+  },
   contact_sales: {
     title: 'Contactez-nous',
     description: 'Contactez-nous'
+  },
+  not_found: {
+    title: 'Pas Trouvé',
+    description: 'Vous ne trouvez pas votre page',
   },
   home: {
     title: 'French home',
