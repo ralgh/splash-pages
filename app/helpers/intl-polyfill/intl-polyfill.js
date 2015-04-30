@@ -1,37 +1,24 @@
-export default function(availableLocales) {
-  var polyfillGlobal;
-  if (typeof global === 'undefined') {
-    polyfillGlobal = window;
-  } else {
-    polyfillGlobal = global;
-  }
+export function hasBuiltInLocaleData(locale) {
+  return (Intl.NumberFormat.supportedLocalesOf(locale)[0] === locale &&
+    Intl.DateTimeFormat.supportedLocalesOf(locale)[0] === locale);
+}
 
+export function loadIntlPolyfill(availableLocales) {
+  return new Promise((resolve) => {
+    var hasEveryLocale = availableLocales.every(hasBuiltInLocaleData);
 
-  var hasNativeIntl = !!polyfillGlobal.Intl;
-
-  // `Intl` exists, but it doesn't have the data we need, so load the polyfill
-  // and replace the constructors with need with the polyfill's.
-  var hasNativeLocaleData = hasNativeIntl &&
-    availableLocales.every(function(locale) {
-      return Intl.NumberFormat.supportedLocalesOf(locale)[0] === locale;
-    });
-
-  function doImport(name, cb) {
-    if (typeof window === 'undefined') {
-      return require(name);
-    } else {
-      return System.import(name).then(cb);
+    if (window.Intl && hasEveryLocale) {
+      return resolve();
     }
-  }
 
-  if (!hasNativeIntl) {
-    doImport('intl', (intlReq) => {
-      polyfillGlobal.Intl = intlReq;
-    });
-  } else if (!hasNativeLocaleData) {
-    doImport('intl', (IntlPolyfill) => {
+    require.ensure(['intl'], (require) => {
+      const IntlPolyfill = require('intl');
+
       Intl.NumberFormat = IntlPolyfill.NumberFormat;
       Intl.DateTimeFormat = IntlPolyfill.DateTimeFormat;
-    });
-  }
+
+      resolve();
+    }, 'intl');
+  });
 }
+
