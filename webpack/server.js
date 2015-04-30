@@ -1,13 +1,13 @@
-// Starts a webpack dev server for dev environments
-
 import WebpackDevServer from 'webpack-dev-server';
 import webpack from 'webpack';
 import config from './dev.config';
 
-const debug = require('debug')('isomorphic500');
+const debug = require('debug')('gocardless');
+
+const devEnv = require('../config/dev-environment');
 
 const WEBPACK_HOST = process.env.HOST || 'localhost';
-const WEBPACK_PORT = parseInt(process.env.PORT) + 1 || 3001;
+const WEBPACK_PORT = parseInt(process.env.PORT) || devEnv.webpackPort;
 
 const serverOptions = {
   contentBase: `http://${WEBPACK_HOST}:${WEBPACK_PORT}`,

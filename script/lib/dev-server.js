@@ -2,6 +2,8 @@
 
 'use strict';
 
+require('babel/register');
+
 var colours = require('colors/safe');
 
 var argv = require('minimist')(process.argv.slice(2));
@@ -13,14 +15,14 @@ var ChildProcess = require('child_process');
 var httpProxy = require('http-proxy');
 var proxy = httpProxy.createProxyServer({});
 
-var config = JSON.parse(fs.readFileSync('./config/dev-env.json'));
+var devEnv = require('../../config/dev-environment.js');
 
 var express = require('express');
 
 var options = {
   verbose: argv.v || argv.verbose || false,
   host: argv.h || argv.host || 'localhost',
-  port: argv.p || argv.port || 4440,
+  port: argv.p || argv.port || devEnv.sitePort,
 };
 
 function ServerProcess(serverConfig) {
@@ -39,11 +41,11 @@ function ServerProcess(serverConfig) {
     });
   };
   this.start = function() {
-    var env = process.env;
-    env.PORT = serverConfig.devPort;
-    this.child = ChildProcess.spawn(serverConfig.runnerCommand, serverConfig.runnerArgs, {env: env});
-    this.pipeout(this.child.stdout, process.stdout, colours.grey);
-    this.pipeout(this.child.stderr, process.stderr, colours.red);
+    this.lastRestart = (new Date()).getTime();
+    this.child = ChildProcess.spawn(serverConfig.runnerCommand, serverConfig.runnerArgs);
+    this.lastError = '';
+    this.pipeout(this.child.stdout, process.stdout, colours.grey, false);
+    this.pipeout(this.child.stderr, process.stderr, colours.red, true);
     this.child.on('error', this.onerror);
     this.child.on('close', this.onclose);
     this.alive = true;
@@ -61,11 +63,13 @@ function ServerProcess(serverConfig) {
   };
 }
 
-var serverProcess = new ServerProcess(config);
+var serverProcess = new ServerProcess({
+  runnerCommand: 'node',
+  runnerArgs: ['./index'],  
+});
 serverProcess.start();
 
 var builderProcess = new ServerProcess({
-  port: '3001',
   runnerCommand: './node_modules/.bin/babel-node',
   runnerArgs: ['./webpack/server.js'],
 });
@@ -87,11 +91,17 @@ proxy.on('error', function(err, req, res) {
   if (err.code !== 'ECONNREFUSED') {
     console.log(err);
   }
-  res.send(config.loadingSite);
+  if (!serverProcess.hasError()) {
+    res.send(devEnv.loadingSite);
+  } else {
+    var errorMessage = serverProcess.getError();
+    errorMessage = errorMessage.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    res.send('<style>body{font-family:helvetica;}</style><h3>Server Error:</h3><pre><code>' + errorMessage + '</code></pre>');
+  }
 });
 
 server.use(function(req, res) {
-  proxy.web(req, res, { target: config.devTarget });
+  proxy.web(req, res, { target: 'http://localhost:' + devEnv.backendPort });
 });
 
 server.listen(options.port);

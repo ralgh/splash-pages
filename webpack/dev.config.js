@@ -1,6 +1,3 @@
-// This is the webpack config to use during development.
-// It enables the hot module replacement, the source maps and inline CSS styles.
-
 import path from 'path';
 import webpack from 'webpack';
 import writeStats from './utils/write-stats';
@@ -37,12 +34,9 @@ export default {
   },
   progress: true,
   plugins: [
-
-    // hot reload
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
 
-    // print a webpack progress
     new webpack.ProgressPlugin((percentage, message) => {
       const MOVE_LEFT = new Buffer('1b5b3130303044', 'hex').toString();
       const CLEAR_LINE = new Buffer('1b5b304b', 'hex').toString();
@@ -59,10 +53,8 @@ export default {
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
 
-    // stats
     function() { this.plugin('done', notifyStats); },
     function() { this.plugin('done', writeStats); },
-
   ],
 };
 

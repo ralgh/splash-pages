@@ -3,7 +3,6 @@ import Router from 'react-router';
 import {getRoutes} from '../router/routes';
 import _ from 'lodash';
 
-// Import the intl polyfill if we need it.
 import intlPolyfill from '../helpers/intl-polyfill/intl-polyfill';
 
 // Load CSS in dev mode dynamically.

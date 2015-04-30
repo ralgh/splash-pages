@@ -16,22 +16,16 @@ export default function(availableLocales) {
       return Intl.NumberFormat.supportedLocalesOf(locale)[0] === locale;
     });
 
-  function doImport(name, cb) {
-    if (typeof window === 'undefined') {
-      return require(name);
-    } else {
-      return System.import(name).then(cb);
-    }
+  function doImport(name) {
+    return require(name);
   }
 
   if (!hasNativeIntl) {
-    doImport('intl', (intlReq) => {
-      polyfillGlobal.Intl = intlReq;
-    });
+    var intlReq = require('intl');
+    polyfillGlobal.Intl = intlReq;
   } else if (!hasNativeLocaleData) {
-    doImport('intl', (IntlPolyfill) => {
-      Intl.NumberFormat = IntlPolyfill.NumberFormat;
-      Intl.DateTimeFormat = IntlPolyfill.DateTimeFormat;
-    });
+    var intlReq = require('intl');
+    Intl.NumberFormat = intlReq.NumberFormat;
+    Intl.DateTimeFormat = intlReq.DateTimeFormat;
   }
 }

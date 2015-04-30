@@ -5,6 +5,7 @@ import compression from 'compression';
 
 import {render} from './render';
 
+import devEnv from '../config/dev-environment';
 
 import {availableLocales} from '../app/helpers/locale-helper/locale-helper';
 
@@ -27,8 +28,7 @@ server.use((err, req, res) => {
   res.status(500).send('Something bad happened');
 });
 
-
-server.set('port', process.env.PORT || 3000);
+server.set('port', process.env.PORT || devEnv.backendPort);
 
 server.listen(server.get('port'), () => {
   console.log(`Express ${server.get('env')} server listening on http://localhost:${server.get('port')}`);
