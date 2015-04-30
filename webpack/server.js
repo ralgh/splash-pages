@@ -34,7 +34,7 @@ webpackDevServer.listen(WEBPACK_PORT, WEBPACK_HOST, () => {
 
 compiler.plugin('done', function() {
   var updateTime = (new Date()).getTime().toString();
-  fs.writeFile(path.join('..', 'restart.txt'), updateTime, function(err) {
+  fs.writeFile(path.join(__dirname, '..', 'restart.txt'), updateTime, function(err) {
     if (err) {
       console.error(err);
     }

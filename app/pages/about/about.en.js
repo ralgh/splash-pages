@@ -6,7 +6,7 @@ export default class AboutEn extends React.Component {
 
   render() {
     return (
-      <Translation locales='en-gb'>
+      <Translation locales='en-GB'>
         <h1>About</h1>
         <p>
           GoCardless is the UK’s leading Direct Debit provider.<br />

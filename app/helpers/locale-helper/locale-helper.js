@@ -1,27 +1,35 @@
 import locale from 'locale';
 import _ from 'lodash';
 
-export var defaultLocale = 'en-GB';
+export const defaultLocale = 'en-GB';
 
-export function pathLocale(path) {
-  var localePath = (path || '').toLowerCase().match(/^\/([a-z]{2,2}\-[a-z]{2,2})/);
-  var foundLocale;
-  if (localePath && localePath[1]) {
-    foundLocale = new locale.Locale(localePath[1]);
+function normalizeLocale(localeData) {
+  const normalizedLocale = _.cloneDeep(localeData);
+  normalizedLocale.normalized = (normalizedLocale.normalized || '').replace('_', '-');
+  return normalizedLocale;
+}
+
+export function pathToLocale(path, availableLocales) {
+  const pathLocale = (path || '').toLowerCase().match(/^\/([a-z]{2,2}\-[a-z]{2,2})/);
+  const foundLocale = new locale.Locale(pathLocale && pathLocale[1]);
+  const normalizedLocale = normalizeLocale(foundLocale);
+  if (!_.contains(availableLocales, normalizedLocale.normalized)) {
+    return normalizeLocale(new locale.Locale(defaultLocale));
   }
-  return foundLocale || new locale.Locale(defaultLocale);
+  return normalizedLocale;
 }
 
-export function normalizeLocale(localeData) {
-  localeData = _.cloneDeep(localeData);
-  localeData.normalized = localeData.normalized.replace('_', '-');
-  return localeData;
-}
-
-export function validateLocale(localeToValidate) {
-  if (!localeToValidate.match(/[a-z]{2,2}\-[A-Z]{2,2}/)) {
-    throw new Error(`Locale not valid ${localeToValidate}`);
+export function validateLocale(localeStr) {
+  if (!localeStr.match(/[a-z]{2,2}\-[A-Z]{2,2}/)) {
+    throw new Error(`Locale not valid ${localeStr}`);
   }
-  return localeToValidate;
+  return localeStr;
 }
 
+export function localeToLanguage(localeStr) {
+  return localeStr.slice(0, 2).toLowerCase();
+}
+
+export function localeToRegion(localeStr) {
+  return localeStr.slice(3, 5).toUpperCase();
+}

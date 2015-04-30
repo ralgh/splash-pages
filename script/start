@@ -1,4 +1,6 @@
 #!/bin/bash
+# Usage: script/start
+# Starts the projects's development server.
 
 set -e errexit
 

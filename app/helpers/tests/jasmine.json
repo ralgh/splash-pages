@@ -1,0 +1,10 @@
+{
+  "spec_dir": "app",
+  "spec_files": [
+    "**/*.test.js"
+  ],
+  "helpers": [
+    "helpers/tests/babel.js",
+    "helpers/tests/*.js"
+  ]
+}

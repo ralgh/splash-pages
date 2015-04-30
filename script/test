@@ -4,3 +4,6 @@
 set -e errexit
 
 ./script/lint
+
+node_modules/.bin/eslint .
+node_modules/.bin/jasmine JASMINE_CONFIG_PATH=app/helpers/tests/jasmine.json
