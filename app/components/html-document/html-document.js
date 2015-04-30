@@ -8,9 +8,10 @@ import websiteSchema from '../layout-static/website-schema.js';
 import {getIntlMessage} from '../intl/intl';
 import localeMessages from '../../../config/messages';
 import {getLocalesForRouteName} from '../../router/routes';
-import {defaultLocale} from '../../helpers/locale-helper/locale-helper';
+import {defaultLocale, localeToLanguage} from '../../helpers/locale-helper/locale-helper';
 import {homeRoute} from '../../router/routes';
-import {buildSchemaDotOrgForOrganization} from '../../../config/schema-dot-org';
+import {buildSchemaDotOrgForOrganization} from '../../helpers/schema-dot-org/schema-dot-org';
+import {PropTypes} from '../../helpers/prop-types/prop-types';
 
 function relAlternateLinks(root, path, locales) {
   var defaultPath = locales[defaultLocale].path;
@@ -33,13 +34,9 @@ class HtmlDocument extends React.Component {
   displayName = 'HtmlDocument'
 
   static propTypes = {
-    locales: React.PropTypes.oneOfType([
-      React.PropTypes.string.isRequired,
-      React.PropTypes.array.isRequired,
-    ]),
+    locales: PropTypes.locale,
     messages: React.PropTypes.object.isRequired,
     formats: React.PropTypes.object.isRequired,
-    language: React.PropTypes.string.isRequired,
     routeName: React.PropTypes.string.isRequired,
     availableLocales: React.PropTypes.array.isRequired,
     router: React.PropTypes.func.isRequired,
@@ -57,13 +54,9 @@ class HtmlDocument extends React.Component {
   }
 
   static childContextTypes = {
-    locales: React.PropTypes.oneOfType([
-      React.PropTypes.string.isRequired,
-      React.PropTypes.array.isRequired,
-    ]),
+    locales: PropTypes.locale,
     messages: React.PropTypes.object.isRequired,
     formats: React.PropTypes.object.isRequired,
-    language: React.PropTypes.string.isRequired,
     routeName: React.PropTypes.string.isRequired,
     availableLocales: React.PropTypes.array.isRequired,
     router: React.PropTypes.func.isRequired,
@@ -72,13 +65,12 @@ class HtmlDocument extends React.Component {
   };
 
   getChildContext() {
-    const { locales, messages, formats, language, routeName, availableLocales, router, path, config } = this.props;
+    const { locales, messages, formats, routeName, availableLocales, router, path, config } = this.props;
 
     return {
       locales: locales,
       messages: messages,
       formats: formats,
-      language: language,
       routeName: routeName,
       availableLocales: availableLocales,
       router: router,
@@ -88,12 +80,13 @@ class HtmlDocument extends React.Component {
   }
 
   render() {
-    const { messages, routeName, language, config, path, availableLocales, markup, script, css } = this.props;
+    const { messages, routeName, locales, config, path, availableLocales, markup, script, css } = this.props;
     const isHome = routeName === homeRoute;
     const schemaDotOrgOrganisation = buildSchemaDotOrgForOrganization(localeMessages, availableLocales, config);
     const routeLocales = getLocalesForRouteName(routeName);
     const pageHref = config.siteRoot + path;
     const title = isHome ? config.siteName : `${getIntlMessage(messages, `${routeName}.title`)} - ${ config.siteName }`;
+    const language = localeToLanguage(locales);
 
     return (
       <html className='no-js' lang={language}>

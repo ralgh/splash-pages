@@ -5,9 +5,11 @@ const {Link} = Router;
 import IntlLink from '../intl-link/intl-link';
 import IntlMessage from '../intl-message/intl-message';
 import LinkExists from '../link-exists/link-exists';
-import {getLocalesForRouteName} from '../../router/routes';
+import {getLocalesForRouteName, homeRoute} from '../../router/routes';
 import {getIntlMessage} from '../intl/intl';
 import Popover from '../popover/popover';
+import {localeToRegion} from '../../helpers/locale-helper/locale-helper';
+import {PropTypes} from '../../helpers/prop-types/prop-types';
 
 function buildAvailableLocales(currentLocale, siteLocales, messages) {
   const availableLocales = Object.keys(siteLocales).map(function(locale) {
@@ -25,15 +27,16 @@ class Footer extends React.Component {
 
   static contextTypes = {
     routeName: React.PropTypes.string.isRequired,
-    locales: React.PropTypes.string.isRequired,
+    locales: PropTypes.locale,
     messages: React.PropTypes.object.isRequired,
   }
 
   render() {
     const {routeName, locales, messages} = this.context;
 
-    const siteLocales = _.merge({}, getLocalesForRouteName('Home'), getLocalesForRouteName(routeName));
+    const siteLocales = _.merge({}, getLocalesForRouteName(homeRoute), getLocalesForRouteName(routeName));
     const availableLocales = buildAvailableLocales(locales, siteLocales, messages);
+    const region = localeToRegion(locales);
 
     return (
       <div className='page-footer u-color-invert u-padding-Tl'>
@@ -157,7 +160,7 @@ class Footer extends React.Component {
         <div className='page-footer__end u-text-center u-text-heading u-text-xxs u-color-invert u-padding-Vl u-margin-Tl' id='track-footer-end-links'>
           <div className='u-padding-Vl'>
             <span className='u-text-light u-text-no-smoothing'><IntlMessage message='footer.currently_viewing' /></span>
-            <img src={ `/images/icons/${ locales.toLowerCase() }-flag-icon@2x.png` } className='flag-icon u-margin-Hs' alt />
+            <img src={ `/images/icons/${ region }-flag-icon@2x.png` } className='flag-icon u-margin-Hs' alt />
             <span className='u-relative'>
               <Popover className='popover--above' toggle={
                   (<a popover-toggle href='#' className='u-text-semi u-link-invert'>
@@ -169,7 +172,7 @@ class Footer extends React.Component {
                 <ul className='u-text-xxs u-text-start u-padding-Vxs'>
                   {
                     availableLocales.map(function(locale) {
-                      const flagSrc = `/images/icons/${ locale.locale.toLowerCase() }-flag-icon@2x.png`;
+                      const flagSrc = `/images/icons/${ localeToRegion(locale.locale) }-flag-icon@2x.png`;
 
                       return (
                         <li className='u-text-semi' key={locale.name}>

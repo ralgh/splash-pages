@@ -1,4 +1,5 @@
 import React from 'react';
+import {PropTypes} from '../../helpers/prop-types/prop-types';
 import Router from 'react-router';
 var {RouteHandler} = Router;
 
@@ -6,39 +7,30 @@ class App extends React.Component {
   displayName = 'App'
 
   static childContextTypes = {
-    locales: React.PropTypes.oneOfType([
-      React.PropTypes.string.isRequired,
-      React.PropTypes.array.isRequired
-    ]),
+    locales: PropTypes.locale,
     messages: React.PropTypes.object.isRequired,
     formats: React.PropTypes.object.isRequired,
-    language: React.PropTypes.string.isRequired,
     routeName: React.PropTypes.string.isRequired,
     availableLocales: React.PropTypes.array.isRequired,
     config: React.PropTypes.object.isRequired,
   }
 
   static propTypes = {
-    locales: React.PropTypes.oneOfType([
-      React.PropTypes.string.isRequired,
-      React.PropTypes.array.isRequired,
-    ]),
+    locales: PropTypes.locale,
     messages: React.PropTypes.object.isRequired,
     formats: React.PropTypes.object.isRequired,
-    language: React.PropTypes.string.isRequired,
     routeName: React.PropTypes.string.isRequired,
     availableLocales: React.PropTypes.array.isRequired,
     config: React.PropTypes.object.isRequired,
   }
 
   getChildContext() {
-    const { locales, messages, formats, language, routeName, availableLocales, config } = this.props;
+    const { locales, messages, formats, routeName, availableLocales, config } = this.props;
 
     return {
       locales: locales,
       messages: messages,
       formats: formats,
-      language: language,
       routeName: routeName,
       availableLocales: availableLocales,
       config: config,
