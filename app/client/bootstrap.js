@@ -3,6 +3,15 @@ import Router from 'react-router';
 import {getRoutes} from '../router/routes';
 import _ from 'lodash';
 
+import { loadIntlPolyfill } from '../helpers/intl-polyfill/intl-polyfill';
+
+// Load CSS in dev mode dynamically.
+if (process.env.BROWSER) {
+  require('../css/main.scss');
+  require('../css/greenhouse-forms.scss');
+  require('../css/fonts.css');
+}
+
 function renderApp() {
   const appState = window.app;
   const routes = getRoutes(appState.locales, appState.availableLocales);
@@ -24,4 +33,7 @@ function renderApp() {
   });
 }
 
+loadIntlPolyfill(window.app.availableLocales);
+
 renderApp();
+

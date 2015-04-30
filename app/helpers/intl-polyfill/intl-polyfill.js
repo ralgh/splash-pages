@@ -1,18 +1,24 @@
-import {availableLocales} from '../locale-helper/locale-helper';
-
-var hasNativeIntl = !!global.Intl;
-
-// `Intl` exists, but it doesn't have the data we need, so load the polyfill
-// and replace the constructors with need with the polyfill's.
-var hasNativeLocaleData = hasNativeIntl &&
-  availableLocales.every(function(locale) {
-    return Intl.NumberFormat.supportedLocalesOf(locale)[0] === locale;
-  });
-
-if (!hasNativeIntl) {
-  global.Intl = require('intl');
-} else if (!hasNativeLocaleData) {
-  var IntlPolyfill = require('intl');
-  Intl.NumberFormat = IntlPolyfill.NumberFormat;
-  Intl.DateTimeFormat = IntlPolyfill.DateTimeFormat;
+export function hasBuiltInLocaleData(locale) {
+  return (Intl.NumberFormat.supportedLocalesOf(locale)[0] === locale &&
+    Intl.DateTimeFormat.supportedLocalesOf(locale)[0] === locale);
 }
+
+export function loadIntlPolyfill(availableLocales) {
+  return new Promise((resolve) => {
+    var hasEveryLocale = availableLocales.every(hasBuiltInLocaleData);
+
+    if (window.Intl && hasEveryLocale) {
+      return resolve();
+    }
+
+    require.ensure(['intl'], (require) => {
+      const IntlPolyfill = require('intl');
+
+      Intl.NumberFormat = IntlPolyfill.NumberFormat;
+      Intl.DateTimeFormat = IntlPolyfill.DateTimeFormat;
+
+      resolve();
+    }, 'intl');
+  });
+}
+

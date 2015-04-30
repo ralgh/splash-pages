@@ -5,6 +5,9 @@ const {Link} = Router;
 import IntlLink from '../intl-link/intl-link';
 import IntlMessage from '../intl-message/intl-message';
 import LinkExists from '../link-exists/link-exists';
+
+import CheckmarkIcon from '../../icons/icon/checkmark';
+
 import {getLocalesForRouteName, homeRoute} from '../../router/routes';
 import {getIntlMessage} from '../intl/intl';
 import Popover from '../popover/popover';
@@ -21,6 +24,7 @@ function buildAvailableLocales(currentLocale, siteLocales, messages) {
 
   return _.sortBy(availableLocales, 'name');
 }
+
 
 class Footer extends React.Component {
   displayName = 'Footer'
@@ -162,7 +166,7 @@ class Footer extends React.Component {
             <span className='u-text-light u-text-no-smoothing'><IntlMessage message='footer.currently_viewing' /></span>
             <img src={ `/images/icons/${ region }-flag-icon@2x.png` } className='flag-icon u-margin-Hs' alt />
             <span className='u-relative'>
-              <Popover className='popover--above' toggle={
+             <Popover className='popover--above' toggle={
                   (<a popover-toggle href='#' className='u-text-semi u-link-invert'>
                      <span className='popover-link popover-link--invert'>
                        <IntlMessage message='country' />
@@ -181,7 +185,7 @@ class Footer extends React.Component {
                               <span className='u-padding-Vxs u-padding-Hm u-block'>
                                 <img src={ flagSrc } className='flag-icon--popover u-margin-Rs' alt={ locale.name } />
                                 <span className='u-color-p'>{ locale.name }</span>
-                                <img src='/images/icons/checkmark-icon.svg' className='u-fill-dark-green u-margin-Ls u-pull-end u-inline' alt='✓' />
+                                <CheckmarkIcon className='u-fill-dark-green u-margin-Ls u-pull-end u-inline' alt='✓' />
                               </span>
                             ) || (
                               <a className='u-padding-Vxs u-padding-Hm u-block u-link-complex' href={ locale.path }>

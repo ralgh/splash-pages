@@ -113,8 +113,9 @@ class HtmlDocument extends React.Component {
 
         <body>
           { config.optimizelyId &&
-              <script src='//cdn.optimizely.com/js/{config.optimizelyId}.js'></script>
+            <script src={`//cdn.optimizely.com/js/${config.optimizelyId}.js`}></script>
           }
+
           <div dangerouslySetInnerHTML={{ __html: browseHappy }} />
 
           <div id='root' dangerouslySetInnerHTML={{ __html: markup }} />
@@ -136,6 +137,7 @@ class HtmlDocument extends React.Component {
           { config.googleTagManagerId &&
               <div dangerouslySetInnerHTML={{__html: GTM.replace('{TAG_ID}', config.googleTagManagerId) }} />
           }
+
         </body>
       </html>
     );

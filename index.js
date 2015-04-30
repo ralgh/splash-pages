@@ -1,5 +1,6 @@
 require('babel/register');
 
-require('./app/helpers/intl-polyfill/intl-polyfill');
+var availableLocales = require('./config/available-locales');
+require('./server/intl-polyfill')(availableLocales);
 
 require('./server/server');

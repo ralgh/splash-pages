@@ -11,8 +11,13 @@ import availableLocales from '../config/available-locales';
 import config from '../config';
 import formats from '../config/formats';
 
-const scriptTags = ['/vendor/system.js', '/jspm.config.js', '/client/loader.js'];
-const cssLinks = ['/css/main.css', '/css/fonts.css'];
+import path from 'path';
+import fs from 'fs';
+
+// TODO: In development, reload paths on every request, but in production, cache paths.
+function getWebpackPaths() {
+  return JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'app', 'bundles', 'webpack-stats.json')));
+}
 
 function normalizeUrl(urlStr) {
   var parsedUrl = url.parse((urlStr || '').toLowerCase());
@@ -21,7 +26,7 @@ function normalizeUrl(urlStr) {
   return url.format(parsedUrl);
 }
 
-function render(req, res, next) {
+export function render(req, res, next) {
   const isHtml = req.headers.accept && req.accepts('html');
 
   // Skip not found assets
@@ -66,14 +71,15 @@ function render(req, res, next) {
     };
 
     const markup = React.renderToString(<Handler {...appProps(stateProps)} />);
+    const webpackUrls = getWebpackPaths();
 
     // The application component is rendered to static markup
     // and sent as response.
     const html = React.renderToStaticMarkup(
       <HtmlDocument
         markup={markup}
-        script={scriptTags}
-        css={cssLinks}
+        script={webpackUrls.script}
+        css={webpackUrls.css}
         router={router}
         dataRender={appProps(stateProps)}
         {...appProps(stateProps)} />
@@ -82,5 +88,3 @@ function render(req, res, next) {
     res.send(doctype + html);
   });
 }
-
-export default render;
