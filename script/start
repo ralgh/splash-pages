@@ -4,4 +4,6 @@ set -e errexit
 
 ulimit -n 10240
 
-node ./script/lib/dev-server.js
+nodemon ./index.js --ignore '*' --watch ./restart.txt --ext txt &
+
+babel-node ./webpack/server.js

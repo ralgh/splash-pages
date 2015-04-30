@@ -14,8 +14,9 @@ import formats from '../config/formats';
 import path from 'path';
 import fs from 'fs';
 
+// TODO: In development, reload paths on every request, but in production, cache paths.
 function getWebpackPaths() {
-  return JSON.parse(fs.readFileSync(path.join(__dirname, '/../app/bundles/webpack-stats.json')));
+  return JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'app', 'bundles', 'webpack-stats.json')));
 }
 
 function normalizeUrl(urlStr) {
