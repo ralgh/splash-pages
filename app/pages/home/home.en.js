@@ -6,7 +6,7 @@ export default class HomeEn extends React.Component {
 
   render() {
     return (
-      <Translation locales="en-gb">
+      <Translation locales="en-GB">
         <h1>Home en-gb</h1>
       </Translation>
     );

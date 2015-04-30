@@ -25,3 +25,11 @@ export function validateLocale(localeStr) {
   }
   return localeStr;
 }
+
+export function localeToLanguage(localeStr) {
+  return localeStr.slice(0, 2).toLowerCase();
+}
+
+export function localeToRegion(localeStr) {
+  return localeStr.slice(3, 5).toUpperCase();
+}

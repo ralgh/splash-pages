@@ -6,7 +6,7 @@ export default class AboutFr extends React.Component {
 
   render() {
     return (
-      <Translation locales='fr-fr'>
+      <Translation locales='fr-FR'>
         <h1>A propos</h1>
         <p>
           GoCardless est un des leaders européens du prélèvement bancaire.
