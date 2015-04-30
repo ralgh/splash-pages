@@ -25,9 +25,7 @@ server.use((err, req, res) => {
   res.status(500).send('Something bad happened');
 });
 
-//server.set('port', process.env.PORT || devEnv.backendPort);
 server.set('port', devEnv.backendPort);
-console.log('port #' + server.get('port'));
 
 server.listen(server.get('port'), () => {
   console.log(`Express ${server.get('env')} server listening on http://localhost:${server.get('port')}`);
