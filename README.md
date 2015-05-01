@@ -1,11 +1,24 @@
-# react-splash-pages
+react-splash-pages
+==================
 
-Proof of concept
-
-# Run locally
+## Dependencies
 
 ```
-jsm install
 npm install
+```
+
+## Running
+
+```
 npm start
 ```
+
+## Tests
+
+```
+npm test
+```
+
+## Syntax highlighting `jsx`
+
+- Sublime Text: https://github.com/babel/babel-sublime (make the it default and disable the default JavaScript one)
