@@ -3,6 +3,10 @@ export default {
     our_products: 'Produit',
     login_btn: 'Login',
   },
+  hero: {
+    header: 'Recurring payments made simple',
+    desc: 'GoCardless makes collecting by Direct Debit easy for everyone from individiuals to multi-national corporations',
+  },
   contact_types: ['sales'],
   footer: {
     description: 'GoCardless est un Etablissement de Paiement Agréé, régulé par l’autorité britannique FCA (Financial Conduct Authority) et habilité à collecter des paiements à travers l’Union Européenne.',
@@ -12,7 +16,10 @@ export default {
     eruope_description: 'sur notre expansion',
   },
   cta: {
-    pro: 'FR PRO',
+    basic: 'Start taking payments',
+    pro: 'Contact sales',
+    pro_signup: 'Sign Up Now',
+    more: 'Learn More',
   },
   postal_address: {
     street_address: '338-346 Goswell Road',
