@@ -9,3 +9,6 @@ ulimit -n 10240
 nodemon ./index.js --watch 'env' --ext 'txt' &
 
 babel-node ./webpack/server.js
+
+trap 'trap - SIGTERM && kill 0' SIGINT SIGTERM EXIT
+
