@@ -62,6 +62,7 @@ var config = [
   ],
 ];
 
+//TODO: JF/JE test this function
 function pathToLocale(path, locale) {
   var localePath;
   if (locale === defaultLocale) {
@@ -129,14 +130,14 @@ function getRoutesForPages(pages, availableLocales) {
   });
 }
 
-function findRelatedForRouteName(pages, routeName) {
+export function getLocalesForRouteName(routeName, givenConfig=config) {
   var foundPage;
 
-  pages.some(function(page, index) {
+  givenConfig.some(function(page, index) {
     if (page[1] && page[1].name === routeName) {
-      foundPage = pages[index];
+      foundPage = givenConfig[index];
     } else if (_.isArray(page[3])) {
-      foundPage = findRelatedForRouteName(page[3], routeName);
+      foundPage = getLocalesForRouteName(routeName, page[3]);
     }
     return !!foundPage;
   });
@@ -152,12 +153,8 @@ function findRelatedForRouteName(pages, routeName) {
   return foundPage;
 }
 
-export function getLocalesForRouteName(routeName) {
-  return findRelatedForRouteName(config, routeName);
-}
-
-export function getRoutes(locale, availableLocales) {
-  var pages = flattenPagesForLocale(config, locale, availableLocales);
+export function getRoutes(locale, availableLocales, givenConfig=config) {
+  var pages = flattenPagesForLocale(givenConfig, locale, availableLocales);
   return (
     <Route path={pages[0][2].path} handler={App}>
       {getRoutesForPages(pages.slice(1), availableLocales)}

@@ -1,9 +1,6 @@
 import { pathToLocale } from './locale-helper';
 
-//TODO: there's some inconsistency aroud capitalisation
-//TODO: blow up if you don't get given available locales?
-
-describe('#pathLocale', function() {
+describe('pathLocale', function() {
   describe('with an fr-FR locale in the path', function() {
     it('instantiates and returns a new Locale instance in the right locale', function() {
       var result = pathToLocale('/fr-FR/about', [

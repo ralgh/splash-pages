@@ -1,7 +1,6 @@
 #!/bin/bash
-# Usage: script/lint
+# Usage: script/test
 
 set -e errexit
 
-./script/lint
-node_modules/.bin/jasmine JASMINE_CONFIG_PATH=app/helpers/tests/jasmine.json
+node_modules/.bin/jasmine JASMINE_CONFIG_PATH=app/helpers/specs/jasmine.json
