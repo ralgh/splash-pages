@@ -1,7 +1,6 @@
 import WebpackDevServer from 'webpack-dev-server';
 import webpack from 'webpack';
 import devConfig from './dev.config';
-import fs from 'fs';
 import path from 'path';
 import touch from 'touch';
 

@@ -1,6 +1,8 @@
 import React from 'react';
 import Translation from '../../components/translation/translation';
 
+import { team } from '../../constants/team';
+
 export default class AboutEn extends React.Component {
   displayName = 'AboutEn'
 
@@ -78,55 +80,7 @@ export default class AboutEn extends React.Component {
               </div>
               <div className='grid__cell u-size-2of3'>
                   <span className='u-text-heavy u-color-heading'>GoCardless is: </span><span className='u-color-p'>
-                  Octave Auger,
-                  Grey Baker,
-                  Baris Balic,
-                  Angus Bayley,
-                  James Berry,
-                  Lewis Blackwood,
-                  George Britton,
-                  Jenna Brown,
-                  Maria Campbell,
-                  Michael Christofides,
-                  Duncan Coleman,
-                  James Cunningham,
-                  Amaury de Closset,
-                  Steve Domin,
-                  Jamie English,
-                  Jack Franklin,
-                  Jessie Giladi,
-                  Pete Hamilton,
-                  Phil Harrison,
-                  Natalie Hockham,
-                  James Jackson,
-                  Sam Jewell,
-                  Alan Kennedy,
-                  Georg Knoerr,
-                  Norberto Lopes,
-                  Daniel Lyons,
-                  Harry Marr,
-                  Erez Mathan,
-                  Ben Miller,
-                  Max Murdoch,
-                  Iain Nash,
-                  Jacob Pargin,
-                  Tom Petty,
-                  Nabeel Qureshi,
-                  Matt Robinson,
-                  Tim Rogers,
-                  Isaac Seymour,
-                  James Shedden,
-                  Ben Sims,
-                  Chris Sinjakli,
-                  Dave Smith,
-                  Alina Solovjova,
-                  Jess Summerfield,
-                  Hiroki Takeuchi,
-                  Yoshio Takeuchi,
-                  Helen Taylor,
-                  Corinne Thompson,
-                  Matt Thomson,
-                  James Walker
+                  {team.join('\n')}
                 </span>
               </div>
             </div>

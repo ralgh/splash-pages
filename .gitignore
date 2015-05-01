@@ -8,5 +8,5 @@ Session.vim
 npm-debug.log
 restart.txt
 
-app/bundles
+app/bundles/
 env/
