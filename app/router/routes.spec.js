@@ -80,7 +80,7 @@ describe('getRoutes', () => {
         const route = routes[0];
         const childRoutePaths = route.childRoutes.map(c => c.path);
 
-        expect(childRoutePaths).toEqual(['/english-specific-page', '/english-only', '/', '/*']);
+        expect(childRoutePaths).toEqual(['/english-specific-page/?', '/english-only/?', '//?', '//?*']);
 
         done();
       });
@@ -95,7 +95,7 @@ describe('getRoutes', () => {
           const route = routes[0];
           const childRoutePaths = route.childRoutes.map(c => c.path);
 
-          expect(childRoutePaths).toEqual(['/fr-fr/french-specific-page', '/fr-fr/french-only', '/fr-fr', '/fr-fr*']);
+          expect(childRoutePaths).toEqual(['/fr-fr/french-specific-page/?', '/fr-fr/french-only/?', '/fr-fr/?', '/fr-fr/?*']);
 
           done();
         });
