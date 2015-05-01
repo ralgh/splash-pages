@@ -1,8 +1,11 @@
 import React from 'react';
+import Router from 'react-router';
+var { Link } = Router;
 import Page from '../../components/page/page';
 import IntlMessage from '../../components/intl-message/intl-message';
 import HomeEn from './home.en';
 import HomeFr from './home.fr';
+import Translation from '../../components/translation/translation';
 
 export default class Home extends React.Component {
   displayName = 'Home'
@@ -21,12 +24,20 @@ export default class Home extends React.Component {
                   <IntlMessage message='hero.desc' />
                 </div>
                 <div className='u-text-center u-margin-Tl'>
-                  <a href='#learn-more' id='track-hero-learn-more' ng-gc-smooth-scroll className='btn btn--invert btn--move u-size-2of12'>
-                    <IntlMessage message='cta.more' />
-                  </a>
-                  <a href='/merchants/new' className='btn btn--invert-hollow btn-move u-size-2of12 u-margin-Lm' id='track-hero-merchants-new'>
-                    <IntlMessage message='cta.pro_signup' />
-                  </a>
+                  <Translation locales='en-GB'>
+                    <a href='#learn-more' id='track-hero-learn-more' className='btn btn--invert btn--move u-size-2of12'>
+                      <IntlMessage message='cta.more' />
+                    </a>
+                    <a href='/merchants/new' className='btn btn--invert-hollow btn-move u-size-2of12 u-margin-Lm' id='track-hero-merchants-new'>
+                      <IntlMessage message='cta.pro_signup' />
+                    </a>
+                  </Translation>
+
+                  <Translation locales='fr-FR'>
+                    <Link to='home' id='track-hero-learn-more' className='btn btn--invert btn--move u-size-3of12'>
+                      <IntlMessage message='cta.more' />
+                    </Link>
+                  </Translation>
                 </div>
               </div>
             </div>

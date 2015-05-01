@@ -4,6 +4,7 @@ var { Link } = Router;
 import IntlMessage from '../intl-message/intl-message';
 import LinkExists from '../link-exists/link-exists';
 import Logo from '../../icons/icon/logo';
+import Popover from '../popover/popover';
 
 class Header extends React.Component {
   displayName = 'Header'
@@ -62,16 +63,15 @@ class Header extends React.Component {
           <div className='u-pull-end align-btn-small'>
             <nav className='nav u-pull-start u-color-primary u-text-xxs u-text-light u-text-no-smoothing'>
               <div className='nav__item u-relative'>
-                <popover-container>
-                  <span popover-toggle id='track-nav-products' className={`u-padding-Vl u-block u-link-clean ${linkClass}`}>
-                    <div className='nav__item-link popover-link popover-link--invert'>
-                      <IntlMessage message='header.our_products' />
-                    </div>
-                  </span>
-                  <popover-content className='popover popover--large'>
-                    {products}
-                  </popover-content>
-                </popover-container>
+                <Popover className='popover--large' toggle={
+                     (<a href='#' id='track-nav-products' className={`u-padding-Vl u-block u-link-clean ${linkClass}`}>
+                        <div className='nav__item-link popover-link popover-link--invert'>
+                          <IntlMessage message='header.our_products' />
+                        </div>
+                      </a>)
+                   }>
+                   {products}
+                 </Popover>
               </div>
               <div className='nav__item u-relative'>
                 <LinkExists to='about'>
