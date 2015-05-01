@@ -6,7 +6,7 @@ export default class PricingEn extends React.Component {
 
   render() {
     return (
-      <Translation locales='en-gb'>
+      <Translation locales='en-GB'>
         <div className='page-hero--pricing page-hero'>
           <div className='site-container'>
             <div className='grid pricing-options u-center u-padding-Bxl'>
