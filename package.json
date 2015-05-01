@@ -6,9 +6,8 @@
   "scripts": {
     "start": "./script/start",
     "build": "./script/build",
-    "lint": "eslint . || true",
     "run-production": "./script/run-production",
-    "test": "./script/test"
+    "test": "./script/lint && ./script/test"
   },
   "dependencies": {
     "autoprefixer": "^5.1.1",
