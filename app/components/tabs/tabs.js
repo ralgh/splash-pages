@@ -18,13 +18,8 @@ class Tabs extends React.Component {
 
   handleClick(event) {
     event.preventDefault();
-
-    var index = -1;
-    _.some(_.toArray(event.currentTarget.children), function(node, i) {
-      if (event.target === node || node.contains(event.target)) {
-        index = i;
-        return true;
-      }
+    const index = _.findIndex(_.toArray(event.currentTarget.children), function(node) {
+      return event.target === node || node.contains(event.target);
     });
 
     if (index !== -1) {
