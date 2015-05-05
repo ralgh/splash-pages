@@ -44,7 +44,8 @@
     "strip-loader": "^0.1.0",
     "style-loader": "^0.12.1",
     "touch": "0.0.3",
-    "webpack": "^1.8.11"
+    "webpack": "^1.8.11",
+    "components": "file:./app/components"
   },
   "devDependencies": {
     "jasmine": "^2.3.0",

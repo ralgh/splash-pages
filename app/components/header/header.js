@@ -4,6 +4,7 @@ var { Link } = Router;
 import IntlMessage from '../intl-message/intl-message';
 import LinkExists from '../link-exists/link-exists';
 import Logo from '../../icons/icon/logo';
+import classNames from 'classnames';
 
 class Header extends React.Component {
   displayName = 'Header'
@@ -49,22 +50,22 @@ class Header extends React.Component {
     );
 
     const isInverted = this.props.isInverted;
-    const linkClass = isInverted ? 'u-link-invert' : 'u-link-default';
+    const linkClasses = classNames('u-padding-Vl', 'u-block', 'u-link-clean', isInverted ? 'u-link-invert' : 'u-link-default');
 
     return (
-      <div className={isInverted && 'site-header-wrapper'}>
+      <div className={classNames({'site-header-wrapper': isInverted})}>
         <div className='site-header site-header--invert u-relative u-cf'>
           <div className='u-pull-start'>
             <Link to='home' id='track-nav-home' className='header-logo u-relative u-block u-padding-Vl'>
-              <Logo className={'site-logo__image ${isInverted ? "u-fill-invert" : "u-fill-primary"}'} />
+              <Logo className={classNames('site-logo__image', isInverted ? 'u-fill-invert' : 'u-fill-primary')} />
             </Link>
           </div>
           <div className='u-pull-end align-btn-small'>
             <nav className='nav u-pull-start u-color-primary u-text-xxs u-text-light u-text-no-smoothing'>
               <div className='nav__item u-relative'>
                 <popover-container>
-                  <span popover-toggle id='track-nav-products' className={`u-padding-Vl u-block u-link-clean ${linkClass}`}>
-                    <div className='nav__item-link popover-link popover-link--invert'>
+                  <span popover-toggle id='track-nav-products' className={linkClasses}>
+                    <div className={classNames('nav__item-link', 'popover-link', {'popover-link--invert': isInverted})}>
                       <IntlMessage message='header.our_products' />
                     </div>
                   </span>
@@ -75,7 +76,7 @@ class Header extends React.Component {
               </div>
               <div className='nav__item u-relative'>
                 <LinkExists to='about'>
-                  <Link to='about' id='track-nav-pricing' className={`u-padding-Vl u-block u-link-clean ${linkClass}`}>
+                  <Link to='about' id='track-nav-pricing' className={linkClasses}>
                     <div className='nav__item-link'>
                       <IntlMessage message='about.title' />
                     </div>
@@ -84,7 +85,7 @@ class Header extends React.Component {
               </div>
               <div className='nav__item u-relative'>
                 <LinkExists to='stories'>
-                  <Link to='stories' id='track-nav-stories' className={`u-padding-Vl u-block u-link-clean ${linkClass}`}>
+                  <Link to='stories' id='track-nav-stories' className={linkClasses}>
                     <div className='nav__item-link'>
                       <IntlMessage message='stories.title' />
                     </div>

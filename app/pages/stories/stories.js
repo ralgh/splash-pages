@@ -4,13 +4,8 @@ import StartTakingPaymentsCTA from '../../components/start-taking-payments/start
 
 import ReactRouter from 'react-router';
 var { Link } = ReactRouter;
+import StoryLink from './components/story-link';
 
-import AllStories from './stories-data';
-
-var EnStories = AllStories.en;
-var SmallBlurbStories = Object.keys(EnStories).filter(function(key) {
-  return EnStories[key].blurb;
-});
 
 export default class Stories extends React.Component {
   displayName = 'Stories'
@@ -72,19 +67,24 @@ export default class Stories extends React.Component {
         <hr className='u-margin-An' />
         <div className='site-container u-padding-Vxxl'>
           <div className='grid u-padding-Vxl'>
-            {SmallBlurbStories.map(function(storyKey) {
-              return (
-                <Link key={storyKey} to='story' params={{storyId: storyKey}} className='grid__cell u-size-1of3 u-link-clean u-padding-Rxs u-padding-Bm'>
-                  <div className='product-grid__container u-text-center u-padding-Vl'>
-                    <i role='img' aria-label={storyKey} className={EnStories[storyKey].blurb.img}></i>
-                    <p className='u-size-3of4 u-center u-color-p u-margin-Txxs'>
-                       {EnStories[storyKey].blurb.text}
-                    </p>
-                  </div>
-                  <div className='stories-item__btn btn u-size-full'>Read the case study</div>
-                </Link>
-              );
-            })}
+            <StoryLink img='bluesky-logo stories-item__logo--bluesky' to='story_bluesky_business'>
+              Bluesky Business, a book-keeping and accounting service provider, reduced late payments by 62.5% in just one month with GoCardless.
+            </StoryLink>
+            <StoryLink img='foundation-of-hearts-logo stories-item__logo--foundation-of-hearts' to='story_foundation_of_hearts'>
+              The Foundation of Hearts, a not-for-profit organisation made up of Hearts FC fans, can easily collect over 8000 donations each month with GoCardless.
+            </StoryLink>
+            <StoryLink img='crowdcube-logo stories-item__logo--crowdcube' to='story_crowdcube'>
+              Crowdcube, the world’s leading investment crowdfunding site, have saved more than 40 hours of admin time each month by switching to GoCardless.
+            </StoryLink>
+            <StoryLink img='greater-anglia-logo stories-item__logo--greater-anglia' to='story_greater_anglia'>
+              Greater Anglia, the East Anglia rail franchise, cut admin time and saved more than £21,000 by switching to online Direct Debit with GoCardless.
+            </StoryLink>
+            <StoryLink img='rock-choir-logo stories-item__logo--rock-choir' to='story_rock_choir'>
+              Rock Choir, the UK’s leading contemporary choir group, cut failed payments to 1% by switching to online Direct Debit with GoCardless.
+            </StoryLink>
+            <StoryLink img='spencer-hockey-club-logo stories-item__logo--spencer-hockey-club' to='story_spencer_hockey'>
+              Spencer Hockey Club slashed the time spent chasing their members for payments by switching to Direct Debit with GoCardless.
+            </StoryLink>
           </div>
         </div>
         <hr className='u-margin-An' />

@@ -21,6 +21,10 @@ import HasBeanCoffeeStory from '../pages/stories/stories/has-bean-coffee';
 import BlueskyBusinessStory from '../pages/stories/stories/bluesky-business';
 import CrowdCubeStory from '../pages/stories/stories/crowdcube';
 import MomentumStory from '../pages/stories/stories/momentum-training';
+import RockChoirStory from '../pages/stories/stories/rock-choir';
+import SpencerHockeyStory from '../pages/stories/stories/spencer-hockey';
+import FoundationOfHeartsStory from '../pages/stories/stories/foundation-of-hearts';
+import GreaterAngliaStory from '../pages/stories/stories/greater-anglia';
 
 import {defaultLocale} from '../helpers/locale-helper/locale-helper';
 
@@ -70,29 +74,44 @@ var config = [
           path: '/faq/merchants',
       },
   },],
-  [HasBeanCoffeeStory, {name: 'story_has_bean_coffee'}, {
+  [HasBeanCoffeeStory, {name: 'story_has_bean_coffee', category: 'stories'}, {
     'en-GB': {
       path: '/stories/has-bean-coffee',
     },
   },],
-  [BlueskyBusinessStory, {name: 'story_bluesky_business'}, {
+  [BlueskyBusinessStory, {name: 'story_bluesky_business', category: 'stories'}, {
     'en-GB': {
       path: '/stories/bluesky-business',
     },
   },],
-  [CrowdCubeStory, {name: 'story_crowdcube'}, {
+  [CrowdCubeStory, {name: 'story_crowdcube', category: 'stories'}, {
     'en-GB': {
       path: '/stories/crowdcube',
     },
   },],
-  [MomentumStory, {name: 'story_momentum'}, {
+  [MomentumStory, {name: 'story_momentum', category: 'stories'}, {
     'en-GB': {
       path: '/stories/momentum',
     },
   },],
-  [Story, {name: 'story'}, {
+  [RockChoirStory, {name: 'story_rock_choir', category: 'stories'}, {
     'en-GB': {
-      path: '/stories/:storyId',
+      path: '/stories/rock-choir',
+    },
+  },],
+  [SpencerHockeyStory, {name: 'story_spencer_hockey', category: 'stories'}, {
+    'en-GB': {
+      path: '/stories/spencer-hockey',
+    },
+  },],
+  [FoundationOfHeartsStory, {name: 'story_foundation_of_hearts', category: 'stories'}, {
+    'en-GB': {
+      path: '/stories/foundation-of-hearts',
+    },
+  },],
+  [GreaterAngliaStory, {name: 'story_greater_anglia', category: 'stories'}, {
+    'en-GB': {
+      path: '/stories/greater-anglia',
     },
   },],
 ];
