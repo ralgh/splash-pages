@@ -117,20 +117,18 @@ export default class HomeEn extends React.Component {
           </div>
         </div>
         <hr className='u-margin-An' />
-        <div className='u-text-center u-padding-Vxxl'>
-          <div className='site-container u-text-center u-padding-Vxxl'>
-            <div className='u-padding-Txl'>
-              <div className='u-size-1of2 u-center'>
-                <h2 className='u-text-heading u-color-heading u-text-light u-text-l'>
-                  Trusted by thousands of businesses
-                </h2>
-                <p className='u-text-s u-color-p u-margin-Txs'>
-                  We’re a Bacs approved bureau that collects millions of pounds for our merchants every day. Whatever your scale, GoCardless works for you.
-                </p>
-              </div>
-              <div className='u-text-center u-margin-Vl u-padding-Vs u-center'>
-                <img src='/images/logos/pro-logos@2x.png' />
-              </div>
+        <div className='site-container u-text-center u-padding-Vxxl'>
+          <div className='u-padding-Txl'>
+            <div className='u-size-1of2 u-center'>
+              <h2 className='u-text-heading u-color-heading u-text-light u-text-l'>
+                Trusted by thousands of businesses
+              </h2>
+              <p className='u-text-s u-color-p u-margin-Txs'>
+                We’re a Bacs approved bureau that collects millions of pounds for our merchants every day. Whatever your scale, GoCardless works for you.
+              </p>
+            </div>
+            <div className='u-text-center u-margin-Vl u-padding-Vs u-center'>
+              <img src='/images/logos/pro-logos@2x.png' />
             </div>
           </div>
         </div>
