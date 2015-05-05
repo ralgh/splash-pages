@@ -1,7 +1,7 @@
 import React from 'react';
 import {PropTypes} from '../../helpers/prop-types/prop-types';
 
-class Translation extends React.Component {
+export default class Translation extends React.Component {
   displayName = 'Translation'
 
   static contextTypes = {
@@ -22,5 +22,3 @@ class Translation extends React.Component {
     );
   }
 }
-
-export default Translation;

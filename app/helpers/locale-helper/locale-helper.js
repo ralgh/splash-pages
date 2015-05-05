@@ -13,7 +13,7 @@ export function pathToLocale(path, availableLocales) {
   const pathLocale = (path || '').toLowerCase().match(/^\/([a-z]{2,2}\-[a-z]{2,2})/);
   const foundLocale = new locale.Locale(pathLocale && pathLocale[1]);
   const normalizedLocale = normalizeLocale(foundLocale);
-  if (!_.contains(availableLocales, normalizedLocale.normalized)) {
+  if (!_.includes(availableLocales, normalizedLocale.normalized)) {
     return normalizeLocale(new locale.Locale(defaultLocale));
   }
   return normalizedLocale;
@@ -21,7 +21,7 @@ export function pathToLocale(path, availableLocales) {
 
 export function validateLocale(localeStr) {
   if (!localeStr.match(/[a-z]{2,2}\-[A-Z]{2,2}/)) {
-    throw new Error(`Locale not valid ${localeStr}`);
+    throw new TypeError(`Locale not valid ${localeStr}`);
   }
   return localeStr;
 }
