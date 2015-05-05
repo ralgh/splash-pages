@@ -65,7 +65,7 @@ class Header extends React.Component {
             <nav className='nav u-pull-start u-color-primary u-text-xxs u-text-light u-text-no-smoothing'>
               <div className='nav__item u-relative'>
                 <Popover className='popover--large' toggle={
-                     (<a href='#' id='track-nav-products' className={`u-padding-Vl u-block u-link-clean ${linkClass}`}>
+                     (<a href='#' id='track-nav-products' className={linkClasses}>
                         <div className='nav__item-link popover-link popover-link--invert'>
                           <IntlMessage message='header.our_products' />
                         </div>

@@ -3,6 +3,7 @@ import Page from '../../components/page/page';
 import StartTakingPaymentsCTA from '../../components/start-taking-payments/start-taking-payments';
 
 import ReactRouter from 'react-router';
+import RevealBox from './components/reveal-box';
 var { Link } = ReactRouter;
 import StoryLink from './components/story-link';
 
@@ -86,6 +87,32 @@ export default class Stories extends React.Component {
               Spencer Hockey Club slashed the time spent chasing their members for payments by switching to Direct Debit with GoCardless.
             </StoryLink>
           </div>
+        </div>
+        <hr className='u-margin-An' />
+        <div className='site-container u-text-center u-padding-Vxxl'>
+          <RevealBox>
+            <div
+              key='guardian'
+              tab={(<img src="/images/stories/guardian-logo@2x.jpg" />)}
+              className="stories-testimonials__quote stories-testimonials__quote--guardian u-relative u-margin-Txxl u-padding-Al"
+            >
+              <p className="u-text-heading u-color-heading u-text-light u-text-m">"The Guardian is always looking to give the best customer experience and has chosen GoCardless to make its recurring payment experience as seamless as possible."</p>
+            </div>
+            <div
+              key='funding-circle'
+              tab={(<img className="stories-testimonials__link-image--funding-circle" src="/images/stories/funding-circle-logo@2x.jpg" />)}
+              className="stories-testimonials__quote stories-testimonials__quote--funding-circle u-relative u-margin-Txxl u-padding-Al"
+            >
+              <p className="u-text-heading u-color-heading u-text-light u-text-m">"GoCardless is one of the best payments companies we've worked with. Their API was simple to integrate and allows us to use Direct Debit in a fully automated way. I'd highly recommend them to any company that cares about a providing good user experience and using the best available technology for their Direct Debit in the UK and Europe."</p>
+            </div>
+            <div
+              key='lendable'
+              tab={(<img className="stories-testimonials__link-image--lendable" src="/images/stories/lendable-logo@2x.jpg" />)}
+              className="stories-testimonials__quote stories-testimonials__quote--lendable u-relative u-margin-Txxl u-padding-Al"
+            >
+              <p className="u-text-heading u-color-heading u-text-light u-text-m">"We moved to GoCardless as collections can be managed by one person instead of a whole department. It's great to work with another financial technology company who are committed to helping businesses."</p>
+            </div>
+          </RevealBox>
         </div>
         <hr className='u-margin-An' />
         <StartTakingPaymentsCTA />
