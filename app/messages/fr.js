@@ -21,6 +21,10 @@ export default {
     pro_signup: 'Sign Up Now',
     more: 'Learn More',
   },
+  hero: {
+    header: 'Simplifions les paiements récurrents',
+    desc: 'GoCardless rend le prélèvement bancaire Européen simple pour tous, des start-ups aux grandes entreprises.',
+  },
   postal_address: {
     street_address: '338-346 Goswell Road',
     address_locality: 'Londres',
@@ -36,16 +40,16 @@ export default {
   },
   contact_sales: {
     title: 'Contactez-nous',
-    description: 'Contactez-nous'
+    description: 'Contactez-nous',
   },
   not_found: {
     title: 'Pas Trouvé',
     description: 'Vous ne trouvez pas votre page',
   },
   home: {
-    title: 'French home',
-    description: 'French home',
-    link: 'fr home'
+    title: 'Le prélèvement high-tech en Europe ',
+    description: 'Accédez au prélèvement SEPA afin d\'améliorer votre rétention clients et réduire vos coûts, sans les complications associées aux opérateurs historiques.',
+    link: 'fr home',
   },
   about: {
     title: 'A propos',
@@ -60,7 +64,7 @@ export default {
   },
   pricing: {
     title: 'Tarifs',
-    description: 'Tarifs',
+    description: 'Collectez vos prélèvements automatiques SEPA à partir de 0,75€ par transaction, avec tarifs dégressifs pour les grandes entreprises.',
   },
   legal: {
     title: 'Légal',

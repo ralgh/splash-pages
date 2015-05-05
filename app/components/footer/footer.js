@@ -173,7 +173,7 @@ class Footer extends React.Component {
             <img src={ `/images/icons/${ region }-flag-icon@2x.png` } className='flag-icon u-margin-Hs' alt />
             <span className='u-relative'>
              <Popover className='popover--above' toggle={
-                  (<a popover-toggle href='#' className='u-text-semi u-link-invert'>
+                  (<a href='#' className='u-text-semi u-link-invert'>
                      <span className='popover-link popover-link--invert'>
                        <IntlMessage message='country' />
                      </span>

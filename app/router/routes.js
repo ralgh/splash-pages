@@ -116,7 +116,10 @@ var config = [
   },],
 ];
 
-function pathToLocale(path, locale) {
+function pathWithLocale(path, locale) {
+  if (!path || path.indexOf('/') !== 0) {
+    throw new Error('Path not valid, must begin with `/`');
+  }
   var localePath;
   if (locale === defaultLocale) {
     localePath = path;
@@ -124,8 +127,7 @@ function pathToLocale(path, locale) {
     localePath = ['/', locale.toLowerCase(), path].join('/').replace(/\/\//g, '/');
   }
   localePath = localePath.replace(/^\/|\/$/g, '');
-  localePath = '/' + localePath;
-  return localePath;
+  return '/' + localePath;
 }
 
 function validatePages(pages) {
@@ -145,7 +147,8 @@ function flattenPagesForLocale(pages, locale, availableLocales) {
     page = _.cloneDeep(page);
     if (locale in page[2]) {
       page[2] = page[2][locale];
-      page[2].path = pathToLocale(page[2].path, locale);
+      const matchOptionalSlash = '/?';
+      page[2].path = pathWithLocale(page[2].path, locale) + matchOptionalSlash;
       if (_.isArray(page[3])) {
         page[3] = flattenPagesForLocale(page[3], locale, availableLocales);
       }
@@ -183,14 +186,14 @@ function getRoutesForPages(pages, availableLocales) {
   });
 }
 
-function findRelatedForRouteName(pages, routeName) {
+export function getLocalesForRouteName(routeName, givenConfig=config) {
   var foundPage;
 
-  pages.some(function(page, index) {
+  givenConfig.some(function(page, index) {
     if (page[1] && page[1].name === routeName) {
-      foundPage = pages[index];
+      foundPage = givenConfig[index];
     } else if (_.isArray(page[3])) {
-      foundPage = findRelatedForRouteName(page[3], routeName);
+      foundPage = getLocalesForRouteName(routeName, page[3]);
     }
     return !!foundPage;
   });
@@ -199,19 +202,16 @@ function findRelatedForRouteName(pages, routeName) {
     foundPage = foundPage[2];
     foundPage = _.cloneDeep(foundPage);
     Object.keys(foundPage).forEach(function(locale) {
-      foundPage[locale].path = pathToLocale(foundPage[locale].path, locale);
+      const destPath = pathWithLocale(foundPage[locale].path, locale);
+      foundPage[locale].path = destPath;
     });
   }
 
   return foundPage;
 }
 
-export function getLocalesForRouteName(routeName) {
-  return findRelatedForRouteName(config, routeName);
-}
-
-export function getRoutes(locale, availableLocales) {
-  var pages = flattenPagesForLocale(config, locale, availableLocales);
+export function getRoutes(locale, availableLocales, givenConfig=config) {
+  var pages = flattenPagesForLocale(givenConfig, locale, availableLocales);
   return (
     <Route path={pages[0][2].path} handler={App}>
       {getRoutesForPages(pages.slice(1), availableLocales)}

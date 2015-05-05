@@ -12,7 +12,7 @@
   height: 100%;
   width: 100%;
   position: relative;
-  top: -76px;
+  top: -38px;
 }
 
 .page-hero__text {
@@ -20,6 +20,11 @@
   vertical-align: middle;
   height: 100%;
   width: 100%;
+}
+
+.page-hero__text__desc {
+  max-width: 650px;
+  margin: 0 auto;
 }
 
 .page-hero--home {

@@ -6,7 +6,7 @@ export default class PricingEn extends React.Component {
 
   render() {
     return (
-      <Translation locales='en-gb'>
+      <Translation locales='en-GB'>
         <div className='page-hero--pricing page-hero'>
           <div className='site-container'>
             <div className='grid pricing-options u-center u-padding-Bxl'>
@@ -26,7 +26,7 @@ export default class PricingEn extends React.Component {
                     <b>Perfect for small to medium sized businesses</b>
                   </li>
                   <li className='pricing-options__list-item'>
-                    No setup fees, hidden fees, or commitments</li>
+                    No setup costs, hidden fees, or commitments</li>
                   <li className='pricing-options__list-item'>
                     Scale pricing available (<a href='#scale-pricing-container' ng-gc-smooth-scroll=''>?</a>)
                   </li>

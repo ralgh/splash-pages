@@ -8,7 +8,6 @@ import { loadIntlPolyfill } from '../helpers/intl-polyfill/intl-polyfill';
 // Load CSS in dev mode dynamically.
 if (process.env.BROWSER) {
   require('../css/main.scss');
-  require('../css/greenhouse-forms.scss');
   require('../css/fonts.css');
 }
 
