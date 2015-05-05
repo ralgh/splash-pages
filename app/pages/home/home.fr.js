@@ -3,6 +3,7 @@ import Translation from '../../components/translation/translation';
 import ChecklistIcon from '../../icons/svg/checklist';
 import RealtimeIcon from '../../icons/svg/realtime';
 import TickSquareIcon from '../../icons/svg/tick-square';
+import Tabs from '../../components/tabs/tabs';
 
 export default class HomeFr extends React.Component {
   displayName = 'HomeFr'
@@ -159,40 +160,29 @@ export default class HomeFr extends React.Component {
             </div>
           </div>
           <div className='u-padding-Vxl u-margin-Tl'>
-            <div className='stories-testimonials__grid grid u-text-center'>
-              <a href='#guardian' className='grid__cell u-padding-Hl stories-testimonials__link--guardian u-size-1of3 stories-testimonials__link u-link-clean' ng-click='$activate($event)'>
+            <Tabs triggers={[
+              (<a href='#' className='grid__cell u-padding-Hl stories-testimonials__link--guardian u-size-1of3 stories-testimonials__link u-link-clean'>
                 <img src='/images/stories/guardian-logo@2x.jpg' />
-              </a>
-              <a href='#funding-circle' className='grid__cell u-padding-Hl stories-testimonials__link--funding-circle u-size-1of3 stories-testimonials__link u-link-clean' ng-click='$activate($event)'>
+              </a>),
+              (<a href='#' className='grid__cell u-padding-Hl stories-testimonials__link--funding-circle u-size-1of3 stories-testimonials__link u-link-clean'>
                 <img className='stories-testimonials__link-image--funding-circle' src='/images/stories/funding-circle-logo@2x.jpg' />
-              </a>
-              <a href='#lendable' className='grid__cell u-padding-Hl stories-testimonials__link--lendable u-size-1of3 stories-testimonials__link u-link-clean' ng-click='$activate($event)'>
+              </a>),
+              (<a href='#' className='grid__cell u-padding-Hl stories-testimonials__link--lendable u-size-1of3 stories-testimonials__link u-link-clean'>
                 <img className='stories-testimonials__link-image--lendable' src='/images/stories/lendable-logo@2x.jpg' />
-              </a>
-            </div>
-            <div id='guardian'>
-              <div>
-                <div className='stories-testimonials__quote stories-testimonials__quote--guardian u-relative u-margin-Txxl u-padding-Al'>
-                  <p className='u-text-heading u-color-heading u-text-light u-text-m'>The Guardian recherche toujours à offrir la meilleure expérience client et a choisi GoCardless pour simplifier l'expérience du paiement récurrent.'</p>
-                </div>
+              </a>),
+            ]}>
+              <div className='stories-testimonials__quote stories-testimonials__quote--guardian u-relative u-margin-Txxl u-padding-Al'>
+                <p className='u-text-heading u-color-heading u-text-light u-text-m'>The Guardian recherche toujours à offrir la meilleure expérience client et a choisi GoCardless pour simplifier l'expérience du paiement récurrent.'</p>
               </div>
-            </div>
-            <div id='funding-circle'>
-              <div>
-                <div className='stories-testimonials__quote stories-testimonials__quote--funding-circle u-relative u-margin-Txxl u-padding-Al'>
-                  <p className='u-text-heading u-color-heading u-text-light u-text-m'>
-                    Nous avons migré sur GoCardless pour que nos prélèvements puissent être gérés par une seule personne au lieu de tout un département. C'est un plaisir de travailler avec une société de technologie financière qui s'engage également à aider les entreprises.'</p>
-                </div>
+              <div className='stories-testimonials__quote stories-testimonials__quote--funding-circle u-relative u-margin-Txxl u-padding-Al'>
+                <p className='u-text-heading u-color-heading u-text-light u-text-m'>
+                  Nous avons migré sur GoCardless pour que nos prélèvements puissent être gérés par une seule personne au lieu de tout un département. C'est un plaisir de travailler avec une société de technologie financière qui s'engage également à aider les entreprises.'</p>
               </div>
-            </div>
-            <div id='lendable'>
-              <div>
-                <div className='stories-testimonials__quote stories-testimonials__quote--lendable u-relative u-margin-Txxl u-padding-Al'>
-                  <p className='u-text-heading u-color-heading u-text-light u-text-m'>
-                    GoCardless est une des meilleures entreprises de paiements avec laquelle j'ai travaillé. Leur API est simple à intégrer et nous permet d'utiliser le prélèvement de façon entièrement automatisée. Je les recommende fortement à toutes les entreprises qui ont pour priorités une bonne expérience client et l'utilisation de la meilleure technologie disponible pour leurs prélèvements en Europe.</p>
-                </div>
+              <div className='stories-testimonials__quote stories-testimonials__quote--lendable u-relative u-margin-Txxl u-padding-Al'>
+                <p className='u-text-heading u-color-heading u-text-light u-text-m'>
+                  GoCardless est une des meilleures entreprises de paiements avec laquelle j'ai travaillé. Leur API est simple à intégrer et nous permet d'utiliser le prélèvement de façon entièrement automatisée. Je les recommende fortement à toutes les entreprises qui ont pour priorités une bonne expérience client et l'utilisation de la meilleure technologie disponible pour leurs prélèvements en Europe.</p>
               </div>
-            </div>
+            </Tabs>
           </div>
         </div>
 
