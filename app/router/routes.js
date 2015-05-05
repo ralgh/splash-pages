@@ -17,6 +17,11 @@ import Pricing from '../pages/pricing/pricing';
 import Stories from '../pages/stories/stories';
 import Story from '../pages/stories/story';
 
+import HasBeanCoffeeStory from '../pages/stories/stories/has-bean-coffee';
+import BlueskyBusinessStory from '../pages/stories/stories/bluesky-business';
+import CrowdCubeStory from '../pages/stories/stories/crowdcube';
+import MomentumStory from '../pages/stories/stories/momentum-training';
+
 import {defaultLocale} from '../helpers/locale-helper/locale-helper';
 
 export var homeRoute = 'home';
@@ -51,25 +56,45 @@ var config = [
   ],
   [Stories, {name: 'stories'}, {
     'en-GB': {
-      path: '/stories'
-    }
-  }],
-  [Story, {name: 'story'}, {
-    'en-GB': {
-      path: '/stories/:storyId',
+      path: '/stories',
     },
-  }],
+  },],
   [null, null, {
       'en-GB': {
           path: '/faq',
           redirectTo: 'faq_merchants',
       },
-  }],
+  },],
   [FaqMerchants, { name: 'faq_merchants' }, {
       'en-GB': {
           path: '/faq/merchants',
       },
-  }],
+  },],
+  [HasBeanCoffeeStory, {name: 'story_has_bean_coffee'}, {
+    'en-GB': {
+      path: '/stories/has-bean-coffee',
+    },
+  },],
+  [BlueskyBusinessStory, {name: 'story_bluesky_business'}, {
+    'en-GB': {
+      path: '/stories/bluesky-business',
+    },
+  },],
+  [CrowdCubeStory, {name: 'story_crowdcube'}, {
+    'en-GB': {
+      path: '/stories/crowdcube',
+    },
+  },],
+  [MomentumStory, {name: 'story_momentum'}, {
+    'en-GB': {
+      path: '/stories/momentum',
+    },
+  },],
+  [Story, {name: 'story'}, {
+    'en-GB': {
+      path: '/stories/:storyId',
+    },
+  },],
 ];
 
 function pathToLocale(path, locale) {

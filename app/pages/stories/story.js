@@ -15,7 +15,7 @@ export default class Story extends React.Component {
 
   render() {
     var storyId = this.props.params.storyId;
-    var story = AllStories['en'][storyId];
+    var story = AllStories.en[storyId];
     var tips = story.tips;
     return (
       <Page isInverted={false}>

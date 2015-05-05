@@ -7,7 +7,7 @@ var { Link } = ReactRouter;
 
 import AllStories from './stories-data';
 
-var EnStories = AllStories['en'];
+var EnStories = AllStories.en;
 var SmallBlurbStories = Object.keys(EnStories).filter(function(key) {
   return EnStories[key].blurb;
 });
@@ -37,7 +37,7 @@ export default class Stories extends React.Component {
           <div className='u-padding-Vxxl u-relative u-margin-Bxxl'>
             <div className='u-padding-Bl'>
               <div className='stories-spotlight grid u-margin-Hn u-size-full'>
-                <Link to='story' params={{storyId: 'has-bean-coffee'}} className='grid__cell u-text-center u-size-1of2 u-link-clean u-padding-Rxs u-padding-Ln'>
+                <Link to='story_has_bean_coffee' className='grid__cell u-text-center u-size-1of2 u-link-clean u-padding-Rxs u-padding-Ln'>
                   <div className='stories-spotlight__item stories-spotlight__item--has-bean-coffee
                   u-relative u-padding-Vl'>
                     <div className='stories-spotlight__item-text u-margin-Vl'>
@@ -51,7 +51,7 @@ export default class Stories extends React.Component {
                   </div>
                   <div className='stories-spotlight__btn btn u-size-full'>Read the case study</div>
                 </Link>
-                <Link to='story' params={{storyId: 'momentum'}} className='grid__cell u-text-center u-size-1of2 u-link-clean u-padding-Lxs u-padding-Rn'>
+                <Link to='story_momentum' className='grid__cell u-text-center u-size-1of2 u-link-clean u-padding-Lxs u-padding-Rn'>
                   <div className='stories-spotlight__item stories-spotlight__item--crossfit-hackney u-relative u-padding-Vl'>
                     <div className='stories-spotlight__item-text u-margin-Vl'>
                       <p className='u-padding-Al u-padding-Bn u-text-heading u-color-invert u-text-m'>

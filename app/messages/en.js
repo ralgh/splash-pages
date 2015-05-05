@@ -118,4 +118,20 @@ export default {
   help: {
     title: 'Support',
   },
+  story_has_bean_coffee: {
+    title: ':(',
+      description: 'agegjiafij',
+  },
+  story_momentum: {
+    title: '',
+    description: '',
+  },
+  story_bluesky_business: {
+    title: '',
+    description: '',
+  },
+  story_crowdcube: {
+    title: '',
+    description: '',
+  }
 };
