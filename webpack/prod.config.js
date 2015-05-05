@@ -6,7 +6,7 @@ var writeStats = require('./utils/write-stats');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var strip = require('strip-loader');
 
-var assetsPath = path.join(__dirname, './public/images');
+var assetsPath = path.join(__dirname, '../public/bundle');
 
 module.exports = {
   devtool: 'source-map',
@@ -17,7 +17,7 @@ module.exports = {
     path: assetsPath,
     filename: '[name]-[chunkhash].js',
     chunkFilename: '[name]-[chunkhash].js',
-    publicPath: '/assets/',
+    publicPath: '/bundle/',
   },
   module: {
     loaders: [
