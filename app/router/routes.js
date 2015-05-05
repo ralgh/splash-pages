@@ -92,6 +92,7 @@ function pathWithLocale(path, locale) {
   if (!path || path.indexOf('/') !== 0) {
     throw new TypeError('Path not valid, must begin with `/`');
   }
+
   var localePath;
   if (locale === defaultLocale) {
     localePath = path;
@@ -103,7 +104,9 @@ function pathWithLocale(path, locale) {
 }
 
 function validatePages(pages) {
-  return (pages.length !== 0);
+  if (pages.length < 1) {
+    throw new TypeError('pages must not be empty');
+  }
 }
 
 function validateLocale(locale, availableLocales) {
@@ -115,80 +118,124 @@ function validateLocale(locale, availableLocales) {
 function flattenPagesForLocale(pages, locale, availableLocales) {
   validatePages(pages);
   validateLocale(locale, availableLocales);
-  return pages.reduce(function(pagesInner, page) {
-    page = _.cloneDeep(page);
-    if (locale in page[2]) {
-      page[2] = page[2][locale];
-      const matchOptionalSlash = '/?';
-      page[2].path = pathWithLocale(page[2].path, locale) + matchOptionalSlash;
-      if (_.isArray(page[3])) {
-        page[3] = flattenPagesForLocale(page[3], locale, availableLocales);
-      }
-      pagesInner.push(page);
+
+  function setLocaleConfigPath(page) {
+    const matchOptionalSlash = '/?';
+
+    return _.merge({}, page, {
+      localeConfig: {
+        path: pathWithLocale(page.localeConfig[locale].path, locale) + matchOptionalSlash,
+      },
+    });
+  }
+
+  function flattenChildConfig(page) {
+    if (Array.isArray(page.childConfig)) {
+      return _.merge({}, page, {
+        childConfig: flattenPagesForLocale(page.childConfig, locale, availableLocales),
+      });
+    } else {
+      return page;
     }
-    return pagesInner;
-  }, []);
+  }
+
+  return pages.filter((page) => page.localeConfig.hasOwnProperty(locale))
+              .map(setLocaleConfigPath)
+              .map(flattenChildConfig);
 }
 
 function getRoutesForPages(pages, availableLocales) {
   return pages.map(function(page) {
-    if (page[0] === null) {
-      return [
-        (
-          <Redirect
-            from={page[2].path}
-            to={page[2].redirectTo}
-            key={page[2].redirectTo + '_redirect'}>
-            {page[3] && getRoutesForPages(page[3], availableLocales) || null}
-          </Redirect>
-        ),
-      ];
+    const { handler, routeConfig, localeConfig, childConfig } = page;
+
+    if (handler === null) {
+      return (
+        <Redirect
+          from={localeConfig.path}
+          to={localeConfig.redirectTo}
+          key={localeConfig.redirectTo + '_redirect'}>
+          {childConfig && getRoutesForPages(childConfig, availableLocales) || null}
+        </Redirect>
+      );
     } else {
-      return [
-        (
-          <Route key={page[1].name}
-            name={page[1].name}
-            path={page[2].path}
-            handler={page[0]}>
-            {page[3] && getRoutesForPages(page[3], availableLocales) || null}
-          </Route>
-        ),
-      ];
+      return (
+        <Route key={routeConfig.name}
+          name={routeConfig.name}
+          path={localeConfig.path}
+          handler={handler}>
+          {childConfig && getRoutesForPages(childConfig, availableLocales) || null}
+        </Route>
+      );
     }
   });
+}
+
+function findRouteByName(routeName, transformedConfig) {
+  function fanOutConfig(page) {
+    const { childConfig } = page;
+
+    if (Array.isArray(childConfig)) {
+      return childConfig.map(fanOutConfig).concat(page);
+    } else {
+      return page;
+    }
+  }
+
+  return _.chain(transformedConfig)
+          .map(fanOutConfig)
+          .flatten()
+          .find(({ routeConfig }) => routeConfig && routeConfig.name === routeName)
+          .value();
+}
+
+/**
+ * Returns an easier to work with version of a 'route config' entry, applying the same
+ * transformation to any `childConfig`s
+ * @param {Array} configItem e.g. [ReactComponent, Object, Object, [[ReactComponent, Object, Object], ...]]
+ * @returns {Object} e.g.:
+ *   {
+ *     handler: ReactComponent,
+ *     routeConfig: Object,
+ *     localeConfig: Object,
+ *     childConfig: [{
+ *       handler: ReactComponent,
+ *       routeConfig: Object,
+ *       localeConfig: Object,
+ *       childConfig: ...
+ *     }, ...]
+ *   }
+ */
+function transformConfig([handler, routeConfig, localeConfig, childConfig]) {
+  if (Array.isArray(childConfig) && Array.isArray(childConfig[0])) {
+    return transformConfig([ handler, routeConfig, localeConfig, childConfig.map(transformConfig) ]);
+  } else {
+    return { handler, routeConfig, localeConfig, childConfig };
+  }
 }
 
 export function getLocalesForRouteName(routeName, givenConfig=config) {
-  var foundPage;
+  const transformedConfig = givenConfig.map(transformConfig);
+  const page = findRouteByName(routeName, transformedConfig);
+  if (!page) { return undefined; }
 
-  givenConfig.some(function(page, index) {
-    if (page[1] && page[1].name === routeName) {
-      foundPage = givenConfig[index];
-    } else if (_.isArray(page[3])) {
-      foundPage = getLocalesForRouteName(routeName, page[3]);
-    }
-    return !!foundPage;
-  });
+  const { localeConfig } = page;
 
-  if (foundPage) {
-    foundPage = foundPage[2];
-    foundPage = _.cloneDeep(foundPage);
-    Object.keys(foundPage).forEach(function(locale) {
-      const destPath = pathWithLocale(foundPage[locale].path, locale);
-      foundPage[locale].path = destPath;
+  return _.reduce(localeConfig, function(memo, routeConfig, localeKey) {
+    return _.extend(memo, {
+      [localeKey]: { path: pathWithLocale(routeConfig.path, localeKey) },
     });
-  }
-
-  return foundPage;
+  }, {});
 }
 
 export function getRoutes(locale, availableLocales, givenConfig=config) {
-  var pages = flattenPagesForLocale(givenConfig, locale, availableLocales);
-  return (
-    <Route path={pages[0][2].path} handler={App}>
-      {getRoutesForPages(pages.slice(1), availableLocales)}
+  const transformedConfig = givenConfig.map(transformConfig);
+  const [homePage, ...rest] = flattenPagesForLocale(transformedConfig, locale, availableLocales);
 
-      <DefaultRoute handler={pages[0][0]} name={pages[0][1].name} />
+  return (
+    <Route path={homePage.localeConfig.path} handler={App}>
+      {getRoutesForPages(rest, availableLocales)}
+
+      <DefaultRoute handler={homePage.handler} name={homePage.routeConfig.name} />
       <NotFoundRoute handler={NotFound} />
     </Route>
   );
