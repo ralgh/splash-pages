@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import { run, TestLocation } from 'react-router';
 import { getLocalesForRouteName, getRoutes } from './routes.js';
 import { FakeComponent } from '../helpers/specs/fake-component';
@@ -80,7 +81,7 @@ describe('getRoutes', () => {
         const route = routes[0];
         const childRoutePaths = route.childRoutes.map(c => c.path);
 
-        expect(childRoutePaths).toEqual(['/english-specific-page', '/english-only', '/', '/*']);
+        expect(childRoutePaths).toEqual(['/english-specific-page/?', '/english-only/?', '//?', '//?*']);
 
         done();
       });
@@ -88,15 +89,33 @@ describe('getRoutes', () => {
 
     describe('when given fr-FR locale', () => {
       it('picks the french routes', (done) => {
-        var location = new TestLocation(['/fr-fr']);
+        const location = new TestLocation(['/fr-fr']);
         routeComponent = getRoutes('fr-FR', ['en-GB', 'fr-FR'], fakeConfig);
 
         run(routeComponent, location, function({ routes }) {
           const route = routes[0];
           const childRoutePaths = route.childRoutes.map(c => c.path);
 
-          expect(childRoutePaths).toEqual(['/fr-fr/french-specific-page', '/fr-fr/french-only', '/fr-fr', '/fr-fr*']);
+          expect(childRoutePaths).toEqual(['/fr-fr/french-specific-page/?', '/fr-fr/french-only/?', '/fr-fr/?', '/fr-fr/?*']);
 
+          done();
+        });
+      });
+    });
+
+    describe('matching path', function() {
+      it('without forward slash', (done) => {
+        const location = new TestLocation(['/english-only']);
+        run(routeComponent, location, function(Handler, state) {
+          expect(_.last(state.routes).name).toEqual('englishOnlyRoute');
+          done();
+        });
+      });
+
+      it('with forward slash', (done) => {
+        const location = new TestLocation(['/english-only/']);
+        run(routeComponent, location, function(Handler, state) {
+          expect(_.last(state.routes).name).toEqual('englishOnlyRoute');
           done();
         });
       });
