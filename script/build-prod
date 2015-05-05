@@ -1,0 +1,3 @@
+#!/bin/sh
+
+node_modules/.bin/webpack --stats --progress --config ./webpack/prod.config.js
