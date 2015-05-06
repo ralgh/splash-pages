@@ -13,7 +13,9 @@ export default class PricingFr extends React.Component {
             <div className='grid pricing-options u-center u-padding-Bxl'>
               <div className='grid__cell u-size-1of2 u-padding-Vxl u-padding-Rxs'>
                 <div className='u-padding-Rxs'>
-                  <h1 className='u-text-heading-light u-text-center u-color-invert u-text-l u-padding-Bs'>GoCardless</h1>
+                  <h1 className='u-text-heading-light u-text-center u-color-invert u-text-l u-padding-Bs'>
+                    GoCardless
+                  </h1>
                   <div className='u-background-primary u-padding-Vxl'>
                     <h2 className='u-text-heading-light u-text-center u-color-invert u-text-xl'>1%</h2>
                     <p className='u-text-heading-light u-text-center u-color-invert u-text-s u-margin-Txxs'>
@@ -43,7 +45,9 @@ export default class PricingFr extends React.Component {
               </div>
               <div className='grid__cell u-size-1of2 u-padding-Vxl u-padding-Rxs'>
                 <div className='u-padding-Lxs'>
-                  <h1 className='u-text-heading-light u-text-center u-color-invert u-text-l u-padding-Bs'>GoCardless Pro</h1>
+                  <h1 className='u-text-heading-light u-text-center u-color-invert u-text-l u-padding-Bs'>
+                    GoCardless Pro
+                  </h1>
                   <div className='u-background-dark-gray-darken u-padding-Vxl'>
                     <h2 className='u-text-heading-light u-text-center u-color-invert u-text-xl'>0,01 — 0,60 €</h2>
                     <p className='u-text-heading-light u-text-center u-color-invert u-text-s u-margin-Txxs'>
@@ -87,7 +91,9 @@ export default class PricingFr extends React.Component {
                 </b>
               </div>
               <p className='u-color-p'>
-                Non, il n'y aucun autre frais que ceux indiqués ci-dessus. Nous ne vous facturons jamais les paiements qui ont échoué, les remboursements, les créations de mandats...
+                Non, il n'y aucun autre frais que ceux indiqués ci-dessus.
+                Nous ne vous facturons jamais les paiements qui ont échoué,
+                  les remboursements, les créations de mandats...
               </p>
             </div>
             <div className='grid__cell u-size-1of2 u-padding-Bxxl u-padding-Lm'>
@@ -96,7 +102,8 @@ export default class PricingFr extends React.Component {
               </div>
               <p className='u-color-p'>
                 Oui. Nos frais par transaction sont dégressifs à partir de 1.000 paiements par mois.
-                Pour en savoir plus, <Link to='contact_sales' className='u-link-color-p u-text-underline'>contactez-nous</Link>
+                Pour en savoir plus,
+                &nbsp;<Link to='contact_sales' className='u-link-color-p u-text-underline'>contactez-nous</Link>
               </p>
             </div>
             <div className='grid__cell u-size-1of2 u-padding-Bm u-padding-Rm'>

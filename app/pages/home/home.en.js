@@ -24,7 +24,8 @@ export default class HomeEn extends React.Component {
                 Bringing Direct Debit into the 21st century
               </h2>
               <p className='u-text-s u-color-p u-margin-Txs'>
-                GoCardless allows you to benefit from the great fees and low failure rates of Direct Debit, without the operational complexity associated with traditional providers.
+                GoCardless allows you to benefit from the great fees and low failure rates of Direct Debit,
+                without the operational complexity associated with traditional providers.
               </p>
             </div>
             <div className='grid u-margin-Tl u-padding-Tm'>
@@ -123,7 +124,8 @@ export default class HomeEn extends React.Component {
                 Trusted by thousands of businesses
               </h2>
               <p className='u-text-s u-color-p u-margin-Txs'>
-                We’re a Bacs approved bureau that collects millions of pounds for our merchants every day. Whatever your scale, GoCardless works for you.
+                We’re a Bacs approved bureau that collects millions of pounds for our merchants every day.
+                Whatever your scale, GoCardless works for you.
               </p>
             </div>
             <div className='u-text-center u-margin-Vl u-padding-Vs u-center'>
@@ -141,7 +143,9 @@ export default class HomeEn extends React.Component {
               <p className='u-text-s u-color-p u-margin-Vxs'>
                 Competitive rates for everyone from individuals through to large corporations
               </p>
-              <Link to='pricing' id='track-cta-pricing' className='btn btn--hollow u-margin-Tm'>Learn about our pricing</Link>
+              <Link to='pricing' id='track-cta-pricing' className='btn btn--hollow u-margin-Tm'>
+                Learn about our pricing
+              </Link>
             </div>
           </div>
         </div>

@@ -7,6 +7,7 @@ export default class SecurityIcon extends React.Component {
     className: React.PropTypes.string.isRequired
   };
 
+  /*eslint-disable max-len*/
   render() {
     return (
       <svg className={this.props.className} width='54' height='76' viewBox='0 0 54 76' xmlns='http://www.w3.org/2000/svg'>

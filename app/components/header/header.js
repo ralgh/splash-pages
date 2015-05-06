@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import IntlMessage from '../intl-message/intl-message';
 import LinkExists from '../link-exists/link-exists';
-import Logo from '../../icons/icon/logo';
+import Logo from '../../icons/logo/logo';
 import Popover from '../popover/popover';
 import classNames from 'classnames';
 
@@ -107,7 +107,8 @@ class Header extends React.Component {
             <ul className='u-cf u-pull-start'>
               <li className='u-pull-start'>
                 <a href='/users/sign_in' id='track-nav-sign-in'
-                className={classNames('nav-btn btn btn--small u-text-light u-text-xxs u-relative u-text-transform-none u-text-no-smoothing', {
+                className={classNames('nav-btn btn btn--small u-text-light u-text-xxs u-relative' +
+                  'u-text-transform-none u-text-no-smoothing', {
                   'btn--invert-hollow': isInverted,
                   'btn--hollow': !isInverted,
                 })}>

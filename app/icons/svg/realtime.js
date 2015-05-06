@@ -7,6 +7,7 @@ export default class RealtimeIcon extends React.Component {
     className: React.PropTypes.string.isRequired
   };
 
+  /*eslint-disable max-len*/
   render() {
     return (
       <svg className={this.props.className} width='76' height='77' viewBox='0 0 76 77' xmlns='http://www.w3.org/2000/svg'>
