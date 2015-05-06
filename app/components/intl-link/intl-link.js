@@ -1,7 +1,6 @@
 import React from 'react';
 import IntlMessage from '../intl-message/intl-message';
-import Router from 'react-router';
-var { Link } = Router;
+import { Link } from 'react-router';
 
 export default class IntlLink extends React.Component {
   displayName = 'IntlLink'

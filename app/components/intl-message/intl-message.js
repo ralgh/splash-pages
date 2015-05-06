@@ -1,7 +1,6 @@
 import React from 'react';
-import {getIntlMessage} from '../intl/intl';
-import ReactIntl from 'react-intl';
-var { FormattedMessage } = ReactIntl;
+import { getIntlMessage } from '../intl/intl';
+import { FormattedMessage } from 'react-intl';
 
 class IntlMessage extends React.Component {
   displayName = 'IntlMessage'

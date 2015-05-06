@@ -1,18 +1,17 @@
 import React from 'react';
 import _ from 'lodash';
-import Router from 'react-router';
-const {Link} = Router;
+import { Link } from 'react-router';
 import IntlLink from '../intl-link/intl-link';
 import IntlMessage from '../intl-message/intl-message';
 import LinkExists from '../link-exists/link-exists';
 
 import CheckmarkIcon from '../../icons/svg/checkmark';
 
-import {getLocalesForRouteName, homeRoute} from '../../router/routes';
-import {getIntlMessage} from '../intl/intl';
+import { getLocalesForRouteName, homeRoute } from '../../router/routes';
+import { getIntlMessage } from '../intl/intl';
 import Popover from '../popover/popover';
-import {localeToRegion} from '../../helpers/locale-helper/locale-helper';
-import {PropTypes} from '../../helpers/prop-types/prop-types';
+import { localeToRegion } from '../../helpers/locale-helper/locale-helper';
+import { PropTypes } from '../../helpers/prop-types/prop-types';
 
 function buildAvailableLocales(currentLocale, siteLocales, messages) {
   const availableLocales = Object.keys(siteLocales).map(function(locale) {

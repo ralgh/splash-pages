@@ -1,6 +1,5 @@
 import React from 'react';
-import Router from 'react-router';
-var { Link } = Router;
+import { Link } from 'react-router';
 import Page from '../../components/page/page';
 import IntlMessage from '../../components/intl-message/intl-message';
 import HomeEn from './home.en';
