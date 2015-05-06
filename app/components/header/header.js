@@ -1,6 +1,5 @@
 import React from 'react';
-import Router from 'react-router';
-var { Link } = Router;
+import { Link } from 'react-router';
 import IntlMessage from '../intl-message/intl-message';
 import LinkExists from '../link-exists/link-exists';
 import Logo from '../../icons/icon/logo';

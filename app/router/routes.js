@@ -1,6 +1,5 @@
 import _ from 'lodash';
-import Router from 'react-router';
-var {Route, DefaultRoute, NotFoundRoute, Redirect} = Router;
+import { Route, DefaultRoute, NotFoundRoute, Redirect } from 'react-router';
 
 // This is internally used within jsx, so ignore the unused error.
 /*eslint-disable */
