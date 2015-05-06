@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import { Route, DefaultRoute, NotFoundRoute, Redirect } from 'react-router';
+import Immutable from 'immutable';
 
 // This is internally used within jsx, so ignore the unused error.
 /*eslint-disable */
@@ -22,7 +23,7 @@ import {defaultLocale} from '../helpers/locale-helper/locale-helper';
 
 export var homeRoute = 'home';
 
-var config = [
+var config = Immutable.fromJS([
   [Home, { name: homeRoute }, {
       'en-GB': {
           path: '/',
@@ -96,7 +97,7 @@ var config = [
       },
     },
   ],
-];
+]);
 
 function pathWithLocale(path, locale) {
   if (!path || path.indexOf('/') !== 0) {
@@ -114,7 +115,7 @@ function pathWithLocale(path, locale) {
 }
 
 function validatePages(pages) {
-  if (pages.length < 1) {
+  if (pages.size < 1) {
     throw new TypeError('pages must not be empty');
   }
 }
@@ -130,48 +131,46 @@ function flattenPagesForLocale(pages, locale, availableLocales) {
   validateLocale(locale, availableLocales);
 
   function setLocaleConfigPath(page) {
+    const path = page.getIn(['localeConfig', locale, 'path']);
     const matchOptionalSlash = '/?';
 
-    return _.merge({}, page, {
-      localeConfig: {
-        path: pathWithLocale(page.localeConfig[locale].path, locale) + matchOptionalSlash,
-      },
-    });
+    return page.setIn(['localeConfig', 'path'], pathWithLocale(path, locale) + matchOptionalSlash);
   }
 
   function flattenChildConfig(page) {
-    if (Array.isArray(page.childConfig)) {
-      return _.merge({}, page, {
-        childConfig: flattenPagesForLocale(page.childConfig, locale, availableLocales),
-      });
+    if (Immutable.List.isList(page.get('childConfig'))) {
+      return page.set('childConfig', flattenPagesForLocale(page.get('childConfig'), locale, availableLocales));
     } else {
       return page;
     }
   }
 
-  return pages.filter((page) => page.localeConfig.hasOwnProperty(locale))
+  return pages.filter((page) => page.get('localeConfig').has(locale))
               .map(setLocaleConfigPath)
               .map(flattenChildConfig);
 }
 
 function getRoutesForPages(pages, availableLocales) {
   return pages.map(function(page) {
-    const { handler, routeConfig, localeConfig, childConfig } = page;
+    const handler = page.get('handler');
+    const routeConfig = page.get('routeConfig');
+    const localeConfig = page.get('localeConfig');
+    const childConfig = page.get('childConfig');
 
     if (handler === null) {
       return (
         <Redirect
-          from={localeConfig.path}
-          to={localeConfig.redirectTo}
-          key={localeConfig.redirectTo + '_redirect'}>
+          from={localeConfig.get('path')}
+          to={localeConfig.get('redirectTo')}
+          key={localeConfig.get('redirectTo') + '_redirect'}>
           {childConfig && getRoutesForPages(childConfig, availableLocales) || null}
         </Redirect>
       );
     } else {
       return (
-        <Route key={routeConfig.name}
-          name={routeConfig.name}
-          path={localeConfig.path}
+        <Route key={routeConfig.get('name')}
+          name={routeConfig.get('name')}
+          path={localeConfig.get('path')}
           handler={handler}>
           {childConfig && getRoutesForPages(childConfig, availableLocales) || null}
         </Route>
@@ -182,20 +181,17 @@ function getRoutesForPages(pages, availableLocales) {
 
 function findRouteByName(routeName, transformedConfig) {
   function fanOutConfig(page) {
-    const { childConfig } = page;
+    const childConfig = page.get('childConfig');
 
-    if (Array.isArray(childConfig)) {
-      return childConfig.map(fanOutConfig).concat(page);
+    if (Immutable.List.isList(childConfig)) {
+      return childConfig.flatMap(fanOutConfig).push(page);
     } else {
-      return page;
+      return Immutable.List([page]);
     }
   }
 
-  return _.chain(transformedConfig)
-          .map(fanOutConfig)
-          .flatten()
-          .find(({ routeConfig }) => routeConfig && routeConfig.name === routeName)
-          .value();
+  return transformedConfig.flatMap(fanOutConfig)
+                          .find((page) => page.getIn(['routeConfig', 'name']) === routeName);
 }
 
 /**
@@ -215,37 +211,42 @@ function findRouteByName(routeName, transformedConfig) {
  *     }, ...]
  *   }
  */
-function transformConfig([handler, routeConfig, localeConfig, childConfig]) {
-  if (Array.isArray(childConfig) && Array.isArray(childConfig[0])) {
-    return transformConfig([ handler, routeConfig, localeConfig, childConfig.map(transformConfig) ]);
+function transformConfigItems(arg) {
+  const [handler, routeConfig, localeConfig, childConfig] = arg.toArray();
+
+  if (Immutable.List.isList(childConfig) && Immutable.List.isList(childConfig.first())) {
+    return transformConfigItems(Immutable.List([ handler, routeConfig, localeConfig, childConfig.map(transformConfigItems) ]));
   } else {
-    return { handler, routeConfig, localeConfig, childConfig };
+    return Immutable.Map({ handler, routeConfig, localeConfig, childConfig });
   }
 }
 
+function turnConfigImmutable(mutableConfig) {
+  return mutableConfig.map(transformConfigItems);
+}
+
 export function getLocalesForRouteName(routeName, givenConfig=config) {
-  const transformedConfig = givenConfig.map(transformConfig);
-  const page = findRouteByName(routeName, transformedConfig);
+  const page = findRouteByName(routeName, turnConfigImmutable(givenConfig));
+
   if (!page) { return undefined; }
 
-  const { localeConfig } = page;
+  const localesForRoute = page.get('localeConfig').reduce(function(memo, routeConfig, localeKey) {
+    return memo.setIn([localeKey, 'path'], pathWithLocale(routeConfig.get('path'), localeKey));
+  }, Immutable.Map());
 
-  return _.reduce(localeConfig, function(memo, routeConfig, localeKey) {
-    return _.extend(memo, {
-      [localeKey]: { path: pathWithLocale(routeConfig.path, localeKey) },
-    });
-  }, {});
+  return localesForRoute.toJS();
 }
 
 export function getRoutes(locale, availableLocales, givenConfig=config) {
-  const transformedConfig = givenConfig.map(transformConfig);
-  const [homePage, ...rest] = flattenPagesForLocale(transformedConfig, locale, availableLocales);
+  const flattenedRoutes = flattenPagesForLocale(turnConfigImmutable(givenConfig), locale, availableLocales);
+
+  const homePage = flattenedRoutes.first();
 
   return (
-    <Route path={homePage.localeConfig.path} handler={App}>
-      {getRoutesForPages(rest, availableLocales)}
+    <Route path={homePage.getIn(['localeConfig', 'path'])} handler={App}>
+      {getRoutesForPages(flattenedRoutes.rest(), availableLocales)}
 
-      <DefaultRoute handler={homePage.handler} name={homePage.routeConfig.name} />
+      <DefaultRoute handler={homePage.get('handler')} name={homePage.getIn(['routeConfig', 'name'])} />
       <NotFoundRoute handler={NotFound} />
     </Route>
   );
