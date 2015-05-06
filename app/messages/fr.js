@@ -2,6 +2,7 @@ export default {
   header: {
     our_products: 'Produit',
     login_btn: 'Login',
+    more: 'Plus',
   },
   footer: {
     description: 'GoCardless est un Etablissement de Paiement Agréé, régulé par l’autorité britannique FCA (Financial Conduct Authority) et habilité à collecter des paiements à travers l’Union Européenne.',
@@ -94,8 +95,8 @@ export default {
     description: 'Légal',
   },
   jobs: {
-    title: 'Jobs',
-    nav_title: 'Jobs',
+    title: 'Carrières',
+    nav_title: 'Carrières',
   },
   pro: {
     title: 'GoCardless: Le contrôle total de vos prélèvements',
@@ -123,7 +124,7 @@ export default {
     path: '/fr/guides/sepa',
   },
   help: {
-    title: 'Support',
-    nav_title: 'Support',
+    title: 'Soutien',
+    nav_title: 'Soutien',
   },
 }
