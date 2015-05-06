@@ -138,7 +138,7 @@ export default class ProFr extends React.Component {
                 </div>
                 <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
                   Intégrez très simplement GoCardless dans votre site web et vos systèmes
-                  informatique. Tout ce qu'il y a à savoir est dans
+                  d'information. Tout ce qu'il y a à savoir est dans
                   notre <a href='https://developer.gocardless.com/pro'>documentation</a>.
                 </p>
               </div>
