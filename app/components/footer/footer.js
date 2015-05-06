@@ -24,7 +24,6 @@ function buildAvailableLocales(currentLocale, siteLocales, messages) {
   return _.sortBy(availableLocales, 'name');
 }
 
-
 class Footer extends React.Component {
   displayName = 'Footer'
 
@@ -32,10 +31,11 @@ class Footer extends React.Component {
     routeName: React.PropTypes.string.isRequired,
     locales: PropTypes.locale,
     messages: React.PropTypes.object.isRequired,
+    config: React.PropTypes.object.isRequired,
   }
 
   render() {
-    const {routeName, locales, messages} = this.context;
+    const { routeName, locales, messages, config } = this.context;
 
     const siteLocales = _.merge({}, getLocalesForRouteName(homeRoute), getLocalesForRouteName(routeName));
     const availableLocales = buildAvailableLocales(locales, siteLocales, messages);
@@ -144,15 +144,21 @@ class Footer extends React.Component {
             <div className='u-size-2of3 u-pull-end'>
               <p className='u-text-heading u-text-xxs u-color-invert u-margin-Bm' itemScope itemType='http://schema.org/Organization'>
                 <span itemProp='name'>GoCardless Ltd.</span>
-                <meta itemProp='url' content='' />
+                <meta itemProp='url' content={config.siteRoot} />
                 <span itemProp='address' itemScope itemType='http://schema.org/PostalAddress'>
                   <span itemProp='streetAddress'><IntlMessage message='postal_address.street_address' /></span><span>{','} </span>
                   <span itemProp='addressLocality'><IntlMessage message='postal_address.address_locality' /></span><span>{','} </span>
                   <span itemProp='postalCode'><IntlMessage message='postal_address.postal_code' /></span><span>{','} </span>
-                  <span itemProp='addressCountry' content=''><IntlMessage message='postal_address.address_country_iso' /></span>
+                  <span itemProp='addressCountry' content={getIntlMessage(messages, 'postal_address.address_country_iso')}>
+                    <IntlMessage message='postal_address.address_country_iso' />
+                  </span>
                 </span>
-                <span itemProp='telephone' content=''><IntlMessage message='phone_full' /></span><span>{','} </span>
-                <a href='mailto:help@gocardless.com' className='u-link-clean u-link-invert' itemProp='email'><IntlMessage message='email' /></a>
+                <span itemProp='telephone' content={getIntlMessage(messages, 'phone_full')}>
+                  <IntlMessage message='phone_full' />
+                </span>,&nbsp;
+                <a href={ `mailto:${getIntlMessage(messages, 'email')}` } className='u-link-clean u-link-invert' itemProp='email'>
+                  <IntlMessage message='email' />
+                </a>
               </p>
               <p className='u-text-heading u-text-xxs u-color-invert'>
                 <IntlMessage message='footer.description' />

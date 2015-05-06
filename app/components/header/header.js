@@ -5,6 +5,7 @@ import LinkExists from '../link-exists/link-exists';
 import Logo from '../../icons/logo/logo';
 import Popover from '../popover/popover';
 import classNames from 'classnames';
+import IntlLink from '../intl-link/intl-link';
 
 class Header extends React.Component {
   displayName = 'Header'
@@ -57,22 +58,28 @@ class Header extends React.Component {
 
     return (
       <div className='site-header-wrapper'>
-        <div className='site-header site-header--invert u-relative u-cf'>
+        <div className={classNames('site-header u-relative u-cf', {
+          'site-header--invert': isInverted,
+        })}>
           <div className='u-pull-start'>
             <Link to='home' id='track-nav-home' className='header-logo u-relative u-block u-padding-Vl'>
-              <Logo className='site-logo__image u-fill-invert' />
+              <Logo className={classNames('site-logo__image', {
+                'u-fill-invert': isInverted,
+              })} />
             </Link>
           </div>
           <div className='u-pull-end align-btn-small'>
             <nav className='nav u-pull-start u-color-primary u-text-xxs u-text-light u-text-no-smoothing'>
               <div className='nav__item u-relative'>
                 <Popover className='popover--large' toggle={
-                     (<a href='#' id='track-nav-products' className={linkClass}>
-                        <div className='nav__item-link popover-link popover-link--invert'>
-                          <IntlMessage message='header.our_products' />
-                        </div>
-                      </a>)
-                   }>
+                   (<a href='#' id='track-nav-products' className={linkClass}>
+                      <div className={classNames('nav__item-link popover-link', {
+                        'popover-link--invert': isInverted,
+                      })}>
+                        <IntlMessage message='header.our_products' />
+                      </div>
+                    </a>)
+                 }>
                    {products}
                  </Popover>
               </div>
@@ -86,15 +93,6 @@ class Header extends React.Component {
                 </LinkExists>
               </div>
               <div className='nav__item u-relative'>
-                <LinkExists to='about'>
-                  <Link to='about' id='track-nav-pricing' className={linkClass}>
-                    <div className='nav__item-link'>
-                      <IntlMessage message='about.nav_title' />
-                    </div>
-                  </Link>
-                </LinkExists>
-              </div>
-              <div className='nav__item u-relative'>
                 <LinkExists to='stories'>
                   <Link to='stories' id='track-nav-stories' className={linkClass}>
                     <div className='nav__item-link'>
@@ -103,11 +101,60 @@ class Header extends React.Component {
                   </Link>
                 </LinkExists>
               </div>
+              <div className='nav__item u-relative'>
+                <Popover className='popover--large' toggle={
+                  (<a href='#' id='track-nav-more' className={linkClass}>
+                    <div className={classNames('nav__item-link popover-link', {
+                      'popover-link--invert': isInverted,
+                    })}>
+                      <IntlMessage message='header.more' />
+                    </div>
+                  </a>)
+                }>
+                  <ul className='u-text-xxs u-padding-Vxs'>
+                    <li className='u-text-semi'>
+                     <LinkExists to='security'>
+                       <IntlLink to='security' id='track-nav-security' className='u-padding-Vxs u-padding-Hm u-block'
+                         message='security.nav_title' />
+                     </LinkExists>
+                    </li>
+                    <li className='u-text-semi'>
+                      <a href='https://gocardless.com/guides' id='track-nav-guides' className='u-padding-Vxs u-padding-Hm u-block'>
+                        <IntlMessage message='guides.nav_title' />
+                      </a>
+                    </li>
+                    <li className='u-text-semi'>
+                      <a href='http://help.gocardless.com' id='track-nav-help' className='u-padding-Vxs u-padding-Hm u-block'>
+                        <IntlMessage message='help.nav_title' />
+                      </a>
+                    </li>
+                    <li className='u-text-semi'>
+                     <LinkExists to='faq_merchants'>
+                       <IntlLink to='faq_merchants' message='faq_merchants.nav_title'
+                         id='track-nav-faq' className='u-padding-Vxs u-padding-Hm u-block' />
+                     </LinkExists>
+                    </li>
+                    <hr className='u-margin-Vs' />
+                    <li>
+                      <LinkExists to='about'>
+                        <IntlLink to='about' message='about.nav_title'
+                          id='track-nav-about' className='u-padding-Vxs u-padding-Hm u-block' />
+                      </LinkExists>
+                    </li>
+                    <li>
+                      <LinkExists to='about'>
+                        <IntlLink to='about' message='jobs.nav_title'
+                          id='track-nav-jobs' className='u-padding-Vxs u-padding-Hm u-block' />
+                      </LinkExists>
+                    </li>
+                  </ul>
+                </Popover>
+              </div>
             </nav>
             <ul className='u-cf u-pull-start'>
               <li className='u-pull-start'>
                 <a href='/users/sign_in' id='track-nav-sign-in'
-                className={classNames('nav-btn btn btn--small u-text-light u-text-xxs u-relative' +
+                className={classNames('nav-btn btn btn--small u-text-light u-text-xxs u-relative',
                   'u-text-transform-none u-text-no-smoothing', {
                   'btn--invert-hollow': isInverted,
                   'btn--hollow': !isInverted,
