@@ -38,7 +38,8 @@ export default class Stories extends React.Component {
                   u-relative u-padding-Vl'>
                     <div className='stories-spotlight__item-text u-margin-Vl'>
                       <p className='u-padding-Al u-padding-Bn u-text-heading u-color-invert u-text-m'>
-                        “GoCardless gives us control over when<br />we get paid and takes away<br />the uncomfortable conversations<br />about money.”
+                        “GoCardless gives us control over when<br />we get paid and takes away<br />
+                        the uncomfortable conversations<br />about money.”
                       </p>
                       <div className='u-color-invert u-margin-Tm'>
                         Steve Leighton, Has Bean Coffee
@@ -51,7 +52,8 @@ export default class Stories extends React.Component {
                   <div className='stories-spotlight__item stories-spotlight__item--crossfit-hackney u-relative u-padding-Vl'>
                     <div className='stories-spotlight__item-text u-margin-Vl'>
                       <p className='u-padding-Al u-padding-Bn u-text-heading u-color-invert u-text-m'>
-                        “Taking payments with GoCardless costs us less than half the price of using PayPal and the integration with TeamUp has definitely reduced our admin.”
+                        “Taking payments with GoCardless costs us less than half the price of using PayPal
+                        and the integration with TeamUp has definitely reduced our admin.”
                       </p>
                       <div className='u-color-invert u-margin-Tm'>
                         Geoff Stewart, Momentum Training
@@ -69,7 +71,8 @@ export default class Stories extends React.Component {
         <div className='site-container u-padding-Vxxl'>
           <div className='grid u-padding-Vxl'>
             <StoryLink img='bluesky-logo stories-item__logo--bluesky' to='story_bluesky_business'>
-              Bluesky Business, a book-keeping and accounting service provider, reduced late payments by 62.5% in just one month with GoCardless.
+              Bluesky Business, a book-keeping and accounting service provider,
+              reduced late payments by 62.5% in just one month with GoCardless.
             </StoryLink>
             <StoryLink img='foundation-of-hearts-logo stories-item__logo--foundation-of-hearts' to='story_foundation_of_hearts'>
               The Foundation of Hearts, a not-for-profit organisation made up of Hearts FC fans, can easily collect over 8000 donations each month with GoCardless.
@@ -90,33 +93,47 @@ export default class Stories extends React.Component {
         </div>
         <hr className='u-margin-An' />
         <div className='site-container u-text-center u-padding-Vxxl'>
-          <RevealBox>
+          <RevealBox
+            tabClass='stories-testimonials__grid grid u-text-center'
+            wrapperClass='grid__cell u-padding-Hl stories-testimonials__link--guardian u-size-1of3 stories-testimonials__link u-link-clean'
+          >
             <div
               key='guardian'
               tab={(<img src="/images/stories/guardian-logo@2x.jpg" />)}
               className="stories-testimonials__quote stories-testimonials__quote--guardian u-relative u-margin-Txxl u-padding-Al"
             >
-              <p className="u-text-heading u-color-heading u-text-light u-text-m">"The Guardian is always looking to give the best customer experience and has chosen GoCardless to make its recurring payment experience as seamless as possible."</p>
+              <p className="u-text-heading u-color-heading u-text-light u-text-m">
+                "The Guardian is always looking to give the best customer experience and has chosen GoCardless to make its recurring payment experience
+                as seamless as possible."
+              </p>
             </div>
             <div
               key='funding-circle'
               tab={(<img className="stories-testimonials__link-image--funding-circle" src="/images/stories/funding-circle-logo@2x.jpg" />)}
               className="stories-testimonials__quote stories-testimonials__quote--funding-circle u-relative u-margin-Txxl u-padding-Al"
             >
-              <p className="u-text-heading u-color-heading u-text-light u-text-m">"GoCardless is one of the best payments companies we've worked with. Their API was simple to integrate and allows us to use Direct Debit in a fully automated way. I'd highly recommend them to any company that cares about a providing good user experience and using the best available technology for their Direct Debit in the UK and Europe."</p>
+              <p className="u-text-heading u-color-heading u-text-light u-text-m">
+                "GoCardless is one of the best payments companies we've worked with.
+                Their API was simple to integrate and allows us to use Direct Debit in a fully automated way.
+                I'd highly recommend them to any company that cares about a providing good user experience and using the
+                best available technology for their Direct Debit in the UK and Europe."
+              </p>
             </div>
             <div
               key='lendable'
               tab={(<img className="stories-testimonials__link-image--lendable" src="/images/stories/lendable-logo@2x.jpg" />)}
               className="stories-testimonials__quote stories-testimonials__quote--lendable u-relative u-margin-Txxl u-padding-Al"
             >
-              <p className="u-text-heading u-color-heading u-text-light u-text-m">"We moved to GoCardless as collections can be managed by one person instead of a whole department. It's great to work with another financial technology company who are committed to helping businesses."</p>
+              <p className="u-text-heading u-color-heading u-text-light u-text-m">
+                "We moved to GoCardless as collections can be managed by one person instead of a whole department.
+                It's great to work with another financial technology company who are committed to helping businesses."
+              </p>
             </div>
           </RevealBox>
         </div>
         <hr className='u-margin-An' />
         <StartTakingPaymentsCTA />
       </Page>
-    );
+  );
   }
 }

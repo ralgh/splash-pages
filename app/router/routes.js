@@ -15,7 +15,6 @@ import Home from '../pages/home/home';
 import About from '../pages/about/about';
 import Pricing from '../pages/pricing/pricing';
 import Stories from '../pages/stories/stories';
-import Story from '../pages/stories/story';
 
 import HasBeanCoffeeStory from '../pages/stories/stories/has-bean-coffee';
 import BlueskyBusinessStory from '../pages/stories/stories/bluesky-business';

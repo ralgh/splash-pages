@@ -3,6 +3,8 @@ import Router from 'react-router';
 var { Link } = Router;
 
 export default class StoryLink extends React.Component {
+  displayName = 'StoryLink'
+
   static propTypes = {
     img: React.PropTypes.string.isRequired,
     to: React.PropTypes.string.isRequired,

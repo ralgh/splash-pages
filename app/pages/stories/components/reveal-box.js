@@ -2,9 +2,13 @@ import React from 'react';
 
 export default class RevealBox extends React.Component {
 
+  displayName = 'RevealBox'
+
   static propTypes = {
     children: React.PropTypes.node.isRequired,
     linkClass: React.PropTypes.string,
+    wrapperClass: React.PropTypes.string,
+    tabClass: React.PropTypes.string,
   };
 
   state = {
@@ -12,16 +16,15 @@ export default class RevealBox extends React.Component {
   };
 
   tabClick(key) {
-    console.log(key);
     this.setState({
-      atTab: key
+      atTab: key,
     });
   }
 
   componentDidMount() {
     this.setState({
       atTab: this.props.children[0].key,
-    })
+    });
   }
 
   shouldShowElement(key) {
@@ -29,24 +32,26 @@ export default class RevealBox extends React.Component {
   }
 
   render() {
-    var self = this;
-    var tabs = this.props.children.map(function(child) {
-      var tab = child.props.tab;
-      return React.createElement('div', {className: 'grid__cell u-padding-Hl stories-testimonials__link--guardian u-size-1of3 stories-testimonials__link u-link-clean', onClick: self.tabClick.bind(self, child.key)}, React.cloneElement(tab));
+    const tabs = this.props.children.map((child) => {
+      return React.createElement('div', {
+        className: `${this.props.wrapperClass} ${this.shouldShowElement(child.key) ? 'is-active' : 'inactive'}`,
+        onClick: this.tabClick.bind(this, child.key),
+        key: child.key,
+      },
+        React.cloneElement(child.props.tab,
+          {className: child.props.tab.className}));
     });
-    var children = this.props.children.map(function(child) {
-      return React.cloneElement(child, {style: {display: self.shouldShowElement(child.key) ? 'block' : 'none'}});
-    })
+    const children = this.props.children.map((child) => {
+      return React.cloneElement(child,
+        {style: {display: this.shouldShowElement(child.key) ? 'block' : 'none'}});
+    });
 
     return (
-      <div className="tabbox">
-        <div className="stories-testimonials__grid grid u-text-center">
+      <div>
+        <div className={this.props.tabClass || ''}>
           {tabs}
         </div>
-        <div className="tabcontent">
-          {children}
-        </div>
-      </div>
-    );
+        {children}
+      </div>);
   }
 }

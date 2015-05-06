@@ -39,7 +39,8 @@ export default class StoryPage extends React.Component {
                     <p className='u-color-heading u-margin-Txs u-size-5of6 u-center'>
                       {tip}
                     </p>
-                  </div>);
+                  </div>
+            );
               })}
             </div>
           </div>
@@ -47,6 +48,7 @@ export default class StoryPage extends React.Component {
         <hr className='u-margin-An' />
         {this.props.children}
         <StartTakingPaymentsCTA />
-      </Page>);
+      </Page>
+  );
   }
 }
