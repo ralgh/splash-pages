@@ -1,4 +1,3 @@
-import { getAllPaths } from '../router/routes.js';
 import request from 'superagent';
 import fs from 'fs';
 import { mkdirP as mkdirPCallback } from 'mkdirp';
@@ -35,17 +34,3 @@ export function writePage(baseDir, [pageUrl, content]) {
     .then(() => writeFile(filename, content))
     .then(() => filename);
 }
-
-/*eslint-disable no-unused-vars*/
-function main(serverUrl, outDir) {
-  const processPage = function(pagePath) {
-    return fetchPage(serverUrl, pagePath)
-      .then(writePage.bind(null, outDir))
-      .catch(console.error.bind(console));
-  };
-
-  Promise.all(getAllPaths().map(processPage)).then(function(_filenames) {
-    console.log('done');
-  }).catch(console.error.bind(console));
-}
-/*eslint-enable no-unused-vars*/
