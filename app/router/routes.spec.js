@@ -1,59 +1,9 @@
 import _ from 'lodash';
-import Immutable from 'immutable';
 import { run, TestLocation } from 'react-router';
-import { getLocalesForRouteName, getRoutes } from './routes.js';
-import { FakeComponent } from '../helpers/specs/fake-component';
+import { getLocalesForRouteName, getRoutes, getAllPaths } from './routes.js';
 import NotFound from '../pages/not-found/not-found';
 
-const fakeConfig = Immutable.fromJS([
-  [
-    FakeComponent, { name: 'home' }, {
-      'en-GB': { path: '/' },
-      'fr-FR': { path: '/' },
-    },
-  ],
-  [
-    FakeComponent, { name: 'englishAndFrenchRoute' }, {
-      'en-GB': { path: '/english-specific-page' },
-      'fr-FR': { path: '/french-specific-page' },
-    },
-  ],
-  [
-    FakeComponent, { name: 'englishOnlyRoute' }, {
-      'en-GB': { path: '/english-only' },
-    },
-  ],
-  [
-    FakeComponent, { name: 'frenchOnlyRoute' }, {
-      'fr-FR': { path: '/french-only' },
-    },
-  ],
-  [
-    FakeComponent, { name: 'routeWithChildren' }, {
-      'en-GB': { path: '/en-route-with-child' },
-    },
-    [
-      [
-        FakeComponent, { name: 'childRoute' }, {
-          'en-GB': { path: '/child-route' },
-        },
-      ],
-    ],
-  ],
-  [
-    null, null, {
-      'en-GB': {
-        path: '/redirect',
-        redirectTo: '/redirected',
-      },
-    },
-  ],
-  [
-    FakeComponent, { name: 'redirectedToRoute' }, {
-      'en-GB': { path: '/redirected' },
-    },
-  ],
-]);
+import { fakeConfig } from '../helpers/specs/fake-route-config';
 
 //TODO: write a test that says if you have a config with a URL that's not absolute, throw an error
 describe('getLocalesForRouteName', () => {
@@ -239,5 +189,24 @@ describe('getRoutes', () => {
         getRoutes('de-de', ['en-GB', 'fr-FR'], fakeConfig);
       }).toThrowError(/Locale not allowed/);
     });
+  });
+});
+
+describe('getAllPaths', () => {
+  it('lists all possible URLs', function() {
+    const urls = getAllPaths(fakeConfig).sort().toJS();
+
+    expect(urls).toEqual([
+      '/',
+      '/fr-fr',
+      '/english-specific-page',
+      '/fr-fr/french-specific-page',
+      '/english-only',
+      '/fr-fr/french-only',
+      '/en-route-with-child',
+      '/child-route',
+      '/redirect',
+      '/redirected',
+    ].sort());
   });
 });

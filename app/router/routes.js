@@ -38,7 +38,7 @@ import {defaultLocale} from '../helpers/locale-helper/locale-helper';
 
 export var homeRoute = 'home';
 
-var config = Immutable.fromJS([
+const config = Immutable.fromJS([
   [Home, { name: homeRoute }, {
       'en-GB': {
           path: '/',
@@ -333,21 +333,6 @@ function getRoutesForPages(pages, availableLocales) {
   });
 }
 
-function findRouteByName(routeName, transformedConfig) {
-  function fanOutConfig(page) {
-    const childConfig = page.get('childConfig');
-
-    if (Immutable.List.isList(childConfig)) {
-      return childConfig.flatMap(fanOutConfig).push(page);
-    } else {
-      return Immutable.List([page]);
-    }
-  }
-
-  return transformedConfig.flatMap(fanOutConfig)
-                          .find((page) => page.getIn(['routeConfig', 'name']) === routeName);
-}
-
 /**
  * Returns an easier to work with version of a 'route config' entry, applying the same
  * transformation to any `childConfig`s
@@ -375,25 +360,41 @@ function transformConfigItems(arg) {
   }
 }
 
-function turnConfigImmutable(mutableConfig) {
-  return mutableConfig.map(transformConfigItems);
+function expandConfig(givenConfig) {
+  function expandChildConfig(page) {
+    const childConfig = page.get('childConfig');
+
+    if (Immutable.List.isList(childConfig)) {
+      return childConfig.flatMap(expandChildConfig).push(page);
+    } else {
+      return Immutable.List([page]);
+    }
+  }
+
+  function setLocalePaths(page) {
+    return page.update('localeConfig', function(localeConfig) {
+      return localeConfig.reduce(function(memo, localeSpecificConfig, locale) {
+        return memo.setIn([locale, 'path'], pathWithLocale(localeSpecificConfig.get('path'), locale));
+      }, Immutable.Map());
+    });
+  }
+
+  return givenConfig.map(transformConfigItems)
+                    .flatMap(expandChildConfig)
+                    .map(setLocalePaths);
 }
 
 export function getLocalesForRouteName(routeName, givenConfig=config) {
-  const page = findRouteByName(routeName, turnConfigImmutable(givenConfig));
+  const expanded = expandConfig(givenConfig);
+  const foundPage = expanded.find((page) => page.getIn(['routeConfig', 'name']) === routeName);
 
-  if (!page) { return undefined; }
-
-  const localesForRoute = page.get('localeConfig').reduce(function(memo, routeConfig, localeKey) {
-    return memo.setIn([localeKey, 'path'], pathWithLocale(routeConfig.get('path'), localeKey));
-  }, Immutable.Map());
-
-  return localesForRoute.toJS();
+  if (foundPage) {
+    return foundPage.get('localeConfig').toJS();
+  }
 }
 
 export function getRoutes(locale, availableLocales, givenConfig=config) {
-  const flattenedRoutes = flattenPagesForLocale(turnConfigImmutable(givenConfig), locale, availableLocales);
-
+  const flattenedRoutes = flattenPagesForLocale(givenConfig.map(transformConfigItems), locale, availableLocales);
   const homePage = flattenedRoutes.first();
 
   return (
@@ -404,4 +405,11 @@ export function getRoutes(locale, availableLocales, givenConfig=config) {
       <NotFoundRoute handler={NotFound} />
     </Route>
   );
+}
+
+export function getAllPaths(givenConfig=config) {
+  const expanded = expandConfig(givenConfig);
+
+  return expanded.flatMap((page) => page.get('localeConfig').valueSeq())
+                 .map((localeConfig) => localeConfig.get('path'));
 }
