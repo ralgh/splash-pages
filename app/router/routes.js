@@ -16,6 +16,7 @@ import Pricing from '../pages/pricing/pricing';
 import Pro from '../pages/pro/pro';
 import ContactSales from '../pages/contact-sales/contact-sales';
 import Features from '../pages/features/features';
+import Security from '../pages/security/security';
 
 import {defaultLocale} from '../helpers/locale-helper/locale-helper';
 
@@ -61,6 +62,15 @@ var config = [
   [Features, { name: 'features' }, {
       'en-GB': {
           path: '/features',
+      },
+    },
+  ],
+  [Security, { name: 'security' }, {
+      'en-GB': {
+          path: '/security',
+      },
+      'fr-FR': {
+          path: '/securite',
       },
     },
   ],
