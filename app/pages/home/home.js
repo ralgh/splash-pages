@@ -20,7 +20,8 @@ export default class Home extends React.Component {
                 <h1 className='u-text-heading u-color-invert u-text-center u-text-xl u-text-light'>
                   <IntlMessage message='hero.header' />
                 </h1>
-                <div className='u-text-heading u-text-center u-color-invert u-text-m u-text-light u-margin-Txxs u-text-no-smoothing page-hero__text__desc'>
+                <div className={'u-text-heading u-text-center u-color-invert' +
+                                'u-text-m u-text-light u-margin-Txxs u-text-no-smoothing page-hero__text__desc'}>
                   <IntlMessage message='hero.desc' />
                 </div>
                 <div className='u-text-center u-margin-Tl'>
@@ -28,7 +29,9 @@ export default class Home extends React.Component {
                     <a href='#learn-more' id='track-hero-learn-more' className='btn btn--invert btn--move u-size-2of12'>
                       <IntlMessage message='cta.more' />
                     </a>
-                    <a href='/merchants/new' className='btn btn--invert-hollow btn-move u-size-2of12 u-margin-Lm' id='track-hero-merchants-new'>
+                    <a href='/merchants/new'
+                      className='btn btn--invert-hollow btn-move u-size-2of12 u-margin-Lm'
+                      id='track-hero-merchants-new'>
                       <IntlMessage message='cta.pro_signup' />
                     </a>
                   </Translation>

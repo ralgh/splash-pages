@@ -3,7 +3,7 @@ import Router from 'react-router';
 var { Link } = Router;
 import IntlMessage from '../intl-message/intl-message';
 import LinkExists from '../link-exists/link-exists';
-import Logo from '../../icons/icon/logo';
+import Logo from '../../icons/logo/logo';
 import Popover from '../popover/popover';
 
 class Header extends React.Component {
@@ -94,7 +94,10 @@ class Header extends React.Component {
             </nav>
             <ul className='u-cf u-pull-start'>
               <li className='u-pull-start'>
-                <a href='/users/sign_in' id='track-nav-sign-in' className={`nav-btn btn btn--small ${isInverted ? 'btn--invert-hollow' : 'btn--hollow'} u-text-light u-text-xxs u-relative u-text-transform-none u-text-no-smoothing`}>
+                <a
+                  href='/users/sign_in' id='track-nav-sign-in'
+                  className={`nav-btn btn btn--small ${isInverted ? 'btn--invert-hollow' : 'btn--hollow'} u-text-light u-text-xxs`+
+                    ` u-relative u-text-transform-none u-text-no-smoothing`}>
                   <IntlMessage message='header.login_btn' />
                 </a>
               </li>

@@ -161,7 +161,9 @@ class Footer extends React.Component {
             </div>
           </div>
         </div>
-        <div className='page-footer__end u-text-center u-text-heading u-text-xxs u-color-invert u-padding-Vl u-margin-Tl' id='track-footer-end-links'>
+        <div
+          className='page-footer__end u-text-center u-text-heading u-text-xxs u-color-invert u-padding-Vl u-margin-Tl'
+          id='track-footer-end-links'>
           <div className='u-padding-Vl'>
             <span className='u-text-light u-text-no-smoothing'><IntlMessage message='footer.currently_viewing' /></span>
             <img src={ `/images/icons/${ region }-flag-icon@2x.png` } className='flag-icon u-margin-Hs' alt />

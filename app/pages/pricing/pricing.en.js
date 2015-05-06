@@ -80,7 +80,9 @@ export default class PricingEn extends React.Component {
                 </b>
               </div>
               <p className='u-color-p'>
-                No, there are no monthly charges or hidden fees of any kind. We never charge for chargebacks or payment failures. All you'll ever pay is 1% of the transaction amount, up to a maximum of £2.
+                No, there are no monthly charges or hidden fees of any kind.
+                We never charge for chargebacks or payment failures.
+                All you'll ever pay is 1% of the transaction amount, up to a maximum of £2.
               </p>
             </div>
             <div className='grid__cell u-size-1of2 u-padding-Bxxl u-padding-Lm'>
@@ -88,7 +90,9 @@ export default class PricingEn extends React.Component {
                 <b>Do you offer discounts for large volume?</b>
               </div>
               <p className='u-color-p'>
-                Yes. Discounts for high volume are built into the pricing of GoCardless Pro, and scale pricing is available on request for users of regular GoCardless that take over 250 payments per month. To find out more,  please <a href='/contact-sales' className='u-link-color-p u-text-underline'>contact sales</a>.
+                Yes. Discounts for high volume are built into the pricing of GoCardless Pro,
+                and scale pricing is available on request for users of regular GoCardless that take over 250 payments per month.
+                To find out more, please <a href='/contact-sales' className='u-link-color-p u-text-underline'>contact sales</a>.
               </p>
             </div>
             <div className='grid__cell u-size-1of2 u-padding-Bm u-padding-Rm'>
