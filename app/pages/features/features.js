@@ -12,6 +12,7 @@ import DeveloperIcon from '../../icons/svg/developer';
 import TickIcon from '../../icons/svg/tick';
 import MembershipIcon from '../../icons/svg/membership';
 import PhoneIcon from '../../icons/svg/phone';
+import { Link } from 'react-router';
 
 export default class Features extends React.Component {
   displayName = 'Features'
@@ -23,18 +24,24 @@ export default class Features extends React.Component {
           <div className='page-hero u-relative u-size-full'>
             <div className='site-container page-hero__container'>
               <div className='page-hero__text u-center u-padding-Bm'>
-                <h1 className='u-text-heading u-margin-Tm u-color-invert u-text-center u-text-xl u-text-light'>Start taking payments today</h1>
-                <p className='u-text-heading u-text-center u-color-invert u-text-m u-text-light u-margin-Txxs u-text-no-smoothing'>GoCardless is the quickest and easiest way to take one-off and <br />recurring payments online.</p>
+                <h1 className='u-text-heading u-margin-Tm u-color-invert u-text-center u-text-xl u-text-light'>
+                  Start taking payments today
+                </h1>
+                <p className='u-text-heading u-text-center u-color-invert u-text-m u-text-light u-margin-Txxs u-text-no-smoothing'>
+                  GoCardless is the quickest and easiest way to take one-off and <br />recurring payments online.
+                </p>
               </div>
               <div className='u-text-center'>
                 <div className='site-container u-padding-Bl'>
-                  <iframe src='https://player.vimeo.com/video/110889197' className='u-text-center videos-container__iframe u-margin-Vl'></iframe>
+                  <iframe src='https://player.vimeo.com/video/110889197'
+                    className='u-text-center videos-container__iframe u-margin-Vl' />
                 </div>
               </div>
             </div>
           </div>
           <div className='sticky-nav'>
-            <div ng-gc-sticky-nav className='sticky-nav__inner u-background-light-gray u-text-heading u-text-xxs u-text-light u-text-no-smoothing'>
+            <div ng-gc-sticky-nav
+              className='sticky-nav__inner u-background-light-gray u-text-heading u-text-xxs u-text-light u-text-no-smoothing'>
               <div className='site-container u-padding-Vm'>
                 <ul className='u-pull-start u-margin-Txxs'>
                   <li className='sticky-nav__item'>
@@ -58,12 +65,20 @@ export default class Features extends React.Component {
                     </a>
                   </li>
                 </ul>
-                <a href='/merchants/new' id='track-sticky-nav-merchants-new' className='sticky-nav__cta btn btn--small btn--hollow u-pull-end u-text-transform-none u-text-light u-text-xxs u-text-no-smoothing'>
+                <a href='/merchants/new' id='track-sticky-nav-merchants-new'
+                  className={
+                    'sticky-nav__cta btn btn--small btn--hollow u-pull-end ' +
+                    'u-text-transform-none u-text-light u-text-xxs u-text-no-smoothing'
+                  }>
                   <IntlMessage message='cta.basic' />
                 </a>
-                <a href='/contact-sales' id='track-sticky-nav-contact-sales' className='btn btn--small btn--hollow u-pull-end u-text-transform-none u-text-light u-text-xxs u-text-no-smoothing u-margin-Rs'>
+                <Link to='contact_sales' id='track-sticky-nav-contact-sales'
+                  className={
+                    'btn btn--small btn--hollow u-pull-end u-text-transform-none ' +
+                    'u-text-light u-text-xxs u-text-no-smoothing u-margin-Rs'
+                  }>
                   <IntlMessage message='cta.pro' />
-                </a>
+                </Link>
               </div>
               <hr className='u-margin-An' />
             </div>
@@ -93,7 +108,8 @@ export default class Features extends React.Component {
                       No setup fees
                     </div>
                     <p className='u-color-p u-margin-Txs'>
-                      GoCardless costs just 1% per transaction (capped at £2) with no monthly or setup fees. Scale pricing is also available.
+                      GoCardless costs just 1% per transaction (capped at £2) with no monthly or setup fees.
+                      Scale pricing is also available.
                     </p>
                   </div>
                   <div className='grid__cell u-size-1of3'>
@@ -119,7 +135,8 @@ export default class Features extends React.Component {
                       High customer retention
                     </div>
                     <p className='u-color-p u-margin-Txs'>
-                      Because it's built on the Direct Debit system, GoCardless means not losing customers through card expiry or cancellation.
+                      Because it's built on the Direct Debit system,
+                      GoCardless means not losing customers through card expiry or cancellation.
                     </p>
                   </div>
                   <div className='grid__cell u-size-1of3'>
@@ -143,7 +160,8 @@ export default class Features extends React.Component {
                       Modern, RESTful API
                     </div>
                     <p className='u-color-p u-margin-Txs'>
-                      Add GoCardless to your site or app in minutes with our easy to use API libraries. <a href='/features/api' id='track-overview-api'>Learn more</a>.
+                      Add GoCardless to your site or app in minutes with our easy to use API
+                      libraries. <a href='/features/api' id='track-overview-api'>Learn more</a>.
                     </p>
                   </div>
                 </div>
@@ -161,7 +179,8 @@ export default class Features extends React.Component {
                   <img src='/images/testimonials/greater-anglia__avatar.png' className='u-size-1of12 u-text-center u-margin-Bxs' />
                   <div className='u-color-invert u-text-heading u-text-m u-text-semi'>Graham Beton</div>
                   <div className='u-color-invert u-text-heading u-text-xs u-margin-Bs'>Greater Anglia Railways</div>
-                  <a href='/stories/greater-anglia' className='u-link-invert u-text-heading u-color-invert u-text-semi u-text-upcase u-text-xxs'>
+                  <a href='/stories/greater-anglia'
+                  className='u-link-invert u-text-heading u-color-invert u-text-semi u-text-upcase u-text-xxs'>
                     Read the full story
                   </a>
                 </div>
@@ -181,7 +200,8 @@ export default class Features extends React.Component {
                   </h2>
                   <h3 className='u-text-s'>Up to the second status reports</h3>
                   <p className='u-size-5of6 u-color-p u-margin-Bm'>
-                    Our simple online dashboard and email notifications keep you updated with comprehensive information on all of your payments and customers.
+                    Our simple online dashboard and email notifications keep you updated with comprehensive
+                    information on all of your payments and customers.
                   </p>
                   <h3 className='u-text-s'>Export your data</h3>
                   <p className='u-size-5of6 u-color-p u-margin-Bm'>
@@ -202,21 +222,26 @@ export default class Features extends React.Component {
                     Your customers will love it
                   </h2>
                   <p className='u-size-5of6 u-color-p u-margin-Bm'>
-                    GoCardless is a Bacs approved bureau and an FCA authorised institution which makes payments quick and simple for you and your customers.
+                    GoCardless is a Bacs approved bureau and an FCA authorised institution which makes
+                    payments quick and simple for you and your customers.
                   </p>
                   <h3 className='u-text-s'>Simple online set up</h3>
                   <p className='u-size-5of6 u-color-p u-margin-Bm'>
-                    The whole process happens online. Using our online form, your customers can authorise payments in minutes — even from their mobile phone.
+                    The whole process happens online. Using our online form, your customers can authorise
+                    payments in minutes — even from their mobile phone.
                   </p>
                   <h3 className='u-text-s'>Your logo, front and centre</h3>
                   <p className='u-color-p u-margin-Bm'>
-                    Provide a great user experience by adding your logo to our<br />payment forms and automatically sending customers back<br />to your site after paying.
+                    Provide a great user experience by adding your logo to our<br />payment forms and
+                    automatically sending customers back<br />to your site after paying.
                   </p>
                   <h3 className='u-text-s'>A safe and easy way to pay</h3>
                   <p className='u-size-5of6 u-color-p u-margin-Bm'>
-                    With Direct Debit, there's no need for customers to worry about missing a payment and they're always protected by the Direct Debit Guarantee.
+                    With Direct Debit, there's no need for customers to worry about missing a payment and
+                    they're always protected by the Direct Debit Guarantee.
                   </p>
-                  <a href='/example-checkout' className='u-color-primary u-text-upcase u-text-xxs u-text-heading u-text-semi u-block u-margin-Txl'>
+                  <a href='/example-checkout'
+                  className='u-color-primary u-text-upcase u-text-xxs u-text-heading u-text-semi u-block u-margin-Txl'>
                     See an example payment page
                   </a>
                 </div>
@@ -265,7 +290,8 @@ export default class Features extends React.Component {
                       Add customers in bulk
                     </div>
                     <p className='u-size-8of10 u-center u-color-p u-margin-Txs'>
-                      Our easy-to-use tools let you add thousands of customers in minutes. All they have to do is complete our simple payment page.
+                      Our easy-to-use tools let you add thousands of customers in minutes.
+                      All they have to do is complete our simple payment page.
                     </p>
                   </div>
                 </div>
@@ -327,26 +353,32 @@ export default class Features extends React.Component {
                 </div>
                 <div className='u-text-center u-text-heading u-text-upcase u-text-xxs u-text-semi'>
                   <Tabs triggers={[(
-                    <a href='#dashboard-home' id='track-dashboard-home' className='tab-link u-padding-Vxxs u-margin-Bxl u-margin-Hs u-inline-block u-padding-Hs u-link-clean'>
+                    <a href='#dashboard-home' id='track-dashboard-home'
+                      className='tab-link u-padding-Vxxs u-margin-Bxl u-margin-Hs u-inline-block u-padding-Hs u-link-clean'>
                       Dashboard home
                     </a>
                   ), (
-                    <a href='#add-customers' id='track-dashboard-customers' className='tab-link u-padding-Vxxs u-margin-Bxl u-margin-Hs u-inline-block u-padding-Hs u-link-clean'>
+                    <a href='#add-customers' id='track-dashboard-customers'
+                      className='tab-link u-padding-Vxxs u-margin-Bxl u-margin-Hs u-inline-block u-padding-Hs u-link-clean'>
                       Add customers
                     </a>
                   ), (
-                    <a href='#take-payments' id='track-dashboard-payments' className='tab-link u-padding-Vxxs u-margin-Bxl u-margin-Hs u-inline-block u-padding-Hs u-link-clean'>
+                    <a href='#take-payments' id='track-dashboard-payments'
+                      className='tab-link u-padding-Vxxs u-margin-Bxl u-margin-Hs u-inline-block u-padding-Hs u-link-clean'>
                       Take payments
                     </a>
                   ),]}>
                     <div>
-                      <img src='/images/basic/basic-dashboard-home.png' className='basic-page__dashboard-image' alt='GoCardless Dashboard interface' />
+                      <img src='/images/basic/basic-dashboard-home.png'
+                        className='basic-page__dashboard-image' alt='GoCardless Dashboard interface' />
                     </div>
                     <div>
-                      <img src='/images/basic/basic-add-customer.png' className='basic-page__dashboard-image' alt='add customers form' />
+                      <img src='/images/basic/basic-add-customer.png'
+                        className='basic-page__dashboard-image' alt='add customers form' />
                     </div>
                     <div>
-                      <img src='/images/basic/basic-take-payment.png' className='basic-page__dashboard-image' alt='payment status timeline' />
+                      <img src='/images/basic/basic-take-payment.png'
+                        className='basic-page__dashboard-image' alt='payment status timeline' />
                     </div>
                   </Tabs>
                 </div>

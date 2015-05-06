@@ -111,6 +111,8 @@ export default {
     title: 'Sécurité',
     nav_title: 'Sécurité',
     description: 'GoCardless est construit sur des bases solides et une encryption de calibre militaire pour conserver vos données de façon sécurisée. Nous sommes régulés par l\'autorité britannique FCA (Financial Conduct Authority).',
+    header1: 'Vous êtes protégé',
+    header2: 'Vos données sont entièrement chiffrées par un cryptage de calibre militaire, digne de la confiance des plus grands noms du secteur.',
   },
   blog: {
     title: 'Blog',

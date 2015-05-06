@@ -111,6 +111,8 @@ export default {
     title: 'Security',
     nav_title: 'Security',
     description: 'GoCardless is built securely from the ground up and uses military grade encryption to keep your details safe. Regulated by the Financial Conduct Authority.',
+    header1: 'Built securely from the ground up',
+    header2: 'GoCardless uses military grade encryption to keep you safe, and is approved by the biggest names in payments',
   },
   stories: {
     title: 'Stories',
