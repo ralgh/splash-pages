@@ -7,7 +7,7 @@ export default class SecurityFr extends React.Component {
 
   render() {
     return (
-      <Translation locales='fr-FR'>
+      <Translation locales={['fr-FR', 'fr-BE']}>
         <div className='site-container u-padding-Vxxl'>
           <div className='grid u-center u-padding-Vxm'>
             <div className='grid__cell u-text-center u-size-1of2 u-padding-Vxl'>

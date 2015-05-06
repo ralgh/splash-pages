@@ -78,25 +78,25 @@
   border-top-color: white;
 }
 
-.popover--above {
+.popover--country-select {
   bottom: 100%;
   margin-bottom: 26px;
   width: 230px;
-  margin-left: -110px;
+  margin-left: -164px;
 }
 
-.popover--above:after, .popover--above:before {
+.popover--country-select:after, .popover--country-select:before {
   top: 100%;
   border-color: transparent;
 }
 
 // CSS triangle (aka nipple)
-.popover--above:after {
+.popover--country-select:after {
   border-top-color: white;
 }
 
 // triangle shadow
-.popover--above:before {
+.popover--country-select:before {
   border-top-color: rgba(0, 0, 0, 0.1);
   margin-top: 1px;
 }
@@ -112,10 +112,10 @@
   }
 }
 
-.popover--above.ng-hide-remove {
+.popover--country-select.ng-hide-remove {
   animation: fadeDown 100ms cubic-bezier(.55,0,.1,1);
 }
 
-.popover--above.ng-hide-add {
+.popover--country-select.ng-hide-add {
   animation: fadeDown 100ms cubic-bezier(.55,0,.1,1) reverse;
 }
