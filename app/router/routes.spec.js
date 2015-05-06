@@ -27,10 +27,23 @@ const fakeConfig = [
       'fr-FR': { path: '/french-only' },
     },
   ],
+  [
+    FakeComponent, { name: 'routeWithChildren' }, {
+      'en-GB': { path: '/en-route-with-child' },
+    },
+    [
+      [
+        FakeComponent, { name: 'childRoute' }, {
+          'en-GB': { path: '/child-route' },
+        },
+      ],
+    ],
+  ],
 ];
 
+//TODO: write a test that says if you have a config with a URL that's not absolute, throw an error
 describe('getLocalesForRouteName', () => {
-  var routeName;
+  let routeName;
 
   describe('for a routeName that is available in many locales', () => {
     beforeEach(() => routeName = 'home');
@@ -39,6 +52,20 @@ describe('getLocalesForRouteName', () => {
       expect(getLocalesForRouteName(routeName, fakeConfig)).toEqual({
         'en-GB': { path: '/' },
         'fr-FR': { path: '/fr-fr' },
+      });
+    });
+  });
+
+  describe('for a nested route', () => {
+    beforeEach(() => routeName = 'childRoute');
+
+    it('returns a name => path mapping', () => {
+      expect(getLocalesForRouteName(routeName, fakeConfig)).toEqual({
+        'en-GB': { path: '/child-route' },
+      });
+
+      expect(getLocalesForRouteName('routeWithChildren', fakeConfig)).toEqual({
+        'en-GB': { path: '/en-route-with-child' },
       });
     });
   });
@@ -62,7 +89,7 @@ describe('getLocalesForRouteName', () => {
 
 describe('getRoutes', () => {
   describe('given a valid set of routes and locales', () => {
-    var routeComponent;
+    let routeComponent;
 
     beforeEach(() => {
       routeComponent = getRoutes('en-GB', ['en-GB', 'fr-FR'], fakeConfig);
@@ -79,9 +106,9 @@ describe('getRoutes', () => {
     it('picks the correct routes based on the locale', (done) => {
       run(routeComponent, function({ routes }) {
         const route = routes[0];
-        const childRoutePaths = route.childRoutes.map(c => c.path);
+        const childRoutePaths = route.childRoutes.map((c) => c.path);
 
-        expect(childRoutePaths).toEqual(['/english-specific-page/?', '/english-only/?', '//?', '//?*']);
+        expect(childRoutePaths).toEqual(['/english-specific-page/?', '/english-only/?', '/en-route-with-child/?', '//?', '//?*']);
 
         done();
       });
@@ -104,7 +131,7 @@ describe('getRoutes', () => {
       });
     });
 
-    describe('matching path', function() {
+    describe('matching path', () => {
       it('without forward slash', (done) => {
         const location = new TestLocation(['/english-only']);
         run(routeComponent, location, function(Handler, state) {
@@ -119,6 +146,17 @@ describe('getRoutes', () => {
           expect(_.last(state.routes).name).toEqual('englishOnlyRoute');
           done();
         });
+      });
+    });
+
+    it('correctly includes child routes for the given locale', (done) => {
+      run(routeComponent, function({ routes }) {
+        const route = routes[0];
+        const childChildRoutePaths = _.flatten(_.compact(route.childRoutes.map(c => c.childRoutes))).map((c) => c.path);
+
+        expect(childChildRoutePaths).toEqual(['/child-route/?']);
+
+        done();
       });
     });
 
@@ -139,6 +177,22 @@ describe('getRoutes', () => {
         expect(defaultRoute.name).toEqual('home');
 
         done();
+      });
+    });
+
+    describe('when given fr-FR locale', () => {
+      it('picks the french routes', (done) => {
+        const location = new TestLocation(['/fr-fr']);
+        routeComponent = getRoutes('fr-FR', ['en-GB', 'fr-FR'], fakeConfig);
+
+        run(routeComponent, location, function({ routes }) {
+          const route = routes[0];
+          const childRoutePaths = route.childRoutes.map(c => c.path);
+
+          expect(childRoutePaths).toEqual(['/fr-fr/french-specific-page/?', '/fr-fr/french-only/?', '/fr-fr/?', '/fr-fr/?*']);
+
+          done();
+        });
       });
     });
   });
