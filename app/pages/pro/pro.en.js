@@ -22,14 +22,16 @@ export default class ProEn extends React.Component {
               <div className='page-hero__inner'>
                 <div className='page-hero__text'>
                   <h1 className='u-text-heading u-color-invert u-text-center u-text-xl u-text-light'>Totally control Direct Debit</h1>
-                  <p className='u-text-heading u-text-center u-color-invert u-text-m u-text-light u-margin-Txxs u-text-no-smoothing'>A cutting edge platform for building your<br />recurring payments ecosystem
+                  <p className='u-text-heading u-text-center u-color-invert u-text-m u-text-light u-margin-Txxs u-text-no-smoothing'>
+                    A cutting edge platform for building your<br />recurring payments ecosystem
                   </p>
                 </div>
               </div>
             </div>
           </div>
           <div className='sticky-nav'>
-            <div ng-gc-sticky-nav className='sticky-nav__inner u-background-light-gray u-text-heading u-text-xxs u-text-light u-text-no-smoothing'>
+            <div ng-gc-sticky-nav
+            className='sticky-nav__inner u-background-light-gray u-text-heading u-text-xxs u-text-light u-text-no-smoothing'>
               <div className='site-container u-padding-Vm'>
                 <ul className='u-pull-start u-margin-Txxs'>
                   <li className='sticky-nav__item'>
@@ -49,10 +51,15 @@ export default class ProEn extends React.Component {
                   </li>
                 </ul>
                 <Link to='contact_sales' query={{ s: 'pro' }}
-                  id='track-sticky-nav-contact-sales' className='sticky-nav__cta btn btn--small btn--hollow u-pull-end u-text-transform-none u-text-light u-text-xxs u-text-no-smoothing'>
+                id='track-sticky-nav-contact-sales'
+                className={
+                  'sticky-nav__cta btn btn--small btn--hollow u-pull-end ' +
+                  'u-text-transform-none u-text-light u-text-xxs u-text-no-smoothing'
+                }>
                   <IntlMessage message='cta.pro' />
                 </Link>
-                <a href='https://developer.gocardless.com/pro/' id='track-sticky-nav-docs' className='u-pull-end u-margin-Txxs u-margin-Rm'>
+                <a href='https://developer.gocardless.com/pro/' id='track-sticky-nav-docs'
+                className='u-pull-end u-margin-Txxs u-margin-Rm'>
                   API Documentation
                 </a>
               </div>
@@ -67,7 +74,10 @@ export default class ProEn extends React.Component {
                     Welcome to GoCardless Pro
                   </h2>
                   <p className='u-text-s u-color-p u-margin-Txs'>
-                    Designed specifically for larger enterprises, GoCardless Pro combines the simplicity of our original GoCardless product with complete control over payments and customer experience. It also allows you to collect UK and SEPA Direct Debit via one simple integration.
+                    Designed specifically for larger enterprises,
+                    GoCardless Pro combines the simplicity of our original
+                    GoCardless product with complete control over payments and customer experience.
+                    It also allows you to collect UK and SEPA Direct Debit via one simple integration.
                   </p>
                 </div>
                 <div className='grid u-margin-Tl u-padding-Tm'>
@@ -76,9 +86,12 @@ export default class ProEn extends React.Component {
                       <WhiteLabelIcon className='svg-icon__image svg-icon__image--shadow u-fill-green' />
                       <WhiteLabelIcon className='svg-icon__image u-fill-dark-gray' />
                     </figure>
-                    <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>Completely white-labelled</div>
+                    <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
+                      Completely white-labelled
+                    </div>
                     <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
-                      GoCardless Pro puts your brand at the forefront. Enjoy complete control over payment pages and email notifications to your customers.
+                      GoCardless Pro puts your brand at the forefront.
+                      Enjoy complete control over payment pages and email notifications to your customers.
                     </p>
                   </div>
                   <div className='grid__cell u-size-1of2 u-text-center'>
@@ -86,9 +99,13 @@ export default class ProEn extends React.Component {
                       <DeveloperIcon className='svg-icon__image svg-icon__image--shadow u-fill-yellow' />
                       <DeveloperIcon className='svg-icon__image u-fill-dark-gray' />
                     </figure>
-                    <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>A simple, modern API</div>
+                    <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
+                      A simple, modern API
+                    </div>
                     <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
-                      All documentation for our Pro product is freely available in our <a href='https://developer.gocardless.com/pro' id='track-overview-docs'>API docs</a>. We’ve worked hard to make integrating your systems as painless as possible.
+                      All documentation for our Pro product is freely available in
+                      our <a href='https://developer.gocardless.com/pro' id='track-overview-docs'>API docs</a>.
+                      We’ve worked hard to make integrating your systems as painless as possible.
                     </p>
                   </div>
                   <div className='grid__cell u-size-1of2 u-text-center u-margin-Txxl u-padding-Txxl'>
@@ -96,9 +113,12 @@ export default class ProEn extends React.Component {
                       <MobileIcon className='svg-icon__image svg-icon__image--shadow u-fill-blue' />
                       <MobileIcon className='svg-icon__image u-fill-dark-gray' />
                     </figure>
-                    <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>Works everywhere</div>
+                    <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
+                      Works everywhere
+                    </div>
                     <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
-                      We’ve made it incredibly simple to develop on top of GoCardless Pro and create the next generation of your website or mobile apps.
+                      We’ve made it incredibly simple to develop on top of GoCardless Pro
+                      and create the next generation of your website or mobile apps.
                     </p>
                   </div>
                   <div className='grid__cell u-size-1of2 u-text-center u-margin-Txxl u-padding-Txxl'>
@@ -106,13 +126,21 @@ export default class ProEn extends React.Component {
                       <SecurityIcon className='svg-icon__image svg-icon__image--shadow u-fill-green' />
                       <SecurityIcon className='svg-icon__image u-fill-dark-gray' />
                     </figure>
-                    <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>Military grade security</div>
+                    <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
+                      Military grade security
+                    </div>
                     <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
-                      We’ve sweated over security so you don’t have to. We store all bank details with RSA encryption and communicate only over secure channels.
+                      We’ve sweated over security so you don’t have to.
+                      We store all bank details with RSA encryption and communicate only over secure channels.
                     </p>
                   </div>
                 </div>
-                <p className='u-color-p u-margin-Txxl u-padding-Tm'>Want to easily try our API and dashboard? <a href='https://manage-sandbox.gocardless.com/registrations/create'>Sign up for a free sandbox account</a></p>
+                <p className='u-color-p u-margin-Txxl u-padding-Tm'>
+                  Want to easily try our API and
+                  dashboard? <a href='https://manage-sandbox.gocardless.com/registrations/create'>
+                    Sign up for a free sandbox account
+                  </a>
+                </p>
               </div>
             </div>
             <hr className='u-margin-An' />
@@ -123,7 +151,8 @@ export default class ProEn extends React.Component {
                     You’re in good company
                   </h2>
                   <p className='u-text-s u-color-p u-margin-Txs'>
-                    Every day, some of the biggest and most respected businesses in the UK trust GoCardless to power their payments
+                    Every day, some of the biggest and most respected businesses
+                    in the UK trust GoCardless to power their payments
                   </p>
                 </div>
                 <div className='u-text-center u-margin-Vl u-padding-Vs u-center'>
@@ -138,7 +167,8 @@ export default class ProEn extends React.Component {
                   <h2 className='u-text-heading u-color-heading u-text-l u-text-light'>
                     Watch a short overview of GoCardless Pro
                   </h2>
-                  <iframe src='https://player.vimeo.com/video/116341918' className='u-text-center videos-container__iframe u-margin-Vl'>
+                  <iframe src='https://player.vimeo.com/video/116341918'
+                  className='u-text-center videos-container__iframe u-margin-Vl'>
                   </iframe>
                 </div>
               </div>
@@ -153,7 +183,9 @@ export default class ProEn extends React.Component {
                   </h2>
                   <div className='u-center'>
                     <p className='u-text-s u-color-p u-margin-Ts'>
-                      GoCardless Pro is the only product that enables you to collect Direct Debit payments from the UK and SEPA via one integration. With our API, your business can take payments from over 500 million people.
+                      GoCardless Pro is the only product that enables you to collect
+                      Direct Debit payments from the UK and SEPA via one integration.
+                      With our API, your business can take payments from over 500 million people.
                     </p>
                   </div>
                 </div>
@@ -175,7 +207,8 @@ export default class ProEn extends React.Component {
                       Speak with one of our payments experts to learn how GoCardless can help your business.
                     </p>
                   </div>
-                  <Link to='contact_sales' query={{ s: 'pro' }} id='track-cta-contact-sales' className='btn btn--hollow u-margin-Tm'>
+                  <Link to='contact_sales' query={{ s: 'pro' }} id='track-cta-contact-sales'
+                  className='btn btn--hollow u-margin-Tm'>
                     <IntlMessage message='cta.pro' />
                   </Link>
                 </div>
@@ -197,26 +230,32 @@ export default class ProEn extends React.Component {
                 </div>
                 <div className='u-text-center u-text-heading u-text-upcase u-text-xxs u-text-semi'>
                   <Tabs triggers={[(
-                      <a href='#customer-info' id='track-dashboard-customer' className='tab-link u-padding-Vxxs u-margin-Bxl u-margin-Hs u-inline-block u-padding-Hs u-link-clean'>
+                      <a href='#customer-info' id='track-dashboard-customer'
+                      className='tab-link u-padding-Vxxs u-margin-Bxl u-margin-Hs u-inline-block u-padding-Hs u-link-clean'>
                         Customer info
                       </a>
                     ), (
-                      <a href='#payment-history' id='track-dashboard-payment' className='tab-link u-padding-Vxxs u-margin-Bxl u-margin-Hs u-inline-block u-padding-Hs u-link-clean'>
+                      <a href='#payment-history' id='track-dashboard-payment'
+                      className='tab-link u-padding-Vxxs u-margin-Bxl u-margin-Hs u-inline-block u-padding-Hs u-link-clean'>
                         Payment history
                       </a>
                     ), (
-                      <a href='#filtering' id='track-dashboard-admin' className='tab-link u-padding-Vxxs u-margin-Hs u-inline-block u-padding-Hs u-link-clean'>
+                      <a href='#filtering' id='track-dashboard-admin'
+                      className='tab-link u-padding-Vxxs u-margin-Hs u-inline-block u-padding-Hs u-link-clean'>
                         Filtering
                       </a>
                     ),]}>
                     <div>
-                      <img src='/images/pro/customer.jpg' className='pro-page__dashboard-image u-shadow-medium' />
+                      <img src='/images/pro/customer.jpg'
+                      className='pro-page__dashboard-image u-shadow-medium' />
                     </div>
                     <div>
-                      <img src='/images/pro/payment.jpg' className='pro-page__dashboard-image u-shadow-medium' />
+                      <img src='/images/pro/payment.jpg'
+                      className='pro-page__dashboard-image u-shadow-medium' />
                     </div>
                     <div>
-                      <img src='/images/pro/payments-list.jpg' className='pro-page__dashboard-image u-shadow-medium' />
+                      <img src='/images/pro/payments-list.jpg'
+                      className='pro-page__dashboard-image u-shadow-medium' />
                     </div>
                   </Tabs>
                 </div>
@@ -231,7 +270,8 @@ export default class ProEn extends React.Component {
                       <tr className='comparison-table__row'>
                         <td />
                         <td className='u-padding-As'>
-                          <Link to='features' id='track-comparison-table-features' className='u-color-primary'>
+                          <Link to='features' id='track-comparison-table-features'
+                          className='u-color-primary'>
                             Learn more about GoCardless
                           </Link>
                         </td>
@@ -270,7 +310,8 @@ export default class ProEn extends React.Component {
                 id='track-cta-contact-sales' className='btn u-margin-Rm'>
                   <IntlMessage message='cta.pro' />
                 </Link>
-                <a href='https://manage-sandbox.gocardless.com/registrations/create' id='track-cta-try-pro-dash' className='btn btn--hollow'>Try Pro for free</a>
+                <a href='https://manage-sandbox.gocardless.com/registrations/create'
+                id='track-cta-try-pro-dash' className='btn btn--hollow'>Try Pro for free</a>
                 <hr className='u-margin-Vxxl' />
                 <p className='u-color-p'>
                   <strong>Want to talk to someone first?</strong><br />

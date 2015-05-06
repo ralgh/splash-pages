@@ -19,14 +19,19 @@ export default class ProFr extends React.Component {
           <div className='site-container page-hero__container'>
             <div className='page-hero__inner'>
               <div className='page-hero__text'>
-                <h1 className='u-text-heading u-color-invert u-text-center u-text-xl u-text-light'>Prenez le contrôle de vos prélèvements bancaires</h1>
-                <p className='u-text-heading u-text-center u-color-invert u-text-m u-text-light u-margin-Txxs u-text-no-smoothing'>La meilleure technologie pour vos paiements<br />récurrents en ligne</p>
+                <h1 className='u-text-heading u-color-invert u-text-center u-text-xl u-text-light'>
+                  Prenez le contrôle de vos prélèvements bancaires
+                </h1>
+                <p className='u-text-heading u-text-center u-color-invert u-text-m u-text-light u-margin-Txxs u-text-no-smoothing'>
+                  La meilleure technologie pour vos paiements<br />récurrents en ligne
+                </p>
               </div>
             </div>
           </div>
         </div>
         <div className='sticky-nav'>
-          <div ng-gc-sticky-nav className='sticky-nav__inner u-background-light-gray u-text-heading u-text-xxs u-text-light u-text-no-smoothing'>
+          <div ng-gc-sticky-nav
+          className='sticky-nav__inner u-background-light-gray u-text-heading u-text-xxs u-text-light u-text-no-smoothing'>
             <div className='site-container u-padding-Vm'>
               <ul className='u-pull-start u-margin-Txxs'>
                 <li className='sticky-nav__item'>
@@ -41,7 +46,10 @@ export default class ProFr extends React.Component {
                 </li>
               </ul>
               <Link to='contact_sales' query={{ s: 'pro' }}
-                className='sticky-nav__cta btn btn--small btn--hollow u-pull-end u-text-transform-none u-text-light u-text-xxs u-text-no-smoothing'>
+                className={
+                  'sticky-nav__cta btn btn--small btn--hollow u-pull-end ' +
+                  'u-text-transform-none u-text-light u-text-xxs u-text-no-smoothing'
+                }>
                 Contactez-nous
               </Link>
               <a href='https://developer.gocardless.com/pro/' className='u-pull-end u-margin-Txxs u-margin-Rm'>
@@ -59,7 +67,9 @@ export default class ProFr extends React.Component {
                   Découvrez GoCardless
                 </h2>
                 <p className='u-text-s u-color-p u-margin-Txs'>
-                  GoCardless combine simplicité d'utilisation et contrôle complet du paiement et de l'expérience client. Il vous permet d'encaisser des paiements par compte bancaire dans toute la zone Euro <br />et au Royaume-Uni en une simple intégration.
+                  GoCardless combine simplicité d'utilisation et contrôle complet du paiement
+                  et de l'expérience client. Il vous permet d'encaisser des paiements par
+                  compte bancaire dans toute la zone Euro <br />et au Royaume-Uni en une simple intégration.
                 </p>
               </div>
               <div className='grid u-margin-Tl u-padding-Tm'>
@@ -114,7 +124,8 @@ export default class ProFr extends React.Component {
                   Vos paiements, votre marque
                 </div>
                 <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
-                  Vos utilisateurs ne voient que votre marque. Vous avez un contrôle total sur le design de vos pages de paiement et votre communication client.
+                  Vos utilisateurs ne voient que votre marque. Vous avez un contrôle
+                  total sur le design de vos pages de paiement et votre communication client.
                 </p>
               </div>
               <div className='grid__cell u-size-1of2 u-text-center'>
@@ -126,7 +137,9 @@ export default class ProFr extends React.Component {
                   Une API simple et moderne
                 </div>
                 <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
-                  Intégrez très simplement GoCardless dans votre site web et vos systèmes informatique. Tout ce qu'il y a à savoir est dans notre <a href='https://developer.gocardless.com/pro'>documentation</a>.
+                  Intégrez très simplement GoCardless dans votre site web et vos systèmes
+                  informatique. Tout ce qu'il y a à savoir est dans
+                  notre <a href='https://developer.gocardless.com/pro'>documentation</a>.
                 </p>
               </div>
               <div className='grid__cell u-size-1of2 u-text-center u-margin-Txxl u-padding-Txxl'>
@@ -138,7 +151,8 @@ export default class ProFr extends React.Component {
                   Compatibilité tout terrain
                 </div>
                 <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
-                  GoCardless s'intégre facilement dans n'importe quel site et application mobile, quel que soit la technologie que vous utilisez.
+                  GoCardless s'intégre facilement dans n'importe quel site et application mobile,
+                  quel que soit la technologie que vous utilisez.
                 </p>
               </div>
               <div className='grid__cell u-size-1of2 u-text-center u-margin-Txxl u-padding-Txxl'>
@@ -150,7 +164,8 @@ export default class ProFr extends React.Component {
                   Sécurité de calibre militaire
                 </div>
                 <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
-                  Toutes les données bancaires sont chiffrées avec RSA et ne sont transmises que par le biais de serveurs Européens sécurisés.
+                  Toutes les données bancaires sont chiffrées avec RSA et ne sont transmises
+                  que par le biais de serveurs Européens sécurisés.
                 </p>
               </div>
             </div>
@@ -165,7 +180,9 @@ export default class ProFr extends React.Component {
                 </h2>
                 <div className='u-center'>
                   <p className='u-text-s u-color-p u-margin-Ts'>
-                    GoCardless est le seul produit qui vous permet de collecter vos prélèvements bancaires auprès de plus de 300 millions de personnes dans la zone SEPA et le Royaume-Uni en une seule intégration.
+                    GoCardless est le seul produit qui vous permet de collecter vos prélèvements
+                    bancaires auprès de plus de 300 millions de personnes dans la zone
+                    SEPA et le Royaume-Uni en une seule intégration.
                   </p>
                 </div>
               </div>
@@ -179,7 +196,8 @@ export default class ProFr extends React.Component {
                   Vous êtes en bonne compagnie
                 </h2>
                 <p className='u-text-s u-color-p u-margin-Txs'>
-                  Chaque jour les plus grandes entreprises et start-ups innovantes font confiance à la technologie de GoCardless pour gérer leurs paiements
+                  Chaque jour les plus grandes entreprises et start-ups innovantes font confiance à
+                  la technologie de GoCardless pour gérer leurs paiements
                 </p>
               </div>
               <div className='u-text-center u-margin-Vl u-padding-Vs u-center'>
@@ -211,7 +229,8 @@ export default class ProFr extends React.Component {
               <Link to='contact_sales' query={{ s: 'pro' }} className='btn u-margin-Rm'>
                 Contactez-nous
               </Link>
-              <a href='https://manage-sandbox.gocardless.com/registrations/create' id='track-cta-try-pro-dash' className='btn btn--hollow'>Essayez gratuitement</a>
+              <a href='https://manage-sandbox.gocardless.com/registrations/create'
+              id='track-cta-try-pro-dash' className='btn btn--hollow'>Essayez gratuitement</a>
             </div>
           </div>
         </div>
