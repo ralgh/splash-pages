@@ -1,5 +1,6 @@
 import React from 'react';
 import Translation from '../../components/translation/translation';
+import { Link } from 'react-router';
 
 export default class PricingFr extends React.Component {
   displayName = 'PricingFr'
@@ -32,10 +33,12 @@ export default class PricingFr extends React.Component {
                       Pour les entreprises collectant <b>1 à 500 paiements</b> par mois
                     </li>
                     <li className='pricing-options__list-item'>
-                      <a href='/fr/pro'>En apprendre plus sur notre produit</a>
+                      <Link to='pro'>En apprendre plus sur notre produit</Link>
                     </li>
                     <li className='pricing-options__list-button'>
-                      <a href='/fr/contactez-nous?s=pricing' className='btn btn--hollow u-size-full'>Contactez-nous</a>
+                      <Link to='contact_sales' query={{ s: 'pricing' }} className='btn btn--hollow u-size-full'>
+                        Contactez-nous
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -62,10 +65,12 @@ export default class PricingFr extends React.Component {
                       Pour les entreprises collectant <b>plus de 500 paiements</b> par mois
                     </li>
                     <li className='pricing-options__list-item'>
-                      <a href='/fr/pro'>En apprendre plus sur notre produit</a>
+                      <Link to='pro'>En apprendre plus sur notre produit</Link>
                     </li>
                     <li className='pricing-options__list-button'>
-                      <a href='/fr/contactez-nous?s=pricing' className='btn btn--hollow u-size-full'>Contactez-nous</a>
+                      <Link to='contact_sales' query={{ s: 'pricing' }} className='btn btn--hollow u-size-full'>
+                        Contactez-nous
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -98,7 +103,7 @@ export default class PricingFr extends React.Component {
               <p className='u-color-p'>
                 Oui. Nos frais par transaction sont dégressifs à partir de 1.000 paiements par mois.
                 Pour en savoir plus,
-                &nbsp;<a href='/fr/contactez-nous' className='u-link-color-p u-text-underline'>contactez-nous</a>.
+                &nbsp;<Link to='contact_sales' className='u-link-color-p u-text-underline'>contactez-nous</Link>
               </p>
             </div>
             <div className='grid__cell u-size-1of2 u-padding-Bm u-padding-Rm'>
@@ -124,10 +129,11 @@ export default class PricingFr extends React.Component {
           <div className='u-padding-Vxl'>
             <h2 className='u-text-heading u-text-l u-color-heading u-text-light'>Avez-vous des questions ?</h2>
             <p className='u-color-p u-margin-Ts'>Contactez-nous au +33 9 75 18 42 95 (FR)<br />+32 78 48 09 94 (BE)</p>
-            <a href='/fr/contactez-nous' className='btn btn--hollow u-margin-Tm'>Contactez-nous</a>
+            <Link to='contact_sales' className='btn btn--hollow u-margin-Tm'>
+              Contactez-nous
+            </Link>
           </div>
         </div>
-
       </Translation>
     );
   }

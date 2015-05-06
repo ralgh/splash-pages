@@ -1,6 +1,5 @@
 import React from 'react';
-import ReactRouter from 'react-router';
-var { Route } = ReactRouter;
+import { Route } from 'react-router';
 
 class LinkExists extends React.Component {
   displayName = 'LinkExists'

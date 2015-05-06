@@ -1,6 +1,5 @@
 import React from 'react';
 import Translation from '../../components/translation/translation';
-
 import { team } from '../../constants/team';
 
 export default class AboutEn extends React.Component {

@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-class Popover extends React.Component {
+export default class Popover extends React.Component {
   displayName = 'Popover'
 
   static propTypes = {
@@ -39,7 +39,8 @@ class Popover extends React.Component {
   }
 
   handleDocumentClick(event) {
-    if (!this.findContentNode().contains(event.target)) {
+    const node = this.findContentNode();
+    if (node && !node.contains(event.target)) {
       this.hide();
     }
   }
@@ -90,5 +91,3 @@ class Popover extends React.Component {
     );
   }
 }
-
-export default Popover;

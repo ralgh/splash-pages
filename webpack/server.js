@@ -21,6 +21,7 @@ const serverOptions = {
   hot: true,
   publicPath: config.output.publicPath,
   proxy: {
+    '/api*': 'http://gocardless.dev:3000',
     '*': proxyPath,
   },
 };

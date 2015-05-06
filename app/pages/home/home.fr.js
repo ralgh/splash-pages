@@ -4,6 +4,7 @@ import ChecklistIcon from '../../icons/svg/checklist';
 import RealtimeIcon from '../../icons/svg/realtime';
 import TickSquareIcon from '../../icons/svg/tick-square';
 import Tabs from '../../components/tabs/tabs';
+import { Link } from 'react-router';
 
 export default class HomeFr extends React.Component {
   displayName = 'HomeFr'
@@ -227,7 +228,7 @@ export default class HomeFr extends React.Component {
 
         <div className='site-container u-text-center u-padding-Vxxl'>
           <div className='u-padding-Vxl'>
-            <a href='/fr/pro' id='track-cta-sign-up' className='btn'>En apprendre plus</a>
+            <Link to='pro' id='track-cta-sign-up' className='btn'>En apprendre plus</Link>
           </div>
         </div>
       </Translation>

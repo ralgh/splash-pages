@@ -43,6 +43,7 @@
     "serve-favicon": "^2.2.0",
     "strip-loader": "^0.1.0",
     "style-loader": "^0.12.1",
+    "superagent": "^1.2.0",
     "touch": "0.0.3",
     "webpack": "^1.8.11"
   },

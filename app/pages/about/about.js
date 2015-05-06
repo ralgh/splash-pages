@@ -4,7 +4,6 @@ import IntlMessage from '../../components/intl-message/intl-message';
 import AboutEn from './about.en';
 import AboutFr from './about.fr';
 
-
 export default class About extends React.Component {
   displayName = 'About'
 

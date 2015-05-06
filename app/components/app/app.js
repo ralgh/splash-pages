@@ -1,7 +1,6 @@
 import React from 'react';
 import {PropTypes} from '../../helpers/prop-types/prop-types';
-import Router from 'react-router';
-var {RouteHandler} = Router;
+import {RouteHandler} from 'react-router';
 
 class App extends React.Component {
   displayName = 'App'

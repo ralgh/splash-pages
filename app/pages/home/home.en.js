@@ -9,8 +9,7 @@ import ProIcon from '../../icons/svg/pro';
 import ShopIcon from '../../icons/svg/shop';
 import IntegrationsIcon from '../../icons/svg/integrations';
 
-import Router from 'react-router';
-var { Link } = Router;
+import { Link } from 'react-router';
 
 export default class HomeEn extends React.Component {
   displayName = 'HomeEn'

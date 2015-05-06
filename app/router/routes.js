@@ -1,6 +1,5 @@
 import _ from 'lodash';
-import Router from 'react-router';
-var {Route, DefaultRoute, NotFoundRoute, Redirect} = Router;
+import { Route, DefaultRoute, NotFoundRoute, Redirect } from 'react-router';
 
 // This is internally used within jsx, so ignore the unused error.
 /*eslint-disable */
@@ -14,6 +13,9 @@ import FaqMerchants from '../pages/faq/merchants/merchants';
 import Home from '../pages/home/home';
 import About from '../pages/about/about';
 import Pricing from '../pages/pricing/pricing';
+import Pro from '../pages/pro/pro';
+import ContactSales from '../pages/contact-sales/contact-sales';
+import Features from '../pages/features/features';
 
 import {defaultLocale} from '../helpers/locale-helper/locale-helper';
 
@@ -35,6 +37,30 @@ var config = [
       },
       'fr-FR': {
           path: '/tarifs',
+      },
+    },
+  ],
+  [Pro, { name: 'pro' }, {
+      'en-GB': {
+          path: '/pro',
+      },
+      'fr-FR': {
+          path: '/pro',
+      },
+    },
+  ],
+  [ContactSales, { name: 'contact_sales' }, {
+      'en-GB': {
+          path: '/contact-sales',
+      },
+      'fr-FR': {
+          path: '/contactez-nous',
+      },
+    },
+  ],
+  [Features, { name: 'features' }, {
+      'en-GB': {
+          path: '/features',
       },
     },
   ],
@@ -64,7 +90,7 @@ var config = [
 
 function pathWithLocale(path, locale) {
   if (!path || path.indexOf('/') !== 0) {
-    throw new Error('Path not valid, must begin with `/`');
+    throw new TypeError('Path not valid, must begin with `/`');
   }
   var localePath;
   if (locale === defaultLocale) {
@@ -81,7 +107,7 @@ function validatePages(pages) {
 }
 
 function validateLocale(locale, availableLocales) {
-  if (!_.contains(availableLocales, locale)) {
+  if (!_.includes(availableLocales, locale)) {
     throw new TypeError(`Locale not allowed: ${locale} [${availableLocales.join(', ')}]`);
   }
 }
