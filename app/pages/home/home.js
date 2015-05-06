@@ -35,7 +35,7 @@ export default class Home extends React.Component {
                     </a>
                   </Translation>
 
-                  <Translation locales='fr-FR'>
+                  <Translation locales={['fr-FR', 'fr-BE']}>
                     <Link to='home' id='track-hero-learn-more' className='btn btn--invert btn--move u-size-3of12'>
                       <IntlMessage message='cta.more' />
                     </Link>

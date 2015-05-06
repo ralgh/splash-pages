@@ -7,7 +7,7 @@ export default class PricingFr extends React.Component {
 
   render() {
     return (
-      <Translation locales='fr-FR'>
+      <Translation locales={['fr-FR', 'fr-BE']}>
         <div className='page-hero--pricing page-hero'>
           <div className='site-container'>
             <div className='grid pricing-options u-center u-padding-Bxl'>

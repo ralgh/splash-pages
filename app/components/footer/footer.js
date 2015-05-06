@@ -143,12 +143,12 @@ class Footer extends React.Component {
           <div className='grid__cell u-size-1of2'>
             <div className='u-size-2of3 u-pull-end'>
               <p className='u-text-heading u-text-xxs u-color-invert u-margin-Bm' itemScope itemType='http://schema.org/Organization'>
-                <span itemProp='name'>GoCardless Ltd.</span>
+                <span itemProp='name'>GoCardless Ltd.</span>&nbsp;
                 <meta itemProp='url' content={config.siteRoot} />
                 <span itemProp='address' itemScope itemType='http://schema.org/PostalAddress'>
-                  <span itemProp='streetAddress'><IntlMessage message='postal_address.street_address' /></span><span>{','} </span>
-                  <span itemProp='addressLocality'><IntlMessage message='postal_address.address_locality' /></span><span>{','} </span>
-                  <span itemProp='postalCode'><IntlMessage message='postal_address.postal_code' /></span><span>{','} </span>
+                  <span itemProp='streetAddress'><IntlMessage message='postal_address.street_address' /></span>,&nbsp;
+                  <span itemProp='addressLocality'><IntlMessage message='postal_address.address_locality' /></span>,&nbsp;
+                  <span itemProp='postalCode'><IntlMessage message='postal_address.postal_code' /></span>,&nbsp;
                   <span itemProp='addressCountry' content={getIntlMessage(messages, 'postal_address.address_country_iso')}>
                     <IntlMessage message='postal_address.address_country_iso' />
                   </span>
@@ -171,10 +171,11 @@ class Footer extends React.Component {
           id='track-footer-end-links'>
           <div className='u-padding-Vl'>
             <span className='u-text-light u-text-no-smoothing'><IntlMessage message='footer.currently_viewing' /></span>
-            <img src={ `/images/icons/${ region }-flag-icon@2x.png` } className='flag-icon u-margin-Hs' alt />
+
             <span className='u-relative'>
-             <Popover className='popover--above' toggle={
+             <Popover className='popover--country-select' toggle={
                   (<a href='#' className='u-text-semi u-link-invert'>
+                    <img src={ `/images/icons/${ region }-flag-icon@2x.png` } className='flag-icon u-margin-Hs' alt />
                      <span className='popover-link popover-link--invert'>
                        <IntlMessage message='country' />
                      </span>

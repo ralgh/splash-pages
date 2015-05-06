@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React from 'react';
 import {PropTypes} from '../../helpers/prop-types/prop-types';
 
@@ -14,9 +15,12 @@ export default class Translation extends React.Component {
   }
 
   render() {
+    const locales = _.flatten([this.props.locales]);
+    const hasLocale = _.includes(locales, this.context.locales);
+
     return (
       <div>
-        { this.context.locales === this.props.locales &&
+        { hasLocale &&
             this.props.children }
       </div>
     );

@@ -30,6 +30,9 @@ var config = [
       'fr-FR': {
           path: '/',
       },
+      'fr-BE': {
+          path: '/',
+      },
     },
   ],
   [Pricing, { name: 'pricing' }, {
@@ -37,6 +40,9 @@ var config = [
           path: '/pricing',
       },
       'fr-FR': {
+          path: '/tarifs',
+      },
+      'fr-BE': {
           path: '/tarifs',
       },
     },
@@ -48,6 +54,9 @@ var config = [
       'fr-FR': {
           path: '/pro',
       },
+      'fr-BE': {
+          path: '/pro',
+      },
     },
   ],
   [ContactSales, { name: 'contact_sales' }, {
@@ -55,6 +64,9 @@ var config = [
           path: '/contact-sales',
       },
       'fr-FR': {
+          path: '/contactez-nous',
+      },
+      'fr-BE': {
           path: '/contactez-nous',
       },
     },
@@ -72,6 +84,9 @@ var config = [
       'fr-FR': {
           path: '/securite',
       },
+      'fr-BE': {
+          path: '/securite',
+      },
     },
   ],
   [About, { name: 'about' }, {
@@ -79,6 +94,9 @@ var config = [
           path: '/about',
       },
       'fr-FR': {
+          path: '/a-propos',
+      },
+      'fr-BE': {
           path: '/a-propos',
       },
     },
