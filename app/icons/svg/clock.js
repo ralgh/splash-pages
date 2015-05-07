@@ -4,7 +4,7 @@ export default class ClockIcon extends React.Component {
   displayName = 'ClockIcon'
 
   static propTypes = {
-    className: React.PropTypes.string.isRequired
+    className: React.PropTypes.string.isRequired,
   };
 
   /*eslint-disable max-len*/

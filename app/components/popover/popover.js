@@ -11,7 +11,7 @@ export default class Popover extends React.Component {
   }
 
   static keyCodes = {
-    ESC: 27
+    ESC: 27,
   }
 
   constructor(props) {

@@ -4,7 +4,7 @@ export default class CheckmarkIcon extends React.Component {
   displayName = 'CheckmarkIcon'
 
   static propTypes = {
-    className: React.PropTypes.string.isRequired
+    className: React.PropTypes.string.isRequired,
   };
 
   /*eslint-disable max-len*/

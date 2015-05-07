@@ -4,7 +4,7 @@ export default class XIcon extends React.Component {
   displayName = 'XIcon'
 
   static propTypes = {
-    className: React.PropTypes.string.isRequired
+    className: React.PropTypes.string.isRequired,
   };
 
   /*eslint-disable max-len*/

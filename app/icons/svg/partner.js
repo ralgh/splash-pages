@@ -4,7 +4,7 @@ export default class PartnerIcon extends React.Component {
   displayName = 'PartnerIcon'
 
   static propTypes = {
-    className: React.PropTypes.string.isRequired
+    className: React.PropTypes.string.isRequired,
   };
 
   /*eslint-disable max-len*/

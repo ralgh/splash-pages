@@ -4,7 +4,7 @@ export default class ImproveCashflowIcon extends React.Component {
   displayName = 'ImproveCashflowIcon'
 
   static propTypes = {
-    className: React.PropTypes.string.isRequired
+    className: React.PropTypes.string.isRequired,
   };
 
   /*eslint-disable max-len*/

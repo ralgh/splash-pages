@@ -4,7 +4,7 @@ export default class PaymentPageIcon extends React.Component {
   displayName = 'PaymentPageIcon'
 
   static propTypes = {
-    className: React.PropTypes.string.isRequired
+    className: React.PropTypes.string.isRequired,
   };
 
   /*eslint-disable max-len*/

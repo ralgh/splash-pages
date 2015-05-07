@@ -4,7 +4,7 @@ export default class GymMemberIcon extends React.Component {
   displayName = 'GymMemberIcon'
 
   static propTypes = {
-    className: React.PropTypes.string.isRequired
+    className: React.PropTypes.string.isRequired,
   };
 
   /*eslint-disable max-len*/

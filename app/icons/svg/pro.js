@@ -4,7 +4,7 @@ export default class ProIcon extends React.Component {
   displayName = 'ProIcon'
 
   static propTypes = {
-    className: React.PropTypes.string.isRequired
+    className: React.PropTypes.string.isRequired,
   };
 
   /*eslint-disable max-len*/

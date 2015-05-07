@@ -4,7 +4,7 @@ export default class MemberIcon extends React.Component {
   displayName = 'MemberIcon'
 
   static propTypes = {
-    className: React.PropTypes.string.isRequired
+    className: React.PropTypes.string.isRequired,
   };
 
   /*eslint-disable max-len*/

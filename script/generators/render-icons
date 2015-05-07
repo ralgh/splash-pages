@@ -15,7 +15,7 @@ function renderIcon(className, svgIcon) {
     displayName = '${className}'
 
     static propTypes = {
-      className: React.PropTypes.string.isRequired
+      className: React.PropTypes.string.isRequired,
     };
 
     /*eslint-disable max-len*/
@@ -47,7 +47,7 @@ function processSvg() {
 }
 
 function checkSvg() {
-  glob('./app/icons/svg/*.js', function(err, icons){ 
+  glob('./app/icons/svg/*.js', function(err, icons){
     if (err) { throw err; }
     console.log(`Verifying ${icons.length} icons`);
     icons.forEach(function(icon) {

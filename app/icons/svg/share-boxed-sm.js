@@ -4,7 +4,7 @@ export default class ShareBoxedSmIcon extends React.Component {
   displayName = 'ShareBoxedSmIcon'
 
   static propTypes = {
-    className: React.PropTypes.string.isRequired
+    className: React.PropTypes.string.isRequired,
   };
 
   /*eslint-disable max-len*/

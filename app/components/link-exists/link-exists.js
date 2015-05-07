@@ -5,7 +5,7 @@ class LinkExists extends React.Component {
   displayName = 'LinkExists'
 
   static contextTypes = {
-    router: React.PropTypes.func.isRequired
+    router: React.PropTypes.func.isRequired,
   };
 
   static propTypes = {

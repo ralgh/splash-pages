@@ -4,7 +4,7 @@ export default class TickSquareIcon extends React.Component {
   displayName = 'TickSquareIcon'
 
   static propTypes = {
-    className: React.PropTypes.string.isRequired
+    className: React.PropTypes.string.isRequired,
   };
 
   /*eslint-disable max-len*/

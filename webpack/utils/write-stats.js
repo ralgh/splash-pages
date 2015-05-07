@@ -9,25 +9,23 @@ import path from 'path';
 const filepath = path.resolve(__dirname, '../../app/bundles/webpack-stats.json');
 
 // Write only a relevant subset of the stats and attach the public path to it
-
 function writeStats(stats) {
   const publicPath = this.options.output.publicPath;
 
   const json = stats.toJson();
 
-  // get chunks by name and extensions
   function getChunks(name, ext) {
     ext = ext || 'js';
     let curChunk = json.assetsByChunkName[name];
 
-    // a chunk could be a string or an array, so make sure it is an array
+    // Could be a string or an array
     if (!(Array.isArray(curChunk))) {
       curChunk = [curChunk];
     }
 
     return curChunk
-      .filter(chunk => path.extname(chunk) === `.${ext}`) // filter by extension
-      .map(chunk => `${publicPath}${chunk}`); // add public path to it
+      .filter(chunk => path.extname(chunk) === `.${ext}`)
+      .map(chunk => `${publicPath}${chunk}`);
   }
 
   const script = getChunks('main', 'js');

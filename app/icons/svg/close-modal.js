@@ -4,14 +4,14 @@ export default class CloseModalIcon extends React.Component {
   displayName = 'CloseModalIcon'
 
   static propTypes = {
-    className: React.PropTypes.string.isRequired
+    className: React.PropTypes.string.isRequired,
   };
 
   /*eslint-disable max-len*/
   render() {
     return (
-      <svg className={this.props.className} width='35px' height='35px' viewBox='0 0 35 35'>
-        <g stroke='none' strokeWidth='1' fill='none' fillRule='evenodd'>
+        <svg className={this.props.className} width='35px' height='35px' viewBox='0 0 35 35'>
+        <g stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'>
           <g transform='translate(-1287.000000, -2941.000000)'>
             <g transform='translate(1287.000000, 2941.000000)'>
               <circle fill='#CBFB99' cx='17.5' cy='17.5' r='17.5'></circle>

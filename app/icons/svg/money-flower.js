@@ -4,7 +4,7 @@ export default class MoneyFlowerIcon extends React.Component {
   displayName = 'MoneyFlowerIcon'
 
   static propTypes = {
-    className: React.PropTypes.string.isRequired
+    className: React.PropTypes.string.isRequired,
   };
 
   /*eslint-disable max-len*/

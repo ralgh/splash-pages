@@ -4,7 +4,7 @@ export default class Logo extends React.Component {
   displayName = 'Logo'
 
   static propTypes = {
-    className: React.PropTypes.string.isRequired
+    className: React.PropTypes.string.isRequired,
   };
 
   /*eslint-disable max-len*/

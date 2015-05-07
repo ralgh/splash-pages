@@ -4,7 +4,7 @@ export default class RealtimeIcon extends React.Component {
   displayName = 'RealtimeIcon'
 
   static propTypes = {
-    className: React.PropTypes.string.isRequired
+    className: React.PropTypes.string.isRequired,
   };
 
   /*eslint-disable max-len*/

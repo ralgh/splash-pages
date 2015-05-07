@@ -4,7 +4,7 @@ export default class GlobeIcon extends React.Component {
   displayName = 'GlobeIcon'
 
   static propTypes = {
-    className: React.PropTypes.string.isRequired
+    className: React.PropTypes.string.isRequired,
   };
 
   /*eslint-disable max-len*/
