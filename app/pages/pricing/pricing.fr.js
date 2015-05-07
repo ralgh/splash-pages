@@ -1,18 +1,22 @@
 import React from 'react';
 import Translation from '../../components/translation/translation';
+import Message from '../../components/message/message';
+import Link from '../../components/link/link';
 
 export default class PricingFr extends React.Component {
   displayName = 'PricingFr'
 
   render() {
     return (
-      <Translation locales='fr-FR'>
+      <Translation locales={['fr-FR', 'fr-BE']}>
         <div className='page-hero--pricing page-hero'>
           <div className='site-container'>
             <div className='grid pricing-options u-center u-padding-Bxl'>
               <div className='grid__cell u-size-1of2 u-padding-Vxl u-padding-Rxs'>
                 <div className='u-padding-Rxs'>
-                  <h1 className='u-text-heading-light u-text-center u-color-invert u-text-l u-padding-Bs'>GoCardless</h1>
+                  <h1 className='u-text-heading-light u-text-center u-color-invert u-text-l u-padding-Bs'>
+                    GoCardless
+                  </h1>
                   <div className='u-background-primary u-padding-Vxl'>
                     <h2 className='u-text-heading-light u-text-center u-color-invert u-text-xl'>1%</h2>
                     <p className='u-text-heading-light u-text-center u-color-invert u-text-s u-margin-Txxs'>
@@ -30,17 +34,21 @@ export default class PricingFr extends React.Component {
                       Pour les entreprises collectant <b>1 à 500 paiements</b> par mois
                     </li>
                     <li className='pricing-options__list-item'>
-                      <a href='/fr/pro'>En apprendre plus sur notre produit</a>
+                      <Link to='pro'>En apprendre plus sur notre produit</Link>
                     </li>
                     <li className='pricing-options__list-button'>
-                      <a href='/fr/contactez-nous?s=pricing' className='btn btn--hollow u-size-full'>Contactez-nous</a>
+                      <Link to='contact_sales' query={{ s: 'pricing' }} className='btn btn--hollow u-size-full'>
+                        Contactez-nous
+                      </Link>
                     </li>
                   </ul>
                 </div>
               </div>
               <div className='grid__cell u-size-1of2 u-padding-Vxl u-padding-Rxs'>
                 <div className='u-padding-Lxs'>
-                  <h1 className='u-text-heading-light u-text-center u-color-invert u-text-l u-padding-Bs'>GoCardless Pro</h1>
+                  <h1 className='u-text-heading-light u-text-center u-color-invert u-text-l u-padding-Bs'>
+                    GoCardless Pro
+                  </h1>
                   <div className='u-background-dark-gray-darken u-padding-Vxl'>
                     <h2 className='u-text-heading-light u-text-center u-color-invert u-text-xl'>0,01 — 0,60 €</h2>
                     <p className='u-text-heading-light u-text-center u-color-invert u-text-s u-margin-Txxs'>
@@ -58,10 +66,12 @@ export default class PricingFr extends React.Component {
                       Pour les entreprises collectant <b>plus de 500 paiements</b> par mois
                     </li>
                     <li className='pricing-options__list-item'>
-                      <a href='/fr/pro'>En apprendre plus sur notre produit</a>
+                      <Link to='pro'>En apprendre plus sur notre produit</Link>
                     </li>
                     <li className='pricing-options__list-button'>
-                      <a href='/fr/contactez-nous?s=pricing' className='btn btn--hollow u-size-full'>Contactez-nous</a>
+                      <Link to='contact_sales' query={{ s: 'pricing' }} className='btn btn--hollow u-size-full'>
+                        Contactez-nous
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -82,7 +92,9 @@ export default class PricingFr extends React.Component {
                 </b>
               </div>
               <p className='u-color-p'>
-                Non, il n'y aucun autre frais que ceux indiqués ci-dessus. Nous ne vous facturons jamais les paiements qui ont échoué, les remboursements, les créations de mandats...
+                Non, il n'y aucun autre frais que ceux indiqués ci-dessus.
+                Nous ne vous facturons jamais les paiements qui ont échoué,
+                  les remboursements, les créations de mandats...
               </p>
             </div>
             <div className='grid__cell u-size-1of2 u-padding-Bxxl u-padding-Lm'>
@@ -90,7 +102,9 @@ export default class PricingFr extends React.Component {
                 <b>Offrez-vous des réductions ?</b>
               </div>
               <p className='u-color-p'>
-                Oui. Nos frais par transaction sont dégressifs à partir de 1.000 paiements par mois. Pour en savoir plus, <a href='/fr/contactez-nous' className='u-link-color-p u-text-underline'>contactez-nous</a>.
+                Oui. Nos frais par transaction sont dégressifs à partir de 1.000 paiements par mois.
+                Pour en savoir plus,
+                &nbsp;<Link to='contact_sales' className='u-link-color-p u-text-underline'>contactez-nous</Link>
               </p>
             </div>
             <div className='grid__cell u-size-1of2 u-padding-Bm u-padding-Rm'>
@@ -115,11 +129,12 @@ export default class PricingFr extends React.Component {
         <div className='site-container u-text-center u-padding-Tm u-padding-Bxxl'>
           <div className='u-padding-Vxl'>
             <h2 className='u-text-heading u-text-l u-color-heading u-text-light'>Avez-vous des questions ?</h2>
-            <p className='u-color-p u-margin-Ts'>Contactez-nous au +33 9 75 18 42 95 (FR)<br />+32 78 48 09 94 (BE)</p>
-            <a href='/fr/contactez-nous' className='btn btn--hollow u-margin-Tm'>Contactez-nous</a>
+            <p className='u-color-p u-margin-Ts'>Contactez-nous au <Message message='phone_full' /></p>
+            <Link to='contact_sales' className='btn btn--hollow u-margin-Tm'>
+              Contactez-nous
+            </Link>
           </div>
         </div>
-
       </Translation>
     );
   }

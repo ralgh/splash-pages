@@ -1,4 +1,16 @@
 export default {
+  header: {
+    our_products: 'Our products',
+    login_btn: 'Login',
+    more: 'More',
+  },
+  footer: {
+    description: 'GoCardless is a Bacs approved bureau and is regulated by the Financial Conduct Authority as an Authorised Payment Institution.',
+    currently_viewing: 'Currently viewing',
+    eruope_cta: 'GoCardless is expanding',
+    eruope_link: 'learn more',
+    eruope_description: 'about upcoming countries',
+  },
   cta: {
     basic: 'Start taking payments',
     pro: 'Contact sales',
@@ -9,18 +21,7 @@ export default {
     header: 'Recurring payments made simple',
     desc: 'GoCardless makes collecting by Direct Debit easy for everyone from individiuals to multi-national corporations',
   },
-  header: {
-    our_products: 'Our products',
-    login_btn: 'Login',
-  },
   contact_types: ['customer support', 'sales'],
-  footer: {
-    description: 'GoCardless is a Bacs approved bureau and is regulated by the Financial Conduct Authority as an Authorised Payment Institution.',
-    currently_viewing: 'Currently viewing',
-    eruope_cta: 'GoCardless is expanding',
-    eruope_link: 'learn more',
-    eruope_description: 'about upcoming countries',
-  },
   postal_address: {
     street_address: '338-346 Goswell Road',
     address_locality: 'London',
@@ -37,116 +38,164 @@ export default {
     'fr-FR': 'France',
     'fr-BE': 'Belgium',
   },
+  prospect_form: {
+    name_label: 'Your name',
+    name_placeholder: 'John Smith',
+    email_label: 'Work email',
+    email_placeholder: 'example@companyname.com',
+    phone_label: 'Work phone',
+    phone_placeholder: '02071838674',
+    submit: 'Contact',
+    success_messages: {
+      '0-100': 'Thank you, a member of the GoCardless team will be in touch soon.',
+      '100-500': 'Thank you, a member of the GoCardless team will be in touch soon.',
+      '500+': 'Thank you, a member of the GoCardless team will be in touch soon.',
+      default: 'Thank you, someone will be in touch within 24 hours.',
+    },
+  },
   not_found: {
     title: 'Not Found',
     description: 'Page Not Found',
   },
   pricing: {
     title: 'Pricing',
-    description: 'Pricing',
+    nav_title: 'Pricing',
+    description: 'Collect Direct Debit payments online with fees of just 1%, capped at £2. Scale pricing is available for larger organisations.',
   },
   about: {
-    title: 'About us',
+    title: 'About GoCardless: Company Info & Job Openings',
+    nav_title: 'About us',
     description: 'About us',
     link: 'about',
     header1: 'We\'re creating a new payment',
     header2: 'network for the internet',
   },
   home: {
-    title: 'Home',
+    title: 'The UK’s #1 for online Direct Debit',
+    nav_title: 'Home',
     description: 'GoCardless',
-    link: "home page"
+    link: 'home page'
   },
   contact_sales: {
-    title: 'Contact Sales',
-    description: 'Contact Sales'
+    title: 'Get a Quote',
+    nav_title: 'Contact Sales',
+    description: 'Find out how much you can save using GoCardless to collect Direct Debit payments online. Enter your details and we\'ll e-mail you a quote within 24 hours.',
+    page_title: 'Contact Sales',
+    page_description: 'To find out more about how GoCardless can help you, please enter your details below. A member of our team will call you back as soon as possible.',
+    talk_to_us: 'Want to talk to an expert now?',
+    call_us: 'Call us on',
+    information1: 'Your information is safe with us.',
+    information2: 'We won\'t ever share it or sell it to anyone.'
   },
   story: {
     title: 'Story',
     description: 'customer stories',
   },
   features: {
-    title: 'GoCardless',
-    description: 'GoCardless',
+    title: 'GoCardless: Quick & Simple Online Payments',
+    nav_title: 'GoCardless',
+    description: 'GoCardless is the easiest way to take payments online. Collect payments directly from your customers\' bank accounts. Save time and improve cash flow.',
     explainer: 'Simple recurring payments'
   },
   faq_merchants: {
-    title: 'FAQ',
-    description: 'FAQ',
+    title: 'FAQ for merchants',
+    nav_title: 'FAQ',
+    description: '',
+  },
+  faq_customers: {
+    title: 'FAQ for customers',
+    nav_title: 'FAQ for customers',
+    description: '',
   },
   features_api: {
-    title: 'API',
-    description: 'API',
+    title: 'GoCardless API: Integrate Direct Debit into your website & app',
+    nav_title: 'API',
+    description: 'With the GoCardless REST API, you can integrate Direct Debit payments into your website or app. Official libraries for Ruby, PHP, Java & more.',
   },
   security: {
     title: 'Security',
-    description: 'Security',
+    nav_title: 'Security',
+    description: 'GoCardless is built securely from the ground up and uses military grade encryption to keep your details safe. Regulated by the Financial Conduct Authority.',
+    header1: 'Built securely from the ground up',
+    header2: 'GoCardless uses military grade encryption to keep you safe, and is approved by the biggest names in payments',
   },
   stories: {
     title: 'Stories',
+    nav_title: 'Stories',
     description: 'Stories',
   },
   europe: {
     title: 'SEPA',
+    nav_title: 'SEPA',
     description: 'SEPA',
   },
   legal: {
-    title: 'Legal',
+    title: 'Terms of Service',
+    nav_title: 'Legal',
     description: 'Legal',
   },
   pro: {
-    title: 'GoCardless Pro',
+    title: 'GoCardless Pro: Complete Control Over Direct Debit',
+    nav_title: 'GoCardless Pro',
+    description: 'GoCardless Pro allows you to collect Direct Debit payments with full control over the experience. Completely white-labelled and with an easy-to-use API.',
     explainer: 'Total control over Direct Debit',
   },
   partners: {
-    title: 'Partners',
+    title: 'Partner Apps & Software Integration',
+    nav_title: 'Partner with us',
+    description: 'Partner up with GoCardless and let people take payments through your software. We work with FreeAgent, Xero, Sage, Kashflow, Pitchero, ClearBooks, CrowdCube and more.',
     explainer: 'Offer GoCardless to your users',
   },
   jobs: {
     title: 'Jobs',
+    nav_title: 'Jobs',
   },
   pro_docs: {
     title: 'Pro API',
+    nav_title: 'Pro API',
   },
   blog: {
     title: 'Blog',
+    nav_title: 'Blog',
   },
   guides: {
     title: 'Guides',
+    nav_title: 'Guides',
     path: '/guides',
   },
   help: {
     title: 'Support',
+    nav_title: 'Support',
   },
-  story_has_bean_coffee: {
+  has_bean_coffee_story: {
     title: 'Has Bean Coffee',
     description: 'Has Bean Coffee improved their cashflow by 30% using Direct Debit with GoCardless. See their testimonial of taking subscriptions using GoCardless.',
   },
-  story_greater_anglia: {
+  greater_anglia_story: {
     title: 'Greater Anglia',
     description: 'Greater Anglia saved £21,000 by switching to online Direct Debit with GoCardless. Read their testimonial of GoCardless.',
   },
-  story_foundation_of_hearts: {
+  foundation_of_hearts_story: {
     title: 'Foundation of Hearts',
     description: 'The Foundation of Hearts set up 7500 donations in under 2 months with GoCardless’s simple and easy-to-use system',
   },
-  story_spencer_hockey: {
+  spencer_hockey_story: {
     title: 'Spencer Hockey Club',
     description: 'Spencer Hockey Club slashed the time spent chasing payments by switching to Direct Debit with GoCardless. Find out how GoCardless is a \'natural fit\' for membership groups.',
   },
-  story_rock_choir: {
+  rock_choir_story: {
     title: 'Rock Choir',
     description: 'Rock Choir cut failed payments to 1% by switching to online Direct Debit with GoCardless. Read their customer story of using GoCardless.',
   },
-  story_momentum: {
+  momentum_story: {
     title: 'Momentum Training and CrossFit Hackney',
     description: 'Momentum Training and CrossFit Hackney cut payment costs by over 50% by switching to GoCardless. Read the testimonial of how they reduced time spent chasing clients for payment.',
   },
-  story_bluesky_business: {
+  bluesky_business_story: {
     title: 'Bluesky Business',
     description: 'Bluesky Business reduced late payments by 62.5% in one month with GoCardless. Read the testimonial of how they reduced time spent chasing clients for payment.',
   },
-  story_crowdcube: {
+  crowdcube_story: {
     title: 'Crowdcube',
     description: 'Crowdcube saved admin time and kept the FCA happy by switching to GoCardless',
   }

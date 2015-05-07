@@ -3,4 +3,4 @@ export default {
   phone_local: '078 48 09 94',
   email: 'belgium@gocardless.com',
   country: 'Belgique',
-}
+};

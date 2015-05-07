@@ -5,7 +5,7 @@ import createHTML5Tags from '../layout-static/create-html5-tags.js';
 import GTM from '../layout-static/google-tag-manager.js';
 import websiteSchema from '../layout-static/website-schema.js';
 
-import {getIntlMessage} from '../intl/intl';
+import {getMessage} from '../intl/intl';
 import localeMessages from '../../../config/messages';
 import {getLocalesForRouteName} from '../../router/routes';
 import {defaultLocale, localeToLanguage} from '../../helpers/locale-helper/locale-helper';
@@ -85,7 +85,7 @@ class HtmlDocument extends React.Component {
     const schemaDotOrgOrganisation = buildSchemaDotOrgForOrganization(localeMessages, availableLocales, config);
     const routeLocales = getLocalesForRouteName(routeName);
     const pageHref = config.siteRoot + path;
-    const title = isHome ? config.siteName : `${getIntlMessage(messages, `${routeName}.title`)} - ${ config.siteName }`;
+    const title = `${getMessage(messages, `${routeName}.title`)} - ${ config.siteName }`;
     const language = localeToLanguage(locales);
 
     return (
@@ -96,7 +96,7 @@ class HtmlDocument extends React.Component {
 
           <title>{ title }</title>
 
-          <meta name='description' content={ getIntlMessage(messages, `${routeName}.description`) } />
+          <meta name='description' content={ getMessage(messages, `${routeName}.description`) } />
           <link href={ config.socialLinks.google } rel='publisher' />
           <meta name='og:image' content={ config.logoUrlSquare } />
           <meta name='og:image:secure_url' content={ config.logoUrlSquare } />

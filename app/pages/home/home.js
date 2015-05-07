@@ -1,8 +1,7 @@
 import React from 'react';
-import Router from 'react-router';
-var { Link } = Router;
+import Link from '../../components/link/link';
 import Page from '../../components/page/page';
-import IntlMessage from '../../components/intl-message/intl-message';
+import Message from '../../components/message/message';
 import HomeEn from './home.en';
 import HomeFr from './home.fr';
 import Translation from '../../components/translation/translation';
@@ -18,24 +17,27 @@ export default class Home extends React.Component {
             <div className='page-hero__inner'>
               <div className='page-hero__text'>
                 <h1 className='u-text-heading u-color-invert u-text-center u-text-xl u-text-light'>
-                  <IntlMessage message='hero.header' />
+                  <Message message='hero.header' />
                 </h1>
-                <div className='u-text-heading u-text-center u-color-invert u-text-m u-text-light u-margin-Txxs u-text-no-smoothing page-hero__text__desc'>
-                  <IntlMessage message='hero.desc' />
+                <div className={'u-text-heading u-text-center u-color-invert ' +
+                                'u-text-m u-text-light u-margin-Txxs u-text-no-smoothing page-hero__text__desc'}>
+                  <Message message='hero.desc' />
                 </div>
                 <div className='u-text-center u-margin-Tl'>
                   <Translation locales='en-GB'>
                     <a href='#learn-more' id='track-hero-learn-more' className='btn btn--invert btn--move u-size-2of12'>
-                      <IntlMessage message='cta.more' />
+                      <Message message='cta.more' />
                     </a>
-                    <a href='/merchants/new' className='btn btn--invert-hollow btn-move u-size-2of12 u-margin-Lm' id='track-hero-merchants-new'>
-                      <IntlMessage message='cta.pro_signup' />
+                    <a href='/merchants/new'
+                      className='btn btn--invert-hollow btn-move u-size-2of12 u-margin-Lm'
+                      id='track-hero-merchants-new'>
+                      <Message message='cta.pro_signup' />
                     </a>
                   </Translation>
 
-                  <Translation locales='fr-FR'>
+                  <Translation locales={['fr-FR', 'fr-BE']}>
                     <Link to='home' id='track-hero-learn-more' className='btn btn--invert btn--move u-size-3of12'>
-                      <IntlMessage message='cta.more' />
+                      <Message message='cta.more' />
                     </Link>
                   </Translation>
                 </div>

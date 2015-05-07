@@ -5,7 +5,6 @@
   ],
   "helpers": [
     "helpers/specs/babel.js",
-    "helpers/specs/intl-polyfill.js",
     "helpers/specs/*.js"
   ]
 }

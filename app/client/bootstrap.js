@@ -1,9 +1,7 @@
+import _ from 'lodash';
 import React from 'react';
 import Router from 'react-router';
 import {getRoutes} from '../router/routes';
-import _ from 'lodash';
-
-import { loadIntlPolyfill } from '../helpers/intl-polyfill/intl-polyfill';
 
 // Load CSS in dev mode dynamically.
 if (process.env.BROWSER) {
@@ -31,8 +29,6 @@ function renderApp() {
     });
   });
 }
-
-loadIntlPolyfill(window.app.availableLocales);
 
 renderApp();
 

@@ -1,9 +1,9 @@
 import _ from 'lodash';
 
-export function getIntlMessage(messages, path) {
-  if (!_.isString(path)) { throw new Error(`Path must be a string`); }
+export function getMessage(messages, path) {
+  if (!_.isString(path)) { throw new TypeError(`Path must be a string`); }
   if (!_.isPlainObject(messages) || _.isEmpty(messages)) {
-    throw new Error(`Messages must an object`);
+    throw new TypeError(`Messages must an object`);
   }
 
   var message = path.split('.').reduce(function(obj, pathPart) {

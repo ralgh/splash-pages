@@ -7,6 +7,7 @@ export default class MobileIcon extends React.Component {
     className: React.PropTypes.string.isRequired
   };
 
+  /*eslint-disable max-len*/
   render() {
     return (
       <svg className={this.props.className} width='59' height='76' viewBox='0 0 59 76' xmlns='http://www.w3.org/2000/svg'>
