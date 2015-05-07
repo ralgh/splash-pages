@@ -1,10 +1,11 @@
 import _ from 'lodash';
+import Immutable from 'immutable';
 import { run, TestLocation } from 'react-router';
 import { getLocalesForRouteName, getRoutes } from './routes.js';
 import { FakeComponent } from '../helpers/specs/fake-component';
 import NotFound from '../pages/not-found/not-found';
 
-const fakeConfig = [
+const fakeConfig = Immutable.fromJS([
   [
     FakeComponent, { name: 'home' }, {
       'en-GB': { path: '/' },
@@ -39,7 +40,7 @@ const fakeConfig = [
       ],
     ],
   ],
-];
+]);
 
 //TODO: write a test that says if you have a config with a URL that's not absolute, throw an error
 describe('getLocalesForRouteName', () => {
