@@ -3,8 +3,8 @@ import StoryBigQuote from '../story-big-quote';
 import StoryPage from '../story-page';
 import StoryQuote from '../story-quote';
 
-export default class StoryCrowdCubeStory extends React.Component {
-  displayName = 'StoryCrowdCubeStory'
+export default class StoriesCrowdCube extends React.Component {
+  displayName = 'StoriesCrowdCube'
 
   render() {
     return (

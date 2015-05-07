@@ -3,8 +3,8 @@ import StoryBigQuote from '../story-big-quote';
 import StoryPage from '../story-page';
 import StoryQuote from '../story-quote';
 
-export default class StorySpencerHockeyStory extends React.Component {
-  displayName = 'StorySpencerHockeyStory'
+export default class StoriesSpencerHockey extends React.Component {
+  displayName = 'StoriesSpencerHockey'
 
   render() {
     return (

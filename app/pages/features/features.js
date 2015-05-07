@@ -180,7 +180,7 @@ export default class Features extends React.Component {
                   <img src='/images/testimonials/greater-anglia__avatar.png' className='u-size-1of12 u-text-center u-margin-Bxs' />
                   <div className='u-color-invert u-text-heading u-text-m u-text-semi'>Graham Beton</div>
                   <div className='u-color-invert u-text-heading u-text-xs u-margin-Bs'>Greater Anglia Railways</div>
-                  <Link to='greater_anglia_story'
+                  <Link to='stories_greater_anglia'
                   className='u-link-invert u-text-heading u-color-invert u-text-semi u-text-upcase u-text-xxs'>
                     Read the full story
                   </Link>

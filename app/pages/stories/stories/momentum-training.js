@@ -3,8 +3,8 @@ import StoryBigQuote from '../story-big-quote';
 import StoryPage from '../story-page';
 import StoryQuote from '../story-quote';
 
-export default class MomentumTrainingStory extends React.Component {
-  displayName = 'MomentumTrainingStory'
+export default class StoriesMomentumTraining extends React.Component {
+  displayName = 'StoriesMomentumTraining'
 
   render() {
     return (
