@@ -6,12 +6,15 @@ export function getMessage(messages, path) {
     throw new TypeError(`Messages must an object`);
   }
 
-  var message = path.split('.').reduce(function(obj, pathPart) {
-    return obj[pathPart];
-  }, messages);
-
-  if (message === undefined) {
-    throw new ReferenceError(`Could not find Intl message: ${path}`);
+  let message;
+  try {
+    message = path.split('.').reduce(function(obj, pathPart) {
+      return obj[pathPart];
+    }, messages);
+  } finally {
+    if (message === undefined) {
+      throw new ReferenceError(`Could not find Intl message: ${path}`);
+    }
   }
 
   return message;

@@ -4,6 +4,7 @@ import Message from '../../components/message/message';
 import ProductComparison from '../../components/product-comparison/product-comparison';
 import Tabs from '../../components/tabs/tabs';
 import StartTakingPaymentsCTA from '../../components/start-taking-payments/start-taking-payments';
+import PayOnePercentCTA from '../../components/pay-one-percent/pay-one-percent';
 import ClockIcon from '../../icons/svg/clock';
 import MoneyFlowerIcon from '../../icons/svg/money-flower';
 import CheckListIcon from '../../icons/svg/checklist';
@@ -388,21 +389,8 @@ export default class Features extends React.Component {
             <hr className='u-margin-An' />
           </div>
           <div className='section-scroll-target' id='pricing'>
-            <div className='u-text-center u-padding-Vxxl'>
-              <div className='site-container u-padding-Vxl'>
-                <div className='u-size-1of2 u-center'>
-                  <h2 className='u-text-heading u-color-heading u-text-xl u-text-light'>
-                    Pay 1%
-                  </h2>
-                  <p className='u-color-p u-margin-Txxs'>
-                    Just 1% per transaction, capped at £2
-                  </p>
-                  <Link to='pricing' id='track-cta-pricing' className='btn btn--hollow u-margin-Tm'>Learn about our pricing</Link>
-                </div>
-              </div>
-            </div>
+            <PayOnePercentCTA />
             <hr className='u-margin-An' />
-
             <StartTakingPaymentsCTA />
           </div>
         </div>
