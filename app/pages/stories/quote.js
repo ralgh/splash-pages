@@ -14,7 +14,7 @@ export default class Quote extends React.Component {
           <div className='grid u-padding-Vxl'>
             <div className='grid__cell u-size-1of2'>
               <h2 className='u-text-heading u-center u-color-heading u-text-l u-text-light u-size-3of4'>
-                "{this.props.tag}"
+                “{this.props.tag}”
               </h2>
             </div>
             <div className='grid__cell u-size-1of2'>

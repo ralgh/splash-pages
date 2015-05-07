@@ -19,7 +19,7 @@ export default class StoriesBigQuote extends React.Component {
           <div className='u-padding-Vxl'>
             <div className='u-padding-Bxxl u-size-2of3 u-center'>
               <p className='u-text-heading u-color-invert u-text-l u-text-light'>
-                '{this.props.children}'
+                “{this.props.children}”
               </p>
             </div>
             {this.props.image &&

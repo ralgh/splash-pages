@@ -3,8 +3,8 @@ import BigQuote from '../big-quote';
 import StoryPage from '../story-page';
 import Quote from '../quote';
 
-export default class StoriesBlueskyBusiness extends React.Component {
-  displayName = 'StoriesBlueskyBusiness'
+export default class StoriesBlueskyBusinessStory extends React.Component {
+  displayName = 'StoriesBlueskyBusinessStory'
   render() {
     return (
       <StoryPage
@@ -15,29 +15,36 @@ export default class StoriesBlueskyBusiness extends React.Component {
             'GoCardless helped them reduce late payments by 62.5%',
             'We helped them sign up 70% of customers to pay on time in one month',
         ]}
-        blurb='Bluesky Business, a book-keeping and accounting service provider, reduced late payments by 62.5% in just one month with GoCardless.'
-      >
-        <Quote tag="We used to spend two full days a month just chasing clients for payment">
-          <p>Bluesky Business provide professional book-keeping and accounting services. As a growing business, it was important for them to maintain a strong cashflow to finance new hires, and maintain a clear sales ledger and forecast.</p>
-          <p>“Only 20% of our customers were paying within the required 30 days. We used to spend two full days a month just chasing clients for payment up to three months late,” says Emma Mills, Director.</p>
+        blurb={
+          'Bluesky Business, a book-keeping and accounting service provider, ' +
+          'reduced late payments by 62.5% in just one month with GoCardless.'
+        }>
+        <Quote tag='We used to spend two full days a month just chasing clients for payment'>
+          <p>Bluesky Business provide professional book-keeping and accounting services. As a growing business,
+          it was important for them to maintain a strong cashflow to finance new hires, and maintain a clear
+          sales ledger and forecast.</p>
+          <p>“Only 20% of our customers were paying within the required 30 days. We used to spend two full
+          days a month just chasing clients for payment up to three months late,” says Emma Mills, Director.</p>
         </Quote>
-        <BigQuote heroClass='story-hero--bluesky' img='/images/testimonials/bluesky__avatar.png' person='Emma Mills' position='Bluesky Business'>
+        <BigQuote heroClass='story-hero--bluesky' img='/images/testimonials/bluesky__avatar.png'
+        person='Emma Mills' position='Bluesky Business'>
           Our cashflow and business have been transformed since we started using GoCardless.
           Within a month our average debtor days had halved and 70% of our customers were paying on time.
           We&quo;re wasting less time chasing payments, and can really focus on growing our business
         </BigQuote>
         <Quote tag='GoCardless gave us the automated Direct Debit solution we needed'>
           <p>
-            Bluesky needed an assured payment system that integrated with their Sage 50 accounts, and quickly turned to the GoCardless add-on.
-            Now, when each invoice is due, it is automatically collected from client's accounts, and marked as "paid" in Sage.
+            Bluesky needed an assured payment system that integrated with their Sage 50 accounts,
+            and quickly turned to the GoCardless add-on. Now, when each invoice is due, it is automatically
+            collected from client's accounts, and marked as “paid” in Sage.
           </p>
         </Quote>
         <Quote tag='Our cashflow and business have been transformed since we started using GoCardless'>
           <p>Within a month of switching to GoCardless, 70% of Bluesky'&quo;s clients signed up to pay by Direct Debit.</p>
           <p>
-            "Our cashflow and business have been transformed since we started using GoCardless.
+            “Our cashflow and business have been transformed since we started using GoCardless.
             Within a month our average debtor days had halved and 70% of our customers were paying on time.
-            This means we waste less time chasing payments so we've got the time now to really grow the business".
+            This means we waste less time chasing payments so we've got the time now to really grow the business”.
           </p>
         </Quote>
       </StoryPage>

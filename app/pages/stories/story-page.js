@@ -25,8 +25,7 @@ export default class StoryPage extends React.Component {
         </div>
         <div className='site-container u-padding-Vxxl'>
           <div className='u-padding-Vxl'>
-            <h2 className='u-text-heading u-color-heading u-text-l u-text-light
-            u-size-4of6 u-center u-text-center'>
+            <h2 className='u-text-heading u-color-heading u-text-l u-text-light u-size-4of6 u-center u-text-center'>
               {this.props.tagline}
             </h2>
             <div className='grid u-margin-Txxl u-padding-Txm'>
