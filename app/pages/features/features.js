@@ -1,6 +1,6 @@
 import React from 'react';
 import Page from '../../components/page/page';
-import IntlMessage from '../../components/intl-message/intl-message';
+import Message from '../../components/message/message';
 import ProductComparison from '../../components/product-comparison/product-comparison';
 import Tabs from '../../components/tabs/tabs';
 import ClockIcon from '../../icons/svg/clock';
@@ -12,7 +12,7 @@ import DeveloperIcon from '../../icons/svg/developer';
 import TickIcon from '../../icons/svg/tick';
 import MembershipIcon from '../../icons/svg/membership';
 import PhoneIcon from '../../icons/svg/phone';
-import { Link } from 'react-router';
+import Link from '../../components/link/link';
 
 export default class Features extends React.Component {
   displayName = 'Features'
@@ -70,14 +70,14 @@ export default class Features extends React.Component {
                     'sticky-nav__cta btn btn--small btn--hollow u-pull-end ' +
                     'u-text-transform-none u-text-light u-text-xxs u-text-no-smoothing'
                   }>
-                  <IntlMessage message='cta.basic' />
+                  <Message message='cta.basic' />
                 </a>
                 <Link to='contact_sales' id='track-sticky-nav-contact-sales'
                   className={
                     'btn btn--small btn--hollow u-pull-end u-text-transform-none ' +
                     'u-text-light u-text-xxs u-text-no-smoothing u-margin-Rs'
                   }>
-                  <IntlMessage message='cta.pro' />
+                  <Message message='cta.pro' />
                 </Link>
               </div>
               <hr className='u-margin-An' />
@@ -314,7 +314,7 @@ export default class Features extends React.Component {
                     </p>
                   </div>
                   <a href='/contact-sales' id='track-cta-contact-sales' className='btn btn--hollow u-margin-Tm'>
-                    <IntlMessage message='cta.pro' />
+                    <Message message='cta.pro' />
                   </a>
                 </div>
               </div>
@@ -406,7 +406,7 @@ export default class Features extends React.Component {
                 <h2 className='u-text-heading u-color-heading u-text-light u-text-l u-margin-Bm'>
                   Sign up in minutes, take payments today
                 </h2>
-                <a href='/merchants/new' id='track-merchants-new' className='btn'><IntlMessage message='cta.basic' /></a>
+                <a href='/merchants/new' id='track-merchants-new' className='btn'><Message message='cta.basic' /></a>
                 <p className='u-color-p u-margin-Ts'>No set up costs, no hidden charges, no commitments</p>
                 <hr className='u-size-1of2 u-center u-margin-Vxxl' />
                 <p className='u-color-p'>

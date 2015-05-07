@@ -1,11 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router';
-import IntlMessage from '../intl-message/intl-message';
+import Link from '../link/link';
+import Message from '../message/message';
 import LinkExists from '../link-exists/link-exists';
 import Logo from '../../icons/logo/logo';
 import Popover from '../popover/popover';
 import classNames from 'classnames';
-import IntlLink from '../intl-link/intl-link';
 
 class Header extends React.Component {
   displayName = 'Header'
@@ -30,8 +29,8 @@ class Header extends React.Component {
         <LinkExists to='features'>
           <li>
             <Link to='features' id='track-nav-features' className='u-link-complex u-link-clean u-padding-Vxs u-padding-Hm u-block'>
-              <span className='u-link-complex-target u-text-semi'><IntlMessage message='features.nav_title' /></span>
-              <p className='u-color-p'><IntlMessage message='features.explainer' /></p>
+              <span className='u-link-complex-target u-text-semi'><Message message='features.nav_title' /></span>
+              <p className='u-color-p'><Message message='features.explainer' /></p>
             </Link>
           </li>
         </LinkExists>
@@ -39,8 +38,8 @@ class Header extends React.Component {
           <hr className='u-margin-Vxs' />
           <li>
             <Link to='pro' id='track-nav-pro' className='u-link-complex u-link-clean u-padding-Vxs u-padding-Hm u-block'>
-              <span className='u-link-complex-target u-text-semi'><IntlMessage message='pro.nav_title' /></span>
-              <p className='u-color-p'><IntlMessage message='pro.explainer' /></p>
+              <span className='u-link-complex-target u-text-semi'><Message message='pro.nav_title' /></span>
+              <p className='u-color-p'><Message message='pro.explainer' /></p>
             </Link>
           </li>
         </LinkExists>
@@ -48,8 +47,8 @@ class Header extends React.Component {
           <hr className='u-margin-Vxs' />
           <li>
             <Link to='partners' id='track-nav-partners' className='u-link-complex uLinki-link-clean u-padding-Vxs u-padding-Hm u-block'>
-              <span className='u-link-complex-target u-text-semi'><IntlMessage message='partner.nav_title' /></span>
-              <p className='u-color-p'><IntlMessage message='partner.explainer' /></p>
+              <span className='u-link-complex-target u-text-semi'><Message message='partner.nav_title' /></span>
+              <p className='u-color-p'><Message message='partner.explainer' /></p>
             </Link>
           </li>
         </LinkExists>
@@ -76,7 +75,7 @@ class Header extends React.Component {
                       <div className={classNames('nav__item-link popover-link', {
                         'popover-link--invert': isInverted,
                       })}>
-                        <IntlMessage message='header.our_products' />
+                        <Message message='header.our_products' />
                       </div>
                     </a>)
                  }>
@@ -87,7 +86,7 @@ class Header extends React.Component {
                 <LinkExists to='pricing'>
                   <Link to='pricing' id='track-nav-pricing' className={linkClass}>
                     <div className='nav__item-link'>
-                      <IntlMessage message='pricing.nav_title' />
+                      <Message message='pricing.nav_title' />
                     </div>
                   </Link>
                 </LinkExists>
@@ -96,7 +95,7 @@ class Header extends React.Component {
                 <LinkExists to='stories'>
                   <Link to='stories' id='track-nav-stories' className={linkClass}>
                     <div className='nav__item-link'>
-                      <IntlMessage message='stories.nav_title' />
+                      <Message message='stories.nav_title' />
                     </div>
                   </Link>
                 </LinkExists>
@@ -107,43 +106,43 @@ class Header extends React.Component {
                     <div className={classNames('nav__item-link popover-link', {
                       'popover-link--invert': isInverted,
                     })}>
-                      <IntlMessage message='header.more' />
+                      <Message message='header.more' />
                     </div>
                   </a>)
                 }>
                   <ul className='u-text-xxs u-padding-Vxs'>
                     <li className='u-text-semi'>
                      <LinkExists to='security'>
-                       <IntlLink to='security' id='track-nav-security' className='u-padding-Vxs u-padding-Hm u-block'
+                       <Link to='security' id='track-nav-security' className='u-padding-Vxs u-padding-Hm u-block'
                          message='security.nav_title' />
                      </LinkExists>
                     </li>
                     <li className='u-text-semi'>
                       <a href='https://gocardless.com/guides' id='track-nav-guides' className='u-padding-Vxs u-padding-Hm u-block'>
-                        <IntlMessage message='guides.nav_title' />
+                        <Message message='guides.nav_title' />
                       </a>
                     </li>
                     <li className='u-text-semi'>
                       <a href='http://help.gocardless.com' id='track-nav-help' className='u-padding-Vxs u-padding-Hm u-block'>
-                        <IntlMessage message='help.nav_title' />
+                        <Message message='help.nav_title' />
                       </a>
                     </li>
                     <li className='u-text-semi'>
                      <LinkExists to='faq_merchants'>
-                       <IntlLink to='faq_merchants' message='faq_merchants.nav_title'
+                       <Link to='faq_merchants' message='faq_merchants.nav_title'
                          id='track-nav-faq' className='u-padding-Vxs u-padding-Hm u-block' />
                      </LinkExists>
                     </li>
                     <hr className='u-margin-Vs' />
                     <li>
                       <LinkExists to='about'>
-                        <IntlLink to='about' message='about.nav_title'
+                        <Link to='about' message='about.nav_title'
                           id='track-nav-about' className='u-padding-Vxs u-padding-Hm u-block' />
                       </LinkExists>
                     </li>
                     <li>
                       <LinkExists to='about'>
-                        <IntlLink to='about' message='jobs.nav_title'
+                        <Link to='about' message='jobs.nav_title'
                           id='track-nav-jobs' className='u-padding-Vxs u-padding-Hm u-block' />
                       </LinkExists>
                     </li>
@@ -159,7 +158,7 @@ class Header extends React.Component {
                   'btn--invert-hollow': isInverted,
                   'btn--hollow': !isInverted,
                 })}>
-                  <IntlMessage message='header.login_btn' />
+                  <Message message='header.login_btn' />
                 </a>
               </li>
             </ul>

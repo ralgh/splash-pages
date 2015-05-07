@@ -1,7 +1,7 @@
 import React from 'react';
 import Translation from '../../components/translation/translation';
-import IntlMessage from '../../components/intl-message/intl-message';
-import { Link } from 'react-router';
+import Message from '../../components/message/message';
+import Link from '../../components/link/link';
 
 export default class PricingFr extends React.Component {
   displayName = 'PricingFr'
@@ -129,7 +129,7 @@ export default class PricingFr extends React.Component {
         <div className='site-container u-text-center u-padding-Tm u-padding-Bxxl'>
           <div className='u-padding-Vxl'>
             <h2 className='u-text-heading u-text-l u-color-heading u-text-light'>Avez-vous des questions ?</h2>
-            <p className='u-color-p u-margin-Ts'>Contactez-nous au <IntlMessage message='phone_full' /></p>
+            <p className='u-color-p u-margin-Ts'>Contactez-nous au <Message message='phone_full' /></p>
             <Link to='contact_sales' className='btn btn--hollow u-margin-Tm'>
               Contactez-nous
             </Link>

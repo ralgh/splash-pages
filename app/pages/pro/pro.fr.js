@@ -7,7 +7,7 @@ import WhiteLabelIcon from '../../icons/svg/white-label';
 import CheckListIcon from '../../icons/svg/checklist';
 import PaymentPageIcon from '../../icons/svg/payment-page';
 import ControlIcon from '../../icons/svg/control';
-import { Link } from 'react-router';
+import Link from '../../components/link/link';
 
 export default class ProFr extends React.Component {
   displayName = 'ProFr'

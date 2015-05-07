@@ -4,7 +4,7 @@ import ChecklistIcon from '../../icons/svg/checklist';
 import RealtimeIcon from '../../icons/svg/realtime';
 import TickSquareIcon from '../../icons/svg/tick-square';
 import Tabs from '../../components/tabs/tabs';
-import { Link } from 'react-router';
+import Link from '../../components/link/link';
 
 export default class HomeFr extends React.Component {
   displayName = 'HomeFr'

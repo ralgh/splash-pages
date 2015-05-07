@@ -1,11 +1,7 @@
 import _ from 'lodash';
-import { Route, DefaultRoute, NotFoundRoute, Redirect } from 'react-router';
-import Immutable from 'immutable';
-
-// This is internally used within jsx, so ignore the unused error.
-/*eslint-disable */
 import React from 'react';
-/*eslint-enable */
+import Immutable from 'immutable';
+import { Route, DefaultRoute, NotFoundRoute, Redirect } from 'react-router';
 
 import App from '../components/app/app';
 

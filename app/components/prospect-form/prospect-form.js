@@ -1,8 +1,8 @@
 import _ from 'lodash';
 import request from 'superagent';
 import React from 'react';
-import IntlMessage from '../../components/intl-message/intl-message';
-import {getIntlMessage} from '../../components/intl/intl';
+import Message from '../../components/message/message';
+import {getMessage} from '../../components/intl/intl';
 import {PropTypes} from '../../helpers/prop-types/prop-types';
 import classNames from 'classnames';
 import {trackEvent} from '../../helpers/gtm-tracker/gtm-tracker';
@@ -128,29 +128,29 @@ export default class ProspectForm extends React.Component {
             'u-is-hidden notice notice--success u-margin-Bm': true,
             'u-is-visible': this.state.isSuccess,
           })}>
-            <IntlMessage message={`prospect_form.success_messages.${size}`} />
+            <Message message={`prospect_form.success_messages.${size}`} />
           </div>
 
           <label className='label label--stacked' htmlFor='prospect_name'>
-            <IntlMessage message='prospect_form.name_label' />
+            <Message message='prospect_form.name_label' />
           </label>
           <input className='input input--stacked' id='prospect_name' name='prospect[name]'
-            placeholder={getIntlMessage(messages, 'prospect_form.name_placeholder')} required type='text' />
+            placeholder={getMessage(messages, 'prospect_form.name_placeholder')} required type='text' />
 
           <label className='label label--stacked' htmlFor='prospect_email'>
-            <IntlMessage message='prospect_form.email_label' />
+            <Message message='prospect_form.email_label' />
           </label>
           <input className='input input--stacked' id='prospect_email' name='prospect[email]'
-            placeholder={getIntlMessage(messages, 'prospect_form.email_placeholder')} required type='email' />
+            placeholder={getMessage(messages, 'prospect_form.email_placeholder')} required type='email' />
 
           <label className='label label--stacked' htmlFor='prospect_phone_number'>
-            <IntlMessage message='prospect_form.phone_label' />
+            <Message message='prospect_form.phone_label' />
           </label>
           <input className='input input--stacked' id='prospect_phone_number' name='prospect[phone_number]'
-            placeholder={getIntlMessage(messages, 'prospect_form.phone_placeholder')} required type='text' />
+            placeholder={getMessage(messages, 'prospect_form.phone_placeholder')} required type='text' />
 
           <button className='btn btn--block u-margin-Tl' type='submit'>
-            <IntlMessage message='prospect_form.submit' />
+            <Message message='prospect_form.submit' />
           </button>
         </form>
       </div>
