@@ -1,7 +1,7 @@
 import React from 'react';
-import BigQuote from '../big-quote';
+import StoryBigQuote from '../story-big-quote';
 import StoryPage from '../story-page';
-import Quote from '../quote';
+import StoryQuote from '../story-quote';
 
 export default class GreaterAngliaStory extends React.Component {
   displayName = 'GreaterAngliaStory'
@@ -16,7 +16,7 @@ export default class GreaterAngliaStory extends React.Component {
             'We removed the need for paper mandates, saving £300 per month',
             'We helped them avoid a £21,000 upgrade to their server infrastructure',
         ]}>
-        <Quote tag='Collecting payments was complicated and very manual'>
+        <StoryQuote tag='Collecting payments was complicated and very manual'>
         <p>
           <a href='http://www.greateranglia.co.uk' className='u-link-color-p u-text-underline' target='_blank'>
           Greater Anglia</a>, the East Anglia rail franchise, uses Direct Debit to take monthly payments
@@ -29,20 +29,20 @@ export default class GreaterAngliaStory extends React.Component {
           It was also hard for the team to link their legacy Direct Debit management
           processes with their online offering.
         </p>
-        </Quote>
-        <BigQuote heroClass='story-hero--greater-anglia' img='/images/testimonials/greater-anglia__avatar.png'
+        </StoryQuote>
+        <StoryBigQuote heroClass='story-hero--greater-anglia' image='/images/testimonials/greater-anglia__avatar.png'
         person='Graham Beton' position='Greater Anglia Railways'>
           “GoCardless have taken all of the pain out of setting up and managing Direct Debit”
-        </BigQuote>
-        <Quote tag='Customers can now set up new season tickets entirely online'>
+        </StoryBigQuote>
+        <StoryQuote tag='Customers can now set up new season tickets entirely online'>
           <p>Greater Anglia realised they needed an outsourced solution that could adapt to their
           growing online sales. They quickly identified GoCardless as “by far the best option for
           online Direct Debit”.</p>
           <p>One key advantage was that because of our superior technology, GoCardless was the only
           provider who could enable Greater Anglia’s customers to set up new season ticket customers
           entirely online and link this back to their CRM and accounts.</p>
-        </Quote>
-        <Quote tag='Switching to GoCardless has saved us time and money'>
+        </StoryQuote>
+        <StoryQuote tag='Switching to GoCardless has saved us time and money'>
           <p>
             Switching to GoCardless' online system eliminated the need for paper mandates and statements,
             saving Greater Anglia <strong>£300 every month</strong> and reducing management time
@@ -56,7 +56,7 @@ export default class GreaterAngliaStory extends React.Component {
           <a href='/subscriptions' className='u-color-primary u-text-upcase u-text-xxs u-text-heading u-text-semi u-block u-margin-Txl'>
               See how GoCardless works for subscriptions
           </a>
-        </Quote>
+        </StoryQuote>
       </StoryPage>
     );
   }

@@ -1,8 +1,7 @@
 import React from 'react';
-
-import BigQuote from '../big-quote';
+import StoryBigQuote from '../story-big-quote';
 import StoryPage from '../story-page';
-import Quote from '../quote';
+import StoryQuote from '../story-quote';
 
 export default class MomentumTrainingStory extends React.Component {
   displayName = 'MomentumTrainingStory'
@@ -17,7 +16,7 @@ export default class MomentumTrainingStory extends React.Component {
           'We helped them retry failed payments instantly',
           'GoCardless and TeamUp have helped them save hours in admin',
         ]}>
-        <Quote tag='We wanted to find a cheaper and easier way to take payments'>
+        <StoryQuote tag='We wanted to find a cheaper and easier way to take payments'>
           <p>
             <a href='http://www.momentum-training.com/' className='u-link-color-p u-text-underline' target='_blank'>
             Momentum Training and CrossFit Hackney</a> is one of the leading Crossfit gyms in the UK. Since
@@ -30,20 +29,20 @@ export default class MomentumTrainingStory extends React.Component {
             relatively high and it was difficult to integrate so our developers were keen to find a cheaper
             and easier alternative.”
           </p>
-        </Quote>
-        <BigQuote heroClass='story-hero--momentum' person='Geoff Stewart' position='Momentum Training'>
+        </StoryQuote>
+        <StoryBigQuote heroClass='story-hero--momentum' person='Geoff Stewart' position='Momentum Training'>
           Taking payments with GoCardless costs us less than half the price of using Paypal and the
           integration with TeamUp has reduced our admin
-        </BigQuote>
-        <Quote tag='GoCardless was super easy to integrate'>
+        </StoryBigQuote>
+        <StoryQuote tag='GoCardless was super easy to integrate'>
           <p>Looking for a solution they came across TeamUp, a specialist management platform for fitness
           businesses who recommended using GoCardless to collect their payments. It took minutes to get started;
           “GoCardless was super easy to integrate. With Paypal we needed a developer to get us set up but we were
           able to get set up with GoCardless ourselves.”</p>
           <p>Momentum Training and CrossFit Hackney now collect their recurring membership fees using GoCardless
           and use GoCardless and Stripe for their one-off payments.</p>
-        </Quote>
-        <Quote tag={
+        </StoryQuote>
+        <StoryQuote tag={
           'Since moving to TeamUp and GoCardless our payment failures are lower than they were before – ' +
           'even though our members have more than doubled.'
         }>
@@ -66,7 +65,7 @@ export default class MomentumTrainingStory extends React.Component {
           className='u-color-primary u-text-upcase u-text-xxs u-text-heading u-text-semi u-block u-margin-Txl'>
               See how GoCardless works for gyms and fitness businesses
           </a>
-        </Quote>
+        </StoryQuote>
       </StoryPage>
     );
   }

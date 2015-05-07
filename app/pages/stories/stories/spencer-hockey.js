@@ -1,7 +1,7 @@
 import React from 'react';
-import BigQuote from '../big-quote';
+import StoryBigQuote from '../story-big-quote';
 import StoryPage from '../story-page';
-import Quote from '../quote';
+import StoryQuote from '../story-quote';
 
 export default class StorySpencerHockeyStory extends React.Component {
   displayName = 'StorySpencerHockeyStory'
@@ -16,7 +16,7 @@ export default class StorySpencerHockeyStory extends React.Component {
           'After using GoCardless, they achieved 80% take-up in 8 months',
           'Their integration cost was covered with an improved payment rate',
         ]}>
-        <Quote tag='Collecting membership fees was difficult and time consuming'>
+        <StoryQuote tag='Collecting membership fees was difficult and time consuming'>
           <p>
             <a href='http://hockey.spencerclub.org' className='u-link-color-p u-text-underline' target='_blank'>
             Spencer Hockey Club</a> is one of the UK's leading hockey clubs. With over 400 players,
@@ -31,18 +31,18 @@ export default class StorySpencerHockeyStory extends React.Component {
             of <a href='http://www.codegent.com' className='u-link-color-p u-text-underline' target='_blank'>codegent</a>,
             who built the site.
           </p>
-        </Quote>
-        <BigQuote heroClass='story-hero--spencer-hockey' person='Mark McDermott' position='Spencer Hockey Club'>
+        </StoryQuote>
+        <StoryBigQuote heroClass='story-hero--spencer-hockey' person='Mark McDermott' position='Spencer Hockey Club'>
           Using GoCardless felt like a natural fit for a membership group, and now the black hole in our finances has disappeared
-        </BigQuote>
-        <Quote tag='GoCardless felt like an automation of what we were already doing'>
+        </StoryBigQuote>
+        <StoryQuote tag='GoCardless felt like an automation of what we were already doing'>
           <p>“We realised we needed an online payment system, but had been put off by other
           providers' high fees and requirements for a merchant account. GoCardless provided a
           low cost solution that felt like an automation of what we were already doing.”</p>
           <p>The Club integrated the GoCardless API into their site in one weekend and now use it to
           take regular and one-off payments from members.</p>
-        </Quote>
-        <Quote tag='The black hole in our finances has disappeared'>
+        </StoryQuote>
+        <StoryQuote tag='The black hole in our finances has disappeared'>
           <p>
             “Within 8 months of integration, 80% of the team were using GoCardless to make their payments.
             As a membership group, there is a high level of trust between us so Direct Debit is a nice fit.”
@@ -59,7 +59,7 @@ export default class StorySpencerHockeyStory extends React.Component {
           className='u-color-primary u-text-upcase u-text-xxs u-text-heading u-text-semi u-block u-margin-Txl'>
             See how GoCardless works for sports clubs &amp; societies
           </a>
-        </Quote>
+        </StoryQuote>
       </StoryPage>
     );
   }

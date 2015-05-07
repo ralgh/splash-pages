@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 
-export default class StoriesBigQuote extends React.Component {
-  displayName = 'StoriesBigQuote';
+export default class StoryBigQuote extends React.Component {
+  displayName = 'StoryBigQuote';
 
   static propTypes = {
     person: React.PropTypes.string.isRequired,

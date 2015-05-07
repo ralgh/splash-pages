@@ -1,11 +1,12 @@
 import React from 'react';
 
-export default class Quote extends React.Component {
+export default class StoryQuote extends React.Component {
+  displayName = 'StoryQuote';
+
   static propTypes = {
     tag: React.PropTypes.string.isRequired,
     children: React.PropTypes.node.isRequired,
   };
-  displayName = 'StoriesQuote';
 
   render() {
     return (
