@@ -76,7 +76,7 @@ export default class HomeEn extends React.Component {
             What are you looking for?
           </h2>
           <div className='product-grid grid u-margin-Vxxl'>
-            <a href='/features' id='track-cta-features' className='u-link-clean u-text-center grid__cell u-size-1of3'>
+            <Link to='features' id='track-cta-features' className='u-link-clean u-text-center grid__cell u-size-1of3'>
               <div className='product-grid__container u-padding-Vl'>
                 <figure className='svg-icon u-center'>
                   <ShopIcon className='svg-icon__image svg-icon__image--shadow u-fill-green' />
@@ -87,8 +87,8 @@ export default class HomeEn extends React.Component {
                 </p>
               </div>
               <div className='product-grid__btn btn u-size-full'>Discover GoCardless</div>
-            </a>
-            <a href='/pro' id='track-cta-pro' className='u-link-clean u-text-center grid__cell u-size-1of3'>
+            </Link>
+            <Link to='pro' id='track-cta-pro' className='u-link-clean u-text-center grid__cell u-size-1of3'>
               <div className='product-grid__container u-padding-Vl'>
                 <figure className='svg-icon u-center'>
                   <ProIcon className='svg-icon__image svg-icon__image--shadow u-fill-yellow' />
@@ -99,7 +99,7 @@ export default class HomeEn extends React.Component {
                 </p>
               </div>
               <div className='product-grid__btn btn u-size-full'>Discover GoCardless Pro</div>
-            </a>
+            </Link>
             <a href='/partners' id='track-cta-partners' className='u-link-clean u-text-center grid__cell u-size-1of3'>
               <div className='product-grid__container u-padding-Vl'>
                 <figure className='svg-icon u-center'>
