@@ -31,7 +31,7 @@ export default class Stories extends React.Component {
           <div className='u-padding-Vxxl u-relative u-margin-Bxxl'>
             <div className='u-padding-Bl'>
               <div className='stories-spotlight grid u-margin-Hn u-size-full'>
-                <Link to='has_bean_coffee_story' className='grid__cell u-text-center u-size-1of2 u-link-clean u-padding-Rxs u-padding-Ln'>
+                <Link to='stories_has_bean_coffee' className='grid__cell u-text-center u-size-1of2 u-link-clean u-padding-Rxs u-padding-Ln'>
                   <div className='stories-spotlight__item stories-spotlight__item--has-bean-coffee
                   u-relative u-padding-Vl'>
                     <div className='stories-spotlight__item-text u-margin-Vl'>
@@ -46,7 +46,7 @@ export default class Stories extends React.Component {
                   </div>
                   <div className='stories-spotlight__btn btn u-size-full'>Read the case study</div>
                 </Link>
-                <Link to='momentum_story' className='grid__cell u-text-center u-size-1of2 u-link-clean u-padding-Lxs u-padding-Rn'>
+                <Link to='stories_momentum' className='grid__cell u-text-center u-size-1of2 u-link-clean u-padding-Lxs u-padding-Rn'>
                   <div className='stories-spotlight__item stories-spotlight__item--crossfit-hackney u-relative u-padding-Vl'>
                     <div className='stories-spotlight__item-text u-margin-Vl'>
                       <p className='u-padding-Al u-padding-Bn u-text-heading u-color-invert u-text-m'>
@@ -68,27 +68,27 @@ export default class Stories extends React.Component {
         <hr className='u-margin-An' />
         <div className='site-container u-padding-Vxxl'>
           <div className='grid u-padding-Vxl'>
-            <StoryLink imgClass='bluesky-logo stories-item__logo--bluesky' to='bluesky_business_story'>
+            <StoryLink imgClass='bluesky-logo stories-item__logo--bluesky' to='stories_bluesky_business'>
               Bluesky Business, a book-keeping and accounting service provider,
               reduced late payments by 62.5% in just one month with GoCardless.
             </StoryLink>
-            <StoryLink imgClass='foundation-of-hearts-logo stories-item__logo--foundation-of-hearts' to='foundation_of_hearts_story'>
+            <StoryLink imgClass='foundation-of-hearts-logo stories-item__logo--foundation-of-hearts' to='stories_foundation_of_hearts'>
               The Foundation of Hearts, a not-for-profit organisation made up of Hearts FC fans,
               can easily collect over 8000 donations each month with GoCardless.
             </StoryLink>
-            <StoryLink imgClass='crowdcube-logo stories-item__logo--crowdcube' to='crowdcube_story'>
+            <StoryLink imgClass='crowdcube-logo stories-item__logo--crowdcube' to='stories_crowdcube'>
               Crowdcube, the world’s leading investment crowdfunding site, have saved more than
               40 hours of admin time each month by switching to GoCardless.
             </StoryLink>
-            <StoryLink imgClass='greater-anglia-logo stories-item__logo--greater-anglia' to='greater_anglia_story'>
+            <StoryLink imgClass='greater-anglia-logo stories-item__logo--greater-anglia' to='stories_greater_anglia'>
               Greater Anglia, the East Anglia rail franchise, cut admin time and saved more than
               £21,000 by switching to online Direct Debit with GoCardless.
             </StoryLink>
-            <StoryLink imgClass='rock-choir-logo stories-item__logo--rock-choir' to='rock_choir_story'>
+            <StoryLink imgClass='rock-choir-logo stories-item__logo--rock-choir' to='stories_rock_choir'>
               Rock Choir, the UK’s leading contemporary choir group, cut failed payments to 1%
               by switching to online Direct Debit with GoCardless.
             </StoryLink>
-            <StoryLink imgClass='spencer-hockey-club-logo stories-item__logo--spencer-hockey-club' to='spencer_hockey_story'>
+            <StoryLink imgClass='spencer-hockey-club-logo stories-item__logo--spencer-hockey-club' to='stories_spencer_hockey'>
               Spencer Hockey Club slashed the time spent chasing their members for payments by
               switching to Direct Debit with GoCardless.
             </StoryLink>
