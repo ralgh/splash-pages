@@ -1,6 +1,6 @@
 import React from 'react';
 import Translation from '../../components/translation/translation';
-import IntlMessage from '../../components/intl-message/intl-message';
+import Message from '../../components/message/message';
 import ProductComparison from '../../components/product-comparison/product-comparison';
 import Tabs from '../../components/tabs/tabs';
 import SecurityIcon from '../../icons/svg/security';
@@ -8,7 +8,7 @@ import DeveloperIcon from '../../icons/svg/developer';
 import WhiteLabelIcon from '../../icons/svg/white-label';
 import MobileIcon from '../../icons/svg/mobile';
 import PhoneIcon from '../../icons/svg/phone';
-import { Link } from 'react-router';
+import Link from '../../components/link/link';
 
 export default class ProEn extends React.Component {
   displayName = 'ProEn'
@@ -56,7 +56,7 @@ export default class ProEn extends React.Component {
                   'sticky-nav__cta btn btn--small btn--hollow u-pull-end ' +
                   'u-text-transform-none u-text-light u-text-xxs u-text-no-smoothing'
                 }>
-                  <IntlMessage message='cta.pro' />
+                  <Message message='cta.pro' />
                 </Link>
                 <a href='https://developer.gocardless.com/pro/' id='track-sticky-nav-docs'
                 className='u-pull-end u-margin-Txxs u-margin-Rm'>
@@ -209,7 +209,7 @@ export default class ProEn extends React.Component {
                   </div>
                   <Link to='contact_sales' query={{ s: 'pro' }} id='track-cta-contact-sales'
                   className='btn btn--hollow u-margin-Tm'>
-                    <IntlMessage message='cta.pro' />
+                    <Message message='cta.pro' />
                   </Link>
                 </div>
               </div>
@@ -308,7 +308,7 @@ export default class ProEn extends React.Component {
                 </h2>
                 <Link to='contact_sales' query={{ s: 'pro' }}
                 id='track-cta-contact-sales' className='btn u-margin-Rm'>
-                  <IntlMessage message='cta.pro' />
+                  <Message message='cta.pro' />
                 </Link>
                 <a href='https://manage-sandbox.gocardless.com/registrations/create'
                 id='track-cta-try-pro-dash' className='btn btn--hollow'>Try Pro for free</a>

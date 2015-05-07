@@ -1,15 +1,13 @@
 import React from 'react';
 import Translation from '../../components/translation/translation';
+import Link from '../../components/link/link';
 
 import MobileIcon from '../../icons/svg/mobile';
 import CheckListIcon from '../../icons/svg/checklist';
 import MoneyFlowerIcon from '../../icons/svg/money-flower';
-
 import ProIcon from '../../icons/svg/pro';
 import ShopIcon from '../../icons/svg/shop';
 import IntegrationsIcon from '../../icons/svg/integrations';
-
-import { Link } from 'react-router';
 
 export default class HomeEn extends React.Component {
   displayName = 'HomeEn'
