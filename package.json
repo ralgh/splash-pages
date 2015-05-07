@@ -47,6 +47,7 @@
     "superagent": "^1.2.0",
     "touch": "0.0.3",
     "webpack": "^1.8.11",
-    "webpack-dev-server": "^1.8.2"
+    "webpack-dev-server": "^1.8.2",
+    "react-magic": "harrison/react-magic#add-html-svg-attributes"
   }
 }
