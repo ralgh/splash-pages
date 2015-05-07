@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default class RevealBox extends React.Component {
-
   displayName = 'RevealBox'
 
   static propTypes = {

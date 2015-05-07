@@ -36,15 +36,15 @@ export default class StoryRockClub extends React.Component {
           </p>
         </Quote>
         <Quote tag='The whole payments process is much less time consuming'>
-            <p>
-              Thanks to GoCardless, recurring failure rates were slashed to around 1%, dramatically reducing the administrative burden. Retrying failed payments also became much simpler. “Rather than chasing people to update their details, we can now retry failed payments at the click of a button”.
-            </p>
-            <p>
-              “Since using GoCardless, the whole payments process is much less time consuming and has allowed us to focus on strategy and expansion.”
-            </p>
-            <a href="/membership" className="u-color-primary u-text-upcase u-text-xxs u-text-heading u-text-semi u-block u-margin-Txl">
-                See how GoCardless works for membership
-            </a>
+          <p>
+            Thanks to GoCardless, recurring failure rates were slashed to around 1%, dramatically reducing the administrative burden. Retrying failed payments also became much simpler. “Rather than chasing people to update their details, we can now retry failed payments at the click of a button”.
+          </p>
+          <p>
+            “Since using GoCardless, the whole payments process is much less time consuming and has allowed us to focus on strategy and expansion.”
+          </p>
+          <a href="/membership" className="u-color-primary u-text-upcase u-text-xxs u-text-heading u-text-semi u-block u-margin-Txl">
+              See how GoCardless works for membership
+          </a>
         </Quote>
       </StoryPage>
     );

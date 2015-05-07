@@ -1,12 +1,10 @@
 import React from 'react';
+import Tabs from '../../components/tabs/tabs';
 import Page from '../../components/page/page';
 import StartTakingPaymentsCTA from '../../components/start-taking-payments/start-taking-payments';
 
-import ReactRouter from 'react-router';
-import RevealBox from './components/reveal-box';
-var { Link } = ReactRouter;
+import { Link } from 'react-router';
 import StoryLink from './components/story-link';
-
 
 export default class Stories extends React.Component {
   displayName = 'Stories'
@@ -70,48 +68,53 @@ export default class Stories extends React.Component {
         <hr className='u-margin-An' />
         <div className='site-container u-padding-Vxxl'>
           <div className='grid u-padding-Vxl'>
-            <StoryLink img='bluesky-logo stories-item__logo--bluesky' to='story_bluesky_business'>
+            <StoryLink imgClass='bluesky-logo stories-item__logo--bluesky' to='story_bluesky_business'>
               Bluesky Business, a book-keeping and accounting service provider,
               reduced late payments by 62.5% in just one month with GoCardless.
             </StoryLink>
-            <StoryLink img='foundation-of-hearts-logo stories-item__logo--foundation-of-hearts' to='story_foundation_of_hearts'>
+            <StoryLink imgClass='foundation-of-hearts-logo stories-item__logo--foundation-of-hearts' to='story_foundation_of_hearts'>
               The Foundation of Hearts, a not-for-profit organisation made up of Hearts FC fans, can easily collect over 8000 donations each month with GoCardless.
             </StoryLink>
-            <StoryLink img='crowdcube-logo stories-item__logo--crowdcube' to='story_crowdcube'>
+            <StoryLink imgClass='crowdcube-logo stories-item__logo--crowdcube' to='story_crowdcube'>
               Crowdcube, the world’s leading investment crowdfunding site, have saved more than 40 hours of admin time each month by switching to GoCardless.
             </StoryLink>
-            <StoryLink img='greater-anglia-logo stories-item__logo--greater-anglia' to='story_greater_anglia'>
+            <StoryLink imgClass='greater-anglia-logo stories-item__logo--greater-anglia' to='story_greater_anglia'>
               Greater Anglia, the East Anglia rail franchise, cut admin time and saved more than £21,000 by switching to online Direct Debit with GoCardless.
             </StoryLink>
-            <StoryLink img='rock-choir-logo stories-item__logo--rock-choir' to='story_rock_choir'>
+            <StoryLink imgClass='rock-choir-logo stories-item__logo--rock-choir' to='story_rock_choir'>
               Rock Choir, the UK’s leading contemporary choir group, cut failed payments to 1% by switching to online Direct Debit with GoCardless.
             </StoryLink>
-            <StoryLink img='spencer-hockey-club-logo stories-item__logo--spencer-hockey-club' to='story_spencer_hockey'>
+            <StoryLink imgClass='spencer-hockey-club-logo stories-item__logo--spencer-hockey-club' to='story_spencer_hockey'>
               Spencer Hockey Club slashed the time spent chasing their members for payments by switching to Direct Debit with GoCardless.
             </StoryLink>
           </div>
         </div>
         <hr className='u-margin-An' />
         <div className='site-container u-text-center u-padding-Vxxl'>
-          <RevealBox
-            tabClass='stories-testimonials__grid grid u-text-center'
-            wrapperClass='grid__cell u-padding-Hl stories-testimonials__link--guardian u-size-1of3 stories-testimonials__link u-link-clean'
-          >
-            <div
-              key='guardian'
-              tab={(<img src="/images/stories/guardian-logo@2x.jpg" />)}
-              className="stories-testimonials__quote stories-testimonials__quote--guardian u-relative u-margin-Txxl u-padding-Al"
-            >
+          <Tabs triggers={[
+            (<a href='#' className={'grid__cell u-padding-Hl stories-testimonials__link--guardian'+
+               ' u-size-1of3 stories-testimonials__link u-link-clean'}>
+              <img src='/images/stories/guardian-logo@2x.jpg' />
+            </a>),
+            (<a href='#'
+               className={'grid__cell u-padding-Hl stories-testimonials__link--funding-circle'+
+               ' u-size-1of3 stories-testimonials__link u-link-clean'}>
+              <img className='stories-testimonials__link-image--funding-circle' src='/images/stories/funding-circle-logo@2x.jpg' />
+            </a>),
+            (<a href='#'
+               className={'grid__cell u-padding-Hl stories-testimonials__link--lendable'+
+               ' u-size-1of3 stories-testimonials__link u-link-clean'}>
+              <img className='stories-testimonials__link-image--lendable' src='/images/stories/lendable-logo@2x.jpg' />
+            </a>),
+          ]}>
+            <div className='stories-testimonials__quote stories-testimonials__quote--guardian u-relative u-margin-Txxl u-padding-Al'>
               <p className="u-text-heading u-color-heading u-text-light u-text-m">
                 "The Guardian is always looking to give the best customer experience and has chosen GoCardless to make its recurring payment experience
                 as seamless as possible."
               </p>
             </div>
-            <div
-              key='funding-circle'
-              tab={(<img className="stories-testimonials__link-image--funding-circle" src="/images/stories/funding-circle-logo@2x.jpg" />)}
-              className="stories-testimonials__quote stories-testimonials__quote--funding-circle u-relative u-margin-Txxl u-padding-Al"
-            >
+            <div className={'stories-testimonials__quote stories-testimonials__quote--funding-circle'+
+              ' u-relative u-margin-Txxl u-padding-Al'}>
               <p className="u-text-heading u-color-heading u-text-light u-text-m">
                 "GoCardless is one of the best payments companies we've worked with.
                 Their API was simple to integrate and allows us to use Direct Debit in a fully automated way.
@@ -119,17 +122,13 @@ export default class Stories extends React.Component {
                 best available technology for their Direct Debit in the UK and Europe."
               </p>
             </div>
-            <div
-              key='lendable'
-              tab={(<img className="stories-testimonials__link-image--lendable" src="/images/stories/lendable-logo@2x.jpg" />)}
-              className="stories-testimonials__quote stories-testimonials__quote--lendable u-relative u-margin-Txxl u-padding-Al"
-            >
+            <div className='stories-testimonials__quote stories-testimonials__quote--lendable u-relative u-margin-Txxl u-padding-Al'>
               <p className="u-text-heading u-color-heading u-text-light u-text-m">
                 "We moved to GoCardless as collections can be managed by one person instead of a whole department.
                 It's great to work with another financial technology company who are committed to helping businesses."
               </p>
             </div>
-          </RevealBox>
+          </Tabs>
         </div>
         <hr className='u-margin-An' />
         <StartTakingPaymentsCTA />

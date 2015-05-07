@@ -119,19 +119,35 @@ export default {
     title: 'Support',
   },
   story_has_bean_coffee: {
-    title: ':(',
-      description: 'agegjiafij',
+    title: 'Has Bean Coffee',
+    description: 'Has Bean Coffee improved their cashflow by 30% using Direct Debit with GoCardless. See their testimonial of taking subscriptions using GoCardless.',
+  },
+  story_greater_anglia: {
+    title: 'Greater Anglia',
+    description: 'Greater Anglia saved £21,000 by switching to online Direct Debit with GoCardless. Read their testimonial of GoCardless.',
+  },
+  story_foundation_of_hearts: {
+    title: 'Foundation of Hearts',
+    description: 'The Foundation of Hearts set up 7500 donations in under 2 months with GoCardless’s simple and easy-to-use system',
+  },
+  story_spencer_hockey: {
+    title: 'Spencer Hockey Club',
+    description: 'Spencer Hockey Club slashed the time spent chasing payments by switching to Direct Debit with GoCardless. Find out how GoCardless is a \'natural fit\' for membership groups.',
+  },
+  story_rock_choir: {
+    title: 'Rock Choir',
+    description: 'Rock Choir cut failed payments to 1% by switching to online Direct Debit with GoCardless. Read their customer story of using GoCardless.',
   },
   story_momentum: {
-    title: '',
-    description: '',
+    title: 'Momentum Training and CrossFit Hackney',
+    description: 'Momentum Training and CrossFit Hackney cut payment costs by over 50% by switching to GoCardless. Read the testimonial of how they reduced time spent chasing clients for payment.',
   },
   story_bluesky_business: {
-    title: '',
-    description: '',
+    title: 'Bluesky Business',
+    description: 'Bluesky Business reduced late payments by 62.5% in one month with GoCardless. Read the testimonial of how they reduced time spent chasing clients for payment.',
   },
   story_crowdcube: {
-    title: '',
-    description: '',
+    title: 'Crowdcube',
+    description: 'Crowdcube saved admin time and kept the FCA happy by switching to GoCardless',
   }
 };

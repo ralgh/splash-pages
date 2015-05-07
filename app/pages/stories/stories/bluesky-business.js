@@ -9,14 +9,14 @@ export default class StoriesBlueskyBusiness extends React.Component {
   render() {
     return (
       <StoryPage
-          title='Bluesky Business'
-          tagline='Bluesky Business reduced late payments by 62.5% in one month with GoCardless'
-          tips={[
-              'We helped them reduce debtor days by 50% - within a month',
-              'GoCardless helped them reduce late payments by 62.5%',
-              'We helped them sign up 70% of customers to pay on time in one month',
-          ]}
-          blurb='Bluesky Business, a book-keeping and accounting service provider, reduced late payments by 62.5% in just one month with GoCardless.'
+        title='Bluesky Business'
+        tagline='Bluesky Business reduced late payments by 62.5% in one month with GoCardless'
+        tips={[
+            'We helped them reduce debtor days by 50% - within a month',
+            'GoCardless helped them reduce late payments by 62.5%',
+            'We helped them sign up 70% of customers to pay on time in one month',
+        ]}
+        blurb='Bluesky Business, a book-keeping and accounting service provider, reduced late payments by 62.5% in just one month with GoCardless.'
       >
         <Quote tag="We used to spend two full days a month just chasing clients for payment">
           <p>Bluesky Business provide professional book-keeping and accounting services. As a growing business, it was important for them to maintain a strong cashflow to finance new hires, and maintain a clear sales ledger and forecast.</p>

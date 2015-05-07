@@ -8,7 +8,7 @@
     "build": "./script/build",
     "run-production": "./script/run-production",
     "test": "./script/lint && ./script/test",
-    "lint": "./script/lint || true"
+    "lint": "./script/lint"
   },
   "dependencies": {
     "autoprefixer": "^5.1.1",

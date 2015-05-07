@@ -4,6 +4,8 @@ import StartTakingPaymentsCTA from '../../../components/start-taking-payments/st
 import TickXsmall from '../../../icons/svg/tick-xsmall';
 
 export default class StoryPage extends React.Component {
+  displayName = 'StoryPage';
+
   static propTypes = {
     title: React.PropTypes.string.isRequired,
     tagline: React.PropTypes.string.isRequired,
@@ -12,7 +14,6 @@ export default class StoryPage extends React.Component {
     tips: React.PropTypes.array.isRequired,
     children: React.PropTypes.node.isRequired,
   };
-  displayName = 'StoryPage';
 
   render() {
     return (
@@ -40,7 +41,7 @@ export default class StoryPage extends React.Component {
                       {tip}
                     </p>
                   </div>
-            );
+                );
               })}
             </div>
           </div>

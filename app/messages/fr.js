@@ -12,15 +12,15 @@ export default {
   },
   cta: {
     basic: 'Start taking payments',
-    pro: 'Contact sales',
+    pro: 'Contactez-nous',
     pro_signup: 'Sign Up Now',
-    more: 'Learn More',
+    more: 'Apprendre plus',
   },
   hero: {
     header: 'Simplifions les paiements récurrents',
     desc: 'GoCardless rend le prélèvement bancaire Européen simple pour tous, des start-ups aux grandes entreprises.',
   },
-  contact_types: ['customer support', 'sales'],
+  contact_types: ['sales'],
   postal_address: {
     street_address: '338-346 Goswell Road',
     address_locality: 'Londres',
@@ -53,10 +53,6 @@ export default {
     link: 'a-propos',
     header1: 'Simplifions les paiements récurrents',
     header2: '',
-  },
-  story: {
-    title: 'Story',
-    description: 'customer stories',
   },
   pricing: {
     title: 'Tarifs',
