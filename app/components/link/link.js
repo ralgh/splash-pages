@@ -10,7 +10,7 @@ export default class Link extends Component {
     message: PropTypes.string,
     children: PropTypes.node,
     to: PropTypes.string.isRequired,
-    activeClassName: PropTypes.string.isRequired,
+    activeClassName: PropTypes.string,
     params: PropTypes.object,
     query: PropTypes.object,
     activeStyle: PropTypes.object,
