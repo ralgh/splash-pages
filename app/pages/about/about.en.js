@@ -67,8 +67,8 @@ export default class AboutEn extends React.Component {
                 <div className='u-margin-Txxl'>
                   <img src='/images/press/publications-stacked.jpg' />
                   <p className='u-text-s u-color-p u-margin-Txxl'>
-                    For any press enquiries, please contact
-                    <a href='mailto:press@gocardless.com'>the GoCardless PR team</a>, or view our comprehensive
+                    For any press enquiries, please contact&nbsp;
+                    <a href='mailto:press@gocardless.com'>the GoCardless PR team</a>, or view our comprehensive&nbsp;
                     <a href='https://www.dropbox.com/sh/sat8xsjntbf5mnh/AACn116IKyIWrNG7c8FnY0cYa?dl=0'>press pack</a>.
                   </p>
                 </div>
@@ -76,6 +76,7 @@ export default class AboutEn extends React.Component {
             </div>
           </div>
         </div>
+        <hr className='u-margin-An' />
         <div className='section-scroll-target' id='team'>
           <div className='site-container u-padding-Vxxl'>
             <div className='grid u-padding-Txl'>
@@ -84,7 +85,7 @@ export default class AboutEn extends React.Component {
                   We are a small team building a new payment network for the internet.
                 </h2>
                 <p className='u-text-heading-light u-text-xs u-color-meta'>
-                  Interested in joining the team?<br />Take a look at our
+                  Interested in joining the team?<br />Take a look at our&nbsp;
                   <a href='#jobs' ng-gc-smooth-scroll='' className='u-link-clean ku-link-color-meta u-text-underline'>
                     available positions
                   </a>
@@ -92,7 +93,7 @@ export default class AboutEn extends React.Component {
               </div>
               <div className='grid__cell u-size-2of3'>
                   <span className='u-text-heavy u-color-heading'>GoCardless is: </span><span className='u-color-p'>
-                  {team.join('\n')}
+                  {team.join(', ')}
                 </span>
               </div>
             </div>

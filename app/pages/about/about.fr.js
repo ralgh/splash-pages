@@ -1,5 +1,6 @@
 import React from 'react';
 import Translation from '../../components/translation/translation';
+import { team } from '../../constants/team';
 
 export default class AboutFr extends React.Component {
   displayName = 'AboutFr'
@@ -61,15 +62,49 @@ export default class AboutFr extends React.Component {
                   <p className='u-text-s u-color-p u-margin-Txxl'>
                     GoCardless est apparu à la télévision, sur des blogs
                     et site dans le monde entier.<br /><br />
-                    Pour tout contact presse, merci de contacter
+                    Pour tout contact presse, merci de contacter&nbsp;
                     <a href='mailto:press@gocardless.com'>notre équipe de relations presse</a>,
-                    ou téléchargez notre
+                    ou téléchargez notre&nbsp;
                     <a href='https://www.dropbox.com/sh/sat8xsjntbf5mnh/AACn116IKyIWrNG7c8FnY0cYa?dl=0'>dossier de presse</a>.
                   </p>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+        <hr className='u-margin-An' />
+        <div className='section-scroll-target' id='equipe'>
+          <div className='site-container u-padding-Vxxl'>
+            <div className='grid u-padding-Txl'>
+              <div className='grid__cell u-size-1of3'>
+                <h2 className='u-text-heading-light u-text-m u-color-meta u-margin-Bm'>
+                  Nous sommes une petite équipe formée d'individus talentueux travaillant ensemble pour construire l'avenir des paiements.
+                </h2>
+                <p className='u-text-heading-light u-text-xs u-color-meta'>
+                  Interested in joining the team?<br />Take a look at our&nbsp;
+                  <a href='#jobs' ng-gc-smooth-scroll='' className='u-link-clean ku-link-color-meta u-text-underline'>
+                    available positions
+                  </a>
+                </p>
+              </div>
+              <div className='grid__cell u-size-2of3'>
+                  <span className='u-text-heavy u-color-heading'>GoCardless est: </span><span className='u-color-p'>
+                  {team.join(', ')}
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className='site-container u-padding-Vxxl'>
+            <div className='grid u-padding-Bxl'>
+              <div className='grid__cell u-size-1of3'>
+                <img src='/images/office/office-picnic-table.jpg' />
+              </div>
+              <div className='grid__cell u-size-2of3'>
+                <img src='/images/office/office-support-booths.jpg' />
+              </div>
+            </div>
+          </div>
+          <hr className='u-margin-An' />
         </div>
       </Translation>
     );
