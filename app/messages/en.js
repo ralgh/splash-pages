@@ -87,10 +87,6 @@ export default {
     information1: 'Your information is safe with us.',
     information2: 'We won\'t ever share it or sell it to anyone.'
   },
-  story: {
-    title: 'Story',
-    description: 'customer stories',
-  },
   features: {
     title: 'GoCardless: Quick & Simple Online Payments',
     nav_title: 'GoCardless',

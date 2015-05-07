@@ -1,7 +1,7 @@
 import React from 'react';
-import Page from '../../../components/page/page';
-import StartTakingPaymentsCTA from '../../../components/start-taking-payments/start-taking-payments';
-import TickXsmall from '../../../icons/svg/tick-xsmall';
+import Page from '../../components/page/page';
+import StartTakingPaymentsCTA from '../../components/start-taking-payments/start-taking-payments';
+import TickXsmall from '../../icons/svg/tick-xsmall';
 
 export default class StoryPage extends React.Component {
   displayName = 'StoryPage';

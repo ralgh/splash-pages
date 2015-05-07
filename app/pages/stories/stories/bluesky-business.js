@@ -1,8 +1,7 @@
 import React from 'react';
-
-import BigQuote from '../components/big-quote';
-import StoryPage from '../components/story-page';
-import Quote from '../components/quote';
+import BigQuote from '../big-quote';
+import StoryPage from '../story-page';
+import Quote from '../quote';
 
 export default class StoriesBlueskyBusiness extends React.Component {
   displayName = 'StoriesBlueskyBusiness'

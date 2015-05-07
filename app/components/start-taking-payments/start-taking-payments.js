@@ -1,6 +1,8 @@
 import React from 'react';
+
 export default class StartTakingPaymentsCTA extends React.Component {
   displayName = 'StartTakingPaymentsCTA'
+
   render() {
     return (
       <div className='site-container u-text-center u-padding-Vxxl'>

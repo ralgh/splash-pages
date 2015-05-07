@@ -3,7 +3,7 @@ import Tabs from '../../components/tabs/tabs';
 import Page from '../../components/page/page';
 import StartTakingPaymentsCTA from '../../components/start-taking-payments/start-taking-payments';
 import Link from '../../components/link/link';
-import StoryLink from './components/story-link';
+import StoryLink from './story-link';
 
 export default class Stories extends React.Component {
   displayName = 'Stories'

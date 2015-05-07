@@ -2,6 +2,8 @@ import React from 'react';
 import classNames from 'classnames';
 
 export default class StoriesBigQuote extends React.Component {
+  displayName = 'StoriesBigQuote';
+
   static propTypes = {
     person: React.PropTypes.string.isRequired,
     position: React.PropTypes.string.isRequired,
@@ -9,7 +11,6 @@ export default class StoriesBigQuote extends React.Component {
     heroClass: React.PropTypes.string,
     children: React.PropTypes.node.isRequired,
   };
-  displayName = 'StoriesBigQuote';
 
   render() {
     return (
