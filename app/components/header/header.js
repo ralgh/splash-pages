@@ -56,7 +56,7 @@ class Header extends React.Component {
     );
 
     return (
-      <div className='site-header-wrapper'>
+      <div className={classNames({'site-header-wrapper': isInverted})}>
         <div className={classNames('site-header u-relative u-cf', {
           'site-header--invert': isInverted,
         })}>
@@ -64,6 +64,7 @@ class Header extends React.Component {
             <Link to='home' id='track-nav-home' className='header-logo u-relative u-block u-padding-Vl'>
               <Logo className={classNames('site-logo__image', {
                 'u-fill-invert': isInverted,
+                'u-fill-primary': !isInverted,
               })} />
             </Link>
           </div>

@@ -16,10 +16,10 @@ export default {
     desc: 'GoCardless rend le prélèvement bancaire Européen simple pour tous, des start-ups aux grandes entreprises.',
   },
   cta: {
-    pro: 'FR PRO',
     basic: 'Start taking payments',
+    pro: 'Contactez-nous',
     pro_signup: 'Sign Up Now',
-    more: 'En apprendre plus',
+    more: 'Apprendre plus',
   },
   contact_types: ['sales'],
   postal_address: {

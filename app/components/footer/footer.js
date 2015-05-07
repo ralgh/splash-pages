@@ -68,6 +68,12 @@ class Footer extends React.Component {
                       id='track-footer-pricing' className='u-link-clean u-link-invert' />
                   </li>
                 </LinkExists>
+                <LinkExists to='stories'>
+                  <li>
+                    <Link to='stories' message='stories.title'
+                      id='track-footer-stories' className='u-link-clean u-link-invert' />
+                  </li>
+                </LinkExists>
                 <li>
                   <a href='/guides' id='track-footer-guides' className='u-link-clean u-link-invert'>
                     <Message message='guides.nav_title' />

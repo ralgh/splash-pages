@@ -3,6 +3,7 @@ import Page from '../../components/page/page';
 import Message from '../../components/message/message';
 import ProductComparison from '../../components/product-comparison/product-comparison';
 import Tabs from '../../components/tabs/tabs';
+import StartTakingPaymentsCTA from '../../components/start-taking-payments/start-taking-payments';
 import ClockIcon from '../../icons/svg/clock';
 import MoneyFlowerIcon from '../../icons/svg/money-flower';
 import CheckListIcon from '../../icons/svg/checklist';
@@ -179,10 +180,10 @@ export default class Features extends React.Component {
                   <img src='/images/testimonials/greater-anglia__avatar.png' className='u-size-1of12 u-text-center u-margin-Bxs' />
                   <div className='u-color-invert u-text-heading u-text-m u-text-semi'>Graham Beton</div>
                   <div className='u-color-invert u-text-heading u-text-xs u-margin-Bs'>Greater Anglia Railways</div>
-                  <a href='/stories/greater-anglia'
+                  <Link to='greater_anglia_story'
                   className='u-link-invert u-text-heading u-color-invert u-text-semi u-text-upcase u-text-xxs'>
                     Read the full story
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -396,26 +397,13 @@ export default class Features extends React.Component {
                   <p className='u-color-p u-margin-Txxs'>
                     Just 1% per transaction, capped at £2
                   </p>
-                  <a href='/pricing' id='track-cta-pricing' className='btn btn--hollow u-margin-Tm'>Learn about our pricing</a>
+                  <Link to='pricing' id='track-cta-pricing' className='btn btn--hollow u-margin-Tm'>Learn about our pricing</Link>
                 </div>
               </div>
             </div>
             <hr className='u-margin-An' />
-            <div className='site-container u-text-center u-padding-Vxxl'>
-              <div className='u-padding-Vxl'>
-                <h2 className='u-text-heading u-color-heading u-text-light u-text-l u-margin-Bm'>
-                  Sign up in minutes, take payments today
-                </h2>
-                <a href='/merchants/new' id='track-merchants-new' className='btn'><Message message='cta.basic' /></a>
-                <p className='u-color-p u-margin-Ts'>No set up costs, no hidden charges, no commitments</p>
-                <hr className='u-size-1of2 u-center u-margin-Vxxl' />
-                <p className='u-color-p'>
-                  <strong>Want to talk to someone first?</strong><br />
-                  Call our payments experts on +44 (0) 207 7183 8674<br />
-                  We're available 9am - 6pm Monday to Friday
-                </p>
-              </div>
-            </div>
+
+            <StartTakingPaymentsCTA />
           </div>
         </div>
       </Page>

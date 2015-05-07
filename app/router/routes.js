@@ -15,6 +15,15 @@ import ContactSales from '../pages/contact-sales/contact-sales';
 import Features from '../pages/features/features';
 import FeaturesApi from '../pages/features/api/features-api';
 import Security from '../pages/security/security';
+import Stories from '../pages/stories/stories';
+import HasBeanCoffeeStory from '../pages/stories/stories/has-bean-coffee';
+import BlueskyBusinessStory from '../pages/stories/stories/bluesky-business';
+import CrowdCubeStory from '../pages/stories/stories/crowdcube';
+import MomentumStory from '../pages/stories/stories/momentum-training';
+import RockChoirStory from '../pages/stories/stories/rock-choir';
+import SpencerHockeyStory from '../pages/stories/stories/spencer-hockey';
+import FoundationOfHeartsStory from '../pages/stories/stories/foundation-of-hearts';
+import GreaterAngliaStory from '../pages/stories/stories/greater-anglia';
 
 import {defaultLocale} from '../helpers/locale-helper/locale-helper';
 
@@ -115,6 +124,60 @@ var config = Immutable.fromJS([
   [FaqMerchants, { name: 'faq_merchants' }, {
       'en-GB': {
           path: '/faq/merchants',
+      },
+    },
+  ],
+  [Stories, { name: 'stories' }, {
+      'en-GB': {
+        path: '/stories',
+      },
+    },
+  ],
+  [HasBeanCoffeeStory, { name: 'has_bean_coffee_story', category: 'stories' }, {
+      'en-GB': {
+        path: '/stories/has-bean-coffee',
+      },
+    },
+  ],
+  [BlueskyBusinessStory, { name: 'bluesky_business_story', category: 'stories' }, {
+      'en-GB': {
+        path: '/stories/bluesky-business',
+      },
+    },
+  ],
+  [CrowdCubeStory, { name: 'crowdcube_story', category: 'stories' }, {
+      'en-GB': {
+        path: '/stories/crowdcube',
+      },
+    },
+  ],
+  [MomentumStory, { name: 'momentum_story', category: 'stories' }, {
+      'en-GB': {
+        path: '/stories/momentum',
+      },
+    },
+  ],
+  [RockChoirStory, { name: 'rock_choir_story', category: 'stories' }, {
+      'en-GB': {
+        path: '/stories/rock-choir',
+      },
+    },
+  ],
+  [SpencerHockeyStory, { name: 'spencer_hockey_story', category: 'stories' }, {
+      'en-GB': {
+        path: '/stories/spencer-hockey',
+      },
+    },
+  ],
+  [FoundationOfHeartsStory, { name: 'foundation_of_hearts_story', category: 'stories' }, {
+      'en-GB': {
+        path: '/stories/foundation-of-hearts',
+      },
+    },
+  ],
+  [GreaterAngliaStory, { name: 'greater_anglia_story', category: 'stories' }, {
+      'en-GB': {
+        path: '/stories/greater-anglia',
       },
     },
   ],
