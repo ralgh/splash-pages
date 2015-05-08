@@ -89,7 +89,7 @@ class Footer extends React.Component {
                 <LinkExists to='faq_merchants'>
                   <li>
                     <Link to='faq_merchants' message='faq_merchants.nav_title'
-                      id='track-footer-faq' className='u-link-invert' />
+                      id='track-footer-faq' className='u-link-clean u-link-invert' />
                   </li>
                 </LinkExists>
                 <LinkExists to='features_api'>

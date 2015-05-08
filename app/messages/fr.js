@@ -65,9 +65,53 @@ export default {
     information1: 'Vos données sont sécurisées et ne seront jamais vendues ou partagées.',
     information2: ''
   },
+  faq: {
+    title: 'Foire aux questions',
+    sidebar: 'Une question? Appelez nous au',
+  },
   faq_merchants: {
     title: 'FAQ Commerçants',
-    nav_title: 'FAQ',
+    nav_title: 'En bref',
+    description: '',
+  },
+  faq_merchants_customer_experience: {
+    title: 'FAQ Commerçants - Expérience du consommateur',
+    nav_title: 'Expérience du consommateur',
+    description: '',
+  },
+  faq_merchants_developer_api: {
+    title: 'FAQ Commerçants - API pour développeurs',
+    nav_title: 'API pour développeurs',
+    description: '',
+  },
+  faq_merchants_direct_debit: {
+    title: 'FAQ Commerçants - Prélèvement bancaire',
+    nav_title: 'Prélèvement bancaire',
+    description: '',
+  },
+  faq_merchants_how_it_works: {
+    title: 'FAQ Commerçants - Fonctionnement',
+    nav_title: 'Fonctionnement',
+    description: '',
+  },
+  faq_merchants_international_payments: {
+    title: 'FAQ Commerçants - Paiements à l\'étranger',
+    nav_title: 'Paiements à l\'étranger',
+    description: '',
+  },
+  faq_merchants_partners: {
+    title: 'FAQ Commerçants - Partenaires',
+    nav_title: 'Partenaires',
+    description: '',
+  },
+  faq_merchants_security: {
+    title: 'FAQ Commerçants - Sécurité',
+    nav_title: 'Sécurité',
+    description: '',
+  },
+  faq_merchants_signing_up: {
+    title: 'FAQ Commerçants - Inscription',
+    nav_title: 'Inscription',
     description: '',
   },
   home: {
