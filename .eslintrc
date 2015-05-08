@@ -11,7 +11,11 @@
     "beforeEach": true,
     "afterEach": true,
     "expect": true,
-    "jasmine": true
+    "browser": true,
+    "by": true,
+    "element": true,
+    "jasmine": true,
+    "afterEach": true
   },
   "plugins": [
     "react"

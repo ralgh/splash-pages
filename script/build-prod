@@ -12,15 +12,28 @@ fi
 set -e errexit
 ulimit -n 10240
 
-# when this process exists, kill backgrounded jobs
-trap 'kill $(jobs -p)' INT SIGTERM EXIT
-
 rm -rf dist
 node_modules/.bin/webpack --stats --progress --config ./webpack/prod.config.js
+
 PORT=$PORT node ./index.js &
+SERVER_PID=$!
+
+# from this point on if something goes wrong we don't want to immediately exit
+# because we have to make sure we tidy up the server properly and kill the process
+set +e errexit
 
 # wait for the server to start up
 while ! echo exit | nc localhost $PORT; do sleep 1; done
 
 ./script/dump-html "http://localhost:$PORT" 'dist'
-cp -R public/* dist
+DUMP_EXIT=$?
+
+kill $SERVER_PID
+
+set -e errexit
+
+if [ $DUMP_EXIT -eq 0 ]; then
+  cp -R public/* dist
+else
+  exit $DUMP_EXIT
+fi

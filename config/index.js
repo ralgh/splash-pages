@@ -4,7 +4,7 @@ import _ from 'lodash';
 import shared from '../config/shared';
 
 var env = process.env.NODE_ENV || 'development';
-var allowedEnvs = ['production', 'development'];
+var allowedEnvs = ['production', 'development', 'test'];
 
 if (!_.includes(allowedEnvs, env)) {
   throw new TypeError(`env not allowed ${env}: [${allowedEnvs}]`);

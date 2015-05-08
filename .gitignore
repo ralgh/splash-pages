@@ -1,9 +1,9 @@
 .DS_Store
-node_modules/*
-e2eserver/node_modules/*
-app/vendor/*
-dist/*
-e2e-dist/*
+node_modules
+e2eserver/node_modules
+app/vendor
+dist
+e2e-dist
 Session.vim
 npm-debug.log
 restart.txt
@@ -12,3 +12,4 @@ env/
 public/bundle/
 *.swp
 .tmp
+.e2e_server_log
