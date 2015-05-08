@@ -104,6 +104,12 @@ export default {
     description: 'GoCardless combine simplicité d\'utilisation et contrôle complet du paiement et de l\'expérience client afin de prélever vos clients partout en Europe.',
     explainer: 'fr',
   },
+  partners: {
+    title: 'Applications partenaires et intégrations logiciels',
+    nav_title: 'Devenez nos partenaires',
+    description: 'Devenez partenaires de GoCardless et laisse vos utilisateurs collecter des paiements par prélèvement SEPA dans votre plateforme.',
+    explainer: 'Offrez GoCardless à vos clients',
+  },
   pro_docs: {
     title: 'Pro API',
     nav_title: 'Pro API',
