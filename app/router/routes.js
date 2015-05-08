@@ -9,6 +9,13 @@ import NotFound from '../pages/not-found/not-found';
 import FaqMerchants from '../pages/faq/merchants/merchants';
 import Home from '../pages/home/home';
 import About from '../pages/about/about';
+import Partners from '../pages/partners/partners';
+import PartnersClearBooks from '../pages/partners/clearbooks/partners-clearbooks';
+import PartnersFreeagent from '../pages/partners/freeagent/partners-freeagent';
+import PartnersKashflow from '../pages/partners/kashflow/partners-kashflow';
+import PartnersPitchero from '../pages/partners/pitchero/partners-pitchero';
+import PartnersSage from '../pages/partners/sage/partners-sage';
+import PartnersXero from '../pages/partners/xero/partners-xero';
 import Pricing from '../pages/pricing/pricing';
 import Pro from '../pages/pro/pro';
 import ContactSales from '../pages/contact-sales/contact-sales';
@@ -39,6 +46,48 @@ var config = Immutable.fromJS([
       },
       'fr-BE': {
           path: '/',
+      },
+    },
+  ],
+  [Partners, { name: 'partners' }, {
+      'en-GB': {
+          path: '/partners',
+      },
+    },
+  ],
+  [PartnersClearBooks, { name: 'partners_clearbooks' }, {
+      'en-GB': {
+          path: '/partners/clearbooks',
+      },
+    },
+  ],
+  [PartnersFreeagent, { name: 'partners_freeagent' }, {
+      'en-GB': {
+          path: '/partners/freeagent',
+      },
+    },
+  ],
+  [PartnersKashflow, { name: 'partners_kashflow' }, {
+      'en-GB': {
+          path: '/partners/kashflow',
+      },
+    },
+  ],
+  [PartnersPitchero, { name: 'partners_pitchero' }, {
+      'en-GB': {
+          path: '/partners/pitchero',
+      },
+    },
+  ],
+  [PartnersSage, { name: 'partners_sage' }, {
+      'en-GB': {
+          path: '/partners/sage',
+      },
+    },
+  ],
+  [PartnersXero, { name: 'partners_xero' }, {
+      'en-GB': {
+          path: '/partners/xero',
       },
     },
   ],

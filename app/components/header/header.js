@@ -47,8 +47,8 @@ class Header extends React.Component {
           <hr className='u-margin-Vxs' />
           <li>
             <Link to='partners' id='track-nav-partners' className='u-link-complex uLinki-link-clean u-padding-Vxs u-padding-Hm u-block'>
-              <span className='u-link-complex-target u-text-semi'><Message message='partner.nav_title' /></span>
-              <p className='u-color-p'><Message message='partner.explainer' /></p>
+              <span className='u-link-complex-target u-text-semi'><Message message='partners.nav_title' /></span>
+              <p className='u-color-p'><Message message='partners.explainer' /></p>
             </Link>
           </li>
         </LinkExists>
@@ -57,9 +57,7 @@ class Header extends React.Component {
 
     return (
       <div className={classNames({'site-header-wrapper': isInverted})}>
-        <div className={classNames('site-header u-relative u-cf', {
-          'site-header--invert': isInverted,
-        })}>
+        <div className='site-header u-relative u-cf'>
           <div className='u-pull-start'>
             <Link to='home' id='track-nav-home' className='header-logo u-relative u-block u-padding-Vl'>
               <Logo className={classNames('site-logo__image', {

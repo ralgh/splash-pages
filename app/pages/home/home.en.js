@@ -100,7 +100,7 @@ export default class HomeEn extends React.Component {
               </div>
               <div className='product-grid__btn btn u-size-full'>Discover GoCardless Pro</div>
             </Link>
-            <a href='/partners' id='track-cta-partners' className='u-link-clean u-text-center grid__cell u-size-1of3'>
+            <Link to='partners' id='track-cta-partners' className='u-link-clean u-text-center grid__cell u-size-1of3'>
               <div className='product-grid__container u-padding-Vl'>
                 <figure className='svg-icon u-center'>
                   <IntegrationsIcon className='svg-icon__image svg-icon__image--shadow u-fill-blue' />
@@ -111,7 +111,7 @@ export default class HomeEn extends React.Component {
                 </p>
               </div>
               <div className='product-grid__btn btn u-size-full'>Discover our partners</div>
-            </a>
+            </Link>
           </div>
         </div>
         <hr className='u-margin-An' />

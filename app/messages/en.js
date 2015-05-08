@@ -142,6 +142,30 @@ export default {
     description: 'Partner up with GoCardless and let people take payments through your software. We work with FreeAgent, Xero, Sage, Kashflow, Pitchero, ClearBooks, CrowdCube and more.',
     explainer: 'Offer GoCardless to your users',
   },
+  partners_clearbooks: {
+    title: 'Collect Direct Debit Payments With Clear Books',
+    description: 'GoCardless can integrate with the Clear Books online accounting software. Take payments from your customers with lower fees & lower failure rates.',
+  },
+  partners_freeagent: {
+    title: 'Using GoCardless with FreeAgent',
+    description: 'FreeAgent is an online accounting software solution for freelancers & small businesses. With GoCardless, FreeAgent users can collect Direct Debit payments.',
+  },
+  partners_kashflow: {
+    title: 'Kashflow and GoCardless',
+    description: 'GoCardless integrates with KashFlow accounting software so you can embed payment links in your invoices, or collect payments automatically.',
+  },
+  partners_pitchero: {
+    title: 'GoCardless & Pitchero: Payments For Your Sports Team',
+    description: 'GoCardless integrates with Pitchero so that sports clubs can take online recurring payments without any hassle.',
+  },
+  partners_sage: {
+    title: 'GoCardless for Sage: Improve Cashflow Using Direct Debit',
+    description: 'GoCardless for Sage 50 allows you to collect and manage Direct Debit payments directly from within Sage. Sign up and start collecting payments in 60 seconds.',
+  },
+  partners_xero: {
+    title: 'Using GoCardless with Xero',
+    description: 'GoCardless integrates with the Xero online accounting software and allows you to collect payments with Direct Debit.',
+  },
   jobs: {
     title: 'Jobs',
     nav_title: 'Jobs',
