@@ -188,9 +188,9 @@ export default class FeaturesAPI extends React.Component {
                   GoCardless handles all the Direct Debit compliance requirements so you can get started instantly. Our secure,
                   online payment pages are optimised based on experience with millions of customers.
                   <br />
-                  <a href='/example-checkout' className='u-text-underline u-link-color-p'>
+                  <Link to='example_checkout' className='u-text-underline u-link-color-p'>
                     View an example
-                  </a>
+                  </Link>
                 </p>
                 <p className='u-color-p'>
                   Looking for complete control over the payment experience?

@@ -87,6 +87,10 @@ export default {
     information1: 'Your information is safe with us.',
     information2: 'We won\'t ever share it or sell it to anyone.'
   },
+  example_checkout: {
+    title: 'Example Checkout Page: Paying with GoCardless & Direct Debit',
+    description: '',
+  },
   features: {
     title: 'GoCardless: Quick & Simple Online Payments',
     nav_title: 'GoCardless',
