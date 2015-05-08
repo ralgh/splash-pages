@@ -242,10 +242,10 @@ export default class Features extends React.Component {
                     With Direct Debit, there's no need for customers to worry about missing a payment and
                     they're always protected by the Direct Debit Guarantee.
                   </p>
-                  <a href='/example-checkout'
+                  <Link to='example_checkout'
                   className='u-color-primary u-text-upcase u-text-xxs u-text-heading u-text-semi u-block u-margin-Txl'>
                     See an example payment page
-                  </a>
+                  </Link>
                 </div>
                 <div className='grid__cell u-size-1of2 u-text-center'>
                   <img src='/images/features/payment-page--gyms.jpg' className='vertical-page__mobile-image' />

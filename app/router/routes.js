@@ -9,6 +9,7 @@ import NotFound from '../pages/not-found/not-found';
 import FaqMerchants from '../pages/faq/merchants/merchants';
 import Home from '../pages/home/home';
 import About from '../pages/about/about';
+import ExampleCheckout from '../pages/example-checkout/example-checkout';
 import Partners from '../pages/partners/partners';
 import PartnersClearBooks from '../pages/partners/clearbooks/partners-clearbooks';
 import PartnersFreeagent from '../pages/partners/freeagent/partners-freeagent';
@@ -47,6 +48,12 @@ var config = Immutable.fromJS([
       },
       'fr-BE': {
           path: '/',
+      },
+    },
+  ],
+  [ExampleCheckout, { name: 'example_checkout' }, {
+      'en-GB': {
+          path: '/example-checkout',
       },
     },
   ],
