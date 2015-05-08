@@ -16,7 +16,7 @@ export default {
     desc: 'GoCardless rend le prélèvement bancaire Européen simple pour tous, des start-ups aux grandes entreprises.',
   },
   cta: {
-    basic: 'Start taking payments',
+    basic: 'Commencez à collecter des paiements',
     pro: 'Contactez-nous',
     pro_signup: 'Sign Up Now',
     more: 'Apprendre plus',
@@ -51,13 +51,13 @@ export default {
     },
   },
   not_found: {
-    title: 'Pas Trouvé',
-    description: 'Vous ne trouvez pas votre page',
+    title: 'Page Non Trouvée',
+    description: "Nous n'avons pas trouvé votre page",
   },
   contact_sales: {
     title: 'Contactez-nous',
     nav_title: 'Contactez-nous',
-    description: 'Apprenez-en plus sur comment GoCardless peut vous aider à collecter vos prélèvements automatiques. Nous vous contacterons sous 24 heures.',
+    description: 'Apprenez-en plus sur la manière dont GoCardless peut vous aider à collecter vos prélèvements automatiques. Nous vous contacterons sous 24 heures.',
     page_title: 'Contactez notre équipe',
     page_description: 'Afin de mieux pouvoir vous aider, veuillez nous donner les informations ci-dessous. Nous vous contacterons le plus rapidement possible.',
     talk_to_us: 'Vous souhaitez parler à un expert tout de suite?',
