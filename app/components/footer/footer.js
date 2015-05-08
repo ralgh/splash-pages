@@ -155,7 +155,7 @@ class Footer extends React.Component {
                   <span itemProp='addressCountry' content={getMessage(messages, 'postal_address.address_country_iso')}>
                     <Message message='postal_address.address_country_iso' />
                   </span>
-                </span>
+                </span><br />
                 <span itemProp='telephone' content={getMessage(messages, 'phone_full')}>
                   <Message message='phone_full' />
                 </span>,&nbsp;
