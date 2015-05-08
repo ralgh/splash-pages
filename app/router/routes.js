@@ -16,6 +16,7 @@ import PartnersKashflow from '../pages/partners/kashflow/partners-kashflow';
 import PartnersPitchero from '../pages/partners/pitchero/partners-pitchero';
 import PartnersSage from '../pages/partners/sage/partners-sage';
 import PartnersXero from '../pages/partners/xero/partners-xero';
+import PaymentsByDirectDebit from '../pages/payments-by-direct-debit/payments-by-direct-debit';
 import Pricing from '../pages/pricing/pricing';
 import Pro from '../pages/pro/pro';
 import ContactSales from '../pages/contact-sales/contact-sales';
@@ -88,6 +89,12 @@ var config = Immutable.fromJS([
   [PartnersXero, { name: 'partners_xero' }, {
       'en-GB': {
           path: '/partners/xero',
+      },
+    },
+  ],
+  [PaymentsByDirectDebit, { name: 'payments_by_direct_debit' }, {
+      'en-GB': {
+          path: '/payments-by-direct-debit',
       },
     },
   ],

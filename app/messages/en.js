@@ -166,6 +166,10 @@ export default {
     title: 'Using GoCardless with Xero',
     description: 'GoCardless integrates with the Xero online accounting software and allows you to collect payments with Direct Debit.',
   },
+  payments_by_direct_debit: {
+    title: 'Payments By Direct Debit',
+    description: 'Direct Debit is cheaper & more reliable than the card networks. It\'s also more flexible than a standing order. Find out how you can take payments using Direct Debit.',
+  },
   jobs: {
     title: 'Jobs',
     nav_title: 'Jobs',
