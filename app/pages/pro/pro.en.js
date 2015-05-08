@@ -200,7 +200,7 @@ export default class ProEn extends React.Component {
                     <PhoneIcon className='svg-icon__image u-fill-dark-gray' />
                   </figure>
                   <h2 className='u-text-heading u-color-heading u-text-l u-text-light u-margin-Tm'>
-                    +44 (0) 207 183 8674
+                    <Message message='phone_full' />
                   </h2>
                   <div className='u-center'>
                     <p className='u-text-s u-color-p u-margin-Ts'>
@@ -315,7 +315,7 @@ export default class ProEn extends React.Component {
                 <hr className='u-margin-Vxxl' />
                 <p className='u-color-p'>
                   <strong>Want to talk to someone first?</strong><br />
-                  Call our payments experts on +44 (0) 207 7183 8674<br />
+                  Call our payments experts on <Message message='phone_full' /><br />
                   We're available 9am - 6pm Monday to Friday
                 </p>
               </div>
