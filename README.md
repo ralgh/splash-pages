@@ -206,7 +206,7 @@ export default class Home extends React.Component {
         Shown when visiting urls with `en-GB` locale or any `en-` locale (e.g. /pricing)
       </Translation>
 
-      <Translation locales={['fr-FR', 'fr-BE']}>
+      <Translation locales='fr'>
         Shown when visiting urls with `fr-FR` or `fr-BE` locale (e.g. /fr-fr/tarifs or /fr-be/tarifs)
       </Translation>
     );
