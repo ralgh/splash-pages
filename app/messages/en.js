@@ -10,6 +10,8 @@ export default {
     eruope_cta: 'GoCardless is expanding',
     eruope_link: 'learn more',
     eruope_description: 'about upcoming countries',
+    cookies_message: 'By continuing your visit to this site, you agree to the use of cookies.',
+    cookies_link_text: 'Learn more',
   },
   cta: {
     basic: 'Start taking payments',

@@ -10,6 +10,8 @@ export default {
     eruope_cta: 'GoCardless s\'étend en Europe',
     eruope_link: 'en apprendre plus',
     eruope_description: 'sur notre expansion',
+    cookies_message: 'En continuant votre visite sur notre site vous acceptez nos cookies.',
+    cookies_link_text: 'Apprenez-en plus',
   },
   hero: {
     header: 'Simplifions les paiements récurrents',

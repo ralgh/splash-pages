@@ -151,10 +151,8 @@ class Footer extends React.Component {
                 <span itemProp='address' itemScope itemType='http://schema.org/PostalAddress'>
                   <span itemProp='streetAddress'><Message message='postal_address.street_address' /></span>,&nbsp;
                   <span itemProp='addressLocality'><Message message='postal_address.address_locality' /></span>,&nbsp;
-                  <span itemProp='postalCode'><Message message='postal_address.postal_code' /></span>,&nbsp;
-                  <span itemProp='addressCountry' content={getMessage(messages, 'postal_address.address_country_iso')}>
-                    <Message message='postal_address.address_country_iso' />
-                  </span>
+                  <span itemProp='postalCode'><Message message='postal_address.postal_code' /></span>.&nbsp;
+                  <span itemProp='addressCountry' content={getMessage(messages, 'postal_address.address_country_iso')}></span>
                 </span><br />
                 <span itemProp='telephone' content={getMessage(messages, 'phone_full')}>
                   <Message message='phone_full' />
@@ -163,9 +161,15 @@ class Footer extends React.Component {
                   <Message message='email' />
                 </a>
               </p>
-              <p className='u-text-heading u-text-xxs u-color-invert'>
+              <p className='u-text-heading u-text-xxs u-color-invert u-margin-Bm'>
                 <Message message='footer.description' />
               </p>
+              <LinkExists to='legal_privacy'>
+                <p className='u-text-heading u-text-xxs u-color-invert'>
+                  <Message message='footer.cookies_message' />&nbsp;
+                  <Link to='legal_privacy' className='u-link-clean u-link-invert u-text-heavy' message='footer.cookies_link_text' />.
+                </p>
+              </LinkExists>
             </div>
           </div>
         </div>
