@@ -22,6 +22,9 @@ const serverOptions = {
   publicPath: config.output.publicPath,
   proxy: {
     '/api*': 'http://gocardless.dev:3000',
+    '/guides*': 'http://localhost:4001',
+    '/fr/guides*': 'http://localhost:4001',
+    '/direct-debit*': 'http://localhost:4001',
     '*': proxyPath,
   },
 };
