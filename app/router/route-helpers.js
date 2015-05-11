@@ -141,4 +141,3 @@ export function expandConfig(givenConfig) {
                     .flatMap(expandChildConfig)
                     .map(setLocalePaths);
 }
-
