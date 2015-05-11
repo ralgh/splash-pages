@@ -1,6 +1,5 @@
 import React from 'react';
 import Translation from '../../components/translation/translation';
-import Page from '../../components/page/page';
 import CustomerIcon from '../../icons/svg/customer';
 import AddPartnerIcon from '../../icons/svg/add-partner';
 import Link from '../../components/link/link';

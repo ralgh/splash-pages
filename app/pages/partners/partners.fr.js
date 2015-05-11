@@ -1,11 +1,8 @@
 import React from 'react';
 import Translation from '../../components/translation/translation';
-import Page from '../../components/page/page';
 import CustomerIcon from '../../icons/svg/customer';
 import ProIcon from '../../icons/svg/pro';
 import AddPartnerIcon from '../../icons/svg/add-partner';
-import Link from '../../components/link/link';
-import PartnersLink from './partners-link';
 
 export default class PartnersFr extends React.Component {
   displayName = 'PartnersFr'
@@ -50,7 +47,8 @@ export default class PartnersFr extends React.Component {
                     Ravissez vos clients
                   </h2>
                   <p className='u-size-2of3 u-center u-color-p u-margin-Vxs'>
-                    Simplifiez la vie de vos clients et rendez-les plus loyaux en les laissant collecter leurs paiements via votre plateforme.
+                    Simplifiez la vie de vos clients et rendez-les plus loyaux en les
+                    laissant collecter leurs paiements via votre plateforme.
                   </p>
                 </div>
                 <div className='grid__cell u-text-center u-size-1of3'>
