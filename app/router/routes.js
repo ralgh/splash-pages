@@ -61,6 +61,12 @@ var config = Immutable.fromJS([
       'en-GB': {
           path: '/partners',
       },
+      'fr-FR': {
+          path: '/partenaires',
+      },
+      'fr-BE': {
+          path: '/partenaires',
+      },
     },
   ],
   [PartnersClearBooks, { name: 'partners_clearbooks' }, {
