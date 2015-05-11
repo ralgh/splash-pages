@@ -40,6 +40,19 @@ const fakeConfig = Immutable.fromJS([
       ],
     ],
   ],
+  [
+    null, null, {
+      'en-GB': {
+        path: '/redirect',
+        redirectTo: '/redirected',
+      },
+    },
+  ],
+  [
+    FakeComponent, { name: 'redirectedToRoute' }, {
+      'en-GB': { path: '/redirected' },
+    },
+  ],
 ]);
 
 //TODO: write a test that says if you have a config with a URL that's not absolute, throw an error
@@ -96,6 +109,20 @@ describe('getRoutes', () => {
       routeComponent = getRoutes('en-GB', ['en-GB', 'fr-FR'], fakeConfig);
     });
 
+    it('creates any redirects correctly', (done) => {
+      run(routeComponent, function({ routes }) {
+        const redirectRoute = routes[0].childRoutes.find((route) => !route.handler);
+
+        const transitionSpy = jasmine.createSpyObj('transition', ['redirect']);
+
+        redirectRoute.onEnter(transitionSpy, {}, {});
+
+        expect(transitionSpy.redirect).toHaveBeenCalledWith('/redirected', {}, {});
+
+        done();
+      });
+    });
+
     it('returns one route component', (done) => {
       run(routeComponent, function({ routes }) {
         expect(routes.length).toEqual(1);
@@ -109,7 +136,15 @@ describe('getRoutes', () => {
         const route = routes[0];
         const childRoutePaths = route.childRoutes.map((c) => c.path);
 
-        expect(childRoutePaths).toEqual(['/english-specific-page/?', '/english-only/?', '/en-route-with-child/?', '//?', '//?*']);
+        expect(childRoutePaths).toEqual([
+          '/english-specific-page/?',
+          '/english-only/?',
+          '/en-route-with-child/?',
+          '/redirect/?',
+          '/redirected/?',
+          '//?',
+          '//?*',
+        ]);
 
         done();
       });
