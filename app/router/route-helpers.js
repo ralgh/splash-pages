@@ -1,6 +1,6 @@
 import React from 'react';
 import Immutable from 'immutable';
-import { Route, DefaultRoute, NotFoundRoute, Redirect } from 'react-router';
+import { Route, Redirect } from 'react-router';
 import { defaultLocale } from '../helpers/locale-helper/locale-helper';
 import _ from 'lodash';
 
