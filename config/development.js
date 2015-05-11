@@ -1,4 +1,3 @@
 export default {
-  siteRoot: 'localhost:3000',
-  googleTagManagerId: 'GTM-PRFKNC',
+  siteRoot: 'http://localhost:4402',
 };
