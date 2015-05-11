@@ -284,6 +284,12 @@ function flattenPagesForLocale(pages, locale, availableLocales) {
     return page.setIn(['localeConfig', 'path'], pathWithLocale(path, locale) + matchOptionalSlash);
   }
 
+  function setLocaleConfigRedirectTo(page) {
+    const redirectTo = page.getIn(['localeConfig', locale, 'redirectTo']);
+
+    return page.setIn(['localeConfig', 'redirectTo'], redirectTo);
+  }
+
   function flattenChildConfig(page) {
     if (Immutable.List.isList(page.get('childConfig'))) {
       return page.set('childConfig', flattenPagesForLocale(page.get('childConfig'), locale, availableLocales));
@@ -294,6 +300,7 @@ function flattenPagesForLocale(pages, locale, availableLocales) {
 
   return pages.filter((page) => page.get('localeConfig').has(locale))
               .map(setLocaleConfigPath)
+              .map(setLocaleConfigRedirectTo)
               .map(flattenChildConfig);
 }
 
