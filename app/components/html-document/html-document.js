@@ -2,7 +2,6 @@ import React from 'react';
 
 import browseHappy from '../layout-static/browse-happy';
 import createHTML5Tags from '../layout-static/create-html5-tags';
-import createGTMEvents from '../layout-static/create-gtm-events';
 import GTM from '../layout-static/google-tag-manager';
 import websiteSchema from '../layout-static/website-schema';
 
@@ -111,7 +110,6 @@ class HtmlDocument extends React.Component {
           { css.map((href, k) => <link key={k} rel='stylesheet' href={href} />) }
 
           <script dangerouslySetInnerHTML={{ __html: createHTML5Tags }} />
-          <script dangerouslySetInnerHTML={{ __html: createGTMEvents }} />
         </head>
 
         <body>
@@ -134,7 +132,7 @@ class HtmlDocument extends React.Component {
 
           { isHome &&
               <script type='application/ld+json'
-                dangerouslySetInnerHTML={{ __html: schemaDotOrgOrganisation }} />
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaDotOrgOrganisation) }} />
           }
 
           { config.googleTagManagerId &&

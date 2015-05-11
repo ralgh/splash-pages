@@ -30,7 +30,7 @@ function renderApp() {
       pushDataLayer({
         event: 'pageview',
         title: document.title,
-        virtualUrl: state.pathname
+        virtualUrl: state.pathname,
       });
     });
   });
