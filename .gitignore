@@ -10,3 +10,4 @@ restart.txt
 app/bundles/
 env/
 public/bundle/
+.tmp
