@@ -9,7 +9,9 @@
     "describe": true,
     "it": true,
     "beforeEach": true,
-    "expect": true
+    "afterEach": true,
+    "expect": true,
+    "jasmine": true
   },
   "plugins": [
     "react"

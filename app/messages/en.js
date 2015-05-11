@@ -174,9 +174,90 @@ export default {
     title: 'Payments By Direct Debit',
     description: 'Direct Debit is cheaper & more reliable than the card networks. It\'s also more flexible than a standing order. Find out how you can take payments using Direct Debit.',
   },
+  team: {
+    title: 'Team',
+    description: '',
+    nav_title: 'Team',
+  },
   jobs: {
     title: 'Jobs',
+    description: '',
     nav_title: 'Jobs',
+    open_positions: 'Open positions',
+    engineering: {
+      title: 'Engineering',
+    },
+    country_leads: {
+      title: 'Country Leads',
+    },
+    business_development: {
+      title: 'Business Development',
+    },
+    sales_marketing: {
+      title: 'Sales & Marketing',
+    },
+    operations: {
+      title: 'Operations',
+    },
+    ux_design: {
+      title: 'UX & Design'
+    }
+  },
+  jobs_product_engineer: {
+    title: 'Product Engineer',
+    description: '',
+  },
+  jobs_software_engineer: {
+    title: 'Backend Software Engineer',
+   description: '',
+  },
+  jobs_web_operations: {
+    title: 'Web Operations Engineer',
+    description: '',
+  },
+  jobs_engineering_internships: {
+    title: 'Engineering Internships',
+    description: '',
+  },
+  jobs_developer_community_manager: {
+    title: 'Developer Community Manager',
+    description: '',
+  },
+  jobs_designers: {
+    title: 'Designers',
+    description: '',
+  },
+  jobs_country_lead_nl_be: {
+    title: 'Netherlands & Belgium',
+    description: '',
+  },
+  jobs_country_lead_de_at: {
+    title: 'Germany & Austria',
+    description: '',
+  },
+  jobs_country_lead_es: {
+    title: 'Spain',
+    description: '',
+  },
+  jobs_country_lead_se: {
+    title: 'Sweden',
+    description: '',
+  },
+  jobs_bd_generalist: {
+    title: 'Generalist',
+    description: '',
+  },
+  jobs_account_executive: {
+    title: 'Account Executive',
+    description: '',
+  },
+  jobs_account_executive_france: {
+    title: 'French Account Executive',
+    description: '',
+  },
+  jobs_customer_support_france: {
+    title: 'French Customer Support',
+    description: '',
   },
   pro_docs: {
     title: 'Pro API',
@@ -185,6 +266,7 @@ export default {
   blog: {
     title: 'Blog',
     nav_title: 'Blog',
+    cta: 'Visit our Blog',
   },
   guides: {
     title: 'Guides',
@@ -226,5 +308,5 @@ export default {
   stories_crowdcube: {
     title: 'Crowdcube',
     description: 'Crowdcube saved admin time and kept the FCA happy by switching to GoCardless',
-  }
+  },
 };

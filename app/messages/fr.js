@@ -16,7 +16,7 @@ export default {
     desc: 'GoCardless rend le prélèvement bancaire Européen simple pour tous, des start-ups aux grandes entreprises.',
   },
   cta: {
-    basic: 'Start taking payments',
+    basic: 'Commencez à collecter des paiements',
     pro: 'Contactez-nous',
     pro_signup: 'Sign Up Now',
     more: 'Apprendre plus',
@@ -51,13 +51,13 @@ export default {
     },
   },
   not_found: {
-    title: 'Pas Trouvé',
-    description: 'Vous ne trouvez pas votre page',
+    title: 'Page Non Trouvée',
+    description: "Nous n'avons pas trouvé votre page",
   },
   contact_sales: {
     title: 'Contactez-nous',
     nav_title: 'Contactez-nous',
-    description: 'Apprenez-en plus sur comment GoCardless peut vous aider à collecter vos prélèvements automatiques. Nous vous contacterons sous 24 heures.',
+    description: 'Apprenez-en plus sur la manière dont GoCardless peut vous aider à collecter vos prélèvements automatiques. Nous vous contacterons sous 24 heures.',
     page_title: 'Contactez notre équipe',
     page_description: 'Afin de mieux pouvoir vous aider, veuillez nous donner les informations ci-dessous. Nous vous contacterons le plus rapidement possible.',
     talk_to_us: 'Vous souhaitez parler à un expert tout de suite?',
@@ -94,15 +94,42 @@ export default {
     nav_title: 'Légal',
     description: 'Légal',
   },
+  team: {
+    title: 'Notre équipe',
+    description: '',
+    nav_title: 'Notre équipe',
+  },
   jobs: {
     title: 'Carrières',
+    description: '',
     nav_title: 'Carrières',
+    open_positions: 'Nos offres d\'emplois',
+    sales_marketing: {
+      title: 'Ventes',
+    },
+    operations: {
+      title: 'Support',
+    },
   },
+  jobs_customer_support_france: {
+    title: 'Service client',
+    description: '',
+  },
+  jobs_account_executive_france: {
+    title: 'Chargé(e) de clientèle',
+    description: '',
+ },
   pro: {
     title: 'GoCardless: Le contrôle total de vos prélèvements',
     nav_title: 'Pro',
     description: 'GoCardless combine simplicité d\'utilisation et contrôle complet du paiement et de l\'expérience client afin de prélever vos clients partout en Europe.',
     explainer: 'fr',
+  },
+  partners: {
+    title: 'Applications partenaires et intégrations logiciels',
+    nav_title: 'Devenez nos partenaires',
+    description: 'Devenez partenaires de GoCardless et laisse vos utilisateurs collecter des paiements par prélèvement SEPA dans votre plateforme.',
+    explainer: 'Offrez GoCardless à vos clients',
   },
   pro_docs: {
     title: 'Pro API',
@@ -118,6 +145,7 @@ export default {
   blog: {
     title: 'Blog',
     nav_title: 'Blog',
+    cta: 'Visitez notre Blog',
   },
   guides: {
     title: 'Guide SEPA',
