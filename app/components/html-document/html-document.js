@@ -1,10 +1,12 @@
 import React from 'react';
 
-import browseHappy from '../layout-static/browse-happy.js';
-import createHTML5Tags from '../layout-static/create-html5-tags.js';
-import GTM from '../layout-static/google-tag-manager.js';
-import websiteSchema from '../layout-static/website-schema.js';
+import browseHappy from '../layout-static/browse-happy';
+import createHTML5Tags from '../layout-static/create-html5-tags';
+import createGTMEvents from '../layout-static/create-gtm-events';
+import GTM from '../layout-static/google-tag-manager';
+import websiteSchema from '../layout-static/website-schema';
 
+import getSiteTitle from '../get-site-title/get-site-title';
 import {getMessage} from '../intl/intl';
 import localeMessages from '../../../config/messages';
 import {getLocalesForRouteName} from '../../router/routes';
@@ -85,7 +87,7 @@ class HtmlDocument extends React.Component {
     const schemaDotOrgOrganisation = buildSchemaDotOrgForOrganization(localeMessages, availableLocales, config);
     const routeLocales = getLocalesForRouteName(routeName);
     const pageHref = config.siteRoot + path;
-    const title = `${getMessage(messages, `${routeName}.title`)} - ${ config.siteName }`;
+    const title = getSiteTitle({messages: messages, routeName: routeName, config: config});
     const language = localeToLanguage(locales);
 
     return (
@@ -109,6 +111,7 @@ class HtmlDocument extends React.Component {
           { css.map((href, k) => <link key={k} rel='stylesheet' href={href} />) }
 
           <script dangerouslySetInnerHTML={{ __html: createHTML5Tags }} />
+          <script dangerouslySetInnerHTML={{ __html: createGTMEvents }} />
         </head>
 
         <body>
