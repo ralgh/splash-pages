@@ -47,66 +47,66 @@ class Footer extends React.Component {
                 <LinkExists to='features'>
                   <li>
                     <Link to='features' message='features.nav_title'
-                      id='track-footer-features' className='u-link-clean u-link-invert' />
+                      id='track-footer-features' className='u-link-invert' />
                   </li>
                 </LinkExists>
                 <LinkExists to='pro'>
                   <li>
                     <Link to='pro' message='pro.nav_title'
-                      id='track-footer-pro' className='u-link-clean u-link-invert' />
+                      id='track-footer-pro' className='u-link-invert' />
                   </li>
                 </LinkExists>
                 <LinkExists to='partners'>
                   <li>
                     <Link to='partners' message='partners.nav_title'
-                      id='track-footer-partners' className='u-link-clean u-link-invert' />
+                      id='track-footer-partners' className='u-link-invert' />
                   </li>
                 </LinkExists>
                 <LinkExists to='pricing'>
                   <li>
                     <Link to='pricing' message='pricing.nav_title'
-                      id='track-footer-pricing' className='u-link-clean u-link-invert' />
+                      id='track-footer-pricing' className='u-link-invert' />
                   </li>
                 </LinkExists>
                 <LinkExists to='stories'>
                   <li>
                     <Link to='stories' message='stories.title'
-                      id='track-footer-stories' className='u-link-clean u-link-invert' />
+                      id='track-footer-stories' className='u-link-invert' />
                   </li>
                 </LinkExists>
                 <li>
-                  <a href='/guides' id='track-footer-guides' className='u-link-clean u-link-invert'>
+                  <a href='/guides' id='track-footer-guides' className='u-link-invert'>
                     <Message message='guides.nav_title' />
                   </a>
                 </li>
               </div>
               <div className='grid__cell u-size-1of3 u-text-xxs'>
                 <li>
-                  <a href='https://help.gocardless.com' id='track-footer-help' className='u-link-clean u-link-invert'>
+                  <a href='https://help.gocardless.com' id='track-footer-help' className='u-link-invert'>
                     <Message message='help.nav_title' />
                   </a>
                 </li>
                 <LinkExists to='faq_merchants'>
                   <li>
                     <Link to='faq_merchants' message='faq_merchants.nav_title'
-                      id='track-footer-faq' className='u-link-clean u-link-invert' />
+                      id='track-footer-faq' className='u-link-invert' />
                   </li>
                 </LinkExists>
                 <LinkExists to='features_api'>
                   <li>
                     <Link to='features_api' message='features_api.nav_title'
-                      id='track-footer-api' className='u-link-clean u-link-invert' />
+                      id='track-footer-api' className='u-link-invert' />
                   </li>
                 </LinkExists>
                 <li>
-                  <a href='https://developer.gocardless.com/pro' id='track-footer-pro-api' className='u-link-clean u-link-invert'>
+                  <a href='https://developer.gocardless.com/pro' id='track-footer-pro-api' className='u-link-invert'>
                     <Message message='pro_docs.nav_title' />
                   </a>
                 </li>
                 <LinkExists to='security'>
                   <li>
                     <Link to='security' message='security.nav_title'
-                      id='track-footer-security' className='u-link-clean u-link-invert' />
+                      id='track-footer-security' className='u-link-invert' />
                   </li>
                 </LinkExists>
               </div>
@@ -114,30 +114,30 @@ class Footer extends React.Component {
                 <LinkExists to='europe'>
                   <li>
                     <Link to='europe' message='europe.nav_title'
-                      id='track-footer-europe' className='u-link-clean u-link-invert' />
+                      id='track-footer-europe' className='u-link-invert' />
                   </li>
                 </LinkExists>
                 <LinkExists to='legal'>
                   <li>
                     <Link to='legal' message='legal.nav_title'
-                      id='track-footer-legal' className='u-link-clean u-link-invert' />
+                      id='track-footer-legal' className='u-link-invert' />
                   </li>
                 </LinkExists>
                 <li>
-                  <a href='https://blog.gocardless.com' id='track-footer-blog' className='u-link-clean u-link-invert'>
+                  <a href='https://blog.gocardless.com' id='track-footer-blog' className='u-link-invert'>
                     <Message message='blog.nav_title' />
                   </a>
                 </li>
                 <LinkExists to='about'>
                   <li>
                     <Link to='about' message='about.nav_title'
-                      id='track-footer-about' className='u-link-clean u-link-invert' />
+                      id='track-footer-about' className='u-link-invert' />
                   </li>
                 </LinkExists>
-                <LinkExists to='about'>
+                <LinkExists to='jobs'>
                   <li>
-                    <Link to='about' message='jobs.nav_title'
-                      id='track-footer-jobs' className='u-link-clean u-link-invert' />
+                    <Link to='jobs' message='jobs.nav_title'
+                      id='track-footer-jobs' className='u-link-invert' />
                   </li>
                 </LinkExists>
               </div>
@@ -159,7 +159,7 @@ class Footer extends React.Component {
                 <span itemProp='telephone' content={getMessage(messages, 'phone_full')}>
                   <Message message='phone_full' />
                 </span>,&nbsp;
-                <a href={ `mailto:${getMessage(messages, 'email')}` } className='u-link-clean u-link-invert' itemProp='email'>
+                <a href={ `mailto:${getMessage(messages, 'email')}` } className='u-link-invert' itemProp='email'>
                   <Message message='email' />
                 </a>
               </p>
@@ -199,9 +199,9 @@ class Footer extends React.Component {
                                 <CheckmarkIcon className='u-fill-dark-green u-margin-Ls u-pull-end u-inline' alt='✓' />
                               </span>
                             ) || (
-                              <a className='u-padding-Vxs u-padding-Hm u-block u-link-complex' href={ locale.path }>
+                              <a className='u-padding-Vxs u-padding-Hm u-block' href={ locale.path }>
                                 <img src={ flagSrc } className='flag-icon--popover u-margin-Rs' alt={ locale.name } />
-                                <span className='u-link-complex-target'>{ locale.name }</span>
+                                { locale.name }
                               </a>
                             )
                           }

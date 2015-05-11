@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import { run, TestLocation } from 'react-router';
-import { getLocalesForRouteName, getRoutes, getAllPaths } from './routes.js';
+import { getLocalesForRouteName, filterRouteByCategory, getRoutes, getAllPaths } from './routes.js';
 import NotFound from '../pages/not-found/not-found';
 
 import { fakeConfig } from '../helpers/specs/fake-route-config';
@@ -208,5 +208,55 @@ describe('getAllPaths', () => {
       '/redirect',
       '/redirected',
     ].sort());
+  });
+});
+
+describe('filterRouteByCategory', () => {
+  let routeCategory;
+
+  describe('for a root category with sub categories', () => {
+    beforeEach(() => routeCategory = 'jobs');
+
+    it('returns all jobs routes', () => {
+      var pages = filterRouteByCategory(routeCategory, 'en-GB', fakeConfig);
+
+      expect(pages.length).toEqual(2);
+
+      pages.forEach(function(page) {
+        expect(page.routeConfig.category).toMatch(/jobs\.engineering|jobs\.testing/);
+        expect(page.localeConfig.path).toMatch(/^\//);
+      });
+    });
+  });
+
+  describe('for a sub category', () => {
+    beforeEach(() => routeCategory = 'jobs.engineering');
+
+    it('returns jobs.engineering routes', () => {
+      var pages = filterRouteByCategory(routeCategory, 'en-GB', fakeConfig);
+
+      expect(pages.length).toEqual(1);
+
+      pages.forEach(function(page) {
+        expect(page.routeConfig.category).toEqual('jobs.engineering');
+        expect(page.localeConfig.path).toMatch(/^\//);
+      });
+    });
+  });
+
+  describe('for a category with no pages in locale', () => {
+    beforeEach(() => routeCategory = 'jobs');
+
+    it('returns no routes', () => {
+      expect(filterRouteByCategory(routeCategory, 'fr-BE', fakeConfig)).toEqual([]);
+    });
+  });
+
+  describe('for a category that is not available in any locale', () => {
+    beforeEach(() => routeCategory = 'doesnt exist');
+
+    it('returns no routes', () => {
+      expect(filterRouteByCategory(routeCategory, 'fr-BE', fakeConfig)).toEqual([]);
+    });
   });
 });
