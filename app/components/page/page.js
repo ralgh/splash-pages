@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from '../header/header';
 import Footer from '../footer/footer';
-import getSiteTitle from '../get-site-title/get-site-title';
 
 class Page extends React.Component {
   displayName = 'Page'
@@ -13,16 +12,6 @@ class Page extends React.Component {
 
   static defaultProps = {
     isInverted: true,
-  }
-
-  static contextTypes = {
-    routeName: React.PropTypes.string.isRequired,
-    messages: React.PropTypes.object.isRequired,
-    config: React.PropTypes.object.isRequired,
-  }
-
-  componentDidMount() {
-    document.title = getSiteTitle(this.context);
   }
 
   render() {

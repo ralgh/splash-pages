@@ -2,6 +2,7 @@ import _ from 'lodash';
 import React from 'react';
 import Router from 'react-router';
 import {getRoutes} from '../router/routes';
+import {pushDataLayer} from '../helpers/gtm-tracker/gtm-tracker';
 
 // Load CSS in dev mode dynamically.
 if (process.env.BROWSER) {
@@ -26,7 +27,11 @@ function renderApp() {
 
     React.render(<Handler {...stateProps} />, mountNode, () => {
       console.log('App has been mounted. Logging pageview.');
-      window.dataLayer.push({event: 'pageview', title: document.title, virtualUrl: state.pathname});
+      pushDataLayer({
+        event: 'pageview',
+        title: document.title,
+        virtualUrl: state.pathname
+      });
     });
   });
 }
