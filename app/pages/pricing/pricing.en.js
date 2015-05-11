@@ -1,5 +1,6 @@
 import React from 'react';
 import Translation from '../../components/translation/translation';
+import Message from '../../components/message/message';
 import Link from '../../components/link/link';
 
 export default class PricingEn extends React.Component {
@@ -7,7 +8,7 @@ export default class PricingEn extends React.Component {
 
   render() {
     return (
-      <Translation locales='en-GB'>
+      <Translation locales='en'>
         <div className='page-hero--pricing page-hero'>
           <div className='site-container'>
             <div className='grid pricing-options u-center u-padding-Bxl'>
@@ -17,9 +18,11 @@ export default class PricingEn extends React.Component {
                   <div className='pricing-options__badge'>
                     <img src='/images/pricing/most-popular-badge@2x.png' alt='most popular' />
                   </div>
-                  <h2 className='u-text-heading-light u-text-center u-color-invert u-text-xl'>1%</h2>
+                  <h2 className='u-text-heading-light u-text-center u-color-invert u-text-xl'>
+                    <Message message='pricing.per_transaction_amount_normal' />
+                  </h2>
                   <p className='u-text-heading-light u-text-center u-color-invert u-text-s u-margin-Txxs'>
-                    Per transaction, capped at £2
+                    Per transaction, capped at <Message message="pricing.cost_cap" />
                   </p>
                 </div>
                 <ul className='pricing-options__list'>
@@ -42,7 +45,9 @@ export default class PricingEn extends React.Component {
               <div className='grid__cell u-size-1of2 u-padding-Vxl u-padding-Rxs'>
                 <h1 className='u-text-heading-light u-text-center u-color-invert u-text-l u-padding-Bs'>Pro</h1>
                 <div className='u-background-dark-gray-darken u-padding-Vxl'>
-                  <h2 className='u-text-heading-light u-text-center u-color-invert u-text-xl'>1p - 60p</h2>
+                  <h2 className='u-text-heading-light u-text-center u-color-invert u-text-xl'>
+                    <Message message='pricing.pro_cost_per_transaction' />
+                  </h2>
                   <p className='u-text-heading-light u-text-center u-color-invert u-text-s u-margin-Txxs'>
                     Per transaction
                   </p>
@@ -52,10 +57,10 @@ export default class PricingEn extends React.Component {
                     <b>For organisations that want total control</b>
                   </li>
                   <li className='pricing-options__list-item'>
-                    <b>£200 monthly fee</b>, no hidden charges
+                    <b><Message message='pricing.pro_monthly_fee' /> monthly fee</b>, no hidden charges
                   </li>
                   <li className='pricing-options__list-item'>
-                    For businesses taking <b>&gt;500 payments</b> per month
+                    For businesses taking <b><Message message='pricing.pro_number_of_monthly_payments' /></b> per month
                   </li>
                   <li className='pricing-options__list-item'>
                     <Link to='pro'>Find out more about Pro</Link>
@@ -83,7 +88,8 @@ export default class PricingEn extends React.Component {
               <p className='u-color-p'>
                 No, there are no monthly charges or hidden fees of any kind.
                 We never charge for chargebacks or payment failures.
-                All you'll ever pay is 1% of the transaction amount, up to a maximum of £2.
+                All you'll ever pay is <Message message='pricing.per_transaction_amount_normal' /> of the transaction amount,
+                up to a maximum of <Message message="pricing.cost_cap" />.
               </p>
             </div>
             <div className='grid__cell u-size-1of2 u-padding-Bxxl u-padding-Lm'>
@@ -93,15 +99,16 @@ export default class PricingEn extends React.Component {
               <p className='u-color-p'>
                 Yes. Discounts for high volume are built into the pricing of GoCardless Pro,
                 and scale pricing is available on request for users of regular GoCardless that take over 250 payments per month.
-                To find out more, please <Link to='contact_sales'className='u-link-color-p u-text-underline'>contact sales</Link>.
+                To find out more, please <Link to='contact_sales' className='u-link-color-p u-text-underline'>contact sales</Link>.
               </p>
             </div>
             <div className='grid__cell u-size-1of2 u-padding-Bm u-padding-Rm'>
               <div className='u-color-heading'>
-                <b>What does ‘capped at £2’ mean?</b>
+                <b>What does ‘capped at <Message message="pricing.cost_cap" />’ mean?</b>
               </div>
               <p className='u-color-p'>
-                You'll never pay more than £2 per transaction even if the transaction value is greater than £200.
+                You'll never pay more than <Message message="pricing.cost_cap" /> per transaction
+                even if the transaction value is greater than <Message message='pricing.normal_capped_at_amount' />.
               </p>
             </div>
             <div className='grid__cell u-size-1of2 u-padding-Bm u-padding-Lm'>

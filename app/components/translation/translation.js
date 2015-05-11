@@ -16,7 +16,13 @@ export default class Translation extends React.Component {
 
   render() {
     const locales = _.flatten([this.props.locales]);
-    const hasLocale = _.includes(locales, this.context.locales);
+    const currentLocale = this.context.locales;
+    const hasLocale = _.any(locales, function(localeToCheck) {
+      if (localeToCheck.indexOf('-') === -1) {
+        return currentLocale.indexOf(localeToCheck + '-') === 0;
+      }
+      return currentLocale === localeToCheck;
+    });
 
     return (
       <div>

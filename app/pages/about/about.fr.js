@@ -6,7 +6,7 @@ export default class AboutFr extends React.Component {
 
   render() {
     return (
-      <Translation locales={['fr-FR', 'fr-BE']}>
+      <Translation locales='fr'>
         <div className='site-container u-padding-Vxxl'>
           <h2 className='u-text-heading u-color-heading u-text-l u-text-light u-padding-Txl'>
             A propos de GoCardless

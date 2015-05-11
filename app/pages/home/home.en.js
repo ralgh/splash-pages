@@ -1,5 +1,6 @@
 import React from 'react';
 import Translation from '../../components/translation/translation';
+import Message from '../../components/message/message';
 import Link from '../../components/link/link';
 
 import MobileIcon from '../../icons/svg/mobile';
@@ -14,7 +15,7 @@ export default class HomeEn extends React.Component {
 
   render() {
     return (
-      <Translation locales='en-GB'>
+      <Translation locales='en'>
         <div className='site-container u-text-center u-padding-Vxxl' id='learn-more'>
           <div className='u-padding-Vxl'>
             <div className='u-size-2of3 u-center'>
@@ -122,7 +123,8 @@ export default class HomeEn extends React.Component {
                 Trusted by thousands of businesses
               </h2>
               <p className='u-text-s u-color-p u-margin-Txs'>
-                We’re a Bacs approved bureau that collects millions of pounds for our merchants every day.
+                <Message message="home.trusted_message_scale" />
+                <br />
                 Whatever your scale, GoCardless works for you.
               </p>
             </div>

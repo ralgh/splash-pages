@@ -10,7 +10,7 @@ export default class PartnersEn extends React.Component {
 
   render() {
     return (
-      <Translation locales='en-GB'>
+      <Translation locales='en'>
         <div className='page-hero u-padding-Vxxl'>
           <div className='site-container u-text-center u-padding-Vxm'>
             <h1 className='u-text-heading u-color-invert u-text-light u-padding-Tm'>Help your customers get paid</h1>

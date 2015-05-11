@@ -3,12 +3,12 @@ import Translation from '../../../components/translation/translation';
 import Link from '../../../components/link/link';
 import { team } from '../../../constants/team';
 
-export default class TeamFr extends React.Component {
-  displayName = 'TeamFr'
+export default class TeamEn extends React.Component {
+  displayName = 'TeamEn'
 
   render() {
     return (
-      <Translation locales={['en-GB']}>
+      <Translation locales='en'>
         <div className='site-container u-padding-Vxxl'>
           <div className='grid u-padding-Txl'>
             <div className='grid__cell u-size-1of3'>

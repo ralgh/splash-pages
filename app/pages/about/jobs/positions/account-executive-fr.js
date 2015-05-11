@@ -8,7 +8,7 @@ export default class AccountExecutiveFrance extends React.Component {
   render() {
     return (
       <JobsPage>
-        <Translation locales='en-GB'>
+        <Translation locales='en'>
           <h3 className='u-text-heading-light u-text-m u-color-heading'>Account Executive: France</h3>
           <p className='para'>
             Kick-start our growth in France.
@@ -97,7 +97,7 @@ export default class AccountExecutiveFrance extends React.Component {
           </a>
         </Translation>
 
-        <Translation locales={['fr-FR', 'fr-BE']}>
+        <Translation locales='fr'>
           <h3 className='u-text-heading-light u-text-m u-color-heading'>Chargé(e) de clientèle: France</h3>
           <p className='para'>
             Accélérer notre croissance en France.
