@@ -22,6 +22,9 @@ const serverOptions = {
   publicPath: config.output.publicPath,
   proxy: {
     '/api*': 'http://gocardless.dev:3000',
+    '/guides*': 'http://localhost:4001',
+    '/fr/guides*': 'http://localhost:4001',
+    '/direct-debit*': 'http://localhost:4001',
     '*': proxyPath,
   },
 };
@@ -29,7 +32,7 @@ const serverOptions = {
 const compiler = webpack(config);
 const webpackDevServer = new WebpackDevServer(compiler, serverOptions);
 
-webpackDevServer.listen(WEBPACK_PORT, WEBPACK_HOST, () => {
+webpackDevServer.listen(WEBPACK_PORT, '0.0.0.0', () => {
   const url = `http://${WEBPACK_HOST}:${WEBPACK_PORT}`;
   console.log('Webpack development server listening on %s', url);
 
