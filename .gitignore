@@ -10,4 +10,5 @@ restart.txt
 app/bundles/
 env/
 public/bundle/
+*.swp
 .tmp
