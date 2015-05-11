@@ -94,10 +94,31 @@ export default {
     nav_title: 'Légal',
     description: 'Légal',
   },
+  team: {
+    title: 'Notre équipe',
+    description: '',
+    nav_title: 'Notre équipe',
+  },
   jobs: {
     title: 'Carrières',
+    description: '',
     nav_title: 'Carrières',
+    open_positions: 'Nos offres d\'emplois',
+    sales_marketing: {
+      title: 'Ventes',
+    },
+    operations: {
+      title: 'Support',
+    },
   },
+  jobs_customer_support_france: {
+    title: 'Service client',
+    description: '',
+  },
+  jobs_account_executive_france: {
+    title: 'Chargé(e) de clientèle',
+    description: '',
+ },
   pro: {
     title: 'GoCardless: Le contrôle total de vos prélèvements',
     nav_title: 'Pro',
@@ -124,6 +145,7 @@ export default {
   blog: {
     title: 'Blog',
     nav_title: 'Blog',
+    cta: 'Visitez notre Blog',
   },
   guides: {
     title: 'Guide SEPA',

@@ -19,7 +19,7 @@ class Header extends React.Component {
 
   render() {
     const isInverted = this.props.isInverted;
-    const linkClass = classNames('u-padding-Vl u-block u-link-clean', {
+    const linkClass = classNames('u-padding-Vl u-block', {
       'u-link-invert': isInverted,
       'u-link-default': !isInverted,
     });
@@ -28,8 +28,8 @@ class Header extends React.Component {
       <ul className='u-text-xxs u-padding-Vxs'>
         <LinkExists to='features'>
           <li>
-            <Link to='features' id='track-nav-features' className='u-link-complex u-link-clean u-padding-Vxs u-padding-Hm u-block'>
-              <span className='u-link-complex-target u-text-semi'><Message message='features.nav_title' /></span>
+            <Link to='features' id='track-nav-features' className='u-padding-Vxs u-padding-Hm u-block'>
+              <span className='u-text-semi'><Message message='features.nav_title' /></span>
               <p className='u-color-p'><Message message='features.explainer' /></p>
             </Link>
           </li>
@@ -37,8 +37,8 @@ class Header extends React.Component {
         <LinkExists to='pro'>
           <hr className='u-margin-Vxs' />
           <li>
-            <Link to='pro' id='track-nav-pro' className='u-link-complex u-link-clean u-padding-Vxs u-padding-Hm u-block'>
-              <span className='u-link-complex-target u-text-semi'><Message message='pro.nav_title' /></span>
+            <Link to='pro' id='track-nav-pro' className='u-padding-Vxs u-padding-Hm u-block'>
+              <span className='u-text-semi'><Message message='pro.nav_title' /></span>
               <p className='u-color-p'><Message message='pro.explainer' /></p>
             </Link>
           </li>
@@ -46,8 +46,8 @@ class Header extends React.Component {
         <LinkExists to='partners'>
           <hr className='u-margin-Vxs' />
           <li>
-            <Link to='partners' id='track-nav-partners' className='u-link-complex uLinki-link-clean u-padding-Vxs u-padding-Hm u-block'>
-              <span className='u-link-complex-target u-text-semi'><Message message='partners.nav_title' /></span>
+            <Link to='partners' id='track-nav-partners' className='u-padding-Vxs u-padding-Hm u-block'>
+              <span className='u-text-semi'><Message message='partners.nav_title' /></span>
               <p className='u-color-p'><Message message='partners.explainer' /></p>
             </Link>
           </li>
@@ -140,8 +140,8 @@ class Header extends React.Component {
                       </LinkExists>
                     </li>
                     <li>
-                      <LinkExists to='about'>
-                        <Link to='about' message='jobs.nav_title'
+                      <LinkExists to='jobs'>
+                        <Link to='jobs' message='jobs.nav_title'
                           id='track-nav-jobs' className='u-padding-Vxs u-padding-Hm u-block' />
                       </LinkExists>
                     </li>

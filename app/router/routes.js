@@ -3,12 +3,28 @@ import React from 'react';
 import Immutable from 'immutable';
 import { Route, DefaultRoute, NotFoundRoute, Redirect } from 'react-router';
 
-import App from '../components/app/app';
-
 import NotFound from '../pages/not-found/not-found';
-import FaqMerchants from '../pages/faq/merchants/merchants';
+import App from '../components/app/app';
 import Home from '../pages/home/home';
 import About from '../pages/about/about';
+import Team from '../pages/about/team/team';
+import Jobs from '../pages/about/jobs/jobs';
+import AccountExecutive from '../pages/about/jobs/positions/account-executive';
+import ProductEngineer from '../pages/about/jobs/positions/product-engineer';
+import DeveloperCommunityManager from '../pages/about/jobs/positions/developer-community-manager';
+import EngineeringInterships from '../pages/about/jobs/positions/engineering-internships';
+import AccountExecutiveFrance from '../pages/about/jobs/positions/account-executive-fr';
+import CustomerSupportFrance from '../pages/about/jobs/positions/customer-support-fr';
+import BdGeneralist from '../pages/about/jobs/positions/bd-generalist';
+import CountryLeadGermanyAustria from '../pages/about/jobs/positions/country-lead-de-at';
+import CountryLeadNetherlandsBelgium from '../pages/about/jobs/positions/country-lead-nl-be';
+import CountryLeadSpain from '../pages/about/jobs/positions/country-lead-es';
+import CountryLeadSweden from '../pages/about/jobs/positions/country-lead-se';
+import Designers from '../pages/about/jobs/positions/designers';
+import SoftwareEngineer from '../pages/about/jobs/positions/software-engineer';
+import WebOperationsEngineer from '../pages/about/jobs/positions/web-operations-engineer';
+
+import FaqMerchants from '../pages/faq/merchants/merchants';
 import ExampleCheckout from '../pages/example-checkout/example-checkout';
 import Partners from '../pages/partners/partners';
 import PartnersClearBooks from '../pages/partners/clearbooks/partners-clearbooks';
@@ -180,6 +196,126 @@ const config = Immutable.fromJS([
       },
       'fr-BE': {
           path: '/a-propos',
+      },
+    },
+  ],
+  [Team, { name: 'team' }, {
+      'en-GB': {
+          path: '/about/team',
+      },
+      'fr-FR': {
+          path: '/a-propos/equipe',
+      },
+      'fr-BE': {
+          path: '/a-propos/equipe',
+      },
+    },
+  ],
+  [Jobs, { name: 'jobs' }, {
+      'en-GB': {
+          path: '/about/jobs',
+      },
+      'fr-FR': {
+          path: '/a-propos/carrieres',
+      },
+      'fr-BE': {
+          path: '/a-propos/carrieres',
+      },
+    },
+  ],
+  [ProductEngineer, { name: 'jobs_product_engineer', category: 'jobs.engineering' }, {
+      'en-GB': {
+          path: '/about/jobs/product-engineer',
+      },
+    },
+  ],
+  [SoftwareEngineer, { name: 'jobs_software_engineer', category: 'jobs.engineering' }, {
+      'en-GB': {
+          path: '/about/jobs/software-engineer',
+      },
+    },
+  ],
+  [WebOperationsEngineer, { name: 'jobs_web_operations', category: 'jobs.engineering' }, {
+      'en-GB': {
+          path: '/about/jobs/web-operations',
+      },
+    },
+  ],
+  [EngineeringInterships, { name: 'jobs_engineering_internships', category: 'jobs.engineering' }, {
+      'en-GB': {
+          path: '/about/jobs/engineering-internships',
+      },
+    },
+  ],
+  [DeveloperCommunityManager, { name: 'jobs_developer_community_manager', category: 'jobs.engineering' }, {
+      'en-GB': {
+          path: '/about/jobs/developer-community-manager',
+      },
+    },
+  ],
+  [Designers, { name: 'jobs_designers', category: 'jobs.ux_design' }, {
+      'en-GB': {
+          path: '/about/jobs/designers',
+      },
+    },
+  ],
+  [CountryLeadNetherlandsBelgium, { name: 'jobs_country_lead_nl_be', category: 'jobs.country_leads' }, {
+      'en-GB': {
+          path: '/about/jobs/country-lead-nl-be',
+      },
+    },
+  ],
+  [CountryLeadGermanyAustria, { name: 'jobs_country_lead_de_at', category: 'jobs.country_leads' }, {
+      'en-GB': {
+          path: '/about/jobs/country-lead-de-at',
+      },
+    },
+  ],
+  [CountryLeadSpain, { name: 'jobs_country_lead_es', category: 'jobs.country_leads' }, {
+      'en-GB': {
+          path: '/about/jobs/country-lead-es',
+      },
+    },
+  ],
+  [CountryLeadSweden, { name: 'jobs_country_lead_se', category: 'jobs.country_leads' }, {
+      'en-GB': {
+          path: '/about/jobs/country-lead-se',
+      },
+    },
+  ],
+  [BdGeneralist, { name: 'jobs_bd_generalist', category: 'jobs.business_development' }, {
+      'en-GB': {
+          path: '/about/jobs/bd-generalist',
+      },
+    },
+  ],
+  [AccountExecutive, { name: 'jobs_account_executive', category: 'jobs.sales_marketing' }, {
+      'en-GB': {
+          path: '/about/jobs/account-executive',
+      },
+    },
+  ],
+  [AccountExecutiveFrance, { name: 'jobs_account_executive_france', category: 'jobs.sales_marketing' }, {
+      'en-GB': {
+          path: '/about/jobs/account-executive-fr',
+      },
+      'fr-FR': {
+          path: '/about/jobs/charge-de-clientele',
+      },
+      'fr-BE': {
+          path: '/about/jobs/charge-de-clientele',
+      },
+    },
+  ],
+  [CustomerSupportFrance, { name: 'jobs_customer_support_france', category: 'jobs.operations' }, {
+      'en-GB': {
+          path: '/about/jobs/customer-support-fr',
+      },
+      'fr-FR': {
+          path: '/about/jobs/service-client',
+      },
+      'fr-BE': {
+          path: '/about/jobs/service-client',
       },
     },
   ],
@@ -397,6 +533,25 @@ export function getLocalesForRouteName(routeName, givenConfig=config) {
   if (foundPage) {
     return foundPage.get('localeConfig').toJS();
   }
+}
+
+export function filterRouteByCategory(routeCategory, locale, givenConfig=config) {
+  const expanded = expandConfig(givenConfig);
+  const foundPages = expanded.filter((page) => {
+    const category = page.getIn(['routeConfig', 'category']);
+    if (!category) { return false; }
+    const categoryParts = category.split('.');
+    return routeCategory.split('.').every(function(part, i) {
+      return part === categoryParts[i];
+    });
+  });
+
+  return foundPages
+    .filter((page) => page.get('localeConfig').has(locale))
+    .map((page) => {
+      return page.setIn(['localeConfig', 'path'], page.getIn(['localeConfig', locale, 'path']));
+    })
+    .toJS();
 }
 
 export function getRoutes(locale, availableLocales, givenConfig=config) {
