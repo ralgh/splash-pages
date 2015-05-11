@@ -26,7 +26,7 @@ function renderApp() {
 
     React.render(<Handler {...stateProps} />, mountNode, () => {
       console.log('App has been mounted. Logging pageview.');
-      dataLayer.push({'event': 'pageview', 'title': document.title, 'virtualUrl': state.pathname});
+      window.dataLayer.push({event: 'pageview', title: document.title, virtualUrl: state.pathname});
     });
   });
 }
