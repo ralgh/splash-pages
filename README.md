@@ -29,6 +29,8 @@ http://localhost:4402
 npm test
 ```
 
+__Note__: the first time you run the tests, they will be slow. This is because of the transpilation that Babel has to do. Every subsequent run should be much quicker, as Babel caches aggresively.
+
 # What is JSX?
 
 JSX looks a bit like HTML but it's just a shorthand for writing JavaScript functions that turn into HTML.
