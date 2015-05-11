@@ -1,6 +1,6 @@
 import React from 'react';
 import Immutable from 'immutable';
-import {Route, DefaultRoute, NotFoundRoute, Redirect } from 'react-router';
+import {Route, DefaultRoute, NotFoundRoute } from 'react-router';
 import {transformConfigItems, expandConfig, flattenPagesForLocale, getRoutesForPages} from './route-helpers';
 
 import App from '../components/app/app';
