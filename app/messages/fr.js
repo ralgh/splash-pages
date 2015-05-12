@@ -164,10 +164,10 @@ export default {
     description: '',
  },
   pro: {
-    title: 'GoCardless: Le contrôle total de vos prélèvements',
+    title: 'Le contrôle total de vos prélèvements',
     nav_title: 'Pro',
     description: 'GoCardless combine simplicité d\'utilisation et contrôle complet du paiement et de l\'expérience client afin de prélever vos clients partout en Europe.',
-    explainer: 'fr',
+    explainer: 'Le contrôle total de vos prélèvements',
   },
   partners: {
     title: 'Applications partenaires et intégrations logiciels',

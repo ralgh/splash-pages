@@ -69,7 +69,7 @@ export default {
     pro_number_of_monthly_payments: '> 500',
   },
   about: {
-    title: 'About GoCardless: Company Info & Job Openings',
+    title: 'Company Info & Job Openings',
     nav_title: 'About us',
     description: 'About us',
     link: 'about',
@@ -99,7 +99,7 @@ export default {
     description: '',
   },
   features: {
-    title: 'GoCardless: Quick & Simple Online Payments',
+    title: 'Quick & Simple Online Payments',
     nav_title: 'GoCardless',
     description: 'GoCardless is the easiest way to take payments online. Collect payments directly from your customers\' bank accounts. Save time and improve cash flow.',
     explainer: 'Simple recurring payments'

@@ -6,7 +6,7 @@ export default class FaqMerchantsCustomerExperienceEn extends React.Component {
 
   render() {
     return (
-      <Translation locales='en-GB'>
+      <Translation locales='en'>
         <h2 className='u-text-heading-light u-text-m u-color-heading'>Customer Experience</h2>
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
           Can I fill in the payment pages on my customer's behalf?

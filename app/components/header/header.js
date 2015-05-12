@@ -33,18 +33,18 @@ class Header extends React.Component {
               <p className='u-color-p'><Message message='features.explainer' /></p>
             </Link>
           </li>
+          <hr className='u-margin-Vxs' />
         </LinkExists>
         <LinkExists to='pro'>
-          <hr className='u-margin-Vxs' />
           <li>
             <Link to='pro' id='track-nav-pro' className='u-padding-Vxs u-padding-Hm u-block'>
               <span className='u-text-semi'><Message message='pro.nav_title' /></span>
               <p className='u-color-p'><Message message='pro.explainer' /></p>
             </Link>
           </li>
+          <hr className='u-margin-Vxs' />
         </LinkExists>
         <LinkExists to='partners'>
-          <hr className='u-margin-Vxs' />
           <li>
             <Link to='partners' id='track-nav-partners' className='u-padding-Vxs u-padding-Hm u-block'>
               <span className='u-text-semi'><Message message='partners.nav_title' /></span>

@@ -6,7 +6,7 @@ export default class FaqMerchantsHowItWorksEn extends React.Component {
 
   render() {
     return (
-      <Translation locales='en-GB'>
+      <Translation locales='en'>
         <h2 className='u-text-heading-light u-text-m u-color-heading'>How it works</h2>
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
           When do I receive my payment?
