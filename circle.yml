@@ -7,7 +7,7 @@ deployment:
 
 machine:
   node:
-    version: 0.10.34
+    version: 0.10.33
 
 dependencies:
   pre:
