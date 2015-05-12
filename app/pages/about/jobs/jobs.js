@@ -1,5 +1,5 @@
 import React from 'react';
-import { filterRouteByCategory } from '../../../router/routes';
+import { filterRouteByCategory } from '../../../router/route-helpers';
 import { PropTypes } from '../../../helpers/prop-types/prop-types';
 
 export default class Jobs extends React.Component {

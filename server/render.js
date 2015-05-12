@@ -1,20 +1,18 @@
+import path from 'path';
+import fs from 'fs';
 import url from 'url';
 
 import _ from 'lodash';
 import React from 'react';
 import Router from 'react-router';
-import {pathToLocale} from '../app/helpers/locale-helper/locale-helper';
+import { pathToLocale } from '../app/helpers/locale-helper/locale-helper';
 import HtmlDocument from '../app/components/html-document/html-document';
-import {getRoutes} from '../app/router/routes';
+import { getRoutes } from '../app/router/route-helpers';
 import localeMessages from '../config/messages';
 import availableLocales from '../config/available-locales';
 import config from '../config';
 import formats from '../config/formats';
 
-import path from 'path';
-import fs from 'fs';
-
-// TODO: In development, reload paths on every request, but in production, cache paths.
 function getWebpackPaths() {
   return JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'app', 'bundles', 'webpack-stats.json')));
 }
@@ -22,7 +20,7 @@ function getWebpackPaths() {
 function normalizeUrl(urlStr) {
   var parsedUrl = url.parse((urlStr || '').toLowerCase());
   parsedUrl.pathname = parsedUrl.pathname.replace(/^\/|\/$/g, '');
-  parsedUrl.pathname = '/' + parsedUrl.pathname;
+  parsedUrl.pathname = parsedUrl.pathname ? `/${parsedUrl.pathname}/` : '/';
   return url.format(parsedUrl);
 }
 

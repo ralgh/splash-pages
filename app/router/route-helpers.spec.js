@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import { run, TestLocation } from 'react-router';
-import { getLocalesForRouteName, filterRouteByCategory, getRoutes, getAllPaths } from './routes.js';
+import { getLocalesForRouteName, filterRouteByCategory, getRoutes, getAllPaths } from './route-helpers';
 import NotFound from '../pages/not-found/not-found';
 
 import { fakeConfig } from '../helpers/specs/fake-route-config';
@@ -15,7 +15,7 @@ describe('getLocalesForRouteName', () => {
     it('returns a name => path mapping', () => {
       expect(getLocalesForRouteName(routeName, fakeConfig)).toEqual({
         'en-GB': { path: '/' },
-        'fr-FR': { path: '/fr-fr' },
+        'fr-FR': { path: '/fr-fr/' },
       });
     });
   });
@@ -25,11 +25,11 @@ describe('getLocalesForRouteName', () => {
 
     it('returns a name => path mapping', () => {
       expect(getLocalesForRouteName(routeName, fakeConfig)).toEqual({
-        'en-GB': { path: '/child-route' },
+        'en-GB': { path: '/child-route/' },
       });
 
       expect(getLocalesForRouteName('routeWithChildren', fakeConfig)).toEqual({
-        'en-GB': { path: '/en-route-with-child' },
+        'en-GB': { path: '/en-route-with-child/' },
       });
     });
   });
@@ -76,8 +76,8 @@ describe('getRoutes', () => {
           '/english-specific-page/?',
           '/english-only/?',
           '/en-route-with-child/?',
-          '//?',
-          '//?*',
+          '/?',
+          '/?*',
         ]);
 
         done();
@@ -182,13 +182,13 @@ describe('getAllPaths', () => {
 
     expect(urls).toEqual([
       '/',
-      '/fr-fr',
-      '/english-specific-page',
-      '/fr-fr/french-specific-page',
-      '/english-only',
-      '/fr-fr/french-only',
-      '/en-route-with-child',
-      '/child-route',
+      '/fr-fr/',
+      '/english-specific-page/',
+      '/fr-fr/french-specific-page/',
+      '/english-only/',
+      '/fr-fr/french-only/',
+      '/en-route-with-child/',
+      '/child-route/',
     ].sort());
   });
 });

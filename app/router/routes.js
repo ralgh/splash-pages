@@ -1,35 +1,21 @@
-import React from 'react';
 import Immutable from 'immutable';
-import {Route, DefaultRoute, NotFoundRoute } from 'react-router';
-import {transformConfigItems, expandConfig, flattenPagesForLocale, getRoutesForPages} from './route-helpers';
-
-import App from '../components/app/app';
-
-import ExampleCheckout from '../pages/example-checkout/example-checkout';
-import ContactSales from '../pages/contact-sales/contact-sales';
-
-import FaqCustomersHowItWorks from '../pages/faq/customers/how-it-works/faq-customers-how-it-works';
-import FaqCustomers from '../pages/faq/customers/overview/faq-customers-overview';
-import FaqCustomersRefunds from '../pages/faq/customers/refunds/faq-customers-refunds';
-import FaqCustomersSecurity from '../pages/faq/customers/security/faq-customers-security';
-import FaqMerchantsCustomerExperience from '../pages/faq/merchants/customer-experience/faq-merchants-customer-experience';
-import FaqMerchantsDeveloperApi from '../pages/faq/merchants/developer-api/faq-merchants-developer-api';
-import FaqMerchantsDirectDebit from '../pages/faq/merchants/direct-debit/faq-merchants-direct-debit';
-import FaqMerchantsHowItWorks from '../pages/faq/merchants/how-it-works/faq-merchants-how-it-works';
-import FaqMerchantsInternationalPayments from '../pages/faq/merchants/international-payments/faq-merchants-international-payments';
-import FaqMerchants from '../pages/faq/merchants/overview/faq-merchants-overview';
-import FaqMerchantsPartners from '../pages/faq/merchants/partners/faq-merchants-partners';
-import FaqMerchantsReferrals from '../pages/faq/merchants/referrals/faq-merchants-referrals';
-import FaqMerchantsSecurity from '../pages/faq/merchants/security/faq-merchants-security';
-import FaqMerchantsSigningUp from '../pages/faq/merchants/signing-up/faq-merchants-signing-up';
-
-import Features from '../pages/features/features';
-import FeaturesApi from '../pages/features/api/features-api';
 
 import Home from '../pages/home/home';
+import Pricing from '../pages/pricing/pricing';
+import Pro from '../pages/pro/pro';
+import Features from '../pages/features/features';
+import FeaturesApi from '../pages/features/api/features-api';
+import Security from '../pages/security/security';
+import ContactSales from '../pages/contact-sales/contact-sales';
+
+import PaymentsByDirectDebit from '../pages/payments-by-direct-debit/payments-by-direct-debit';
+import Europe from '../pages/europe/europe';
+import Refer from '../pages/refer/refer';
+import ExampleCheckout from '../pages/example-checkout/example-checkout';
 
 import About from '../pages/about/about';
 import Team from '../pages/about/team/team';
+
 import Jobs from '../pages/about/jobs/jobs';
 import AccountExecutive from '../pages/about/jobs/positions/account-executive';
 import ProductEngineer from '../pages/about/jobs/positions/product-engineer';
@@ -46,8 +32,6 @@ import Designers from '../pages/about/jobs/positions/designers';
 import SoftwareEngineer from '../pages/about/jobs/positions/software-engineer';
 import WebOperationsEngineer from '../pages/about/jobs/positions/web-operations-engineer';
 
-import NotFound from '../pages/not-found/not-found';
-
 import Partners from '../pages/partners/partners';
 import PartnersClearBooks from '../pages/partners/clearbooks/partners-clearbooks';
 import PartnersFreeagent from '../pages/partners/freeagent/partners-freeagent';
@@ -56,10 +40,20 @@ import PartnersPitchero from '../pages/partners/pitchero/partners-pitchero';
 import PartnersSage from '../pages/partners/sage/partners-sage';
 import PartnersXero from '../pages/partners/xero/partners-xero';
 
-import PaymentsByDirectDebit from '../pages/payments-by-direct-debit/payments-by-direct-debit';
-import Pricing from '../pages/pricing/pricing';
-import Pro from '../pages/pro/pro';
-import Security from '../pages/security/security';
+import FaqCustomersHowItWorks from '../pages/faq/customers/how-it-works/faq-customers-how-it-works';
+import FaqCustomers from '../pages/faq/customers/overview/faq-customers-overview';
+import FaqCustomersRefunds from '../pages/faq/customers/refunds/faq-customers-refunds';
+import FaqCustomersSecurity from '../pages/faq/customers/security/faq-customers-security';
+import FaqMerchantsCustomerExperience from '../pages/faq/merchants/customer-experience/faq-merchants-customer-experience';
+import FaqMerchantsDeveloperApi from '../pages/faq/merchants/developer-api/faq-merchants-developer-api';
+import FaqMerchantsDirectDebit from '../pages/faq/merchants/direct-debit/faq-merchants-direct-debit';
+import FaqMerchantsHowItWorks from '../pages/faq/merchants/how-it-works/faq-merchants-how-it-works';
+import FaqMerchantsInternationalPayments from '../pages/faq/merchants/international-payments/faq-merchants-international-payments';
+import FaqMerchants from '../pages/faq/merchants/overview/faq-merchants-overview';
+import FaqMerchantsPartners from '../pages/faq/merchants/partners/faq-merchants-partners';
+import FaqMerchantsReferrals from '../pages/faq/merchants/referrals/faq-merchants-referrals';
+import FaqMerchantsSecurity from '../pages/faq/merchants/security/faq-merchants-security';
+import FaqMerchantsSigningUp from '../pages/faq/merchants/signing-up/faq-merchants-signing-up';
 
 import Stories from '../pages/stories/stories';
 import StoriesHasBeanCoffee from '../pages/stories/stories/has-bean-coffee';
@@ -70,12 +64,10 @@ import StoriesRockChoir from '../pages/stories/stories/rock-choir';
 import StoriesSpencerHockey from '../pages/stories/stories/spencer-hockey';
 import StoriesFoundationOfHearts from '../pages/stories/stories/foundation-of-hearts';
 import StoriesGreaterAnglia from '../pages/stories/stories/greater-anglia';
-import Europe from '../pages/europe/europe';
-import Refer from '../pages/refer/refer';
 
 export var homeRoute = 'home';
 
-const config = Immutable.fromJS([
+export const config = Immutable.fromJS([
   [Home, { name: homeRoute }, {
       'en-GB': {
           path: '/',
@@ -88,69 +80,6 @@ const config = Immutable.fromJS([
       },
       'fr-BE': {
           path: '/',
-      },
-    },
-  ],
-  [ExampleCheckout, { name: 'example_checkout' }, {
-      'en-GB': {
-          path: '/example-checkout',
-      },
-    },
-  ],
-  [Partners, { name: 'partners' }, {
-      'en-GB': {
-          path: '/partners',
-      },
-      'en-IE': {
-          path: '/partners',
-      },
-      'fr-FR': {
-          path: '/partenaires',
-      },
-      'fr-BE': {
-          path: '/partenaires',
-      },
-    },
-  ],
-  [PartnersClearBooks, { name: 'partners_clearbooks' }, {
-      'en-GB': {
-          path: '/partners/clearbooks',
-      },
-    },
-  ],
-  [PartnersFreeagent, { name: 'partners_freeagent' }, {
-      'en-GB': {
-          path: '/partners/freeagent',
-      },
-    },
-  ],
-  [PartnersKashflow, { name: 'partners_kashflow' }, {
-      'en-GB': {
-          path: '/partners/kashflow',
-      },
-    },
-  ],
-  [PartnersPitchero, { name: 'partners_pitchero' }, {
-      'en-GB': {
-          path: '/partners/pitchero',
-      },
-    },
-  ],
-  [PartnersSage, { name: 'partners_sage' }, {
-      'en-GB': {
-          path: '/partners/sage',
-      },
-    },
-  ],
-  [PartnersXero, { name: 'partners_xero' }, {
-      'en-GB': {
-          path: '/partners/xero',
-      },
-    },
-  ],
-  [PaymentsByDirectDebit, { name: 'payments_by_direct_debit' }, {
-      'en-GB': {
-          path: '/payments-by-direct-debit',
       },
     },
   ],
@@ -184,18 +113,18 @@ const config = Immutable.fromJS([
       },
     },
   ],
-  [ContactSales, { name: 'contact_sales' }, {
+  [Security, { name: 'security' }, {
       'en-GB': {
-          path: '/contact-sales',
+          path: '/security',
       },
       'en-IE': {
-          path: '/contact-sales',
+          path: '/security',
       },
       'fr-FR': {
-          path: '/contactez-nous',
+          path: '/securite',
       },
       'fr-BE': {
-          path: '/contactez-nous',
+          path: '/securite',
       },
     },
   ],
@@ -212,22 +141,67 @@ const config = Immutable.fromJS([
       'en-GB': {
           path: '/features/api',
       },
+      'en-IE': {
+          path: '/features/api',
+      },
     },
   ],
-  [Security, { name: 'security' }, {
+  [ContactSales, { name: 'contact_sales' }, {
       'en-GB': {
-          path: '/security',
+          path: '/contact-sales',
+      },
+      'en-IE': {
+          path: '/contact-sales',
       },
       'fr-FR': {
-          path: '/securite',
+          path: '/contactez-nous',
       },
       'fr-BE': {
-          path: '/securite',
+          path: '/contactez-nous',
+      },
+    },
+  ],
+  [PaymentsByDirectDebit, { name: 'payments_by_direct_debit' }, {
+      'en-GB': {
+          path: '/payments-by-direct-debit',
+      },
+      'en-IE': {
+          path: '/payments-by-direct-debit',
+      },
+    },
+  ],
+  [Europe, { name: 'europe' }, {
+      'en-GB': {
+        path: '/europe',
+      },
+      'en-IE': {
+        path: '/europe',
+      },
+    },
+  ],
+  [Refer, { name: 'refer' }, {
+      'en-GB': {
+        path: '/refer',
+      },
+      'en-IE': {
+        path: '/refer',
+      },
+    },
+  ],
+  [ExampleCheckout, { name: 'example_checkout' }, {
+      'en-GB': {
+          path: '/example-checkout',
+      },
+      'en-IE': {
+          path: '/example-checkout',
       },
     },
   ],
   [About, { name: 'about' }, {
       'en-GB': {
+          path: '/about',
+      },
+      'en-IE': {
           path: '/about',
       },
       'fr-FR': {
@@ -240,6 +214,9 @@ const config = Immutable.fromJS([
   ],
   [Team, { name: 'team' }, {
       'en-GB': {
+          path: '/about/team',
+      },
+      'en-IE': {
           path: '/about/team',
       },
       'fr-FR': {
@@ -269,10 +246,16 @@ const config = Immutable.fromJS([
       'en-GB': {
           path: '/about/jobs/product-engineer',
       },
+      'en-IE': {
+          path: '/about/jobs/product-engineer',
+      },
     },
   ],
   [SoftwareEngineer, { name: 'jobs_software_engineer', category: 'jobs.engineering' }, {
       'en-GB': {
+          path: '/about/jobs/software-engineer',
+      },
+      'en-IE': {
           path: '/about/jobs/software-engineer',
       },
     },
@@ -281,10 +264,16 @@ const config = Immutable.fromJS([
       'en-GB': {
           path: '/about/jobs/web-operations',
       },
+      'en-IE': {
+          path: '/about/jobs/web-operations',
+      },
     },
   ],
   [EngineeringInterships, { name: 'jobs_engineering_internships', category: 'jobs.engineering' }, {
       'en-GB': {
+          path: '/about/jobs/engineering-internships',
+      },
+      'en-IE': {
           path: '/about/jobs/engineering-internships',
       },
     },
@@ -293,10 +282,16 @@ const config = Immutable.fromJS([
       'en-GB': {
           path: '/about/jobs/developer-community-manager',
       },
+      'en-IE': {
+          path: '/about/jobs/developer-community-manager',
+      },
     },
   ],
   [Designers, { name: 'jobs_designers', category: 'jobs.ux_design' }, {
       'en-GB': {
+          path: '/about/jobs/designers',
+      },
+      'en-IE': {
           path: '/about/jobs/designers',
       },
     },
@@ -305,10 +300,16 @@ const config = Immutable.fromJS([
       'en-GB': {
           path: '/about/jobs/country-lead-nl-be',
       },
+      'en-IE': {
+          path: '/about/jobs/country-lead-nl-be',
+      },
     },
   ],
   [CountryLeadGermanyAustria, { name: 'jobs_country_lead_de_at', category: 'jobs.country_leads' }, {
       'en-GB': {
+          path: '/about/jobs/country-lead-de-at',
+      },
+      'en-IE': {
           path: '/about/jobs/country-lead-de-at',
       },
     },
@@ -317,10 +318,16 @@ const config = Immutable.fromJS([
       'en-GB': {
           path: '/about/jobs/country-lead-es',
       },
+      'en-IE': {
+          path: '/about/jobs/country-lead-es',
+      },
     },
   ],
   [CountryLeadSweden, { name: 'jobs_country_lead_se', category: 'jobs.country_leads' }, {
       'en-GB': {
+          path: '/about/jobs/country-lead-se',
+      },
+      'en-IE': {
           path: '/about/jobs/country-lead-se',
       },
     },
@@ -329,16 +336,25 @@ const config = Immutable.fromJS([
       'en-GB': {
           path: '/about/jobs/bd-generalist',
       },
+      'en-IE': {
+          path: '/about/jobs/bd-generalist',
+      },
     },
   ],
   [AccountExecutive, { name: 'jobs_account_executive', category: 'jobs.sales_marketing' }, {
       'en-GB': {
           path: '/about/jobs/account-executive',
       },
+      'en-IE': {
+          path: '/about/jobs/account-executive',
+      },
     },
   ],
   [AccountExecutiveFrance, { name: 'jobs_account_executive_france', category: 'jobs.sales_marketing' }, {
       'en-GB': {
+          path: '/about/jobs/account-executive-fr',
+      },
+      'en-IE': {
           path: '/about/jobs/account-executive-fr',
       },
       'fr-FR': {
@@ -353,6 +369,9 @@ const config = Immutable.fromJS([
       'en-GB': {
           path: '/about/jobs/customer-support-fr',
       },
+      'en-IE': {
+          path: '/about/jobs/customer-support-fr',
+      },
       'fr-FR': {
           path: '/about/jobs/service-client',
       },
@@ -361,8 +380,80 @@ const config = Immutable.fromJS([
       },
     },
   ],
+  [Partners, { name: 'partners' }, {
+      'en-GB': {
+          path: '/partners',
+      },
+      'en-IE': {
+          path: '/partners',
+      },
+      'fr-FR': {
+          path: '/partenaires',
+      },
+      'fr-BE': {
+          path: '/partenaires',
+      },
+    },
+  ],
+  [PartnersClearBooks, { name: 'partners_clearbooks' }, {
+      'en-GB': {
+          path: '/partners/clearbooks',
+      },
+      'en-IE': {
+          path: '/partners/clearbooks',
+      },
+    },
+  ],
+  [PartnersFreeagent, { name: 'partners_freeagent' }, {
+      'en-GB': {
+          path: '/partners/freeagent',
+      },
+      'en-IE': {
+          path: '/partners/freeagent',
+      },
+    },
+  ],
+  [PartnersKashflow, { name: 'partners_kashflow' }, {
+      'en-GB': {
+          path: '/partners/kashflow',
+      },
+      'en-IE': {
+          path: '/partners/kashflow',
+      },
+    },
+  ],
+  [PartnersPitchero, { name: 'partners_pitchero' }, {
+      'en-GB': {
+          path: '/partners/pitchero',
+      },
+      'en-IE': {
+          path: '/partners/pitchero',
+      },
+    },
+  ],
+  [PartnersSage, { name: 'partners_sage' }, {
+      'en-GB': {
+          path: '/partners/sage',
+      },
+      'en-IE': {
+          path: '/partners/sage',
+      },
+    },
+  ],
+  [PartnersXero, { name: 'partners_xero' }, {
+      'en-GB': {
+          path: '/partners/xero',
+      },
+      'en-IE': {
+          path: '/partners/xero',
+      },
+    },
+  ],
   [FaqCustomers, { name: 'faq_customers', category: 'faq.customers' }, {
       'en-GB': {
+          path: '/faq/customers',
+      },
+      'en-IE': {
           path: '/faq/customers',
       },
     },
@@ -371,10 +462,16 @@ const config = Immutable.fromJS([
       'en-GB': {
           path: '/faq/customers/how-it-works',
       },
+      'en-IE': {
+          path: '/faq/customers/how-it-works',
+      },
     },
   ],
   [FaqCustomersRefunds, { name: 'faq_customers_refunds', category: 'faq.customers' }, {
       'en-GB': {
+          path: '/faq/customers/refunds',
+      },
+      'en-IE': {
           path: '/faq/customers/refunds',
       },
     },
@@ -383,10 +480,16 @@ const config = Immutable.fromJS([
       'en-GB': {
           path: '/faq/customers/security',
       },
+      'en-IE': {
+          path: '/faq/customers/security',
+      },
     },
   ],
   [FaqMerchants, { name: 'faq_merchants', category: 'faq.merchants' }, {
       'en-GB': {
+          path: '/faq/merchants',
+      },
+      'en-IE': {
           path: '/faq/merchants',
       },
       'fr-FR': {
@@ -401,6 +504,9 @@ const config = Immutable.fromJS([
       'en-GB': {
           path: '/faq/merchants/how-it-works',
       },
+      'en-IE': {
+          path: '/faq/merchants/how-it-works',
+      },
       'fr-FR': {
           path: '/faq/commercant/fonctionnement',
       },
@@ -411,6 +517,9 @@ const config = Immutable.fromJS([
   ],
   [FaqMerchantsSigningUp, { name: 'faq_merchants_signing_up', category: 'faq.merchants' }, {
       'en-GB': {
+          path: '/faq/merchants/signing-up',
+      },
+      'en-IE': {
           path: '/faq/merchants/signing-up',
       },
       'fr-FR': {
@@ -425,6 +534,9 @@ const config = Immutable.fromJS([
       'en-GB': {
           path: '/faq/merchants/direct-debit',
       },
+      'en-IE': {
+          path: '/faq/merchants/direct-debit',
+      },
       'fr-FR': {
           path: '/faq/commercant/prelevement-bancaire',
       },
@@ -435,6 +547,9 @@ const config = Immutable.fromJS([
   ],
   [FaqMerchantsSecurity, { name: 'faq_merchants_security', category: 'faq.merchants' }, {
       'en-GB': {
+          path: '/faq/merchants/security',
+      },
+      'en-IE': {
           path: '/faq/merchants/security',
       },
       'fr-FR': {
@@ -449,6 +564,9 @@ const config = Immutable.fromJS([
       'en-GB': {
           path: '/faq/merchants/customer-experience',
       },
+      'en-IE': {
+          path: '/faq/merchants/customer-experience',
+      },
       'fr-FR': {
           path: '/faq/commercant/consommateur',
       },
@@ -459,6 +577,9 @@ const config = Immutable.fromJS([
   ],
   [FaqMerchantsInternationalPayments, { name: 'faq_merchants_international_payments', category: 'faq.merchants' }, {
       'en-GB': {
+          path: '/faq/merchants/international-payments',
+      },
+      'en-IE': {
           path: '/faq/merchants/international-payments',
       },
       'fr-FR': {
@@ -473,6 +594,9 @@ const config = Immutable.fromJS([
       'en-GB': {
           path: '/faq/merchants/developer-api',
       },
+      'en-IE': {
+          path: '/faq/merchants/developer-api',
+      },
       'fr-FR': {
           path: '/faq/commercant/api-developpeurs',
       },
@@ -483,6 +607,9 @@ const config = Immutable.fromJS([
   ],
   [FaqMerchantsPartners, { name: 'faq_merchants_partners', category: 'faq.merchants' }, {
       'en-GB': {
+          path: '/faq/merchants/partners',
+      },
+      'en-IE': {
           path: '/faq/merchants/partners',
       },
       'fr-FR': {
@@ -497,10 +624,16 @@ const config = Immutable.fromJS([
       'en-GB': {
           path: '/faq/merchants/referrals',
       },
+      'en-IE': {
+          path: '/faq/merchants/referrals',
+      },
     },
   ],
   [Stories, { name: 'stories' }, {
       'en-GB': {
+        path: '/stories',
+      },
+      'en-IE': {
         path: '/stories',
       },
     },
@@ -509,10 +642,16 @@ const config = Immutable.fromJS([
       'en-GB': {
         path: '/stories/has-bean-coffee',
       },
+      'en-IE': {
+        path: '/stories/has-bean-coffee',
+      },
     },
   ],
   [StoriesBlueskyBusiness, { name: 'stories_bluesky_business', category: 'stories' }, {
       'en-GB': {
+        path: '/stories/bluesky-business',
+      },
+      'en-IE': {
         path: '/stories/bluesky-business',
       },
     },
@@ -521,10 +660,16 @@ const config = Immutable.fromJS([
       'en-GB': {
         path: '/stories/crowdcube',
       },
+      'en-IE': {
+        path: '/stories/crowdcube',
+      },
     },
   ],
   [StoriesMomentum, { name: 'stories_momentum', category: 'stories' }, {
       'en-GB': {
+        path: '/stories/momentum',
+      },
+      'en-IE': {
         path: '/stories/momentum',
       },
     },
@@ -533,10 +678,16 @@ const config = Immutable.fromJS([
       'en-GB': {
         path: '/stories/rock-choir',
       },
+      'en-IE': {
+        path: '/stories/rock-choir',
+      },
     },
   ],
   [StoriesSpencerHockey, { name: 'stories_spencer_hockey', category: 'stories' }, {
       'en-GB': {
+        path: '/stories/spencer-hockey',
+      },
+      'en-IE': {
         path: '/stories/spencer-hockey',
       },
     },
@@ -545,74 +696,18 @@ const config = Immutable.fromJS([
       'en-GB': {
         path: '/stories/foundation-of-hearts',
       },
+      'en-IE': {
+        path: '/stories/foundation-of-hearts',
+      },
     },
   ],
   [StoriesGreaterAnglia, { name: 'stories_greater_anglia', category: 'stories' }, {
       'en-GB': {
         path: '/stories/greater-anglia',
       },
-    },
-  ],
-  [Europe, { name: 'europe' }, {
-      'en-GB': {
-        path: '/europe',
-      },
-    },
-  ],
-  [Refer, { name: 'refer' }, {
-      'en-GB': {
-        path: '/refer',
+      'en-IE': {
+        path: '/stories/greater-anglia',
       },
     },
   ],
 ]);
-
-export function getLocalesForRouteName(routeName, givenConfig=config) {
-  const expanded = expandConfig(givenConfig);
-  const foundPage = expanded.find((page) => page.getIn(['routeConfig', 'name']) === routeName);
-
-  if (foundPage) {
-    return foundPage.get('localeConfig').toJS();
-  }
-}
-
-export function filterRouteByCategory(routeCategory, locale, givenConfig=config) {
-  const expanded = expandConfig(givenConfig);
-  const foundPages = expanded.filter((page) => {
-    const category = page.getIn(['routeConfig', 'category']);
-    if (!category) { return false; }
-    const categoryParts = category.split('.');
-    return routeCategory.split('.').every(function(part, i) {
-      return part === categoryParts[i];
-    });
-  });
-
-  return foundPages
-    .filter((page) => page.get('localeConfig').has(locale))
-    .map((page) => {
-      return page.setIn(['localeConfig', 'path'], page.getIn(['localeConfig', locale, 'path']));
-    })
-    .toJS();
-}
-
-export function getRoutes(locale, availableLocales, givenConfig=config) {
-  const flattenedRoutes = flattenPagesForLocale(givenConfig.map(transformConfigItems), locale, availableLocales);
-  const homePage = flattenedRoutes.first();
-
-  return (
-    <Route path={homePage.getIn(['localeConfig', 'path'])} handler={App}>
-      {getRoutesForPages(flattenedRoutes.rest(), availableLocales)}
-
-      <DefaultRoute handler={homePage.get('handler')} name={homePage.getIn(['routeConfig', 'name'])} />
-      <NotFoundRoute handler={NotFound} />
-    </Route>
-  );
-}
-
-export function getAllPaths(givenConfig=config) {
-  const expanded = expandConfig(givenConfig);
-
-  return expanded.flatMap((page) => page.get('localeConfig').valueSeq())
-                 .map((localeConfig) => localeConfig.get('path'));
-}
-

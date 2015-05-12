@@ -18,7 +18,7 @@ export default class GBFlagIcon extends React.Component {
           <rect id="rect8675" fillOpacity="0.67" height={512} width="682.67" y="-.0000028613" x="-85.333" />
         </clippath>
       </defs>
-      <g id="flag" clip-path="url(#clipPath8673)" transform="matrix(.93750 0 0 .93750 80 .0000026825)">
+      <g id="flag" clipPath="url(#clipPath8673)" transform="matrix(.93750 0 0 .93750 80 .0000026825)">
         <g id="g578" strokeWidth="1pt" transform="matrix(17.067 0 0 17.067 -256 -0.0000024)">
           <rect id="rect124" height={30} width={60} y={0} x={0} fill="#006" />
           <g id="g584">
