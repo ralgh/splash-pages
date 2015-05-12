@@ -22,7 +22,7 @@ export default class PartnersFr extends React.Component {
         <div className='site-container u-padding-Vxxl u-text-center'>
           <div className='u-padding-Vxl'>
             <h2 className='u-text-heading u-color-heading u-text-light'>
-              Pas de frais spéciaux ou de paperasse, juste notre prix standard :<br /> 1% par transaction, plafonné à 2€.
+              Pas de frais cachés ou de paperasse, juste notre prix standard :<br /> 1% par transaction, plafonné à 2€.
             </h2>
             <div className='site-container u-padding-Txxl'>
               <div className='grid u-padding-Txl'>
@@ -44,7 +44,7 @@ export default class PartnersFr extends React.Component {
                     <CustomerIcon className='svg-icon__image u-fill-dark-gray' />
                   </figure>
                   <h2 className='u-text-heading u-text-m u-color-heading u-text-light u-text-no-smoothing u-margin-Tm'>
-                    Ravissez vos clients
+                    Aidez vos clients
                   </h2>
                   <p className='u-size-2of3 u-center u-color-p u-margin-Vxs'>
                     Simplifiez la vie de vos clients et rendez-les plus loyaux en les
