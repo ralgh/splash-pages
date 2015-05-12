@@ -33,7 +33,7 @@ app.get('/fr/*', function(req, res) {
 app.use(render);
 
 app.use(compression());
-app.set('port', normalisePort(devEnv.backendPort || process.env.PORT));
+app.set('port', normalisePort(process.env.PORT || devEnv.backendPort));
 
 app.use(function(req, res, next) {
   const err = new Error('Not Found');

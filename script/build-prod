@@ -1,3 +1,26 @@
 #!/bin/sh
 
+PORT='4413'
+
+# check if something is already on our port
+echo exit | nc localhost $PORT
+if [ $? -eq 0 ]; then
+  echo "something is already running on $PORT"
+  exit 1
+fi
+
+set -e errexit
+ulimit -n 10240
+
+# when this process exists, kill backgrounded jobs
+trap 'kill $(jobs -p)' INT SIGTERM EXIT
+
+rm -rf dist
 node_modules/.bin/webpack --stats --progress --config ./webpack/prod.config.js
+PORT=$PORT node ./index.js &
+
+# wait for the server to start up
+while ! echo exit | nc localhost $PORT; do sleep 1; done
+
+./script/dump-html "http://localhost:$PORT" 'dist'
+cp -R public/* dist
