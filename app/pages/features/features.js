@@ -315,9 +315,9 @@ export default class Features extends React.Component {
                       Speak with one of our payments experts to learn how GoCardless can help your business.
                     </p>
                   </div>
-                  <a href='/contact-sales' id='track-cta-contact-sales' className='btn btn--hollow u-margin-Tm'>
+                  <Link to='contact_sales' id='track-cta-contact-sales' className='btn btn--hollow u-margin-Tm'>
                     <Message message='cta.pro' />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -330,9 +330,9 @@ export default class Features extends React.Component {
                       <td />
                       <td />
                       <td className='u-padding-As'>
-                        <a href='/pro' id='track-comparison-table-pro' className='u-color-primary'>
+                        <Link to='pro' id='track-comparison-table-pro' className='u-color-primary'>
                           Learn more about GoCardless Pro
-                        </a>
+                        </Link>
                       </td>
                     </tr>
                   </tfoot>

@@ -49,6 +49,8 @@ import StoriesRockChoir from '../pages/stories/stories/rock-choir';
 import StoriesSpencerHockey from '../pages/stories/stories/spencer-hockey';
 import StoriesFoundationOfHearts from '../pages/stories/stories/foundation-of-hearts';
 import StoriesGreaterAnglia from '../pages/stories/stories/greater-anglia';
+import Europe from '../pages/europe/europe';
+import Refer from '../pages/refer/refer';
 
 export var homeRoute = 'home';
 
@@ -381,6 +383,18 @@ const config = Immutable.fromJS([
   [StoriesGreaterAnglia, { name: 'stories_greater_anglia', category: 'stories' }, {
       'en-GB': {
         path: '/stories/greater-anglia',
+      },
+    },
+  ],
+  [Europe, { name: 'europe' }, {
+      'en-GB': {
+        path: '/europe',
+      },
+    },
+  ],
+  [Refer, { name: 'refer' }, {
+      'en-GB': {
+        path: '/refer',
       },
     },
   ],
