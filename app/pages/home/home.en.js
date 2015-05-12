@@ -2,6 +2,8 @@ import React from 'react';
 import Translation from '../../components/translation/translation';
 import Message from '../../components/message/message';
 import Link from '../../components/link/link';
+import HowDdWorks from '../../components/how-dd-works/how-dd-works';
+import Modal from '../../components/modal/modal';
 
 import MobileIcon from '../../icons/svg/mobile';
 import CheckListIcon from '../../icons/svg/checklist';
@@ -9,6 +11,7 @@ import MoneyFlowerIcon from '../../icons/svg/money-flower';
 import ProIcon from '../../icons/svg/pro';
 import ShopIcon from '../../icons/svg/shop';
 import IntegrationsIcon from '../../icons/svg/integrations';
+import CloseModalIcon from '../../icons/svg/close-modal';
 
 export default class HomeEn extends React.Component {
   displayName = 'HomeEn'
@@ -65,10 +68,21 @@ export default class HomeEn extends React.Component {
                 </p>
               </div>
             </div>
+
             <p className='u-color-p u-margin-Txxl u-padding-Tm'>
-              Want to learn more about Direct Debit?
-              <a data-ng-click='modal.isShown = true; modal.slide = 1'> Find out the basics</a>
+              Want to learn more about
+              Direct Debit?
             </p>
+            <Modal toggle={(
+              <a href='#'>Find out the basics</a>
+            )}
+            close={(
+              <a className='modal__container__close'>
+                <CloseModalIcon class='svg-icon__close-modal' />
+              </a>
+            )}>
+              <HowDdWorks />
+            </Modal>
           </div>
         </div>
         <hr className='u-margin-An' />
