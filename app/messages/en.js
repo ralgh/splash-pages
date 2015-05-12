@@ -60,7 +60,13 @@ export default {
   pricing: {
     title: 'Pricing',
     nav_title: 'Pricing',
+    cost_cap: '2£',
     description: 'Collect Direct Debit payments online with fees of just 1%, capped at £2. Scale pricing is available for larger organisations.',
+    pro_cost_per_transaction: '1p - 60p',
+    per_transaction_amount_normal: '1%',
+    pro_monthly_fee: '£200',
+    normal_capped_at_amount: '£200',
+    pro_number_of_monthly_payments: '> 500',
   },
   about: {
     title: 'About GoCardless: Company Info & Job Openings',
@@ -74,7 +80,8 @@ export default {
     title: 'The UK’s #1 for online Direct Debit',
     nav_title: 'Home',
     description: 'GoCardless',
-    link: 'home page'
+    link: 'home page',
+    trusted_message_scale: 'We’re a Bacs approved bureau that collects millions of pounds for our merchants every day.',
   },
   contact_sales: {
     title: 'Get a Quote',

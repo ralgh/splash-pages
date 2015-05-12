@@ -15,7 +15,7 @@ export default class ProEn extends React.Component {
 
   render() {
     return (
-      <Translation locales='en-GB'>
+      <Translation locales='en'>
         <div>
           <div className='page-hero page-hero--pro page-hero--medium u-relative u-size-full'>
             <div className='site-container page-hero__container'>
@@ -30,7 +30,7 @@ export default class ProEn extends React.Component {
             </div>
           </div>
           <div className='sticky-nav'>
-            <div ng-gc-sticky-nav
+            <div
             className='sticky-nav__inner u-background-light-gray u-text-heading u-text-xxs u-text-light u-text-no-smoothing'>
               <div className='site-container u-padding-Vm'>
                 <ul className='u-pull-start u-margin-Txxs'>

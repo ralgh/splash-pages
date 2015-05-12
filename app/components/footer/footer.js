@@ -6,6 +6,7 @@ import LinkExists from '../link-exists/link-exists';
 import { getLocalesForRouteName, homeRoute } from '../../router/routes';
 import { getMessage } from '../intl/intl';
 import Popover from '../popover/popover';
+import Flag from '../flag/flag';
 import { localeToRegion } from '../../helpers/locale-helper/locale-helper';
 import { PropTypes } from '../../helpers/prop-types/prop-types';
 import CheckmarkIcon from '../../icons/svg/checkmark';
@@ -178,7 +179,7 @@ class Footer extends React.Component {
             <span className='u-relative'>
              <Popover className='popover--country-select' toggle={
                   (<a href='#' className='u-text-semi u-link-invert'>
-                    <img src={ `/images/icons/${ region }-flag-icon@2x.png` } className='flag-icon u-margin-Hs' alt />
+                    <Flag viewBox="0 0 640 480" width="64" height="48" country={region} className='flag-icon u-margin-Hs' alt={ region } />
                      <span className='popover-link popover-link--invert'>
                        <Message message='country' />
                      </span>
@@ -187,20 +188,20 @@ class Footer extends React.Component {
                 <ul className='u-text-xxs u-text-start u-padding-Vxs'>
                   {
                     availableLocales.map(function(locale) {
-                      const flagSrc = `/images/icons/${ localeToRegion(locale.locale) }-flag-icon@2x.png`;
-
                       return (
                         <li className='u-text-semi' key={locale.name}>
                           {
                             locale.isActive && (
                               <span className='u-padding-Vxs u-padding-Hm u-block'>
-                                <img src={ flagSrc } className='flag-icon--popover u-margin-Rs' alt={ locale.name } />
+                                <Flag viewBox="0 0 640 480" country={localeToRegion(locale.locale)}
+                                  className='flag-icon--popover u-margin-Rs' alt={ locale.name } />
                                 <span className='u-color-p'>{ locale.name }</span>
                                 <CheckmarkIcon className='u-fill-dark-green u-margin-Ls u-pull-end u-inline' alt='✓' />
                               </span>
                             ) || (
                               <a className='u-padding-Vxs u-padding-Hm u-block' href={ locale.path }>
-                                <img src={ flagSrc } className='flag-icon--popover u-margin-Rs' alt={ locale.name } />
+                                <Flag viewBox="0 0 640 480" country={localeToRegion(locale.locale)}
+                                  className='flag-icon--popover u-margin-Rs' alt={ locale.name } />
                                 { locale.name }
                               </a>
                             )

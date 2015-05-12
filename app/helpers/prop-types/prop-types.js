@@ -1,12 +1,10 @@
-import {validateLocale} from '../locale-helper/locale-helper';
+import {validateLocaleOrLanguage} from '../locale-helper/locale-helper';
+import _ from 'lodash';
 
 export const PropTypes = {
   locale(props, propName) {
-    if (!Array.isArray(props[propName])) {
-      return validateLocale(props[propName]);
-    }
-    props[propName].forEach(function(locale) {
-      validateLocale(locale);
+    return _.every(_.flatten([props[propName]]), function(locale) {
+      return validateLocaleOrLanguage(locale);
     });
   },
 };

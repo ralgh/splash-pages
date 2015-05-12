@@ -6,7 +6,7 @@ export default class AboutEn extends React.Component {
 
   render() {
     return (
-      <Translation locales='en-GB'>
+      <Translation locales='en'>
         <div className='site-container u-padding-Vxxl'>
           <h2 className='u-text-heading u-color-heading u-text-l u-text-light u-padding-Txl'>
             About GoCardless

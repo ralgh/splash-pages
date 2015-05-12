@@ -26,6 +26,10 @@ export function validateLocale(localeStr) {
   return localeStr;
 }
 
+export function validateLocaleOrLanguage(localeStr) {
+  return !!(localeStr.match(/^[a-z]{2}$/) || validateLocale(localeStr));
+}
+
 export function localeToLanguage(localeStr) {
   return localeStr.slice(0, 2).toLowerCase();
 }

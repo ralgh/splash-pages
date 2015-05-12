@@ -80,6 +80,9 @@ const config = Immutable.fromJS([
       'en-GB': {
           path: '/',
       },
+      'en-IE': {
+          path: '/',
+      },
       'fr-FR': {
           path: '/',
       },
@@ -96,6 +99,9 @@ const config = Immutable.fromJS([
   ],
   [Partners, { name: 'partners' }, {
       'en-GB': {
+          path: '/partners',
+      },
+      'en-IE': {
           path: '/partners',
       },
       'fr-FR': {
@@ -152,6 +158,9 @@ const config = Immutable.fromJS([
       'en-GB': {
           path: '/pricing',
       },
+      'en-IE': {
+          path: '/pricing',
+      },
       'fr-FR': {
           path: '/tarifs',
       },
@@ -162,6 +171,9 @@ const config = Immutable.fromJS([
   ],
   [Pro, { name: 'pro' }, {
       'en-GB': {
+          path: '/pro',
+      },
+      'en-IE': {
           path: '/pro',
       },
       'fr-FR': {
@@ -176,6 +188,9 @@ const config = Immutable.fromJS([
       'en-GB': {
           path: '/contact-sales',
       },
+      'en-IE': {
+          path: '/contact-sales',
+      },
       'fr-FR': {
           path: '/contactez-nous',
       },
@@ -186,6 +201,9 @@ const config = Immutable.fromJS([
   ],
   [Features, { name: 'features' }, {
       'en-GB': {
+          path: '/features',
+      },
+      'en-IE': {
           path: '/features',
       },
     },
@@ -234,6 +252,9 @@ const config = Immutable.fromJS([
   ],
   [Jobs, { name: 'jobs' }, {
       'en-GB': {
+          path: '/about/jobs',
+      },
+      'en-IE': {
           path: '/about/jobs',
       },
       'fr-FR': {
