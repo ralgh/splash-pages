@@ -5,11 +5,11 @@
   "description": "React",
   "scripts": {
     "start": "./script/start",
-    "build": "./script/build",
     "run-production": "./script/run-production",
     "build-production": "./script/build-prod",
     "test": "./script/lint && ./script/test",
-    "lint": "./script/lint"
+    "lint": "./script/lint",
+    "deploy-live-staging": "NODE_ENV=production AWS_S3_BUCKET=staging.gocardless.com ./script/deploy"
   },
   "dependencies": {
     "autoprefixer": "^5.1.1",
@@ -53,11 +53,8 @@
     "superagent": "^1.2.0",
     "touch": "0.0.3",
     "webpack": "^1.8.11",
-    "webpack-dev-server": "^1.8.2"
-  },
-  "devDependencies": {
-    "mkdirp": "^0.5.0",
-    "nock": "^1.9.0",
-    "rimraf": "^2.3.3"
+    "webpack-dev-server": "^1.8.2",
+    "rimraf": "^2.3.3",
+    "nock": "^1.9.0"
   }
 }
