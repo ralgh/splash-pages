@@ -47,7 +47,7 @@
     "raw-loader": "^0.5.1",
     "react": "^0.13.2",
     "react-hot-loader": "^1.2.7",
-    "react-magic": "harrison/react-magic#add-html-svg-attributes",
+    "htmltojsx": "github:harrison/react-magic#add-html-svg-attributes",
     "react-router": "^0.13.3",
     "rimraf": "^2.3.3",
     "sass-loader": "^0.4.2",
