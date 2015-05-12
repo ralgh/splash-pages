@@ -1,7 +1,7 @@
 #!/usr/bin/env babel-node
 
 import { fetchPage, writePage } from '../app/static-build/builder';
-import { getAllPaths } from '../app/router/routes.js';
+import { getAllPaths } from '../app/router/route-helpers';
 
 const [bin, script, serverUrl, outDir] = process.argv;
 

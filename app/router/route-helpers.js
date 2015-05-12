@@ -1,8 +1,11 @@
+import _ from 'lodash';
 import React from 'react';
 import Immutable from 'immutable';
-import { Route } from 'react-router';
+import { Route, DefaultRoute, NotFoundRoute } from 'react-router';
 import { defaultLocale } from '../helpers/locale-helper/locale-helper';
-import _ from 'lodash';
+import NotFound from '../pages/not-found/not-found';
+import App from '../components/app/app';
+import { config } from './routes';
 
 function pathWithLocale(path, locale) {
   if (!path || path.indexOf('/') !== 0) {
@@ -13,10 +16,10 @@ function pathWithLocale(path, locale) {
   if (locale === defaultLocale) {
     localePath = path;
   } else {
-    localePath = ['/', locale.toLowerCase(), path].join('/').replace(/\/\//g, '/');
+    localePath = ['/', locale.toLowerCase(), path].join('/').replace(/\/+/g, '/');
   }
   localePath = localePath.replace(/^\/|\/$/g, '');
-  return '/' + localePath;
+  return localePath ? `/${localePath}/` : '/';
 }
 
 function validatePages(pages) {
@@ -37,8 +40,7 @@ export function flattenPagesForLocale(pages, locale, availableLocales) {
 
   function setLocaleConfigPath(page) {
     const path = page.getIn(['localeConfig', locale, 'path']);
-    const matchOptionalSlash = '/?';
-
+    const matchOptionalSlash = '?';
     return page.setIn(['localeConfig', 'path'], pathWithLocale(path, locale) + matchOptionalSlash);
   }
 
@@ -114,7 +116,8 @@ export function expandConfig(givenConfig) {
   function setLocalePaths(page) {
     return page.update('localeConfig', function(localeConfig) {
       return localeConfig.reduce(function(memo, localeSpecificConfig, locale) {
-        return memo.setIn([locale, 'path'], pathWithLocale(localeSpecificConfig.get('path'), locale));
+        const path = pathWithLocale(localeSpecificConfig.get('path'), locale);
+        return memo.setIn([locale, 'path'], path);
       }, Immutable.Map());
     });
   }
@@ -122,4 +125,53 @@ export function expandConfig(givenConfig) {
   return givenConfig.map(transformConfigItems)
                     .flatMap(expandChildConfig)
                     .map(setLocalePaths);
+}
+
+export function getLocalesForRouteName(routeName, givenConfig=config) {
+  const expanded = expandConfig(givenConfig);
+  const foundPage = expanded.find((page) => page.getIn(['routeConfig', 'name']) === routeName);
+
+  if (foundPage) {
+    return foundPage.get('localeConfig').toJS();
+  }
+}
+
+export function filterRouteByCategory(routeCategory, locale, givenConfig=config) {
+  const expanded = expandConfig(givenConfig);
+  const foundPages = expanded.filter((page) => {
+    const category = page.getIn(['routeConfig', 'category']);
+    if (!category) { return false; }
+    const categoryParts = category.split('.');
+    return routeCategory.split('.').every(function(part, i) {
+      return part === categoryParts[i];
+    });
+  });
+
+  return foundPages
+    .filter((page) => page.get('localeConfig').has(locale))
+    .map((page) => {
+      return page.setIn(['localeConfig', 'path'], page.getIn(['localeConfig', locale, 'path']));
+    })
+    .toJS();
+}
+
+export function getRoutes(locale, availableLocales, givenConfig=config) {
+  const flattenedRoutes = flattenPagesForLocale(givenConfig.map(transformConfigItems), locale, availableLocales);
+  const homePage = flattenedRoutes.first();
+
+  return (
+    <Route path={homePage.getIn(['localeConfig', 'path'])} handler={App}>
+      {getRoutesForPages(flattenedRoutes.rest(), availableLocales)}
+
+      <DefaultRoute handler={homePage.get('handler')} name={homePage.getIn(['routeConfig', 'name'])} />
+      <NotFoundRoute handler={NotFound} />
+    </Route>
+  );
+}
+
+export function getAllPaths(givenConfig=config) {
+  const expanded = expandConfig(givenConfig);
+
+  return expanded.flatMap((page) => page.get('localeConfig').valueSeq())
+                 .map((localeConfig) => localeConfig.get('path'));
 }

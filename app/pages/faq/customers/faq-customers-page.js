@@ -1,5 +1,5 @@
 import React from 'react';
-import { filterRouteByCategory } from '../../../router/routes';
+import { filterRouteByCategory } from '../../../router/route-helpers';
 import Page from '../../../components/page/page';
 import Message from '../../../components/message/message';
 import Link from '../../../components/link/link';

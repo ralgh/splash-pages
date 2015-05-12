@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
-import { filterRouteByCategory } from '../../../router/routes';
+import { filterRouteByCategory } from '../../../router/route-helpers';
 import Message from '../../../components/message/message';
 import Link from '../../../components/link/link';
 import AboutHeader from '../about-header';

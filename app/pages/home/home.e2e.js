@@ -15,7 +15,7 @@ describe('Swapping languages', function() {
     element(by.id('track-nav-products')).click();
     element(by.id('track-nav-pro')).click();
     element(by.cssContainingText('.popover-link', 'United Kingdom')).click();
-    element(by.css('a[href="/fr-fr/pro"]')).click();
+    element(by.css('a[href="/fr-fr/pro/"]')).click();
     expect(element(by.cssContainingText('body', 'Découvrez GoCardless')).isPresent()).toBe(true);
   });
 });

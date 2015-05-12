@@ -6,15 +6,15 @@ import GTM from '../layout-static/google-tag-manager';
 import websiteSchema from '../layout-static/website-schema';
 
 import getSiteTitle from '../get-site-title/get-site-title';
-import {getMessage} from '../intl/intl';
+import { getMessage } from '../intl/intl';
 import localeMessages from '../../../config/messages';
-import {getLocalesForRouteName} from '../../router/routes';
-import {defaultLocale, localeToLanguage} from '../../helpers/locale-helper/locale-helper';
-import {homeRoute} from '../../router/routes';
-import {buildSchemaDotOrgForOrganization} from '../../helpers/schema-dot-org/schema-dot-org';
-import {PropTypes} from '../../helpers/prop-types/prop-types';
+import { defaultLocale, localeToLanguage } from '../../helpers/locale-helper/locale-helper';
+import { homeRoute } from '../../router/routes';
+import { getLocalesForRouteName } from '../../router/route-helpers';
+import { buildSchemaDotOrgForOrganization } from '../../helpers/schema-dot-org/schema-dot-org';
+import { PropTypes } from '../../helpers/prop-types/prop-types';
 
-function relAlternateLinks(root, path, locales) {
+function relAlternateLinks(root, locales) {
   var defaultPath = locales[defaultLocale].path;
 
   var alternates = Object.keys(locales).map(function(locale) {
@@ -105,7 +105,7 @@ class HtmlDocument extends React.Component {
           <link rel='canonical' href={ pageHref } />
 
           { routeLocales &&
-              relAlternateLinks(config.siteRoot, path, routeLocales) }
+              relAlternateLinks(config.siteRoot, routeLocales) }
 
           { css.map((href, k) => <link key={k} rel='stylesheet' href={href} />) }
 

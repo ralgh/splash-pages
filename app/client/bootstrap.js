@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React from 'react';
 import Router from 'react-router';
-import {getRoutes} from '../router/routes';
+import {getRoutes} from '../router/route-helpers';
 import {pushDataLayer} from '../helpers/gtm-tracker/gtm-tracker';
 
 // Load CSS in dev mode dynamically.
