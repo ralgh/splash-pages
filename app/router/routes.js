@@ -319,13 +319,6 @@ const config = Immutable.fromJS([
       },
     },
   ],
-  [null, null, {
-      'en-GB': {
-          path: '/faq',
-          redirectTo: 'faq_merchants',
-      },
-    },
-  ],
   [FaqMerchants, { name: 'faq_merchants' }, {
       'en-GB': {
           path: '/faq/merchants',

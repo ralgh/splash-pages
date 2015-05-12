@@ -52,10 +52,7 @@ export function render(req, res, next) {
 
   const router = Router.create({
     onAbort: function(abortReason) {
-      const destination = router.makePath(abortReason.to,
-        abortReason.params, abortReason.query);
-      console.log('Redirecting to:', destination);
-      res.redirect(302, destination);
+      next(abortReason);
     },
     onError: function(err) {
       next(err);

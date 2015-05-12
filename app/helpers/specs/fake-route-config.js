@@ -37,17 +37,4 @@ export const fakeConfig = Immutable.fromJS([
       ],
     ],
   ],
-  [
-    null, null, {
-      'en-GB': {
-        path: '/redirect',
-        redirectTo: '/redirected',
-      },
-    },
-  ],
-  [
-    FakeComponent, { name: 'redirectedToRoute' }, {
-      'en-GB': { path: '/redirected' },
-    },
-  ],
 ]);

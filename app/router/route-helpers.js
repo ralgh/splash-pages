@@ -1,6 +1,6 @@
 import React from 'react';
 import Immutable from 'immutable';
-import { Route, Redirect } from 'react-router';
+import { Route } from 'react-router';
 import { defaultLocale } from '../helpers/locale-helper/locale-helper';
 import _ from 'lodash';
 
@@ -42,12 +42,6 @@ export function flattenPagesForLocale(pages, locale, availableLocales) {
     return page.setIn(['localeConfig', 'path'], pathWithLocale(path, locale) + matchOptionalSlash);
   }
 
-  function setLocaleConfigRedirectTo(page) {
-    const redirectTo = page.getIn(['localeConfig', locale, 'redirectTo']);
-
-    return page.setIn(['localeConfig', 'redirectTo'], redirectTo);
-  }
-
   function flattenChildConfig(page) {
     if (Immutable.List.isList(page.get('childConfig'))) {
       return page.set('childConfig', flattenPagesForLocale(page.get('childConfig'), locale, availableLocales));
@@ -58,7 +52,6 @@ export function flattenPagesForLocale(pages, locale, availableLocales) {
 
   return pages.filter((page) => page.get('localeConfig').has(locale))
               .map(setLocaleConfigPath)
-              .map(setLocaleConfigRedirectTo)
               .map(flattenChildConfig);
 }
 
@@ -69,25 +62,14 @@ export function getRoutesForPages(pages, availableLocales) {
     const localeConfig = page.get('localeConfig');
     const childConfig = page.get('childConfig');
 
-    if (handler === null) {
-      return (
-        <Redirect
-          from={localeConfig.get('path')}
-          to={localeConfig.get('redirectTo')}
-          key={localeConfig.get('redirectTo') + '_redirect'}>
-          {childConfig && getRoutesForPages(childConfig, availableLocales) || null}
-        </Redirect>
-      );
-    } else {
-      return (
-        <Route key={routeConfig.get('name')}
-          name={routeConfig.get('name')}
-          path={localeConfig.get('path')}
-          handler={handler}>
-          {childConfig && getRoutesForPages(childConfig, availableLocales) || null}
-        </Route>
-      );
-    }
+    return (
+      <Route key={routeConfig.get('name')}
+        name={routeConfig.get('name')}
+        path={localeConfig.get('path')}
+        handler={handler}>
+        {childConfig && getRoutesForPages(childConfig, availableLocales) || null}
+      </Route>
+    );
   });
 }
 
