@@ -7,6 +7,9 @@ import WhiteLabelIcon from '../../icons/svg/white-label';
 import CheckListIcon from '../../icons/svg/checklist';
 import PaymentPageIcon from '../../icons/svg/payment-page';
 import ControlIcon from '../../icons/svg/control';
+import ProIcon from '../../icons/svg/pro';
+import ShopIcon from '../../icons/svg/shop';
+import IntegrationsIcon from '../../icons/svg/integrations';
 import Link from '../../components/link/link';
 
 export default class ProFr extends React.Component {
@@ -20,10 +23,10 @@ export default class ProFr extends React.Component {
             <div className='page-hero__inner'>
               <div className='page-hero__text'>
                 <h1 className='u-text-heading u-color-invert u-text-center u-text-xl u-text-light'>
-                  Prenez le contrôle de vos prélèvements bancaires
+                  Automatisez vos prélèvements
                 </h1>
                 <p className='u-text-heading u-text-center u-color-invert u-text-m u-text-light u-margin-Txxs u-text-no-smoothing'>
-                  La meilleure technologie pour vos paiements<br />récurrents en ligne
+                  Intégrez en profondeur la meilleure technologie <br />de paiements récurrents
                 </p>
               </div>
             </div>
@@ -60,99 +63,100 @@ export default class ProFr extends React.Component {
           </div>
         </div>
         <div className='section-scroll-target' id='en-bref'>
-          <div className='site-container u-text-center u-padding-Vxxl'>
+          <div className='site-container u-text-center u-padding-Vxl'>
             <div className='u-padding-Vxl'>
               <div className='u-size-3of4 u-center'>
                 <h2 className='u-text-heading u-color-heading u-text-l u-text-light'>
-                  Découvrez GoCardless
+                  Découvrez GoCardless Pro
                 </h2>
                 <p className='u-text-s u-color-p u-margin-Txs'>
-                  GoCardless combine simplicité d'utilisation et contrôle complet du paiement
-                  et de l'expérience client. Il vous permet d'encaisser des paiements par
-                  compte bancaire dans toute la zone Euro <br />et au Royaume-Uni en une simple intégration.
+                  Adapté aux grands comptes et entreprises en forte croissance, GoCardless Pro combine simplicité 
+                  d'utilisation et contrôle complet du paiement
+                  et de l'expérience client. <br / >GoCardless Pro vous permet de:
                 </p>
               </div>
-              <div className='grid u-margin-Tl u-padding-Tm'>
-                <div className='grid__cell u-size-1of3 u-text-center'>
-                  <figure className='svg-icon u-center'>
-                    <PaymentPageIcon className='svg-icon__image svg-icon__image--shadow u-fill-green' />
-                    <PaymentPageIcon className='svg-icon__image u-fill-dark-gray' />
-                  </figure>
-                  <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
-                    Gestion des mandats
+
+              <div className='site-container u-text-center'>
+                <div className='product-grid grid u-margin-Vxl'>
+                  <div className='u-link-clean u-text-center grid__cell u-size-1of3'>
+                    <div className='product-grid__container u-padding-Vl'>
+                      <figure className='svg-icon u-center'>
+                        <ShopIcon className='svg-icon__image svg-icon__image--shadow u-fill-green' />
+                        <ShopIcon className='svg-icon__image u-fill-dark-gray' />
+                      </figure>
+                      <p className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
+                        Lancer rapidement de<br /> nouvelles offres d;ab
+                      </p>
+                    </div>
                   </div>
-                  <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
-                    Dématérialisez automatiquement tous vos mandats de façon sécurisée
-                  </p>
-                </div>
-                <div className='grid__cell u-size-1of3 u-text-center'>
-                  <figure className='svg-icon u-center'>
-                    <ControlIcon className='svg-icon__image svg-icon__image--shadow u-fill-blue' />
-                    <ControlIcon className='svg-icon__image u-fill-dark-gray' />
-                  </figure>
-                  <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
-                    Encaissement des paiements
+                  <div className='u-link-clean u-text-center grid__cell u-size-1of3'>
+                    <div className='product-grid__container u-padding-Vl'>
+                      <figure className='svg-icon u-center'>
+                        <ProIcon className='svg-icon__image svg-icon__image--shadow u-fill-yellow' />
+                        <ProIcon className='svg-icon__image u-fill-dark-gray' />
+                      </figure>
+                      <p className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
+                        Rationaliser la facturation <br /> et les paiements
+                      </p>
+                    </div>
                   </div>
-                  <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
-                    Acceptez les paiements par compte bancaire, sur votre site, par téléphone ou par courrier
-                  </p>
-                </div>
-                <div className='grid__cell u-size-1of3 u-text-center'>
-                  <figure className='svg-icon u-center'>
-                    <CheckListIcon className='svg-icon__image svg-icon__image--shadow u-fill-yellow' />
-                    <CheckListIcon className='svg-icon__image u-fill-dark-gray' />
-                  </figure>
-                  <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
-                    Réconciliation automatique
+                  <div className='u-link-clean u-text-center grid__cell u-size-1of3'>
+                    <div className='product-grid__container u-padding-Vl'>
+                      <figure className='svg-icon u-center'>
+                        <IntegrationsIcon className='svg-icon__image svg-icon__image--shadow u-fill-blue' />
+                        <IntegrationsIcon className='svg-icon__image u-fill-dark-gray' />
+                      </figure>
+                      <p className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
+                        Optimiser<br /> des prélèvement existants
+                      </p>
+                    </div>
                   </div>
-                  <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
-                    Visualisez le statut de vos paiements directement dans <br /> vos systèmes d'information
-                  </p>
                 </div>
               </div>
             </div>
           </div>
+
           <hr className='u-margin-An' />
           <div className='site-container u-text-center u-padding-Vxxl'>
             <div className='grid u-padding-Vxl'>
-              <div className='grid__cell u-size-1of2 u-text-center'>
-                <figure className='svg-icon svg-icon--small u-center'>
-                  <WhiteLabelIcon className='svg-icon__image svg-icon__image--small svg-icon__image--small-shadow u-fill-green' />
-                  <WhiteLabelIcon className='svg-icon__image svg-icon__image--small u-fill-dark-gray' />
-                </figure>
-                <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
-                  Vos paiements, votre marque
-                </div>
-                <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
-                  Vos utilisateurs ne voient que votre marque. Vous avez un contrôle
-                  total sur le design de vos pages de paiement et votre communication client.
-                </p>
-              </div>
               <div className='grid__cell u-size-1of2 u-text-center'>
                 <figure className='svg-icon svg-icon--small u-center'>
                   <DeveloperIcon className='svg-icon__image svg-icon__image--small svg-icon__image--small-shadow u-fill-yellow' />
                   <DeveloperIcon className='svg-icon__image svg-icon__image--small u-fill-dark-gray' />
                 </figure>
                 <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
-                  Une API simple et moderne
+                  Restez chez vous
                 </div>
                 <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
-                  Intégrez très simplement GoCardless dans votre site web et vos systèmes
+                  Intégrez l'API de GoCardless rapidement dans votre site web et vos systèmes
                   d'information. Tout ce qu'il y a à savoir est dans
                   notre <a href='https://developer.gocardless.com/pro'>documentation</a>.
                 </p>
               </div>
-              <div className='grid__cell u-size-1of2 u-text-center u-margin-Txxl u-padding-Txxl'>
+              <div className='grid__cell u-size-1of2 u-text-center'>
                 <figure className='svg-icon svg-icon--small u-center'>
                   <MobileIcon className='svg-icon__image svg-icon__image--small svg-icon__image--small-shadow u-fill-blue' />
                   <MobileIcon className='svg-icon__image svg-icon__image--small u-fill-dark-gray' />
                 </figure>
                 <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
-                  Compatibilité tout terrain
+                  Donnez le choix à vos clients
                 </div>
                 <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
-                  GoCardless s'intégre facilement dans n'importe quel site et application mobile,
-                  quel que soit la technologie que vous utilisez.
+                  Que ce soit via votre site internet, par téléphone ou courrier, GoCardless Pro
+                  vous permet de faire du prélèvement en votre nom.
+                </p>
+              </div>
+              <div className='grid__cell u-size-1of2 u-text-center u-margin-Txxl u-padding-Txxl'>
+                <figure className='svg-icon svg-icon--small u-center'>
+                  <WhiteLabelIcon className='svg-icon__image svg-icon__image--small svg-icon__image--small-shadow u-fill-green' />
+                  <WhiteLabelIcon className='svg-icon__image svg-icon__image--small u-fill-dark-gray' />
+                </figure>
+                <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
+                  Maîtrisez vos paiements de A à Z
+                </div>
+                <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
+                  Vous connaissez en temps réel le statut de tous vos paiements directement dans vos
+                  systèmes. En cas d'incidents, vous pouvez automatiser les relances.
                 </p>
               </div>
               <div className='grid__cell u-size-1of2 u-text-center u-margin-Txxl u-padding-Txxl'>
@@ -161,15 +165,16 @@ export default class ProFr extends React.Component {
                   <SecurityIcon className='svg-icon__image svg-icon__image--small u-fill-dark-gray' />
                 </figure>
                 <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
-                  Sécurité de calibre militaire
+                  Concentrez vous sur votre activité
                 </div>
                 <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
-                  Toutes les données bancaires sont chiffrées avec RSA et ne sont transmises
-                  que par le biais de serveurs Européens sécurisés.
+                  GoCardless se charge de toutes les démarches SEPA, que ce soit le stockage des mandats 
+                  dématérialisés et les transmissions aux banques. 
                 </p>
               </div>
             </div>
           </div>
+
           <hr className='u-margin-An' />
           <div className='site-container u-text-center u-padding-Vxxl'>
             <div className='u-padding-Vxl'>
@@ -180,9 +185,9 @@ export default class ProFr extends React.Component {
                 </h2>
                 <div className='u-center'>
                   <p className='u-text-s u-color-p u-margin-Ts'>
-                    GoCardless est le seul produit qui vous permet de collecter vos prélèvements
+                    GoCardless vous permet d'encaisser vos prélèvements
                     bancaires auprès de plus de 300 millions de personnes dans la zone
-                    SEPA et le Royaume-Uni en une seule intégration.
+                    Euro et au Royaume-Uni via une seule intégration.
                   </p>
                 </div>
               </div>
