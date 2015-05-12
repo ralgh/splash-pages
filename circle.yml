@@ -1,0 +1,10 @@
+deployment:
+  staging:
+    branch: master
+    commands:
+      - npm run build-production
+      - npm run deploy-live-staging
+
+machine:
+  node:
+    version: 0.10.28

@@ -1,5 +1,5 @@
 #!/bin/bash
-# Usage: NODE_ENV=production AWS_S3_BUCKET=staging.gocardless.com ./script/s3-deploy
+# Usage: NODE_ENV=production AWS_S3_BUCKET=staging.gocardless.com ./script/deploy
 
 set -e errexit
 
