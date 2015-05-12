@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import CloseModalIcon from '../../icons/svg/close-modal';
 
 export default class Modal extends React.Component {
   displayName = 'Modal'
@@ -7,7 +8,6 @@ export default class Modal extends React.Component {
   static propTypes = {
     children: React.PropTypes.node.isRequired,
     toggle: React.PropTypes.node.isRequired,
-    close: React.PropTypes.node.isRequired,
   }
 
   static keyCodes = {
@@ -93,9 +93,9 @@ export default class Modal extends React.Component {
             style={style}
             tabIndex='-1'
             ref='modalContent'>
-            <span onClick={this.handleClick}>
-              {this.props.close}
-            </span>
+            <a className='modal__container__close' onClick={this.handleClick}>
+              <CloseModalIcon className='svg-icon__close-modal' />
+            </a>
             {this.props.children}
           </div>
         </div>

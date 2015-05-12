@@ -11,7 +11,6 @@ import MoneyFlowerIcon from '../../icons/svg/money-flower';
 import ProIcon from '../../icons/svg/pro';
 import ShopIcon from '../../icons/svg/shop';
 import IntegrationsIcon from '../../icons/svg/integrations';
-import CloseModalIcon from '../../icons/svg/close-modal';
 
 export default class HomeEn extends React.Component {
   displayName = 'HomeEn'
@@ -75,11 +74,6 @@ export default class HomeEn extends React.Component {
             </p>
             <Modal toggle={(
               <a href='#'>Find out the basics</a>
-            )}
-            close={(
-              <a className='modal__container__close'>
-                <CloseModalIcon class='svg-icon__close-modal' />
-              </a>
             )}>
               <HowDdWorks />
             </Modal>
