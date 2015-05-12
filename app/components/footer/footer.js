@@ -213,8 +213,8 @@ class Footer extends React.Component {
                   <LinkExists to='europe'>
                     <hr className='u-margin-Vs' />
                     <div className='u-padding-Vxs u-padding-Hm'>
-                      <p className='u-color-p'><Message message='footer.eruope_cta' />{','}</p>
-                      <p className='u-color-p'><Link to='europe'><Message message='footer.europe_link' /></Link>
+                      <p className='u-color-p'><Message message='footer.europe_cta' />,&nbsp;</p>
+                      <p className='u-color-p'><Link to='europe'><Message message='footer.europe_link' /></Link>&nbsp;
                         <Message message='footer.europe_description' /></p>
                     </div>
                   </LinkExists>

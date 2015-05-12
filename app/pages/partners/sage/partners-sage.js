@@ -46,7 +46,7 @@ export default class PartnersSage extends React.Component {
               For a limited time only, the GoCardless Sage 50 add-on is completely
               free. Get in touch now to be sure not to miss out.
             </p>
-            <a href='/request-sage-demo' className='btn btn--hollow u-margin-Tm'>Contact us</a>
+            <Link to='contact_sales' className='btn btn--hollow u-margin-Tm'>Contact us</Link>
           </div>
         </div>
 

@@ -40,9 +40,6 @@ export default class StoriesHasBeanCoffee extends React.Component {
           62 days to 41 and cash flow has improved by 30%.</p>
           <p>Thanks to GoCardless, Has Bean are now in control of when they get paid.
           This has vastly improved their cashflow and helped them “keep uncomfortable conversations about money to a minimum”.</p>
-          <a href='/invoicing' className='u-color-primary u-text-upcase u-text-xxs u-text-heading u-text-semi u-block u-margin-Txl'>
-              See how GoCardless works for invoicing
-          </a>
         </StoryQuote>
       </StoryPage>
     );

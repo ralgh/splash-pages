@@ -55,10 +55,6 @@ export default class StoriesSpencerHockey extends React.Component {
             “With 80% take-up by our members, the black hole in our finances has disappeared,
             so now we can spend more time growing our reserves.”
           </p>
-          <a href='/sports-clubs'
-          className='u-color-primary u-text-upcase u-text-xxs u-text-heading u-text-semi u-block u-margin-Txl'>
-            See how GoCardless works for sports clubs &amp; societies
-          </a>
         </StoryQuote>
       </StoryPage>
     );

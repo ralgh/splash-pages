@@ -7,9 +7,9 @@ export default {
   footer: {
     description: 'GoCardless is a Bacs approved bureau and is regulated by the Financial Conduct Authority as an Authorised Payment Institution.',
     currently_viewing: 'Currently viewing',
-    eruope_cta: 'GoCardless is expanding',
-    eruope_link: 'learn more',
-    eruope_description: 'about upcoming countries',
+    europe_cta: 'GoCardless is expanding',
+    europe_link: 'learn more',
+    europe_description: 'about upcoming countries',
   },
   cta: {
     basic: 'Start taking payments',
@@ -124,11 +124,6 @@ export default {
     nav_title: 'Stories',
     description: 'Stories',
   },
-  europe: {
-    title: 'SEPA',
-    nav_title: 'SEPA',
-    description: 'SEPA',
-  },
   legal: {
     title: 'Terms of Service',
     nav_title: 'Legal',
@@ -173,6 +168,16 @@ export default {
   payments_by_direct_debit: {
     title: 'Payments By Direct Debit',
     description: 'Direct Debit is cheaper & more reliable than the card networks. It\'s also more flexible than a standing order. Find out how you can take payments using Direct Debit.',
+  },
+  europe: {
+    title: 'SEPA Direct Debit: Collect Payments Across Europe',
+    nav_title: 'Europe',
+    description: 'GoCardless makes it easy to accept SEPA Direct Debit payments from across Europe. Take recurring and one-off payments. Find out more and register your interest.',
+  },
+  refer: {
+    title: 'Referral Scheme: Get £50 off your fees',
+    nav_title: 'Refer',
+    description: 'Earn money by recommending GoCardless. Refer someone else and you\'ll both get £50 credit towards GoCardless fees.',
   },
   team: {
     title: 'Team',
