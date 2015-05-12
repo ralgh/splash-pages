@@ -8,19 +8,19 @@
 }
 
 .u-text-heavy {
-  font-weight: 700;
+  font-weight: $font-weight-heavy;
 }
 
 .u-text-semi {
-  font-weight: 500;
+  font-weight: $font-weight-semi;
 }
 
 .u-text-normal {
-  font-weight: 400;
+  font-weight: $font-weight-normal;
 }
 
 .u-text-light {
-  font-weight: 200;
+  font-weight: $font-weight-light;
 }
 
 .u-text-heading {

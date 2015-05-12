@@ -3,9 +3,31 @@ import Immutable from 'immutable';
 import {Route, DefaultRoute, NotFoundRoute } from 'react-router';
 import {transformConfigItems, expandConfig, flattenPagesForLocale, getRoutesForPages} from './route-helpers';
 
-import NotFound from '../pages/not-found/not-found';
 import App from '../components/app/app';
+
+import ExampleCheckout from '../pages/example-checkout/example-checkout';
+import ContactSales from '../pages/contact-sales/contact-sales';
+
+import FaqCustomersHowItWorks from '../pages/faq/customers/how-it-works/faq-customers-how-it-works';
+import FaqCustomers from '../pages/faq/customers/overview/faq-customers-overview';
+import FaqCustomersRefunds from '../pages/faq/customers/refunds/faq-customers-refunds';
+import FaqCustomersSecurity from '../pages/faq/customers/security/faq-customers-security';
+import FaqMerchantsCustomerExperience from '../pages/faq/merchants/customer-experience/faq-merchants-customer-experience';
+import FaqMerchantsDeveloperApi from '../pages/faq/merchants/developer-api/faq-merchants-developer-api';
+import FaqMerchantsDirectDebit from '../pages/faq/merchants/direct-debit/faq-merchants-direct-debit';
+import FaqMerchantsHowItWorks from '../pages/faq/merchants/how-it-works/faq-merchants-how-it-works';
+import FaqMerchantsInternationalPayments from '../pages/faq/merchants/international-payments/faq-merchants-international-payments';
+import FaqMerchants from '../pages/faq/merchants/overview/faq-merchants-overview';
+import FaqMerchantsPartners from '../pages/faq/merchants/partners/faq-merchants-partners';
+import FaqMerchantsReferrals from '../pages/faq/merchants/referrals/faq-merchants-referrals';
+import FaqMerchantsSecurity from '../pages/faq/merchants/security/faq-merchants-security';
+import FaqMerchantsSigningUp from '../pages/faq/merchants/signing-up/faq-merchants-signing-up';
+
+import Features from '../pages/features/features';
+import FeaturesApi from '../pages/features/api/features-api';
+
 import Home from '../pages/home/home';
+
 import About from '../pages/about/about';
 import Team from '../pages/about/team/team';
 import Jobs from '../pages/about/jobs/jobs';
@@ -24,8 +46,8 @@ import Designers from '../pages/about/jobs/positions/designers';
 import SoftwareEngineer from '../pages/about/jobs/positions/software-engineer';
 import WebOperationsEngineer from '../pages/about/jobs/positions/web-operations-engineer';
 
-import FaqMerchants from '../pages/faq/merchants/merchants';
-import ExampleCheckout from '../pages/example-checkout/example-checkout';
+import NotFound from '../pages/not-found/not-found';
+
 import Partners from '../pages/partners/partners';
 import PartnersClearBooks from '../pages/partners/clearbooks/partners-clearbooks';
 import PartnersFreeagent from '../pages/partners/freeagent/partners-freeagent';
@@ -33,13 +55,12 @@ import PartnersKashflow from '../pages/partners/kashflow/partners-kashflow';
 import PartnersPitchero from '../pages/partners/pitchero/partners-pitchero';
 import PartnersSage from '../pages/partners/sage/partners-sage';
 import PartnersXero from '../pages/partners/xero/partners-xero';
+
 import PaymentsByDirectDebit from '../pages/payments-by-direct-debit/payments-by-direct-debit';
 import Pricing from '../pages/pricing/pricing';
 import Pro from '../pages/pro/pro';
-import ContactSales from '../pages/contact-sales/contact-sales';
-import Features from '../pages/features/features';
-import FeaturesApi from '../pages/features/api/features-api';
 import Security from '../pages/security/security';
+
 import Stories from '../pages/stories/stories';
 import StoriesHasBeanCoffee from '../pages/stories/stories/has-bean-coffee';
 import StoriesBlueskyBusiness from '../pages/stories/stories/bluesky-business';
@@ -319,9 +340,141 @@ const config = Immutable.fromJS([
       },
     },
   ],
-  [FaqMerchants, { name: 'faq_merchants' }, {
+  [FaqCustomers, { name: 'faq_customers', category: 'faq.customers' }, {
+      'en-GB': {
+          path: '/faq/customers',
+      },
+    },
+  ],
+  [FaqCustomersHowItWorks, { name: 'faq_customers_how_it_works', category: 'faq.customers' }, {
+      'en-GB': {
+          path: '/faq/customers/how-it-works',
+      },
+    },
+  ],
+  [FaqCustomersRefunds, { name: 'faq_customers_refunds', category: 'faq.customers' }, {
+      'en-GB': {
+          path: '/faq/customers/refunds',
+      },
+    },
+  ],
+  [FaqCustomersSecurity, { name: 'faq_customers_security', category: 'faq.customers' }, {
+      'en-GB': {
+          path: '/faq/customers/security',
+      },
+    },
+  ],
+  [FaqMerchants, { name: 'faq_merchants', category: 'faq.merchants' }, {
       'en-GB': {
           path: '/faq/merchants',
+      },
+      'fr-FR': {
+          path: '/faq/commercant',
+      },
+      'fr-BE': {
+          path: '/faq/commercant',
+      },
+    },
+  ],
+  [FaqMerchantsHowItWorks, { name: 'faq_merchants_how_it_works', category: 'faq.merchants' }, {
+      'en-GB': {
+          path: '/faq/merchants/how-it-works',
+      },
+      'fr-FR': {
+          path: '/faq/commercant/fonctionnement',
+      },
+      'fr-BE': {
+          path: '/faq/commercant/fonctionnement',
+      },
+    },
+  ],
+  [FaqMerchantsSigningUp, { name: 'faq_merchants_signing_up', category: 'faq.merchants' }, {
+      'en-GB': {
+          path: '/faq/merchants/signing-up',
+      },
+      'fr-FR': {
+          path: '/faq/commercant/inscription',
+      },
+      'fr-BE': {
+          path: '/faq/commercant/inscription',
+      },
+    },
+  ],
+  [FaqMerchantsDirectDebit, { name: 'faq_merchants_direct_debit', category: 'faq.merchants' }, {
+      'en-GB': {
+          path: '/faq/merchants/direct-debit',
+      },
+      'fr-FR': {
+          path: '/faq/commercant/prelevement-bancaire',
+      },
+      'fr-BE': {
+          path: '/faq/commercant/prelevement-bancaire',
+      },
+    },
+  ],
+  [FaqMerchantsSecurity, { name: 'faq_merchants_security', category: 'faq.merchants' }, {
+      'en-GB': {
+          path: '/faq/merchants/security',
+      },
+      'fr-FR': {
+          path: '/faq/commercant/securite',
+      },
+      'fr-BE': {
+          path: '/faq/commercant/securite',
+      },
+    },
+  ],
+  [FaqMerchantsCustomerExperience, { name: 'faq_merchants_customer_experience', category: 'faq.merchants' }, {
+      'en-GB': {
+          path: '/faq/merchants/customer-experience',
+      },
+      'fr-FR': {
+          path: '/faq/commercant/consommateur',
+      },
+      'fr-BE': {
+          path: '/faq/commercant/consommateur',
+      },
+    },
+  ],
+  [FaqMerchantsInternationalPayments, { name: 'faq_merchants_international_payments', category: 'faq.merchants' }, {
+      'en-GB': {
+          path: '/faq/merchants/international-payments',
+      },
+      'fr-FR': {
+          path: '/faq/commercant/international',
+      },
+      'fr-BE': {
+          path: '/faq/commercant/international',
+      },
+    },
+  ],
+  [FaqMerchantsDeveloperApi, { name: 'faq_merchants_developer_api', category: 'faq.merchants' }, {
+      'en-GB': {
+          path: '/faq/merchants/developer-api',
+      },
+      'fr-FR': {
+          path: '/faq/commercant/api-developpeurs',
+      },
+      'fr-BE': {
+          path: '/faq/commercant/api-developpeurs',
+      },
+    },
+  ],
+  [FaqMerchantsPartners, { name: 'faq_merchants_partners', category: 'faq.merchants' }, {
+      'en-GB': {
+          path: '/faq/merchants/partners',
+      },
+      'fr-FR': {
+          path: '/faq/commercant/partenaires',
+      },
+      'fr-BE': {
+          path: '/faq/commercant/partenaires',
+      },
+    },
+  ],
+  [FaqMerchantsReferrals, { name: 'faq_merchants_referrals', category: 'faq.merchants' }, {
+      'en-GB': {
+          path: '/faq/merchants/referrals',
       },
     },
   ],

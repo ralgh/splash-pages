@@ -49,6 +49,6 @@ export default class StoryPage extends React.Component {
         {this.props.children}
         <StartTakingPaymentsCTA />
       </Page>
-  );
+    );
   }
 }

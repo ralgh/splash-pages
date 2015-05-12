@@ -8,6 +8,8 @@
   "/direct_debit/index.html": "/direct-debit",
   "/docs/index.html": "https://developer.gocardless.com",
   "/faq/index.html": "/faq/merchants",
+  "/fr-be/faq/index.html": "/fr-be/faq/commercant",
+  "/fr-fr/faq/index.html": "/fr-fr/faq/commercant",
   "/features/dashboard/index.html": "/features",
   "/features/integrations/index.html": "/partners",
   "/fr/a-propos/index.html": "/fr-fr/a-propos",
