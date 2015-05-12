@@ -1,8 +1,7 @@
+import React from 'react';
 import Translation from './translation';
-import React from 'react/addons';
+import ReactTestUtils from 'react/lib/ReactTestUtils';
 import {stubContext} from '../../helpers/stub-context';
-
-let {TestUtils} = React.addons;
 
 describe('Translation Component', function() {
   describe('when the component is in the same locale', function() {
@@ -12,13 +11,13 @@ describe('Translation Component', function() {
         context: { locales: 'en-GB' },
       });
 
-      var result = TestUtils.renderIntoDocument(
+      var result = ReactTestUtils.renderIntoDocument(
         <TranslationStub>
           <p>hello world</p>
         </TranslationStub>
       );
 
-      var element = TestUtils.findRenderedDOMComponentWithTag(result, 'div');
+      var element = ReactTestUtils.findRenderedDOMComponentWithTag(result, 'div');
       expect(element.getDOMNode().textContent).toEqual('hello world');
     });
   });
@@ -30,13 +29,13 @@ describe('Translation Component', function() {
         context: { locales: 'en-GB' },
       });
 
-      var result = TestUtils.renderIntoDocument(
+      var result = ReactTestUtils.renderIntoDocument(
         <TranslationStub>
           <p>hello world</p>
         </TranslationStub>
       );
 
-      var element = TestUtils.findRenderedDOMComponentWithTag(result, 'div');
+      var element = ReactTestUtils.findRenderedDOMComponentWithTag(result, 'div');
       expect(element.getDOMNode().textContent).toEqual('hello world');
     });
   });
@@ -48,13 +47,13 @@ describe('Translation Component', function() {
         context: { locales: 'en-GB' },
       });
 
-      var result = TestUtils.renderIntoDocument(
+      var result = ReactTestUtils.renderIntoDocument(
         <TranslationStub>
           <p>hello world</p>
         </TranslationStub>
       );
 
-      var element = TestUtils.findRenderedDOMComponentWithTag(result, 'div');
+      var element = ReactTestUtils.findRenderedDOMComponentWithTag(result, 'div');
       expect(element.getDOMNode().textContent).toEqual('');
     });
   });
@@ -66,13 +65,13 @@ describe('Translation Component', function() {
         context: { locales: 'en-GB' },
       });
 
-      var result = TestUtils.renderIntoDocument(
+      var result = ReactTestUtils.renderIntoDocument(
         <TranslationStub>
           <p>hello world</p>
         </TranslationStub>
       );
 
-      var element = TestUtils.findRenderedDOMComponentWithTag(result, 'div');
+      var element = ReactTestUtils.findRenderedDOMComponentWithTag(result, 'div');
       expect(element.getDOMNode().textContent).toEqual('');
     });
   });
