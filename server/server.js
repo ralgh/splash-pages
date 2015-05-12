@@ -20,16 +20,6 @@ app.use(favicon(path.join(__dirname, '..', 'public', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(express.static(path.join(__dirname, '..', 'app')));
 
-app.get('/fr', function(req, res) {
-  res.redirect(301, '/fr-fr');
-});
-
-app.get('/fr/*', function(req, res) {
-  const splat = req.params[0];
-  const destPath = splat ? `/${splat}` : '';
-  res.redirect(301, '/fr-fr' + destPath);
-});
-
 app.use(render);
 
 app.use(compression());

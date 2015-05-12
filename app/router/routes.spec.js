@@ -59,20 +59,6 @@ describe('getRoutes', () => {
       routeComponent = getRoutes('en-GB', ['en-GB', 'fr-FR'], fakeConfig);
     });
 
-    it('creates any redirects correctly', (done) => {
-      run(routeComponent, function({ routes }) {
-        const redirectRoute = routes[0].childRoutes.find((route) => !route.handler);
-
-        const transitionSpy = jasmine.createSpyObj('transition', ['redirect']);
-
-        redirectRoute.onEnter(transitionSpy, {}, {});
-
-        expect(transitionSpy.redirect).toHaveBeenCalledWith('/redirected', {}, {});
-
-        done();
-      });
-    });
-
     it('returns one route component', (done) => {
       run(routeComponent, function({ routes }) {
         expect(routes.length).toEqual(1);
@@ -90,8 +76,6 @@ describe('getRoutes', () => {
           '/english-specific-page/?',
           '/english-only/?',
           '/en-route-with-child/?',
-          '/redirect/?',
-          '/redirected/?',
           '//?',
           '//?*',
         ]);
@@ -205,8 +189,6 @@ describe('getAllPaths', () => {
       '/fr-fr/french-only',
       '/en-route-with-child',
       '/child-route',
-      '/redirect',
-      '/redirected',
     ].sort());
   });
 });
