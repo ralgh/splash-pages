@@ -14,7 +14,7 @@ export default class FaqMerchantsDeveloperApiEn extends React.Component {
     const { messages } = this.context;
 
     return (
-      <Translation locales='en-GB'>
+      <Translation locales='en'>
         <h2 className='u-text-heading-light u-text-m u-color-heading'>Developer API</h2>
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
           What can I use the API for?

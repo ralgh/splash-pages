@@ -7,7 +7,7 @@ export default class FaqMerchantsFr extends React.Component {
 
   render() {
     return (
-      <Translation locales={['fr-FR', 'fr-BE']}>
+      <Translation locales='fr'>
         <h2 className='u-text-heading-light u-text-m u-color-heading'>En bref</h2>
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
           Comment utiliser GoCardless?
