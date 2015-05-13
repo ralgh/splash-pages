@@ -1,6 +1,5 @@
 import React from 'react';
 import Translation from '../../../components/translation/translation';
-import Link from '../../../components/link/link';
 import { team } from '../../../constants/team';
 
 export default class TeamFr extends React.Component {
@@ -15,12 +14,6 @@ export default class TeamFr extends React.Component {
               <h2 className='u-text-heading-light u-text-m u-color-meta u-margin-Bm'>
                 Nous sommes une petite équipe formée d'individus talentueux travaillant ensemble pour construire l'avenir des paiements.
               </h2>
-              <p className='u-text-heading-light u-text-xs u-color-meta'>
-                Interested in joining the team?<br />Take a look at
-                our <Link to='jobs' className='u-link-clean ku-link-color-meta u-text-underline'>
-                  available positions
-                </Link>
-              </p>
             </div>
             <div className='grid__cell u-size-2of3'>
               <span className='u-text-heavy u-color-heading'>GoCardless est: </span><span className='u-color-p'>

@@ -58,8 +58,8 @@ export default class ProductEngineer extends React.Component {
         </p>
         <p className='para'>What we've done recently:</p>
         <ul className='list'>
-          <li>Designed our new <a href='https://developer.gocardless.com/pro/'>Pro API</a>
-            based on the <a href='http://jsonapi.org/'>JSON API Specification</a>.</li>
+          <li>Designed our new <a href='https://developer.gocardless.com/pro/'>
+          Pro API</a> based on the <a href='http://jsonapi.org/'>JSON API Specification</a>.</li>
           <li>Built tooling to run our dashboard integration tests against an auto generated
             mock API using <a href='http://json-schema.org/'>JSON Schema</a>.</li>
           <li>Invested in tooling for deploying ES6 applications

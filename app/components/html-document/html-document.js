@@ -88,6 +88,7 @@ class HtmlDocument extends React.Component {
     const pageHref = config.siteRoot + path;
     const title = getSiteTitle({messages: messages, routeName: routeName, config: config});
     const language = localeToLanguage(locales);
+    const description = getMessage(messages, `${routeName}.description`);
 
     return (
       <html className='no-js' lang={language}>
@@ -96,8 +97,7 @@ class HtmlDocument extends React.Component {
           <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no' />
 
           <title>{ title }</title>
-
-          <meta name='description' content={ getMessage(messages, `${routeName}.description`) } />
+          { description && <meta name='description' content={ description } />}
           <link href={ config.socialLinks.google } rel='publisher' />
           <meta name='og:image' content={ config.logoUrlSquare } />
           <meta name='og:image:secure_url' content={ config.logoUrlSquare } />

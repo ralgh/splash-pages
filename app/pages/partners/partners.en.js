@@ -93,7 +93,7 @@ export default class PartnersEn extends React.Component {
             </div>
           </div>
           <p className='u-text-s u-color-p u-margin-Vxs'>
-            For a full list of our integrations, <Link to='faq_merchants'>see here</Link>.
+            For a full list of our integrations, <Link to='faq_merchants_partners'>see here</Link>.
           </p>
         </div>
         <hr className='u-margin-An' />
