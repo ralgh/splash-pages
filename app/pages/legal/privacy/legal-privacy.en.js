@@ -1,18 +1,11 @@
 import React from 'react';
 import Translation from '../../../components/translation/translation';
-import Message from '../../../components/message/message';
-import { getMessage } from '../../../components/intl/intl';
+import Href from '../../../components/href/href';
 
 export default class LegalPrivacyEn extends React.Component {
   displayName = 'LegalPrivacyEn'
 
-  static contextTypes = {
-    messages: React.PropTypes.object.isRequired,
-  }
-
   render() {
-    const { messages } = this.context;
-
     return (
       <Translation locales='en'>
         <h2 className='u-text-heading-light u-text-m u-color-heading'>Privacy policy</h2>
@@ -111,8 +104,8 @@ export default class LegalPrivacyEn extends React.Component {
         <p className='para'>
           If you send us your CV we may want to keep your details on file in case an opportunity
           comes up in the future. If you’d rather we didn’t do this, please let us know as soon as
-          possible by emailing <a href={ `mailto:${getMessage(messages, 'email')}` }
-          className='u-link-color-p u-text-underline' itemProp='email'><Message message='email' /></a> and
+          possible by emailing <Href to='email'
+          className='u-link-color-p u-text-underline' itemProp='email' /> and
           we will delete your record as soon as we are able.
         </p>
         <p className='para'>
@@ -138,8 +131,8 @@ export default class LegalPrivacyEn extends React.Component {
           origin and any recipients of it as well as the purpose of any data processing carried out.
           Please note that, in accordance with the Data Protection Act 1998, a £10 admin fee is
           applicable. For further information, please contact us by
-          emailing <a href={ `mailto:${getMessage(messages, 'email')}` }
-          className='u-link-color-p u-text-underline' itemProp='email'><Message message='email' /></a> with
+          emailing <Href to='email'
+          className='u-link-color-p u-text-underline' itemProp='email' /> with
           the subject 'Data subject access request'.
         </p>
         <p className='para'>

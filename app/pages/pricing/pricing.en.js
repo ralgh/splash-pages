@@ -125,7 +125,7 @@ export default class PricingEn extends React.Component {
         <div className='site-container u-text-center u-padding-Tm u-padding-Bxxl'>
           <div className='u-padding-Vxl'>
             <h2 className='u-text-heading u-text-l u-color-heading u-text-light'>Got any questions?</h2>
-            <p className='u-color-p u-margin-Ts'>Contact support on +44 (0) 20 7183 8674</p>
+            <p className='u-color-p u-margin-Ts'>Contact support on <Message message='phone_full' /></p>
             <a href='/merchants/new/' className='btn btn--hollow u-margin-Tm'>Sign up today</a>
           </div>
         </div>

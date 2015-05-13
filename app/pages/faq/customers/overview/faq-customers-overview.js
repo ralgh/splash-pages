@@ -1,18 +1,12 @@
 import React from 'react';
 import FaqCustomersPage from '../faq-customers-page';
 import Message from '../../../../components/message/message';
-import { getMessage } from '../../../../components/intl/intl';
+import Href from '../../../../components/href/href';
 
 export default class FaqCustomers extends React.Component {
   displayName = 'FaqCustomers'
 
-  static contextTypes = {
-    messages: React.PropTypes.object.isRequired,
-  }
-
   render() {
-    const { messages } = this.context;
-
     return (
       <FaqCustomersPage>
         <h2 className='u-text-heading-light u-text-m u-color-heading'>Overview</h2>
@@ -29,9 +23,7 @@ export default class FaqCustomers extends React.Component {
         </p>
         <p className='para'>
           If you cannot find this or do not recognise the name email us at&nbsp;
-          <a href={ `mailto:${getMessage(messages, 'email')}` } className='u-link-color-p u-text-underline' itemProp='email'>
-            <Message message='email' />
-          </a>
+          <Href to='email' className='u-link-color-p u-text-underline' itemProp='email' />
           &nbsp;or call us on <Message message='phone_local' /> and we will help you identify the transaction.
         </p>
 
@@ -70,9 +62,7 @@ export default class FaqCustomers extends React.Component {
         </p>
         <p className='para'>
           For further assistance you can also email us at&nbsp;
-          <a href={ `mailto:${getMessage(messages, 'email')}` } className='u-link-color-p u-text-underline' itemProp='email'>
-            <Message message='email' />
-          </a>
+          <Href to='email' className='u-link-color-p u-text-underline' itemProp='email' />
           &nbsp;or call on <Message message='phone_local' />.
         </p>
       </FaqCustomersPage>

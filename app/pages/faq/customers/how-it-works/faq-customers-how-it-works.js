@@ -50,7 +50,7 @@ export default class FaqCustomersHowItWorks extends React.Component {
         </h3>
         <p className='para'>
           GoCardless is not aware of any payment ever failing to reach its destination. However, if this were to occur for any
-          reason you would have a right under the <a href='https://gocardless.com/direct-debit/guarantee/'
+          reason you would have a right under the <a href='/direct-debit/guarantee/'
           className='u-link-color-p u-text-underline'>Direct Debit Guarantee</a> to charge back to payment.
         </p>
       </FaqCustomersPage>

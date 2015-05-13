@@ -1,18 +1,11 @@
 import React from 'react';
 import Translation from '../../../components/translation/translation';
-import Message from '../../../components/message/message';
-import { getMessage } from '../../../components/intl/intl';
+import Href from '../../../components/href/href';
 
 export default class LegalPrivacyFr extends React.Component {
   displayName = 'LegalPrivacyFr'
 
-  static contextTypes = {
-    messages: React.PropTypes.object.isRequired,
-  }
-
   render() {
-    const { messages } = this.context;
-
     return (
       <Translation locales='fr'>
         <h2 className='u-text-heading-light u-text-m u-color-heading'>Politique de confidentialité</h2>
@@ -95,8 +88,8 @@ export default class LegalPrivacyFr extends React.Component {
           <li>
             Si vous nous envoyez votre CV, il est possible que nous conservions vos données pour des opportunités
             professionnelles ultérieures. Si vous souhaitez vous y opposer, veuillez nous en informer en adressant
-            un email à <a href={ `mailto:${getMessage(messages, 'email')}` }
-            className='u-link-color-p u-text-underline' itemProp='email'><Message message='email' /></a> et nous
+            un email à <Href to='email'
+            className='u-link-color-p u-text-underline' itemProp='email' /> et nous
             supprimerons vos données au plus vite.
           </li>
         </ul>
@@ -247,8 +240,8 @@ export default class LegalPrivacyFr extends React.Component {
           et de suppression concernant les données qui les concernent personnellement. Ce droit peut
           être exercé par voie postale auprès de GoCardless Ltd, 338-346 Goswell Road, EC1V 7LQ Londres,
           Grande Bretagne ou par voie électronique à l’adresse email
-          suivante : <a href={ `mailto:${getMessage(messages, 'email')}` } className='u-link-color-p u-text-underline'
-          itemProp='email'><Message message='email' /></a>.
+          suivante : <Href to='email' className='u-link-color-p u-text-underline'
+          itemProp='email' />.
         </p>
         <p className='para'>
           Vous pouvez nous demander de ne pas traiter vos données personnelles à des fins de marketing à
@@ -271,8 +264,8 @@ export default class LegalPrivacyFr extends React.Component {
         <p className='para'>
           Si vous avez des questions au sujet de cette politique de confidentialité ou de traitement de
           vos données personnelles, nous vous prions de nous écrire par e-mail en utilisant l’adresse
-          suivante : <a href={ `mailto:${getMessage(messages, 'email')}` }
-          className='u-link-color-p u-text-underline' itemProp='email'><Message message='email' /></a>.
+          suivante : <Href to='email'
+          className='u-link-color-p u-text-underline' itemProp='email' />.
         </p>
 
         <h3 className='u-text-heading-light u-color-heading u-margin-Vm u-text-s'>

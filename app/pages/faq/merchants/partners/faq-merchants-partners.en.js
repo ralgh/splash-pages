@@ -1,19 +1,12 @@
 import React from 'react';
 import Translation from '../../../../components/translation/translation';
 import Link from '../../../../components/link/link';
-import Message from '../../../../components/message/message';
-import { getMessage } from '../../../../components/intl/intl';
+import Href from '../../../../components/href/href';
 
 export default class FaqMerchantsPartnersEn extends React.Component {
   displayName = 'FaqMerchantsPartnersEn'
 
-  static contextTypes = {
-    messages: React.PropTypes.object.isRequired,
-  }
-
   render() {
-    const { messages } = this.context;
-
     return (
       <Translation locales='en'>
         <h2 className='u-text-heading-light u-text-m u-color-heading'>Partners</h2>
@@ -48,8 +41,8 @@ export default class FaqMerchantsPartnersEn extends React.Component {
           How can I become a partner?
         </h3>
         <p className='para'>
-          Just email us at <a href={ `mailto:${getMessage(messages, 'email')}` } className='u-link-color-p u-text-underline'
-          itemProp='email'><Message message='email' /></a> with a short description of your application, and we'll get
+          Just email us at <Href to='email' className='u-link-color-p u-text-underline'
+          itemProp='email' /> with a short description of your application, and we'll get
           right back to you.
         </p>
 

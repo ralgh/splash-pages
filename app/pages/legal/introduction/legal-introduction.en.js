@@ -1,19 +1,13 @@
 import React from 'react';
 import Translation from '../../../components/translation/translation';
 import Message from '../../../components/message/message';
-import { getMessage } from '../../../components/intl/intl';
+import Href from '../../../components/href/href';
 import Link from '../../../components/link/link';
 
 export default class LegalIntroductionEn extends React.Component {
   displayName = 'LegalIntroductionEn'
 
-  static contextTypes = {
-    messages: React.PropTypes.object.isRequired,
-  }
-
   render() {
-    const { messages } = this.context;
-
     return (
       <Translation locales='en'>
         <h2 className='u-text-heading-light u-text-m u-color-heading'>Introduction</h2>
@@ -23,8 +17,8 @@ export default class LegalIntroductionEn extends React.Component {
         </p>
         <p className='para'>
           If you have any questions about our terms of service, then please get in
-          touch by emailing <a href={ `mailto:${getMessage(messages, 'email')}` } className='u-link-color-p u-text-underline'
-          itemProp='email'><Message message='email' /></a> or calling <Message message='phone_local' />.
+          touch by emailing <Href to='email' className='u-link-color-p u-text-underline'
+          itemProp='email' /> or calling <Message message='phone_local' />.
 
           // FCA requirement. Do not remove.
           Customers can also find more details about our transaction structure

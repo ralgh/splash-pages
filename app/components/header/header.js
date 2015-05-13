@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from '../link/link';
+import Href from '../href/href';
 import Message from '../message/message';
 import LinkExists from '../link-exists/link-exists';
 import Logo from '../../icons/logo/logo';
@@ -117,9 +118,8 @@ class Header extends React.Component {
                      </LinkExists>
                     </li>
                     <li className='u-text-semi'>
-                      <a href='https://gocardless.com/guides' id='track-nav-guides' className='u-padding-Vxs u-padding-Hm u-block'>
-                        <Message message='guides.nav_title' />
-                      </a>
+                      <Href to='guides.path' id='track-nav-guides' className='u-padding-Vxs u-padding-Hm u-block'
+                        message='guides.nav_title' />
                     </li>
                     <li className='u-text-semi'>
                       <a href='http://help.gocardless.com' id='track-nav-help' className='u-padding-Vxs u-padding-Hm u-block'>

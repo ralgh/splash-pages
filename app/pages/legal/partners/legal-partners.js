@@ -1,19 +1,12 @@
 import React from 'react';
 import LegalPage from '../legal-page';
-import Message from '../../../components/message/message';
-import { getMessage } from '../../../components/intl/intl';
+import Href from '../../../components/href/href';
 import Link from '../../../components/link/link';
 
 export default class LegalPartners extends React.Component {
   displayName = 'LegalPartners'
 
-  static contextTypes = {
-    messages: React.PropTypes.object.isRequired,
-  }
-
   render() {
-    const { messages } = this.context;
-
     return (
       <LegalPage>
         <h2 className='u-text-heading-light u-text-m u-color-heading'>Partner agreement</h2>
@@ -147,8 +140,8 @@ export default class LegalPartners extends React.Component {
           customers which may appear to be fraudulent, or connected with some other type
           of illegal activity, such as money laundering or terrorist financing. We ask that
           you notify us of any such suspicions or concerns that these types of issues may
-          affect any payments made through your system by email to <a href={ `mailto:${getMessage(messages, 'email')}` }
-          className='u-link-color-p u-text-underline' itemProp='email'><Message message='email' /></a> or by
+          affect any payments made through your system by email to <Href to='email'
+          className='u-link-color-p u-text-underline' itemProp='email' /> or by
           phone using the contact details provided on the GoCardless website.
         </p>
         <p className='para'>

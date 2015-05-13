@@ -22,6 +22,10 @@ const serverOptions = {
   publicPath: config.output.publicPath,
   proxy: {
     '/api*': 'http://gocardless.dev:3000',
+    '/users/sign_in': 'http://gocardless.dev:3000',
+    '/merchants/new': 'http://gocardless.dev:3000',
+    '/web/mock*': 'http://gocardless.dev:3000',
+    '/connect*': 'http://gocardless.dev:3000',
     '/guides*': 'http://localhost:4001',
     '/fr/guides*': 'http://localhost:4001',
     '/direct-debit*': 'http://localhost:4001',

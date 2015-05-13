@@ -1,5 +1,6 @@
 import React from 'react';
 import Translation from '../../../../components/translation/translation';
+import Href from '../../../../components/href/href';
 
 export default class FaqMerchantsDirectDebitFr extends React.Component {
   displayName = 'FaqMerchantsDirectDebitFr'
@@ -18,8 +19,8 @@ export default class FaqMerchantsDirectDebitFr extends React.Component {
           target='_blank' className='u-link-color-p u-text-underline'>la zone SEPA</a>.
         </p>
         <p className='para'>
-          Vous pouvez en apprendre plus grâce à <a href='/fr/guides/sepa'
-          className='u-link-color-p u-text-underline'>notre guide SEPA.</a>.
+          Vous pouvez en apprendre plus grâce à <Href to='guides.path'
+          className='u-link-color-p u-text-underline'>notre guide SEPA.</Href>.
         </p>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>

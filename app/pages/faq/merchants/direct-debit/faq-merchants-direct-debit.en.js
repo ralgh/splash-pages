@@ -12,7 +12,7 @@ export default class FaqMerchantsDirectDebitEn extends React.Component {
           What is the Direct Debit Guarantee?
         </h3>
         <p className='para'>
-          <a href='https://gocardless.com/direct-debit/guarantee/'
+          <a href='/direct-debit/guarantee/'
           className='u-link-color-p u-text-underline'>The Direct Debit Guarantee</a> offers protection to customers paying by
           Direct Debit in the rare event that there is an error in a payment.
         </p>
@@ -74,7 +74,7 @@ export default class FaqMerchantsDirectDebitEn extends React.Component {
           Can I easily change Direct Debit provider?
         </h3>
         <p className='para'>
-          Yes - the <a href='https://gocardless.com/direct-debit/transferring/'
+          Yes - the <a href='/direct-debit/transferring/'
           className='u-link-color-p u-text-underline'>Direct Debit bulk change</a> process allows you to
           move Direct Debits between providers easily.
         </p>
