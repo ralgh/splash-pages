@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import includes from 'lodash/collection/includes';
 import React from 'react';
 import Immutable from 'immutable';
 import { Route, DefaultRoute, NotFoundRoute } from 'react-router';
@@ -29,7 +29,7 @@ function validatePages(pages) {
 }
 
 function validateLocale(locale, availableLocales) {
-  if (!_.includes(availableLocales, locale)) {
+  if (!includes(availableLocales, locale)) {
     throw new TypeError(`Locale not allowed: ${locale} [${availableLocales.join(', ')}]`);
   }
 }

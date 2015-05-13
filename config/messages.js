@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import merge from 'lodash/object/merge';
 import fs from 'fs';
 import path from 'path';
 
@@ -30,6 +30,6 @@ availableLocales.concat(availableLanguages).map(function(locale) {
 
 export default availableLocales.reduce(function(locales, locale) {
   var lang = langFromLocale(locale);
-  locales[locale] = _.merge({}, langLocales[lang], langLocales[locale]);
+  locales[locale] = merge({}, langLocales[lang], langLocales[locale]);
   return locales;
 }, {});

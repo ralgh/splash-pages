@@ -1,8 +1,10 @@
-import _ from 'lodash';
+import isString from 'lodash/lang/isString';
+import isPlainObject from 'lodash/lang/isPlainObject';
+import isEmpty from 'lodash/lang/isEmpty';
 
 export function getMessage(messages, path) {
-  if (!_.isString(path)) { throw new TypeError(`Path must be a string`); }
-  if (!_.isPlainObject(messages) || _.isEmpty(messages)) {
+  if (!isString(path)) { throw new TypeError(`Path must be a string`); }
+  if (!isPlainObject(messages) || isEmpty(messages)) {
     throw new TypeError(`Messages must an object`);
   }
 

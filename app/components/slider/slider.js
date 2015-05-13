@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import assign from 'lodash/object/assign';
 import React from 'react';
 
 export default class Slider extends React.Component {
@@ -36,10 +36,10 @@ export default class Slider extends React.Component {
 
   render() {
     const children = this.props.children[this.state.activeIndex];
-    const prev = React.cloneElement(this.props.prev, _.extend({}, this.props.prev.props, {
+    const prev = React.cloneElement(this.props.prev, assign({}, this.props.prev.props, {
       onClick: this.handlePrevClick,
     }));
-    const next = React.cloneElement(this.props.next, _.extend({}, this.props.next.props, {
+    const next = React.cloneElement(this.props.next, assign({}, this.props.next.props, {
       onClick: this.handleNextClick,
     }));
     const index = this.state.activeIndex;

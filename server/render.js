@@ -2,7 +2,10 @@ import path from 'path';
 import fs from 'fs';
 import url from 'url';
 
-import _ from 'lodash';
+import assign from 'lodash/object/assign';
+import cloneDeep from 'lodash/lang/cloneDeep';
+import result from 'lodash/object/result';
+import findLast from 'lodash/collection/findLast';
 import React from 'react';
 import Router from 'react-router';
 import { pathToLocale } from '../app/helpers/locale-helper/locale-helper';
@@ -34,10 +37,10 @@ export function render(req, res, next) {
   const reqPath = url.parse(reqUrl).path;
   const reqLocale = pathToLocale(reqPath, availableLocales);
   const routes = getRoutes(reqLocale.normalized, availableLocales);
-  const messages = _.cloneDeep(localeMessages[reqLocale.normalized]);
+  const messages = cloneDeep(localeMessages[reqLocale.normalized]);
 
   function appProps(props) {
-    return _.extend({
+    return assign({
       locales: reqLocale.normalized,
       language: reqLocale.language,
       messages: messages,
@@ -60,7 +63,7 @@ export function render(req, res, next) {
   });
 
   router.run(function(Handler, state) {
-    const routeName = _.result(_.findLast(state.routes.slice(), 'name'), 'name');
+    const routeName = result(findLast(state.routes.slice(), 'name'), 'name');
     const stateProps = {
       routeName: routeName || 'not_found',
     };
