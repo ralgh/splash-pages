@@ -43,7 +43,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <RouteHandler key={this.props.routeName} {...this.props} />
+      <RouteHandler {...this.props} />
     );
   }
 }

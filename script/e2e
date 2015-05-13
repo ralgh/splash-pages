@@ -12,7 +12,7 @@ fi
 
 set -e errexit
 
-./script/build-prod
+ANIMATIONS_DISABLED=true ./script/build-prod
 
 ./node_modules/.bin/serve -p $PORT dist/ &>.e2e_server_log &
 SERVER_PID=$!

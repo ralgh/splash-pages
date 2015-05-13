@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import TransitionGroup from 'react/lib/ReactCSSTransitionGroup';
+import CSSTransitionGroup from '../css-transition-group/css-transition-group';
 
 export default class Popover extends React.Component {
   displayName = 'Popover'
@@ -81,15 +81,16 @@ export default class Popover extends React.Component {
         <span onClick={this.handleClick}>
           {this.props.toggle}
         </span>
-        <TransitionGroup transitionName='popoverShow'>
-          <div {...this.props} key={'active-' + this.state.isActive} className={classNames(this.props.className, classes)}
-            onKeyDown={this.handleKeyDown}
-            style={style}
-            tabIndex='-1'
-            ref='popoverContent'>
+        <CSSTransitionGroup transitionName='popover-show'>
+          <div {...this.props} key={'active-' + this.state.isActive}
+          className={classNames(this.props.className, classes)}
+          onKeyDown={this.handleKeyDown}
+          style={style}
+          tabIndex='-1'
+          ref='popoverContent'>
             {this.props.children}
           </div>
-        </TransitionGroup>
+        </CSSTransitionGroup>
       </span>
     );
   }
