@@ -100,7 +100,7 @@ class Header extends React.Component {
                 </LinkExists>
               </div>
               <div className='nav__item u-relative'>
-                <Popover className='popover--large' toggle={
+                <Popover toggle={
                   (<a href='#' id='track-nav-more' className={linkClass}>
                     <div className={classNames('nav__item-link popover-link', {
                       'popover-link--invert': isInverted,

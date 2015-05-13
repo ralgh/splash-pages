@@ -28,16 +28,6 @@
   margin-left: -130px;
 }
 
-.popover.ng-hide-remove {
-  animation: fadeUp 100ms cubic-bezier(.55,0,.1,1);
-}
-
-.popover.ng-hide-add {
-  // stop `display: none;` above from overriding the hide animation
-  display: block !important;
-  animation: fadeUp 100ms cubic-bezier(.55,0,.1,1) reverse;
-}
-
 // CSS triangle AND shadow
 .popover:after, .popover:before {
   position: absolute;
@@ -79,10 +69,10 @@
 }
 
 .popover--country-select {
-  bottom: 100%;
-  margin-bottom: 26px;
+  bottom: 0;
+  margin-bottom: 44px;
   width: 230px;
-  margin-left: -164px;
+  left: -162px;
 }
 
 .popover--country-select:after, .popover--country-select:before {
@@ -90,32 +80,43 @@
   border-color: transparent;
 }
 
-// CSS triangle (aka nipple)
-.popover--country-select:after {
-  border-top-color: white;
-}
-
-// triangle shadow
 .popover--country-select:before {
   border-top-color: rgba(0, 0, 0, 0.1);
   margin-top: 1px;
 }
 
-@keyframes fadeDown {
-  0% {
-    opacity: 0;
-    transform: translateY(25px) scale(0.85);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px) scale(1);
-  }
+.popover--country-select:after {
+  border-top-color: white;
 }
 
-.popover--country-select.ng-hide-remove {
-  animation: fadeDown 100ms cubic-bezier(.55,0,.1,1);
+.popover-show-enter,
+.popover-show-leave {
+  position: absolute;
+  transition: all 100ms cubic-bezier(.55,0,.1,1);
 }
 
-.popover--country-select.ng-hide-add {
-  animation: fadeDown 100ms cubic-bezier(.55,0,.1,1) reverse;
+.popover-show-enter {
+  z-index: 10000;
+}
+
+.popover-show-enter.popover-show-enter-active,
+.popover-show-leave {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.popover-show-enter,
+.popover-show-leave.popover-show-leave-active {
+  transform: translateY(-25px) scale(0.85);
+  opacity: 0;
+}
+
+.popover--country-select.popover-show-enter.popover-show-enter-active,
+.popover--country-select.popover-show-leave {
+  transform: translateY(0) scale(1);
+}
+
+.popover--country-select.popover-show-enter,
+.popover--country-select.popover-show-leave.popover-show-leave-active {
+  transform: translateY(25px) scale(0.85);
 }
