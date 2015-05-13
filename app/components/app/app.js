@@ -1,7 +1,31 @@
 import React from 'react';
-import {PropTypes} from '../../helpers/prop-types/prop-types';
-import {RouteHandler} from 'react-router';
+import { PropTypes } from '../../helpers/prop-types/prop-types';
+import { getMessage } from '../intl/intl';
+import { RouteHandler } from 'react-router';
 import getSiteTitle from '../get-site-title/get-site-title';
+
+function setTitle(props) {
+  document.title = getSiteTitle(props);
+}
+
+function setMetaDescription({ messages, routeName }) {
+  const message = getMessage(messages, `${routeName}.description`);
+  const element = document.querySelector('meta[name=description]');
+
+  if (element) {
+    element.setAttribute('content', message);
+  }
+}
+
+function setCanonicalHref(props) {
+  const { config, pathname } = props;
+  const href = config.siteRoot + pathname;
+  const element = document.querySelector('link[rel="canonical"]');
+
+  if (element) {
+    element.setAttribute('href', href);
+  }
+}
 
 class App extends React.Component {
   displayName = 'App'
@@ -27,7 +51,9 @@ class App extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    document.title = getSiteTitle(newProps);
+    setTitle(newProps);
+    setMetaDescription(newProps);
+    setCanonicalHref(newProps);
   }
 
   getChildContext() {
