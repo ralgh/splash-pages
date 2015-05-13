@@ -1,5 +1,6 @@
 import React from 'react';
-import _ from 'lodash';
+import sortBy from 'lodash/collection/sortBy';
+import merge from 'lodash/object/merge';
 import Link from '../link/link';
 import Message from '../message/message';
 import LinkExists from '../link-exists/link-exists';
@@ -20,7 +21,7 @@ function buildAvailableLocales(currentLocale, siteLocales, messages) {
     return {locale, isActive, path, name};
   });
 
-  return _.sortBy(availableLocales, 'name');
+  return sortBy(availableLocales, 'name');
 }
 
 class Footer extends React.Component {
@@ -36,7 +37,7 @@ class Footer extends React.Component {
   render() {
     const { routeName, locales, messages, config } = this.context;
 
-    const siteLocales = _.merge({}, getLocalesForRouteName(homeRoute), getLocalesForRouteName(routeName));
+    const siteLocales = merge({}, getLocalesForRouteName(homeRoute), getLocalesForRouteName(routeName));
     const availableLocales = buildAvailableLocales(locales, siteLocales, messages);
     const region = localeToRegion(locales);
 

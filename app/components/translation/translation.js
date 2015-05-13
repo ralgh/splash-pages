@@ -1,4 +1,5 @@
-import _ from 'lodash';
+import flatten from 'lodash/array/flatten';
+import any from 'lodash/collection/any';
 import React from 'react';
 import {PropTypes} from '../../helpers/prop-types/prop-types';
 
@@ -15,9 +16,9 @@ export default class Translation extends React.Component {
   }
 
   render() {
-    const locales = _.flatten([this.props.locales]);
+    const locales = flatten([this.props.locales]);
     const currentLocale = this.context.locales;
-    const hasLocale = _.any(locales, function(localeToCheck) {
+    const hasLocale = any(locales, function(localeToCheck) {
       if (localeToCheck.indexOf('-') === -1) {
         return currentLocale.indexOf(localeToCheck + '-') === 0;
       }

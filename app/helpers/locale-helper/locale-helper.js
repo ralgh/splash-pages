@@ -1,10 +1,11 @@
 import locale from 'locale';
-import _ from 'lodash';
+import cloneDeep from 'lodash/lang/cloneDeep';
+import includes from 'lodash/collection/includes';
 
 export const defaultLocale = 'en-GB';
 
 function normalizeLocale(localeData) {
-  const normalizedLocale = _.cloneDeep(localeData);
+  const normalizedLocale = cloneDeep(localeData);
   normalizedLocale.normalized = (normalizedLocale.normalized || '').replace('_', '-');
   return normalizedLocale;
 }
@@ -13,7 +14,7 @@ export function pathToLocale(path, availableLocales) {
   const pathLocale = (path || '').toLowerCase().match(/^\/([a-z]{2,2}\-[a-z]{2,2})/);
   const foundLocale = new locale.Locale(pathLocale && pathLocale[1]);
   const normalizedLocale = normalizeLocale(foundLocale);
-  if (!_.includes(availableLocales, normalizedLocale.normalized)) {
+  if (!includes(availableLocales, normalizedLocale.normalized)) {
     return normalizeLocale(new locale.Locale(defaultLocale));
   }
   return normalizedLocale;

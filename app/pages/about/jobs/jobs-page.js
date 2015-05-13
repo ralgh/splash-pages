@@ -1,5 +1,5 @@
 import React from 'react';
-import _ from 'lodash';
+import rest from 'lodash/array/rest';
 import { filterRouteByCategory } from '../../../router/route-helpers';
 import Message from '../../../components/message/message';
 import Link from '../../../components/link/link';
@@ -23,7 +23,7 @@ export default class JobsPage extends React.Component {
     const pages = filterRouteByCategory('jobs', locales);
 
     const categories = pages.reduce(function(memo, job) {
-      const category = _.rest(job.routeConfig.category.split('.')).join('.');
+      const category = rest(job.routeConfig.category.split('.')).join('.');
       memo[category] = memo[category] || [];
       memo[category].push(job);
       return memo;

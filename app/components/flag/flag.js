@@ -1,4 +1,5 @@
 import React from 'react';
+
 import DEFlagIcon from '../../icons/svg/DE-flag';
 import IEFlagIcon from '../../icons/svg/IE-flag';
 import GBFlagIcon from '../../icons/svg/GB-flag';

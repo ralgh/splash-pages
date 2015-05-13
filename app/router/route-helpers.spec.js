@@ -1,4 +1,6 @@
-import _ from 'lodash';
+import last from 'lodash/array/last';
+import flatten from 'lodash/array/flatten';
+import compact from 'lodash/array/compact';
 import { run, TestLocation } from 'react-router';
 import { getLocalesForRouteName, filterRouteByCategory, getRoutes, getAllPaths } from './route-helpers';
 import NotFound from '../pages/not-found/not-found';
@@ -105,7 +107,7 @@ describe('getRoutes', () => {
       it('without forward slash', (done) => {
         const location = new TestLocation(['/english-only']);
         run(routeComponent, location, function(Handler, state) {
-          expect(_.last(state.routes).name).toEqual('englishOnlyRoute');
+          expect(last(state.routes).name).toEqual('englishOnlyRoute');
           done();
         });
       });
@@ -113,7 +115,7 @@ describe('getRoutes', () => {
       it('with forward slash', (done) => {
         const location = new TestLocation(['/english-only/']);
         run(routeComponent, location, function(Handler, state) {
-          expect(_.last(state.routes).name).toEqual('englishOnlyRoute');
+          expect(last(state.routes).name).toEqual('englishOnlyRoute');
           done();
         });
       });
@@ -122,7 +124,7 @@ describe('getRoutes', () => {
     it('correctly includes child routes for the given locale', (done) => {
       run(routeComponent, function({ routes }) {
         const route = routes[0];
-        const childChildRoutePaths = _.flatten(_.compact(route.childRoutes.map(c => c.childRoutes))).map((c) => c.path);
+        const childChildRoutePaths = flatten(compact(route.childRoutes.map(c => c.childRoutes))).map((c) => c.path);
 
         expect(childChildRoutePaths).toEqual(['/child-route/?']);
 
