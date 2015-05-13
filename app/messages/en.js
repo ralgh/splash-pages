@@ -60,7 +60,7 @@ export default {
   pricing: {
     title: 'Pricing',
     nav_title: 'Pricing',
-    cost_cap: '2£',
+    cost_cap: '£2',
     description: 'Collect Direct Debit payments online with fees of just 1%, capped at £2. Scale pricing is available for larger organisations.',
     pro_cost_per_transaction: '1p - 60p',
     per_transaction_amount_normal: '1%',
