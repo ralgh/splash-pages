@@ -1,19 +1,12 @@
 import React from 'react';
 import LegalPage from '../legal-page';
-import Message from '../../../components/message/message';
-import { getMessage } from '../../../components/intl/intl';
 import Link from '../../../components/link/link';
+import Href from '../../../components/href/href';
 
 export default class LegalCustomers extends React.Component {
   displayName = 'LegalCustomers'
 
-  static contextTypes = {
-    messages: React.PropTypes.object.isRequired,
-  }
-
   render() {
-    const { messages } = this.context;
-
     return (
       <LegalPage>
         <h2 className='u-text-heading-light u-text-m u-color-heading'>Customer agreement</h2>
@@ -179,14 +172,14 @@ export default class LegalCustomers extends React.Component {
         </h3>
         <p className='para'>
           Upon becoming aware of any unauthorised or incorrectly executed payment transaction from your
-          GoCardless account, you must notify us by email to <a href={ `mailto:${getMessage(messages, 'email')}` }
-          className='u-link-color-p u-text-underline' itemProp='email'><Message message='email' /></a> or by phone
+          GoCardless account, you must notify us by email to <Href to='email'
+          className='u-link-color-p u-text-underline' itemProp='email' /> or by phone
           using the contact details provided on the GoCardless website.
         </p>
         <p className='para'>
           In relation to unauthorised payment transactions, you must contact us without undue delay by email
-          to <a href={ `mailto:${getMessage(messages, 'email')}` } className='u-link-color-p u-text-underline'
-          itemProp='email'><Message message='email' /></a> or by phone using the contact details provided on
+          to <Href to='email' className='u-link-color-p u-text-underline'
+          itemProp='email' /> or by phone using the contact details provided on
           the GoCardless website and in any event no later than 13 months after the date of the relevant payment
           transaction from your account. Following any investigations that we may undertake, where you have notified
           us in the above circumstances we will immediately arrange for the refund of the amount of the unauthorised
@@ -255,8 +248,8 @@ export default class LegalCustomers extends React.Component {
         <p className='para'>
           Your account with GoCardless will remain open unless it is terminated by you or us.  Unless there are exceptional circumstances,
           we may close your account after giving you at least two months notice in writing. You may close your account at any time by
-          giving us notice by email to <a href={ `mailto:${getMessage(messages, 'email')}` } className='u-link-color-p u-text-underline'
-          itemProp='email'><Message message='email' /></a>. You will remain liable for all transactions or obligations which are incurred
+          giving us notice by email to <Href to='email' className='u-link-color-p u-text-underline'
+          itemProp='email' />. You will remain liable for all transactions or obligations which are incurred
           before and after termination of your account.
         </p>
 
@@ -312,8 +305,8 @@ export default class LegalCustomers extends React.Component {
         </h3>
         <p className='para'>
           If you have any queries or wish to discuss our services, please contact us in writing or by telephone as set out
-          on the GoCardless website or by email at <a href={ `mailto:${getMessage(messages, 'email')}` }
-          className='u-link-color-p u-text-underline' itemProp='email'><Message message='email' /></a>.
+          on the GoCardless website or by email at <Href to='email'
+          className='u-link-color-p u-text-underline' itemProp='email' />.
         </p>
         <p className='para'>
           We will contact you using the contact details you provided when you signed up to this service, or any updated

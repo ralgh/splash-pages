@@ -3,6 +3,7 @@ import Translation from '../../components/translation/translation';
 import CustomerIcon from '../../icons/svg/customer';
 import AddPartnerIcon from '../../icons/svg/add-partner';
 import Link from '../../components/link/link';
+import Href from '../../components/href/href';
 import PartnersLink from './partners-link';
 
 export default class PartnersEn extends React.Component {
@@ -104,7 +105,7 @@ export default class PartnersEn extends React.Component {
               </h2>
               <p className='u-text-s u-color-p u-margin-Vxs'>
                 Expand your business by integrating with GoCardless today. <br />
-                For more information, email us at <a href='mailto:help@gocardless.com'>help@gocardless.com</a>
+                For more information, email us at <Href to='email' />
               </p>
             </div>
           </div>

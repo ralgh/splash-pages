@@ -1,5 +1,6 @@
 import React from 'react';
 import Translation from '../../../../components/translation/translation';
+import Href from '../../../../components/href/href';
 
 export default class FaqMerchantsDeveloperApiFr extends React.Component {
   displayName = 'FaqMerchantsDeveloperApiFr'
@@ -66,7 +67,7 @@ export default class FaqMerchantsDeveloperApiFr extends React.Component {
           Comment recevoir de l’aide technique ?
         </h3>
         <p className='para'>
-          Vous pouvez nous envoyer un email à france@gocardless.com. Nous avons aussi und salle de chat qui est
+          Vous pouvez nous envoyer un email à <Href to='email' />. Nous avons aussi und salle de chat qui est
           accessible à <a href='http://webchat.freenode.net/?channels=gocardless&uio=OT10cnVlJjExPTIzNiYxMj10cnVl51' target='_blank'
           className='u-link-color-p u-text-underline'>#gocardless sur irc.freenode.net</a>. Nos développeurs sont disponible de
           10h-19h du Lundi au Vendredi pour vous assister.

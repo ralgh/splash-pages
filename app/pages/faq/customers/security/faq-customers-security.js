@@ -1,18 +1,12 @@
 import React from 'react';
 import FaqCustomersPage from '../faq-customers-page';
 import Message from '../../../../components/message/message';
-import { getMessage } from '../../../../components/intl/intl';
+import Href from '../../../../components/href/href';
 
 export default class FaqCustomersSecurity extends React.Component {
   displayName = 'FaqCustomersSecurity'
 
-  static contextTypes = {
-    messages: React.PropTypes.object.isRequired,
-  }
-
   render() {
-    const { messages } = this.context;
-
     return (
       <FaqCustomersPage>
         <h2 className='u-text-heading-light u-text-m u-color-heading'>Security</h2>
@@ -32,13 +26,12 @@ export default class FaqCustomersSecurity extends React.Component {
         </h3>
         <p className='para'>
           Let us know immediately by emailing&nbsp;
-          <a href={ `mailto:${getMessage(messages, 'email')}` } className='u-link-color-p u-text-underline' itemProp='email'>
-            <Message message='email' />
-          </a> or calling <Message message='phone_local' />.
+          <Href to='email' className='u-link-color-p u-text-underline' itemProp='email' /> or
+          calling <Message message='phone_local' />.
         </p>
         <p className='para'>
           We can investigate the matter further and arrange for a full refund under the&nbsp;
-          <a href='https://gocardless.com/direct-debit/guarantee/' className='u-link-color-p u-text-underline'>Direct Debit Guarantee</a>.
+          <a href='/direct-debit/guarantee/' className='u-link-color-p u-text-underline'>Direct Debit Guarantee</a>.
         </p>
       </FaqCustomersPage>
     );

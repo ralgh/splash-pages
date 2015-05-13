@@ -72,6 +72,7 @@ export default {
   faq_merchants: {
     title: 'FAQ Commerçants',
     nav_title: 'En bref',
+    footer_title: 'FAQ',
     description: '',
   },
   faq_merchants_customer_experience: {
@@ -183,6 +184,7 @@ export default {
   partners: {
     title: 'Applications partenaires et intégrations logiciels',
     nav_title: 'Devenez nos partenaires',
+    footer_title: 'Partenaires',
     description: 'Devenez partenaires de GoCardless et laisse vos utilisateurs collecter des paiements par prélèvement SEPA dans votre plateforme.',
     explainer: 'Offrez GoCardless à vos clients',
   },

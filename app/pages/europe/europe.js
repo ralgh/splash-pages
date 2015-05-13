@@ -57,7 +57,7 @@ export default class Europe extends React.Component {
                 </a>
               </div>
               <div className='grid__cell u-size-1of3 u-text-center'>
-                <a href='https://gocardless.com/guides/sepa'
+                <a href='/guides/sepa'
                 className='u-color-primary u-text-upcase u-text-xxs u-text-heading u-text-semi'>
                   A SEPA user guide
                 </a>

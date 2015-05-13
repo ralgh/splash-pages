@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from '../../../../components/link/link';
 import Translation from '../../../../components/translation/translation';
+import Href from '../../../../components/href/href';
 
 export default class FaqMerchantsPartnersFr extends React.Component {
   displayName = 'FaqMerchantsPartnersFr'
@@ -33,8 +34,8 @@ export default class FaqMerchantsPartnersFr extends React.Component {
           Comment devenir un partenaire ?
         </h3>
         <p className='para'>
-          Contactez nous à <a href='mailto:france@gocardless.com'
-          className='u-link-color-p u-text-underline'>france@gocardless.com</a> avec une brève description
+          Contactez nous à <Href to='email'
+          className='u-link-color-p u-text-underline' /> avec une brève description
           de votre service, et nous vous répondrons au plus tôt.
         </p>
 

@@ -2,8 +2,10 @@ import React from 'react';
 import sortBy from 'lodash/collection/sortBy';
 import merge from 'lodash/object/merge';
 import Link from '../link/link';
+import Href from '../href/href';
 import Message from '../message/message';
 import LinkExists from '../link-exists/link-exists';
+import SchemaItemProp from '../schema-item-prop/schema-item-prop';
 import { homeRoute } from '../../router/routes';
 import { getLocalesForRouteName } from '../../router/route-helpers';
 import { getMessage } from '../intl/intl';
@@ -61,7 +63,7 @@ class Footer extends React.Component {
                 </LinkExists>
                 <LinkExists to='partners'>
                   <li>
-                    <Link to='partners' message='partners.nav_title'
+                    <Link to='partners' message='partners.footer_title'
                       id='track-footer-partners' className='u-link-invert' />
                   </li>
                 </LinkExists>
@@ -78,9 +80,7 @@ class Footer extends React.Component {
                   </li>
                 </LinkExists>
                 <li>
-                  <a href='/guides' id='track-footer-guides' className='u-link-invert'>
-                    <Message message='guides.nav_title' />
-                  </a>
+                  <Href to='guides.path' id='track-footer-guides' className='u-link-invert' message='guides.nav_title' />
                 </li>
               </div>
               <div className='grid__cell u-size-1of3 u-text-xxs'>
@@ -91,7 +91,7 @@ class Footer extends React.Component {
                 </li>
                 <LinkExists to='faq_merchants'>
                   <li>
-                    <Link to='faq_merchants' message='faq_merchants.nav_title'
+                    <Link to='faq_merchants' message='faq_merchants.footer_title'
                       id='track-footer-faq' className='u-link-clean u-link-invert' />
                   </li>
                 </LinkExists>
@@ -149,22 +149,16 @@ class Footer extends React.Component {
           <div className='grid__cell u-size-1of2'>
             <div className='u-size-2of3 u-pull-end'>
               <p className='u-text-heading u-text-xxs u-color-invert u-margin-Bm' itemScope itemType='http://schema.org/Organization'>
-                <span itemProp='name'>GoCardless Ltd.</span>&nbsp;
-                <meta itemProp='url' content={config.siteRoot} />
-                <span itemProp='address' itemScope itemType='http://schema.org/PostalAddress'>
-                  <span itemProp='streetAddress'><Message message='postal_address.street_address' /></span>,&nbsp;
-                  <span itemProp='addressLocality'><Message message='postal_address.address_locality' /></span>,&nbsp;
-                  <span itemProp='postalCode'><Message message='postal_address.postal_code' /></span>,&nbsp;
-                  <span itemProp='addressCountry' content={getMessage(messages, 'postal_address.address_country_iso')}>
-                    <Message message='postal_address.address_country_iso' />
-                  </span>
-                </span><br />
-                <span itemProp='telephone' content={getMessage(messages, 'phone_full')}>
-                  <Message message='phone_full' />
-                </span>,&nbsp;
-                <a href={ `mailto:${getMessage(messages, 'email')}` } className='u-link-invert' itemProp='email'>
-                  <Message message='email' />
-                </a>
+                <SchemaItemProp itemProp='name' content='GoCardless Ltd.' />&nbsp;
+                <SchemaItemProp itemProp='url' tagName='meta' content={config.siteRoot} />
+                <SchemaItemProp itemProp='address' itemScope='itemScope' itemType='http://schema.org/PostalAddress'>
+                  <SchemaItemProp itemProp='streetAddress' message='postal_address.street_address' />,&nbsp;
+                  <SchemaItemProp itemProp='addressLocality' message='postal_address.address_locality' />,&nbsp;
+                  <SchemaItemProp itemProp='postalCode' message='postal_address.postal_code' />,&nbsp;
+                  <SchemaItemProp itemProp='addressCountry' message='postal_address.address_country_iso' />
+                </SchemaItemProp><br />
+                <SchemaItemProp itemProp='telephone' message='phone_full' />,&nbsp;
+                <Href to='email' className='u-link-invert' itemProp='email' />
               </p>
               <p className='u-text-heading u-text-xxs u-color-invert'>
                 <Message message='footer.description' />

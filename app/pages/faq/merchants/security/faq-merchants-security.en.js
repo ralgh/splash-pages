@@ -49,7 +49,7 @@ export default class FaqMerchantsSecurityEn extends React.Component {
           Is it safe for my customers?
         </h3>
         <p className='para'>
-          Your customers are fully protected by the <a href='https://gocardless.com/direct-debit/guarantee/'
+          Your customers are fully protected by the <a href='/direct-debit/guarantee/'
           className='u-link-color-p u-text-underline'>Direct Debit Guarantee</a>.
         </p>
         <p className='para'>

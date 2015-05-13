@@ -1,5 +1,7 @@
 import React from 'react';
 import Translation from '../../../components/translation/translation';
+import Href from '../../../components/href/href';
+import Message from '../../../components/message/message';
 
 export default class LegalIntroductionFr extends React.Component {
   displayName = 'LegalIntroductionFr'
@@ -23,8 +25,7 @@ export default class LegalIntroductionFr extends React.Component {
             TVA non applicable.
           </p>
           <p className='para'>
-            Téléphone : +33 (0) 9 75 18 42 95 et email : <a href='mailto:france@gocardless.com'
-            className='u-link-color-p u-text-underline'>france@gocardless.com</a>
+            Téléphone : <Message message='phone_full' /> et email : <Href to='email' className='u-link-color-p u-text-underline' />
           </p>
           <p className='para'>
             Les directeurs de la publication sont : Matt Robinson et Hiroki Takeuchi.

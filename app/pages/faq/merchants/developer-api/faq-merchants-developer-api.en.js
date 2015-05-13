@@ -1,18 +1,11 @@
 import React from 'react';
-import Message from '../../../../components/message/message';
 import Translation from '../../../../components/translation/translation';
-import { getMessage } from '../../../../components/intl/intl';
+import Href from '../../../../components/href/href';
 
 export default class FaqMerchantsDeveloperApiEn extends React.Component {
   displayName = 'FaqMerchantsDeveloperApiEn'
 
-  static contextTypes = {
-    messages: React.PropTypes.object.isRequired,
-  }
-
   render() {
-    const { messages } = this.context;
-
     return (
       <Translation locales='en'>
         <h2 className='u-text-heading-light u-text-m u-color-heading'>Developer API</h2>
@@ -123,8 +116,8 @@ export default class FaqMerchantsDeveloperApiEn extends React.Component {
           Where can I get technical support?
         </h3>
         <p className='para'>
-          You can email us at <a href={ `mailto:${getMessage(messages, 'email')}` } className='u-link-color-p u-text-underline'
-          itemProp='email'><Message message='email' /></a>. We also have a live chat room which can be found
+          You can email us at <Href to='email' className='u-link-color-p u-text-underline'
+          itemProp='email' />. We also have a live chat room which can be found
           in <a href='http://webchat.freenode.net/?channels=gocardless&uio=OT10cnVlJjExPTIzNiYxMj10cnVl51' target='_blank'
           className='u-link-color-p u-text-underline'>#gocardless on irc.freenode.net</a>. Our developers are on hand 9am-6pm,
           Mon-Fri to help with your technical queries.

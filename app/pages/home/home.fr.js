@@ -5,6 +5,7 @@ import RealtimeIcon from '../../icons/svg/realtime';
 import TickSquareIcon from '../../icons/svg/tick-square';
 import Tabs from '../../components/tabs/tabs';
 import Link from '../../components/link/link';
+import Href from '../../components/href/href';
 
 export default class HomeFr extends React.Component {
   displayName = 'HomeFr'
@@ -78,10 +79,10 @@ export default class HomeFr extends React.Component {
               <p className='u-color-heading u-margin-Bxxs'>
                 <strong>Vous voulez en apprendre plus sur le prélèvement SEPA ?</strong>
               </p>
-              <a href='https://gocardless.com/fr/guides/sepa'
+              <Href to='guides.path'
                 className='u-color-primary u-text-upcase u-text-xxs u-text-heading u-text-semi'>
                 Lisez notre guide
-              </a>
+              </Href>
             </div>
           </div>
         </div>

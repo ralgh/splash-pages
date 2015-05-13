@@ -1,19 +1,12 @@
 import React from 'react';
 import LegalPage from '../legal-page';
-import Message from '../../../components/message/message';
-import { getMessage } from '../../../components/intl/intl';
 import Link from '../../../components/link/link';
+import Href from '../../../components/href/href';
 
 export default class LegalMerchants extends React.Component {
   displayName = 'LegalMerchants'
 
-  static contextTypes = {
-    messages: React.PropTypes.object.isRequired,
-  }
-
   render() {
-    const { messages } = this.context;
-
     return (
       <LegalPage>
         <h2 className='u-text-heading-light u-text-m u-color-heading'>Merchant agreement</h2>
@@ -192,9 +185,9 @@ export default class LegalMerchants extends React.Component {
           If for any reason you would like to cancel a payment from GoCardless account to
           you, you can do so at any time until the end of the business day before the day
           agreed to make the payment.  You can cancel by notifying us by email
-          to <a href={ `mailto:${getMessage(messages, 'email')}` }
+          to <Href to='email'
           className='u-link-color-p u-text-underline'
-          itemProp='email'><Message message='email' /></a> or by phone using the contact
+          itemProp='email' /> or by phone using the contact
           details provided on the GoCardless website.
         </p>
 
@@ -267,8 +260,8 @@ export default class LegalMerchants extends React.Component {
         <p className='para'>
           Upon becoming aware of any unauthorised or incorrectly executed payment transaction involving funds
           connected with your use of GoCardless (including any fraudulent payments/attempted payments out of
-          those funds to you or others), you must notify us by email to <a href={ `mailto:${getMessage(messages, 'email')}` }
-          className='u-link-color-p u-text-underline' itemProp='email'><Message message='email' /></a> or by phone
+          those funds to you or others), you must notify us by email to <Href to='email'
+          className='u-link-color-p u-text-underline' itemProp='email' /> or by phone
           using the contact details provided on the GoCardless website.
         </p>
         <p className='para'>
@@ -321,8 +314,8 @@ export default class LegalMerchants extends React.Component {
           Occasionally, even the most cautious suppliers can become aware of acts by customers which may appear to
           be fraudulent, or connected with some other type of illegal activity, such as money laundering or terrorist
           financing. We ask that you notify us of any such suspicions or concerns that these types of issues may affect
-          any payments to you by email to <a href={ `mailto:${getMessage(messages, 'email')}` }
-          className='u-link-color-p u-text-underline' itemProp='email'><Message message='email' /></a> or by phone
+          any payments to you by email to <Href to='email'
+          className='u-link-color-p u-text-underline' itemProp='email' /> or by phone
           using the contact details provided on the GoCardless website.
         </p>
 
@@ -682,8 +675,8 @@ export default class LegalMerchants extends React.Component {
         <p className='para'>
           If you have any queries or wish to discuss our services, please contact us in
           writing or by telephone as set out on the GoCardless website or by email
-          at <a href={ `mailto:${getMessage(messages, 'email')}` } className='u-link-color-p u-text-underline'
-          itemProp='email'><Message message='email' /></a>.
+          at <Href to='email' className='u-link-color-p u-text-underline'
+          itemProp='email' />.
         </p>
         <p className='para'>
           We will contact you using the contact details you provided when you signed up

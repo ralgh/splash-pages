@@ -15,7 +15,7 @@ export default class Designers extends React.Component {
           We're also always looking for talented freelancers to come and work with us,
           so if this sounds interesting but you're not looking for a full-time gig,
           get in touch by
-          emailing <a href='mailto:tomp@gocardless.com'>tomp@gocardless.com</a>.
+          emailing <a href='mailto:tom@gocardless.com'>tom@gocardless.com</a>.
         </p>
         <h4 className='u-text-s u-margin-Bxs u-margin-Tm'>Our work</h4>
         <p className='para'>
@@ -98,7 +98,7 @@ export default class Designers extends React.Component {
         </a>
         <p className='para'>
           If you have any questions before applying, please
-          contact <a href='mailto:tomp@gocardless.com'>tomp@gocardless.com</a>
+          contact <a href='mailto:tom@gocardless.com'>tom@gocardless.com</a>
         </p>
         <p className='para'>
           No recruiters please.

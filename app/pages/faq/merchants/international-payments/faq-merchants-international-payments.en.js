@@ -1,5 +1,6 @@
 import React from 'react';
 import Translation from '../../../../components/translation/translation';
+import Link from '../../../../components/link/link';
 
 export default class FaqMerchantsInternationalPayments extends React.Component {
   displayName = 'FaqMerchantsInternationalPayments'
@@ -46,7 +47,7 @@ export default class FaqMerchantsInternationalPayments extends React.Component {
           Direct Debit in the UK.
         </p>
         <p className='para'>
-          Read more about it in our guide to <a href='https://gocardless.com/guides/sepa/introduction/'
+          Read more about it in our guide to <a href='/guides/sepa/introduction/'
           className='u-link-color-p u-text-underline'>the SEPA Direct Debit scheme</a>.
         </p>
 
@@ -54,8 +55,8 @@ export default class FaqMerchantsInternationalPayments extends React.Component {
           Which currencies does GoCardless support?
         </h3>
         <p className='para'>
-          We support payments in GBP and EUR (with our <a href='/europe'
-            className='u-link-color-p u-text-underline'>SEPA Direct Debit</a> product).
+          We support payments in GBP and EUR (with our <Link to='europe'
+            className='u-link-color-p u-text-underline'>SEPA Direct Debit</Link> product).
         </p>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>

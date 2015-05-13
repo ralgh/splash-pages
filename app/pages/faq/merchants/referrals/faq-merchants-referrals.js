@@ -17,7 +17,7 @@ export default class FaqMerchantsReferrals extends React.Component {
           give you both £50 credit each towards your GoCardless fees.
         </p>
         <p className='para'>
-          Find out more <a href='/refer' className='u-link-color-p u-text-underline'>here</a>.
+          Find out more <Link to='refer' className='u-link-color-p u-text-underline'>here</Link>.
         </p>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
@@ -55,7 +55,7 @@ export default class FaqMerchantsReferrals extends React.Component {
           No. But referrals are most effective when they are relevant.
         </p>
         <p className='para'>
-          Find out more about the best <a href='https://gocardless.com/direct-debit/use-cases/'
+          Find out more about the best <a href='/direct-debit/use-cases/'
           className='u-link-color-p u-text-underline'>Direct Debit use cases</a>.
         </p>
 
