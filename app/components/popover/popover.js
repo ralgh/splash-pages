@@ -77,7 +77,7 @@ export default class Popover extends React.Component {
     };
 
     return (
-      <span>
+      <span className='u-inline-block'>
         <span onClick={this.handleClick}>
           {this.props.toggle}
         </span>
