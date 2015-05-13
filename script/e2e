@@ -24,7 +24,7 @@ while ! echo exit | nc localhost $PORT; do sleep 1; done
 # so we can kill the server process
 set +e errexit
 
-./node_modules/.bin/protractor config/protractor.config.js
+PORT=$PORT ./node_modules/.bin/protractor config/protractor.config.js
 
 PROTRACTOR_EXIT=$?
 

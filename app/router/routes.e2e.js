@@ -1,13 +1,25 @@
-import { get } from '../helpers/e2e/request';
+require('babel/register');
 
-import { getAllPaths } from './routes';
+var request = require('superagent');
 
-describe('Automated E2E tests', () => {
+var BASE_URL = require('../helpers/e2e/config').BASE_URL;
+
+var get = function(url, callback) {
+  request.get(BASE_URL + url)
+         .accept('text/html')
+         .end(callback);
+};
+
+var getAllPaths = require('./route-helpers').getAllPaths;
+
+describe('Automated E2E tests', function() {
   getAllPaths().forEach(function(path) {
-    it(`returns a status 200 for ${path}`, (done) => {
-      get(path).then(({ res }) => {
+    it('returns a status 200 for ' + path, function(done) {
+      get(path, function(err, res) {
+        expect(err).toBe(null);
         expect(res.status).toEqual(200);
-      }).then(done, done.fail);
+        done();
+      });
     });
   });
 });
