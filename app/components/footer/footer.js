@@ -16,7 +16,7 @@ import { localeToRegion } from '../../helpers/locale-helper/locale-helper';
 import { PropTypes } from '../../helpers/prop-types/prop-types';
 import CheckmarkIcon from '../../icons/svg/checkmark';
 
-function buildAvailableLocales(currentLocale, siteLocales, messages) {
+function buildAvailableLocalePages(currentLocale, siteLocales, messages) {
   const availableLocales = Object.keys(siteLocales).map(function(locale) {
     const isActive = currentLocale === locale;
     const path = siteLocales[locale].path;
@@ -31,17 +31,19 @@ class Footer extends React.Component {
   displayName = 'Footer'
 
   static contextTypes = {
-    routeName: React.PropTypes.string.isRequired,
+    routeName: PropTypes.string.isRequired,
     locales: PropTypes.locale,
-    messages: React.PropTypes.object.isRequired,
-    config: React.PropTypes.object.isRequired,
+    messages: PropTypes.object.isRequired,
+    config: PropTypes.object.isRequired,
+    availableLocales: PropTypes.array.isRequired,
   }
 
   render() {
-    const { routeName, locales, messages, config } = this.context;
+    const { routeName, locales, messages, config, availableLocales } = this.context;
 
-    const siteLocales = merge({}, getLocalesForRouteName(homeRoute), getLocalesForRouteName(routeName));
-    const availableLocales = buildAvailableLocales(locales, siteLocales, messages);
+    const siteLocales = merge({}, getLocalesForRouteName(homeRoute, availableLocales),
+      getLocalesForRouteName(routeName, availableLocales));
+    const availableLocalePages = buildAvailableLocalePages(locales, siteLocales, messages);
     const region = localeToRegion(locales);
 
     return (
@@ -195,22 +197,22 @@ class Footer extends React.Component {
                 }>
                 <ul className='u-text-xxs u-text-start u-padding-Vxs'>
                   {
-                    availableLocales.map(function(locale) {
+                    availableLocalePages.map(function(localePage) {
                       return (
-                        <li className='u-text-semi' key={locale.name}>
+                        <li className='u-text-semi' key={localePage.name}>
                           {
-                            locale.isActive && (
+                            localePage.isActive && (
                               <span className='u-padding-Vxs u-padding-Hm u-block'>
-                                <Flag viewBox="0 0 640 480" country={localeToRegion(locale.locale)}
-                                className='flag-icon--popover u-margin-Rs' alt={ locale.name } />
-                                <span className='country-select-label u-color-p'>{ locale.name }</span>
+                                <Flag viewBox="0 0 640 480" country={localeToRegion(localePage.locale)}
+                                className='flag-icon--popover u-margin-Rs' alt={ localePage.name } />
+                                <span className='country-select-label u-color-p'>{ localePage.name }</span>
                                 <CheckmarkIcon className='u-fill-dark-green u-margin-Ls u-pull-end u-inline checkmark-icon' alt='✓' />
                               </span>
                             ) || (
-                              <a className='u-padding-Vxs u-padding-Hm u-block' href={ locale.path }>
-                                <Flag viewBox="0 0 640 480" country={localeToRegion(locale.locale)}
-                                className='flag-icon--popover u-margin-Rs' alt={ locale.name } />
-                                <span className='country-select-label'>{ locale.name }</span>
+                              <a className='u-padding-Vxs u-padding-Hm u-block' href={ localePage.path }>
+                                <Flag viewBox="0 0 640 480" country={localeToRegion(localePage.locale)}
+                                className='flag-icon--popover u-margin-Rs' alt={ localePage.name } />
+                                <span className='country-select-label'>{ localePage.name }</span>
                               </a>
                             )
                           }

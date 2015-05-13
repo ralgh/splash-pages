@@ -10,10 +10,11 @@ var get = function(url, callback) {
          .end(callback);
 };
 
+var availableLocales = require('../../config/available-locales');
 var getAllPaths = require('./route-helpers').getAllPaths;
 
 describe('Automated E2E tests', function() {
-  getAllPaths().forEach(function(path) {
+  getAllPaths(availableLocales).forEach(function(path) {
     it('returns a status 200 for ' + path, function(done) {
       get(path, function(err, res) {
         expect(err).toBe(null);

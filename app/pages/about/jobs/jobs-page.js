@@ -11,16 +11,17 @@ export default class JobsPage extends React.Component {
   displayName = 'JobsPage'
 
   static propTypes = {
-    children: React.PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
   }
 
   static contextTypes = {
     locales: PropTypes.locale,
+    availableLocales: PropTypes.array.isRequired,
   }
 
   render() {
-    const {locales} = this.context;
-    const pages = filterRouteByCategory('jobs', locales);
+    const { locales, availableLocales } = this.context;
+    const pages = filterRouteByCategory('jobs', locales, availableLocales);
 
     const categories = pages.reduce(function(memo, job) {
       const category = rest(job.routeConfig.category.split('.')).join('.');

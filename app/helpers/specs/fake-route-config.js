@@ -37,4 +37,10 @@ export const fakeConfig = Immutable.fromJS([
       ],
     ],
   ],
+  [
+    FakeComponent, { name: 'allEnAndFr' }, {
+      en: { path: '/all-en' },
+      fr: { path: '/all-fr' },
+    },
+  ],
 ]);

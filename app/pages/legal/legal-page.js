@@ -9,16 +9,17 @@ export default class LegalPage extends React.Component {
   displayName = 'LegalPage';
 
   static propTypes = {
-    children: React.PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
   };
 
   static contextTypes = {
     locales: PropTypes.locale,
+    availableLocales: PropTypes.array.isRequired,
   }
 
   render() {
-    const {locales} = this.context;
-    const pages = filterRouteByCategory('legal', locales);
+    const { locales, availableLocales } = this.context;
+    const pages = filterRouteByCategory('legal', locales, availableLocales);
 
 
     const legalNav = pages.map(function(page) {
