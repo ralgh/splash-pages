@@ -196,8 +196,46 @@ export default {
     description: 'Stories',
   },
   legal: {
-    title: 'Terms of Service',
-    nav_title: 'Legal',
+    title: 'Our terms of service',
+    nav_title: 'Introduction',
+    description: 'Legal',
+    sidebar_text: 'Got a question? Call our support team on',
+  },
+  legal_customers: {
+    title: 'Our terms of service - Customers',
+    nav_title: 'Customer agreement',
+    description: 'Legal',
+  },
+  legal_merchants: {
+    title: 'Our terms of service - Merchants',
+    nav_title: 'Merchant agreement',
+    description: 'Legal',
+  },
+  legal_old_restrictions: {
+    title: 'Our terms of service - Restrictions',
+    description: 'Legal',
+  },
+  legal_old_restrictions_2014_07_31: {
+    title: 'Our terms of service - Restrictions',
+    description: 'Legal',
+  },
+  legal_old_restrictions_2014_09_19: {
+    title: 'Our terms of service - Restrictions',
+    description: 'Legal',
+  },
+  legal_partners: {
+    title: 'Our terms of service - Partners',
+    nav_title: 'Partner agreement',
+    description: 'Legal',
+  },
+  legal_privacy: {
+    title: 'Our terms of service - Privacy',
+    nav_title: 'Privacy Policy',
+    description: 'Legal',
+  },
+  legal_restrictions: {
+    title: 'Our terms of service - Restrictions',
+    nav_title: 'Restricted activities',
     description: 'Legal',
   },
   pro: {

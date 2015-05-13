@@ -32,6 +32,16 @@ import Designers from '../pages/about/jobs/positions/designers';
 import SoftwareEngineer from '../pages/about/jobs/positions/software-engineer';
 import WebOperationsEngineer from '../pages/about/jobs/positions/web-operations-engineer';
 
+import LegalIntroduction from '../pages/legal/introduction/legal-introduction';
+import LegalCustomers from '../pages/legal/customers/legal-customers';
+import LegalMerchants from '../pages/legal/merchants/legal-merchants';
+import LegalOldRestrictionsIndex from '../pages/legal/old-restrictions/index/legal-old-restrictions-index';
+import LegalOldRestrictions20140731 from '../pages/legal/old-restrictions/2014-07-31/legal-old-restrictions-2014-07-31';
+import LegalOldRestrictions20140919 from '../pages/legal/old-restrictions/2014-09-19/legal-old-restrictions-2014-09-19';
+import LegalPartners from '../pages/legal/partners/legal-partners';
+import LegalPrivacy from '../pages/legal/privacy/legal-privacy';
+import LegalRestrictions from '../pages/legal/restrictions/legal-restrictions';
+
 import Partners from '../pages/partners/partners';
 import PartnersClearBooks from '../pages/partners/clearbooks/partners-clearbooks';
 import PartnersFreeagent from '../pages/partners/freeagent/partners-freeagent';
@@ -377,6 +387,105 @@ export const config = Immutable.fromJS([
       },
       'fr-BE': {
           path: '/about/jobs/service-client',
+      },
+    },
+  ],
+  [LegalIntroduction, { name: 'legal', category: 'legal' }, {
+      'en-GB': {
+          path: '/legal',
+      },
+      'en-IE': {
+          path: '/legal',
+      },
+      'fr-FR': {
+          path: '/legal',
+      },
+      'fr-BE': {
+          path: '/legal',
+      },
+    },
+  ],
+  [LegalCustomers, { name: 'legal_customers', category: 'legal' }, {
+      'en-GB': {
+          path: '/legal/customers',
+      },
+      'en-IE': {
+          path: '/legal/customers',
+      },
+    },
+  ],
+  [LegalMerchants, { name: 'legal_merchants', category: 'legal' }, {
+      'en-GB': {
+          path: '/legal/merchants',
+      },
+      'en-IE': {
+          path: '/legal/merchants',
+      },
+    },
+  ],
+  [LegalOldRestrictionsIndex, { name: 'legal_old_restrictions' }, {
+      'en-GB': {
+          path: '/legal/old-restrictions',
+      },
+      'en-IE': {
+          path: '/legal/old-restrictions',
+      },
+    },
+  ],
+  [LegalOldRestrictions20140731, { name: 'legal_old_restrictions_2014_07_31' }, {
+      'en-GB': {
+          path: '/legal/old-restrictions/2014-07-31',
+      },
+      'en-IE': {
+          path: '/legal/old-restrictions/2014-07-31',
+      },
+    },
+  ],
+  [LegalOldRestrictions20140919, { name: 'legal_old_restrictions_2014_09_19' }, {
+      'en-GB': {
+          path: '/legal/old-restrictions/2014-09-19',
+      },
+      'en-IE': {
+          path: '/legal/old-restrictions/2014-09-19',
+      },
+    },
+  ],
+  [LegalPartners, { name: 'legal_partners', category: 'legal' }, {
+      'en-GB': {
+          path: '/legal/partners',
+      },
+      'en-IE': {
+          path: '/legal/partners',
+      },
+    },
+  ],
+  [LegalRestrictions, { name: 'legal_restrictions', category: 'legal' }, {
+      'en-GB': {
+          path: '/legal/restrictions',
+      },
+      'en-IE': {
+          path: '/legal/restrictions',
+      },
+      'fr-FR': {
+          path: '/legal/activites-restreintes',
+      },
+      'fr-BE': {
+          path: '/legal/activites-restreintes',
+      },
+    },
+  ],
+  [LegalPrivacy, { name: 'legal_privacy', category: 'legal' }, {
+      'en-GB': {
+          path: '/legal/privacy',
+      },
+      'en-IE': {
+          path: '/legal/privacy',
+      },
+      'fr-FR': {
+          path: '/legal/politique-de-confidentialite',
+      },
+      'fr-BE': {
+          path: '/legal/politique-de-confidentialite',
       },
     },
   ],

@@ -1,5 +1,6 @@
 import React from 'react';
 import FaqMerchantsPage from '../faq-merchants-page';
+import Link from '../../../../components/link/link';
 
 export default class FaqMerchantsReferrals extends React.Component {
   displayName = 'FaqMerchantsReferrals'
@@ -66,8 +67,8 @@ export default class FaqMerchantsReferrals extends React.Component {
           to a wider audience.
         </p>
         <p className='para'>
-          Please don't try to abuse the system though - this is in contravention of our <a href='/legal/restrictions'
-          className='u-link-color-p u-text-underline'>Terms of Service</a>.
+          Please don't try to abuse the system though - this is in contravention of our <Link to='legal_restrictions'
+          className='u-link-color-p u-text-underline'>Terms of Service</Link>.
         </p>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>

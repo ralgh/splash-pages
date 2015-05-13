@@ -134,9 +134,20 @@ export default {
     description: 'Collectez vos prélèvements automatiques SEPA à partir de 0,75€ par transaction, avec tarifs dégressifs pour les grandes entreprises.',
   },
   legal: {
-    title: 'Mentions Légales',
-    nav_title: 'Légal',
-    description: 'Légal',
+    title: 'Légal',
+    nav_title: 'Mentions légales',
+    description: '',
+    sidebar_text: 'Des questions ?',
+  },
+  legal_privacy: {
+    title: 'Légal - Politique de confidentialité',
+    nav_title: 'Politique de confidentialité',
+    description: 'Legal',
+  },
+  legal_restrictions: {
+    title: 'Légal - Activités restreintes',
+    nav_title: 'Activités restreintes',
+    description: 'Legal',
   },
   team: {
     title: 'Notre équipe',

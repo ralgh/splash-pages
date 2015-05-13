@@ -64,8 +64,8 @@ export default class FaqMerchantsEn extends React.Component {
         </ul>
         <p className='para'>
           We're able to accept most kinds of customers but there are some exceptions - for
-          full details, see our <a href='/legal/restrictions' className='u-link-color-p u-text-underline'>restricted
-          activities page</a>.
+          full details, see our <Link to='legal_restrictions' className='u-link-color-p u-text-underline'>restricted
+          activities page</Link>.
         </p>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
