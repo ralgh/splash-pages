@@ -7,7 +7,7 @@ export default class LegalRestrictionsEn extends React.Component {
 
   render() {
     return (
-      <Translation locales='en-GB'>
+      <Translation locales='en'>
         <h2 className='u-text-heading-light u-text-m u-color-heading'>Restricted activities</h2>
         <p className='para'>
           This is the list of restricted activities referred to in Merchant Agreement and

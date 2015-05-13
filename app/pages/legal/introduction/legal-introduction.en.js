@@ -15,7 +15,7 @@ export default class LegalIntroductionEn extends React.Component {
     const { messages } = this.context;
 
     return (
-      <Translation locales='en-GB'>
+      <Translation locales='en'>
         <h2 className='u-text-heading-light u-text-m u-color-heading'>Introduction</h2>
         <p className='para'>
           The following documents outline the terms of service for using GoCardless.
