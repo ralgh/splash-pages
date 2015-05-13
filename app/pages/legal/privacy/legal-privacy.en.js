@@ -14,7 +14,7 @@ export default class LegalPrivacyEn extends React.Component {
     const { messages } = this.context;
 
     return (
-      <Translation locales='en-GB'>
+      <Translation locales='en'>
         <h2 className='u-text-heading-light u-text-m u-color-heading'>Privacy policy</h2>
         <div className='well u-margin-Tm'>
           <p className='para'>
