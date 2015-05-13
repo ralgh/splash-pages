@@ -1,7 +1,5 @@
 #!/usr/bin/env babel-node
 
-// vi: set ft=javascript:
-
 import { fetchPage, writePage } from '../app/static-build/builder';
 import { getAllPaths } from '../app/router/route-helpers';
 
