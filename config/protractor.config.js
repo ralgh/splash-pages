@@ -4,7 +4,7 @@ exports.config = {
   },
   getPageTimeout: 15000,
   allScriptsTimeout: 20000,
-  specs: '../app/pages/**/*.e2e.js',
+  specs: '../app/**/*.e2e.js',
   directConnect: true,
   capabilities: {
     browserName: 'chrome',

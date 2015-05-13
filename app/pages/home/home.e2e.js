@@ -1,4 +1,6 @@
-var BASE_URL = 'http://localhost:4402';
+require('babel/register');
+
+var BASE_URL = require('../../helpers/e2e/config').BASE_URL;
 
 describe('Navigating to the Pro product', function() {
   it('lets the user navigate to /pro', function() {
