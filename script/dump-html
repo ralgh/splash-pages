@@ -1,5 +1,7 @@
 #!/usr/bin/env babel-node
 
+// vi: set ft=javascript:
+
 import { fetchPage, writePage } from '../app/static-build/builder';
 import { getAllPaths } from '../app/router/route-helpers';
 
@@ -17,6 +19,6 @@ const processPage = function(pagePath) {
 };
 
 Promise.all(getAllPaths().map(processPage)).then(function(filenames) {
-  console.log(filenames);
-  console.log('done');
+  console.log('Completed static html dump:');
+  console.log(filenames.sort().map((filename) => `  ${filename}`).join('\n'));
 }).catch(console.error.bind(console));
