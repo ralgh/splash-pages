@@ -4,6 +4,7 @@ deployment:
     commands:
       - npm run build-production
       - npm run deploy-live-staging
+      - npm run deploy-live-production
 
 machine:
   node:

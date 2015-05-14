@@ -9,6 +9,7 @@
     "build-production": "./script/build-prod",
     "lint": "./script/lint",
     "deploy-live-staging": "NODE_ENV=production AWS_S3_BUCKET=staging.gocardless.com ./script/deploy",
+    "deploy-live-production": "NODE_ENV=production AWS_S3_BUCKET=gocardless.com ./script/deploy",
     "test": "./script/lint && ./script/test && ./script/e2e",
     "postinstall": "./node_modules/.bin/webdriver-manager update"
   },
