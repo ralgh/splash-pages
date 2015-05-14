@@ -490,7 +490,13 @@ export const config = Immutable.fromJS([
       'fr-BE': {
           path: '/faq/commercant/prelevement-bancaire',
       },
-    },
+       'fr-FR': {
+          path: '/fonctionalites',
+      },
+      'fr-BE': {
+          path: '/fonctionalites',
+      },
+   },
   ],
   [FaqMerchantsSecurity, { name: 'faq_merchants_security', category: 'faq.merchants' }, {
       'en-GB': {

@@ -1,6 +1,6 @@
 export default {
   header: {
-    our_products: 'Produit',
+    our_products: 'Nos produits',
     login_btn: 'Login',
     more: 'Plus',
   },
@@ -67,9 +67,11 @@ export default {
     information1: 'Vos données sont sécurisées et ne seront jamais vendues ou partagées.',
     information2: ''
   },
-  faq: {
-    title: 'Foire aux questions',
-    sidebar: 'Une question? Appelez nous au',
+  features: {
+    title: 'GoCardless: Prélèvement bancaire simplifié',
+    nav_title: 'GoCardless',
+    description: 'GoCardless est la manière la plus simple de collecter vos paiements par prélèvement SEPA. Commencez dès aujourd\'hui, économisez du temps et améliorez votre cash flow.',
+    explainer: 'Paiements récurrents simplifiés'
   },
   faq_merchants: {
     title: 'FAQ Commerçants',
@@ -179,10 +181,10 @@ export default {
     description: '',
  },
   pro: {
-    title: 'Le contrôle total de vos prélèvements',
-    nav_title: 'Pro',
+    title: 'GoCardless: Le contrôle total de vos prélèvements',
+    nav_title: 'GoCardless Pro',
     description: 'GoCardless combine simplicité d\'utilisation et contrôle complet du paiement et de l\'expérience client afin de prélever vos clients partout en Europe.',
-    explainer: 'Le contrôle total de vos prélèvements',
+    explainer: 'Automatisez vos prélèvements',
   },
   partners: {
     title: 'Applications partenaires et intégrations logiciels',
