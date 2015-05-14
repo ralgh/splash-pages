@@ -131,7 +131,7 @@ export default {
   faq_merchants: {
     title: 'FAQ for merchants',
     nav_title: 'Overview',
-    footer_title: 'FAQ',
+    link_title: 'FAQ',
     description: '',
   },
   faq_merchants_customer_experience: {
@@ -248,7 +248,7 @@ export default {
   partners: {
     title: 'Partner Apps & Software Integration',
     nav_title: 'Partner with us',
-    footer_title: 'Partners',
+    link_title: 'Partners',
     description: 'Partner up with GoCardless and let people take payments through your software. We work with FreeAgent, Xero, Sage, Kashflow, Pitchero, ClearBooks, CrowdCube and more.',
     explainer: 'Offer GoCardless to your users',
   },

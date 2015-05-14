@@ -60,15 +60,17 @@ export default class SecurityEn extends React.Component {
             </div>
           </div>
         </div>
-        <hr className='u-margin-An' />
-        <div className='site-container u-text-center u-padding-Vxxl'>
-          <div className='u-padding-Vxl'>
-            <a href='/merchants/new' className='btn'>
-              <Message message='cta.basic' />
-            </a>
-            <p className='u-color-p u-margin-Ts'>No set up costs, no hidden charges, no commitments</p>
+        <Translation locales='en-GB'>
+          <hr className='u-margin-An' />
+          <div className='site-container u-text-center u-padding-Vxxl'>
+            <div className='u-padding-Vxl'>
+              <a href='/merchants/new' className='btn'>
+                <Message message='cta.basic' />
+              </a>
+              <p className='u-color-p u-margin-Ts'>No set up costs, no hidden charges, no commitments</p>
+            </div>
           </div>
-        </div>
+        </Translation>
       </Translation>
     );
   }
