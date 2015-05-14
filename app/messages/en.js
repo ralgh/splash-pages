@@ -10,6 +10,8 @@ export default {
     europe_cta: 'GoCardless is expanding',
     europe_link: 'learn more',
     europe_description: 'about upcoming countries',
+    cookies_message: 'By continuing your visit to this site, you agree to the use of cookies.',
+    cookies_link_text: 'Learn more',
   },
   cta: {
     basic: 'Start taking payments',
@@ -26,7 +28,7 @@ export default {
     street_address: '338-346 Goswell Road',
     address_locality: 'London',
     postal_code: 'EC1V 7LQ',
-    address_country: '',
+    address_country: 'United Kingdom',
     address_country_iso: 'GB'
   },
   phone_full: '+44 20 7183 8674',

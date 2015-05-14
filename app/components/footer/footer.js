@@ -158,14 +158,22 @@ class Footer extends React.Component {
                   <SchemaItemProp itemProp='streetAddress' message='postal_address.street_address' />,&nbsp;
                   <SchemaItemProp itemProp='addressLocality' message='postal_address.address_locality' />,&nbsp;
                   <SchemaItemProp itemProp='postalCode' message='postal_address.postal_code' />,&nbsp;
-                  <SchemaItemProp itemProp='addressCountry' message='postal_address.address_country_iso' />
+                  <SchemaItemProp itemProp='addressCountry' content={getMessage(messages, 'postal_address.address_country_iso')}>
+                    <Message message='postal_address.address_country' />
+                  </SchemaItemProp>.
                 </SchemaItemProp><br />
                 <SchemaItemProp itemProp='telephone' message='phone_full' />,&nbsp;
                 <Href to='email' className='u-link-invert' itemProp='email' />
               </p>
-              <p className='u-text-heading u-text-xxs u-color-invert'>
+              <p className='u-text-heading u-text-xxs u-color-invert u-margin-Bm'>
                 <Message message='footer.description' />
               </p>
+              <LinkExists to='legal_privacy'>
+                <p className='u-text-heading u-text-xxs u-color-invert'>
+                  <Message message='footer.cookies_message' />&nbsp;
+                  <Link to='legal_privacy' className='u-link-clean u-link-invert u-text-heavy' message='footer.cookies_link_text' />.
+                </p>
+              </LinkExists>
             </div>
           </div>
         </div>
