@@ -155,7 +155,9 @@ class Footer extends React.Component {
                   <SchemaItemProp itemProp='streetAddress' message='postal_address.street_address' />,&nbsp;
                   <SchemaItemProp itemProp='addressLocality' message='postal_address.address_locality' />,&nbsp;
                   <SchemaItemProp itemProp='postalCode' message='postal_address.postal_code' />,&nbsp;
-                  <SchemaItemProp itemProp='addressCountry' message='postal_address.address_country_iso' />
+                  <SchemaItemProp itemProp='addressCountry' content={getMessage(messages, 'postal_address.address_country_iso')}>
+                    <Message message='postal_address.address_country' />
+                  </SchemaItemProp>.
                 </SchemaItemProp><br />
                 <SchemaItemProp itemProp='telephone' message='phone_full' />,&nbsp;
                 <Href to='email' className='u-link-invert' itemProp='email' />
