@@ -41,7 +41,7 @@ class HtmlDocument extends React.Component {
     routeName: React.PropTypes.string.isRequired,
     availableLocales: React.PropTypes.array.isRequired,
     router: React.PropTypes.func.isRequired,
-    path: React.PropTypes.string.isRequired,
+    pathname: React.PropTypes.string.isRequired,
     dataRender: React.PropTypes.object.isRequired,
     config: React.PropTypes.object.isRequired,
     markup: React.PropTypes.string.isRequired,
@@ -61,12 +61,12 @@ class HtmlDocument extends React.Component {
     routeName: React.PropTypes.string.isRequired,
     availableLocales: React.PropTypes.array.isRequired,
     router: React.PropTypes.func.isRequired,
-    path: React.PropTypes.string.isRequired,
+    pathname: React.PropTypes.string.isRequired,
     config: React.PropTypes.object.isRequired,
   };
 
   getChildContext() {
-    const { locales, messages, formats, routeName, availableLocales, router, path, config } = this.props;
+    const { locales, messages, formats, routeName, availableLocales, router, pathname, config } = this.props;
 
     return {
       locales: locales,
@@ -75,17 +75,17 @@ class HtmlDocument extends React.Component {
       routeName: routeName,
       availableLocales: availableLocales,
       router: router,
-      path: path,
+      pathname: pathname,
       config: config,
     };
   }
 
   render() {
-    const { messages, routeName, locales, config, path, availableLocales, markup, script, css } = this.props;
+    const { messages, routeName, locales, config, pathname, availableLocales, markup, script, css } = this.props;
     const isHome = routeName === homeRoute;
     const schemaDotOrgOrganisation = buildSchemaDotOrgForOrganization(localeMessages, availableLocales, config);
     const routeLocales = getLocalesForRouteName(routeName);
-    const pageHref = config.siteRoot + path;
+    const pageHref = config.siteRoot + pathname;
     const title = getSiteTitle({messages: messages, routeName: routeName, config: config});
     const language = localeToLanguage(locales);
     const description = getMessage(messages, `${routeName}.description`);
@@ -127,7 +127,7 @@ class HtmlDocument extends React.Component {
 
           { isHome &&
               <script type='application/ld+json'
-                dangerouslySetInnerHTML={{ __html: websiteSchema.replace('{PAGE}', path) }} />
+                dangerouslySetInnerHTML={{ __html: websiteSchema.replace('{PAGE}', pathname) }} />
           }
 
           { isHome &&

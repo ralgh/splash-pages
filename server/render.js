@@ -46,7 +46,6 @@ export function render(req, res, next) {
       messages: messages,
       formats: formats,
       config: config,
-      path: reqPath,
       availableLocales: availableLocales,
     }, props);
   }
@@ -66,6 +65,7 @@ export function render(req, res, next) {
     const routeName = result(findLast(state.routes.slice(), 'name'), 'name');
     const stateProps = {
       routeName: routeName || 'not_found',
+      pathname: state.pathname,
     };
 
     const markup = React.renderToString(<Handler {...appProps(stateProps)} />);
