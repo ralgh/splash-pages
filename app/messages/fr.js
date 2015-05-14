@@ -7,9 +7,9 @@ export default {
   footer: {
     description: 'GoCardless est un Etablissement de Paiement Agréé, régulé par l’autorité britannique FCA (Financial Conduct Authority) et habilité à collecter des paiements à travers l’Union Européenne.',
     currently_viewing: 'Vous consultez actuellement',
-    eruope_cta: 'GoCardless s\'étend en Europe',
-    eruope_link: 'en apprendre plus',
-    eruope_description: 'sur notre expansion',
+    europe_cta: 'GoCardless s\'étend en Europe',
+    europe_link: 'en apprendre plus',
+    europe_description: 'sur notre expansion',
     cookies_message: 'En continuant votre visite sur notre site vous acceptez nos cookies.',
     cookies_link_text: 'Apprenez-en plus',
   },
@@ -28,7 +28,7 @@ export default {
     street_address: '338-346 Goswell Road',
     address_locality: 'Londres',
     postal_code: 'EC1V 7LQ',
-    address_country: '',
+    address_country: 'Royaume-Uni',
     address_country_iso: 'GB',
   },
   country_names: {
