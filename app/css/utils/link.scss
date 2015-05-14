@@ -10,7 +10,7 @@
 .u-link-clean:hover,
 .u-link-clean:focus,
 .u-link-clean:active {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 // Link complex
@@ -29,13 +29,13 @@
 .u-link-complex:hover,
 .u-link-complex:focus,
 .u-link-complex:active {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .u-link-complex:hover .u-link-complex-target,
 .u-link-complex:focus .u-link-complex-target,
 .u-link-complex:active .u-link-complex-target {
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
 // Inverted Link

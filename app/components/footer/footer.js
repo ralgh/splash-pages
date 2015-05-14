@@ -63,7 +63,7 @@ class Footer extends React.Component {
                 </LinkExists>
                 <LinkExists to='partners'>
                   <li>
-                    <Link to='partners' message='partners.footer_title'
+                    <Link to='partners' message='partners.link_title'
                       id='track-footer-partners' className='u-link-invert' />
                   </li>
                 </LinkExists>
@@ -91,7 +91,7 @@ class Footer extends React.Component {
                 </li>
                 <LinkExists to='faq_merchants'>
                   <li>
-                    <Link to='faq_merchants' message='faq_merchants.footer_title'
+                    <Link to='faq_merchants' message='faq_merchants.link_title'
                       id='track-footer-faq' className='u-link-clean u-link-invert' />
                   </li>
                 </LinkExists>

@@ -17,7 +17,7 @@ describe('Translation Component', function() {
         </TranslationStub>
       );
 
-      var element = ReactTestUtils.findRenderedDOMComponentWithTag(result, 'div');
+      var element = ReactTestUtils.findRenderedDOMComponentWithTag(result, 'span');
       expect(element.getDOMNode().textContent).toEqual('hello world');
     });
   });
@@ -35,7 +35,7 @@ describe('Translation Component', function() {
         </TranslationStub>
       );
 
-      var element = ReactTestUtils.findRenderedDOMComponentWithTag(result, 'div');
+      var element = ReactTestUtils.findRenderedDOMComponentWithTag(result, 'span');
       expect(element.getDOMNode().textContent).toEqual('hello world');
     });
   });
@@ -53,7 +53,7 @@ describe('Translation Component', function() {
         </TranslationStub>
       );
 
-      var element = ReactTestUtils.findRenderedDOMComponentWithTag(result, 'div');
+      var element = ReactTestUtils.findRenderedDOMComponentWithTag(result, 'span');
       expect(element.getDOMNode().textContent).toEqual('');
     });
   });
@@ -71,7 +71,7 @@ describe('Translation Component', function() {
         </TranslationStub>
       );
 
-      var element = ReactTestUtils.findRenderedDOMComponentWithTag(result, 'div');
+      var element = ReactTestUtils.findRenderedDOMComponentWithTag(result, 'span');
       expect(element.getDOMNode().textContent).toEqual('');
     });
   });
