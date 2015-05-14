@@ -1,6 +1,7 @@
 import React from 'react';
 import {PropTypes} from '../../helpers/prop-types/prop-types';
 import {RouteHandler} from 'react-router';
+import getSiteTitle from '../get-site-title/get-site-title';
 
 class App extends React.Component {
   displayName = 'App'
@@ -21,6 +22,10 @@ class App extends React.Component {
     routeName: React.PropTypes.string.isRequired,
     availableLocales: React.PropTypes.array.isRequired,
     config: React.PropTypes.object.isRequired,
+  }
+
+  componentWillReceiveProps(newProps) {
+    document.title = getSiteTitle(newProps);
   }
 
   getChildContext() {

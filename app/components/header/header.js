@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from '../link/link';
+import Href from '../href/href';
 import Message from '../message/message';
 import LinkExists from '../link-exists/link-exists';
 import Logo from '../../icons/logo/logo';
@@ -19,7 +20,7 @@ class Header extends React.Component {
 
   render() {
     const isInverted = this.props.isInverted;
-    const linkClass = classNames('u-padding-Vl u-block u-link-clean', {
+    const linkClass = classNames('u-padding-Vl u-block', {
       'u-link-invert': isInverted,
       'u-link-default': !isInverted,
     });
@@ -28,26 +29,26 @@ class Header extends React.Component {
       <ul className='u-text-xxs u-padding-Vxs'>
         <LinkExists to='features'>
           <li>
-            <Link to='features' id='track-nav-features' className='u-link-complex u-link-clean u-padding-Vxs u-padding-Hm u-block'>
-              <span className='u-link-complex-target u-text-semi'><Message message='features.nav_title' /></span>
+            <Link to='features' id='track-nav-features' className='u-padding-Vxs u-padding-Hm u-block'>
+              <span className='u-text-semi'><Message message='features.nav_title' /></span>
               <p className='u-color-p'><Message message='features.explainer' /></p>
             </Link>
           </li>
+          <hr className='u-margin-Vxs' />
         </LinkExists>
         <LinkExists to='pro'>
-          <hr className='u-margin-Vxs' />
           <li>
-            <Link to='pro' id='track-nav-pro' className='u-link-complex u-link-clean u-padding-Vxs u-padding-Hm u-block'>
-              <span className='u-link-complex-target u-text-semi'><Message message='pro.nav_title' /></span>
+            <Link to='pro' id='track-nav-pro' className='u-padding-Vxs u-padding-Hm u-block'>
+              <span className='u-text-semi'><Message message='pro.nav_title' /></span>
               <p className='u-color-p'><Message message='pro.explainer' /></p>
             </Link>
           </li>
+          <hr className='u-margin-Vxs' />
         </LinkExists>
         <LinkExists to='partners'>
-          <hr className='u-margin-Vxs' />
           <li>
-            <Link to='partners' id='track-nav-partners' className='u-link-complex uLinki-link-clean u-padding-Vxs u-padding-Hm u-block'>
-              <span className='u-link-complex-target u-text-semi'><Message message='partners.nav_title' /></span>
+            <Link to='partners' id='track-nav-partners' className='u-padding-Vxs u-padding-Hm u-block'>
+              <span className='u-text-semi'><Message message='partners.nav_title' /></span>
               <p className='u-color-p'><Message message='partners.explainer' /></p>
             </Link>
           </li>
@@ -100,7 +101,7 @@ class Header extends React.Component {
                 </LinkExists>
               </div>
               <div className='nav__item u-relative'>
-                <Popover className='popover--large' toggle={
+                <Popover toggle={
                   (<a href='#' id='track-nav-more' className={linkClass}>
                     <div className={classNames('nav__item-link popover-link', {
                       'popover-link--invert': isInverted,
@@ -117,9 +118,8 @@ class Header extends React.Component {
                      </LinkExists>
                     </li>
                     <li className='u-text-semi'>
-                      <a href='https://gocardless.com/guides' id='track-nav-guides' className='u-padding-Vxs u-padding-Hm u-block'>
-                        <Message message='guides.nav_title' />
-                      </a>
+                      <Href to='guides.path' id='track-nav-guides' className='u-padding-Vxs u-padding-Hm u-block'
+                        message='guides.nav_title' />
                     </li>
                     <li className='u-text-semi'>
                       <a href='http://help.gocardless.com' id='track-nav-help' className='u-padding-Vxs u-padding-Hm u-block'>
@@ -140,8 +140,8 @@ class Header extends React.Component {
                       </LinkExists>
                     </li>
                     <li>
-                      <LinkExists to='about'>
-                        <Link to='about' message='jobs.nav_title'
+                      <LinkExists to='jobs'>
+                        <Link to='jobs' message='jobs.nav_title'
                           id='track-nav-jobs' className='u-padding-Vxs u-padding-Hm u-block' />
                       </LinkExists>
                     </li>

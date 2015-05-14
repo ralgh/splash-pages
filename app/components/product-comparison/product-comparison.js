@@ -7,7 +7,7 @@ export default class ProductComparison extends React.Component {
 
   render() {
     return (
-      <table>
+      <table className='u-size-full'>
         <thead>
           <tr>
             <th />

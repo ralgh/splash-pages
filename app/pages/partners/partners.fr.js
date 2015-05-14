@@ -3,13 +3,14 @@ import Translation from '../../components/translation/translation';
 import CustomerIcon from '../../icons/svg/customer';
 import ProIcon from '../../icons/svg/pro';
 import AddPartnerIcon from '../../icons/svg/add-partner';
+import Href from '../../components/href/href';
 
 export default class PartnersFr extends React.Component {
   displayName = 'PartnersFr'
 
   render() {
     return (
-      <Translation locales={['fr-FR', 'fr-BE']}>
+      <Translation locales='fr'>
         <div className='page-hero u-padding-Vxxl'>
           <div className='site-container u-text-center u-padding-Vxm'>
             <h1 className='u-text-heading u-color-invert u-text-light u-padding-Tm'>Aidez vos clients à être payés</h1>
@@ -97,7 +98,7 @@ export default class PartnersFr extends React.Component {
               </h2>
               <p className='u-text-s u-color-p u-margin-Vxs'>
                 Développez votre business en intégrant GoCardless. <br />
-                Pour plus d'informations, contactez-nous à <a href='mailto:france@gocardless.com'>france@gocardless.com</a>
+                Pour plus d'informations, contactez-nous à <Href to='email' />
               </p>
             </div>
           </div>

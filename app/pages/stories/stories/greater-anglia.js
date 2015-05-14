@@ -53,9 +53,6 @@ export default class StoriesGreaterAnglia extends React.Component {
             Greater Anglia have been delighted with the service since making the switch:
             “Their system is incredibly simple and their expertise is second to none.”
           </p>
-          <a href='/subscriptions' className='u-color-primary u-text-upcase u-text-xxs u-text-heading u-text-semi u-block u-margin-Txl'>
-              See how GoCardless works for subscriptions
-          </a>
         </StoryQuote>
       </StoryPage>
     );

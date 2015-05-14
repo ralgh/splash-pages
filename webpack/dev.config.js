@@ -20,7 +20,7 @@ export default function(WEBPACK_HOST, WEBPACK_PORT) {
       path: assetsPath,
       filename: '[name]-[chunkhash].js',
       chunkFilename: '[name]-[chunkhash].js',
-      publicPath: `/assets/`,
+      publicPath: `http://${WEBPACK_HOST}:${WEBPACK_PORT}/assets/`,
     },
     module: {
       loaders: [

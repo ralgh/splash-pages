@@ -52,9 +52,6 @@ export default class StoriesStoryRockClub extends React.Component {
             “Since using GoCardless, the whole payments process is much less time consuming and has
             allowed us to focus on strategy and expansion.”
           </p>
-          <a href='/membership' className='u-color-primary u-text-upcase u-text-xxs u-text-heading u-text-semi u-block u-margin-Txl'>
-              See how GoCardless works for membership
-          </a>
         </StoryQuote>
       </StoryPage>
     );

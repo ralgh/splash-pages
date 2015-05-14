@@ -36,6 +36,7 @@ module.exports = {
       'process.env': {
         BROWSER: JSON.stringify(true),
         NODE_ENV: JSON.stringify('production'),
+        ANIMATIONS_DISABLED: process.env.ANIMATIONS_DISABLED === 'true',
       },
     }),
 

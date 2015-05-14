@@ -1,4 +1,8 @@
-export function trackEvent(event) {
+export function pushDataLayer(event) {
   window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({ event });
+  window.dataLayer.push(event);
+}
+
+export function trackEvent(event) {
+  pushDataLayer({ event });
 }

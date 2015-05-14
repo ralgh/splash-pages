@@ -308,16 +308,16 @@ export default class Features extends React.Component {
                     <PhoneIcon className='svg-icon__image u-fill-dark-gray' />
                   </figure>
                   <h2 className='u-text-heading u-color-heading u-text-l u-text-light u-margin-Tm'>
-                    +44 (0) 207 183 8674
+                    <Message message='phone_full' />
                   </h2>
                   <div className='u-center'>
                     <p className='u-text-s u-color-p u-margin-Ts'>
                       Speak with one of our payments experts to learn how GoCardless can help your business.
                     </p>
                   </div>
-                  <a href='/contact-sales' id='track-cta-contact-sales' className='btn btn--hollow u-margin-Tm'>
+                  <Link to='contact_sales' id='track-cta-contact-sales' className='btn btn--hollow u-margin-Tm'>
                     <Message message='cta.pro' />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -330,9 +330,9 @@ export default class Features extends React.Component {
                       <td />
                       <td />
                       <td className='u-padding-As'>
-                        <a href='/pro' id='track-comparison-table-pro' className='u-color-primary'>
+                        <Link to='pro' id='track-comparison-table-pro' className='u-color-primary'>
                           Learn more about GoCardless Pro
-                        </a>
+                        </Link>
                       </td>
                     </tr>
                   </tfoot>

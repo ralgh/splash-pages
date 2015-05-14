@@ -61,10 +61,6 @@ export default class StoriesMomentumTraining extends React.Component {
             button to retry them instantly. What’s more since moving to TeamUp and GoCardless our payment failures are lower
             than they were before – even though our members have more than doubled.”
           </p>
-          <a href='/professional-services'
-          className='u-color-primary u-text-upcase u-text-xxs u-text-heading u-text-semi u-block u-margin-Txl'>
-              See how GoCardless works for gyms and fitness businesses
-          </a>
         </StoryQuote>
       </StoryPage>
     );

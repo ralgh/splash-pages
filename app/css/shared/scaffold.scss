@@ -43,6 +43,10 @@ a {
   text-decoration: none;
 }
 
+a.is-active {
+  text-decoration: underline;
+}
+
 a:hover {
   color: $primary-color-darken;
   text-decoration: underline;

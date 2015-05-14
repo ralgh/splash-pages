@@ -1,6 +1,9 @@
 import React from 'react';
 import Translation from '../../components/translation/translation';
+import Message from '../../components/message/message';
 import Link from '../../components/link/link';
+import HowDdWorks from '../../components/how-dd-works/how-dd-works';
+import Modal from '../../components/modal/modal';
 
 import MobileIcon from '../../icons/svg/mobile';
 import CheckListIcon from '../../icons/svg/checklist';
@@ -14,7 +17,7 @@ export default class HomeEn extends React.Component {
 
   render() {
     return (
-      <Translation locales='en-GB'>
+      <Translation locales='en'>
         <div className='site-container u-text-center u-padding-Vxxl' id='learn-more'>
           <div className='u-padding-Vxl'>
             <div className='u-size-2of3 u-center'>
@@ -64,10 +67,16 @@ export default class HomeEn extends React.Component {
                 </p>
               </div>
             </div>
+
             <p className='u-color-p u-margin-Txxl u-padding-Tm'>
-              Want to learn more about Direct Debit?
-              <a data-ng-click='modal.isShown = true; modal.slide = 1'> Find out the basics</a>
+              Want to learn more about
+              Direct Debit?
             </p>
+            <Modal toggle={(
+              <a href='#'>Find out the basics</a>
+            )}>
+              <HowDdWorks />
+            </Modal>
           </div>
         </div>
         <hr className='u-margin-An' />
@@ -122,7 +131,8 @@ export default class HomeEn extends React.Component {
                 Trusted by thousands of businesses
               </h2>
               <p className='u-text-s u-color-p u-margin-Txs'>
-                We’re a Bacs approved bureau that collects millions of pounds for our merchants every day.
+                <Message message="home.trusted_message_scale" />
+                <br />
                 Whatever your scale, GoCardless works for you.
               </p>
             </div>

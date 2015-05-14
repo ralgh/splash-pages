@@ -1,4 +1,5 @@
-import _ from 'lodash';
+import findIndex from 'lodash/array/findIndex';
+import toArray from 'lodash/lang/toArray';
 import React from 'react';
 import classNames from 'classnames';
 
@@ -18,7 +19,7 @@ class Tabs extends React.Component {
 
   handleClick(event) {
     event.preventDefault();
-    const index = _.findIndex(_.toArray(event.currentTarget.children), function(node) {
+    const index = findIndex(toArray(event.currentTarget.children), function(node) {
       return event.target === node || node.contains(event.target);
     });
 

@@ -24,7 +24,7 @@ export default class Home extends React.Component {
                   <Message message='hero.desc' />
                 </div>
                 <div className='u-text-center u-margin-Tl'>
-                  <Translation locales='en-GB'>
+                  <Translation locales='en'>
                     <a href='#learn-more' id='track-hero-learn-more' className='btn btn--invert btn--move u-size-2of12'>
                       <Message message='cta.more' />
                     </a>
@@ -35,8 +35,8 @@ export default class Home extends React.Component {
                     </a>
                   </Translation>
 
-                  <Translation locales={['fr-FR', 'fr-BE']}>
-                    <Link to='home' id='track-hero-learn-more' className='btn btn--invert btn--move u-size-3of12'>
+                  <Translation locales='fr'>
+                    <Link to='pro' id='track-hero-learn-more' className='btn btn--invert btn--move u-size-3of12'>
                       <Message message='cta.more' />
                     </Link>
                   </Translation>
