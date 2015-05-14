@@ -25,6 +25,7 @@ function renderApp() {
     const routeName = result(findLast(state.routes.slice(), 'name'), 'name');
     const stateProps = assign({}, appState, {
       routeName: routeName || 'not_found',
+      pathname: state.pathname,
     });
 
     React.render(<Handler {...stateProps} />, mountNode, () => {
