@@ -11,3 +11,12 @@
   position: absolute;
   width: 100%;
 }
+
+.site-header__product-link {
+  padding: $space-xsmall $space-medium;
+  display: block;
+}
+
+.site-header__product-link:hover .site-header__product-link-title {
+  text-decoration: underline;
+}
