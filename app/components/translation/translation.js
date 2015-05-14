@@ -26,10 +26,10 @@ export default class Translation extends React.Component {
     });
 
     return (
-      <div>
+      <span {...this.props}>
         { hasLocale &&
             this.props.children }
-      </div>
+      </span>
     );
   }
 }

@@ -1,7 +1,4 @@
 export default {
-  cta: {
-    pro: 'Contact sales IE'
-  },
   country: 'Ireland',
   home: {
     trusted_message_scale: 'We’re a SEPA approved bureau that collects thousands of euros for our merchants every day.',

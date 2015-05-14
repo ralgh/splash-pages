@@ -15,6 +15,7 @@ import TickIcon from '../../icons/svg/tick';
 import MembershipIcon from '../../icons/svg/membership';
 import PhoneIcon from '../../icons/svg/phone';
 import Link from '../../components/link/link';
+import Translation from '../../components/translation/translation';
 
 export default class Features extends React.Component {
   displayName = 'Features'
@@ -67,13 +68,15 @@ export default class Features extends React.Component {
                     </a>
                   </li>
                 </ul>
-                <a href='/merchants/new' id='track-sticky-nav-merchants-new'
-                  className={
-                    'sticky-nav__cta btn btn--small btn--hollow u-pull-end ' +
-                    'u-text-transform-none u-text-light u-text-xxs u-text-no-smoothing'
-                  }>
-                  <Message message='cta.basic' />
-                </a>
+                <Translation locales='en-GB'>
+                  <a href='/merchants/new' id='track-sticky-nav-merchants-new'
+                    className={
+                      'sticky-nav__cta btn btn--small btn--hollow u-pull-end ' +
+                      'u-text-transform-none u-text-light u-text-xxs u-text-no-smoothing'
+                    }>
+                    <Message message='cta.basic' />
+                  </a>
+                </Translation>
                 <Link to='contact_sales' id='track-sticky-nav-contact-sales'
                   className={
                     'btn btn--small btn--hollow u-pull-end u-text-transform-none ' +

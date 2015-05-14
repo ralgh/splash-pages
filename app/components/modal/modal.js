@@ -23,6 +23,10 @@ export default class Modal extends React.Component {
     this.handleDocumentClick = this.handleDocumentClick.bind(this);
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('click', this.handleDocumentClick);
+  }
+
   handleClick(event) {
     event.preventDefault();
     if (this.state.isOpen) {

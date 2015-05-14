@@ -37,9 +37,11 @@ export default class PricingEn extends React.Component {
                   <li className='pricing-options__list-item'>
                     <Link to='features'>Find out more about GoCardless</Link>
                   </li>
-                  <li className='pricing-options__list-button'>
-                    <a href='/merchants/new' className='btn u-size-full'>Sign up today</a>
-                  </li>
+                  <Translation locales='en-GB'>
+                    <li className='pricing-options__list-button'>
+                      <a href='/merchants/new' className='btn u-size-full'>Sign up today</a>
+                    </li>
+                  </Translation>
                 </ul>
               </div>
               <div className='grid__cell u-size-1of2 u-padding-Vxl u-padding-Rxs'>
@@ -126,7 +128,9 @@ export default class PricingEn extends React.Component {
           <div className='u-padding-Vxl'>
             <h2 className='u-text-heading u-text-l u-color-heading u-text-light'>Got any questions?</h2>
             <p className='u-color-p u-margin-Ts'>Contact support on <Message message='phone_full' /></p>
-            <a href='/merchants/new/' className='btn btn--hollow u-margin-Tm'>Sign up today</a>
+            <Translation locales='en-GB'>
+              <a href='/merchants/new/' className='btn btn--hollow u-margin-Tm'>Sign up today</a>
+            </Translation>
           </div>
         </div>
       </Translation>

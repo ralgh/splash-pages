@@ -2,6 +2,7 @@ import React from 'react';
 import Link from '../link/link';
 import Href from '../href/href';
 import Message from '../message/message';
+import Translation from '../translation/translation';
 import LinkExists from '../link-exists/link-exists';
 import Logo from '../../icons/logo/logo';
 import Popover from '../popover/popover';
@@ -29,7 +30,7 @@ class Header extends React.Component {
       <ul className='u-text-xxs u-padding-Vxs'>
         <LinkExists to='features'>
           <li>
-            <Link to='features' id='track-nav-features' className='u-padding-Vxs u-padding-Hm u-block'>
+            <Link to='features' id='track-nav-features' className='u-link-clean u-padding-Vxs u-padding-Hm u-block'>
               <span className='u-text-semi'><Message message='features.nav_title' /></span>
               <p className='u-color-p'><Message message='features.explainer' /></p>
             </Link>
@@ -38,16 +39,16 @@ class Header extends React.Component {
         </LinkExists>
         <LinkExists to='pro'>
           <li>
-            <Link to='pro' id='track-nav-pro' className='u-padding-Vxs u-padding-Hm u-block'>
+            <Link to='pro' id='track-nav-pro' className='u-link-clean u-padding-Vxs u-padding-Hm u-block'>
               <span className='u-text-semi'><Message message='pro.nav_title' /></span>
               <p className='u-color-p'><Message message='pro.explainer' /></p>
             </Link>
           </li>
-          <hr className='u-margin-Vxs' />
         </LinkExists>
         <LinkExists to='partners'>
+          <hr className='u-margin-Vxs' />
           <li>
-            <Link to='partners' id='track-nav-partners' className='u-padding-Vxs u-padding-Hm u-block'>
+            <Link to='partners' id='track-nav-partners' className='u-link-clean u-padding-Vxs u-padding-Hm u-block'>
               <span className='u-text-semi'><Message message='partners.nav_title' /></span>
               <p className='u-color-p'><Message message='partners.explainer' /></p>
             </Link>
@@ -121,14 +122,16 @@ class Header extends React.Component {
                       <Href to='guides.path' id='track-nav-guides' className='u-padding-Vxs u-padding-Hm u-block'
                         message='guides.nav_title' />
                     </li>
-                    <li className='u-text-semi'>
-                      <a href='http://help.gocardless.com' id='track-nav-help' className='u-padding-Vxs u-padding-Hm u-block'>
-                        <Message message='help.nav_title' />
-                      </a>
-                    </li>
+                    <Translation locales='en-GB'>
+                      <li className='u-text-semi'>
+                        <a href='http://help.gocardless.com' id='track-nav-help' className='u-padding-Vxs u-padding-Hm u-block'>
+                          <Message message='help.nav_title' />
+                        </a>
+                      </li>
+                    </Translation>
                     <li className='u-text-semi'>
                      <LinkExists to='faq_merchants'>
-                       <Link to='faq_merchants' message='faq_merchants.nav_title'
+                       <Link to='faq_merchants' message='faq_merchants.link_title'
                          id='track-nav-faq' className='u-padding-Vxs u-padding-Hm u-block' />
                      </LinkExists>
                     </li>
@@ -150,16 +153,18 @@ class Header extends React.Component {
               </div>
             </nav>
             <ul className='u-cf u-pull-start'>
-              <li className='u-pull-start'>
-                <a href='/users/sign_in' id='track-nav-sign-in'
-                className={classNames('nav-btn btn btn--small u-text-light u-text-xxs u-relative',
-                  'u-text-transform-none u-text-no-smoothing', {
-                  'btn--invert-hollow': isInverted,
-                  'btn--hollow': !isInverted,
-                })}>
-                  <Message message='header.login_btn' />
-                </a>
-              </li>
+              <Translation locales='en-GB'>
+                <li className='u-pull-start'>
+                  <a href='/users/sign_in' id='track-nav-sign-in'
+                  className={classNames('nav-btn btn btn--small u-text-light u-text-xxs u-relative',
+                    'u-text-transform-none u-text-no-smoothing', {
+                    'btn--invert-hollow': isInverted,
+                    'btn--hollow': !isInverted,
+                  })}>
+                    <Message message='header.login_btn' />
+                  </a>
+                </li>
+              </Translation>
             </ul>
           </div>
         </div>
