@@ -10,7 +10,7 @@ export default class Security extends React.Component {
 
   render() {
     return (
-      <Page>
+      <Page isInverted={false}>
         <div className='page-hero u-relative u-size-full u-padding-Bl'>
           <div className='site-container u-text-center u-padding-Vxm'>
             <figure className='svg-icon u-center'>

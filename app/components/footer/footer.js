@@ -5,6 +5,7 @@ import Link from '../link/link';
 import Href from '../href/href';
 import Message from '../message/message';
 import LinkExists from '../link-exists/link-exists';
+import Translation from '../translation/translation';
 import SchemaItemProp from '../schema-item-prop/schema-item-prop';
 import { homeRoute } from '../../router/routes';
 import { getLocalesForRouteName } from '../../router/route-helpers';
@@ -84,11 +85,13 @@ class Footer extends React.Component {
                 </li>
               </div>
               <div className='grid__cell u-size-1of3 u-text-xxs'>
-                <li>
-                  <a href='https://help.gocardless.com' id='track-footer-help' className='u-link-invert'>
-                    <Message message='help.nav_title' />
-                  </a>
-                </li>
+                <Translation locales='en-GB'>
+                  <li>
+                    <a href='https://help.gocardless.com' id='track-footer-help' className='u-link-invert'>
+                      <Message message='help.nav_title' />
+                    </a>
+                  </li>
+                </Translation>
                 <LinkExists to='faq_merchants'>
                   <li>
                     <Link to='faq_merchants' message='faq_merchants.link_title'
