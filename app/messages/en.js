@@ -201,6 +201,7 @@ export default {
   legal: {
     title: 'Our terms of service',
     nav_title: 'Introduction',
+    footer_nav_title: 'Legal',
     description: 'Legal',
     sidebar_text: 'Got a question? Call our support team on',
   },

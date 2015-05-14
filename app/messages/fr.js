@@ -139,6 +139,7 @@ export default {
   legal: {
     title: 'Légal',
     nav_title: 'Mentions légales',
+    footer_nav_title: 'Légal',
     description: '',
     sidebar_text: 'Des questions ?',
   },
