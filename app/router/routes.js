@@ -82,9 +82,6 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/',
       },
-      'en-IE': {
-          path: '/',
-      },
       'fr-FR': {
           path: '/',
       },
@@ -95,9 +92,6 @@ export const config = Immutable.fromJS([
   ],
   [Pricing, { name: 'pricing' }, {
       'en-GB': {
-          path: '/pricing',
-      },
-      'en-IE': {
           path: '/pricing',
       },
       'fr-FR': {
@@ -112,9 +106,6 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/pro',
       },
-      'en-IE': {
-          path: '/pro',
-      },
       'fr-FR': {
           path: '/pro',
       },
@@ -125,9 +116,6 @@ export const config = Immutable.fromJS([
   ],
   [Security, { name: 'security' }, {
       'en-GB': {
-          path: '/security',
-      },
-      'en-IE': {
           path: '/security',
       },
       'fr-FR': {
@@ -142,25 +130,16 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/features',
       },
-      'en-IE': {
-          path: '/features',
-      },
     },
   ],
   [FeaturesApi, { name: 'features_api' }, {
       'en-GB': {
           path: '/features/api',
       },
-      'en-IE': {
-          path: '/features/api',
-      },
     },
   ],
   [ContactSales, { name: 'contact_sales' }, {
       'en-GB': {
-          path: '/contact-sales',
-      },
-      'en-IE': {
           path: '/contact-sales',
       },
       'fr-FR': {
@@ -175,16 +154,10 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/payments-by-direct-debit',
       },
-      'en-IE': {
-          path: '/payments-by-direct-debit',
-      },
     },
   ],
   [Europe, { name: 'europe' }, {
       'en-GB': {
-        path: '/europe',
-      },
-      'en-IE': {
         path: '/europe',
       },
     },
@@ -193,25 +166,16 @@ export const config = Immutable.fromJS([
       'en-GB': {
         path: '/refer',
       },
-      'en-IE': {
-        path: '/refer',
-      },
     },
   ],
   [ExampleCheckout, { name: 'example_checkout' }, {
       'en-GB': {
           path: '/example-checkout',
       },
-      'en-IE': {
-          path: '/example-checkout',
-      },
     },
   ],
   [About, { name: 'about' }, {
       'en-GB': {
-          path: '/about',
-      },
-      'en-IE': {
           path: '/about',
       },
       'fr-FR': {
@@ -226,9 +190,6 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/about/team',
       },
-      'en-IE': {
-          path: '/about/team',
-      },
       'fr-FR': {
           path: '/a-propos/equipe',
       },
@@ -239,9 +200,6 @@ export const config = Immutable.fromJS([
   ],
   [Jobs, { name: 'jobs' }, {
       'en-GB': {
-          path: '/about/jobs',
-      },
-      'en-IE': {
           path: '/about/jobs',
       },
       'fr-FR': {
@@ -256,16 +214,10 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/about/jobs/product-engineer',
       },
-      'en-IE': {
-          path: '/about/jobs/product-engineer',
-      },
     },
   ],
   [SoftwareEngineer, { name: 'jobs_software_engineer', category: 'jobs.engineering' }, {
       'en-GB': {
-          path: '/about/jobs/software-engineer',
-      },
-      'en-IE': {
           path: '/about/jobs/software-engineer',
       },
     },
@@ -274,16 +226,10 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/about/jobs/web-operations',
       },
-      'en-IE': {
-          path: '/about/jobs/web-operations',
-      },
     },
   ],
   [EngineeringInterships, { name: 'jobs_engineering_internships', category: 'jobs.engineering' }, {
       'en-GB': {
-          path: '/about/jobs/engineering-internships',
-      },
-      'en-IE': {
           path: '/about/jobs/engineering-internships',
       },
     },
@@ -292,16 +238,10 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/about/jobs/developer-community-manager',
       },
-      'en-IE': {
-          path: '/about/jobs/developer-community-manager',
-      },
     },
   ],
   [Designers, { name: 'jobs_designers', category: 'jobs.ux_design' }, {
       'en-GB': {
-          path: '/about/jobs/designers',
-      },
-      'en-IE': {
           path: '/about/jobs/designers',
       },
     },
@@ -310,16 +250,10 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/about/jobs/country-lead-nl-be',
       },
-      'en-IE': {
-          path: '/about/jobs/country-lead-nl-be',
-      },
     },
   ],
   [CountryLeadGermanyAustria, { name: 'jobs_country_lead_de_at', category: 'jobs.country_leads' }, {
       'en-GB': {
-          path: '/about/jobs/country-lead-de-at',
-      },
-      'en-IE': {
           path: '/about/jobs/country-lead-de-at',
       },
     },
@@ -328,16 +262,10 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/about/jobs/country-lead-es',
       },
-      'en-IE': {
-          path: '/about/jobs/country-lead-es',
-      },
     },
   ],
   [CountryLeadSweden, { name: 'jobs_country_lead_se', category: 'jobs.country_leads' }, {
       'en-GB': {
-          path: '/about/jobs/country-lead-se',
-      },
-      'en-IE': {
           path: '/about/jobs/country-lead-se',
       },
     },
@@ -346,25 +274,16 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/about/jobs/bd-generalist',
       },
-      'en-IE': {
-          path: '/about/jobs/bd-generalist',
-      },
     },
   ],
   [AccountExecutive, { name: 'jobs_account_executive', category: 'jobs.sales_marketing' }, {
       'en-GB': {
           path: '/about/jobs/account-executive',
       },
-      'en-IE': {
-          path: '/about/jobs/account-executive',
-      },
     },
   ],
   [AccountExecutiveFrance, { name: 'jobs_account_executive_france', category: 'jobs.sales_marketing' }, {
       'en-GB': {
-          path: '/about/jobs/account-executive-fr',
-      },
-      'en-IE': {
           path: '/about/jobs/account-executive-fr',
       },
       'fr-FR': {
@@ -379,9 +298,6 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/about/jobs/customer-support-fr',
       },
-      'en-IE': {
-          path: '/about/jobs/customer-support-fr',
-      },
       'fr-FR': {
           path: '/about/jobs/service-client',
       },
@@ -392,9 +308,6 @@ export const config = Immutable.fromJS([
   ],
   [LegalIntroduction, { name: 'legal', category: 'legal' }, {
       'en-GB': {
-          path: '/legal',
-      },
-      'en-IE': {
           path: '/legal',
       },
       'fr-FR': {
@@ -409,16 +322,10 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/legal/customers',
       },
-      'en-IE': {
-          path: '/legal/customers',
-      },
     },
   ],
   [LegalMerchants, { name: 'legal_merchants', category: 'legal' }, {
       'en-GB': {
-          path: '/legal/merchants',
-      },
-      'en-IE': {
           path: '/legal/merchants',
       },
     },
@@ -427,16 +334,10 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/legal/old-restrictions',
       },
-      'en-IE': {
-          path: '/legal/old-restrictions',
-      },
     },
   ],
   [LegalOldRestrictions20140731, { name: 'legal_old_restrictions_2014_07_31' }, {
       'en-GB': {
-          path: '/legal/old-restrictions/2014-07-31',
-      },
-      'en-IE': {
           path: '/legal/old-restrictions/2014-07-31',
       },
     },
@@ -445,25 +346,16 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/legal/old-restrictions/2014-09-19',
       },
-      'en-IE': {
-          path: '/legal/old-restrictions/2014-09-19',
-      },
     },
   ],
   [LegalPartners, { name: 'legal_partners', category: 'legal' }, {
       'en-GB': {
           path: '/legal/partners',
       },
-      'en-IE': {
-          path: '/legal/partners',
-      },
     },
   ],
   [LegalRestrictions, { name: 'legal_restrictions', category: 'legal' }, {
       'en-GB': {
-          path: '/legal/restrictions',
-      },
-      'en-IE': {
           path: '/legal/restrictions',
       },
       'fr-FR': {
@@ -478,9 +370,6 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/legal/privacy',
       },
-      'en-IE': {
-          path: '/legal/privacy',
-      },
       'fr-FR': {
           path: '/legal/politique-de-confidentialite',
       },
@@ -493,16 +382,10 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/partners',
       },
-      'en-IE': {
-          path: '/partners',
-      },
     },
   ],
   [PartnersClearBooks, { name: 'partners_clearbooks' }, {
       'en-GB': {
-          path: '/partners/clearbooks',
-      },
-      'en-IE': {
           path: '/partners/clearbooks',
       },
     },
@@ -511,16 +394,10 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/partners/freeagent',
       },
-      'en-IE': {
-          path: '/partners/freeagent',
-      },
     },
   ],
   [PartnersKashflow, { name: 'partners_kashflow' }, {
       'en-GB': {
-          path: '/partners/kashflow',
-      },
-      'en-IE': {
           path: '/partners/kashflow',
       },
     },
@@ -529,16 +406,10 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/partners/pitchero',
       },
-      'en-IE': {
-          path: '/partners/pitchero',
-      },
     },
   ],
   [PartnersSage, { name: 'partners_sage' }, {
       'en-GB': {
-          path: '/partners/sage',
-      },
-      'en-IE': {
           path: '/partners/sage',
       },
     },
@@ -547,16 +418,10 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/partners/xero',
       },
-      'en-IE': {
-          path: '/partners/xero',
-      },
     },
   ],
   [FaqCustomers, { name: 'faq_customers', category: 'faq.customers' }, {
       'en-GB': {
-          path: '/faq/customers',
-      },
-      'en-IE': {
           path: '/faq/customers',
       },
     },
@@ -565,16 +430,10 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/faq/customers/how-it-works',
       },
-      'en-IE': {
-          path: '/faq/customers/how-it-works',
-      },
     },
   ],
   [FaqCustomersRefunds, { name: 'faq_customers_refunds', category: 'faq.customers' }, {
       'en-GB': {
-          path: '/faq/customers/refunds',
-      },
-      'en-IE': {
           path: '/faq/customers/refunds',
       },
     },
@@ -583,16 +442,10 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/faq/customers/security',
       },
-      'en-IE': {
-          path: '/faq/customers/security',
-      },
     },
   ],
   [FaqMerchants, { name: 'faq_merchants', category: 'faq.merchants' }, {
       'en-GB': {
-          path: '/faq/merchants',
-      },
-      'en-IE': {
           path: '/faq/merchants',
       },
       'fr-FR': {
@@ -607,9 +460,6 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/faq/merchants/how-it-works',
       },
-      'en-IE': {
-          path: '/faq/merchants/how-it-works',
-      },
       'fr-FR': {
           path: '/faq/commercant/fonctionnement',
       },
@@ -620,9 +470,6 @@ export const config = Immutable.fromJS([
   ],
   [FaqMerchantsSigningUp, { name: 'faq_merchants_signing_up', category: 'faq.merchants' }, {
       'en-GB': {
-          path: '/faq/merchants/signing-up',
-      },
-      'en-IE': {
           path: '/faq/merchants/signing-up',
       },
       'fr-FR': {
@@ -637,9 +484,6 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/faq/merchants/direct-debit',
       },
-      'en-IE': {
-          path: '/faq/merchants/direct-debit',
-      },
       'fr-FR': {
           path: '/faq/commercant/prelevement-bancaire',
       },
@@ -650,9 +494,6 @@ export const config = Immutable.fromJS([
   ],
   [FaqMerchantsSecurity, { name: 'faq_merchants_security', category: 'faq.merchants' }, {
       'en-GB': {
-          path: '/faq/merchants/security',
-      },
-      'en-IE': {
           path: '/faq/merchants/security',
       },
       'fr-FR': {
@@ -667,9 +508,6 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/faq/merchants/customer-experience',
       },
-      'en-IE': {
-          path: '/faq/merchants/customer-experience',
-      },
       'fr-FR': {
           path: '/faq/commercant/consommateur',
       },
@@ -680,9 +518,6 @@ export const config = Immutable.fromJS([
   ],
   [FaqMerchantsInternationalPayments, { name: 'faq_merchants_international_payments', category: 'faq.merchants' }, {
       'en-GB': {
-          path: '/faq/merchants/international-payments',
-      },
-      'en-IE': {
           path: '/faq/merchants/international-payments',
       },
       'fr-FR': {
@@ -697,9 +532,6 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/faq/merchants/developer-api',
       },
-      'en-IE': {
-          path: '/faq/merchants/developer-api',
-      },
       'fr-FR': {
           path: '/faq/commercant/api-developpeurs',
       },
@@ -710,9 +542,6 @@ export const config = Immutable.fromJS([
   ],
   [FaqMerchantsPartners, { name: 'faq_merchants_partners', category: 'faq.merchants' }, {
       'en-GB': {
-          path: '/faq/merchants/partners',
-      },
-      'en-IE': {
           path: '/faq/merchants/partners',
       },
       'fr-FR': {
@@ -727,16 +556,10 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/faq/merchants/referrals',
       },
-      'en-IE': {
-          path: '/faq/merchants/referrals',
-      },
     },
   ],
   [Stories, { name: 'stories' }, {
       'en-GB': {
-        path: '/stories',
-      },
-      'en-IE': {
         path: '/stories',
       },
     },
@@ -745,16 +568,10 @@ export const config = Immutable.fromJS([
       'en-GB': {
         path: '/stories/has-bean-coffee',
       },
-      'en-IE': {
-        path: '/stories/has-bean-coffee',
-      },
     },
   ],
   [StoriesBlueskyBusiness, { name: 'stories_bluesky_business', category: 'stories' }, {
       'en-GB': {
-        path: '/stories/bluesky-business',
-      },
-      'en-IE': {
         path: '/stories/bluesky-business',
       },
     },
@@ -763,16 +580,10 @@ export const config = Immutable.fromJS([
       'en-GB': {
         path: '/stories/crowdcube',
       },
-      'en-IE': {
-        path: '/stories/crowdcube',
-      },
     },
   ],
   [StoriesMomentum, { name: 'stories_momentum', category: 'stories' }, {
       'en-GB': {
-        path: '/stories/momentum',
-      },
-      'en-IE': {
         path: '/stories/momentum',
       },
     },
@@ -781,16 +592,10 @@ export const config = Immutable.fromJS([
       'en-GB': {
         path: '/stories/rock-choir',
       },
-      'en-IE': {
-        path: '/stories/rock-choir',
-      },
     },
   ],
   [StoriesSpencerHockey, { name: 'stories_spencer_hockey', category: 'stories' }, {
       'en-GB': {
-        path: '/stories/spencer-hockey',
-      },
-      'en-IE': {
         path: '/stories/spencer-hockey',
       },
     },
@@ -799,16 +604,10 @@ export const config = Immutable.fromJS([
       'en-GB': {
         path: '/stories/foundation-of-hearts',
       },
-      'en-IE': {
-        path: '/stories/foundation-of-hearts',
-      },
     },
   ],
   [StoriesGreaterAnglia, { name: 'stories_greater_anglia', category: 'stories' }, {
       'en-GB': {
-        path: '/stories/greater-anglia',
-      },
-      'en-IE': {
         path: '/stories/greater-anglia',
       },
     },
