@@ -125,7 +125,8 @@ class Footer extends React.Component {
                 </LinkExists>
                 <LinkExists to='legal'>
                   <li>
-                    <Link to='legal' message='legal.nav_title'
+                    { /** We special case legal's footer link text, since it appears in the legal page's nav with another name  */ }
+                    <Link to='legal' message='legal.footer_nav_title'
                       id='track-footer-legal' className='page-footer__link u-link-invert' />
                   </li>
                 </LinkExists>
