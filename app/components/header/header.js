@@ -30,8 +30,8 @@ class Header extends React.Component {
       <ul className='u-text-xxs u-padding-Vxs'>
         <LinkExists to='features'>
           <li>
-            <Link to='features' id='track-nav-features' className='u-link-clean u-padding-Vxs u-padding-Hm u-block'>
-              <span className='u-text-semi'><Message message='features.nav_title' /></span>
+            <Link to='features' id='track-nav-features' className='site-header__product-link u-link-clean'>
+              <span className='site-header__product-link-title u-text-semi'><Message message='features.nav_title' /></span>
               <p className='u-color-p'><Message message='features.explainer' /></p>
             </Link>
           </li>
@@ -39,8 +39,8 @@ class Header extends React.Component {
         </LinkExists>
         <LinkExists to='pro'>
           <li>
-            <Link to='pro' id='track-nav-pro' className='u-link-clean u-padding-Vxs u-padding-Hm u-block'>
-              <span className='u-text-semi'><Message message='pro.nav_title' /></span>
+            <Link to='pro' id='track-nav-pro' className='site-header__product-link u-link-clean'>
+              <span className='site-header__product-link-title u-text-semi'><Message message='pro.nav_title' /></span>
               <p className='u-color-p'><Message message='pro.explainer' /></p>
             </Link>
           </li>
@@ -48,8 +48,8 @@ class Header extends React.Component {
         <LinkExists to='partners'>
           <hr className='u-margin-Vxs' />
           <li>
-            <Link to='partners' id='track-nav-partners' className='u-link-clean u-padding-Vxs u-padding-Hm u-block'>
-              <span className='u-text-semi'><Message message='partners.nav_title' /></span>
+            <Link to='partners' id='track-nav-partners' className='site-header__product-link u-link-clean'>
+              <span className='site-header__product-link-title u-text-semi'><Message message='partners.nav_title' /></span>
               <p className='u-color-p'><Message message='partners.explainer' /></p>
             </Link>
           </li>

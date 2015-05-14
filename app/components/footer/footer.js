@@ -53,31 +53,31 @@ class Footer extends React.Component {
                 <LinkExists to='features'>
                   <li>
                     <Link to='features' message='features.nav_title'
-                      id='track-footer-features' className='u-link-invert' />
+                      id='track-footer-features' className='page-footer__link u-link-invert' />
                   </li>
                 </LinkExists>
                 <LinkExists to='pro'>
                   <li>
                     <Link to='pro' message='pro.nav_title'
-                      id='track-footer-pro' className='u-link-invert' />
+                      id='track-footer-pro' className='page-footer__link u-link-invert' />
                   </li>
                 </LinkExists>
                 <LinkExists to='partners'>
                   <li>
                     <Link to='partners' message='partners.link_title'
-                      id='track-footer-partners' className='u-link-invert' />
+                      id='track-footer-partners' className='page-footer__link u-link-invert' />
                   </li>
                 </LinkExists>
                 <LinkExists to='pricing'>
                   <li>
                     <Link to='pricing' message='pricing.nav_title'
-                      id='track-footer-pricing' className='u-link-invert' />
+                      id='track-footer-pricing' className='page-footer__link u-link-invert' />
                   </li>
                 </LinkExists>
                 <LinkExists to='stories'>
                   <li>
                     <Link to='stories' message='stories.title'
-                      id='track-footer-stories' className='u-link-invert' />
+                      id='track-footer-stories' className='page-footer__link u-link-invert' />
                   </li>
                 </LinkExists>
                 <li>
@@ -101,7 +101,7 @@ class Footer extends React.Component {
                 <LinkExists to='features_api'>
                   <li>
                     <Link to='features_api' message='features_api.nav_title'
-                      id='track-footer-api' className='u-link-invert' />
+                      id='track-footer-api' className='page-footer__link u-link-invert' />
                   </li>
                 </LinkExists>
                 <li>
@@ -112,7 +112,7 @@ class Footer extends React.Component {
                 <LinkExists to='security'>
                   <li>
                     <Link to='security' message='security.nav_title'
-                      id='track-footer-security' className='u-link-invert' />
+                      id='track-footer-security' className='page-footer__link u-link-invert' />
                   </li>
                 </LinkExists>
               </div>
@@ -120,13 +120,13 @@ class Footer extends React.Component {
                 <LinkExists to='europe'>
                   <li>
                     <Link to='europe' message='europe.nav_title'
-                      id='track-footer-europe' className='u-link-invert' />
+                      id='track-footer-europe' className='page-footer__link u-link-invert' />
                   </li>
                 </LinkExists>
                 <LinkExists to='legal'>
                   <li>
                     <Link to='legal' message='legal.nav_title'
-                      id='track-footer-legal' className='u-link-invert' />
+                      id='track-footer-legal' className='page-footer__link u-link-invert' />
                   </li>
                 </LinkExists>
                 <li>
@@ -137,13 +137,13 @@ class Footer extends React.Component {
                 <LinkExists to='about'>
                   <li>
                     <Link to='about' message='about.nav_title'
-                      id='track-footer-about' className='u-link-invert' />
+                      id='track-footer-about' className='page-footer__link u-link-invert' />
                   </li>
                 </LinkExists>
                 <LinkExists to='jobs'>
                   <li>
                     <Link to='jobs' message='jobs.nav_title'
-                      id='track-footer-jobs' className='u-link-invert' />
+                      id='track-footer-jobs' className='page-footer__link u-link-invert' />
                   </li>
                 </LinkExists>
               </div>
