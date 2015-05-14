@@ -1,4 +1,6 @@
 import result from 'lodash/object/result';
+import find from 'lodash/collection/find';
+import includes from 'lodash/collection/includes';
 import findLast from 'lodash/collection/findLast';
 import assign from 'lodash/object/assign';
 import React from 'react';
@@ -19,6 +21,18 @@ function renderApp() {
     routes: routes,
     location: Router.HistoryLocation,
   });
+
+  // TODO: Remove this after some time, fix all incoming links
+  const redirects = {
+    '/about#jobs': '/about/jobs',
+    '/about#team': '/about/team',
+  };
+
+  const href = document.location.href;
+  const matchedRedirect = find(Object.keys(redirects), includes.bind(null, href));
+  if (matchedRedirect) {
+    document.location.replace(redirects[matchedRedirect]);
+  }
 
   router.run(function(Handler, state) {
     const mountNode = document.getElementById('root');
