@@ -1,5 +1,6 @@
 import React from 'react';
 import Translation from '../../components/translation/translation';
+import ProductComparison from '../../components/product-comparison/product-comparison';
 import SecurityIcon from '../../icons/svg/security';
 import DeveloperIcon from '../../icons/svg/developer';
 import MobileIcon from '../../icons/svg/mobile';
@@ -26,7 +27,7 @@ export default class ProFr extends React.Component {
                   Automatisez vos prélèvements
                 </h1>
                 <p className='u-text-heading u-text-center u-color-invert u-text-m u-text-light u-margin-Txxs u-text-no-smoothing'>
-                  Intégrez en profondeur la meilleure technologie <br />de paiements récurrents
+                  Une plateforme de pointe pour construire <br />votre écosystème de paiements
                 </p>
               </div>
             </div>
@@ -70,7 +71,7 @@ export default class ProFr extends React.Component {
                   Découvrez GoCardless Pro
                 </h2>
                 <p className='u-text-s u-color-p u-margin-Txs'>
-                  Adapté aux grands comptes et entreprises en forte croissance, GoCardless Pro combine simplicité 
+                  Adapté aux grandes entreprises et startups en forte croissance, GoCardless Pro combine simplicité 
                   d'utilisation et contrôle complet du paiement
                   et de l'expérience client. <br / >GoCardless Pro vous permet de:
                 </p>
@@ -85,7 +86,7 @@ export default class ProFr extends React.Component {
                         <ShopIcon className='svg-icon__image u-fill-dark-gray' />
                       </figure>
                       <p className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
-                        Lancer rapidement de<br /> nouvelles offres d;ab
+                        Lancer rapidement des<br /> offres innovantes
                       </p>
                     </div>
                   </div>
@@ -96,7 +97,7 @@ export default class ProFr extends React.Component {
                         <ProIcon className='svg-icon__image u-fill-dark-gray' />
                       </figure>
                       <p className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
-                        Rationaliser la facturation <br /> et les paiements
+                        Unifier vos systèmes <br /> et vos prélèvements
                       </p>
                     </div>
                   </div>
@@ -107,7 +108,7 @@ export default class ProFr extends React.Component {
                         <IntegrationsIcon className='svg-icon__image u-fill-dark-gray' />
                       </figure>
                       <p className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
-                        Optimiser<br /> des prélèvement existants
+                        Diversifier<br /> vos options de paiements
                       </p>
                     </div>
                   </div>
@@ -125,38 +126,39 @@ export default class ProFr extends React.Component {
                   <DeveloperIcon className='svg-icon__image svg-icon__image--small u-fill-dark-gray' />
                 </figure>
                 <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
-                  Restez chez vous
+                  Restez maître chez vous
                 </div>
                 <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
-                  Intégrez l'API de GoCardless rapidement dans votre site web et vos systèmes
-                  d'information. Tout ce qu'il y a à savoir est dans
-                  notre <a href='https://developer.gocardless.com/pro'>documentation</a>.
+                  Intégrez l'API REST de GoCardless rapidement dans votre site web et vos systèmes
+                  d'information. Découvrez notre 
+                  <a href='https://developer.gocardless.com/pro'> documentation</a>.
                 </p>
               </div>
               <div className='grid__cell u-size-1of2 u-text-center'>
-                <figure className='svg-icon svg-icon--small u-center'>
-                  <MobileIcon className='svg-icon__image svg-icon__image--small svg-icon__image--small-shadow u-fill-blue' />
-                  <MobileIcon className='svg-icon__image svg-icon__image--small u-fill-dark-gray' />
-                </figure>
-                <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
-                  Donnez le choix à vos clients
-                </div>
-                <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
-                  Que ce soit via votre site internet, par téléphone ou courrier, GoCardless Pro
-                  vous permet de faire du prélèvement en votre nom.
-                </p>
-              </div>
-              <div className='grid__cell u-size-1of2 u-text-center u-margin-Txxl u-padding-Txxl'>
                 <figure className='svg-icon svg-icon--small u-center'>
                   <WhiteLabelIcon className='svg-icon__image svg-icon__image--small svg-icon__image--small-shadow u-fill-green' />
                   <WhiteLabelIcon className='svg-icon__image svg-icon__image--small u-fill-dark-gray' />
                 </figure>
                 <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
-                  Maîtrisez vos paiements de A à Z
+                  Contrôlez vos paiements de A à Z
                 </div>
                 <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
-                  Vous connaissez en temps réel le statut de tous vos paiements directement dans vos
-                  systèmes. En cas d'incidents, vous pouvez automatiser les relances.
+                  Recevez automatiquement dans vos systèmes le statut de vos paiements en temps réel. 
+                  Fini les paiements manqués et le travail manuel.
+                </p>
+              </div>
+
+              <div className='grid__cell u-size-1of2 u-text-center u-margin-Txxl u-padding-Txxl'>
+                <figure className='svg-icon svg-icon--small u-center'>
+                  <MobileIcon className='svg-icon__image svg-icon__image--small svg-icon__image--small-shadow u-fill-blue' />
+                  <MobileIcon className='svg-icon__image svg-icon__image--small u-fill-dark-gray' />
+                </figure>
+                <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
+                  Acceptez le prélèvement omni-canal
+                </div>
+                <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
+                  Proposez le prélèvement sur votre site internet, par téléphone ou 
+                  courrier, et passez automatiquement les informations vers vos systèmes CRM et ERP.
                 </p>
               </div>
               <div className='grid__cell u-size-1of2 u-text-center u-margin-Txxl u-padding-Txxl'>
@@ -165,11 +167,11 @@ export default class ProFr extends React.Component {
                   <SecurityIcon className='svg-icon__image svg-icon__image--small u-fill-dark-gray' />
                 </figure>
                 <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
-                  Concentrez vous sur votre activité
+                  Concentrez-vous sur votre activité
                 </div>
                 <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
-                  GoCardless se charge de toutes les démarches SEPA, que ce soit le stockage des mandats 
-                  dématérialisés et les transmissions aux banques. 
+                  Ne devenez pas un expert de paiement : GoCardless se charge de stocker les mandats électronique
+                  et d'intéragir avec les banques en votre nom.
                 </p>
               </div>
             </div>
@@ -181,13 +183,13 @@ export default class ProFr extends React.Component {
               <div className='u-size-1of2 u-center'>
                 <i className='europe-icon u-margin-Bs' />
                 <h2 className='u-text-heading u-color-heading u-text-l u-text-light'>
-                  Vous avez des clients en Europe ?
+                  Vous utilisez Zuora ?
                 </h2>
                 <div className='u-center'>
                   <p className='u-text-s u-color-p u-margin-Ts'>
-                    GoCardless vous permet d'encaisser vos prélèvements
-                    bancaires auprès de plus de 300 millions de personnes dans la zone
-                    Euro et au Royaume-Uni via une seule intégration.
+                    GoCardless est la seule plateforme de prélèvement SEPA
+                    accessible sans intégration dans Zuora, la plateforme de gestion d'abonnement. 
+                    En apprendre plus sur <a href="https://knowledgecenter.zuora.com/CB_Billing/M_Payment_Gateways/Supported_Payment_Gateways/GoCardless_Gateway">notre intégration avec Zuora</a>.
                   </p>
                 </div>
               </div>
@@ -212,13 +214,37 @@ export default class ProFr extends React.Component {
           </div>
           <hr className='u-margin-An' />
         </div>
+        <div id='forOptimizely-Table'>
+          <div className='u-text-center u-padding-Vxxl u-background-light-gray'>
+            <div className='site-container u-padding-Vxl'>
+              <ProductComparison />
+              <table className='u-size-full'><tfoot>
+                  <tr className='comparison-table__row'>
+                    <td />
+                    <td className='u-padding-As'>
+                      <Link to='features' id='track-comparison-table-features'
+                      className='u-color-primary'>
+                        Learn more about GoCardless
+                      </Link>
+                    </td>
+                    <td />
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+          <hr className='u-margin-An' />
+        </div>
         <div className='section-scroll-target' id='tarifs'>
           <div className='u-text-center u-padding-Vxxl'>
             <div className='site-container u-padding-Vxl'>
               <div className='u-size-2of3 u-center'>
                 <h2 className='u-text-heading u-color-heading u-text-light u-text-l'>
-                  Un prix adapté aux entreprises de toute taille
+                  Un prix adapté à votre échelle
                 </h2>
+                <p className='u-text-s u-color-p u-margin-Vxs'>
+                  Conçu pour les grandes entreprises et les start-ups en forte croissance
+                </p>
                 <Link to='pricing' id='track-cta-pricing' className='btn btn--hollow u-margin-Tm'>
                   En apprendre plus sur notre prix
                 </Link>

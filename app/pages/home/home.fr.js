@@ -1,11 +1,15 @@
 import React from 'react';
 import Translation from '../../components/translation/translation';
+import TickSquareIcon from '../../icons/svg/tick-square';
 import ChecklistIcon from '../../icons/svg/checklist';
 import RealtimeIcon from '../../icons/svg/realtime';
-import TickSquareIcon from '../../icons/svg/tick-square';
+import IntegrationsIcon from '../../icons/svg/integrations';
+import ShopIcon from '../../icons/svg/shop';
+import ProIcon from '../../icons/svg/pro'
 import Tabs from '../../components/tabs/tabs';
 import Link from '../../components/link/link';
 import Href from '../../components/href/href';
+import Modal from '../../components/modal/modal';
 
 export default class HomeFr extends React.Component {
   displayName = 'HomeFr'
@@ -20,21 +24,21 @@ export default class HomeFr extends React.Component {
                 La meilleure technologie de prélèvement
               </h2>
               <p className='u-text-s u-color-p u-margin-Txs'>
-                Accédez au prélèvement SEPA afin d'améliorer votre rétention clients et de bénéficier
-                de tarifs très compétitif, sans les complications associées aux opérateurs historiques.
+                GoCardless vous permet de bénéficier de la fiabilité et des tarifs très compétitif 
+                du prélèvement SEPA, sans les complications associées aux opérateurs historiques.
               </p>
             </div>
             <div className='grid u-margin-Tl u-padding-Tm'>
               <div className='grid__cell u-size-1of3 u-text-center'>
                 <figure className='svg-icon u-center'>
-                  <RealtimeIcon className='svg-icon__image svg-icon__image--shadow u-fill-green' />
-                  <RealtimeIcon className='svg-icon__image u-fill-dark-gray' />
+                  <TickSquareIcon className='svg-icon__image svg-icon__image--shadow u-fill-yellow' />
+                  <TickSquareIcon className='svg-icon__image u-fill-dark-gray' />
                 </figure>
                 <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
-                  Fait pour le récurrent
+                  Prenez des paiements en 24h
                 </div>
                 <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
-                  Oubliez les cartes qui expirent et les virements qui tardent
+                  Sans engagement, sans démarche bancaire et sans installation requise
                 </p>
               </div>
               <div className='grid__cell u-size-1of3 u-text-center'>
@@ -51,44 +55,73 @@ export default class HomeFr extends React.Component {
               </div>
               <div className='grid__cell u-size-1of3 u-text-center'>
                 <figure className='svg-icon u-center'>
-                  <TickSquareIcon className='svg-icon__image svg-icon__image--shadow u-fill-yellow' />
-                  <TickSquareIcon className='svg-icon__image u-fill-dark-gray' />
+                  <RealtimeIcon className='svg-icon__image svg-icon__image--shadow u-fill-green' />
+                  <RealtimeIcon className='svg-icon__image u-fill-dark-gray' />
                 </figure>
                 <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
-                  Parfait pour l'Europe
+                  Fait pour le récurrent
                 </div>
                 <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
-                  Acceptez les paiements SEPA via compte bancaire dans 22 pays
+                  Oubliez les cartes qui expirent et les virements qui tardent
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-        <hr className='u-margin-An' />
-        <div className='site-container u-text-center u-padding-Vxxl'>
-          <div className='u-padding-Vxl'>
-            <h2 className='u-text-l u-text-heading u-color-heading u-text-light'>
-              Expertise de paiements
-            </h2>
-            <p className='u-text-s u-color-p u-margin-Txs u-size-1of2 u-center'>
-              Nous vous conseillons sur toutes les étapes d'implementation
-              de vos paiements par prélèvement SEPA et offrons un support de première classe en continu.
+            <p className='u-color-p u-margin-Txxl u-padding-Tm'>
+                Vous voulez en apprendre plus sur le prélèvement SEPA ?
             </p>
-            <div className='u-size-1of2 u-center'>
-              <hr className='u-margin-Vxl horizontal-rule u-size-3of4 u-center' />
-              <p className='u-color-heading u-margin-Bxxs'>
-                <strong>Vous voulez en apprendre plus sur le prélèvement SEPA ?</strong>
-              </p>
-              <Href to='guides.path'
+            <Href to='guides.path'
                 className='u-color-primary u-text-upcase u-text-xxs u-text-heading u-text-semi'>
                 Lisez notre guide
-              </Href>
-            </div>
+            </Href>
           </div>
         </div>
 
         <hr className='u-margin-An' />
+        <div className='site-container u-text-center u-padding-Vxxl'>
+          <h2 className='u-text-l u-text-heading u-colo-heading u-text-light u-margin-Tl'>
+            Que désirez-vous faire?
+          </h2>
+          <div className='product-grid grid u-margin-Vxxl'>
+            <Link to='features' id='track-cta-features' className='u-link-clean u-text-center grid__cell u-size-1of3'>
+              <div className='product-grid__container u-padding-Vl'>
+                <figure className='svg-icon u-center'>
+                  <ShopIcon className='svg-icon__image svg-icon__image--shadow u-fill-green' />
+                  <ShopIcon className='svg-icon__image u-fill-dark-gray' />
+                </figure>
+                <p className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
+                  Prendre des paiements<br />en toute simplicité
+                </p>
+              </div>
+              <div className='product-grid__btn btn u-size-full'>Découvrez GoCardless</div>
+            </Link>
+            <Link to='pro' id='track-cta-pro' className='u-link-clean u-text-center grid__cell u-size-1of3'>
+              <div className='product-grid__container u-padding-Vl'>
+                <figure className='svg-icon u-center'>
+                  <ProIcon className='svg-icon__image svg-icon__image--shadow u-fill-yellow' />
+                  <ProIcon className='svg-icon__image u-fill-dark-gray' />
+                </figure>
+                <p className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
+                  Automatiser en profondeur<br />vos paiements
+                </p>
+              </div>
+              <div className='product-grid__btn btn u-size-full'>Découvrez GoCardless Pro</div>
+            </Link>
+            <Link to='partners' id='track-cta-partners' className='u-link-clean u-text-center grid__cell u-size-1of3'>
+              <div className='product-grid__container u-padding-Vl'>
+                <figure className='svg-icon u-center'>
+                  <IntegrationsIcon className='svg-icon__image svg-icon__image--shadow u-fill-blue' />
+                  <IntegrationsIcon className='svg-icon__image u-fill-dark-gray' />
+                </figure>
+                <p className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
+                  Aider vos clients<br />à prendre des paiements
+                </p>
+              </div>
+              <div className='product-grid__btn btn u-size-full'>Découvrez nos partenaires</div>
+            </Link>
+          </div>
+        </div>
 
+        <hr className='u-margin-An' />
         <div className='site-container u-text-center u-padding-Vxxl'>
           <h2 className='u-text-l u-text-heading u-color-heading u-text-light'>
             Ils parlent de GoCardless
@@ -181,55 +214,27 @@ export default class HomeFr extends React.Component {
                 Nous aidons les start-ups comme les plus grandes entreprises.
               </p>
             </div>
-          </div>
-          <div className='u-padding-Vxl u-margin-Tl'>
-            <Tabs triggers={[
-              (<a href='#' className={'grid__cell u-padding-Hl stories-testimonials__link--guardian'+
-                 ' u-size-1of3 stories-testimonials__link u-link-clean'}>
-                <img src='/images/stories/guardian-logo@2x.jpg' />
-              </a>),
-              (<a href='#'
-                 className={'grid__cell u-padding-Hl stories-testimonials__link--funding-circle'+
-                 ' u-size-1of3 stories-testimonials__link u-link-clean'}>
-                <img className='stories-testimonials__link-image--funding-circle' src='/images/stories/funding-circle-logo@2x.jpg' />
-              </a>),
-              (<a href='#'
-                 className={'grid__cell u-padding-Hl stories-testimonials__link--lendable'+
-                 ' u-size-1of3 stories-testimonials__link u-link-clean'}>
-                <img className='stories-testimonials__link-image--lendable' src='/images/stories/lendable-logo@2x.jpg' />
-              </a>),
-            ]}>
-              <div className='stories-testimonials__quote stories-testimonials__quote--guardian u-relative u-margin-Txxl u-padding-Al'>
-                <p className='u-text-heading u-color-heading u-text-light u-text-m'>
-                  The Guardian recherche toujours à offrir la meilleure expérience client
-                  et a choisi GoCardless pour simplifier l'expérience du paiement récurrent.'
-                </p>
-              </div>
-              <div className={'stories-testimonials__quote stories-testimonials__quote--funding-circle'+
-                ' u-relative u-margin-Txxl u-padding-Al'}>
-                <p className='u-text-heading u-color-heading u-text-light u-text-m'>
-                  Nous avons migré sur GoCardless pour que nos prélèvements
-                  puissent être gérés par une seule personne au lieu de tout un département.
-                  C'est un plaisir de travailler avec une société de technologie financière qui s'engage également à aider les entreprises.'
-                </p>
-              </div>
-              <div className='stories-testimonials__quote stories-testimonials__quote--lendable u-relative u-margin-Txxl u-padding-Al'>
-                <p className='u-text-heading u-color-heading u-text-light u-text-m'>
-                  GoCardless est une des meilleures entreprises de paiements avec laquelle j'ai travaillé.
-                  Leur API est simple à intégrer et nous permet d'utiliser le prélèvement de façon entièrement automatisée.
-                  Je les recommende fortement à toutes les entreprises qui ont pour priorités une bonne expérience client et
-                  l'utilisation de la meilleure technologie disponible pour leurs prélèvements en Europe.
-                </p>
-              </div>
-            </Tabs>
+          </div> 
+          <div className='u-text-center u-margin-Vl u-padding-Vs u-center'>
+                <img src='/images/fr/logos/pro-logos-fr@2x.jpg' />
           </div>
         </div>
 
         <hr className='u-margin-An' />
 
-        <div className='site-container u-text-center u-padding-Vxxl'>
-          <div className='u-padding-Vxl'>
-            <Link to='pro' id='track-cta-sign-up' className='btn'>En apprendre plus</Link>
+        <div className='u-text-center u-padding-Vxxl'>
+          <div className='site-container u-padding-Vxl'>
+            <div className='u-size-2of3 u-center'>
+              <h2 className='u-text-heading u-color-heading u-text-light u-text-l'>
+                Un prix simple, transparent pour tous
+              </h2>
+              <p className='u-text-s u-color-p u-margin-Vxs'>
+                Des tarifs concurrentiels adaptés aux grandes entreprises comme aux start-ups
+              </p>
+              <Link to='pricing' id='track-cta-pricing' className='btn btn--hollow u-margin-Tm'>
+                En apprendre plus sur notre prix
+              </Link>
+            </div>
           </div>
         </div>
       </Translation>
