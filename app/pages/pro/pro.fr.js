@@ -17,7 +17,7 @@ export default class ProFr extends React.Component {
 
   render() {
     return (
-      <Translation locales={['fr-FR', 'fr-BE']}>
+      <Translation locales='fr'>
         <div className='page-hero page-hero--pro page-hero--medium u-relative u-size-full'>
           <div className='site-container page-hero__container'>
             <div className='page-hero__inner'>

@@ -1,0 +1,30 @@
+#!/bin/bash
+# Usage: NODE_ENV=production AWS_S3_BUCKET=staging.gocardless.com ./script/deploy
+
+set -e errexit
+
+trap "exit 1" TERM
+
+if [[ -z "$AWS_S3_BUCKET" ]]; then
+  echo "Missing AWS_S3_BUCKET"
+  kill -s TERM $$
+fi
+
+if [[ -z "$GC_AWS_ACCESS_KEY" ]]; then
+  echo "Missing GC_AWS_ACCESS_KEY"
+  kill -s TERM $$
+fi
+
+if [[ -z "$GC_AWS_SECRET" ]]; then
+  echo "Missing GC_AWS_SECRET"
+  kill -s TERM $$
+fi
+
+CWD="./dist/"
+
+ulimit -n 4096
+
+AWS_SECRET_ACCESS_KEY=$GC_AWS_SECRET AWS_ACCESS_KEY_ID=$GC_AWS_ACCESS_KEY \
+  ./script/s3-deploy $CWD** --cwd $CWD \
+  --region eu-west-1 --bucket $AWS_S3_BUCKET \
+  --redirects config/redirects.json

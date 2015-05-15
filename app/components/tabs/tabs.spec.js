@@ -1,11 +1,11 @@
 import Tabs from './tabs';
-import React from 'react/addons';
-const {TestUtils} = React.addons;
+import React from 'react';
+import ReactTestUtils from 'react/lib/ReactTestUtils';
 
 describe('Tabs Component', function() {
   var result;
   beforeEach(function() {
-    result = TestUtils.renderIntoDocument(
+    result = ReactTestUtils.renderIntoDocument(
         <Tabs triggers={[
           (<a href='#'>1</a>),
           (<a href='#' className='trigger'><span className='trigger-span'>2</span></a>),
@@ -17,17 +17,17 @@ describe('Tabs Component', function() {
   });
 
   it('shows first child content by default', function() {
-    const contentElement = TestUtils.findRenderedDOMComponentWithClass(result, 'u-is-visible is-active');
+    const contentElement = ReactTestUtils.findRenderedDOMComponentWithClass(result, 'u-is-visible is-active');
     expect(contentElement.getDOMNode().textContent).toEqual('Content 1');
   });
 
   describe('clicking on a trigger', function() {
     ['trigger', 'trigger-span'].forEach(function(className) {
       it('shows content', function() {
-        const triggerElement = TestUtils.findRenderedDOMComponentWithClass(result, className);
+        const triggerElement = ReactTestUtils.findRenderedDOMComponentWithClass(result, className);
         const node = triggerElement.getDOMNode();
-        TestUtils.Simulate.click(node);
-        const contentElement = TestUtils.findRenderedDOMComponentWithClass(result, 'u-is-visible is-active');
+        ReactTestUtils.Simulate.click(node);
+        const contentElement = ReactTestUtils.findRenderedDOMComponentWithClass(result, 'u-is-visible is-active');
         expect(contentElement.getDOMNode().textContent).toEqual('Content 2');
       });
     });

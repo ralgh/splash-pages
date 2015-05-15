@@ -1,0 +1,22 @@
+#!/usr/bin/env babel-node
+
+import { fetchPage, writePage } from '../app/static-build/builder';
+import { getAllPaths } from '../app/router/route-helpers';
+
+const [bin, script, serverUrl, outDir] = process.argv;
+
+if (!serverUrl || !outDir) {
+  console.error(`Usage: ${bin} ${script} host directory`);
+  process.exit(1);
+}
+
+const processPage = function(pagePath) {
+  return fetchPage(serverUrl, pagePath)
+    .then(writePage.bind(null, outDir))
+    .catch(console.error.bind(console));
+};
+
+Promise.all(getAllPaths().map(processPage)).then(function(filenames) {
+  console.log('Completed static html dump:');
+  console.log(filenames.sort().map((filename) => `  ${filename}`).join('\n'));
+}).catch(console.error.bind(console));

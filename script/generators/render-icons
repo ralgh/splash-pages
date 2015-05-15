@@ -11,7 +11,7 @@ var converter = new HTMLtoJSX({
 
 function renderIcon(className, svgIcon) {
   var output = converter.convert(svgIcon);
-  output = output.replace(/<svg /, '<svg className={this.props.className} ');
+  output = output.replace(/<svg /, '<svg {...this.props} ');
 
   return `import React from 'react';
   // Warning!

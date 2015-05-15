@@ -3,6 +3,7 @@ import Translation from '../../components/translation/translation';
 import CustomerIcon from '../../icons/svg/customer';
 import AddPartnerIcon from '../../icons/svg/add-partner';
 import Link from '../../components/link/link';
+import Href from '../../components/href/href';
 import PartnersLink from './partners-link';
 
 export default class PartnersEn extends React.Component {
@@ -10,7 +11,7 @@ export default class PartnersEn extends React.Component {
 
   render() {
     return (
-      <Translation locales='en-GB'>
+      <Translation locales='en'>
         <div className='page-hero u-padding-Vxxl'>
           <div className='site-container u-text-center u-padding-Vxm'>
             <h1 className='u-text-heading u-color-invert u-text-light u-padding-Tm'>Help your customers get paid</h1>
@@ -92,7 +93,7 @@ export default class PartnersEn extends React.Component {
             </div>
           </div>
           <p className='u-text-s u-color-p u-margin-Vxs'>
-            For a full list of our integrations, <Link to='faq_merchants'>see here</Link>.
+            For a full list of our integrations, <Link to='faq_merchants_partners'>see here</Link>.
           </p>
         </div>
         <hr className='u-margin-An' />
@@ -104,7 +105,7 @@ export default class PartnersEn extends React.Component {
               </h2>
               <p className='u-text-s u-color-p u-margin-Vxs'>
                 Expand your business by integrating with GoCardless today. <br />
-                For more information, email us at <a href='mailto:help@gocardless.com'>help@gocardless.com</a>
+                For more information, email us at <Href to='email' />
               </p>
             </div>
           </div>

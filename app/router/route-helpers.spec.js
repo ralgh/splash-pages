@@ -1,59 +1,11 @@
-import _ from 'lodash';
-import Immutable from 'immutable';
+import last from 'lodash/array/last';
+import flatten from 'lodash/array/flatten';
+import compact from 'lodash/array/compact';
 import { run, TestLocation } from 'react-router';
-import { getLocalesForRouteName, getRoutes } from './routes.js';
-import { FakeComponent } from '../helpers/specs/fake-component';
+import { getLocalesForRouteName, filterRouteByCategory, getRoutes, getAllPaths } from './route-helpers';
 import NotFound from '../pages/not-found/not-found';
 
-const fakeConfig = Immutable.fromJS([
-  [
-    FakeComponent, { name: 'home' }, {
-      'en-GB': { path: '/' },
-      'fr-FR': { path: '/' },
-    },
-  ],
-  [
-    FakeComponent, { name: 'englishAndFrenchRoute' }, {
-      'en-GB': { path: '/english-specific-page' },
-      'fr-FR': { path: '/french-specific-page' },
-    },
-  ],
-  [
-    FakeComponent, { name: 'englishOnlyRoute' }, {
-      'en-GB': { path: '/english-only' },
-    },
-  ],
-  [
-    FakeComponent, { name: 'frenchOnlyRoute' }, {
-      'fr-FR': { path: '/french-only' },
-    },
-  ],
-  [
-    FakeComponent, { name: 'routeWithChildren' }, {
-      'en-GB': { path: '/en-route-with-child' },
-    },
-    [
-      [
-        FakeComponent, { name: 'childRoute' }, {
-          'en-GB': { path: '/child-route' },
-        },
-      ],
-    ],
-  ],
-  [
-    null, null, {
-      'en-GB': {
-        path: '/redirect',
-        redirectTo: '/redirected',
-      },
-    },
-  ],
-  [
-    FakeComponent, { name: 'redirectedToRoute' }, {
-      'en-GB': { path: '/redirected' },
-    },
-  ],
-]);
+import { fakeConfig } from '../helpers/specs/fake-route-config';
 
 //TODO: write a test that says if you have a config with a URL that's not absolute, throw an error
 describe('getLocalesForRouteName', () => {
@@ -65,7 +17,7 @@ describe('getLocalesForRouteName', () => {
     it('returns a name => path mapping', () => {
       expect(getLocalesForRouteName(routeName, fakeConfig)).toEqual({
         'en-GB': { path: '/' },
-        'fr-FR': { path: '/fr-fr' },
+        'fr-FR': { path: '/fr-fr/' },
       });
     });
   });
@@ -75,11 +27,11 @@ describe('getLocalesForRouteName', () => {
 
     it('returns a name => path mapping', () => {
       expect(getLocalesForRouteName(routeName, fakeConfig)).toEqual({
-        'en-GB': { path: '/child-route' },
+        'en-GB': { path: '/child-route/' },
       });
 
       expect(getLocalesForRouteName('routeWithChildren', fakeConfig)).toEqual({
-        'en-GB': { path: '/en-route-with-child' },
+        'en-GB': { path: '/en-route-with-child/' },
       });
     });
   });
@@ -109,20 +61,6 @@ describe('getRoutes', () => {
       routeComponent = getRoutes('en-GB', ['en-GB', 'fr-FR'], fakeConfig);
     });
 
-    it('creates any redirects correctly', (done) => {
-      run(routeComponent, function({ routes }) {
-        const redirectRoute = routes[0].childRoutes.find((route) => !route.handler);
-
-        const transitionSpy = jasmine.createSpyObj('transition', ['redirect']);
-
-        redirectRoute.onEnter(transitionSpy, {}, {});
-
-        expect(transitionSpy.redirect).toHaveBeenCalledWith('/redirected', {}, {});
-
-        done();
-      });
-    });
-
     it('returns one route component', (done) => {
       run(routeComponent, function({ routes }) {
         expect(routes.length).toEqual(1);
@@ -140,10 +78,8 @@ describe('getRoutes', () => {
           '/english-specific-page/?',
           '/english-only/?',
           '/en-route-with-child/?',
-          '/redirect/?',
-          '/redirected/?',
-          '//?',
-          '//?*',
+          '/?',
+          '/?*',
         ]);
 
         done();
@@ -171,7 +107,7 @@ describe('getRoutes', () => {
       it('without forward slash', (done) => {
         const location = new TestLocation(['/english-only']);
         run(routeComponent, location, function(Handler, state) {
-          expect(_.last(state.routes).name).toEqual('englishOnlyRoute');
+          expect(last(state.routes).name).toEqual('englishOnlyRoute');
           done();
         });
       });
@@ -179,7 +115,7 @@ describe('getRoutes', () => {
       it('with forward slash', (done) => {
         const location = new TestLocation(['/english-only/']);
         run(routeComponent, location, function(Handler, state) {
-          expect(_.last(state.routes).name).toEqual('englishOnlyRoute');
+          expect(last(state.routes).name).toEqual('englishOnlyRoute');
           done();
         });
       });
@@ -188,7 +124,7 @@ describe('getRoutes', () => {
     it('correctly includes child routes for the given locale', (done) => {
       run(routeComponent, function({ routes }) {
         const route = routes[0];
-        const childChildRoutePaths = _.flatten(_.compact(route.childRoutes.map(c => c.childRoutes))).map((c) => c.path);
+        const childChildRoutePaths = flatten(compact(route.childRoutes.map(c => c.childRoutes))).map((c) => c.path);
 
         expect(childChildRoutePaths).toEqual(['/child-route/?']);
 
@@ -238,6 +174,73 @@ describe('getRoutes', () => {
       expect(function() {
         getRoutes('de-de', ['en-GB', 'fr-FR'], fakeConfig);
       }).toThrowError(/Locale not allowed/);
+    });
+  });
+});
+
+describe('getAllPaths', () => {
+  it('lists all possible URLs', function() {
+    const urls = getAllPaths(fakeConfig).sort().toJS();
+
+    expect(urls).toEqual([
+      '/',
+      '/fr-fr/',
+      '/english-specific-page/',
+      '/fr-fr/french-specific-page/',
+      '/english-only/',
+      '/fr-fr/french-only/',
+      '/en-route-with-child/',
+      '/child-route/',
+    ].sort());
+  });
+});
+
+describe('filterRouteByCategory', () => {
+  let routeCategory;
+
+  describe('for a root category with sub categories', () => {
+    beforeEach(() => routeCategory = 'jobs');
+
+    it('returns all jobs routes', () => {
+      var pages = filterRouteByCategory(routeCategory, 'en-GB', fakeConfig);
+
+      expect(pages.length).toEqual(2);
+
+      pages.forEach(function(page) {
+        expect(page.routeConfig.category).toMatch(/jobs\.engineering|jobs\.testing/);
+        expect(page.localeConfig.path).toMatch(/^\//);
+      });
+    });
+  });
+
+  describe('for a sub category', () => {
+    beforeEach(() => routeCategory = 'jobs.engineering');
+
+    it('returns jobs.engineering routes', () => {
+      var pages = filterRouteByCategory(routeCategory, 'en-GB', fakeConfig);
+
+      expect(pages.length).toEqual(1);
+
+      pages.forEach(function(page) {
+        expect(page.routeConfig.category).toEqual('jobs.engineering');
+        expect(page.localeConfig.path).toMatch(/^\//);
+      });
+    });
+  });
+
+  describe('for a category with no pages in locale', () => {
+    beforeEach(() => routeCategory = 'jobs');
+
+    it('returns no routes', () => {
+      expect(filterRouteByCategory(routeCategory, 'fr-BE', fakeConfig)).toEqual([]);
+    });
+  });
+
+  describe('for a category that is not available in any locale', () => {
+    beforeEach(() => routeCategory = 'doesnt exist');
+
+    it('returns no routes', () => {
+      expect(filterRouteByCategory(routeCategory, 'fr-BE', fakeConfig)).toEqual([]);
     });
   });
 });

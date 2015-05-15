@@ -1,4 +1,5 @@
-import _ from 'lodash';
+import includes from 'lodash/collection/includes';
+import assign from 'lodash/object/assign';
 import request from 'superagent';
 import React from 'react';
 import Message from '../../components/message/message';
@@ -24,10 +25,10 @@ const prospectTypes = {
 
 const ProspectFormPropTypes = {
   prospectType(props, propName) {
-    const keys = _.keys(prospectTypes);
+    const types = Object.keys(prospectTypes);
     const value = props[propName];
-    if (!_.includes(keys, value)) {
-      throw new TypeError(`prospectType (${value}) is not allowed (${keys})`);
+    if (!includes(types, value)) {
+      throw new TypeError(`prospectType (${value}) is not allowed (${types})`);
     }
   },
 };
@@ -60,7 +61,7 @@ export default class ProspectForm extends React.Component {
 
   handleChange(event) {
     const input = event.target;
-    var formData = _.extend({}, this.state.formData, {
+    var formData = assign({}, this.state.formData, {
       [input.name]: input.value,
     });
 

@@ -1,19 +1,20 @@
 import React from 'react';
 
-import browseHappy from '../layout-static/browse-happy.js';
-import createHTML5Tags from '../layout-static/create-html5-tags.js';
-import GTM from '../layout-static/google-tag-manager.js';
-import websiteSchema from '../layout-static/website-schema.js';
+import browseHappy from '../layout-static/browse-happy';
+import createHTML5Tags from '../layout-static/create-html5-tags';
+import GTM from '../layout-static/google-tag-manager';
+import websiteSchema from '../layout-static/website-schema';
 
-import {getMessage} from '../intl/intl';
+import getSiteTitle from '../get-site-title/get-site-title';
+import { getMessage } from '../intl/intl';
 import localeMessages from '../../../config/messages';
-import {getLocalesForRouteName} from '../../router/routes';
-import {defaultLocale, localeToLanguage} from '../../helpers/locale-helper/locale-helper';
-import {homeRoute} from '../../router/routes';
-import {buildSchemaDotOrgForOrganization} from '../../helpers/schema-dot-org/schema-dot-org';
-import {PropTypes} from '../../helpers/prop-types/prop-types';
+import { defaultLocale, localeToLanguage } from '../../helpers/locale-helper/locale-helper';
+import { homeRoute } from '../../router/routes';
+import { getLocalesForRouteName } from '../../router/route-helpers';
+import { buildSchemaDotOrgForOrganization } from '../../helpers/schema-dot-org/schema-dot-org';
+import { PropTypes } from '../../helpers/prop-types/prop-types';
 
-function relAlternateLinks(root, path, locales) {
+function relAlternateLinks(root, locales) {
   var defaultPath = locales[defaultLocale].path;
 
   var alternates = Object.keys(locales).map(function(locale) {
@@ -40,7 +41,7 @@ class HtmlDocument extends React.Component {
     routeName: React.PropTypes.string.isRequired,
     availableLocales: React.PropTypes.array.isRequired,
     router: React.PropTypes.func.isRequired,
-    path: React.PropTypes.string.isRequired,
+    pathname: React.PropTypes.string.isRequired,
     dataRender: React.PropTypes.object.isRequired,
     config: React.PropTypes.object.isRequired,
     markup: React.PropTypes.string.isRequired,
@@ -60,12 +61,12 @@ class HtmlDocument extends React.Component {
     routeName: React.PropTypes.string.isRequired,
     availableLocales: React.PropTypes.array.isRequired,
     router: React.PropTypes.func.isRequired,
-    path: React.PropTypes.string.isRequired,
+    pathname: React.PropTypes.string.isRequired,
     config: React.PropTypes.object.isRequired,
   };
 
   getChildContext() {
-    const { locales, messages, formats, routeName, availableLocales, router, path, config } = this.props;
+    const { locales, messages, formats, routeName, availableLocales, router, pathname, config } = this.props;
 
     return {
       locales: locales,
@@ -74,29 +75,29 @@ class HtmlDocument extends React.Component {
       routeName: routeName,
       availableLocales: availableLocales,
       router: router,
-      path: path,
+      pathname: pathname,
       config: config,
     };
   }
 
   render() {
-    const { messages, routeName, locales, config, path, availableLocales, markup, script, css } = this.props;
+    const { messages, routeName, locales, config, pathname, availableLocales, markup, script, css } = this.props;
     const isHome = routeName === homeRoute;
     const schemaDotOrgOrganisation = buildSchemaDotOrgForOrganization(localeMessages, availableLocales, config);
     const routeLocales = getLocalesForRouteName(routeName);
-    const pageHref = config.siteRoot + path;
-    const title = `${getMessage(messages, `${routeName}.title`)} - ${ config.siteName }`;
+    const pageHref = config.siteRoot + pathname;
+    const title = getSiteTitle({messages: messages, routeName: routeName, config: config});
     const language = localeToLanguage(locales);
+    const description = getMessage(messages, `${routeName}.description`);
 
     return (
       <html className='no-js' lang={language}>
         <head>
           <meta charSet='utf-8' />
-          <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no' />
+          <meta name='viewport' content='width=device-width' />
 
           <title>{ title }</title>
-
-          <meta name='description' content={ getMessage(messages, `${routeName}.description`) } />
+          { description && <meta name='description' content={ description } />}
           <link href={ config.socialLinks.google } rel='publisher' />
           <meta name='og:image' content={ config.logoUrlSquare } />
           <meta name='og:image:secure_url' content={ config.logoUrlSquare } />
@@ -104,7 +105,7 @@ class HtmlDocument extends React.Component {
           <link rel='canonical' href={ pageHref } />
 
           { routeLocales &&
-              relAlternateLinks(config.siteRoot, path, routeLocales) }
+              relAlternateLinks(config.siteRoot, routeLocales) }
 
           { css.map((href, k) => <link key={k} rel='stylesheet' href={href} />) }
 
@@ -126,12 +127,12 @@ class HtmlDocument extends React.Component {
 
           { isHome &&
               <script type='application/ld+json'
-                dangerouslySetInnerHTML={{ __html: websiteSchema.replace('{PAGE}', path) }} />
+                dangerouslySetInnerHTML={{ __html: websiteSchema.replace('{PAGE}', pathname) }} />
           }
 
           { isHome &&
               <script type='application/ld+json'
-                dangerouslySetInnerHTML={{ __html: schemaDotOrgOrganisation }} />
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaDotOrgOrganisation) }} />
           }
 
           { config.googleTagManagerId &&

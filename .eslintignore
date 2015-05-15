@@ -3,3 +3,5 @@ app/messages
 app/vendor
 app/jspm.config*.js
 app/bundles
+public/bundle
+dist

@@ -1,15 +1,17 @@
 export default {
   header: {
-    our_products: 'Produit',
+    our_products: 'Nos produits',
     login_btn: 'Login',
     more: 'Plus',
   },
   footer: {
     description: 'GoCardless est un Etablissement de Paiement Agréé, régulé par l’autorité britannique FCA (Financial Conduct Authority) et habilité à collecter des paiements à travers l’Union Européenne.',
     currently_viewing: 'Vous consultez actuellement',
-    eruope_cta: 'GoCardless s\'étend en Europe',
-    eruope_link: 'en apprendre plus',
-    eruope_description: 'sur notre expansion',
+    europe_cta: 'GoCardless s\'étend en Europe',
+    europe_link: 'en apprendre plus',
+    europe_description: 'sur notre expansion',
+    cookies_message: 'En continuant votre visite sur notre site vous acceptez nos cookies.',
+    cookies_link_text: 'Apprenez-en plus',
   },
   hero: {
     header: 'Simplifions les paiements récurrents',
@@ -19,14 +21,14 @@ export default {
     basic: 'Commencez à collecter des paiements',
     pro: 'Contactez-nous',
     pro_signup: 'Sign Up Now',
-    more: 'Apprendre plus',
+    more: 'En apprendre plus',
   },
   contact_types: ['sales'],
   postal_address: {
     street_address: '338-346 Goswell Road',
     address_locality: 'Londres',
     postal_code: 'EC1V 7LQ',
-    address_country: '',
+    address_country: 'Royaume-Uni',
     address_country_iso: 'GB',
   },
   country_names: {
@@ -65,9 +67,56 @@ export default {
     information1: 'Vos données sont sécurisées et ne seront jamais vendues ou partagées.',
     information2: ''
   },
+  features: {
+    title: 'GoCardless: Prélèvement bancaire simplifié',
+    nav_title: 'GoCardless',
+    description: 'GoCardless est la manière la plus simple de collecter vos paiements par prélèvement SEPA. Commencez dès aujourd\'hui, économisez du temps et améliorez votre cash flow.',
+    explainer: 'Paiements récurrents simplifiés'
+  },
   faq_merchants: {
     title: 'FAQ Commerçants',
-    nav_title: 'FAQ',
+    nav_title: 'En bref',
+    link_title: 'FAQ',
+    description: '',
+  },
+  faq_merchants_customer_experience: {
+    title: 'FAQ Commerçants - Expérience du consommateur',
+    nav_title: 'Expérience du consommateur',
+    description: '',
+  },
+  faq_merchants_developer_api: {
+    title: 'FAQ Commerçants - API pour développeurs',
+    nav_title: 'API pour développeurs',
+    description: '',
+  },
+  faq_merchants_direct_debit: {
+    title: 'FAQ Commerçants - Prélèvement bancaire',
+    nav_title: 'Prélèvement bancaire',
+    description: '',
+  },
+  faq_merchants_how_it_works: {
+    title: 'FAQ Commerçants - Fonctionnement',
+    nav_title: 'Fonctionnement',
+    description: '',
+  },
+  faq_merchants_international_payments: {
+    title: 'FAQ Commerçants - Paiements à l\'étranger',
+    nav_title: 'Paiements à l\'étranger',
+    description: '',
+  },
+  faq_merchants_partners: {
+    title: 'FAQ Commerçants - Partenaires',
+    nav_title: 'Partenaires',
+    description: '',
+  },
+  faq_merchants_security: {
+    title: 'FAQ Commerçants - Sécurité',
+    nav_title: 'Sécurité',
+    description: '',
+  },
+  faq_merchants_signing_up: {
+    title: 'FAQ Commerçants - Inscription',
+    nav_title: 'Inscription',
     description: '',
   },
   home: {
@@ -90,14 +139,47 @@ export default {
     description: 'Collectez vos prélèvements automatiques SEPA à partir de 0,75€ par transaction, avec tarifs dégressifs pour les grandes entreprises.',
   },
   legal: {
-    title: 'Mentions Légales',
-    nav_title: 'Légal',
-    description: 'Légal',
+    title: 'Légal',
+    nav_title: 'Mentions légales',
+    footer_nav_title: 'Légal',
+    description: '',
+    sidebar_text: 'Des questions ?',
+  },
+  legal_privacy: {
+    title: 'Légal - Politique de confidentialité',
+    nav_title: 'Politique de confidentialité',
+    description: 'Legal',
+  },
+  legal_restrictions: {
+    title: 'Légal - Activités restreintes',
+    nav_title: 'Activités restreintes',
+    description: 'Legal',
+  },
+  team: {
+    title: 'Notre équipe',
+    description: '',
+    nav_title: 'Notre équipe',
   },
   jobs: {
     title: 'Carrières',
+    description: '',
     nav_title: 'Carrières',
+    open_positions: 'Nos offres d\'emplois',
+    sales_marketing: {
+      title: 'Ventes',
+    },
+    operations: {
+      title: 'Support',
+    },
   },
+  jobs_customer_support_france: {
+    title: 'Service client',
+    description: '',
+  },
+  jobs_account_executive_france: {
+    title: 'Chargé(e) de clientèle',
+    description: '',
+ },
   pro: {
     title: 'GoCardless: Le contrôle total de vos prélèvements',
     nav_title: 'GoCardless Pro',
@@ -107,6 +189,7 @@ export default {
   partners: {
     title: 'Applications partenaires et intégrations logiciels',
     nav_title: 'Devenez nos partenaires',
+    link_title: 'Partenaires',
     description: 'Devenez partenaires de GoCardless et laisse vos utilisateurs collecter des paiements par prélèvement SEPA dans votre plateforme.',
     explainer: 'Offrez GoCardless à vos clients',
   },
@@ -124,6 +207,7 @@ export default {
   blog: {
     title: 'Blog',
     nav_title: 'Blog',
+    cta: 'Visitez notre Blog',
   },
   guides: {
     title: 'Guide SEPA',

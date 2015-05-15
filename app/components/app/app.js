@@ -1,6 +1,7 @@
 import React from 'react';
 import {PropTypes} from '../../helpers/prop-types/prop-types';
 import {RouteHandler} from 'react-router';
+import getSiteTitle from '../get-site-title/get-site-title';
 
 class App extends React.Component {
   displayName = 'App'
@@ -11,6 +12,7 @@ class App extends React.Component {
     formats: React.PropTypes.object.isRequired,
     routeName: React.PropTypes.string.isRequired,
     availableLocales: React.PropTypes.array.isRequired,
+    pathname: React.PropTypes.string.isRequired,
     config: React.PropTypes.object.isRequired,
   }
 
@@ -20,11 +22,16 @@ class App extends React.Component {
     formats: React.PropTypes.object.isRequired,
     routeName: React.PropTypes.string.isRequired,
     availableLocales: React.PropTypes.array.isRequired,
+    pathname: React.PropTypes.string.isRequired,
     config: React.PropTypes.object.isRequired,
   }
 
+  componentWillReceiveProps(newProps) {
+    document.title = getSiteTitle(newProps);
+  }
+
   getChildContext() {
-    const { locales, messages, formats, routeName, availableLocales, config } = this.props;
+    const { locales, messages, formats, routeName, availableLocales, config, pathname } = this.props;
 
     return {
       locales: locales,
@@ -32,6 +39,7 @@ class App extends React.Component {
       formats: formats,
       routeName: routeName,
       availableLocales: availableLocales,
+      pathname: pathname,
       config: config,
     };
   }

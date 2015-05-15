@@ -12,7 +12,7 @@ export default class CloseModalIcon extends React.Component {
   /*eslint-disable max-len*/
   render() {
     return (
-      <svg className={this.props.className} width="35px" height="35px" viewBox="0 0 35 35">
+      <svg {...this.props} width="35px" height="35px" viewBox="0 0 35 35">
       <g id="Page-1" stroke="none" strokeWidth={1} fill="none" fill-rule="evenodd">
         <g id="Artboard-2" transform="translate(-1287.000000, -2941.000000)">
           <g id="Oval-18-+-delete" transform="translate(1287.000000, 2941.000000)">

@@ -1,3 +1,9 @@
+.nav-tabs__link {
+  display: block;
+  padding-bottom: $space-small;
+  font-weight: $font-weight-light;
+}
+
 .nav-tabs__link.is-active {
   text-decoration: underline;
 }

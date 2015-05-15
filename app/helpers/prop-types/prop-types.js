@@ -1,12 +1,13 @@
-import {validateLocale} from '../locale-helper/locale-helper';
+import assign from 'lodash/object/assign';
+import every from 'lodash/collection/every';
+import flatten from 'lodash/array/flatten';
+import React from 'react';
+import { validateLocaleOrLanguage } from '../locale-helper/locale-helper';
 
-export const PropTypes = {
+export const PropTypes = assign({}, React.PropTypes, {
   locale(props, propName) {
-    if (!Array.isArray(props[propName])) {
-      return validateLocale(props[propName]);
-    }
-    props[propName].forEach(function(locale) {
-      validateLocale(locale);
+    return every(flatten([props[propName]]), function(locale) {
+      return validateLocaleOrLanguage(locale);
     });
   },
-};
+});

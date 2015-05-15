@@ -19,7 +19,7 @@ export default class Link extends Component {
 
   render() {
     return (
-      <RouterLink {...this.props}>
+      <RouterLink {...this.props} activeClassName='is-active'>
         { this.props.message &&
           (<Message message={this.props.message} />) || this.props.children }
       </RouterLink>

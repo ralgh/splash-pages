@@ -25,7 +25,7 @@ export default class ContactSales extends React.Component {
             <ProspectForm prospectType='sales' />
             <hr />
             <p className='u-text-center u-color-meta u-margin-Bs'>
-              <b><Message message='contact_sales.talk_to_us' /> </b>
+              <b><Message message='contact_sales.talk_to_us' /></b><br/>
               <Message message='contact_sales.call_us' /> <Message message='phone_full' />
             </p>
             <hr />

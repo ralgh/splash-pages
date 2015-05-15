@@ -9,3 +9,7 @@
 .page-footer__end {
   background: $dark-gray-darken;
 }
+
+.page-footer__link.is-active {
+  text-decoration: none;
+}

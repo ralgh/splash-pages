@@ -7,9 +7,11 @@ export default {
   footer: {
     description: 'GoCardless is a Bacs approved bureau and is regulated by the Financial Conduct Authority as an Authorised Payment Institution.',
     currently_viewing: 'Currently viewing',
-    eruope_cta: 'GoCardless is expanding',
-    eruope_link: 'learn more',
-    eruope_description: 'about upcoming countries',
+    europe_cta: 'GoCardless is expanding',
+    europe_link: 'learn more',
+    europe_description: 'about upcoming countries',
+    cookies_message: 'By continuing your visit to this site, you agree to the use of cookies.',
+    cookies_link_text: 'Learn more',
   },
   cta: {
     basic: 'Start taking payments',
@@ -26,7 +28,7 @@ export default {
     street_address: '338-346 Goswell Road',
     address_locality: 'London',
     postal_code: 'EC1V 7LQ',
-    address_country: '',
+    address_country: 'United Kingdom',
     address_country_iso: 'GB'
   },
   phone_full: '+44 20 7183 8674',
@@ -60,10 +62,16 @@ export default {
   pricing: {
     title: 'Pricing',
     nav_title: 'Pricing',
+    cost_cap: '£2',
     description: 'Collect Direct Debit payments online with fees of just 1%, capped at £2. Scale pricing is available for larger organisations.',
+    pro_cost_per_transaction: '1p - 60p',
+    per_transaction_amount_normal: '1%',
+    pro_monthly_fee: '£200',
+    normal_capped_at_amount: '£200',
+    pro_number_of_monthly_payments: '> 500',
   },
   about: {
-    title: 'About GoCardless: Company Info & Job Openings',
+    title: 'Company Info & Job Openings',
     nav_title: 'About us',
     description: 'About us',
     link: 'about',
@@ -74,7 +82,8 @@ export default {
     title: 'The UK’s #1 for online Direct Debit',
     nav_title: 'Home',
     description: 'GoCardless',
-    link: 'home page'
+    link: 'home page',
+    trusted_message_scale: 'We’re a Bacs approved bureau that collects millions of pounds for our merchants every day.',
   },
   contact_sales: {
     title: 'Get a Quote',
@@ -92,19 +101,84 @@ export default {
     description: '',
   },
   features: {
-    title: 'GoCardless: Quick & Simple Online Payments',
+    title: 'Quick & Simple Online Payments',
     nav_title: 'GoCardless',
     description: 'GoCardless is the easiest way to take payments online. Collect payments directly from your customers\' bank accounts. Save time and improve cash flow.',
     explainer: 'Simple recurring payments'
   },
-  faq_merchants: {
-    title: 'FAQ for merchants',
-    nav_title: 'FAQ',
-    description: '',
+  faq: {
+    title: 'Frequently asked questions',
+    sidebar: 'Got a question? Call our support team on',
   },
   faq_customers: {
     title: 'FAQ for customers',
-    nav_title: 'FAQ for customers',
+    nav_title: 'Overview',
+    description: '',
+  },
+  faq_customers_how_it_works: {
+    title: 'FAQ for customers - How it works',
+    nav_title: 'How it works',
+    description: '',
+  },
+  faq_customers_refunds: {
+    title: 'FAQ for customers - Refunds',
+    nav_title: 'Refunds',
+    description: '',
+  },
+  faq_customers_security: {
+    title: 'FAQ for customers - Security',
+    nav_title: 'Security',
+    description: '',
+  },
+  faq_merchants: {
+    title: 'FAQ for merchants',
+    nav_title: 'Overview',
+    link_title: 'FAQ',
+    description: '',
+  },
+  faq_merchants_customer_experience: {
+    title: 'FAQ for merchants - Customer experience',
+    nav_title: 'Customer experience',
+    description: '',
+  },
+  faq_merchants_developer_api: {
+    title: 'FAQ for merchants - Developer API',
+    nav_title: 'Developer API',
+    description: '',
+  },
+  faq_merchants_direct_debit: {
+    title: 'FAQ for merchants - Direct Debit',
+    nav_title: 'Direct Debit',
+    description: '',
+  },
+  faq_merchants_how_it_works: {
+    title: 'FAQ for merchants - How it works',
+    nav_title: 'How it works',
+    description: '',
+  },
+  faq_merchants_international_payments: {
+    title: 'FAQ for merchants - International payments',
+    nav_title: 'International payments',
+    description: '',
+  },
+  faq_merchants_partners: {
+    title: 'FAQ for merchants - Partners',
+    nav_title: 'Partners',
+    description: '',
+  },
+  faq_merchants_referrals: {
+    title: 'FAQ for merchants - Referral scheme',
+    nav_title: 'Referral scheme',
+    description: '',
+  },
+  faq_merchants_security: {
+    title: 'FAQ for merchants - Security',
+    nav_title: 'Security',
+    description: '',
+  },
+  faq_merchants_signing_up: {
+    title: 'FAQ for merchants - Signing up',
+    nav_title: 'Signing up',
     description: '',
   },
   features_api: {
@@ -124,14 +198,48 @@ export default {
     nav_title: 'Stories',
     description: 'Stories',
   },
-  europe: {
-    title: 'SEPA',
-    nav_title: 'SEPA',
-    description: 'SEPA',
-  },
   legal: {
-    title: 'Terms of Service',
-    nav_title: 'Legal',
+    title: 'Our terms of service',
+    nav_title: 'Introduction',
+    footer_nav_title: 'Legal',
+    description: 'Legal',
+    sidebar_text: 'Got a question? Call our support team on',
+  },
+  legal_customers: {
+    title: 'Our terms of service - Customers',
+    nav_title: 'Customer agreement',
+    description: 'Legal',
+  },
+  legal_merchants: {
+    title: 'Our terms of service - Merchants',
+    nav_title: 'Merchant agreement',
+    description: 'Legal',
+  },
+  legal_old_restrictions: {
+    title: 'Our terms of service - Restrictions',
+    description: 'Legal',
+  },
+  legal_old_restrictions_2014_07_31: {
+    title: 'Our terms of service - Restrictions',
+    description: 'Legal',
+  },
+  legal_old_restrictions_2014_09_19: {
+    title: 'Our terms of service - Restrictions',
+    description: 'Legal',
+  },
+  legal_partners: {
+    title: 'Our terms of service - Partners',
+    nav_title: 'Partner agreement',
+    description: 'Legal',
+  },
+  legal_privacy: {
+    title: 'Our terms of service - Privacy',
+    nav_title: 'Privacy Policy',
+    description: 'Legal',
+  },
+  legal_restrictions: {
+    title: 'Our terms of service - Restrictions',
+    nav_title: 'Restricted activities',
     description: 'Legal',
   },
   pro: {
@@ -143,6 +251,7 @@ export default {
   partners: {
     title: 'Partner Apps & Software Integration',
     nav_title: 'Partner with us',
+    link_title: 'Partners',
     description: 'Partner up with GoCardless and let people take payments through your software. We work with FreeAgent, Xero, Sage, Kashflow, Pitchero, ClearBooks, CrowdCube and more.',
     explainer: 'Offer GoCardless to your users',
   },
@@ -174,9 +283,100 @@ export default {
     title: 'Payments By Direct Debit',
     description: 'Direct Debit is cheaper & more reliable than the card networks. It\'s also more flexible than a standing order. Find out how you can take payments using Direct Debit.',
   },
+  europe: {
+    title: 'SEPA Direct Debit: Collect Payments Across Europe',
+    nav_title: 'Europe',
+    description: 'GoCardless makes it easy to accept SEPA Direct Debit payments from across Europe. Take recurring and one-off payments. Find out more and register your interest.',
+  },
+  refer: {
+    title: 'Referral Scheme: Get £50 off your fees',
+    nav_title: 'Refer',
+    description: 'Earn money by recommending GoCardless. Refer someone else and you\'ll both get £50 credit towards GoCardless fees.',
+  },
+  team: {
+    title: 'Team',
+    description: '',
+    nav_title: 'Team',
+  },
   jobs: {
     title: 'Jobs',
+    description: '',
     nav_title: 'Jobs',
+    open_positions: 'Open positions',
+    engineering: {
+      title: 'Engineering',
+    },
+    country_leads: {
+      title: 'Country Leads',
+    },
+    business_development: {
+      title: 'Business Development',
+    },
+    sales_marketing: {
+      title: 'Sales & Marketing',
+    },
+    operations: {
+      title: 'Operations',
+    },
+    ux_design: {
+      title: 'UX & Design'
+    }
+  },
+  jobs_product_engineer: {
+    title: 'Product Engineer',
+    description: '',
+  },
+  jobs_software_engineer: {
+    title: 'Backend Software Engineer',
+   description: '',
+  },
+  jobs_web_operations: {
+    title: 'Web Operations Engineer',
+    description: '',
+  },
+  jobs_engineering_internships: {
+    title: 'Engineering Internships',
+    description: '',
+  },
+  jobs_developer_community_manager: {
+    title: 'Developer Community Manager',
+    description: '',
+  },
+  jobs_designers: {
+    title: 'Designers',
+    description: '',
+  },
+  jobs_country_lead_nl_be: {
+    title: 'Netherlands & Belgium',
+    description: '',
+  },
+  jobs_country_lead_de_at: {
+    title: 'Germany & Austria',
+    description: '',
+  },
+  jobs_country_lead_es: {
+    title: 'Spain',
+    description: '',
+  },
+  jobs_country_lead_se: {
+    title: 'Sweden',
+    description: '',
+  },
+  jobs_bd_generalist: {
+    title: 'Generalist',
+    description: '',
+  },
+  jobs_account_executive: {
+    title: 'Account Executive',
+    description: '',
+  },
+  jobs_account_executive_france: {
+    title: 'French Account Executive',
+    description: '',
+  },
+  jobs_customer_support_france: {
+    title: 'French Customer Support',
+    description: '',
   },
   pro_docs: {
     title: 'Pro API',
@@ -185,6 +385,7 @@ export default {
   blog: {
     title: 'Blog',
     nav_title: 'Blog',
+    cta: 'Visit our Blog',
   },
   guides: {
     title: 'Guides',
@@ -226,5 +427,5 @@ export default {
   stories_crowdcube: {
     title: 'Crowdcube',
     description: 'Crowdcube saved admin time and kept the FCA happy by switching to GoCardless',
-  }
+  },
 };

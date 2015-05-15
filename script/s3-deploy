@@ -1,0 +1,213 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var util = require('util');
+var crypto = require('crypto');
+var fs = require('fs');
+var path = require('path');
+
+var mime = require('mime');
+var glob = require('glob');
+var mkdirp = require('mkdirp');
+var AWS = require('aws-sdk');
+var assign = require('lodash/object/assign');
+var flatten = require('lodash/array/flatten');
+var clone = require('lodash/lang/clone');
+var argv = require('minimist')(process.argv.slice(2));
+
+var redirects;
+if (argv.redirects) {
+  redirects = require(path.join(process.cwd(), argv.redirects));
+}
+
+process.stdout.on('error', process.exit);
+
+var options = {
+  bucket: argv.bucket,
+  region: argv.r || argv.region || 'us-west-1',
+  cwd: argv.cwd || '',
+};
+
+function errorExit(err) {
+  if (err.stack) {
+    console.error(err.stack);
+  } else {
+    console.error(String(err));
+  }
+  process.exit(1);
+}
+
+var MSG = {
+  SKIP_MATCHES: 'File Matches, skipped %s',
+  UPLOAD_SUCCESS: 'Uploaded: %s/%s',
+  ERR_UPLOAD: 'Upload error: %s (%s)',
+  ERR_CHECKSUM: '%s error: expected hash: %s but found %s for %s',
+};
+
+function contentType(src) {
+  var type = mime.lookup(src).replace('-', '');
+  var charset = mime.charsets.lookup(type, null);
+
+  if (charset) {
+    type += '; charset=' + charset;
+  }
+
+  return type;
+}
+
+function createMd5Hash(data) {
+  return crypto.createHash('md5').update(data).digest('hex');
+}
+
+function base64Md5(data) {
+  return crypto.createHash('md5').update(data).digest('base64');
+}
+
+function redirect(dest) {
+  if (dest.indexOf('/') !== 0) {
+    dest = '/' + dest;
+  }
+
+  return redirects && redirects[dest];
+}
+
+function buildBaseParams(file) {
+  var dest = file.path.replace(file.base, '');
+  dest = dest.replace(/^\//, '');
+  return {
+    Key: dest,
+  };
+}
+
+function buildUploadParams(file) {
+  var params = assign({
+    ContentMD5: base64Md5(file.contents),
+    Body: file.contents,
+    ContentType: contentType(file.path),
+    CacheControl: 'max-age=0, no-cache',
+  }, buildBaseParams(file));
+
+  var websiteRedirectLocation = redirect(params.Key);
+  if (websiteRedirectLocation) {
+    params.WebsiteRedirectLocation = websiteRedirectLocation;
+  }
+
+  return params;
+}
+
+function upload(client, file, opts) {
+  opts = assign({
+    ACL: 'public-read',
+  }, opts);
+
+  var params = assign({}, buildUploadParams(file), opts);
+  var dest = params.Key;
+
+  if (params.WebsiteRedirectLocation) {
+    console.log('!!! Redirecting:', dest, 'to:', params.WebsiteRedirectLocation);
+  }
+
+  // Upload the file to s3.
+  client.putObject(params, function(err) {
+    if (err) {
+      console.log(MSG.ERR_UPLOAD, err, err.stack);
+    }
+
+    var msg = util.format(MSG.UPLOAD_SUCCESS, params.Bucket, dest);
+    console.log(msg);
+  });
+}
+
+function sync(client, file, opts) {
+  var params = assign({
+    IfNoneMatch: createMd5Hash(file.contents),
+    IfUnmodifiedSince: file.stat.mtime,
+  }, buildBaseParams(file), opts);
+
+  client.headObject(params, function(err) {
+    if (err && (err.statusCode === 304 || err.statusCode === 412)) {
+      console.log(MSG.SKIP_MATCHES, params.Key);
+      return;
+    }
+
+    upload(client, file, opts);
+  });
+}
+
+function readFile(filepath, cb) {
+  var stat = fs.statSync(filepath);
+  if (stat.isFile()) {
+    fs.readFile(filepath, {
+      encoding: null,
+    }, function(err, data) {
+      if (err) {
+        errorExit('Failed to read file: ' + filepath);
+      }
+      cb({
+        stat: stat,
+        contents: data,
+        base: path.join(process.cwd(), options.cwd),
+        path: path.join(process.cwd(), filepath),
+      });
+    });
+  } else if (stat.isDirectory()) {
+    fs.readdir(filepath, function(err, files) {
+      if (err) {
+        errorExit('Failed to read files: ' + err);
+      }
+      files.forEach(function(filename) {
+        readFile(path.join(filepath, filename), cb);
+      });
+    });
+  }
+}
+
+function deploy(files, AWSOptions, s3Options) {
+  AWSOptions = clone(AWSOptions, true);
+  s3Options = clone(s3Options, true);
+
+  AWS.config.update(assign({
+    sslEnabled: true,
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  }, AWSOptions));
+
+  var client = new AWS.S3();
+
+  files.forEach(function(filePath) {
+    readFile(filePath, function(fileObject) {
+      sync(client, fileObject, s3Options);
+    });
+  });
+}
+
+function writeRedirectFiles(targetRedirects) {
+  Object.keys(targetRedirects).forEach(function(redirectFrom) {
+    var outdir = path.join(process.cwd(), argv.cwd);
+    var outfile = path.join(outdir, redirectFrom);
+    mkdirp.sync(path.dirname(outfile));
+    fs.writeFileSync(outfile, '<!doctype html><meta charset="utf-8"></html>');
+  });
+}
+
+if (redirects) {
+  console.log('Creating redirect files');
+
+  writeRedirectFiles(redirects);
+}
+
+var globbedFiles = flatten(argv._
+  .filter(Boolean).map(function(pattern) {
+    return glob.sync(pattern);
+  }));
+
+console.log('Deploying files: %s', globbedFiles);
+console.log('> Target S3 bucket: %s (%s region)',
+  options.bucket, options.region);
+
+deploy(globbedFiles, {
+  region: argv.r || argv.region,
+}, {
+  Bucket: options.bucket,
+});
