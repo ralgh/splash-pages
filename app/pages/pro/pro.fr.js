@@ -73,7 +73,10 @@ export default class ProFr extends React.Component {
                 <p className='u-text-s u-color-p u-margin-Txs'>
                   Adapté aux grandes entreprises et startups en forte croissance, GoCardless Pro combine simplicité 
                   d'utilisation et contrôle complet du paiement
-                  et de l'expérience client. <br / >GoCardless Pro vous permet de:
+                  et de l'expérience client.
+                </p>
+                <p className='u-text-s u-color-p u-margin-Txs'>
+                  GoCardless Pro vous permet de:
                 </p>
               </div>
 
@@ -179,24 +182,6 @@ export default class ProFr extends React.Component {
 
           <hr className='u-margin-An' />
           <div className='site-container u-text-center u-padding-Vxxl'>
-            <div className='u-padding-Vxl'>
-              <div className='u-size-1of2 u-center'>
-                <i className='europe-icon u-margin-Bs' />
-                <h2 className='u-text-heading u-color-heading u-text-l u-text-light'>
-                  Vous utilisez Zuora ?
-                </h2>
-                <div className='u-center'>
-                  <p className='u-text-s u-color-p u-margin-Ts'>
-                    GoCardless est la seule plateforme de prélèvement SEPA
-                    accessible sans intégration dans Zuora, la plateforme de gestion d'abonnement. 
-                    En apprendre plus sur <a href="https://knowledgecenter.zuora.com/CB_Billing/M_Payment_Gateways/Supported_Payment_Gateways/GoCardless_Gateway">notre intégration avec Zuora</a>.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr className='u-margin-An' />
-          <div className='site-container u-text-center u-padding-Vxxl'>
             <div className='u-padding-Txl'>
               <div className='u-size-1of2 u-center'>
                 <h2 className='u-text-heading u-color-heading u-text-light u-text-l'>
@@ -224,7 +209,7 @@ export default class ProFr extends React.Component {
                     <td className='u-padding-As'>
                       <Link to='features' id='track-comparison-table-features'
                       className='u-color-primary'>
-                        Learn more about GoCardless
+                        Apprenez-en plus sur GoCardless
                       </Link>
                     </td>
                     <td />

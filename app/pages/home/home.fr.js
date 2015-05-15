@@ -151,18 +151,6 @@ export default class HomeFr extends React.Component {
               </div>
               <div className='stories-item__btn btn u-size-full'>Lire l'article</div>
             </a>
-            <a href={'http://www.challenges.fr/finance-et-marche/20150413.CHA4873/'+
-              'ces-start-up-qui-font-valser-les-modeles-de-la-city-de-londres.html'}
-              target='_blank' className='grid__cell u-size-1of3 u-link-clean u-padding-Lxs u-padding-Bm'>
-              <div className='product-grid__container u-text-center u-padding-Vl'>
-                <i role='img' aria-label='Challenges' className='challenges-logo stories-item__logo--challenges' />
-                <p className='u-size-3of4 u-center u-color-p u-margin-Txxs'>
-                  'GoCardless a trouvé son marché: 9.000 clients ont acheté cette technologie qui simplifie leur gestion administrative
-                  et améliore le paiement de leurs factures'
-                </p>
-              </div>
-              <div className='stories-item__btn btn u-size-full'>Lire l'article</div>
-            </a>
             <a href={'http://www.latribune.fr/entreprises-finance/banques-finance/'+
               'gocardless-ou-quand-la-fintech-londonienne-debarque-en-france-469023.html'}
               target='_blank' className='grid__cell u-size-1of3 u-link-clean u-padding-Rxs'>
@@ -171,28 +159,6 @@ export default class HomeFr extends React.Component {
                 <p className='u-size-3of4 u-center u-color-p u-margin-Txxs'>
                   'Les grandes entreprises n'ont pas plus envie que les startups de devenir des spécialistes des paiements,
                    elles veulent juste une solution de paiement qui fonctionne'
-                </p>
-              </div>
-              <div className='stories-item__btn btn u-size-full'>Lire l'article</div>
-            </a>
-            <a href='http://www.journaldunet.com/web-tech/start-up/fintech-gocardless-lancement-france.shtml'
-              target='_blank' className='grid__cell u-size-1of3 u-link-clean'>
-              <div className='product-grid__container u-text-center u-padding-Vl'>
-                <i role='img' aria-label='Journal Du Net' className='journaldunet-logo stories-item__logo--journaldunet' />
-                <p className='u-size-3of4 u-center u-color-p u-margin-Txxs'>
-                  'Plus de logiciel coûteux à installer au sein de l'entreprise ou de
-                  fastidieux processus d'agréments bancaires, et plus besoin d'équipe dédiée à la gestion des prélèvements'
-                </p>
-              </div>
-              <div className='stories-item__btn btn u-size-full'>Lire l'article</div>
-            </a>
-            <a href='http://www.agefi.fr/articles/gocardless-arrive-en-france-dans-le-prelevement-automatique-1354433.html'
-              target='_blank' className='grid__cell u-size-1of3 u-link-clean u-padding-Lxs'>
-              <div className='product-grid__container u-text-center u-padding-Vl'>
-                <i role='img' aria-label='L\Agefi' className='lagefi-logo stories-item__logo--lagefi' />
-                <p className='u-size-3of4 u-center u-color-p u-margin-Txxs'>
-                  'Offre adaptée aux jeunes entreprises commercialisant auprès de leurs clients des services par abonnement,
-                   que la mise en place de prélèvements facilite'
                 </p>
               </div>
               <div className='stories-item__btn btn u-size-full'>Lire l'article</div>
