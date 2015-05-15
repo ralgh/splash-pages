@@ -130,6 +130,12 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/features',
       },
+      'fr-FR': {
+          path: '/fonctionalites',
+      },
+      'fr-BE': {
+          path: '/fonctionalites',
+      },
     },
   ],
   [FeaturesApi, { name: 'features_api' }, {
@@ -382,6 +388,12 @@ export const config = Immutable.fromJS([
       'en-GB': {
           path: '/partners',
       },
+      'fr-FR': {
+          path: '/partenaires',
+      },
+      'fr-BE': {
+          path: '/partenaires',
+      },
     },
   ],
   [PartnersClearBooks, { name: 'partners_clearbooks' }, {
@@ -489,12 +501,6 @@ export const config = Immutable.fromJS([
       },
       'fr-BE': {
           path: '/faq/commercant/prelevement-bancaire',
-      },
-       'fr-FR': {
-          path: '/fonctionalites',
-      },
-      'fr-BE': {
-          path: '/fonctionalites',
       },
    },
   ],
