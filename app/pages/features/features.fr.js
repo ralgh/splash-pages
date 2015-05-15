@@ -24,15 +24,17 @@ export default class FeaturesFr extends React.Component {
     return (
       <Translation locales={['fr-FR', 'fr-BE']}>
         <div>
-          <div className='page-hero u-relative u-size-full'>
+          <div className='page-hero page-hero--medium u-relative u-size-full'>
             <div className='site-container page-hero__container'>
-              <div className='page-hero__text u-center u-padding-Bm'>
-                <h1 className='u-text-heading u-margin-Tm u-color-invert u-text-center u-text-xl u-text-light'>
-                  Commencez à prélever tout de suite
-                </h1>
-                <p className='u-text-heading u-text-center u-color-invert u-text-m u-text-light u-margin-Txxs u-text-no-smoothing'>
-                  GoCardless est le moyen le plus rapide et facile <br />de collecter des prélèvements SEPA sur Internet
-                </p>
+              <div className='page-hero__inner'>
+                <div className='page-hero__text'>
+                  <h1 className='u-text-heading u-margin-Tm u-color-invert u-text-center u-text-xl u-text-light'>
+                    Commencez à prélever tout de suite
+                  </h1>
+                  <p className='u-text-heading u-text-center u-color-invert u-text-m u-text-light u-margin-Txxs u-text-no-smoothing'>
+                    GoCardless est le moyen le plus rapide et facile <br />de collecter des prélèvements SEPA sur Internet
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -251,7 +253,7 @@ export default class FeaturesFr extends React.Component {
                       <td />
                       <td className='u-padding-As'>
                         <a href='/pro' id='track-comparison-table-pro' className='u-color-primary'>
-                          Learn more about GoCardless Pro
+                          Apprenez-en plus sur GoCardless Pro
                         </a>
                       </td>
                     </tr>
@@ -291,15 +293,15 @@ export default class FeaturesFr extends React.Component {
                     </a>
                   ),]}>
                     <div>
-                      <img src='/images/basic/basic-dashboard-home.png'
+                      <img src='/images/basic/fr/basic-dashboard-home.png'
                         className='basic-page__dashboard-image' alt='Interface du tableau de bord GoCardless' />
                     </div>
                     <div>
-                      <img src='/images/basic/basic-add-customer.png'
+                      <img src='/images/basic/fr/basic-add-customer.png'
                         className='basic-page__dashboard-image' alt="Formulaire d'ajout de client" />
                     </div>
                     <div>
-                      <img src='/images/basic/basic-take-payment.png'
+                      <img src='/images/basic/fr/basic-take-payment.png'
                         className='basic-page__dashboard-image' alt='Suivi du statut des paiements' />
                     </div>
                   </Tabs>
