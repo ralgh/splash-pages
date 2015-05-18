@@ -2,7 +2,7 @@ import includes from 'lodash/collection/includes';
 import React from 'react';
 import Immutable from 'immutable';
 import { Route, DefaultRoute, NotFoundRoute } from 'react-router';
-import { defaultLocale } from '../helpers/locale-helper/locale-helper';
+import { defaultLocale, localeToLanguage, validateLocaleOrLanguage } from '../helpers/locale-helper/locale-helper';
 import NotFound from '../pages/not-found/not-found';
 import App from '../components/app/app';
 import { config } from './routes';
@@ -76,6 +76,43 @@ export function getRoutesForPages(pages, availableLocales) {
 }
 
 /**
+ * Expand localeConfig with languages to available locales
+ * @param {Map} localeConfig e.g. { 'en': { path: 'test' } }
+ * @returns {Map} e.g.:
+ * {
+ *   'en-IE': {},
+ *   'en-GB': {},
+ * }
+ */
+function expandLocaleConfig(localeConfig, availableLocales) {
+  var langToLocales = Immutable.List(availableLocales).reduce(function(memo, locale) {
+    return memo.update(localeToLanguage(locale), function(locales) {
+      return locales ? locales.push(locale) : Immutable.List([locale]);
+    });
+  }, Immutable.Map());
+
+  function invalidLocale(locale) {
+    throw new Error(`locale not allowed (${locale}), allowed: ${availableLocales}`);
+  }
+
+  const keys = localeConfig.keySeq();
+  keys.filterNot(validateLocaleOrLanguage).concat(
+    keys.filterNot((locale) => langToLocales.has(locale))
+        .filterNot((locale) => includes(availableLocales, locale))
+  ).forEach(invalidLocale);
+
+  return localeConfig.reduce(function(memo, localeSpecificConfig, locale) {
+    if (langToLocales.has(locale)) {
+      return langToLocales.get(locale).reduce(function(mmemo, langLocale) {
+        return mmemo.set(langLocale, localeSpecificConfig);
+      }, memo);
+    } else {
+      return memo.set(locale, localeSpecificConfig);
+    }
+  }, Immutable.Map());
+}
+
+/**
  * Returns an easier to work with version of a 'route config' entry, applying the same
  * transformation to any `childConfig`s
  * @param {Array} configItem e.g. [ReactComponent, Object, Object, [[ReactComponent, Object, Object], ...]]
@@ -92,17 +129,25 @@ export function getRoutesForPages(pages, availableLocales) {
  *     }, ...]
  *   }
  */
-export function transformConfigItems(arg) {
-  const [handler, routeConfig, localeConfig, childConfig] = arg.toArray();
+export function transformConfigItems(page, availableLocales) {
+  const [handler, routeConfig, localeConfig, childConfig] = page.toArray();
 
   if (Immutable.List.isList(childConfig) && Immutable.List.isList(childConfig.first())) {
-    return transformConfigItems(Immutable.List([ handler, routeConfig, localeConfig, childConfig.map(transformConfigItems) ]));
+    return transformConfigItems(Immutable.List([ handler, routeConfig, localeConfig,
+      childConfig.map((child) => transformConfigItems(child, availableLocales)),
+    ]), availableLocales);
   } else {
-    return Immutable.Map({ handler, routeConfig, localeConfig, childConfig });
+    const expandedLocaleConfig = expandLocaleConfig(localeConfig, availableLocales);
+    return Immutable.Map({
+      handler: handler,
+      routeConfig: routeConfig,
+      localeConfig: expandedLocaleConfig,
+      childConfig: childConfig,
+    });
   }
 }
 
-export function expandConfig(givenConfig) {
+export function expandConfig(givenConfig, availableLocales) {
   function expandChildConfig(page) {
     const childConfig = page.get('childConfig');
 
@@ -122,13 +167,13 @@ export function expandConfig(givenConfig) {
     });
   }
 
-  return givenConfig.map(transformConfigItems)
+  return givenConfig.map((page) => transformConfigItems(page, availableLocales))
                     .flatMap(expandChildConfig)
                     .map(setLocalePaths);
 }
 
-export function getLocalesForRouteName(routeName, givenConfig=config) {
-  const expanded = expandConfig(givenConfig);
+export function getLocalesForRouteName(routeName, availableLocales, givenConfig=config) {
+  const expanded = expandConfig(givenConfig, availableLocales);
   const foundPage = expanded.find((page) => page.getIn(['routeConfig', 'name']) === routeName);
 
   if (foundPage) {
@@ -136,8 +181,8 @@ export function getLocalesForRouteName(routeName, givenConfig=config) {
   }
 }
 
-export function filterRouteByCategory(routeCategory, locale, givenConfig=config) {
-  const expanded = expandConfig(givenConfig);
+export function filterRouteByCategory(routeCategory, locale, availableLocales, givenConfig=config) {
+  const expanded = expandConfig(givenConfig, availableLocales);
   const foundPages = expanded.filter((page) => {
     const category = page.getIn(['routeConfig', 'category']);
     if (!category) { return false; }
@@ -156,7 +201,8 @@ export function filterRouteByCategory(routeCategory, locale, givenConfig=config)
 }
 
 export function getRoutes(locale, availableLocales, givenConfig=config) {
-  const flattenedRoutes = flattenPagesForLocale(givenConfig.map(transformConfigItems), locale, availableLocales);
+  const expandedPages = givenConfig.map((page) => transformConfigItems(page, availableLocales));
+  const flattenedRoutes = flattenPagesForLocale(expandedPages, locale, availableLocales);
   const homePage = flattenedRoutes.first();
 
   return (
@@ -169,8 +215,8 @@ export function getRoutes(locale, availableLocales, givenConfig=config) {
   );
 }
 
-export function getAllPaths(givenConfig=config) {
-  const expanded = expandConfig(givenConfig);
+export function getAllPaths(availableLocales, givenConfig=config) {
+  const expanded = expandConfig(givenConfig, availableLocales);
 
   return expanded.flatMap((page) => page.get('localeConfig').valueSeq())
                  .map((localeConfig) => localeConfig.get('path'));

@@ -12,16 +12,17 @@ export default class FaqMerchantsPage extends React.Component {
   displayName = 'FaqMerchantsPage';
 
   static propTypes = {
-    children: React.PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
   };
 
   static contextTypes = {
     locales: PropTypes.locale,
+    availableLocales: PropTypes.array.isRequired,
   }
 
   render() {
-    const {locales} = this.context;
-    const pages = filterRouteByCategory('faq.merchants', locales);
+    const { locales, availableLocales } = this.context;
+    const pages = filterRouteByCategory('faq.merchants', locales, availableLocales);
 
     const faqNav = pages.map(function(page) {
       return (<li key={page.routeConfig.name}>

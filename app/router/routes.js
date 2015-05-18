@@ -79,535 +79,469 @@ export var homeRoute = 'home';
 
 export const config = Immutable.fromJS([
   [Home, { name: homeRoute }, {
-      'en-GB': {
-          path: '/',
+      en: {
+        path: '/',
       },
-      'fr-FR': {
-          path: '/',
-      },
-      'fr-BE': {
-          path: '/',
+      fr: {
+        path: '/',
       },
     },
   ],
   [Pricing, { name: 'pricing' }, {
-      'en-GB': {
-          path: '/pricing',
+      en: {
+        path: '/pricing',
       },
-      'fr-FR': {
-          path: '/tarifs',
-      },
-      'fr-BE': {
-          path: '/tarifs',
+      fr: {
+        path: '/tarifs',
       },
     },
   ],
   [Pro, { name: 'pro' }, {
-      'en-GB': {
-          path: '/pro',
+      en: {
+        path: '/pro',
       },
-      'fr-FR': {
-          path: '/pro',
-      },
-      'fr-BE': {
-          path: '/pro',
+      fr: {
+        path: '/pro',
       },
     },
   ],
   [Security, { name: 'security' }, {
-      'en-GB': {
-          path: '/security',
+      en: {
+        path: '/security',
       },
-      'fr-FR': {
-          path: '/securite',
-      },
-      'fr-BE': {
-          path: '/securite',
+      fr: {
+        path: '/securite',
       },
     },
   ],
   [Features, { name: 'features' }, {
-      'en-GB': {
-          path: '/features',
+      en: {
+        path: '/features',
       },
     },
   ],
   [FeaturesApi, { name: 'features_api' }, {
-      'en-GB': {
-          path: '/features/api',
+      en: {
+        path: '/features/api',
       },
     },
   ],
   [ContactSales, { name: 'contact_sales' }, {
-      'en-GB': {
-          path: '/contact-sales',
+      en: {
+        path: '/contact-sales',
       },
-      'fr-FR': {
-          path: '/contactez-nous',
-      },
-      'fr-BE': {
-          path: '/contactez-nous',
+      fr: {
+        path: '/contactez-nous',
       },
     },
   ],
   [PaymentsByDirectDebit, { name: 'payments_by_direct_debit' }, {
-      'en-GB': {
-          path: '/payments-by-direct-debit',
+      en: {
+        path: '/payments-by-direct-debit',
       },
     },
   ],
   [Europe, { name: 'europe' }, {
-      'en-GB': {
+      en: {
         path: '/europe',
       },
     },
   ],
   [Refer, { name: 'refer' }, {
-      'en-GB': {
+      en: {
         path: '/refer',
       },
     },
   ],
   [ExampleCheckout, { name: 'example_checkout' }, {
-      'en-GB': {
-          path: '/example-checkout',
+      en: {
+        path: '/example-checkout',
       },
     },
   ],
   [About, { name: 'about' }, {
-      'en-GB': {
-          path: '/about',
+      en: {
+        path: '/about',
       },
-      'fr-FR': {
-          path: '/a-propos',
-      },
-      'fr-BE': {
-          path: '/a-propos',
+      fr: {
+        path: '/a-propos',
       },
     },
   ],
   [Team, { name: 'team' }, {
-      'en-GB': {
-          path: '/about/team',
+      en: {
+        path: '/about/team',
       },
-      'fr-FR': {
-          path: '/a-propos/equipe',
-      },
-      'fr-BE': {
-          path: '/a-propos/equipe',
+      fr: {
+        path: '/a-propos/equipe',
       },
     },
   ],
   [Jobs, { name: 'jobs' }, {
-      'en-GB': {
-          path: '/about/jobs',
+      en: {
+        path: '/about/jobs',
       },
-      'fr-FR': {
-          path: '/a-propos/carrieres',
-      },
-      'fr-BE': {
-          path: '/a-propos/carrieres',
+      fr: {
+        path: '/a-propos/carrieres',
       },
     },
   ],
   [ProductEngineer, { name: 'jobs_product_engineer', category: 'jobs.engineering' }, {
-      'en-GB': {
-          path: '/about/jobs/product-engineer',
+      en: {
+        path: '/about/jobs/product-engineer',
       },
     },
   ],
   [SoftwareEngineer, { name: 'jobs_software_engineer', category: 'jobs.engineering' }, {
-      'en-GB': {
-          path: '/about/jobs/software-engineer',
+      en: {
+        path: '/about/jobs/software-engineer',
       },
     },
   ],
   [WebOperationsEngineer, { name: 'jobs_web_operations', category: 'jobs.engineering' }, {
-      'en-GB': {
-          path: '/about/jobs/web-operations',
+      en: {
+        path: '/about/jobs/web-operations',
       },
     },
   ],
   [EngineeringInterships, { name: 'jobs_engineering_internships', category: 'jobs.engineering' }, {
-      'en-GB': {
-          path: '/about/jobs/engineering-internships',
+      en: {
+        path: '/about/jobs/engineering-internships',
       },
     },
   ],
   [DeveloperCommunityManager, { name: 'jobs_developer_community_manager', category: 'jobs.engineering' }, {
-      'en-GB': {
-          path: '/about/jobs/developer-community-manager',
+      en: {
+        path: '/about/jobs/developer-community-manager',
       },
     },
   ],
   [Designers, { name: 'jobs_designers', category: 'jobs.ux_design' }, {
-      'en-GB': {
-          path: '/about/jobs/designers',
+      en: {
+        path: '/about/jobs/designers',
       },
     },
   ],
   [CountryLeadNetherlandsBelgium, { name: 'jobs_country_lead_nl_be', category: 'jobs.country_leads' }, {
-      'en-GB': {
-          path: '/about/jobs/country-lead-nl-be',
+      en: {
+        path: '/about/jobs/country-lead-nl-be',
       },
     },
   ],
   [CountryLeadGermanyAustria, { name: 'jobs_country_lead_de_at', category: 'jobs.country_leads' }, {
-      'en-GB': {
-          path: '/about/jobs/country-lead-de-at',
+      en: {
+        path: '/about/jobs/country-lead-de-at',
       },
     },
   ],
   [CountryLeadSpain, { name: 'jobs_country_lead_es', category: 'jobs.country_leads' }, {
-      'en-GB': {
-          path: '/about/jobs/country-lead-es',
+      en: {
+        path: '/about/jobs/country-lead-es',
       },
     },
   ],
   [CountryLeadSweden, { name: 'jobs_country_lead_se', category: 'jobs.country_leads' }, {
-      'en-GB': {
-          path: '/about/jobs/country-lead-se',
+      en: {
+        path: '/about/jobs/country-lead-se',
       },
     },
   ],
   [BdGeneralist, { name: 'jobs_bd_generalist', category: 'jobs.business_development' }, {
-      'en-GB': {
-          path: '/about/jobs/bd-generalist',
+      en: {
+        path: '/about/jobs/bd-generalist',
       },
     },
   ],
   [AccountExecutive, { name: 'jobs_account_executive', category: 'jobs.sales_marketing' }, {
-      'en-GB': {
-          path: '/about/jobs/account-executive',
+      en: {
+        path: '/about/jobs/account-executive',
       },
     },
   ],
   [AccountExecutiveFrance, { name: 'jobs_account_executive_france', category: 'jobs.sales_marketing' }, {
-      'en-GB': {
-          path: '/about/jobs/account-executive-fr',
+      en: {
+        path: '/about/jobs/account-executive-fr',
       },
-      'fr-FR': {
-          path: '/about/jobs/charge-de-clientele',
-      },
-      'fr-BE': {
-          path: '/about/jobs/charge-de-clientele',
+      fr: {
+        path: '/about/jobs/charge-de-clientele',
       },
     },
   ],
   [CustomerSupportFrance, { name: 'jobs_customer_support_france', category: 'jobs.operations' }, {
-      'en-GB': {
-          path: '/about/jobs/customer-support-fr',
+      en: {
+        path: '/about/jobs/customer-support-fr',
       },
-      'fr-FR': {
-          path: '/about/jobs/service-client',
-      },
-      'fr-BE': {
-          path: '/about/jobs/service-client',
+      fr: {
+        path: '/about/jobs/service-client',
       },
     },
   ],
   [LegalIntroduction, { name: 'legal', category: 'legal' }, {
-      'en-GB': {
-          path: '/legal',
+      en: {
+        path: '/legal',
       },
-      'fr-FR': {
-          path: '/legal',
-      },
-      'fr-BE': {
-          path: '/legal',
+      fr: {
+        path: '/legal',
       },
     },
   ],
   [LegalCustomers, { name: 'legal_customers', category: 'legal' }, {
-      'en-GB': {
-          path: '/legal/customers',
+      en: {
+        path: '/legal/customers',
       },
     },
   ],
   [LegalMerchants, { name: 'legal_merchants', category: 'legal' }, {
-      'en-GB': {
-          path: '/legal/merchants',
+      en: {
+        path: '/legal/merchants',
       },
     },
   ],
   [LegalOldRestrictionsIndex, { name: 'legal_old_restrictions' }, {
-      'en-GB': {
-          path: '/legal/old-restrictions',
+      en: {
+        path: '/legal/old-restrictions',
       },
     },
   ],
   [LegalOldRestrictions20140731, { name: 'legal_old_restrictions_2014_07_31' }, {
-      'en-GB': {
-          path: '/legal/old-restrictions/2014-07-31',
+      en: {
+        path: '/legal/old-restrictions/2014-07-31',
       },
     },
   ],
   [LegalOldRestrictions20140919, { name: 'legal_old_restrictions_2014_09_19' }, {
-      'en-GB': {
-          path: '/legal/old-restrictions/2014-09-19',
+      en: {
+        path: '/legal/old-restrictions/2014-09-19',
       },
     },
   ],
   [LegalPartners, { name: 'legal_partners', category: 'legal' }, {
-      'en-GB': {
-          path: '/legal/partners',
+      en: {
+        path: '/legal/partners',
       },
     },
   ],
   [LegalRestrictions, { name: 'legal_restrictions', category: 'legal' }, {
-      'en-GB': {
-          path: '/legal/restrictions',
+      en: {
+        path: '/legal/restrictions',
       },
-      'fr-FR': {
-          path: '/legal/activites-restreintes',
-      },
-      'fr-BE': {
-          path: '/legal/activites-restreintes',
+      fr: {
+        path: '/legal/activites-restreintes',
       },
     },
   ],
   [LegalPrivacy, { name: 'legal_privacy', category: 'legal' }, {
-      'en-GB': {
-          path: '/legal/privacy',
+      en: {
+        path: '/legal/privacy',
       },
-      'fr-FR': {
-          path: '/legal/politique-de-confidentialite',
-      },
-      'fr-BE': {
-          path: '/legal/politique-de-confidentialite',
+      fr: {
+        path: '/legal/politique-de-confidentialite',
       },
     },
   ],
   [Partners, { name: 'partners' }, {
-      'en-GB': {
-          path: '/partners',
+      en: {
+        path: '/partners',
       },
     },
   ],
   [PartnersClearBooks, { name: 'partners_clearbooks' }, {
-      'en-GB': {
-          path: '/partners/clearbooks',
+      en: {
+        path: '/partners/clearbooks',
       },
     },
   ],
   [PartnersFreeagent, { name: 'partners_freeagent' }, {
-      'en-GB': {
-          path: '/partners/freeagent',
+      en: {
+        path: '/partners/freeagent',
       },
     },
   ],
   [PartnersKashflow, { name: 'partners_kashflow' }, {
-      'en-GB': {
-          path: '/partners/kashflow',
+      en: {
+        path: '/partners/kashflow',
       },
     },
   ],
   [PartnersPitchero, { name: 'partners_pitchero' }, {
-      'en-GB': {
-          path: '/partners/pitchero',
+      en: {
+        path: '/partners/pitchero',
       },
     },
   ],
   [PartnersSage, { name: 'partners_sage' }, {
-      'en-GB': {
-          path: '/partners/sage',
+      en: {
+        path: '/partners/sage',
       },
     },
   ],
   [PartnersXero, { name: 'partners_xero' }, {
-      'en-GB': {
-          path: '/partners/xero',
+      en: {
+        path: '/partners/xero',
       },
     },
   ],
   [FaqCustomers, { name: 'faq_customers', category: 'faq.customers' }, {
-      'en-GB': {
-          path: '/faq/customers',
+      en: {
+        path: '/faq/customers',
       },
     },
   ],
   [FaqCustomersHowItWorks, { name: 'faq_customers_how_it_works', category: 'faq.customers' }, {
-      'en-GB': {
-          path: '/faq/customers/how-it-works',
+      en: {
+        path: '/faq/customers/how-it-works',
       },
     },
   ],
   [FaqCustomersRefunds, { name: 'faq_customers_refunds', category: 'faq.customers' }, {
-      'en-GB': {
-          path: '/faq/customers/refunds',
+      en: {
+        path: '/faq/customers/refunds',
       },
     },
   ],
   [FaqCustomersSecurity, { name: 'faq_customers_security', category: 'faq.customers' }, {
-      'en-GB': {
-          path: '/faq/customers/security',
+      en: {
+        path: '/faq/customers/security',
       },
     },
   ],
   [FaqMerchants, { name: 'faq_merchants', category: 'faq.merchants' }, {
-      'en-GB': {
-          path: '/faq/merchants',
+      en: {
+        path: '/faq/merchants',
       },
-      'fr-FR': {
-          path: '/faq/commercant',
-      },
-      'fr-BE': {
-          path: '/faq/commercant',
+      fr: {
+        path: '/faq/commercant',
       },
     },
   ],
   [FaqMerchantsHowItWorks, { name: 'faq_merchants_how_it_works', category: 'faq.merchants' }, {
-      'en-GB': {
-          path: '/faq/merchants/how-it-works',
+      en: {
+        path: '/faq/merchants/how-it-works',
       },
-      'fr-FR': {
-          path: '/faq/commercant/fonctionnement',
-      },
-      'fr-BE': {
-          path: '/faq/commercant/fonctionnement',
+      fr: {
+        path: '/faq/commercant/fonctionnement',
       },
     },
   ],
   [FaqMerchantsSigningUp, { name: 'faq_merchants_signing_up', category: 'faq.merchants' }, {
-      'en-GB': {
-          path: '/faq/merchants/signing-up',
+      en: {
+        path: '/faq/merchants/signing-up',
       },
-      'fr-FR': {
-          path: '/faq/commercant/inscription',
-      },
-      'fr-BE': {
-          path: '/faq/commercant/inscription',
+      fr: {
+        path: '/faq/commercant/inscription',
       },
     },
   ],
   [FaqMerchantsDirectDebit, { name: 'faq_merchants_direct_debit', category: 'faq.merchants' }, {
-      'en-GB': {
-          path: '/faq/merchants/direct-debit',
+      en: {
+        path: '/faq/merchants/direct-debit',
       },
-      'fr-FR': {
-          path: '/faq/commercant/prelevement-bancaire',
-      },
-      'fr-BE': {
-          path: '/faq/commercant/prelevement-bancaire',
+      fr: {
+        path: '/faq/commercant/prelevement-bancaire',
       },
     },
   ],
   [FaqMerchantsSecurity, { name: 'faq_merchants_security', category: 'faq.merchants' }, {
-      'en-GB': {
-          path: '/faq/merchants/security',
+      en: {
+        path: '/faq/merchants/security',
       },
-      'fr-FR': {
-          path: '/faq/commercant/securite',
-      },
-      'fr-BE': {
-          path: '/faq/commercant/securite',
+      fr: {
+        path: '/faq/commercant/securite',
       },
     },
   ],
   [FaqMerchantsCustomerExperience, { name: 'faq_merchants_customer_experience', category: 'faq.merchants' }, {
-      'en-GB': {
-          path: '/faq/merchants/customer-experience',
+      en: {
+        path: '/faq/merchants/customer-experience',
       },
-      'fr-FR': {
-          path: '/faq/commercant/consommateur',
-      },
-      'fr-BE': {
-          path: '/faq/commercant/consommateur',
+      fr: {
+        path: '/faq/commercant/consommateur',
       },
     },
   ],
   [FaqMerchantsInternationalPayments, { name: 'faq_merchants_international_payments', category: 'faq.merchants' }, {
-      'en-GB': {
-          path: '/faq/merchants/international-payments',
+      en: {
+        path: '/faq/merchants/international-payments',
       },
-      'fr-FR': {
-          path: '/faq/commercant/international',
-      },
-      'fr-BE': {
-          path: '/faq/commercant/international',
+      fr: {
+        path: '/faq/commercant/international',
       },
     },
   ],
   [FaqMerchantsDeveloperApi, { name: 'faq_merchants_developer_api', category: 'faq.merchants' }, {
-      'en-GB': {
-          path: '/faq/merchants/developer-api',
+      en: {
+        path: '/faq/merchants/developer-api',
       },
-      'fr-FR': {
-          path: '/faq/commercant/api-developpeurs',
-      },
-      'fr-BE': {
-          path: '/faq/commercant/api-developpeurs',
+      fr: {
+        path: '/faq/commercant/api-developpeurs',
       },
     },
   ],
   [FaqMerchantsPartners, { name: 'faq_merchants_partners', category: 'faq.merchants' }, {
-      'en-GB': {
-          path: '/faq/merchants/partners',
+      en: {
+        path: '/faq/merchants/partners',
       },
-      'fr-FR': {
-          path: '/faq/commercant/partenaires',
-      },
-      'fr-BE': {
-          path: '/faq/commercant/partenaires',
+      fr: {
+        path: '/faq/commercant/partenaires',
       },
     },
   ],
   [FaqMerchantsReferrals, { name: 'faq_merchants_referrals', category: 'faq.merchants' }, {
-      'en-GB': {
-          path: '/faq/merchants/referrals',
+      en: {
+        path: '/faq/merchants/referrals',
       },
     },
   ],
   [Stories, { name: 'stories' }, {
-      'en-GB': {
+      en: {
         path: '/stories',
       },
     },
   ],
   [StoriesHasBeanCoffee, { name: 'stories_has_bean_coffee', category: 'stories' }, {
-      'en-GB': {
+      en: {
         path: '/stories/has-bean-coffee',
       },
     },
   ],
   [StoriesBlueskyBusiness, { name: 'stories_bluesky_business', category: 'stories' }, {
-      'en-GB': {
+      en: {
         path: '/stories/bluesky-business',
       },
     },
   ],
   [StoriesCrowdCube, { name: 'stories_crowdcube', category: 'stories' }, {
-      'en-GB': {
+      en: {
         path: '/stories/crowdcube',
       },
     },
   ],
   [StoriesMomentum, { name: 'stories_momentum', category: 'stories' }, {
-      'en-GB': {
+      en: {
         path: '/stories/momentum',
       },
     },
   ],
   [StoriesRockChoir, { name: 'stories_rock_choir', category: 'stories' }, {
-      'en-GB': {
+      en: {
         path: '/stories/rock-choir',
       },
     },
   ],
   [StoriesSpencerHockey, { name: 'stories_spencer_hockey', category: 'stories' }, {
-      'en-GB': {
+      en: {
         path: '/stories/spencer-hockey',
       },
     },
   ],
   [StoriesFoundationOfHearts, { name: 'stories_foundation_of_hearts', category: 'stories' }, {
-      'en-GB': {
+      en: {
         path: '/stories/foundation-of-hearts',
       },
     },
   ],
   [StoriesGreaterAnglia, { name: 'stories_greater_anglia', category: 'stories' }, {
-      'en-GB': {
+      en: {
         path: '/stories/greater-anglia',
       },
     },

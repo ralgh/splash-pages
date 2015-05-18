@@ -84,7 +84,7 @@ class HtmlDocument extends React.Component {
     const { messages, routeName, locales, config, pathname, availableLocales, markup, script, css } = this.props;
     const isHome = routeName === homeRoute;
     const schemaDotOrgOrganisation = buildSchemaDotOrgForOrganization(localeMessages, availableLocales, config);
-    const routeLocales = getLocalesForRouteName(routeName);
+    const routeLocales = getLocalesForRouteName(routeName, availableLocales);
     const pageHref = config.siteRoot + pathname;
     const title = getSiteTitle({ messages, routeName, config });
     const language = localeToLanguage(locales);

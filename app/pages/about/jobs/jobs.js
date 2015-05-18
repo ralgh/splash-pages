@@ -7,11 +7,12 @@ export default class Jobs extends React.Component {
 
   static contextTypes = {
     locales: PropTypes.locale,
+    availableLocales: PropTypes.array.isRequired,
   }
 
   render() {
-    const {locales} = this.context;
-    const pages = filterRouteByCategory('jobs', locales);
+    const { locales, availableLocales } = this.context;
+    const pages = filterRouteByCategory('jobs', locales, availableLocales);
     // Render the first job by default (we need an overview page this is weird)
     const Handler = pages[0].handler;
 

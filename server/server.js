@@ -10,7 +10,7 @@ import devEnv from '../config/dev-environment';
 import favicon from 'serve-favicon';
 
 import { render } from './render';
-import { availableLocales } from '../app/helpers/locale-helper/locale-helper';
+import availableLocales from '../config/available-locales';
 
 const app = express();
 
