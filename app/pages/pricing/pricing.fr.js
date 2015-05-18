@@ -2,6 +2,7 @@ import React from 'react';
 import Translation from '../../components/translation/translation';
 import Message from '../../components/message/message';
 import Link from '../../components/link/link';
+import PhoneIcon from '../../icons/svg/phone';
 
 export default class PricingFr extends React.Component {
   displayName = 'PricingFr'
@@ -25,7 +26,7 @@ export default class PricingFr extends React.Component {
                   </div>
                   <ul className='pricing-options__list'>
                     <li className='pricing-options__list-item u-color-heading'>
-                      <b>Pour les TPE et PME qui recherchent la simplicité</b>
+                      <b>Pour les TPEs et PMEs souhaitant un accès rapide et simplifié</b>
                     </li>
                     <li className='pricing-options__list-item'>
                       Utilisable sans intégration
@@ -34,7 +35,7 @@ export default class PricingFr extends React.Component {
                       Pour les entreprises collectant <b>1 à 500 paiements</b> par mois
                     </li>
                     <li className='pricing-options__list-item'>
-                      <Link to='pro'>En apprendre plus sur notre produit</Link>
+                      <Link to='features'>En apprendre plus sur notre produit</Link>
                     </li>
                     <li className='pricing-options__list-button'>
                       <Link to='contact_sales' query={{ s: 'pricing' }} className='btn btn--hollow u-size-full'>
@@ -57,7 +58,7 @@ export default class PricingFr extends React.Component {
                   </div>
                   <ul className='pricing-options__list'>
                     <li className='pricing-options__list-item u-color-heading'>
-                      <b>Pour les entreprises qui souhaitent un contrôle total</b>
+                      <b>Pour les entreprises souhaitant une solution intégrée à leurs systèmes</b>
                     </li>
                     <li className='pricing-options__list-item'>
                       <b>+ 250 € par mois</b>, pas de frais cachés
@@ -93,8 +94,8 @@ export default class PricingFr extends React.Component {
               </div>
               <p className='u-color-p'>
                 Non, il n'y aucun autre frais que ceux indiqués ci-dessus.
-                Nous ne vous facturons jamais les paiements qui ont échoué,
-                  les remboursements, les créations de mandats...
+                Nous ne vous facturons jamais la création de mandats, ainsi que
+                les incidents de paiements : échecs, remboursements, annulations...
               </p>
             </div>
             <div className='grid__cell u-size-1of2 u-padding-Bxxl u-padding-Lm'>
@@ -112,7 +113,7 @@ export default class PricingFr extends React.Component {
                 <b>Y a-t'il des frais d'implémentation ?</b>
               </div>
               <p className='u-color-p'>
-                Non. Vous ne payez pas pour implémenter GoCardless et notre support est gratuit.
+                Non. Vous ne payez pas pour implémenter GoCardless.
               </p>
             </div>
             <div className='grid__cell u-size-1of2 u-padding-Bm u-padding-Lm'>
@@ -120,7 +121,7 @@ export default class PricingFr extends React.Component {
                 <b>Serai-je facturé si un paiement échoue ?</b>
               </div>
               <p className='u-color-p'>
-                Non. Nous ne facturons que les paiements réussis.
+                Non. Nous ne facturons que les paiements réussis quel que soit le produit.
               </p>
             </div>
           </div>
@@ -128,11 +129,20 @@ export default class PricingFr extends React.Component {
         <hr className='u-margin-An' />
         <div className='site-container u-text-center u-padding-Tm u-padding-Bxxl'>
           <div className='u-padding-Vxl'>
-            <h2 className='u-text-heading u-text-l u-color-heading u-text-light'>Avez-vous des questions ?</h2>
-            <p className='u-color-p u-margin-Ts'>Contactez-nous au <Message message='phone_full' /></p>
-            <Link to='contact_sales' className='btn btn--hollow u-margin-Tm'>
-              Contactez-nous
-            </Link>
+            <div className='u-size-1of3 u-center'>
+              <figure className='svg-icon u-center'>
+                <PhoneIcon className='svg-icon__image svg-icon__image--shadow u-fill-blue' />
+                <PhoneIcon className='svg-icon__image u-fill-dark-gray' />
+              </figure>
+              <div className='u-center'>     
+                <p className='u-color-p u-margin-Ts'>
+                  Nous sommes disponible afin de répondre à vos questions au <Message message='phone_full' />
+                </p>
+                <Link to='contact_sales' className='btn btn--hollow u-margin-Tm'>
+                  Contactez-nous
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </Translation>

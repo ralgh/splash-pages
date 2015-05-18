@@ -73,6 +73,10 @@ export default {
     description: 'GoCardless est la manière la plus simple de collecter vos paiements par prélèvement SEPA. Commencez dès aujourd\'hui, économisez du temps et améliorez votre cash flow.',
     explainer: 'Paiements récurrents simplifiés'
   },
+  faq: {
+    title: 'Foire aux questions',
+    sidebar: 'Vous avez une question? Appelez-nous',
+  },
   faq_merchants: {
     title: 'FAQ Commerçants',
     nav_title: 'En bref',

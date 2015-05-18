@@ -32,7 +32,7 @@ export default class FeaturesFr extends React.Component {
                     Commencez à prélever tout de suite
                   </h1>
                   <p className='u-text-heading u-text-center u-color-invert u-text-m u-text-light u-margin-Txxs u-text-no-smoothing'>
-                    GoCardless est le moyen le plus rapide et facile <br />de collecter des prélèvements SEPA sur Internet
+                    GoCardless est le moyen le plus rapide et facile <br />pour collecter des prélèvements SEPA par internet
                   </p>
                 </div>
               </div>
@@ -97,11 +97,12 @@ export default class FeaturesFr extends React.Component {
                       <MoneyFlowerIcon className='svg-icon__image svg-icon__image--small u-fill-dark-gray' />
                     </figure>
                     <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-s u-margin-Tm'>
-                      Pas de frais de lancement
+                      Pas de frais d'intégration
                     </div>
                     <p className='u-color-p u-margin-Txs'>
-                      Juste 1% par transaction (plafonné à 2€), sans frais mensuels ou initiaux.
-                      Plus de 500 paiements par mois ? C'est <Link to="pricing">dégressif</Link>.
+                      Payez 1% par transaction réussie (plafonné à 2€), sans frais d'installation et d'abonnement.
+                      Zéro frais sur les incidents.
+
                     </p>
                   </div>
                   <div className='grid__cell u-size-1of3'>
@@ -113,7 +114,7 @@ export default class FeaturesFr extends React.Component {
                       Simplifiez-vous la vie
                     </div>
                     <p className='u-color-p u-margin-Txs'>
-                      GoCardless automatise la collecte, gestion et réconciliation de vos paiements : dites-nous juste le montant et la date.
+                      GoCardless automatise la collecte, suivi et reconciliation de vos paiements : il suffit de définir le montant et la date.
                     </p>
                   </div>
                 </div>
@@ -124,10 +125,10 @@ export default class FeaturesFr extends React.Component {
                       <CustomerIcon className='svg-icon__image svg-icon__image--small u-fill-dark-gray' />
                     </figure>
                     <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-s u-margin-Tm'>
-                      Forte rétention client
+                      Fidélisez vos client
                     </div>
                     <p className='u-color-p u-margin-Txs'>
-                      GoCardless vous évite de perdre vos clients à cause de l'expiration ou d'un échec de carte, grâce au prélèvement SEPA.
+                      Grâce au prélèvement SEPA, GoCardless vous évite de perdre vos clients à cause de l'expiration ou d'un échec de carte. 
                     </p>
                   </div>
                   <div className='grid__cell u-size-1of3'>
@@ -148,11 +149,11 @@ export default class FeaturesFr extends React.Component {
                       <DeveloperIcon className='svg-icon__image svg-icon__image--small u-fill-dark-gray' />
                     </figure>
                     <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-s u-margin-Tm'>
-                      Une API simple et moderne
+                      Évoluez facilement
                     </div>
                     <p className='u-color-p u-margin-Txs'>
-                      Intégrez très simplement GoCardless dans votre site web. Tout ce qu'il y a à savoir est
-                      dans <a href="https://developer.gocardless.com/pro" target="_blank">notre documentation</a>.
+                      Automatisez plus en profondeur grâce à l'API. Tout ce qu'il y a à savoir est
+                      dans <Link to='pro'>GoCardless Pro</Link>.
                     </p>
                   </div>
                 </div>
@@ -168,21 +169,21 @@ export default class FeaturesFr extends React.Component {
                 </div>
                 <div className='grid__cell u-size-1of2 u-margin-Tl'>
                   <h2 className='u-text-heading u-color-heading u-text-l u-text-light u-margin-Bl u-margin-Ts'>
-                    Arrêtez de deviner quand vous serez payés
+                    Ne laissez rien au hasard
                   </h2>
                   <h3 className='u-text-s'>Statuts de paiement instantanés</h3>
                   <p className='u-size-5of6 u-color-p u-margin-Bm'>
-                    Notre tableau de bord vous permet de voir rapidement tout l'information sur vos 
-                    clients et vos paiements.
+                    Notre tableau de bord vous permet de voir rapidement où en sont vos 
+                    clients et vos paiements en temps réel.
                   </p>
                   <h3 className='u-text-s'>Exportez vos données</h3>
                   <p className='u-size-5of6 u-color-p u-margin-Bm'>
                     Gérez vos données de la manière que vous préfèrez - par exemple pour l'utiliser 
                     dans votre comptabilité.
                   </p>
-                  <h3 className='u-text-s'>Soumettez des paiements tous les jours</h3>
+                  <h3 className='u-text-s'>Encaissez des paiements tous les jours</h3>
                   <p className='u-size-5of6 u-color-p u-margin-Bm'>
-                    Avec GoCardless vous pouvez soumettre des paiements aussi souvent que vous le 
+                    Avec GoCardless vous pouvez encaisser des paiements aussi souvent que vous le 
                     souhaitez, sans le moindre coût ou difficulté supplémentaire.
                   </p>
                 </div>
@@ -199,14 +200,14 @@ export default class FeaturesFr extends React.Component {
                     GoCardless est un Etablissement de Paiement Agréé, habilité à collecter des paiements 
                     à travers l’Union Européenne ce qui rend les paiements faciles pour vous et vos clients.
                   </p>
-                  <h3 className='u-text-s'>Mandat en ligne simple</h3>
+                  <h3 className='u-text-s'>Mandat électronique simple</h3>
                   <p className='u-size-5of6 u-color-p u-margin-Bm'>
-                    Tout se passe en ligne. En utilisant notre formulaire sécurisé, vos clients peuvent
+                    Tout se passe en ligne. En utilisant notre mandat sécurisé, vos clients peuvent
                     autoriser les prélèvements en 2 minutes - même depuis leur téléphone.
                   </p>
                   <h3 className='u-text-s'>Votre logo sur le devant de la scène</h3>
                   <p className='u-color-p u-margin-Bm'>
-                    Apportez une excellente expérience client en ajoutant votre logo à nos formulaires
+                    Garantissez la meilleure expérience client en ajoutant votre logo à nos pages
                     de paiement, ce qui rassure vos utilisateurs.
                   </p>
                   <h3 className='u-text-s'>Une façon simple et sécurisée de payer</h3>
@@ -237,9 +238,7 @@ export default class FeaturesFr extends React.Component {
                       Prenez contact avec notre équipe pour commencer à prélever rapidement
                     </p>
                   </div>
-                  <a href='/contact-sales' id='track-cta-contact-sales' className='btn btn--hollow u-margin-Tm'>
-                    <Message message='cta.pro' />
-                  </a>
+                  <Link to='contact_sales' id='track-cta-contact-sales' className='btn btn--hollow u-margin-Tm'>Contactez-nous</Link>
                 </div>
               </div>
             </div>

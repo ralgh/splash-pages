@@ -15,7 +15,7 @@ export default class ProductComparisonFr extends React.Component {
               <th />
               <th className='u-background-primary u-text-heading-light u-color-invert u-padding-Am u-border-gray'>
                 <div className='u-text-l u-margin-Bxxs'>GoCardless</div>
-                Prélèvez vos clients facilement
+                Prélèvez vos clients rapidement
               </th>
               <th className='u-background-dark-gray-darken u-text-heading-light u-color-invert u-padding-Am u-border-gray'>
                 <div className='u-text-l u-margin-Bxxs'>GoCardless Pro</div>
@@ -26,8 +26,8 @@ export default class ProductComparisonFr extends React.Component {
           <tbody>
             <tr className='comparison-table__row'>
               <td className='comparison-table__cell u-text-end'>Pour qui est-ce ?</td>
-              <td className='comparison-table__cell'>PMEs souhaitant un accès rapide et simplifié</td>
-              <td className='comparison-table__cell'>Entreprises souhaitant une solution flexible et automatisée</td>
+              <td className='comparison-table__cell'>TPEs et PMEs souhaitant un accès rapide et simplifié</td>
+              <td className='comparison-table__cell'>Entreprises souhaitant une solution intégrée à leurs systèmes</td>
             </tr>
             <tr className='comparison-table__row'>
               <td className='comparison-table__cell u-text-end'>Tableau de bord</td>
@@ -57,7 +57,7 @@ export default class ProductComparisonFr extends React.Component {
               </td>
             </tr>
             <tr className='comparison-table__row'>
-              <td className='comparison-table__cell u-text-end'>Vos pages de paiement en marque blanche</td>
+              <td className='comparison-table__cell u-text-end'>Vos pages de paiement et notifications clients en marque blanche</td>
               <td className='comparison-table__cell'>
                 <XIcon className='u-fill-dark-gray' alt='✘' />
               </td>
@@ -110,8 +110,8 @@ export default class ProductComparisonFr extends React.Component {
             </tr>
             <tr className='comparison-table__row'>
               <td className='comparison-table__cell u-text-end'>Frais de transaction</td>
-              <td className='comparison-table__cell'>1% plafonné à 2€</td>
-              <td className='comparison-table__cell'>Dégressif à partir de 0,60€</td>
+              <td className='comparison-table__cell'>1% plafonné à 2 €</td>
+              <td className='comparison-table__cell'>Dégressif à partir de 0,60 €</td>
             </tr>
           </tbody>
         </table>

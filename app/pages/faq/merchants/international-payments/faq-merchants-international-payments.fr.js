@@ -13,8 +13,7 @@ export default class FaqMerchantsInternationalPaymentsFr extends React.Component
           Dans quels pays GoCardless est-il disponible ?
         </h3>
         <p className='para'>
-          GoCardless est disponible dans tous les pays, quelque soit le lieu d’immatriculation de votre
-          entreprise. Vous aurez besoin d’avoir un compte en banque dans la zone Euro ou Livre Sterling.
+          GoCardless est disponible en Grande-Bretagne, France et Belgique. GoCardless Pro est disponible dans tous les pays respectant les normes anti-blanchiment. Vous aurez besoin d’avoir un compte en banque dans la zone Euro ou en Grande-Bretagne.
         </p>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
@@ -22,7 +21,7 @@ export default class FaqMerchantsInternationalPaymentsFr extends React.Component
         </h3>
         <p className='para'>
           Avec SEPA, vous pouvez collecter des fonds dans les 21 pays de la zone Euro :  Allemagne, Autriche,
-          Belgique, Chypre, Espagne, Estonie, Finlande, France, Grèce, Irlande, Italie, Lettonie, Lituanie,
+          Belgique, Chypre, Espagne, Estonie, Finlande, France (et DOM-TOM), Grèce, Irlande, Italie, Lettonie, Lituanie,
           Luxembourg, Malte, Monaco, Pays-Bas, Portugal, San Marino, Slovaquie, Slovénie.
         </p>
         <p className='para'>
@@ -67,15 +66,14 @@ export default class FaqMerchantsInternationalPaymentsFr extends React.Component
           Les coûts à l’étranger sont-ils les mêmes?
         </h3>
         <p className='para'>
-          Oui, vous bénéficiez d’un tarif unique dans la devise de votre choix (EUR ou GBP). Le prix
-          devient dégressif quel que soit le paiement effectué.
+          Oui, vous bénéficiez d’un tarif unique dans la devise de votre choix (EUR ou GBP).
         </p>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
           Quand est-ce que GoCardless sera disponible hors d’Europe?
         </h3>
         <p className='para'>
-          GoCardless ne sera pas disponible hors d’Europe en 2015. Nous souhaitons ajouter d’autres pays,
+          GoCardless ne sera pas disponible hors d’Europe en 2015. Nous travaillons sur l'ajout d’autres pays,
           et vous tiendrons informé sur notre blog.
         </p>
       </Translation>

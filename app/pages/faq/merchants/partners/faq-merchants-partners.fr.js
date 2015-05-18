@@ -24,10 +24,10 @@ export default class FaqMerchantsPartnersFr extends React.Component {
         </p>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
-          Partagez vous une part des recettes pour le partenaire ?
+          Quel est le modèle économique ?
         </h3>
         <p className='para'>
-          Oui – nous partageons 10% des frais transactionnels.
+          Vous êtes libre d'ajouter une commission en plus de celle de GoCardless.
         </p>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
@@ -56,8 +56,9 @@ export default class FaqMerchantsPartnersFr extends React.Component {
           Puis-je héberger directement les pages de paiements ?
         </h3>
         <p className='para'>
-          Oui. Un partenaire peut créer les pages de paiement pour ses utilisateurs. Il y a cependant certaines
-          règles à respecter que nous vous aiderons à implémenter via notre guide des règles SEPA.
+          Au choix. Un partenaire peut créer les pages de paiement pour ses utilisateurs ou utiliser celles
+          de GoCardless. Il y a cependant certaines règles à respecter que nous vous aiderons à implémenter 
+          via notre guide des règles SEPA.
         </p>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
