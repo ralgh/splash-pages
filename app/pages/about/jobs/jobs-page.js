@@ -36,8 +36,8 @@ export default class JobsPage extends React.Component {
           <Message message={`jobs.${category}`} />
         </li>),
         categories[category].map(function(job) {
-          return (<li key={job.routeConfig.name} className='u-padding-Bs u-text-light u-text-no-smoothing'>
-            <Link to={job.localeConfig.path} className='nav-tabs__link'>
+          return (<li key={job.routeConfig.name}>
+            <Link to={job.localeConfig.path} className='nav-tabs__link u-text-no-smoothing'>
               <Message message={`${job.routeConfig.name}.title`} />
             </Link>
           </li>);
