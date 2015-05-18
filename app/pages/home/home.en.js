@@ -98,7 +98,7 @@ export default class HomeEn extends React.Component {
             </Translation>
           </div>
         </div>
-        <Translation locales='en-GB'>
+        
           <hr className='u-margin-An' />
           <div className='site-container u-text-center u-padding-Vxxl'>
             <h2 className='u-text-l u-text-heading u-colo-heading u-text-light u-margin-Tl'>
@@ -143,7 +143,7 @@ export default class HomeEn extends React.Component {
               </Link>
             </div>
           </div>
-        </Translation>
+          
         <hr className='u-margin-An' />
         <div className='site-container u-text-center u-padding-Vxxl'>
           <div className='u-padding-Txl'>
