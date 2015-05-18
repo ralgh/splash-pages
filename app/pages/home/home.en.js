@@ -143,7 +143,7 @@ export default class HomeEn extends React.Component {
               </Link>
             </div>
           </div>
-        </Translation>  
+        </Translation>
         <hr className='u-margin-An' />
         <div className='site-container u-text-center u-padding-Vxxl'>
           <div className='u-padding-Txl'>
