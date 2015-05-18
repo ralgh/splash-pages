@@ -5,7 +5,7 @@ export default {
     more: 'More',
   },
   footer: {
-    description: 'GoCardless is a Bacs approved bureau and is regulated by the Financial Conduct Authority as an Authorised Payment Institution.',
+    description: 'GoCardless is regulated in the United Kingdom by the Financial Conduct Authority as an Authorised Payment Institution.',
     currently_viewing: 'Currently viewing',
     europe_cta: 'GoCardless is expanding',
     europe_link: 'learn more',
@@ -42,6 +42,7 @@ export default {
   country_names: {
     'en-GB': 'United Kingdom',
     'en-IE': 'Ireland',
+    'en-EU': 'Europe',
     'fr-FR': 'France',
     'fr-BE': 'Belgium',
   },

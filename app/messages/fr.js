@@ -39,6 +39,7 @@ export default {
   country_names: {
     'en-GB': 'Royaume-Uni',
     'en-IE': 'Irlande',
+    'en-EU': 'Europe',
     'fr-FR': 'France',
     'fr-BE': 'Belgique',
   },
