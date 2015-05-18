@@ -259,34 +259,36 @@ export default class ProEn extends React.Component {
               </div>
             </div>
             <hr className='u-margin-An' />
-            <div id='forOptimizely-Table'>
-              <div className='u-text-center u-padding-Vxxl u-background-light-gray'>
-                <div className='site-container u-padding-Vxl'>
-                  <ProductComparison />
-                  <table className='u-size-full'><tfoot>
-                      <tr className='comparison-table__row'>
-                        <td />
-                        <td className='u-padding-As'>
-                          <Link to='features' id='track-comparison-table-features'
-                          className='u-color-primary'>
-                            Learn more about GoCardless
-                          </Link>
-                        </td>
-                        <td />
-                      </tr>
-                    </tfoot>
-                  </table>
+            <Translation locales='en-GB'>
+              <div id='forOptimizely-Table'>
+                <div className='u-text-center u-padding-Vxxl u-background-light-gray'>
+                  <div className='site-container u-padding-Vxl'>
+                    <ProductComparison />
+                    <table className='u-size-full'><tfoot>
+                        <tr className='comparison-table__row'>
+                          <td />
+                          <td className='u-padding-As'>
+                            <Link to='features' id='track-comparison-table-features'
+                            className='u-color-primary'>
+                              Learn more about GoCardless
+                            </Link>
+                          </td>
+                          <td />
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
                 </div>
-              </div>
               <hr className='u-margin-An' />
-            </div>
+              </div>
+            </Translation>
           </div>
           <div className='section-scroll-target' id='pricing'>
             <div className='u-text-center u-padding-Vxxl'>
               <div className='site-container u-padding-Vxl'>
                 <div className='u-size-2of3 u-center'>
                   <h2 className='u-text-heading u-color-heading u-text-light u-text-xl'>
-                    1p — 60p per transaction
+                    <Message message='pricing.pro_cost_per_transaction' /> per transaction
                   </h2>
                   <p className='u-text-s u-color-p u-margin-Vxs'>
                     Competitive rates for businesses of any size.<br />
