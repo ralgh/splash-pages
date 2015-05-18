@@ -38,6 +38,16 @@ export default {
     address_country: 'Royaume-Uni',
     address_country_iso: 'GB',
   },
+<<<<<<< HEAD
+=======
+  country_names: {
+    'en-GB': 'Royaume-Uni',
+    'en-IE': 'Irlande',
+    'en-EU': 'Europe',
+    'fr-FR': 'France',
+    'fr-BE': 'Belgique',
+  },
+>>>>>>> Start adding a generic version of English splash pages (SEPA-only, without the Bacs stuff)
   prospect_form: {
     name_label: 'Votre nom',
     name_placeholder: 'Jean Dubois',
