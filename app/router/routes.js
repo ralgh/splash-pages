@@ -115,7 +115,7 @@ export const config = Immutable.fromJS([
     },
   ],
   [Features, { name: 'features' }, {
-      en: {
+      'en-GB': {
         path: '/features',
       },
     },
