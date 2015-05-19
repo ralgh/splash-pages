@@ -2,6 +2,12 @@
   height: 72px;
 }
 
+.sticky-nav__inner {
+  background: $light-gray;
+  font-size: $font-size-xxsmall;
+  font-weight: $font-weight-light;
+}
+
 .sticky-nav__inner.is-sticky {
   position: fixed;
   width: 100%;
@@ -35,7 +41,11 @@
   }
 }
 
-.sticky-nav__link.active:after {
+.sticky-nav__link.is-active {
+  text-decoration: none;
+}
+
+.sticky-nav__link.is-active:after {
   display: block;
   content: "";
   border-bottom: 6px solid $primary-color;
