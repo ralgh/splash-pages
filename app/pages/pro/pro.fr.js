@@ -1,5 +1,6 @@
 import React from 'react';
 import Translation from '../../components/translation/translation';
+import StickyNav from '../../components/sticky-nav/sticky-nav';
 import SecurityIcon from '../../icons/svg/security';
 import DeveloperIcon from '../../icons/svg/developer';
 import MobileIcon from '../../icons/svg/mobile';
@@ -29,36 +30,32 @@ export default class ProFr extends React.Component {
             </div>
           </div>
         </div>
-        <div className='sticky-nav'>
-          <div ng-gc-sticky-nav
-          className='sticky-nav__inner u-background-light-gray u-text-heading u-text-xxs u-text-light u-text-no-smoothing'>
-            <div className='site-container u-padding-Vm'>
-              <ul className='u-pull-start u-margin-Txxs'>
-                <li className='sticky-nav__item'>
-                  <a href='#en-bref' du-scrollspy ng-gc-smooth-scroll className='sticky-nav__link'>
-                    En bref
-                  </a>
-                </li>
-                <li className='sticky-nav__item'>
-                  <a href='#tarifs' du-scrollspy ng-gc-smooth-scroll className='sticky-nav__link'>
-                    Tarifs
-                  </a>
-                </li>
-              </ul>
-              <Link to='contact_sales' query={{ s: 'pro' }}
-                className={
-                  'sticky-nav__cta btn btn--small btn--hollow u-pull-end ' +
-                  'u-text-transform-none u-text-light u-text-xxs u-text-no-smoothing'
-                }>
-                Contactez-nous
-              </Link>
-              <a href='https://developer.gocardless.com/pro/' className='u-pull-end u-margin-Txxs u-margin-Rm'>
-                Documentation API
-              </a>
-            </div>
-            <hr className='u-margin-An' />
+        <StickyNav>
+          <div className='site-container u-padding-Vm'>
+            <ul className='u-pull-start u-margin-Txxs'>
+              <li className='sticky-nav__item'>
+                <a href='#en-bref' du-scrollspy ng-gc-smooth-scroll className='sticky-nav__link'>
+                  En bref
+                </a>
+              </li>
+              <li className='sticky-nav__item'>
+                <a href='#tarifs' du-scrollspy ng-gc-smooth-scroll className='sticky-nav__link'>
+                  Tarifs
+                </a>
+              </li>
+            </ul>
+            <Link to='contact_sales' query={{ s: 'pro' }}
+              className={
+                'sticky-nav__cta btn btn--small btn--hollow u-pull-end ' +
+                'u-text-transform-none u-text-light u-text-xxs u-text-no-smoothing'
+              }>
+              Contactez-nous
+            </Link>
+            <a href='https://developer.gocardless.com/pro/' className='u-pull-end u-margin-Txxs u-margin-Rm'>
+              Documentation API
+            </a>
           </div>
-        </div>
+        </StickyNav>
         <div className='section-scroll-target' id='en-bref'>
           <div className='site-container u-text-center u-padding-Vxxl'>
             <div className='u-padding-Vxl'>

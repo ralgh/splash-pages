@@ -24,6 +24,7 @@ import EngineeringInterships from '../pages/about/jobs/positions/engineering-int
 import AccountExecutiveFrance from '../pages/about/jobs/positions/account-executive-fr';
 import CustomerSupportFrance from '../pages/about/jobs/positions/customer-support-fr';
 import BdGeneralist from '../pages/about/jobs/positions/bd-generalist';
+import GlobalExpansionLead from '../pages/about/jobs/positions/global-expansion-lead';
 import CountryLeadGermanyAustria from '../pages/about/jobs/positions/country-lead-de-at';
 import CountryLeadNetherlandsBelgium from '../pages/about/jobs/positions/country-lead-nl-be';
 import CountryLeadSpain from '../pages/about/jobs/positions/country-lead-es';
@@ -249,6 +250,12 @@ export const config = Immutable.fromJS([
   [BdGeneralist, { name: 'jobs_bd_generalist', category: 'jobs.business_development' }, {
       en: {
         path: '/about/jobs/bd-generalist',
+      },
+    },
+  ],
+  [GlobalExpansionLead, { name: 'jobs_global_expansion_lead', category: 'jobs.business_development' }, {
+      en: {
+        path: '/about/jobs/global-expansion-lead',
       },
     },
   ],

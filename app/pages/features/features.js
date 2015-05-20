@@ -15,6 +15,7 @@ import TickIcon from '../../icons/svg/tick';
 import MembershipIcon from '../../icons/svg/membership';
 import PhoneIcon from '../../icons/svg/phone';
 import Link from '../../components/link/link';
+import StickyNav from '../../components/sticky-nav/sticky-nav';
 import Translation from '../../components/translation/translation';
 
 export default class Features extends React.Component {
@@ -42,52 +43,48 @@ export default class Features extends React.Component {
               </div>
             </div>
           </div>
-          <div className='sticky-nav'>
-            <div ng-gc-sticky-nav
-              className='sticky-nav__inner u-background-light-gray u-text-heading u-text-xxs u-text-light u-text-no-smoothing'>
-              <div className='site-container u-padding-Vm'>
-                <ul className='u-pull-start u-margin-Txxs'>
-                  <li className='sticky-nav__item'>
-                    <a href='#overview' du-scrollspy ng-gc-smooth-scroll id='track-sticky-nav-overview' className='sticky-nav__link'>
-                      Overview
-                    </a>
-                  </li>
-                  <li className='sticky-nav__item'>
-                    <a href='#features' du-scrollspy ng-gc-smooth-scroll id='track-sticky-nav-features' className='sticky-nav__link'>
-                      Features
-                    </a>
-                  </li>
-                  <li className='sticky-nav__item'>
-                    <a href='#dashboard' du-scrollspy ng-gc-smooth-scroll id='track-sticky-nav-dashboard' className='sticky-nav__link'>
-                      Dashboard
-                    </a>
-                  </li>
-                  <li className='sticky-nav__item'>
-                    <a href='#pricing' du-scrollspy ng-gc-smooth-scroll id='track-sticky-nav-pricing' className='sticky-nav__link'>
-                      Pricing
-                    </a>
-                  </li>
-                </ul>
-                <Translation locales='en-GB'>
-                  <a href='/merchants/new' id='track-sticky-nav-merchants-new'
-                    className={
-                      'sticky-nav__cta btn btn--small btn--hollow u-pull-end ' +
-                      'u-text-transform-none u-text-light u-text-xxs u-text-no-smoothing'
-                    }>
-                    <Message message='cta.basic' />
+          <StickyNav>
+            <div className='site-container u-padding-Vm'>
+              <ul className='u-pull-start u-margin-Txxs'>
+                <li className='sticky-nav__item'>
+                  <a href='#overview' du-scrollspy ng-gc-smooth-scroll id='track-sticky-nav-overview' className='sticky-nav__link'>
+                    Overview
                   </a>
-                </Translation>
-                <Link to='contact_sales' id='track-sticky-nav-contact-sales'
+                </li>
+                <li className='sticky-nav__item'>
+                  <a href='#features' du-scrollspy ng-gc-smooth-scroll id='track-sticky-nav-features' className='sticky-nav__link'>
+                    Features
+                  </a>
+                </li>
+                <li className='sticky-nav__item'>
+                  <a href='#dashboard' du-scrollspy ng-gc-smooth-scroll id='track-sticky-nav-dashboard' className='sticky-nav__link'>
+                    Dashboard
+                  </a>
+                </li>
+                <li className='sticky-nav__item'>
+                  <a href='#pricing' du-scrollspy ng-gc-smooth-scroll id='track-sticky-nav-pricing' className='sticky-nav__link'>
+                    Pricing
+                  </a>
+                </li>
+              </ul>
+              <Translation locales='en-GB'>
+                <a href='/merchants/new' id='track-sticky-nav-merchants-new'
                   className={
-                    'btn btn--small btn--hollow u-pull-end u-text-transform-none ' +
-                    'u-text-light u-text-xxs u-text-no-smoothing u-margin-Rs'
+                    'sticky-nav__cta btn btn--small btn--hollow u-pull-end ' +
+                    'u-text-transform-none u-text-light u-text-xxs u-text-no-smoothing'
                   }>
-                  <Message message='cta.pro' />
-                </Link>
-              </div>
-              <hr className='u-margin-An' />
+                  <Message message='cta.basic' />
+                </a>
+              </Translation>
+              <Link to='contact_sales' id='track-sticky-nav-contact-sales'
+                className={
+                  'btn btn--small btn--hollow u-pull-end u-text-transform-none ' +
+                  'u-text-light u-text-xxs u-text-no-smoothing u-margin-Rs'
+                }>
+                <Message message='cta.pro' />
+              </Link>
             </div>
-          </div>
+          </StickyNav>
           <div className='section-scroll-target' id='overview'>
             <div className='site-container u-padding-Vxxl'>
               <div className='u-padding-Vxl'>
