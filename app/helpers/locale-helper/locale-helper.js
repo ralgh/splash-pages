@@ -1,6 +1,8 @@
 import locale from 'locale';
 import cloneDeep from 'lodash/lang/cloneDeep';
 import includes from 'lodash/collection/includes';
+import flatten from 'lodash/array/flatten';
+import uniq from 'lodash/array/uniq';
 
 export const defaultLocale = 'en-GB';
 
@@ -37,4 +39,18 @@ export function localeToLanguage(localeStr) {
 
 export function localeToRegion(localeStr) {
   return localeStr.slice(3, 5).toUpperCase();
+}
+
+export function expandLangLocales(currentLocales, availableLocales) {
+  return flatten(uniq(currentLocales.reduce(function(memo, currentLocale) {
+    if (localeToRegion(currentLocale)) {
+      memo.push(currentLocale);
+    } else {
+      const locales = availableLocales.filter(function(availableLocale) {
+        return localeToLanguage(availableLocale) === currentLocale;
+      });
+      memo.push(locales);
+    }
+    return memo;
+  }, [])));
 }

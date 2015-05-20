@@ -42,6 +42,7 @@ class App extends React.Component {
     formats: React.PropTypes.object.isRequired,
     routeName: React.PropTypes.string.isRequired,
     availableLocales: React.PropTypes.array.isRequired,
+    routeLocales: React.PropTypes.array.isRequired,
     pathname: React.PropTypes.string.isRequired,
     config: React.PropTypes.object.isRequired,
   }
@@ -52,6 +53,7 @@ class App extends React.Component {
     formats: React.PropTypes.object.isRequired,
     routeName: React.PropTypes.string.isRequired,
     availableLocales: React.PropTypes.array.isRequired,
+    routeLocales: React.PropTypes.array.isRequired,
     pathname: React.PropTypes.string.isRequired,
     config: React.PropTypes.object.isRequired,
   }
@@ -77,7 +79,7 @@ class App extends React.Component {
   }
 
   getChildContext() {
-    const { locales, messages, formats, routeName, availableLocales, config, pathname } = this.props;
+    const { locales, messages, formats, routeName, availableLocales, routeLocales, config, pathname } = this.props;
 
     return {
       locales: locales,
@@ -85,6 +87,7 @@ class App extends React.Component {
       formats: formats,
       routeName: routeName,
       availableLocales: availableLocales,
+      routeLocales: routeLocales,
       pathname: pathname,
       config: config,
     };

@@ -5,6 +5,7 @@ var webpack = require('webpack');
 var writeStats = require('./utils/write-stats');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var strip = require('strip-loader');
+var autoprefixer = require('autoprefixer-core');
 
 var assetsPath = path.join(__dirname, '../public/bundle');
 
@@ -23,10 +24,11 @@ module.exports = {
     loaders: [
       { test: /\.(jpe?g|png|gif|svg)$/, loader: 'file' },
       { test: /\.js$/, exclude: /node_modules/, loaders: [strip.loader('debug'), 'babel'] },
-      { test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!sass') },
-      { test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css') },
+      { test: /\.scss$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader', 'postcss-loader') },
+      { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader', 'postcss-loader') },
     ],
   },
+  postcss: [autoprefixer({ browsers: ['last 2 version'] })],
   progress: true,
   plugins: [
     new ExtractTextPlugin('[name]-[chunkhash].css'),

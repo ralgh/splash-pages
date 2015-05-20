@@ -24,10 +24,10 @@ export default function(WEBPACK_HOST, WEBPACK_PORT) {
     },
     module: {
       loaders: [
-        { test: /\.(jpe?g|png|gif|svg)$/, loader: 'file' },
-        { test: /\.js$/, exclude: /node_modules/, loaders: ['react-hot', 'babel-loader'] },
-        { test: /\.scss$/, loader: 'style!css!sass' },
-        { test: /\.css$/, loader: 'style!css' },
+        { test: /\.(jpe?g|png|gif|svg)$/, loader: 'file-loader' },
+        { test: /\.js$/, exclude: /node_modules/, loaders: ['react-hot-loader', 'babel-loader'] },
+        { test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader' },
+        { test: /\.css$/, loader: 'style-loader!css-loader' },
       ],
     },
     progress: true,
