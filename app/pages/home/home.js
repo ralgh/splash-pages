@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from '../../components/link/link';
 import Page from '../../components/page/page';
 import Message from '../../components/message/message';
 import HomeEn from './home.en';
@@ -38,9 +37,9 @@ export default class Home extends React.Component {
                   </Translation>
 
                   <Translation locales='fr'>
-                    <Link to='pro' id='track-hero-learn-more' className='btn btn--invert btn--move u-size-3of12'>
+                    <a href='#learn-more' id='track-hero-learn-more' className='btn btn--invert btn--move u-size-3of12'>
                       <Message message='cta.more' />
-                    </Link>
+                    </a>
                   </Translation>
                 </div>
               </div>

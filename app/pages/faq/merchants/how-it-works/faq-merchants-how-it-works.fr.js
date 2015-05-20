@@ -30,20 +30,19 @@ export default class FaqMerchantsHowItWorksFr extends React.Component {
         </h3>
         <ul className='list u-margin-Tm'>
           <li>
-            Vos clients fournissent leur information bancaire sur une page de paiement sécurisé sur votre site web,
-            par téléphone ou par courrier.
+            Vos clients fournissent leur information bancaire sur une page de paiement sécurisée en ligne, ou
+            par téléphone ou courrier.
           </li>
           <li>
-            Les informations nécessaires pour créer le prélèvement sont automatiquement alimentées par votre site web via
-            notre API. Elles peuvent également être alimentées à partir de vos systèmes de facturation ou de gestion
-            clients, ou votre intranet.
+            Les informations nécessaires pour créer le prélèvement sont automatiquement alimentés à GoCardless
+            ou fournies à GoCardless dans le cas du papier et téléphone.
           </li>
           <li>
-            Nous créons un mandate de prélèvement auprès des banques, contre lequel vous pouvez prélevez les fonds nécessaires.
+            Nous créons un mandat de prélèvement auprès des banques, contre lequel vous pouvez prélevez les fonds nécessaires.
             Nous stockons le mandat dématérialisé de façon sécurisée.
           </li>
           <li>
-            Vous envoyez un email pour notifier votre client des prochaines échéances de paiements.
+            Vos clients reçoivent un email de pré-notification des prochaines échéances de paiements.
           </li>
           <li>
             Vous gérez vos paiements directement dans vos systèmes ou avec notre tableau de bord.
@@ -54,16 +53,15 @@ export default class FaqMerchantsHowItWorksFr extends React.Component {
           Comment mes clients autorisent-ils les paiements?
         </h3>
         <p className='para'>
-          Vos clients fournissent leur information bancaire sur une page de paiement sécurisée et hébergée sur votre site,
-          ce qui crée une autorisation de prélèvement. Vos clients ne voient que votre marque et vous avez le contrôle total
-          du design de vos pages de paiements.
+          Vos clients fournissent leur information bancaire via un mandat électronique ou papier. Pour le mandat électronique,
+          vous pouvez soit utiliser les pages de paiements GoCardless ou vos propres pages de paiements.
         </p>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
           Est il possible de planifier mes paiements pour des dates précises?
         </h3>
         <p className='para'>
-          Oui – vous pouvez facilement adapter le jour, la date, la fréquence et la durée de tous vos paiements via notre API.
+          Oui – vous pouvez facilement adapter le jour, la date, la fréquence et la durée de tous vos paiements.
         </p>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
@@ -72,15 +70,15 @@ export default class FaqMerchantsHowItWorksFr extends React.Component {
         <p className='para'>
           Oui, vous pouvez soit annuler un paiement s’il n’a pas déjà été prélevé, soit faire  un remboursement. Vous
           connaissez le statut de votre paiement et de votre remboursement à chaque instant, en temps réel. Le tout se
-          fait facilement via notre API.
+          fait facilement via notre tableau de bord ou notre API.
         </p>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
           Comment savoir quand j’ai été payé?
         </h3>
         <p className='para'>
-          Vous pouvez voir le statut de tous vos paiements via une simple requête à notre API ou les visualiser sur notre
-          tableau de bord en ligne.
+          Vous pouvez voir le statut de tous vos paiements via notre
+          tableau de bord en ligne ou une simple requête API.
         </p>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>

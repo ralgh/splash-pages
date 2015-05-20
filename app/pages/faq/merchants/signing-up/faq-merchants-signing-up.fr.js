@@ -13,27 +13,11 @@ export default class FaqMerchantsSigningUpFr extends React.Component {
           Comment m’inscrire sur GoCardless?
         </h3>
         <p className='para'>
-          Vous pouvez accéder à notre tableau de bord et créer votre clé d'accès à notre API
+          Vous pouvez accéder à notre tableau de bord sandbox et créer votre clé d'accès à notre API
           directement <a href='https://manage-sandbox.gocardless.com/registrations/new'
-          className='u-link-color-p u-text-underline'>ici</a>. Pour toute question ou démonstration
-          du produit, vous pouvez contacter notre <Link to='contact_sales'
+          className='u-link-color-p u-text-underline'>ici</a>. Afin de créer un compte en production
+          et prendre des paiements réels sous 24h, il vous faudra contacter notre <Link to='contact_sales'
           className='u-link-color-p u-text-underline'>équipe</Link>.
-        </p>
-
-        <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
-          Comment essayer le produit?
-        </h3>
-        <p className='para'>
-          Il vous faudra une clé d'accès à notre <a href='https://developer.gocardless.com/pro'
-          className='u-link-color-p u-text-underline'>API</a>, afin de permettre à vos développeurs
-          de tester GoCardless. Inscrivez-vous <a href='https://manage-sandbox.gocardless.com/registrations/new'
-          className='u-link-color-p u-text-underline'>ici</a> afin d'accéder à notre tableau de bord et à votre
-          clé d'accès API.
-        </p>
-
-        <p className='para'>
-          Selon vos besoins, nous pouvons également vous faire la démonstration de notre tableau de bord pour
-          gérer les prélèvements ou l’intégration faite par nos partenaires (par exemple Zuora).
         </p>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
