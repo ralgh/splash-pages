@@ -55,7 +55,7 @@ export default class FaqMerchantsDirectDebitFr extends React.Component {
           Ai-je besoin d’un Identifiant Créancier SEPA (ICS)?
         </h3>
         <p className='para'>
-          Nous pouvons vous fournir un ICS. Vous pouvez également utiliser le vôtre.
+          Nous pouvons vous fournir un ICS avec notre banque partenaire.
         </p>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>

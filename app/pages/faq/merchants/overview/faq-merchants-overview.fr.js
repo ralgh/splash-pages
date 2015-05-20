@@ -13,11 +13,24 @@ export default class FaqMerchantsFr extends React.Component {
           Comment utiliser GoCardless?
         </h3>
         <p className='para'>
-          GoCardless est une solution de paiement par compte bancaire en Europe basée sur une <a href='https://developer.gocardless.com/pro'
-          className='u-link-color-p u-text-underline'>API REST</a> qui s'intègre dans votre site web, ainsi que dans votre système de
-          facturation ou de gestion clients. Vous pouvez ensuite collecter vos paiements ('prélèvement bancaire') directement depuis le
-          compte bancaire de vos clients, et réconcilier ces paiements automatiquement dans vos systèmes.
+          Il y a trois façons d'utiliser GoCardless :
         </p>
+        <ul className='list'>
+          <li>
+            <strong>GoCardless</strong> - Mettez en place et gérez vos prélèvements avec vos clients directement
+            dans notre tableau de bord en ligne.
+          </li>
+          <li>
+            <strong>GoCardless Pro</strong> - Automatisez vos prélèvements en intégrant
+            notre <a href='https://developer.gocardless.com/pro' className='u-link-color-p u-text-underline'>REST
+            API</a> dans votre site internet et vos systèmes informatiques.
+          </li>
+          <li>
+            <strong>Nos partenaires</strong> - Nous travaillons avec de multiples <Link to='partners'
+            className='u-link-color-p u-text-underline'>partenaires</Link>, afin que vous puissiez prendre des paiements
+            dans les logiciels que vous utilisez déjà.
+          </li>
+        </ul>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
           À qui s'adresse GoCardless?
@@ -31,8 +44,8 @@ export default class FaqMerchantsFr extends React.Component {
           d'abonnements, la facturation de compte clients ou les achats fréquents.
         </p>
         <p className='para'>
-          La simplicité d'utilisation et la facilité d'implémentation de notre API font de GoCardless une platforme
-          puissante pour tous, des start-ups innovantes aux grandes enterprises.
+          La simplicité d'utilisation de notre tableau de bord et la facilité d'implémentation de notre API
+          font de GoCardless une platforme puissante pour tous, des start-ups innovantes aux grandes enterprises.
         </p>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
@@ -44,23 +57,24 @@ export default class FaqMerchantsFr extends React.Component {
 
         <ul className='list'>
           <li>
-            <strong>Réconciliation automatique</strong> - Encaissez des paiments récurrents ou ponctuels automatiquement
-            en un clic. Notre API réconcilie automatiquement tous les paiements directement directement dans vos systèmes
-            informatique. Vous n'avez plus besoin de manipuler les fichiers manuellement.
+            <strong>Moins d'administration</strong> - Inscrivez-vous en 24h et commencez à encaisser des paiments
+            récurrents ou ponctuels automatiquement en un clic. Le suivi des paiements et la réconciliation bancaire
+            se font automatiquement. Fini les démarches et la gestion lourde requises par les banques.
           </li>
           <li>
-            <strong>Fait pour les développeurs</strong> - Notre <a href='https://developer.gocardless.com/'
-            className='u-link-color-p u-text-underline'>REST API</a> est conçu pour être facile et rapide à intégrer par
-            vos développeurs. En plus, c'est gratuit!
-          </li>
-          <li>
-             <strong>Un prix simple et transparent </strong> - Notre tarif dégressif va de <Link to='pricing'
-             className='u-link-color-p u-text-underline'>0,75 à 0,01 €</Link> avec un abonnement mensuel de 250 € par mois. Les
+             <strong>Un prix simple et transparent </strong> - Nos tarifs sont <Link to='pricing'
+             className='u-link-color-p u-text-underline'>simples et dégressifs</Link>. Les
              incidents de paiements, ainsi que l'implémentation, sont gratuits.
           </li>
           <li>
-             <strong>La technologie est notre métier</strong> - Nous recruitons les meilleurs développeurs, et sommes en
-             permanence à votre écoute.
+            <strong>Évoluez facilement</strong> - Notre tableau de bord est propulsé par
+            notre <a href='https://developer.gocardless.com/' className='u-link-color-p u-text-underline'>API REST</a>.
+            Ceci vous permet de facilement évoluer vers l'API afin d'automatiser plus en profondeur au fur et
+            à mesure.
+          </li>
+          <li>
+             <strong>La technologie est notre métier</strong> - Nous recruitons les meilleurs développeurs, et notre
+             équipe de support client est en permanence à votre écoute.
           </li>
         </ul>
 
@@ -99,8 +113,9 @@ export default class FaqMerchantsFr extends React.Component {
           Comment vais-je recevoir les fonds collectés?
         </h3>
         <p className='para'>
-          Les fonds collectés sont directement versés sur le(s) compte(s) en banque de votre choix. Nos <Link to='pricing'
-          title='Tarifs' className='u-link-color-p u-text-underline'>tarifs</Link> sont facturés séparément.
+          Les fonds collectés sont directement versés sur le(s) compte(s) en banque de votre choix. Avec GoCardless,
+          nos <Link to='pricing' title='Tarifs' className='u-link-color-p u-text-underline'>tarifs</Link> sont déduits
+          automatiquement. Avec GoCardless Pro, nous pouvons facturer les frais transactionnels séparément.
         </p>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>

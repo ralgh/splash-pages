@@ -119,6 +119,9 @@ export const config = Immutable.fromJS([
       en: {
         path: '/features',
       },
+      fr: {
+          path: '/fonctionalites',
+      },
     },
   ],
   [FeaturesApi, { name: 'features_api' }, {
@@ -349,6 +352,9 @@ export const config = Immutable.fromJS([
   [Partners, { name: 'partners' }, {
       en: {
         path: '/partners',
+      },
+      fr: {
+        path: '/partenaires',
       },
     },
   ],
