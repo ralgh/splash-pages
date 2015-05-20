@@ -2,6 +2,7 @@
   "name": "react-splash-pages",
   "author": "GoCardless",
   "version": "0.0.1",
+  "repository": "gocardless/splash-pages",
   "description": "React",
   "scripts": {
     "start": "./script/start",
