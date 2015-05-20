@@ -68,27 +68,6 @@ export default class PartnersFr extends React.Component {
           </div>
         </div>
         <hr className='u-margin-An' />
-        <div className='site-container u-padding-Vxxl u-text-center'>
-          <div className='u-padding-Vxl'>
-            <h2 className='u-text-heading u-color-heading u-text-light'>
-              Les plateformes leaders sont partenaires de GoCardless
-            </h2>
-            <div className='grid integrations-grid u-margin-Txxl u-padding-Tl'>
-              <div imgClass='zuora-logo u-margin-Vs'>
-                Zuora propulse les entreprises fonctionnant par abonnement
-              </div>
-
-              <div imgClass='xero-logo'>
-                Logiciel simple de comptabilité en ligne conçu pour les PME
-              </div>
-
-              <div imgClass='teamup-logo u-margin-Vxxs'>
-                Le leader anglais des logiciels pour salles de sports
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr className='u-margin-An' />
         <div className='u-text-center u-padding-Vxxl'>
           <div className='site-container u-padding-Vxl'>
             <div className='u-size-2of3 u-center'>
