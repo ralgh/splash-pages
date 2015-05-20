@@ -40,6 +40,7 @@ class HtmlDocument extends React.Component {
     formats: React.PropTypes.object.isRequired,
     routeName: React.PropTypes.string.isRequired,
     availableLocales: React.PropTypes.array.isRequired,
+    routeLocales: React.PropTypes.array.isRequired,
     router: React.PropTypes.func.isRequired,
     pathname: React.PropTypes.string.isRequired,
     dataRender: React.PropTypes.object.isRequired,
@@ -60,13 +61,14 @@ class HtmlDocument extends React.Component {
     formats: React.PropTypes.object.isRequired,
     routeName: React.PropTypes.string.isRequired,
     availableLocales: React.PropTypes.array.isRequired,
+    routeLocales: React.PropTypes.array.isRequired,
     router: React.PropTypes.func.isRequired,
     pathname: React.PropTypes.string.isRequired,
     config: React.PropTypes.object.isRequired,
   };
 
   getChildContext() {
-    const { locales, messages, formats, routeName, availableLocales, router, pathname, config } = this.props;
+    const { locales, messages, formats, routeName, availableLocales, routeLocales, router, pathname, config } = this.props;
 
     return {
       locales: locales,
@@ -74,6 +76,7 @@ class HtmlDocument extends React.Component {
       formats: formats,
       routeName: routeName,
       availableLocales: availableLocales,
+      routeLocales: routeLocales,
       router: router,
       pathname: pathname,
       config: config,

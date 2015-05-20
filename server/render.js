@@ -10,7 +10,7 @@ import React from 'react';
 import Router from 'react-router';
 import { pathToLocale } from '../app/helpers/locale-helper/locale-helper';
 import HtmlDocument from '../app/components/html-document/html-document';
-import { getRoutes } from '../app/router/route-helpers';
+import { getRoutes, getLocalesForRouteName } from '../app/router/route-helpers';
 import localeMessages from '../config/messages';
 import availableLocales from '../config/available-locales';
 import config from '../config';
@@ -63,9 +63,11 @@ export function render(req, res, next) {
 
   router.run(function(Handler, state) {
     const routeName = result(findLast(state.routes.slice(), 'name'), 'name');
+    const routeLocales = Object.keys(getLocalesForRouteName(routeName, availableLocales) || {});
     const stateProps = {
       routeName: routeName || 'not_found',
       pathname: state.pathname,
+      routeLocales: routeLocales,
     };
 
     const markup = React.renderToString(<Handler {...appProps(stateProps)} />);
