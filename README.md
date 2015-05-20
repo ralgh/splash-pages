@@ -1,8 +1,6 @@
 GoCardless.com Splash Pages
 ==================
 
-
-
 # Install & run
 
 ## Dependencies
@@ -252,14 +250,11 @@ Static app: `app/public/`
 
 # Troubleshooting
 
-1. `npm start` fails
+1. `npm start` fails  
+    Try running `npm install`. Packages might be out of date.
 
-Try running `npm install`. Packages might be out of date.
+2. Changes are not happening  
+   There might be an exception in your code, check the running terminal or your chrome inspector console.
 
-2. Changes are not happening
-
-There might be an exception in your code, check the running terminal or your chrome inspector console.
-
-3. Prospect forms are broken
-
-You need to run [gocardless](github.com/gocardless/gocardless) at: `gocardless.dev:3000`
+3. Prospect forms are broken  
+   You need to run the gocardless app at: `gocardless.dev:3000`
