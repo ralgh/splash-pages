@@ -36,18 +36,19 @@ class HtmlDocument extends React.Component {
 
   static propTypes = {
     locales: PropTypes.locale,
-    messages: React.PropTypes.object.isRequired,
-    formats: React.PropTypes.object.isRequired,
-    routeName: React.PropTypes.string.isRequired,
-    availableLocales: React.PropTypes.array.isRequired,
-    routeLocales: React.PropTypes.array.isRequired,
-    router: React.PropTypes.func.isRequired,
-    pathname: React.PropTypes.string.isRequired,
-    dataRender: React.PropTypes.object.isRequired,
-    config: React.PropTypes.object.isRequired,
-    markup: React.PropTypes.string.isRequired,
-    script: React.PropTypes.arrayOf(React.PropTypes.string),
-    css: React.PropTypes.arrayOf(React.PropTypes.string),
+    messages: PropTypes.object.isRequired,
+    formats: PropTypes.object.isRequired,
+    routeName: PropTypes.string.isRequired,
+    availableLocales: PropTypes.array.isRequired,
+    availableCountryNames: PropTypes.object.isRequired,
+    routeLocales: PropTypes.array.isRequired,
+    router: PropTypes.func.isRequired,
+    pathname: PropTypes.string.isRequired,
+    dataRender: PropTypes.object.isRequired,
+    config: PropTypes.object.isRequired,
+    markup: PropTypes.string.isRequired,
+    script: PropTypes.arrayOf(PropTypes.string),
+    css: PropTypes.arrayOf(PropTypes.string),
   }
 
   static defaultProps = {
@@ -57,18 +58,20 @@ class HtmlDocument extends React.Component {
 
   static childContextTypes = {
     locales: PropTypes.locale,
-    messages: React.PropTypes.object.isRequired,
-    formats: React.PropTypes.object.isRequired,
-    routeName: React.PropTypes.string.isRequired,
-    availableLocales: React.PropTypes.array.isRequired,
-    routeLocales: React.PropTypes.array.isRequired,
-    router: React.PropTypes.func.isRequired,
-    pathname: React.PropTypes.string.isRequired,
-    config: React.PropTypes.object.isRequired,
+    messages: PropTypes.object.isRequired,
+    formats: PropTypes.object.isRequired,
+    routeName: PropTypes.string.isRequired,
+    availableLocales: PropTypes.array.isRequired,
+    routeLocales: PropTypes.array.isRequired,
+    availableCountryNames: PropTypes.object.isRequired,
+    router: PropTypes.func.isRequired,
+    pathname: PropTypes.string.isRequired,
+    config: PropTypes.object.isRequired,
   };
 
   getChildContext() {
-    const { locales, messages, formats, routeName, availableLocales, routeLocales, router, pathname, config } = this.props;
+    const { locales, messages, formats, routeName, availableLocales,
+            availableCountryNames, routeLocales, router, pathname, config } = this.props;
 
     return {
       locales: locales,
@@ -76,6 +79,7 @@ class HtmlDocument extends React.Component {
       formats: formats,
       routeName: routeName,
       availableLocales: availableLocales,
+      availableCountryNames: availableCountryNames,
       routeLocales: routeLocales,
       router: router,
       pathname: pathname,

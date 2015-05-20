@@ -1,3 +1,5 @@
+/*eslint-disable max-len*/
+
 export default {
   header: {
     our_products: 'Our products',
@@ -34,17 +36,11 @@ export default {
     address_locality: 'London',
     postal_code: 'EC1V 7LQ',
     address_country: 'United Kingdom',
-    address_country_iso: 'GB'
+    address_country_iso: 'GB',
   },
   phone_full: '+44 20 7183 8674',
   phone_local: '020 7183 8674',
   email: 'help@gocardless.com',
-  country_names: {
-    'en-GB': 'United Kingdom',
-    'en-IE': 'Ireland',
-    'fr-FR': 'France',
-    'fr-BE': 'Belgium',
-  },
   prospect_form: {
     name_label: 'Your name',
     name_placeholder: 'John Smith',
@@ -99,7 +95,7 @@ export default {
     talk_to_us: 'Want to talk to an expert now?',
     call_us: 'Call us on',
     information1: 'Your information is safe with us.',
-    information2: 'We won\'t ever share it or sell it to anyone.'
+    information2: 'We won\'t ever share it or sell it to anyone.',
   },
   example_checkout: {
     title: 'Example Checkout Page: Paying with GoCardless & Direct Debit',
@@ -109,7 +105,7 @@ export default {
     title: 'Quick & Simple Online Payments',
     nav_title: 'GoCardless',
     description: 'GoCardless is the easiest way to take payments online. Collect payments directly from your customers\' bank accounts. Save time and improve cash flow.',
-    explainer: 'Simple recurring payments'
+    explainer: 'Simple recurring payments',
   },
   faq: {
     title: 'Frequently asked questions',
@@ -324,8 +320,8 @@ export default {
       title: 'Operations',
     },
     ux_design: {
-      title: 'UX & Design'
-    }
+      title: 'UX & Design',
+    },
   },
   jobs_product_engineer: {
     title: 'Product Engineer',

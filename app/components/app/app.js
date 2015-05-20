@@ -32,30 +32,32 @@ function setCanonicalHref(props) {
 class App extends React.Component {
   displayName = 'App'
 
+  static propTypes = {
+    locales: PropTypes.locale,
+    messages: PropTypes.object.isRequired,
+    formats: PropTypes.object.isRequired,
+    routeName: PropTypes.string.isRequired,
+    availableLocales: PropTypes.array.isRequired,
+    availableCountryNames: PropTypes.object.isRequired,
+    routeLocales: PropTypes.array.isRequired,
+    pathname: PropTypes.string.isRequired,
+    config: PropTypes.object.isRequired,
+  }
+
   static contextTypes = {
-    router: React.PropTypes.func,
+    router: PropTypes.func,
   }
 
   static childContextTypes = {
     locales: PropTypes.locale,
-    messages: React.PropTypes.object.isRequired,
-    formats: React.PropTypes.object.isRequired,
-    routeName: React.PropTypes.string.isRequired,
-    availableLocales: React.PropTypes.array.isRequired,
-    routeLocales: React.PropTypes.array.isRequired,
-    pathname: React.PropTypes.string.isRequired,
-    config: React.PropTypes.object.isRequired,
-  }
-
-  static propTypes = {
-    locales: PropTypes.locale,
-    messages: React.PropTypes.object.isRequired,
-    formats: React.PropTypes.object.isRequired,
-    routeName: React.PropTypes.string.isRequired,
-    availableLocales: React.PropTypes.array.isRequired,
-    routeLocales: React.PropTypes.array.isRequired,
-    pathname: React.PropTypes.string.isRequired,
-    config: React.PropTypes.object.isRequired,
+    messages: PropTypes.object.isRequired,
+    formats: PropTypes.object.isRequired,
+    routeName: PropTypes.string.isRequired,
+    availableLocales: PropTypes.array.isRequired,
+    availableCountryNames: PropTypes.object.isRequired,
+    routeLocales: PropTypes.array.isRequired,
+    pathname: PropTypes.string.isRequired,
+    config: PropTypes.object.isRequired,
   }
 
   componentWillReceiveProps(newProps) {
@@ -79,7 +81,8 @@ class App extends React.Component {
   }
 
   getChildContext() {
-    const { locales, messages, formats, routeName, availableLocales, routeLocales, config, pathname } = this.props;
+    const { locales, messages, formats, routeName, availableLocales,
+            availableCountryNames, routeLocales, config, pathname } = this.props;
 
     return {
       locales: locales,
@@ -87,6 +90,7 @@ class App extends React.Component {
       formats: formats,
       routeName: routeName,
       availableLocales: availableLocales,
+      availableCountryNames: availableCountryNames,
       routeLocales: routeLocales,
       pathname: pathname,
       config: config,
