@@ -6,9 +6,11 @@ set -e errexit
 
 ulimit -n 10240
 
-./node_modules/.bin/nodemon ./index.js --watch 'env' --ext 'txt' &
+./node_modules/.bin/nodemon ./index.js \
+  --watch 'env' --watch 'app/messages' \
+  --watch 'config' --watch 'server' \
+  --watch 'webpack' &
 
 ./node_modules/.bin/babel-node ./webpack/server.js
 
 trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
-
