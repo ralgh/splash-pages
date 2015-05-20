@@ -23,6 +23,11 @@ export default {
     pro_signup: 'Sign Up Now',
     more: 'En apprendre plus',
   },
+  signup_cta: {
+    main: 'Payez 1%',
+    description: 'Seulement 1% par transaction, plafonné à 2€.',
+    learn_more: 'Découvrez nos tarifs',
+  },
   contact_types: ['sales'],
   postal_address: {
     street_address: '338-346 Goswell Road',
