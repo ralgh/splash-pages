@@ -85,7 +85,8 @@ export default class FeaturesFr extends React.Component {
                       Commencez en 24 heures
                     </div>
                     <p className='u-color-p u-margin-Txs'>
-                      Pas de long processus bancaire. Vous pouvez commencer à prélever dès demain en nous <Link to='contact_sales'>contactant maintenant</Link>.
+                      Pas de long processus bancaire. Vous pouvez commencer à prélever dès demain en
+                      nous <Link to='contact_sales'>contactant maintenant</Link>.
                     </p>
                   </div>
                   <div className='grid__cell u-size-1of3'>
@@ -111,7 +112,8 @@ export default class FeaturesFr extends React.Component {
                       Simplifiez-vous la vie
                     </div>
                     <p className='u-color-p u-margin-Txs'>
-                      GoCardless automatise la collecte, suivi et reconciliation de vos paiements : il suffit de définir le montant et la date.
+                      GoCardless automatise la collecte, suivi et reconciliation de vos paiements :
+                      il suffit de définir le montant et la date.
                     </p>
                   </div>
                 </div>
@@ -125,7 +127,8 @@ export default class FeaturesFr extends React.Component {
                       Fidélisez vos client
                     </div>
                     <p className='u-color-p u-margin-Txs'>
-                      Grâce au prélèvement SEPA, GoCardless vous évite de perdre vos clients à cause de l'expiration ou d'un échec de carte.
+                      Grâce au prélèvement SEPA, GoCardless vous évite de perdre vos clients à cause de
+                      l'expiration ou d'un échec de carte.
                     </p>
                   </div>
                   <div className='grid__cell u-size-1of3'>
@@ -137,7 +140,8 @@ export default class FeaturesFr extends React.Component {
                       Sécurité de calibre militaire
                     </div>
                     <p className='u-color-p u-margin-Txs'>
-                      Toutes les données bancaires sont chiffrées avec RSA et ne sont transmises que par le biais de serveurs Européens sécurisés.
+                      Toutes les données bancaires sont chiffrées avec RSA et ne sont transmises que par
+                      le biais de serveurs Européens sécurisés.
                     </p>
                   </div>
                   <div className='grid__cell u-size-1of3'>

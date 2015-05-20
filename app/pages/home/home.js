@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from '../../components/link/link';
 import Page from '../../components/page/page';
 import Message from '../../components/message/message';
 import HomeEn from './home.en';

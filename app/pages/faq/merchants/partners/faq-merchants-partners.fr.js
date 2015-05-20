@@ -57,7 +57,7 @@ export default class FaqMerchantsPartnersFr extends React.Component {
         </h3>
         <p className='para'>
           Au choix. Un partenaire peut créer les pages de paiement pour ses utilisateurs ou utiliser celles
-          de GoCardless. Il y a cependant certaines règles à respecter que nous vous aiderons à implémenter 
+          de GoCardless. Il y a cependant certaines règles à respecter que nous vous aiderons à implémenter
           via notre guide des règles SEPA.
         </p>
 

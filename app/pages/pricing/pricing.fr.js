@@ -134,7 +134,7 @@ export default class PricingFr extends React.Component {
                 <PhoneIcon className='svg-icon__image svg-icon__image--shadow u-fill-blue' />
                 <PhoneIcon className='svg-icon__image u-fill-dark-gray' />
               </figure>
-              <div className='u-center'>     
+              <div className='u-center'>
                 <p className='u-color-p u-margin-Ts'>
                   Nous sommes disponible afin de répondre à vos questions au <Message message='phone_full' />
                 </p>

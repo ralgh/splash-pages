@@ -5,11 +5,9 @@ import ChecklistIcon from '../../icons/svg/checklist';
 import RealtimeIcon from '../../icons/svg/realtime';
 import IntegrationsIcon from '../../icons/svg/integrations';
 import ShopIcon from '../../icons/svg/shop';
-import ProIcon from '../../icons/svg/pro'
-import Tabs from '../../components/tabs/tabs';
+import ProIcon from '../../icons/svg/pro';
 import Link from '../../components/link/link';
 import Href from '../../components/href/href';
-import Modal from '../../components/modal/modal';
 
 export default class HomeFr extends React.Component {
   displayName = 'HomeFr'
@@ -24,7 +22,7 @@ export default class HomeFr extends React.Component {
                 La meilleure technologie de prélèvement
               </h2>
               <p className='u-text-s u-color-p u-margin-Txs'>
-                GoCardless vous permet de bénéficier de la fiabilité et des tarifs très compétitif 
+                GoCardless vous permet de bénéficier de la fiabilité et des tarifs très compétitif
                 du prélèvement SEPA, sans les complications associées aux opérateurs historiques.
               </p>
             </div>
@@ -180,7 +178,7 @@ export default class HomeFr extends React.Component {
                 Nous aidons les start-ups comme les plus grandes entreprises.
               </p>
             </div>
-          </div> 
+          </div>
           <div className='u-text-center u-margin-Vl u-padding-Vs u-center'>
                 <img src='/images/fr/logos/pro-logos-fr@2x.jpg' />
           </div>

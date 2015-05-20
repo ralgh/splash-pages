@@ -1,5 +1,4 @@
 import React from 'react';
-import Page from '../../components/page/page';
 import Message from '../../components/message/message';
 import ProductComparison from '../../components/product-comparison/product-comparison';
 import Tabs from '../../components/tabs/tabs';

@@ -21,7 +21,9 @@ export default class FaqMerchantsFr extends React.Component {
             dans notre tableau de bord en ligne.
           </li>
           <li>
-            <strong>GoCardless Pro</strong> - Automatisez vos prélèvements en intégrant notre <a href='https://developer.gocardless.com/pro' className='u-link-color-p u-text-underline'>REST API</a> dans votre site internet et vos systèmes informatiques.
+            <strong>GoCardless Pro</strong> - Automatisez vos prélèvements en intégrant
+            notre <a href='https://developer.gocardless.com/pro' className='u-link-color-p u-text-underline'>REST
+            API</a> dans votre site internet et vos systèmes informatiques.
           </li>
           <li>
             <strong>Nos partenaires</strong> - Nous travaillons avec de multiples <Link to='partners'
@@ -42,7 +44,7 @@ export default class FaqMerchantsFr extends React.Component {
           d'abonnements, la facturation de compte clients ou les achats fréquents.
         </p>
         <p className='para'>
-          La simplicité d'utilisation de notre tableau de bord et la facilité d'implémentation de notre API 
+          La simplicité d'utilisation de notre tableau de bord et la facilité d'implémentation de notre API
           font de GoCardless une platforme puissante pour tous, des start-ups innovantes aux grandes enterprises.
         </p>
 
@@ -55,7 +57,7 @@ export default class FaqMerchantsFr extends React.Component {
 
         <ul className='list'>
           <li>
-            <strong>Moins d'administration</strong> - Inscrivez-vous en 24h et commencez à encaisser des paiments 
+            <strong>Moins d'administration</strong> - Inscrivez-vous en 24h et commencez à encaisser des paiments
             récurrents ou ponctuels automatiquement en un clic. Le suivi des paiements et la réconciliation bancaire
             se font automatiquement. Fini les démarches et la gestion lourde requises par les banques.
           </li>
@@ -65,9 +67,9 @@ export default class FaqMerchantsFr extends React.Component {
              incidents de paiements, ainsi que l'implémentation, sont gratuits.
           </li>
           <li>
-            <strong>Évoluez facilement</strong> - Notre tableau de bord est propulsé par 
-            notre <a href='https://developer.gocardless.com/' className='u-link-color-p u-text-underline'>API REST</a>. 
-            Ceci vous permet de facilement évoluer vers l'API afin d'automatiser plus en profondeur au fur et 
+            <strong>Évoluez facilement</strong> - Notre tableau de bord est propulsé par
+            notre <a href='https://developer.gocardless.com/' className='u-link-color-p u-text-underline'>API REST</a>.
+            Ceci vous permet de facilement évoluer vers l'API afin d'automatiser plus en profondeur au fur et
             à mesure.
           </li>
           <li>
@@ -111,8 +113,8 @@ export default class FaqMerchantsFr extends React.Component {
           Comment vais-je recevoir les fonds collectés?
         </h3>
         <p className='para'>
-          Les fonds collectés sont directement versés sur le(s) compte(s) en banque de votre choix. Avec GoCardless, 
-          nos <Link to='pricing' title='Tarifs' className='u-link-color-p u-text-underline'>tarifs</Link> sont déduits 
+          Les fonds collectés sont directement versés sur le(s) compte(s) en banque de votre choix. Avec GoCardless,
+          nos <Link to='pricing' title='Tarifs' className='u-link-color-p u-text-underline'>tarifs</Link> sont déduits
           automatiquement. Avec GoCardless Pro, nous pouvons facturer les frais transactionnels séparément.
         </p>
 

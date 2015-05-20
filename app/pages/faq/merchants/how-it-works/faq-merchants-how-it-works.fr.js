@@ -30,7 +30,7 @@ export default class FaqMerchantsHowItWorksFr extends React.Component {
         </h3>
         <ul className='list u-margin-Tm'>
           <li>
-            Vos clients fournissent leur information bancaire sur une page de paiement sécurisée en ligne, ou 
+            Vos clients fournissent leur information bancaire sur une page de paiement sécurisée en ligne, ou
             par téléphone ou courrier.
           </li>
           <li>

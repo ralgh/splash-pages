@@ -17,14 +17,16 @@ export default class FaqMerchantsDeveloperApiFr extends React.Component {
           plus sur notre <a href='https://developer.gocardless.com/pro' className='u-link-color-p u-text-underline'>documentation</a>.
         </p>
         <p className='para'>
-          Vous pouvez intégrer GoCardless pour prendre des paiements via prélèvement bancaire à partir de vos systèmes informatique et votre site web.
+          Vous pouvez intégrer GoCardless pour prendre des paiements via prélèvement bancaire
+          à partir de vos systèmes informatique et votre site web.
         </p>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
           Avec quels langages de programmation êtes-vous compatible?
         </h3>
         <p className='para'>
-          Nous sommes compatible avec tous les langages existants grâce à l’adoption du standard REST. Nous avons également plusieurs librairies comme Ruby, PHP et Java. Nous en développons régulièrement de nouvelles.
+          Nous sommes compatible avec tous les langages existants grâce à l’adoption du standard REST.
+          Nous avons également plusieurs librairies comme Ruby, PHP et Java. Nous en développons régulièrement de nouvelles.
         </p>
         <p className='para'>
           Si vous avez des questions pour nos développeurs, vous pouvez aller sur
@@ -36,7 +38,8 @@ export default class FaqMerchantsDeveloperApiFr extends React.Component {
           Puis-je héberger directement les pages de paiements ?
         </h3>
         <p className='para'>
-          Oui avec GoCardless Pro. Vous êtes en contrôle de vos pages de paiement. Vous êtes libre du design de ces pages. Il y a cependant
+          Oui avec GoCardless Pro. Vous êtes en contrôle de vos pages de paiement.
+          Vous êtes libre du design de ces pages. Il y a cependant
           certaines règles à respecter, que nous vous aiderons à implémenter via notre guide des règles SEPA.
         </p>
 

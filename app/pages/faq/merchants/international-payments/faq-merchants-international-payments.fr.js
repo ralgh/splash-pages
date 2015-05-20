@@ -13,7 +13,9 @@ export default class FaqMerchantsInternationalPaymentsFr extends React.Component
           Dans quels pays GoCardless est-il disponible ?
         </h3>
         <p className='para'>
-          GoCardless est disponible en Grande-Bretagne, France et Belgique. GoCardless Pro est disponible dans tous les pays respectant les normes anti-blanchiment. Vous aurez besoin d’avoir un compte en banque dans la zone Euro ou en Grande-Bretagne.
+          GoCardless est disponible en Grande-Bretagne, France et Belgique.
+          GoCardless Pro est disponible dans tous les pays respectant les normes anti-blanchiment.
+          Vous aurez besoin d’avoir un compte en banque dans la zone Euro ou en Grande-Bretagne.
         </p>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
