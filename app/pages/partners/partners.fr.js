@@ -9,7 +9,7 @@ export default class PartnersFr extends React.Component {
 
   render() {
     return (
-      <Translation locales={['fr-FR', 'fr-BE']}>
+      <Translation locales='fr'>
         <div className='page-hero u-padding-Vxxl'>
           <div className='site-container u-text-center u-padding-Vxm'>
             <h1 className='u-text-heading u-color-invert u-text-light u-padding-Tm'>Aidez vos clients à être payés</h1>

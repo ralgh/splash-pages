@@ -1,6 +1,7 @@
 #!/usr/bin/env babel-node
 
 import { fetchPage, writePage } from '../app/static-build/builder';
+import availableLocales from '../config/available-locales';
 import { getAllPaths } from '../app/router/route-helpers';
 
 const [bin, script, serverUrl, outDir] = process.argv;
@@ -16,7 +17,7 @@ const processPage = function(pagePath) {
     .catch(console.error.bind(console));
 };
 
-Promise.all(getAllPaths().map(processPage)).then(function(filenames) {
+Promise.all(getAllPaths(availableLocales).map(processPage)).then(function(filenames) {
   console.log('Completed static html dump:');
   console.log(filenames.sort().map((filename) => `  ${filename}`).join('\n'));
 }).catch(console.error.bind(console));

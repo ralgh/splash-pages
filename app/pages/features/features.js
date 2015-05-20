@@ -1,6 +1,5 @@
 import React from 'react';
 import Page from '../../components/page/page';
-import Link from '../../components/link/link';
 import FeaturesEn from './features.en';
 import FeaturesFr from './features.fr';
 

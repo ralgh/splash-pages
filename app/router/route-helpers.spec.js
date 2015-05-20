@@ -10,12 +10,13 @@ import { fakeConfig } from '../helpers/specs/fake-route-config';
 //TODO: write a test that says if you have a config with a URL that's not absolute, throw an error
 describe('getLocalesForRouteName', () => {
   let routeName;
+  const availableLocales = ['en-GB', 'fr-FR', 'fr-BE'];
 
   describe('for a routeName that is available in many locales', () => {
     beforeEach(() => routeName = 'home');
 
     it('returns a name => path mapping', () => {
-      expect(getLocalesForRouteName(routeName, fakeConfig)).toEqual({
+      expect(getLocalesForRouteName(routeName, availableLocales, fakeConfig)).toEqual({
         'en-GB': { path: '/' },
         'fr-FR': { path: '/fr-fr/' },
       });
@@ -26,11 +27,11 @@ describe('getLocalesForRouteName', () => {
     beforeEach(() => routeName = 'childRoute');
 
     it('returns a name => path mapping', () => {
-      expect(getLocalesForRouteName(routeName, fakeConfig)).toEqual({
+      expect(getLocalesForRouteName(routeName, availableLocales, fakeConfig)).toEqual({
         'en-GB': { path: '/child-route/' },
       });
 
-      expect(getLocalesForRouteName('routeWithChildren', fakeConfig)).toEqual({
+      expect(getLocalesForRouteName('routeWithChildren', availableLocales, fakeConfig)).toEqual({
         'en-GB': { path: '/en-route-with-child/' },
       });
     });
@@ -40,7 +41,7 @@ describe('getLocalesForRouteName', () => {
     beforeEach(() => routeName = 'doesnt exist');
 
     it('returns undefined', () => {
-      expect(getLocalesForRouteName(routeName, fakeConfig)).toBe(undefined);
+      expect(getLocalesForRouteName(routeName, availableLocales, fakeConfig)).toBe(undefined);
     });
   });
 
@@ -48,7 +49,7 @@ describe('getLocalesForRouteName', () => {
     beforeEach(() => routeName = null);
 
     it('returns nothing', () => {
-      expect(getLocalesForRouteName(routeName, fakeConfig)).toBe(undefined);
+      expect(getLocalesForRouteName(routeName, availableLocales, fakeConfig)).toBe(undefined);
     });
   });
 });
@@ -78,6 +79,7 @@ describe('getRoutes', () => {
           '/english-specific-page/?',
           '/english-only/?',
           '/en-route-with-child/?',
+          '/all-en/?',
           '/?',
           '/?*',
         ]);
@@ -96,7 +98,7 @@ describe('getRoutes', () => {
           const childRoutePaths = route.childRoutes.map(c => c.path);
 
           expect(childRoutePaths)
-            .toEqual(['/fr-fr/french-specific-page/?', '/fr-fr/french-only/?', '/fr-fr/?', '/fr-fr/?*']);
+            .toEqual(['/fr-fr/french-specific-page/?', '/fr-fr/french-only/?', '/fr-fr/all-fr/?', '/fr-fr/?', '/fr-fr/?*']);
 
           done();
         });
@@ -161,7 +163,11 @@ describe('getRoutes', () => {
           const route = routes[0];
           const childRoutePaths = route.childRoutes.map(c => c.path);
 
-          expect(childRoutePaths).toEqual(['/fr-fr/french-specific-page/?', '/fr-fr/french-only/?', '/fr-fr/?', '/fr-fr/?*']);
+          expect(childRoutePaths)
+            .toEqual([
+              '/fr-fr/french-specific-page/?', '/fr-fr/french-only/?',
+              '/fr-fr/all-fr/?', '/fr-fr/?', '/fr-fr/?*',
+            ]);
 
           done();
         });
@@ -179,13 +185,18 @@ describe('getRoutes', () => {
 });
 
 describe('getAllPaths', () => {
+  const availableLocales = ['en-GB', 'fr-FR', 'fr-BE'];
+
   it('lists all possible URLs', function() {
-    const urls = getAllPaths(fakeConfig).sort().toJS();
+    const urls = getAllPaths(availableLocales, fakeConfig).sort().toJS();
 
     expect(urls).toEqual([
       '/',
+      '/all-en/',
       '/fr-fr/',
+      '/fr-fr/all-fr/',
       '/english-specific-page/',
+      '/fr-be/all-fr/',
       '/fr-fr/french-specific-page/',
       '/english-only/',
       '/fr-fr/french-only/',
@@ -197,12 +208,13 @@ describe('getAllPaths', () => {
 
 describe('filterRouteByCategory', () => {
   let routeCategory;
+  const availableLocales = ['en-GB', 'fr-FR', 'fr-BE'];
 
   describe('for a root category with sub categories', () => {
     beforeEach(() => routeCategory = 'jobs');
 
     it('returns all jobs routes', () => {
-      var pages = filterRouteByCategory(routeCategory, 'en-GB', fakeConfig);
+      var pages = filterRouteByCategory(routeCategory, 'en-GB', availableLocales, fakeConfig);
 
       expect(pages.length).toEqual(2);
 
@@ -217,7 +229,7 @@ describe('filterRouteByCategory', () => {
     beforeEach(() => routeCategory = 'jobs.engineering');
 
     it('returns jobs.engineering routes', () => {
-      var pages = filterRouteByCategory(routeCategory, 'en-GB', fakeConfig);
+      var pages = filterRouteByCategory(routeCategory, 'en-GB', availableLocales, fakeConfig);
 
       expect(pages.length).toEqual(1);
 
@@ -232,7 +244,7 @@ describe('filterRouteByCategory', () => {
     beforeEach(() => routeCategory = 'jobs');
 
     it('returns no routes', () => {
-      expect(filterRouteByCategory(routeCategory, 'fr-BE', fakeConfig)).toEqual([]);
+      expect(filterRouteByCategory(routeCategory, 'fr-BE', availableLocales, fakeConfig)).toEqual([]);
     });
   });
 
@@ -240,7 +252,7 @@ describe('filterRouteByCategory', () => {
     beforeEach(() => routeCategory = 'doesnt exist');
 
     it('returns no routes', () => {
-      expect(filterRouteByCategory(routeCategory, 'fr-BE', fakeConfig)).toEqual([]);
+      expect(filterRouteByCategory(routeCategory, 'fr-BE', availableLocales, fakeConfig)).toEqual([]);
     });
   });
 });

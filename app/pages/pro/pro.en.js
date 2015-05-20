@@ -2,6 +2,7 @@ import React from 'react';
 import Translation from '../../components/translation/translation';
 import Message from '../../components/message/message';
 import ProductComparison from '../../components/product-comparison/product-comparison';
+import StickyNav from '../../components/sticky-nav/sticky-nav';
 import Tabs from '../../components/tabs/tabs';
 import SecurityIcon from '../../icons/svg/security';
 import DeveloperIcon from '../../icons/svg/developer';
@@ -29,43 +30,39 @@ export default class ProEn extends React.Component {
               </div>
             </div>
           </div>
-          <div className='sticky-nav'>
-            <div
-            className='sticky-nav__inner u-background-light-gray u-text-heading u-text-xxs u-text-light u-text-no-smoothing'>
-              <div className='site-container u-padding-Vm'>
-                <ul className='u-pull-start u-margin-Txxs'>
-                  <li className='sticky-nav__item'>
-                    <a href='#overview' du-scrollspy ng-gc-smooth-scroll id='track-sticky-nav-overview' className='sticky-nav__link'>
-                      Overview
-                    </a>
-                  </li>
-                  <li className='sticky-nav__item'>
-                    <a href='#features' du-scrollspy ng-gc-smooth-scroll id='track-sticky-nav-features' className='sticky-nav__link'>
-                      Features
-                    </a>
-                  </li>
-                  <li className='sticky-nav__item'>
-                    <a href='#pricing' du-scrollspy ng-gc-smooth-scroll id='track-sticky-nav-pricing' className='sticky-nav__link'>
-                      Pricing
-                    </a>
-                  </li>
-                </ul>
-                <Link to='contact_sales' query={{ s: 'pro' }}
-                id='track-sticky-nav-contact-sales'
-                className={
-                  'sticky-nav__cta btn btn--small btn--hollow u-pull-end ' +
-                  'u-text-transform-none u-text-light u-text-xxs u-text-no-smoothing'
-                }>
-                  <Message message='cta.pro' />
-                </Link>
-                <a href='https://developer.gocardless.com/pro/' id='track-sticky-nav-docs'
-                className='u-pull-end u-margin-Txxs u-margin-Rm'>
-                  API Documentation
-                </a>
-              </div>
-              <hr className='u-margin-An' />
+          <StickyNav>
+            <div className='site-container u-padding-Vm'>
+              <ul className='u-pull-start u-margin-Txxs'>
+                <li className='sticky-nav__item'>
+                  <a href='#overview' du-scrollspy ng-gc-smooth-scroll id='track-sticky-nav-overview' className='sticky-nav__link'>
+                    Overview
+                  </a>
+                </li>
+                <li className='sticky-nav__item'>
+                  <a href='#features' du-scrollspy ng-gc-smooth-scroll id='track-sticky-nav-features' className='sticky-nav__link'>
+                    Features
+                  </a>
+                </li>
+                <li className='sticky-nav__item'>
+                  <a href='#pricing' du-scrollspy ng-gc-smooth-scroll id='track-sticky-nav-pricing' className='sticky-nav__link'>
+                    Pricing
+                  </a>
+                </li>
+              </ul>
+              <Link to='contact_sales' query={{ s: 'pro' }}
+              id='track-sticky-nav-contact-sales'
+              className={
+                'sticky-nav__cta btn btn--small btn--hollow u-pull-end ' +
+                'u-text-transform-none u-text-light u-text-xxs u-text-no-smoothing'
+              }>
+                <Message message='cta.pro' />
+              </Link>
+              <a href='https://developer.gocardless.com/pro/' id='track-sticky-nav-docs'
+              className='u-pull-end u-margin-Txxs u-margin-Rm'>
+                API Documentation
+              </a>
             </div>
-          </div>
+          </StickyNav>
           <div className='section-scroll-target' id='overview'>
             <div className='site-container u-text-center u-padding-Vxxl'>
               <div className='u-padding-Vxl'>

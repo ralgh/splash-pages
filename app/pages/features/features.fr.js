@@ -1,5 +1,4 @@
 import React from 'react';
-import Page from '../../components/page/page';
 import Message from '../../components/message/message';
 import ProductComparison from '../../components/product-comparison/product-comparison';
 import Tabs from '../../components/tabs/tabs';
@@ -11,8 +10,6 @@ import CheckListIcon from '../../icons/svg/checklist';
 import CustomerIcon from '../../icons/svg/customer';
 import SecurityIcon from '../../icons/svg/security';
 import DeveloperIcon from '../../icons/svg/developer';
-import TickIcon from '../../icons/svg/tick';
-import MembershipIcon from '../../icons/svg/membership';
 import PhoneIcon from '../../icons/svg/phone';
 import Link from '../../components/link/link';
 import Translation from '../../components/translation/translation';
@@ -22,7 +19,7 @@ export default class FeaturesFr extends React.Component {
 
   render() {
     return (
-      <Translation locales={['fr-FR', 'fr-BE']}>
+      <Translation locales='fr'>
         <div>
           <div className='page-hero page-hero--medium u-relative u-size-full'>
             <div className='site-container page-hero__container'>
@@ -128,7 +125,7 @@ export default class FeaturesFr extends React.Component {
                       Fidélisez vos client
                     </div>
                     <p className='u-color-p u-margin-Txs'>
-                      Grâce au prélèvement SEPA, GoCardless vous évite de perdre vos clients à cause de l'expiration ou d'un échec de carte. 
+                      Grâce au prélèvement SEPA, GoCardless vous évite de perdre vos clients à cause de l'expiration ou d'un échec de carte.
                     </p>
                   </div>
                   <div className='grid__cell u-size-1of3'>
@@ -173,17 +170,17 @@ export default class FeaturesFr extends React.Component {
                   </h2>
                   <h3 className='u-text-s'>Statuts de paiement instantanés</h3>
                   <p className='u-size-5of6 u-color-p u-margin-Bm'>
-                    Notre tableau de bord vous permet de voir rapidement où en sont vos 
+                    Notre tableau de bord vous permet de voir rapidement où en sont vos
                     clients et vos paiements en temps réel.
                   </p>
                   <h3 className='u-text-s'>Exportez vos données</h3>
                   <p className='u-size-5of6 u-color-p u-margin-Bm'>
-                    Gérez vos données de la manière que vous préfèrez - par exemple pour l'utiliser 
+                    Gérez vos données de la manière que vous préfèrez - par exemple pour l'utiliser
                     dans votre comptabilité.
                   </p>
                   <h3 className='u-text-s'>Encaissez des paiements tous les jours</h3>
                   <p className='u-size-5of6 u-color-p u-margin-Bm'>
-                    Avec GoCardless vous pouvez encaisser des paiements aussi souvent que vous le 
+                    Avec GoCardless vous pouvez encaisser des paiements aussi souvent que vous le
                     souhaitez, sans le moindre coût ou difficulté supplémentaire.
                   </p>
                 </div>
@@ -197,7 +194,7 @@ export default class FeaturesFr extends React.Component {
                     Vos clients vont l'adorer
                   </h2>
                   <p className='u-size-5of6 u-color-p u-margin-Bm'>
-                    GoCardless est un Etablissement de Paiement Agréé, habilité à collecter des paiements 
+                    GoCardless est un Etablissement de Paiement Agréé, habilité à collecter des paiements
                     à travers l’Union Européenne ce qui rend les paiements faciles pour vous et vos clients.
                   </p>
                   <h3 className='u-text-s'>Mandat électronique simple</h3>

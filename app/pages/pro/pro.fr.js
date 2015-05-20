@@ -1,13 +1,11 @@
 import React from 'react';
 import Translation from '../../components/translation/translation';
 import ProductComparison from '../../components/product-comparison/product-comparison';
+import StickyNav from '../../components/sticky-nav/sticky-nav';
 import SecurityIcon from '../../icons/svg/security';
 import DeveloperIcon from '../../icons/svg/developer';
 import MobileIcon from '../../icons/svg/mobile';
 import WhiteLabelIcon from '../../icons/svg/white-label';
-import CheckListIcon from '../../icons/svg/checklist';
-import PaymentPageIcon from '../../icons/svg/payment-page';
-import ControlIcon from '../../icons/svg/control';
 import ProIcon from '../../icons/svg/pro';
 import ShopIcon from '../../icons/svg/shop';
 import IntegrationsIcon from '../../icons/svg/integrations';
@@ -33,36 +31,32 @@ export default class ProFr extends React.Component {
             </div>
           </div>
         </div>
-        <div className='sticky-nav'>
-          <div ng-gc-sticky-nav
-          className='sticky-nav__inner u-background-light-gray u-text-heading u-text-xxs u-text-light u-text-no-smoothing'>
-            <div className='site-container u-padding-Vm'>
-              <ul className='u-pull-start u-margin-Txxs'>
-                <li className='sticky-nav__item'>
-                  <a href='#en-bref' du-scrollspy ng-gc-smooth-scroll className='sticky-nav__link'>
-                    En bref
-                  </a>
-                </li>
-                <li className='sticky-nav__item'>
-                  <a href='#tarifs' du-scrollspy ng-gc-smooth-scroll className='sticky-nav__link'>
-                    Tarifs
-                  </a>
-                </li>
-              </ul>
-              <Link to='contact_sales' query={{ s: 'pro' }}
-                className={
-                  'sticky-nav__cta btn btn--small btn--hollow u-pull-end ' +
-                  'u-text-transform-none u-text-light u-text-xxs u-text-no-smoothing'
-                }>
-                Contactez-nous
-              </Link>
-              <a href='https://developer.gocardless.com/pro/' className='u-pull-end u-margin-Txxs u-margin-Rm'>
-                Documentation API
-              </a>
-            </div>
-            <hr className='u-margin-An' />
+        <StickyNav>
+          <div className='site-container u-padding-Vm'>
+            <ul className='u-pull-start u-margin-Txxs'>
+              <li className='sticky-nav__item'>
+                <a href='#en-bref' du-scrollspy ng-gc-smooth-scroll className='sticky-nav__link'>
+                  En bref
+                </a>
+              </li>
+              <li className='sticky-nav__item'>
+                <a href='#tarifs' du-scrollspy ng-gc-smooth-scroll className='sticky-nav__link'>
+                  Tarifs
+                </a>
+              </li>
+            </ul>
+            <Link to='contact_sales' query={{ s: 'pro' }}
+              className={
+                'sticky-nav__cta btn btn--small btn--hollow u-pull-end ' +
+                'u-text-transform-none u-text-light u-text-xxs u-text-no-smoothing'
+              }>
+              Contactez-nous
+            </Link>
+            <a href='https://developer.gocardless.com/pro/' className='u-pull-end u-margin-Txxs u-margin-Rm'>
+              Documentation API
+            </a>
           </div>
-        </div>
+        </StickyNav>
         <div className='section-scroll-target' id='en-bref'>
           <div className='site-container u-text-center u-padding-Vxl'>
             <div className='u-padding-Vxl'>
@@ -71,7 +65,7 @@ export default class ProFr extends React.Component {
                   Découvrez GoCardless Pro
                 </h2>
                 <p className='u-text-s u-color-p u-margin-Txs'>
-                  Adapté aux grandes entreprises et startups en forte croissance, GoCardless Pro combine simplicité 
+                  Adapté aux grandes entreprises et startups en forte croissance, GoCardless Pro combine simplicité
                   d'utilisation et contrôle complet du paiement
                   et de l'expérience client.
                 </p>
@@ -133,7 +127,7 @@ export default class ProFr extends React.Component {
                 </div>
                 <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
                   Intégrez l'API REST de GoCardless rapidement dans votre site web et vos systèmes
-                  d'information. Découvrez notre 
+                  d'information. Découvrez notre
                   <a href='https://developer.gocardless.com/pro'> documentation</a>.
                 </p>
               </div>
@@ -146,7 +140,7 @@ export default class ProFr extends React.Component {
                   Contrôlez vos paiements de A à Z
                 </div>
                 <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
-                  Recevez automatiquement dans vos systèmes le statut de vos paiements en temps réel. 
+                  Recevez automatiquement dans vos systèmes le statut de vos paiements en temps réel.
                   Fini les paiements manqués et le travail manuel.
                 </p>
               </div>
@@ -160,7 +154,7 @@ export default class ProFr extends React.Component {
                   Acceptez le prélèvement omni-canal
                 </div>
                 <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
-                  Proposez le prélèvement sur votre site internet, par téléphone ou 
+                  Proposez le prélèvement sur votre site internet, par téléphone ou
                   courrier, et passez automatiquement les informations vers vos systèmes CRM et ERP.
                 </p>
               </div>

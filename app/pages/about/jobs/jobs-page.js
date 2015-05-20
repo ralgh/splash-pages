@@ -11,16 +11,17 @@ export default class JobsPage extends React.Component {
   displayName = 'JobsPage'
 
   static propTypes = {
-    children: React.PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
   }
 
   static contextTypes = {
     locales: PropTypes.locale,
+    availableLocales: PropTypes.array.isRequired,
   }
 
   render() {
-    const {locales} = this.context;
-    const pages = filterRouteByCategory('jobs', locales);
+    const { locales, availableLocales } = this.context;
+    const pages = filterRouteByCategory('jobs', locales, availableLocales);
 
     const categories = pages.reduce(function(memo, job) {
       const category = rest(job.routeConfig.category.split('.')).join('.');
@@ -35,8 +36,8 @@ export default class JobsPage extends React.Component {
           <Message message={`jobs.${category}`} />
         </li>),
         categories[category].map(function(job) {
-          return (<li key={job.routeConfig.name} className='u-padding-Bs u-text-light u-text-no-smoothing'>
-            <Link to={job.localeConfig.path} className='nav-tabs__link'>
+          return (<li key={job.routeConfig.name}>
+            <Link to={job.localeConfig.path} className='nav-tabs__link u-text-no-smoothing'>
               <Message message={`${job.routeConfig.name}.title`} />
             </Link>
           </li>);

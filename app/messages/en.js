@@ -366,6 +366,10 @@ export default {
     title: 'Generalist',
     description: '',
   },
+  jobs_global_expansion_lead: {
+    title: 'Global Expansion Lead',
+    description: '',
+  },
   jobs_account_executive: {
     title: 'Account Executive',
     description: '',

@@ -22,7 +22,7 @@ export default class FeaturesEn extends React.Component {
 
   render() {
     return (
-      <Translation locales='en-GB'>
+      <Translation locales='en'>
         <div>
           <div className='page-hero u-relative u-size-full'>
             <div className='site-container page-hero__container'>
