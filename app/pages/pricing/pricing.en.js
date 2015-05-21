@@ -8,7 +8,7 @@ export default class PricingEn extends React.Component {
 
   render() {
     return (
-      <Translation locales={['en']} exclude='en-GB'>
+      <Translation locales={['en']} exclude={['en-GB','en-IE']}>
         <div className='page-hero--pricing page-hero'>
           <div className='site-container'>
             <div className='grid pricing-options u-center u-padding-Bxl'>
