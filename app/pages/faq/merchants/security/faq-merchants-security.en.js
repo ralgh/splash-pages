@@ -11,14 +11,26 @@ export default class FaqMerchantsSecurityEn extends React.Component {
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
           How do I know my money is safe?
         </h3>
-        <p className='para'>
-          We are regulated as an <a href='http://www.fsa.gov.uk/register/psdFirmBasicDetails.do?sid=315374'
-          title='FCA Registration' target='_blank' className='u-link-color-p u-text-underline'>Authorised Payment Institution</a> by 
-          the Financial Conduct Authority and serve more businesses than any other Direct Debit provider.
-        </p>
-        <p className='para'>
-          All money collected is held in a secure client monies account with the RBS.
-        </p>
+        <Translation locales='en-EU'>
+          <p className='para'>
+            We are regulated as an <a href='http://www.fsa.gov.uk/register/psdFirmBasicDetails.do?sid=315374'
+            title='FCA Registration' target='_blank' className='u-link-color-p u-text-underline'>Authorised Payment Institution</a> by 
+            the Financial Conduct Authority in the United Kingdom. We are authorised to collect payments throughout the European Union and currently serve more 5,000 businesses.
+          </p>
+          <p className='para'>
+            All money collected is held in a secure client monies account with one of our partner banks.
+          </p>
+        </Translation>
+        <Translation locales='en-GB'>
+          <p className='para'>
+            We are regulated as an <a href='http://www.fsa.gov.uk/register/psdFirmBasicDetails.do?sid=315374'
+            title='FCA Registration' target='_blank' className='u-link-color-p u-text-underline'>Authorised Payment Institution</a> by 
+            the Financial Conduct Authority and serve more businesses than any other Direct Debit provider.
+          </p>
+          <p className='para'>
+            All money collected is held in a secure client monies account with the RBS.
+          </p>
+        </Translation>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
           How does GoCardless protect my data?
@@ -29,7 +41,7 @@ export default class FaqMerchantsSecurityEn extends React.Component {
         </p>
 
         <ul className='list'>
-          <li>Our access to Direct Debit is provided by the UK's major banks, who have approved our systems.</li>
+          <li>Our access to the Direct Debit system is provided by Europe's major banks, who have approved our systems.</li>
           <li>All servers are hosted in secure datacentres located in Europe - data is never transmitted outside the EU.</li>
           <li>Our financial data server is separated from our application server by multiple firewalls.</li>
           <li>All client-server communication is 256-bit SSL encrypted. The banking system requires just 128-bit.</li>
@@ -39,7 +51,7 @@ export default class FaqMerchantsSecurityEn extends React.Component {
           What do you do with my money before it is paid out?
         </h3>
         <p className='para'>
-          All money collected is held in a secure client monies account held with the RBS.
+          All money collected is held in a secure client monies account held with one of our partner banks.
         </p>
         <p className='para'>
           Funds are held fully in accordance with safeguarding provisions.
@@ -48,13 +60,22 @@ export default class FaqMerchantsSecurityEn extends React.Component {
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
           Is it safe for my customers?
         </h3>
-        <p className='para'>
-          Your customers are fully protected by the <a href='/direct-debit/guarantee/'
-          className='u-link-color-p u-text-underline'>Direct Debit Guarantee</a>.
-        </p>
-        <p className='para'>
-          This entitles them to a full and immediate refund of any payments taken from their account in error.
-        </p>
+        <Translation locales='en-EU'>
+          <p className='para'>
+            Yes. Your customers are protected by <a href='/guides/sepa/protection/'
+            className='u-link-color-p u-text-underline'>SEPA Direct Debit Customer Protection</a> in the Eurozone and the <a href='/direct-debit/guarantee/'
+            className='u-link-color-p u-text-underline'>Direct Debit Guarantee</a> in the UK.
+          </p>
+        </Translation>
+        <Translation locales='en-GB'>
+          <p className='para'>
+            Yes. Your customers are fully protected by the <a href='/direct-debit/guarantee/'
+            className='u-link-color-p u-text-underline'>Direct Debit Guarantee</a>.
+          </p>
+          <p className='para'>
+            This entitles them to a full and immediate refund of any payments taken from their account in error.
+          </p>
+        </Translation>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
           Vulnerability Disclosure
