@@ -1,33 +1,52 @@
 import flatten from 'lodash/array/flatten';
 import any from 'lodash/collection/any';
+import partial from 'lodash/function/partial';
 import React from 'react';
-import {PropTypes} from '../../helpers/prop-types/prop-types';
+import { PropTypes } from '../../helpers/prop-types/prop-types';
+import { expandLangLocales } from '../../helpers/locale-helper/locale-helper';
+
+function hasLocale(allowedLocales, currentLocale) {
+  return any(allowedLocales, (locale) => currentLocale === locale);
+}
+
+function validateLocale(translationLocales, routeLocales, routeName) {
+  const localesAllowed = any(translationLocales, partial(hasLocale, routeLocales));
+
+  if (!localesAllowed) {
+    throw new Error(
+      `Translation locales not allowed (${translationLocales}), allowed: (${routeLocales}), route: ${routeName}`
+    );
+  }
+}
 
 export default class Translation extends React.Component {
   displayName = 'Translation'
 
-  static contextTypes = {
-    locales: PropTypes.locale,
-  }
-
   static propTypes = {
     locales: PropTypes.locale,
-    children: React.PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
+    exclude: PropTypes.array,
+  }
+
+  static contextTypes = {
+    locales: PropTypes.locale,
+    routeLocales: PropTypes.array.isRequired,
+    routeName: PropTypes.string.isRequired,
   }
 
   render() {
     const locales = flatten([this.props.locales]);
-    const currentLocale = this.context.locales;
-    const hasLocale = any(locales, function(localeToCheck) {
-      if (localeToCheck.indexOf('-') === -1) {
-        return currentLocale.indexOf(localeToCheck + '-') === 0;
-      }
-      return currentLocale === localeToCheck;
-    });
+    const exclude = flatten([this.props.exclude]);
+    const { locales: currentLocale, routeLocales, routeName } = this.context;
+    const translationLocales = expandLangLocales(locales, routeLocales);
+    validateLocale(translationLocales, routeLocales, routeName);
+
+    const isExcluded = hasLocale(exclude, currentLocale);
+    const isVisible = !isExcluded && hasLocale(translationLocales, currentLocale);
 
     return (
       <span {...this.props}>
-        { hasLocale &&
+        { isVisible &&
             this.props.children }
       </span>
     );
