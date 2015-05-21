@@ -12,6 +12,16 @@ import favicon from 'serve-favicon';
 import { render } from './render';
 import availableLocales from '../config/available-locales';
 
+function normalisePort(val) {
+  const portNum = parseInt(val, 10);
+
+  // named pipe
+  if (Number.isNaN(portNum)) { return val; }
+  if (portNum >= 0) { return portNum; }
+
+  return false;
+}
+
 const app = express();
 
 app.use(locale(availableLocales));
@@ -92,14 +102,3 @@ server.on('listening', function onListening() {
   const type = portType(bind);
   console.log(`Listening on http:\/\/localhost:${bind} (${type})`);
 });
-
-function normalisePort(val) {
-  const portNum = parseInt(val, 10);
-
-  // named pipe
-  if (Number.isNaN(portNum)) { return val; }
-  if (portNum >= 0) { return portNum; }
-
-  return false;
-}
-

@@ -1,5 +1,7 @@
-react-splash-pages
+GoCardless.com Splash Pages
 ==================
+
+
 
 # Install & run
 
@@ -11,7 +13,7 @@ npm install
 
 ### Prerequisites:
 
-- node.js (or io.js): `brew install node`
+- Node.js (or io.js): `brew install node`
 
 ## Running
 
@@ -19,15 +21,19 @@ npm install
 npm start
 ```
 
+Visit:
+
 ```
 http://localhost:4402
 ```
 
-## Tests
+## Testing
 
 ```
 npm test
 ```
+
+This will run ESLint, Unit Tests and E2E tests.
 
 __Note__: the first time you run the tests, they will be slow. This is because of the transpilation that Babel has to do. Every subsequent run should be much quicker, as Babel caches aggresively.
 
