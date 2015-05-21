@@ -56,7 +56,7 @@ export default class HomeEn extends React.Component {
                 </p>
               </div>
               
-              <Translation locales={['en']} exclude='en-GB'>
+              <Translation locales={['en']} exclude={['en-GB']}>
                 <div className='grid__cell u-size-1of3 u-text-center'>
                   <figure className='svg-icon u-center'>
                     <TickSquareIcon className='svg-icon__image svg-icon__image--shadow u-fill-yellow' />

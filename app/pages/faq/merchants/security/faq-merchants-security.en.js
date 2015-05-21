@@ -11,7 +11,7 @@ export default class FaqMerchantsSecurityEn extends React.Component {
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
           How do I know my money is safe?
         </h3>
-        <Translation locales={['en']} exclude='en-GB'>
+        <Translation locales={['en']} exclude={['en-GB']}>
           <p className='para'>
             We are regulated as an <a href='http://www.fsa.gov.uk/register/psdFirmBasicDetails.do?sid=315374'
             title='FCA Registration' target='_blank' className='u-link-color-p u-text-underline'>Authorised Payment Institution</a> by 
@@ -60,7 +60,7 @@ export default class FaqMerchantsSecurityEn extends React.Component {
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
           Is it safe for my customers?
         </h3>
-        <Translation locales={['en']} exclude='en-GB'>
+        <Translation locales={['en']} exclude={['en-GB']}>
           <p className='para'>
             Yes. Your customers are protected by <a href='/guides/sepa/protection/'
             className='u-link-color-p u-text-underline'>SEPA Direct Debit Customer Protection</a> in the Eurozone and the <a href='/direct-debit/guarantee/'

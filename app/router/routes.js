@@ -353,6 +353,9 @@ export const config = Immutable.fromJS([
       'en-GB': {
         path: '/partners',
       },
+      'en-IE': {
+        path: '/partners',
+      },
       fr: {
         path: '/partenaires',
       },
