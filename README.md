@@ -1,19 +1,21 @@
-GoCardless.com Splash Pages
-==================
+Splash Pages for gocardless.com
+===============================
 
 See [How we built the new gocardless.com](https://gocardless.com/blog/how-we-built-the-new-gocardless.com/).
 
-## Dependencies
+### Install & run
+
+##### Prerequisites:
+
+- Node.js (or io.js): `brew install node`
+
+##### Dependencies
 
 ```
 npm install
 ```
 
-### Prerequisites:
-
-- Node.js (or io.js): `brew install node`
-
-## Running
+##### Running
 
 ```
 npm start
@@ -25,7 +27,7 @@ Visit:
 http://localhost:4402
 ```
 
-## Testing
+##### Testing
 
 ```
 npm test
@@ -35,21 +37,21 @@ This will run ESLint, Unit Tests and E2E tests.
 
 __Note__: the first time you run the tests, they will be slow. This is because of the transpilation that Babel has to do. Every subsequent run should be much quicker, as Babel caches aggresively.
 
-# What is JSX?
+### What is JSX?
 
 JSX looks a bit like HTML but it's just a shorthand for writing JavaScript functions that turn into HTML.
 
-## Syntax highlighting `jsx`
+##### Syntax highlighting `jsx`
 
 - Sublime Text: https://github.com/babel/babel-sublime (make the it default for `.js` and `.json` and disable the `JavaScript` package by adding it in `ignored_packages`)
 
-## Transform process
+##### Transform process
 
 To see HTML turn into JSX, write some HTML and see it turn into JSX: https://facebook.github.io/react/html-jsx.html
 
 To see JSX turn into JavaScript, write some JSX in the render function: https://facebook.github.io/react/jsx-compiler.html
 
-## Learn more
+##### Learn more
 
 - JSX syntax: https://facebook.github.io/react/docs/displaying-data.html#jsx-syntax
 
@@ -57,13 +59,13 @@ To see JSX turn into JavaScript, write some JSX in the render function: https://
 
 - JSX Gotchas: https://facebook.github.io/react/docs/jsx-gotchas.html
 
-## HTML to JSX
+##### HTML to JSX
 
 https://facebook.github.io/react/html-jsx.html
 
-# Content
+### Content
 
-## Imports
+##### Imports
 
 Import paths are relative from the file you are in and exclude `.js`.
 
@@ -73,7 +75,7 @@ For example, importing the `Message` component from `app/pages/home/home.js`:
 import Message from '../../components/message/message';
 ```
 
-## Routes
+##### Routes
 
 Routes are defined in `app/router/routes.js`.
 
@@ -91,11 +93,11 @@ var config = Immutable.fromJS([
 ]);
 ```
 
-### Path prefixed with locale
+##### Path prefixed with locale
 
 All paths are prefixed with a lowercase locale except for the default locale (en-GB).
 
-### Route options
+##### Route options
 
 Routes are constructed with an array: `[PageComponent, { route options }, { .. locale options .. }, [optional nested routes]]`
 
@@ -127,7 +129,7 @@ Resulting paths for `Pricing`: `/pricing`, `/en-ie/pricing`, `/fr-fr/tarifs`.
 
 The `Pricing` component is then responsible for rendering the right content for each locale (see Translation).
 
-## Links
+##### Links
 
 Links can be generated given the page `name` value from the route config with the `Link` component.
 
@@ -146,9 +148,9 @@ export default class Home extends React.Component {
 }
 ```
 
-## Translations
+### Translations
 
-### Strings
+##### Strings
 
 String translations are defined in `app/messages/{language-[region]}.js`.
 
@@ -194,7 +196,7 @@ export default {
 }
 ```
 
-### Blocks of HTML
+##### Blocks of HTML
 
 When you need to swap out larget pieces of content you can use the `Translation` component.
 
@@ -218,7 +220,7 @@ export default class Home extends React.Component {
 }
 ```
 
-## SVG icons
+### SVG icons
 
 SVGs are generated React Components, use them like any other component.
 
@@ -236,19 +238,19 @@ class Header extends React.Component {
 }
 ```
 
-### Generating SVG components
+##### Generating SVG components
 
 If you're adding or editing an svg, edit the file in `public/` and run the generate script.
 
 `./script/generators/render-icons`
 
-# Assets
+### Assets
 
 CSS: `app/css/`
 Images: `public/images/`
 Static app: `app/public/`
 
-# Troubleshooting
+### Troubleshooting
 
 1. `npm start` fails  
     Try running `npm install`. Packages might be out of date.
