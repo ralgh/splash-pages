@@ -12,9 +12,42 @@ export default class EUFlagIcon extends React.Component {
   /*eslint-disable max-len*/
   render() {
     return (
-      <svg {...this.props} width={810} height={540}>
-      <defs><g id="s"><g id="c"><path id="t" d="M0,0v1h0.5z" transform="translate(0,-1)rotate(18)" /><use xlinkHref="#t" transform="scale(-1,1)" /></g><g id="a"><use xlinkHref="#c" transform="rotate(72)" /><use xlinkHref="#c" transform="rotate(144)" /></g><use xlinkHref="#a" transform="scale(-1,1)" /></g></defs>
-      <rect fill="#039" width={810} height={540} /><g fill="#fc0" transform="scale(30)translate(13.5,9)"><use xlinkHref="#s" y={-6} /><use xlinkHref="#s" y={6} /><g id="l"><use xlinkHref="#s" x={-6} /><use xlinkHref="#s" transform="rotate(150)translate(0,6)rotate(66)" /><use xlinkHref="#s" transform="rotate(120)translate(0,6)rotate(24)" /><use xlinkHref="#s" transform="rotate(60)translate(0,6)rotate(12)" /><use xlinkHref="#s" transform="rotate(30)translate(0,6)rotate(42)" /></g><use xlinkHref="#l" transform="scale(-1,1)" /></g>
+      <svg {...this.props} version="1.1" x="0px" y="0px" viewBox="0 0 283.6 189.1" style={{enableBackground: 'new 0 0 283.6 189.1'}}>
+      <g>
+        <g>
+          <path style={{fill: '#FFFFFF'}} d="M141.8,96.5" />
+        </g>
+        <g>
+          <rect x={0} y={0} style={{fill: '#164194'}} width="283.6" height="189.1" />
+          <path style={{fill: '#164194'}} d="M141.8,94.5" />
+        </g>
+        <g>
+          <polygon style={{fill: '#FFED00'}} points="135.8,41.2 141.7,36.8 147.7,41.2 145.4,34.1 151.5,29.8 144,29.8 141.7,22.6 139.4,29.8
+    132,29.8 138,34.1     " />
+          <polygon style={{fill: '#FFED00'}} points="104.8,49.5 110.8,45.1 116.8,49.5 114.5,42.5 120.6,38.1 113.1,38.1 110.8,30.9
+    108.5,38.1 101,38.1 107.1,42.5    " />
+          <polygon style={{fill: '#FFED00'}} points="88.1,53.6 85.8,60.8 78.3,60.8 84.4,65.2 82.1,72.2 88.1,67.9 94.1,72.2 91.8,65.2
+    97.9,60.8 90.4,60.8     " />
+          <polygon style={{fill: '#FFED00'}} points="79.8,98.8 85.8,103.2 83.5,96.1 89.6,91.7 82.1,91.7 79.8,84.6 77.5,91.7 70,91.7
+    76.1,96.1 73.8,103.2    " />
+          <polygon style={{fill: '#FFED00'}} points="90.4,122.7 88.1,115.6 85.8,122.8 78.3,122.7 84.4,127.1 82.1,134.2 88.1,129.8
+    94.1,134.2 91.8,127.1 97.9,122.7    " />
+          <polygon style={{fill: '#FFED00'}} points="113.1,145.5 110.8,138.3 108.5,145.5 101,145.5 107.1,149.8 104.8,156.9 110.8,152.5
+    116.8,156.9 114.5,149.8 120.6,145.5     " />
+          <polygon style={{fill: '#FFED00'}} points="144,153.7 141.7,146.5 139.5,153.7 132,153.7 138,158 135.8,165.1 141.7,160.7
+    147.7,165.1 145.5,158 151.5,153.7     " />
+          <polygon style={{fill: '#FFED00'}} points="175,145.5 172.7,138.3 170.4,145.5 162.9,145.5 169,149.8 166.7,156.9 172.7,152.5
+    178.7,156.9 176.4,149.8 182.5,145.5     " />
+          <polygon style={{fill: '#FFED00'}} points="197.7,122.7 195.4,115.6 193.1,122.8 185.6,122.7 191.7,127.1 189.4,134.2 195.4,129.8
+    201.4,134.2 199.1,127.1 205.2,122.7     " />
+          <polygon style={{fill: '#FFED00'}} points="213.4,91.6 205.9,91.6 203.6,84.5 201.3,91.6 193.8,91.6 199.9,96 197.6,103.1 203.6,98.7
+    209.6,103.1 207.3,96    " />
+          <polygon style={{fill: '#FFED00'}} points="189.4,72.1 195.4,67.8 201.4,72.1 199.1,65.1 205.2,60.7 197.7,60.7 195.4,53.6
+    193.1,60.7 185.6,60.7 191.7,65.1    " />
+          <polygon style={{fill: '#FFED00'}} points="172.8,30.9 170.5,38.1 163,38.1 169.1,42.5 166.8,49.5 172.8,45.1 178.7,49.5 176.5,42.5
+    182.6,38.1 175.1,38.1     " />
+        </g>
+      </g>
     </svg>
 
     );
