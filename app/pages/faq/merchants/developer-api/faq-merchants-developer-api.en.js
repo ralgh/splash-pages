@@ -41,20 +41,19 @@ export default class FaqMerchantsDeveloperApiEn extends React.Component {
           What programming languages can I use?
         </h3>
         <p className='para'>
-          We have client libraries for
-          <a href='https://github.com/gocardless/gocardless-ruby' target='_blank' className='u-link-color-p u-text-underline'>
+          We have client libraries
+          for <a href='https://github.com/gocardless/gocardless-ruby' target='_blank' className='u-link-color-p u-text-underline'>
             Ruby
-          </a>,
-          <a href='https://github.com/gocardless/gocardless-php' target='_blank' className='u-link-color-p u-text-underline'>
+          </a>
+          , <a href='https://github.com/gocardless/gocardless-php' target='_blank' className='u-link-color-p u-text-underline'>
             PHP
-          </a>,
-          <a href='https://github.com/gocardless/gocardless-java' target='_blank' className='u-link-color-p u-text-underline'>
+          </a>
+          , <a href='https://github.com/gocardless/gocardless-java' target='_blank' className='u-link-color-p u-text-underline'>
             Java
-          </a>,
-          <a href='https://github.com/gocardless/gocardless-python' target='_blank' className='u-link-color-p u-text-underline'>
+          </a>
+          , <a href='https://github.com/gocardless/gocardless-python' target='_blank' className='u-link-color-p u-text-underline'>
             Python
-          </a>,
-          <a href='https://github.com/gocardless/gocardless-dotnet' target='_blank' className='u-link-color-p u-text-underline'>
+          </a> and <a href='https://github.com/gocardless/gocardless-dotnet' target='_blank' className='u-link-color-p u-text-underline'>
             .NET
           </a>.
           If you need any help with these, just drop by our&nbsp;
