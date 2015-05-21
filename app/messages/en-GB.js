@@ -19,6 +19,7 @@ export default {
     pro_number_of_monthly_payments: '> 500',
   },
   security: {
+    fca_authorised_byline: 'GoCardless is an Authorised Payment Institution regulated by the Financial Conduct Authority.',
     consumer_protection_title: 'Direct Debit Guarantee',
     trusted_by_thousands_byline: 'GoCardless provides access to the Direct Debit network to thousands of businesses in the United Kingdom.',
   },

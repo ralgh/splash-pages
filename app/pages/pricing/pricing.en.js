@@ -74,7 +74,7 @@ export default class PricingEn extends React.Component {
                 <b>Are there any implementation costs?</b>
               </div>
               <p className='u-color-p'>
-                No, you won't pay to implement to GoCardless and our support is free.
+                No, you won't pay to implement GoCardless and our support is free.
               </p>
             </div>
             <div className='grid__cell u-size-1of2 u-padding-Bm u-padding-Lm'>
