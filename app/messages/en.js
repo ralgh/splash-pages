@@ -23,7 +23,7 @@ export default {
   },
   signup_cta: {
     main: 'Pay 1%',
-    description: 'Just 1% per transaction, capped at £2.',
+    description: 'Just 1% per transaction, capped at €2.',
     learn_more: 'Learn about our pricing',
   },
   hero: {

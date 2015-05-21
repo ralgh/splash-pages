@@ -5,6 +5,9 @@ export default {
   footer: {
     description: 'GoCardless is a Bacs approved bureau and is regulated by the Financial Conduct Authority as an Authorised Payment Institution.',
   },
+  signup_cta: {
+    description: 'Just 1% per transaction, capped at £2.',
+  },
   home: {
     title: 'The UK’s #1 for online Direct Debit',
     trusted_message_scale: 'We’re a Bacs approved bureau that collects millions of pounds for our merchants every day.',
