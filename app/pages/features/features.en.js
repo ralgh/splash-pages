@@ -325,14 +325,15 @@ export default class FeaturesEn extends React.Component {
             <div className='u-text-center u-padding-Vxxl u-background-light-gray'>
               <div className='site-container u-padding-Vxl'>
                 <ProductComparison />
-                <table className='u-size-full'><tfoot>
+                <table className='u-size-full'>
+                  <tfoot>
                     <tr className='comparison-table__row'>
                       <td />
                       <td />
-                      <td className='u-padding-As'>
-                        <a href='/pro' id='track-comparison-table-pro' className='u-color-primary'>
+                      <td className='u-padding-As u-size-1of3'>
+                        <Link to='/pro' id='track-comparison-table-pro' className='u-color-primary'>
                           Learn more about GoCardless Pro
-                        </a>
+                        </Link>
                       </td>
                     </tr>
                   </tfoot>
