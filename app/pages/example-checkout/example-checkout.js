@@ -13,7 +13,7 @@ export default class ExampleCheckout extends React.Component {
               Super simple payment experience
             </h1>
             <div className={
-              'u-text-heading u-margin-Bxxl u-text-center u-color-invert u-text-m '+
+              'u-text-heading u-margin-Bxxl u-text-center u-color-invert u-text-m ' +
               'u-text-light u-margin-Txxs u-text-no-smoothing u-text-center'
             }
             id='ab-test-subtitle'>
