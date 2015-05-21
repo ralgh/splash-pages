@@ -1,0 +1,6 @@
+#!/usr/bin/env babel-node
+
+import availableLocales from '../config/available-locales';
+import { getAllPaths } from '../app/router/route-helpers';
+
+console.log(getAllPaths(availableLocales).map((filename) => `${filename}`).sort().join('\n'));
