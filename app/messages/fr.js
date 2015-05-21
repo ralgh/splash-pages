@@ -56,6 +56,8 @@ export default {
   not_found: {
     title: 'Page Non Trouvée',
     description: 'Nous n\'avons pas trouvé votre page',
+    header: 'Page Non Trouvée.',
+    explainer: 'Nous n\'avons pas trouvé votre page.',
   },
   contact_sales: {
     title: 'Contactez-nous',

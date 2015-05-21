@@ -59,6 +59,8 @@ export default {
   not_found: {
     title: 'Not Found',
     description: 'Page Not Found',
+    header: 'Oops! This link appears broken.',
+    explainer: 'The page may have moved, or perhaps you mis-typed the address.',
   },
   pricing: {
     title: 'Pricing',
