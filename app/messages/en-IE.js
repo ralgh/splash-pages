@@ -2,7 +2,7 @@ export default {
   country: 'Ireland',
   hero: {
     header: 'Accept recurring payments across Europe',
-    desc: 'GoCardless allows you to collect Direct Debit payments from the UK and the Eurozone in a single integration.',
+    desc: 'GoCardless allows you to collect Direct Debit payments from Ireland, the UK and the Eurozone in a single integration.',
   },
   pricing: {
     cost_cap: '€2',
