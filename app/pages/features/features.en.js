@@ -331,9 +331,9 @@ export default class FeaturesEn extends React.Component {
                       <td />
                       <td />
                       <td className='u-padding-As u-size-1of3'>
-                        <a href='/pro' id='track-comparison-table-pro' className='u-color-primary'>
+                        <Link to='/pro' id='track-comparison-table-pro' className='u-color-primary'>
                           Learn more about GoCardless Pro
-                        </a>
+                        </Link>
                       </td>
                     </tr>
                   </tfoot>
