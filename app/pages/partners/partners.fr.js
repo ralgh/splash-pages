@@ -2,6 +2,7 @@ import React from 'react';
 import Translation from '../../components/translation/translation';
 import CustomerIcon from '../../icons/svg/customer';
 import ProIcon from '../../icons/svg/pro';
+import Href from '../../components/href/href';
 import AddPartnerIcon from '../../icons/svg/add-partner';
 
 export default class PartnersFr extends React.Component {
@@ -76,7 +77,7 @@ export default class PartnersFr extends React.Component {
               </h2>
               <p className='u-text-s u-color-p u-margin-Vxs'>
                 Développez votre business en intégrant GoCardless. <br />
-                Pour plus d'informations, contactez-nous à <a href='mailto:france@gocardless.com'>france@gocardless.com</a>
+                Pour plus d'informations, contactez-nous à <Href to='email' className='u-link-color-p u-text-underline' />
               </p>
             </div>
           </div>
