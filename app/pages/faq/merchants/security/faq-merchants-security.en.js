@@ -13,8 +13,8 @@ export default class FaqMerchantsSecurityEn extends React.Component {
         </h3>
         <p className='para'>
           We are regulated as an <a href='http://www.fsa.gov.uk/register/psdFirmBasicDetails.do?sid=315374'
-          title='FCA Registration' target='_blank' className='u-link-color-p u-text-underline'>Authorised Payment Institution</a>
-          by the Financial Conduct Authority and serve more businesses than any other Direct Debit provider.
+          title='FCA Registration' target='_blank' className='u-link-color-p u-text-underline'>Authorised Payment Institution</a> by 
+          the Financial Conduct Authority and serve more businesses than any other Direct Debit provider.
         </p>
         <p className='para'>
           All money collected is held in a secure client monies account with the RBS.
