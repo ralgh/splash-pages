@@ -53,6 +53,12 @@ export default class EngineeringInterships extends React.Component {
           for the same qualities and traits that we look for in more senior hires
           – but we don’t expect you to have the experience.
         </p>
+        <p className='para'>
+          <a href='https://gocardless.com/blog/interning-at-gocardless/'>
+            Read more about the projects Iain, one of our previous interns,
+            worked on at GoCardless.
+          </a>
+        </p>
         <h4 className='u-text-s u-margin-Bxs u-margin-Tm'>You should apply if:</h4>
         <ul className='list u-margin-Tm'>
           <li>You’re passionate about technology</li>
