@@ -125,7 +125,7 @@ export default class HomeFr extends React.Component {
             Ils parlent de GoCardless
           </h2>
           <div className='grid u-padding-Vxl'>
-            <a href={'http://www.lefigaro.fr/societes/2015/04/12/20005-20150412ARTFIG00171'+
+            <a href={'http://www.lefigaro.fr/societes/2015/04/12/20005-20150412ARTFIG00171' +
               '-gocardless-pret-a-bousculer-les-banques-francaises.php'}
               target='_blank' className='grid__cell u-size-1of3 u-link-clean u-padding-Rxs u-padding-Bm'>
               <div className='product-grid__container u-text-center u-padding-Vl'>
@@ -137,7 +137,7 @@ export default class HomeFr extends React.Component {
               </div>
               <div className='stories-item__btn btn u-size-full'>Lire l'article</div>
             </a>
-            <a href={'http://www.lesechos.fr/finance-marches/banque-assurances/0213743712'+
+            <a href={'http://www.lesechos.fr/finance-marches/banque-assurances/0213743712' +
               '-le-prelevement-bancaire-seduit-de-nouveaux-acteurs-1110875.php'}
               target='_blank' className='grid__cell u-size-1of3 u-link-clean u-padding-Bm'>
               <div className='product-grid__container u-text-center u-padding-Vl'>
@@ -149,7 +149,7 @@ export default class HomeFr extends React.Component {
               </div>
               <div className='stories-item__btn btn u-size-full'>Lire l'article</div>
             </a>
-            <a href={'http://www.latribune.fr/entreprises-finance/banques-finance/'+
+            <a href={'http://www.latribune.fr/entreprises-finance/banques-finance/' +
               'gocardless-ou-quand-la-fintech-londonienne-debarque-en-france-469023.html'}
               target='_blank' className='grid__cell u-size-1of3 u-link-clean u-padding-Rxs'>
               <div className='product-grid__container u-text-center u-padding-Vl'>
