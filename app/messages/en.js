@@ -191,6 +191,7 @@ export default {
     description: 'GoCardless is built securely from the ground up and uses military grade encryption to keep your details safe. Regulated by the Financial Conduct Authority.',
     header1: 'Built securely from the ground up',
     header2: 'GoCardless uses military grade encryption to keep you safe, and is approved by the biggest names in payments',
+    fca_authorised_byline: 'GoCardless is regulated by the Financial Conduct Authority in the United Kingdom as an Authorised Payment Institution to collect payments across Europe.',
     consumer_protection_title: 'Consumer protection',
     trusted_by_thousands_byline: 'GoCardless provides access to the Direct Debit network to thousands of businesses across Europe.',
   },

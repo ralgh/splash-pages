@@ -16,7 +16,7 @@ export default class SecurityEn extends React.Component {
                 Authorised by the FCA
               </h2>
               <p className='u-size-2of3 u-center u-color-p u-margin-Txs'>
-                GoCardless is an Authorised Payment Institution regulated by the Financial Conduct Authority.
+                <Message message='security.fca_authorised_byline' />
               </p>
             </div>
             <div className='grid__cell u-text-center u-size-1of2 u-padding-Vxl'>
