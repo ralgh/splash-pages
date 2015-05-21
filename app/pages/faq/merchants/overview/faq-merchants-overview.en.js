@@ -13,7 +13,7 @@ export default class FaqMerchantsEn extends React.Component {
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
           How can I use GoCardless?
         </h3>
-        <Translation locales='en-EU'>
+        <Translation locales={['en']} exclude='en-GB'>
           <p className='para'>
             There are two ways to use GoCardless:
           </p>

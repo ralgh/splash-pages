@@ -10,7 +10,7 @@ export default class FaqMerchantsSigningUpEn extends React.Component {
       <Translation locales='en'>
         <h2 className='u-text-heading-light u-text-m u-color-heading'>Signing up</h2>
         
-        <Translation locales='en-EU'>
+        <Translation locales={['en']} exclude='en-GB'>
           <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
             How can I register for GoCardless?
           </h3>
