@@ -62,7 +62,7 @@ export default class SecurityEn extends React.Component {
           </div>
         </div>
         <hr className='u-margin-An' />
-        <Translation locales='en-EU'>
+        <Translation locales={['en']} exclude='en-GB'>
           <div className='site-container u-text-center u-padding-Tm u-padding-Bxxl'>
             <div className='u-padding-Vxl'>
               <h2 className='u-text-heading u-text-l u-color-heading u-text-light'>Got any questions?</h2>
