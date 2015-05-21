@@ -1,0 +1,17 @@
+#!/bin/bash
+# Usage: script/e2e-debug app/pages/not-found/not-found.e2e.js
+
+SPECS=$1
+
+PORT="4402"
+
+curl --silent --max-time 1 --connect-timeout 1 "http://localhost:"$PORT"/" > /dev/null
+
+if [ $? -ne 0 ]; then
+   echo "'npm start' needs to be running to compile assets for this test script"
+   exit 2
+fi
+
+set -e errexit
+
+PORT=$PORT ./node_modules/.bin/protractor config/protractor.config.js --specs $SPECS
