@@ -149,7 +149,7 @@ export default class ProEn extends React.Component {
                   </h2>
                   <p className='u-text-s u-color-p u-margin-Txs'>
                     Every day, some of the biggest and most respected businesses
-                    in the UK trust GoCardless to power their payments
+                    trust GoCardless to power their payments
                   </p>
                 </div>
                 <div className='u-text-center u-margin-Vl u-padding-Vs u-center'>
