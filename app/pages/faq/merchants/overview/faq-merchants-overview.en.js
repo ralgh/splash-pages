@@ -1,6 +1,7 @@
 import React from 'react';
 import Translation from '../../../../components/translation/translation';
 import Link from '../../../../components/link/link';
+import LinkExists from '../../../../components/link-exists/link-exists';
 
 export default class FaqMerchantsEn extends React.Component {
   displayName = 'FaqMerchantsEn'
@@ -20,11 +21,13 @@ export default class FaqMerchantsEn extends React.Component {
             <strong>Our dashboards</strong> - Set up and manage Direct Debit payments
             with your customers using our simple online dashboard.
           </li>
-          <li>
-            <strong>Our account software partnerships</strong> - We work with a growing list of <Link to='partners'
-            className='u-link-color-p u-text-underline'>partners</Link>, so you can take payments within the online
-            services you already use.
-          </li>
+          <Translation locales='en-GB'>
+            <li>
+              <strong>Our account software partnerships</strong> - We work with a growing list of <Link to='partners'
+              className='u-link-color-p u-text-underline'>partners</Link>, so you can take payments within the online
+              services you already use.
+            </li>
+          </Translation>
           <li>
             <strong>Our clean, RESTful API</strong> - Integrate GoCardless into your website using
             our <a href='https://developer.gocardless.com/' className='u-link-color-p u-text-underline'>REST API</a>.
@@ -39,7 +42,7 @@ export default class FaqMerchantsEn extends React.Component {
         </p>
         <p className='para'>
           We have integrated with many of the most popular accounting packages to enable easy invoicing and payment reconciliation.<br />
-          Find out more <Link to='features' className='u-link-color-p u-text-underline'>here</Link>.
+          <LinkExists to='features'>Find out more <Link to='features' className='u-link-color-p u-text-underline'>here</Link></LinkExists>.
         </p>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
@@ -116,11 +119,13 @@ export default class FaqMerchantsEn extends React.Component {
             <strong>Reduced administration</strong> - Collect recurring and one-off payments automatically,
             or at the click of a button. We manage everything else for you.
           </li>
-          <li>
-             <strong>Simple, low pricing </strong> - We charge <Link to='pricing'
-             className='u-link-color-p u-text-underline'>1% per transaction</Link>, and never more
-             than £2. Scale pricing is available.
-          </li>
+          <Translation locales='en-GB'>
+            <li>
+               <strong>Simple, low pricing </strong> - We charge <Link to='pricing'
+               className='u-link-color-p u-text-underline'>1% per transaction</Link>, and never more
+               than £2. Scale pricing is available.
+            </li>
+          </Translation>
           <li>
             <strong>Powerful tools that suit you</strong> - Everything you need to set up, collect
             and manage Direct Debit payments with our simple online tool or <a href='https://developer.gocardless.com/'
@@ -131,13 +136,15 @@ export default class FaqMerchantsEn extends React.Component {
           </li>
         </ul>
 
-        <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
-          Is GoCardless a Bacs-approved bureau?
-        </h3>
-        <p className='para'>
-          Yes, GoCardless is a <a href='http://www.bacs.co.uk/Bacs/Bureaux/Resources/Pages/ApprovedBureaux.aspx'
-          className='u-link-color-p u-text-underline'>Bacs-approved bureau</a>.
-        </p>
+        <Translation locales='en-GB'>
+          <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
+            Is GoCardless a Bacs-approved bureau?
+          </h3>
+          <p className='para'>
+            Yes, GoCardless is a <a href='http://www.bacs.co.uk/Bacs/Bureaux/Resources/Pages/ApprovedBureaux.aspx'
+            className='u-link-color-p u-text-underline'>Bacs-approved bureau</a>.
+          </p>
+        </Translation>
       </Translation>
     );
   }

@@ -16,7 +16,7 @@ export default class FaqSidebar extends React.Component {
           <hr className='u-size-11of12' />
           <p className='para u-padding-Txs'>
             <Message message='faq.sidebar' />&nbsp;
-            <Message message='phone_local' />
+            <Message message='phone_full' />
           </p>
         </div>
       </div>
