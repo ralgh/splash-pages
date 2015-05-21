@@ -2,22 +2,25 @@ import React from 'react';
 import Translation from '../../components/translation/translation';
 import Message from '../../components/message/message';
 import Link from '../../components/link/link';
+import LinkExists from '../../components/link-exists/link-exists';
 
 export default class PricingEnGb extends React.Component {
   displayName = 'PricingEnGb'
 
   render() {
     return (
-      <Translation locales='en-GB'>
+      <Translation locales={['en-GB','en-IE']}>
         <div className='page-hero--pricing page-hero'>
           <div className='site-container'>
             <div className='grid pricing-options u-center u-padding-Bxl'>
               <div className='grid__cell u-size-1of2 u-padding-Vxl u-padding-Rxs'>
                 <h1 className='u-text-heading-light u-text-center u-color-invert u-text-l u-padding-Bs'>GoCardless</h1>
                 <div className='u-relative u-background-primary u-padding-Vxl'>
-                  <div className='pricing-options__badge'>
-                    <img src='/images/pricing/most-popular-badge@2x.png' alt='most popular' />
-                  </div>
+                  <Translation locales='en-GB'>
+                    <div className='pricing-options__badge'>
+                      <img src='/images/pricing/most-popular-badge@2x.png' alt='most popular' />
+                    </div>
+                  </Translation>
                   <h2 className='u-text-heading-light u-text-center u-color-invert u-text-xl'>
                     <Message message='pricing.per_transaction_amount_normal' />
                   </h2>
@@ -34,9 +37,16 @@ export default class PricingEnGb extends React.Component {
                   <li className='pricing-options__list-item'>
                     Scale pricing available (<a href='#scale-pricing-container'>?</a>)
                   </li>
-                  <li className='pricing-options__list-item'>
-                    <Link to='features'>Find out more about GoCardless</Link>
-                  </li>
+                  <LinkExists to='features'>
+                    <li className='pricing-options__list-item'>
+                      <Link to='features'>Find out more about GoCardless</Link>
+                    </li>
+                  </LinkExists>
+                  <Translation locales={['en']} exclude="en-GB">
+                    <li className='pricing-options__list-button'>
+                      <Link to='contact_sales' query={{ s: 'pricing' }} className='btn u-size-full'>Contact sales</Link>
+                    </li>
+                  </Translation>
                   <Translation locales='en-GB'>
                     <li className='pricing-options__list-button'>
                       <a href='/merchants/new' className='btn u-size-full'>Sign up today</a>
@@ -45,7 +55,7 @@ export default class PricingEnGb extends React.Component {
                 </ul>
               </div>
               <div className='grid__cell u-size-1of2 u-padding-Vxl u-padding-Rxs'>
-                <h1 className='u-text-heading-light u-text-center u-color-invert u-text-l u-padding-Bs'>Pro</h1>
+                <h1 className='u-text-heading-light u-text-center u-color-invert u-text-l u-padding-Bs'>GoCardless Pro</h1>
                 <div className='u-background-dark-gray-darken u-padding-Vxl'>
                   <h2 className='u-text-heading-light u-text-center u-color-invert u-text-xl'>
                     <Message message='pricing.pro_cost_per_transaction' />
@@ -84,14 +94,15 @@ export default class PricingEnGb extends React.Component {
             <div className='grid__cell u-size-1of2 u-padding-Bxxl u-padding-Rm'>
               <div className='u-color-heading'>
                 <b>
-                  Are there really no other fees?
+                  Are there any other fees?
                 </b>
               </div>
               <p className='u-color-p'>
-                No, there are no monthly charges or hidden fees of any kind.
-                We never charge for chargebacks or payment failures.
-                All you'll ever pay is <Message message='pricing.per_transaction_amount_normal' /> of the transaction amount,
-                up to a maximum of <Message message="pricing.cost_cap" />.
+                No, there are no other fees except from those listed in the table above.
+                We never charge for chargebacks or payment failures.<br />
+                With GoCardless, all you ever pay is <Message message='pricing.per_transaction_amount_normal' /> of the transaction amount,
+                up to a maximum of <Message message="pricing.cost_cap" />.<br />
+                With GoCardless Pro, we charge you the <Message message='pricing.pro_monthly_fee' /> monthly fee and a fee for each transaction.
               </p>
             </div>
             <div className='grid__cell u-size-1of2 u-padding-Bxxl u-padding-Lm'>
@@ -127,7 +138,10 @@ export default class PricingEnGb extends React.Component {
         <div className='site-container u-text-center u-padding-Tm u-padding-Bxxl'>
           <div className='u-padding-Vxl'>
             <h2 className='u-text-heading u-text-l u-color-heading u-text-light'>Got any questions?</h2>
-            <p className='u-color-p u-margin-Ts'>Contact support on <Message message='phone_full' /></p>
+            <p className='u-color-p u-margin-Ts'>Speak with one of our payments experts on <Message message='phone_full' /></p>
+            <Translation locales={['en']} exclude="en-GB">
+              <Link to='contact_sales' query={{ s: 'pricing' }} className='btn btn--hollow u-margin-Tm'>Contact sales</Link>
+            </Translation>
             <Translation locales='en-GB'>
               <a href='/merchants/new/' className='btn btn--hollow u-margin-Tm'>Sign up today</a>
             </Translation>

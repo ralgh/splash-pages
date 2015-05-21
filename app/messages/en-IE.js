@@ -10,7 +10,7 @@ export default {
     pro_cost_per_transaction: '0,01 — 0,60 €',
     per_transaction_amount_normal: '1%',
     pro_monthly_fee: '€250',
-    normal_capped_at_amount: '€250',
+    normal_capped_at_amount: '€200',
     pro_number_of_monthly_payments: '> 500',
   },
 }
