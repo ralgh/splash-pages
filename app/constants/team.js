@@ -17,7 +17,7 @@ export const team = [
   'Jack Franklin',
   'Jessie Giladi',
   'Pete Hamilton',
-  'Phil Harrison',
+  'Philip Harrison',
   'Natalie Hockham',
   'James Jackson',
   'Sam Jewell',
