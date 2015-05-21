@@ -1,7 +1,7 @@
 GoCardless.com Splash Pages
 ==================
 
-# Install & run
+See [How we built the new gocardless.com](https://gocardless.com/blog/how-we-built-the-new-gocardless.com/).
 
 ## Dependencies
 
