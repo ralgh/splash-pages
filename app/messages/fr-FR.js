@@ -1,3 +1,5 @@
+/*eslint-disable max-len*/
+
 export default {
   country: 'France',
   phone_full: '+33 9 75 18 42 95',

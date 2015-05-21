@@ -9,22 +9,23 @@ import Translation from '../translation/translation';
 import SchemaItemProp from '../schema-item-prop/schema-item-prop';
 import { homeRoute } from '../../router/routes';
 import { getLocalesForRouteName } from '../../router/route-helpers';
-import { getMessage } from '../intl/intl';
 import Popover from '../popover/popover';
 import Flag from '../flag/flag';
 import { localeToRegion } from '../../helpers/locale-helper/locale-helper';
 import { PropTypes } from '../../helpers/prop-types/prop-types';
 import CheckmarkIcon from '../../icons/svg/checkmark';
 
-function buildAvailableLocalePages(currentLocale, siteLocales, messages) {
-  const availableLocales = Object.keys(siteLocales).map(function(locale) {
+function buildAvailableLocalePages(currentLocale, routeName, availableLocales, availableCountryNames) {
+  const siteLocales = merge({}, getLocalesForRouteName(homeRoute, availableLocales),
+    getLocalesForRouteName(routeName, availableLocales));
+  const locales = Object.keys(siteLocales).map(function(locale) {
     const isActive = currentLocale === locale;
     const path = siteLocales[locale].path;
-    const name = getMessage(messages, `country_names.${locale}`);
-    return {locale, isActive, path, name};
+    const name = availableCountryNames[locale];
+    return { locale, isActive, path, name };
   });
 
-  return sortBy(availableLocales, 'name');
+  return sortBy(locales, 'name');
 }
 
 class Footer extends React.Component {
@@ -33,17 +34,14 @@ class Footer extends React.Component {
   static contextTypes = {
     routeName: PropTypes.string.isRequired,
     locales: PropTypes.locale,
-    messages: PropTypes.object.isRequired,
     config: PropTypes.object.isRequired,
     availableLocales: PropTypes.array.isRequired,
+    availableCountryNames: PropTypes.object.isRequired,
   }
 
   render() {
-    const { routeName, locales, messages, config, availableLocales } = this.context;
-
-    const siteLocales = merge({}, getLocalesForRouteName(homeRoute, availableLocales),
-      getLocalesForRouteName(routeName, availableLocales));
-    const availableLocalePages = buildAvailableLocalePages(locales, siteLocales, messages);
+    const { routeName, locales, config, availableLocales, availableCountryNames } = this.context;
+    const availableLocalePages = buildAvailableLocalePages(locales, routeName, availableLocales, availableCountryNames);
     const region = localeToRegion(locales);
 
     return (
@@ -161,7 +159,7 @@ class Footer extends React.Component {
                   <SchemaItemProp itemProp='streetAddress' message='postal_address.street_address' />,&nbsp;
                   <SchemaItemProp itemProp='addressLocality' message='postal_address.address_locality' />,&nbsp;
                   <SchemaItemProp itemProp='postalCode' message='postal_address.postal_code' />,&nbsp;
-                  <SchemaItemProp itemProp='addressCountry' content={getMessage(messages, 'postal_address.address_country_iso')}>
+                  <SchemaItemProp itemProp='addressCountry' message='postal_address.address_country_iso'>
                     <Message message='postal_address.address_country' />
                   </SchemaItemProp>.
                 </SchemaItemProp><br />
