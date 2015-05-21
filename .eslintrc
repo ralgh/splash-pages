@@ -36,7 +36,7 @@
   },
   "rules": {
     "brace-style": [2, "1tbs", { "allowSingleLine": true }],
-    "camelcase": [2, { "properties": "always" }],
+    "camelcase": [2, { "properties": "never" }],
     "comma-dangle": [2, "always-multiline"],
     "comma-spacing": 0,
     "comma-style": [2, "last"],

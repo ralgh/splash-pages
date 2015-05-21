@@ -15,6 +15,7 @@ import localeMessages from '../config/messages';
 import availableLocales from '../config/available-locales';
 import config from '../config';
 import formats from '../config/formats';
+import { getMessage } from '../app/components/intl/intl';
 
 function getWebpackPaths() {
   return JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'app', 'bundles', 'webpack-stats.json')));
@@ -39,6 +40,11 @@ export function render(req, res, next) {
   const routes = getRoutes(reqLocale.normalized, availableLocales);
   const messages = cloneDeep(localeMessages[reqLocale.normalized]);
 
+  const availableCountryNames = availableLocales.reduce(function(memo, locale) {
+    memo[locale] = getMessage(localeMessages[locale], 'country');
+    return memo;
+  }, {});
+
   function appProps(props) {
     return assign({
       locales: reqLocale.normalized,
@@ -47,6 +53,7 @@ export function render(req, res, next) {
       formats: formats,
       config: config,
       availableLocales: availableLocales,
+      availableCountryNames: availableCountryNames,
     }, props);
   }
 

@@ -1,3 +1,5 @@
+/*eslint-disable max-len*/
+
 export default {
   header: {
     our_products: 'Nos produits',
@@ -36,12 +38,6 @@ export default {
     address_country: 'Royaume-Uni',
     address_country_iso: 'GB',
   },
-  country_names: {
-    'en-GB': 'Royaume-Uni',
-    'en-IE': 'Irlande',
-    'fr-FR': 'France',
-    'fr-BE': 'Belgique',
-  },
   prospect_form: {
     name_label: 'Votre nom',
     name_placeholder: 'Jean Dubois',
@@ -59,7 +55,7 @@ export default {
   },
   not_found: {
     title: 'Page Non Trouvée',
-    description: "Nous n'avons pas trouvé votre page",
+    description: 'Nous n\'avons pas trouvé votre page',
   },
   contact_sales: {
     title: 'Contactez-nous',
@@ -70,13 +66,13 @@ export default {
     talk_to_us: 'Vous souhaitez parler à un expert tout de suite?',
     call_us: 'Appelez le',
     information1: 'Vos données sont sécurisées et ne seront jamais vendues ou partagées.',
-    information2: ''
+    information2: '',
   },
   features: {
     title: 'GoCardless: Prélèvement bancaire simplifié',
     nav_title: 'GoCardless',
     description: 'GoCardless est la manière la plus simple de collecter vos paiements par prélèvement SEPA. Commencez dès aujourd\'hui, économisez du temps et améliorez votre cash flow.',
-    explainer: 'Paiements récurrents simplifiés'
+    explainer: 'Paiements récurrents simplifiés',
   },
   faq: {
     title: 'Foire aux questions',
@@ -228,4 +224,4 @@ export default {
     title: 'Soutien',
     nav_title: 'Soutien',
   },
-}
+};

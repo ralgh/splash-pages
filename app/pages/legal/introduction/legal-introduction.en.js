@@ -19,9 +19,8 @@ export default class LegalIntroductionEn extends React.Component {
           If you have any questions about our terms of service, then please get in
           touch by emailing <Href to='email' className='u-link-color-p u-text-underline'
           itemProp='email' /> or calling <Message message='phone_local' />.
-
-          // FCA requirement. Do not remove.
-          Customers can also find more details about our transaction structure
+          { /* FCA requirement. Do not remove. */ }
+          &nbsp;Customers can also find more details about our transaction structure
           in our <Link to='faq_customers' className='u-link-color-p u-text-underline'>FAQ</Link>.
         </p>
 
