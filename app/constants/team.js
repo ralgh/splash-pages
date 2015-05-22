@@ -23,6 +23,7 @@ export const team = [
   'Natalie Hockham',
   'James Jackson',
   'Sam Jewell',
+  'Lawrence Jones',
   'Alan Kennedy',
   'Georg Knoerr',
   'Norberto Lopes',
