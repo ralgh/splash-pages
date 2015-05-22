@@ -36,8 +36,8 @@ export default class FaqMerchantsDirectDebitEn extends React.Component {
           </h3>
           <p className='para'>
             SEPA Direct Debit is a new payment instrument introduced by the European Union in August 2014. It replaces the national
-            Direct Debit schemes that operated previously. It lets companies collect funds directly from bank accounts in Euro in the whole <a href='https://gocardless.com/guides/sepa/countries/'
-            target='_blank' className='u-link-color-p u-text-underline'>SEPA area</a>.
+            Direct Debit schemes that operated previously. It allows companies to collect Euro-denominated funds from the <a href='https://gocardless.com/guides/sepa/countries/'
+            target='_blank' className='u-link-color-p u-text-underline'>Single Euro Payments Area (SEPA)</a>.
           </p>
           
           <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>

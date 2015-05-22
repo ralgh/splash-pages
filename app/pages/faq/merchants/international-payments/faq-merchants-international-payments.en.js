@@ -1,5 +1,6 @@
 import React from 'react';
 import Translation from '../../../../components/translation/translation';
+import Message from '../../../../components/message/message';
 import Link from '../../../../components/link/link';
 import LinkExists from '../../../../components/link-exists/link-exists';
 
@@ -83,12 +84,22 @@ export default class FaqMerchantsInternationalPayments extends React.Component {
           We support payments in GBP and EUR.
         </p>
 
-        <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
-          Will international payments cost the same as UK?
-        </h3>
-        <p className='para'>
-          International payments will cost 1% per transaction (capped at €2).
-        </p>
+        <Translation locales='en-IE'>
+          <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
+            Will international payments cost the same as in <Message message='country' />?
+          </h3>
+          <p className='para'>
+            In Eurozone countries, we charge 1% per transaction, capped at €2. In the UK, we charge 1% per transaction (capped at £2).
+          </p>
+        </Translation>
+        <Translation locales='en-GB'>
+          <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
+            Will international payments cost the same as in the UK?
+          </h3>
+          <p className='para'>
+            International payments will cost 1% per transaction (capped at €2).
+          </p>
+        </Translation>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
           When will GoCardless be available outside Europe?
