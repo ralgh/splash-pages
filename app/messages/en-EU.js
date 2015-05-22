@@ -12,4 +12,4 @@ export default {
     pro_monthly_fee: '€250',
     pro_number_of_monthly_payments: '> 500',
   },
-}
+};
