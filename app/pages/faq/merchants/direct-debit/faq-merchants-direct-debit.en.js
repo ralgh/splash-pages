@@ -26,7 +26,8 @@ export default class FaqMerchantsDirectDebitEn extends React.Component {
             Do I need a Service User Number (SUN) or permission from my bank?
           </h3>
           <p className='para'>
-            There is no need to talk to your bank either. We provide you with everything you need to sign up online and start taking payments.
+            There is no need to talk to your bank either. We provide you with everything you need to sign up online 
+            and start taking payments.
           </p>
         </Translation>
 
@@ -36,7 +37,8 @@ export default class FaqMerchantsDirectDebitEn extends React.Component {
           </h3>
           <p className='para'>
             SEPA Direct Debit is a new payment instrument introduced by the European Union in August 2014. It replaces the national
-            Direct Debit schemes that operated previously. It allows companies to collect Euro-denominated funds from the <a href='https://gocardless.com/guides/sepa/countries/'
+            Direct Debit schemes that operated previously. It allows companies to collect Euro-denominated 
+            funds from the <a href='https://gocardless.com/guides/sepa/countries/'
             target='_blank' className='u-link-color-p u-text-underline'>Single Euro Payments Area (SEPA)</a>.
           </p>
           

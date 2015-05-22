@@ -1,3 +1,5 @@
+/*eslint-disable max-len*/
+
 export default {
   country: 'Ireland',
   hero: {
@@ -13,4 +15,4 @@ export default {
     normal_capped_at_amount: '€200',
     pro_number_of_monthly_payments: '> 500',
   },
-}
+};

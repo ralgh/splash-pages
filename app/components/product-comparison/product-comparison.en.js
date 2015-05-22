@@ -135,7 +135,8 @@ export default class ProductComparisonEn extends React.Component {
             </tr>
             <tr className='comparison-table__row'>
               <td className='comparison-table__cell u-text-end'>Transaction fees</td>
-              <td className='comparison-table__cell'><Message message='pricing.per_transaction_amount_normal' /> up to a maximum of <Message message="pricing.cost_cap" /></td>
+              <td className='comparison-table__cell'><Message message='pricing.per_transaction_amount_normal' /> up
+              to a maximum of <Message message="pricing.cost_cap" /></td>
               <td className='comparison-table__cell'><Message message='pricing.pro_cost_per_transaction' /> depending on volume</td>
             </tr>
           </tbody>

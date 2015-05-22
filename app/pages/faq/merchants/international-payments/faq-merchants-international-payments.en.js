@@ -1,8 +1,6 @@
 import React from 'react';
 import Translation from '../../../../components/translation/translation';
 import Message from '../../../../components/message/message';
-import Link from '../../../../components/link/link';
-import LinkExists from '../../../../components/link-exists/link-exists';
 
 export default class FaqMerchantsInternationalPayments extends React.Component {
   displayName = 'FaqMerchantsInternationalPayments'
@@ -67,8 +65,8 @@ export default class FaqMerchantsInternationalPayments extends React.Component {
             What is Bacs Direct Debit?
           </h3>
           <p className='para'>
-            Bacs Direct Debit is the equivalent of SEPA in the United Kingdom and is managed by <a 
-            href='http://www.bacs.co.uk/Bacs/Businesses/DirectDebit/Pages/DirectDebit.aspx' target='_blank'
+            Bacs Direct Debit is the equivalent of SEPA in the United Kingdom and is managed by&nbsp;
+            <a href='http://www.bacs.co.uk/Bacs/Businesses/DirectDebit/Pages/DirectDebit.aspx' target='_blank'
             className='u-link-color-p u-text-underline'>Bacs</a>.
           </p>
           <p className='para'>
