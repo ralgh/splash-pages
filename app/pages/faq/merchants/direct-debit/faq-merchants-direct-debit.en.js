@@ -30,13 +30,13 @@ export default class FaqMerchantsDirectDebitEn extends React.Component {
           </p>
         </Translation>
 
-        <Translation locales={['en-EU','en-IE']}>
+        <Translation locales={['en']} exclude={['en-GB']}>
           <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
             What is SEPA Direct Debit?
           </h3>
           <p className='para'>
-            SEPA Direct Debit is a new payment instrument introduced by the European Union in August 2014, replacing national
-            Direct Debit schemes. It lets companies collect funds directly from bank accounts in Euro in the whole <a href='http://wikipedia.org/wiki/Single_Euro_Payments_Area'
+            SEPA Direct Debit is a new payment instrument introduced by the European Union in August 2014. It replaces the national
+            Direct Debit schemes that operated previously. It lets companies collect funds directly from bank accounts in Euro in the whole <a href='https://gocardless.com/guides/sepa/countries/'
             target='_blank' className='u-link-color-p u-text-underline'>SEPA area</a>.
           </p>
           
@@ -44,8 +44,8 @@ export default class FaqMerchantsDirectDebitEn extends React.Component {
             What is the Consumer Protection?
           </h3>
           <p className='para'>
-            Your consumers have the right to be refunded of an authorised SEPA Direct Debit payment. Any refund request must be
-            presented to their bank within 8 weeks after the date their account was debited.
+            Consumers have the right to be refunded of an authorised SEPA Direct Debit payment. Any refund request must be
+            presented to their bank within 8 weeks of their account being debited.
           </p>
           <p className='para'>
             Consumers can also ask for the immediate refund of an unauthorised or fraudulent SEPA Direct Debit payment. They must
@@ -57,7 +57,7 @@ export default class FaqMerchantsDirectDebitEn extends React.Component {
           </p>
 
           <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
-            Are there fees for the consumer?
+            Are there any fees for the customer?
           </h3>
           <p className='para'>
             No. With SEPA, banks are forced not to charge for Direct Debit transactions. It is therefore free for your customers.
@@ -106,7 +106,7 @@ export default class FaqMerchantsDirectDebitEn extends React.Component {
             before sending it directly to your bank account.
           </p>
         </Translation>
-        <Translation locales={['en-EU','en-IE']}>
+        <Translation locales={['en']} exclude={['en-GB']}>
           <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
             What are the payment timings for SEPA Direct Debit?
           </h3>
@@ -117,7 +117,7 @@ export default class FaqMerchantsDirectDebitEn extends React.Component {
           </p>
           <p className='para'>
             Once GoCardless has collected payment from your customer you will receive the funds 3 working days
-           later in your bank account.
+            later in your bank account.
           </p>
         </Translation>
 
@@ -144,7 +144,7 @@ export default class FaqMerchantsDirectDebitEn extends React.Component {
             whatsoever, and we offer this service free of charge.
           </p>
         </Translation>
-        <Translation locales={['en-EU','en-IE']}>
+        <Translation locales={['en']} exclude={['en-GB']}>
           <p className='para'>
             Yes - we just need to amend the SEPA mandate to add the name and Creditor Identifier of the new
             provider. Your customers must be notified of the change but won't need to take any action whatsoever.

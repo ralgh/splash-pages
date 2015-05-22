@@ -17,7 +17,7 @@ export default class FaqMerchantsDeveloperApiEn extends React.Component {
           <Translation locales='en-GB'>
             See our <a href='https://developer.gocardless.com/' className='u-link-color-p u-text-underline'>documentation</a> to find out more.
           </Translation>
-          <Translation locales={['en-EU','en-IE']}>
+          <Translation locales={['en']} exclude={['en-GB']}>
             See our <a href='https://developer.gocardless.com/pro' className='u-link-color-p u-text-underline'>documentation</a> to find out more.
           </Translation>
         </p>

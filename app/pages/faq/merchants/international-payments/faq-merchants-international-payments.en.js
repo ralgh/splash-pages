@@ -29,7 +29,7 @@ export default class FaqMerchantsInternationalPayments extends React.Component {
             If you take more than 500 payments a month and want to use our Pro solution, you can be registered anywhere in the world.
           </p>
         </Translation>
-        <Translation locales={['en-EU','en-IE']}>
+        <Translation locales={['en']} exclude={['en-GB']}>
           <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
             In which countries is GoCardless available?
           </h3>
@@ -61,7 +61,7 @@ export default class FaqMerchantsInternationalPayments extends React.Component {
           className='u-link-color-p u-text-underline'>the SEPA Direct Debit scheme</a>.
         </p>
 
-        <Translation locales={['en-EU','en-IE']}>
+        <Translation locales={['en']} exclude={['en-GB']}>
           <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
             What is Bacs Direct Debit?
           </h3>
