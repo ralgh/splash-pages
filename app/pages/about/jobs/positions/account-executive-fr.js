@@ -29,12 +29,12 @@ export default class AccountExecutiveFrance extends React.Component {
             Journal du Net</a> and <a className='u-link-color-p u-text-underline'
             href='http://bfmbusiness.bfmtv.com/mediaplayer/video/start-up-co-gocardless-la-
                   fintech-qui-veut-revolutionner-les-prelevements-bancaires-pour-les-entreprises-2204-508599.html'>
-              BFM Business</a>. Thousands of businesses already trust us with their payments, and
+            BFM Business</a>. Thousands of businesses already trust us with their payments, and
             hundreds more join us every week.
           </p>
           <p className='para'>
             We've gained great traction in the UK, and we know we can make recurring
-            payments simpler for everyone in the Eurozone – and beyond.
+            payments simpler for everyone in the Eurozone &ndash; and beyond.
           </p>
           <p className='para'>
             We're looking for bright, ambitious people to join our talented sales team
@@ -128,7 +128,7 @@ export default class AccountExecutiveFrance extends React.Component {
           <p className='para'>
             Nous avons acquis une excellente popularité avec les entreprises
             anglo-saxonnes, et nous savons que nous pouvons rendre les paiements
-            récurrents plus simples pour tout le monde dans la zone Euro – et au-delà.
+            récurrents plus simples pour tout le monde dans la zone Euro &ndash; et au-delà.
           </p>
           <p className='para'>
             Nous recherchons des gens brillants et ambitieux pour se joindre à notre

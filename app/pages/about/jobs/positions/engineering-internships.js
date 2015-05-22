@@ -24,13 +24,13 @@ export default class EngineeringInterships extends React.Component {
           Rails and Angular, and we rely on Postgres, Elasticsearch, RabbitMQ and Chef.
         </p>
         <p className='para'>We're nimble, deploying every day, and we're doing our most
-          ambitious work right now – working with government and multi-national companies
+          ambitious work right now &ndash; working with Government and multi-national companies
           to build GoCardless Pro, and integrating with more banking systems to expand
           our offering across Europe.
         </p>
         <p className='para'>At the same time we’re already processing millions of pounds of
           payments every day, so there's no space for inconsistent data or downtime.
-          We maintain reliability while iterating on our product by having a test-suite
+          We maintain reliability whilst iterating on our product by having a test-suite
           we can rely on, and prioritising code review.
         </p>
         <p className='para'>As a dev team, learning and mentoring are core to our values: we
@@ -46,21 +46,22 @@ export default class EngineeringInterships extends React.Component {
           engineers and we’ll encourage you to learn new technologies and expand your
           awareness of the full stack.
         </p>
-        <p className='para'>You’ll also get an insight into how a fast-growing tech company
-          works and how the different areas of our business interact.
-        </p>
-        <p className='para'>Because you’ll be part of our engineering team, we’re looking
-          for the same qualities and traits that we look for in more senior hires
-          – but we don’t expect you to have the experience.
-        </p>
         <p className='para'>
           <a href='https://gocardless.com/blog/interning-at-gocardless/'>
             Read more about the projects Iain, one of our previous interns,
             worked on at GoCardless.
           </a>
         </p>
+        <p className='para'>You’ll also get an insight into how a fast-growing tech company
+          works and how the different areas of our business interact.
+        </p>
+        <p className='para'>Because you’ll be part of our engineering team, we’re looking
+          for the same qualities and traits that we look for in more senior hires
+          &ndash; but we don’t expect you to have the experience.
+        </p>
+
         <h4 className='u-text-s u-margin-Bxs u-margin-Tm'>You should apply if:</h4>
-        <ul className='list u-margin-Tm'>
+        <ul className='list'>
           <li>You’re passionate about technology</li>
           <li>You care deeply about doing work you can be proud of</li>
           <li>You’re constantly looking for ways to improve</li>
@@ -101,8 +102,8 @@ export default class EngineeringInterships extends React.Component {
         <a href='http://boards.greenhouse.io/gocardless/jobs/28143' className='btn u-margin-Vs'>
           Apply now
         </a>
-        <p className='para'>If you have questions before applying, email
-          <a href='mailto:pete@gocardless.com'>pete@gocardless.com</a>.</p>
+        <p className='para'>If you have questions before applying, email <a
+        href='mailto:pete@gocardless.com'>pete@gocardless.com</a>.</p>
       </JobsPage>
     );
   }

@@ -13,7 +13,7 @@ export default class ProductEngineer extends React.Component {
         </p>
         <p className='para'>
           We're shaping the way businesses get paid. Our products have
-          drawn thousands of businesses to rely on us to take care of their payments –
+          drawn thousands of businesses to rely on us to take care of their payments &ndash;
           from sole traders to large and multinational companies like the UK Government,
           Box &amp; TripAdvisor. We pride ourselves on uncluttered interfaces that give
           our users the power and control they need to manage their payments.
@@ -44,7 +44,7 @@ export default class ProductEngineer extends React.Component {
         <p className='para'>
           We build simple, reliable products on top of technologies we understand and
           trust. We're upgrading to Angular 2.0 for our dashboards, and we're open to using
-          new technologies when they are the best tool for the task – for example, we're
+          new technologies when they are the best tool for the task &ndash; for example, we're
           just starting to use React where
           server rendering is needed. We continuously deploy all front-end projects backed
           by a test-suite we can rely on, and we prioritise code review and constant
@@ -66,9 +66,10 @@ export default class ProductEngineer extends React.Component {
           using <a href='https://github.com/gocardless/systemjs-assetgraph'>
             System.JS and AssetGraph</a> (and open sourced
           an <a href='https://github.com/gocardless/es6-angularjs'>example project</a>).</li>
-          <li>Auto-generated our <a href='https://developer.gocardless.com/pro/'>API documentation</a>
-            from a <a href='http://json-schema.org/'>JSON Schema</a>
-            (<a href='https://gocardless.com/blog/tagged/engineering'>blog post coming soon</a>).</li>
+          <li>Auto-generated our <a href='https://developer.gocardless.com/pro/'>API
+            documentation</a> from a <a href='http://json-schema.org/'>JSON
+            Schema</a> (<a href='https://gocardless.com/blog/tagged/engineering'>blog
+            post coming soon</a>).</li>
         </ul>
         <p className='para'>If you joined today, you'd work on:</p>
         <ul className='list'>
@@ -87,8 +88,8 @@ export default class ProductEngineer extends React.Component {
           Many of our team are active members of the wider tech community. We open source
           great work that we want to share, as we did with
           our <a href='https://github.com/gocardless/angularjs-style-guide'>
-            AngularJS style guide</a> and <a href='https://github.com/gocardless/http-api-design'>
-            HTTP API Design Guidelines</a>,
+          AngularJS style guide</a> and <a href='https://github.com/gocardless/http-api-design'>
+          HTTP API Design Guidelines</a>,
           and we often host meet-ups and hack days in our offices. We regularly run
           internal tech talks given by both GoCardless employees and other industry experts,
           and we pay for courses and books. We have a conference budget for everyone

@@ -20,7 +20,7 @@ export default class Designers extends React.Component {
         <h4 className='u-text-s u-margin-Bxs u-margin-Tm'>Our work</h4>
         <p className='para'>
           Over the past few years, GoCardless' products have allowed small companies
-          to take subscriptions for the first time — fundamentally changing the way
+          to take subscriptions for the first time &ndash; fundamentally changing the way
           they do business. But we're not done yet. We've just scratched the surface
           for small companies, and we want to do the same thing for the biggest
             organisations on the planet.

@@ -30,7 +30,7 @@ export default class CustomerSupportFrance extends React.Component {
             Journal du Net</a> and <a className='u-link-color-p u-text-underline'
             href='http://bfmbusiness.bfmtv.com/mediaplayer/video/start-up-co-gocardless-la
                   -fintech-qui-veut-revolutionner-les-prelevements-bancaires-pour-les-entreprises-2204-508599.html'>
-              BFM Business</a>. We pride ourselves on listening to our users and doing everything we can to solve their problems
+            BFM Business</a>. We pride ourselves on listening to our users and doing everything we can to solve their problems
             and to keep them happy.  We're looking for enthusiastic, empathic people to
             join our friendly support team and provide first-rate support and guidance to
             both our French and English users.
@@ -96,14 +96,14 @@ export default class CustomerSupportFrance extends React.Component {
             gocardless-pret-a-bousculer-les-banques-francaises.php' target='_blank'>
             Le Figaro</a>, <a className='u-link-color-p u-text-underline'
             href='http://www.lesechos.fr/finance-marches/banque-assurances/0213743712-
-            le-prelevement-bancaire-seduit-de-nouveaux-acteurs-1110875.php' target='_blank'>Les Echos</a>,
-            <a className='u-link-color-p u-text-underline'
+            le-prelevement-bancaire-seduit-de-nouveaux-acteurs-1110875.php' target='_blank'>Les Echos</a>
+            , <a className='u-link-color-p u-text-underline'
             href='http://www.journaldunet.com/web-tech/start-up/fintech-gocardless-lancement-france.shtml' target='_blank'>
-            Journal du Net</a> et
-            <a className='u-link-color-p u-text-underline'
+            Journal du
+            Net</a> et <a className='u-link-color-p u-text-underline'
             href='http://bfmbusiness.bfmtv.com/mediaplayer/video/start-up-co-gocardless-
-            la-fintech-qui-veut-revolutionner-les-prelevements-bancaires-pour-les-entreprises-2204-508599.html' target='_blank'>
-            BFM Business</a>.  Notre mot d'ordre est d'être
+            la-fintech-qui-veut-revolutionner-les-prelevements-bancaires-pour-les-entreprises-2204-508599.html' target='_blank'>BFM
+            Business</a>.  Notre mot d'ordre est d'être
             toujours à l'écoute du client, et de faire tout ce qui est en notre pouvoir
             pour garantir sa satisfaction. Nous recherchons des personnes enthousiastes et
             avec un fort capital d'empathie pour se joindre à notre équipe, et offrir une
