@@ -62,8 +62,11 @@ export default class AccountExecutive extends React.Component {
           </li>
         </ul>
         <p className='para'>
-          This role would ideally suit a recent graduate with some sales experience or
-          someone with 1-3 years' professional experience, e.g. at a consultancy.
+          This role would ideally suit a recent grad with some B2B sales experience, or
+          someone with 1-3 years' professional experience in client-facing roles.
+          To find out more about what we look for when hiring, and how we train
+          new hires, visit <a href='https://gocardless.com/blog/how-we-train-salespeople/'>our
+          blog</a>.
         </p>
         <a href='http://boards.greenhouse.io/gocardless/jobs/37249' className='btn u-margin-Vs'>
           Apply now

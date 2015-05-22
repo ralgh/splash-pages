@@ -60,17 +60,22 @@ export default class FaqMerchantsSecurityEn extends React.Component {
           Vulnerability Disclosure
         </h3>
 
-        <p className='para'>
-          We care deeply about keeping our users safe. If you believe you had discovered a vulnerability,
-          we ask that you disclose it in a responsible manner. Sharing vulnerabilities publicly puts our
-          entire user base at risk, so we urge you to keep issues private until we've had a chance to release a fix.
+        <p className='para'>We care deeply about keeping our users safe. If you believe you have
+          discovered a vulnerability, we ask that you disclose it in a responsible manner. Sharing vulnerabilities
+          publicly puts our entire user base at risk, so we urge you to keep issues private until we've
+          had a chance to release a fix.
         </p>
-        <p className='para'>
-          In recognition of your efforts, and as thanks for working with us to keep GoCardless safe, we
-          offer financial rewards for responsible vulnerability disclosures. Rewards are issued at our
-          discretion, but are a minimum of £250 (and they may be substantially more). The amount is determined
-          by the severity of the issue.
+
+        <p className='para'>If you are interested in testing our service for vulnerabilities then we would appreciate
+          any reports regarding our new dashboard and API, as the current dashboards will be replaced soon.
+          You can <a href="https://manage-sandbox.gocardless.com/registrations/create" className="u-link-color-p u-text-underline">sign up
+          for a sandbox account</a> to get started.
         </p>
+
+        <p className='para'>In recognition of your efforts, and as thanks for working with us to keep GoCardless safe,
+            we offer financial rewards for responsible vulnerability disclosures. Rewards are issued at our discretion,
+            determined by the severity of the issue.
+          </p>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
           Reporting issues

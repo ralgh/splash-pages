@@ -251,10 +251,10 @@ export default class FeaturesFr extends React.Component {
                     <tr className='comparison-table__row'>
                       <td />
                       <td />
-                      <td className='u-padding-As'>
-                        <a href='/pro' id='track-comparison-table-pro' className='u-color-primary'>
+                      <td className='u-padding-As u-size-1of3'>
+                        <Link to="pro" id='track-comparison-table-pro' className='u-color-primary'>
                           Apprenez-en plus sur GoCardless Pro
-                        </a>
+                        </Link>
                       </td>
                     </tr>
                   </tfoot>

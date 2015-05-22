@@ -16,7 +16,7 @@ export default class CountryLeadGermanyAustria extends React.Component {
           technology to a wide variety of businesses, from sole traders to multinational
           corporations like TripAdvisor, The Guardian and Box. We've gained great
           traction in the UK, and we know we can make recurring payments simpler for
-          everyone in the Eurozone – and beyond.
+          everyone in the Eurozone &ndash; and beyond.
         </p>
         <p className='para'>
           The opportunity is there: now we
