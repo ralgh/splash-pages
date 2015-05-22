@@ -13,8 +13,13 @@ export default class FaqMerchantsDeveloperApiEn extends React.Component {
           What can I use the API for?
         </h3>
         <p className='para'>
-          Our REST API allows developers to easily create powerful integrations with GoCardless. See
-          our <a href='https://developer.gocardless.com/' className='u-link-color-p u-text-underline'>documentation</a> to find out more.
+          Our REST API allows developers to easily create powerful integrations with GoCardless.
+          <Translation locales='en-GB'>
+            See our <a href='https://developer.gocardless.com/' className='u-link-color-p u-text-underline'>documentation</a> to find out more.
+          </Translation>
+          <Translation locales={['en-EU','en-IE']}>
+            See our <a href='https://developer.gocardless.com/pro' className='u-link-color-p u-text-underline'>documentation</a> to find out more.
+          </Translation>
         </p>
         <p className='para'>
           You can integrate as a Merchant to take payments on your own behalf, or integrate as a Partner to create and manage

@@ -171,23 +171,45 @@ export default class ProEn extends React.Component {
               </div>
               <hr className='u-margin-An' />
             </div>
-            <div className='site-container u-text-center u-padding-Vxxl'>
-              <div className='u-padding-Vxl'>
-                <div className='u-size-1of2 u-center'>
-                  <i className='europe-icon u-margin-Bs' />
-                  <h2 className='u-text-heading u-color-heading u-text-l u-text-light'>
-                    Want to take payments in Europe?
-                  </h2>
-                  <div className='u-center'>
-                    <p className='u-text-s u-color-p u-margin-Ts'>
-                      GoCardless Pro is the only product that enables you to collect
-                      Direct Debit payments from the UK and SEPA via one integration.
-                      With our API, your business can take payments from over 500 million people.
-                    </p>
+            <Translation locales={['en-GB', 'en-IE']}>
+              <div className='site-container u-text-center u-padding-Vxxl'>
+                <div className='u-padding-Vxl'>
+                  <div className='u-size-1of2 u-center'>
+                    <i className='europe-icon u-margin-Bs' />
+                    <h2 className='u-text-heading u-color-heading u-text-l u-text-light'>
+                      Want to take payments in Europe?
+                    </h2>
+                    <div className='u-center'>
+                      <p className='u-text-s u-color-p u-margin-Ts'>
+                        GoCardless Pro is the only product that enables you to collect
+                        Direct Debit payments from the UK and SEPA via one integration.
+                        With our API, your business can take payments from over 500 million people.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Translation>
+            <Translation locales='en-EU'>
+              <div className='site-container u-text-center u-padding-Vxxl'>
+                <div className='u-padding-Vxl'>
+                  <div className='u-size-1of2 u-center'>
+                    <i className='europe-icon u-margin-Bs' />
+                    <h2 className='u-text-heading u-color-heading u-text-l u-text-light'>
+                      Want to take payments in Europe?
+                    </h2>
+                    <div className='u-center'>
+                      <p className='u-text-s u-color-p u-margin-Ts'>
+                        GoCardless Pro is the only product that enables you to collect
+                        Direct Debit payments from the UK and Eurozone via one integration.
+                        With our API, your business can take payments from over 500 million people
+                        in 22 European countries
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Translation>
             <hr className='u-margin-An' />
             <div className='site-container u-text-center u-padding-Vxxl'>
               <div className='u-padding-Vxl'>

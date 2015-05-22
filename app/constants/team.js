@@ -15,6 +15,7 @@ export const team = [
   'Steve Domin',
   'Jamie English',
   'Jack Franklin',
+  'Jutta Frieden',
   'Jessie Giladi',
   'Pete Hamilton',
   'Philip Harrison',
