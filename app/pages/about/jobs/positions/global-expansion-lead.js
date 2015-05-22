@@ -18,7 +18,7 @@ export default class GlobalExpansionLead extends React.Component {
           corporations like TripAdvisor, The Guardian and Box.
         </p>
         <p className='para'>
-          We've gained great traction in the UK, quickly expanding in Europe,
+          We've gained great traction in the UK, we're quickly expanding in Europe,
           and now we want to make make recurring payments simpler even further
           afield. The opportunity is there, but we need to move fast to become
           a global success. We're looking for results-oriented, adaptable
@@ -26,8 +26,8 @@ export default class GlobalExpansionLead extends React.Component {
         </p>
         <h4 className='u-text-s u-margin-Bxs u-margin-Tm'>The role</h4>
         <p className='para'> You will be responsible for helping to prioritise
-        which countries GoCardless enters next. You will plan & execute the
-        setup in each country - juggling a number of geographies at a time.
+        which countries GoCardless enters next. You will plan &amp; execute the
+        setup in each country &ndash; juggling a number of geographies at a time.
         Recent examples include Sweden, Australia and the USA.
         </p>
         <p className='para'>
@@ -51,12 +51,12 @@ export default class GlobalExpansionLead extends React.Component {
           </li>
         </ul>
         <p className='para'>
-          This role will be varied - you need to be comfortable digging into
+          This role will be varied &ndash; you need to be comfortable digging into
           the details of country-specific payment regulation one day and
           leading tough banking negotiations the next. You'll need to be
           confident making recommendations and pulling in experts from inside
           the business as well as sourcing external help. You'll have the
-          freedom & responsibility to determine your own goals and how best to
+          freedom &amp; responsibility to determine your own goals and how best to
           achieve these.
         </p>
         <p className='para'>
@@ -83,8 +83,8 @@ export default class GlobalExpansionLead extends React.Component {
         <p className='para'>
           This role would ideally suit someone with 4-6 years' professional
           experience. Candidates with previous experience managing high-impact
-          projects will be well suited - for instance in consulting or an early
-          stage startup. However, we welcome a wide diversity of candidates -
+          projects will be well suited &ndash; for instance in consulting or an early
+          stage startup. However, we welcome a wide diversity of candidates &ndash;
           if you're unsure, please apply.
         </p>
         <a href='http://boards.greenhouse.io/gocardless/jobs/67102' className='btn u-margin-Vs'>

@@ -15,14 +15,15 @@ export default class BdGeneralist extends React.Component {
           GoCardless is poised for global success, and we need people to help us seize
           opportunities to achieve our full potential. In the last few months alone,
           we've started serving large organisations like The Guardian, TripAdvisor, and
-          the UK Government – and we're just getting started.
+          the UK Government &ndash; and we're just getting started.
         </p>
         <p className='para'>
           We're looking for systematic problem-solvers to join our business development
           team and help us scale our payment system across the globe.
         </p>
         <h4 className='u-text-s u-margin-Bxs u-margin-Tm'>The role</h4>
-        <p className='para'> You will plan &amp;
+        <p className='para'>
+          You will plan &amp;
           execute entire projects and you'll own their outcomes. You'll be responsible
           for developing strategy, research &amp; analysis, building a plan and then
           implementing it and solving challenges until you succeed.
@@ -81,10 +82,11 @@ export default class BdGeneralist extends React.Component {
         <p className='para'>
           Our current team come from a variety of backgrounds: mechanical engineering,
           economics, consulting, finance, entrepreneurship &amp; startups. We welcome
-          a wide diversity of candidates – if you're unsure, please apply. You can
+          a wide diversity of candidates &ndash; if you're unsure, please apply. You can
           find out more about how we interview for this role, what we're assessing
           at each stage and how to
-          succeed, <a href='https://gocardless.com/blog/how-the-business-development-hiring-process-works/'>on our blog</a>.
+          succeed, <a href='https://gocardless.com/blog/how-the-business-development-hiring-process-works/'>on
+          our blog</a>.
         </p>
         <a href='http://boards.greenhouse.io/gocardless/jobs/14099' className='btn u-margin-Vs'>
           Apply now

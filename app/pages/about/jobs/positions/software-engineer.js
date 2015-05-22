@@ -53,9 +53,9 @@ export default class SoftwareEngineer extends React.Component {
           We regularly run internal tech talks given by both GoCardless employees and
           industry experts, and we pay for courses &amp; books.</p>
         <p className='para'>Many of our team are active members of the wider tech community.
-          We open source whatever we can, as we did with
-          <a className='u-link-color-p u-text-underline' href='https://github.com/gocardless/hutch'>Hutch</a> and
-          <a className='u-link-color-p u-text-underline' href='https://github.com/gocardless/statesman'>Statesman</a>, and we regularly
+          We open source whatever we can, as we did with <a className='u-link-color-p u-text-underline'
+          href='https://github.com/gocardless/hutch'>Hutch</a> and <a
+          className='u-link-color-p u-text-underline' href='https://github.com/gocardless/statesman'>Statesman</a>, and we regularly
           host events and meetups in our offices. We have a conference budget for everyone
           on the team and can help with speaker coaching if you're interested.</p>
         <h4 className='u-text-s u-margin-Bxs u-margin-Tm'>Our stack</h4>
@@ -73,7 +73,8 @@ export default class SoftwareEngineer extends React.Component {
           our growing team. We'd particularly love you to apply if:</p>
         <ul className='list'>
           <li>
-            You're passionate about technology and care deeply about doing work you're proud of.
+            You're passionate about technology and care deeply about doing work that
+            you are proud of.
           </li>
           <li>
             You have opinions about programming languages and experience

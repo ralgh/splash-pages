@@ -12,7 +12,7 @@ export default class WebOperationsEngineer extends React.Component {
           We are looking for a web operations engineer to help us scale our product to millions of
           users, while maintaining a highly available service.
           You should have informed opinions about your ideal provisioning, deployment and monitoring
-          tools — we're looking for people who are independent and take initiative.
+          tools &ndash; we're looking for people who are independent and take initiative.
         </p>
         <h4 className='u-text-s u-margin-Bxs u-margin-Tm'>On a day-to-day basis, you will be:</h4>
         <ul className='list u-margin-Tm'>
