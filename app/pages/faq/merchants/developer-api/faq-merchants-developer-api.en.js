@@ -14,7 +14,7 @@ export default class FaqMerchantsDeveloperApiEn extends React.Component {
         </h3>
         <p className='para'>
           Our REST API allows developers to easily create powerful integrations with GoCardless.
-          See our <Href to='documentation_link' className='u-link-color-p u-text-underline'>documentation</Href> to 
+          See our <Href to='documentation_link' className='u-link-color-p u-text-underline'>documentation</Href> to
           find out more.
         </p>
         <p className='para'>

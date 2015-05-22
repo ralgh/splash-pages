@@ -102,7 +102,8 @@ export default class PricingEnGb extends React.Component {
                 We never charge for chargebacks or payment failures.<br />
                 With GoCardless, all you ever pay is <Message message='pricing.per_transaction_amount_normal' /> of the transaction amount,
                 up to a maximum of <Message message="pricing.cost_cap" />.<br />
-                With GoCardless Pro, we charge you the <Message message='pricing.pro_monthly_fee' /> monthly fee and a fee for each transaction.
+                With GoCardless Pro, we charge you the <Message message='pricing.pro_monthly_fee' /> monthly fee and
+                a fee for each transaction.
               </p>
             </div>
             <div className='grid__cell u-size-1of2 u-padding-Bxxl u-padding-Lm'>

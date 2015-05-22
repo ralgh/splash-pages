@@ -55,7 +55,7 @@ export default class HomeEn extends React.Component {
                   Save time, stop human errors and avoid failed payments
                 </p>
               </div>
-              
+
               <Translation locales={['en']} exclude={['en-GB']}>
                 <div className='grid__cell u-size-1of3 u-text-center'>
                   <figure className='svg-icon u-center'>
@@ -84,7 +84,7 @@ export default class HomeEn extends React.Component {
                   </p>
                 </div>
               </Translation>
-              
+
             </div>
 
             <Translation locales='en-GB'>
@@ -145,7 +145,7 @@ export default class HomeEn extends React.Component {
               </Link>
             </div>
           </div>
-        </Translation>  
+        </Translation>
         <hr className='u-margin-An' />
         <div className='site-container u-text-center u-padding-Vxxl'>
           <div className='u-padding-Txl'>

@@ -33,7 +33,8 @@ export default class FeaturesEn extends React.Component {
                       Start taking payments today
                     </h1>
                     <p className='u-text-heading u-text-center u-color-invert u-text-m u-text-light u-margin-Txxs u-text-no-smoothing'>
-                      GoCardless is the quickest and easiest way to take one-off and <br />recurring payments online in <Message message='country' />.
+                      GoCardless is the quickest and easiest way to take one-off and <br />recurring payments
+                      online in <Message message='country' />.
                     </p>
                   </div>
                 </div>
@@ -115,13 +116,14 @@ export default class FeaturesEn extends React.Component {
                       <ClockIcon className='svg-icon__image svg-icon__image--small svg-icon__image--small-shadow u-fill-green' />
                       <ClockIcon className='svg-icon__image svg-icon__image--small u-fill-dark-gray' />
                     </figure>
-                    
+
                     <Translation locales={['en']} exclude={['en-GB']}>
                       <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-s u-margin-Tm'>
                         Get started in 24 hours
                       </div>
                       <p className='u-color-p u-margin-Txs'>
-                        All you need is a bank account in <Message message='country' />. <Link to='contact_sales'>Contact us</Link> in order to get started.
+                        All you need is a bank account in <Message message='country' />. <Link to='contact_sales'>Contact us</Link> in
+                        order to get started.
                       </p>
                     </Translation>
                     <Translation locales='en-GB'>
@@ -142,7 +144,8 @@ export default class FeaturesEn extends React.Component {
                       No setup fees
                     </div>
                     <p className='u-color-p u-margin-Txs'>
-                      GoCardless costs just <Message message='pricing.per_transaction_amount_normal' /> per transaction (capped at <Message message="pricing.cost_cap" />) with no monthly or setup fees.
+                      GoCardless costs just <Message message='pricing.per_transaction_amount_normal' /> per transaction
+                      (capped at <Message message="pricing.cost_cap" />) with no monthly or setup fees.
                       Scale pricing is also available.
                     </p>
                   </div>
@@ -290,7 +293,7 @@ export default class FeaturesEn extends React.Component {
                   <h3 className='u-text-s'>A safe and easy way to pay</h3>
                   <Translation locales={['en']} exclude={['en-GB']}>
                     <p className='u-size-5of6 u-color-p u-margin-Bm'>
-                      With Direct Debit, there's no need for customers to worry about missing a payment. 
+                      With Direct Debit, there's no need for customers to worry about missing a payment.
                       Customers are also protected by SEPA Direct Debit Customer Protection.
                     </p>
                   </Translation>

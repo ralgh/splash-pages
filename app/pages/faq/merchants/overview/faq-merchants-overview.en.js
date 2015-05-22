@@ -1,7 +1,6 @@
 import React from 'react';
 import Translation from '../../../../components/translation/translation';
 import Link from '../../../../components/link/link';
-import LinkExists from '../../../../components/link-exists/link-exists';
 
 export default class FaqMerchantsEn extends React.Component {
   displayName = 'FaqMerchantsEn'
@@ -53,17 +52,17 @@ export default class FaqMerchantsEn extends React.Component {
           Who is GoCardless for?
         </h3>
         <p className='para'>
-          GoCardless is for anyone who wants to take payments directly from the bank account of customers in the UK and the Eurozone. 
-          It's particularly suited for B2B (business-to-business) and recurring payments. 
+          GoCardless is for anyone who wants to take payments directly from the bank account of customers in the UK and the Eurozone.
+          It's particularly suited for B2B (business-to-business) and recurring payments.
         </p>
         <p className='para'>
-          Our easy-to-use dashboards and powerful API make GoCardless a powerful platform for 
+          Our easy-to-use dashboards and powerful API make GoCardless a powerful platform for
           everyone from innovative start-ups to multi-national corporations.
         </p>
         <Translation locales='en-GB'>
           <p className='para'>
-            In the UK, we've integrated with many of the most popular accounting packages to enable easy invoicing and payment reconciliation. 
-            Find out more <Link to='features' className='u-link-color-p u-text-underline'>here</Link>.
+            In the UK, we've integrated with many of the most popular accounting packages to enable easy invoicing
+            and payment reconciliation. Find out more <Link to='features' className='u-link-color-p u-text-underline'>here</Link>.
           </p>
         </Translation>
 
@@ -111,11 +110,13 @@ export default class FaqMerchantsEn extends React.Component {
         </p>
         <Translation locales='en-GB'>
           <p className='para'>
-            With GoCardless, our <Link to='pricing' title='Pricing' className='u-link-color-p u-text-underline'>fees</Link> are deducted automatically.
+            With GoCardless, our <Link to='pricing' title='Pricing' className='u-link-color-p u-text-underline'>fees</Link> are
+            deducted automatically.
           </p>
         </Translation>
         <p className='para'>
-          With GoCardless Pro, we'll send you an invoice for your <Link to='pricing' title='Pricing' className='u-link-color-p u-text-underline'>fees</Link>.
+          With GoCardless Pro, we'll send you an invoice for
+          your <Link to='pricing' title='Pricing' className='u-link-color-p u-text-underline'>fees</Link>.
         </p>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>

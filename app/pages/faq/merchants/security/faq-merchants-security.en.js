@@ -14,8 +14,9 @@ export default class FaqMerchantsSecurityEn extends React.Component {
         <Translation locales={['en']} exclude={['en-GB']}>
           <p className='para'>
             We are regulated as an <a href='http://www.fsa.gov.uk/register/psdFirmBasicDetails.do?sid=315374'
-            title='FCA Registration' target='_blank' className='u-link-color-p u-text-underline'>Authorised Payment Institution</a> by 
-            the Financial Conduct Authority in the United Kingdom. We are authorised to collect payments throughout the European Union and currently serve more 5,000 businesses.
+            title='FCA Registration' target='_blank' className='u-link-color-p u-text-underline'>Authorised Payment Institution</a> by
+            the Financial Conduct Authority in the United Kingdom. We are authorised to collect payments
+            throughout the European Union and currently serve more 5,000 businesses.
           </p>
           <p className='para'>
             All money collected is held in a secure client monies account with one of our partner banks.
@@ -24,7 +25,7 @@ export default class FaqMerchantsSecurityEn extends React.Component {
         <Translation locales='en-GB'>
           <p className='para'>
             We are regulated as an <a href='http://www.fsa.gov.uk/register/psdFirmBasicDetails.do?sid=315374'
-            title='FCA Registration' target='_blank' className='u-link-color-p u-text-underline'>Authorised Payment Institution</a> by 
+            title='FCA Registration' target='_blank' className='u-link-color-p u-text-underline'>Authorised Payment Institution</a> by
             the Financial Conduct Authority and serve more businesses than any other Direct Debit provider.
           </p>
           <p className='para'>
@@ -63,8 +64,8 @@ export default class FaqMerchantsSecurityEn extends React.Component {
         <Translation locales={['en']} exclude={['en-GB']}>
           <p className='para'>
             Yes. Your customers are protected by <a href='/guides/sepa/protection/'
-            className='u-link-color-p u-text-underline'>SEPA Direct Debit Customer Protection</a> in the Eurozone and the <a href='/direct-debit/guarantee/'
-            className='u-link-color-p u-text-underline'>Direct Debit Guarantee</a> in the UK.
+            className='u-link-color-p u-text-underline'>SEPA Direct Debit Customer Protection</a> in the Eurozone and
+            the <a href='/direct-debit/guarantee/' className='u-link-color-p u-text-underline'>Direct Debit Guarantee</a> in the UK.
           </p>
         </Translation>
         <Translation locales='en-GB'>
