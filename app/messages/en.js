@@ -41,6 +41,7 @@ export default {
   phone_full: '+44 20 7183 8674',
   phone_local: '020 7183 8674',
   email: 'help@gocardless.com',
+  documentation_link: 'https://developer.gocardless.com/pro',
   prospect_form: {
     name_label: 'Your name',
     name_placeholder: 'John Smith',
