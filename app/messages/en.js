@@ -27,7 +27,6 @@ export default {
     learn_more: 'Learn about our pricing',
   },
   hero: {
-    header: 'Recurring payments made simple',
     desc: 'GoCardless makes collecting by Direct Debit easy for everyone from individuals to multi-national corporations',
   },
   contact_types: ['customer support', 'sales'],
