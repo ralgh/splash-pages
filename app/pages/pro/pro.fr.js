@@ -200,7 +200,7 @@ export default class ProFr extends React.Component {
               <table className='u-size-full'><tfoot>
                   <tr className='comparison-table__row'>
                     <td />
-                    <td className='u-padding-As'>
+                    <td className='u-size-1of3 u-padding-As'>
                       <Link to='features' id='track-comparison-table-features'
                       className='u-color-primary'>
                         Apprenez-en plus sur GoCardless

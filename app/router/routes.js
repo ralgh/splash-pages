@@ -23,6 +23,7 @@ import DeveloperCommunityManager from '../pages/about/jobs/positions/developer-c
 import EngineeringInterships from '../pages/about/jobs/positions/engineering-internships';
 import AccountExecutiveFrance from '../pages/about/jobs/positions/account-executive-fr';
 import CustomerSupportFrance from '../pages/about/jobs/positions/customer-support-fr';
+import OfficeManager from '../pages/about/jobs/positions/office-manager';
 import BdGeneralist from '../pages/about/jobs/positions/bd-generalist';
 import GlobalExpansionLead from '../pages/about/jobs/positions/global-expansion-lead';
 import CountryLeadGermanyAustria from '../pages/about/jobs/positions/country-lead-de-at';
@@ -277,6 +278,12 @@ export const config = Immutable.fromJS([
       },
       fr: {
         path: '/about/jobs/charge-de-clientele',
+      },
+    },
+  ],
+  [OfficeManager, { name: 'jobs_office_manager', category: 'jobs.operations' }, {
+      en: {
+        path: '/about/jobs/office-manager',
       },
     },
   ],

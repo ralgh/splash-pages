@@ -281,15 +281,16 @@ export default class ProEn extends React.Component {
               </div>
             </div>
             <hr className='u-margin-An' />
-            <Translation locales='en-GB'>
+            <Translation locales={['en-GB','en-IE']}>
               <div id='forOptimizely-Table'>
                 <div className='u-text-center u-padding-Vxxl u-background-light-gray'>
                   <div className='site-container u-padding-Vxl'>
                     <ProductComparison />
-                    <table className='u-size-full'><tfoot>
+                    <table className='u-size-full'>
+                      <tfoot>
                         <tr className='comparison-table__row'>
                           <td />
-                          <td className='u-padding-As'>
+                          <td className='u-size-1of3 u-padding-As'>
                             <Link to='features' id='track-comparison-table-features'
                             className='u-color-primary'>
                               Learn more about GoCardless
@@ -301,7 +302,7 @@ export default class ProEn extends React.Component {
                     </table>
                   </div>
                 </div>
-              <hr className='u-margin-An' />
+                <hr className='u-margin-An' />
               </div>
             </Translation>
           </div>
