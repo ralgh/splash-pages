@@ -2,6 +2,7 @@ import React from 'react';
 import Message from '../../components/message/message';
 import StickyNav from '../../components/sticky-nav/sticky-nav';
 import Link from '../../components/link/link';
+import LinkExists from '../../components/link-exists/link-exists';
 
 export default class AboutHeader extends React.Component {
   displayName = 'AboutHeader'
@@ -35,11 +36,13 @@ export default class AboutHeader extends React.Component {
                   <Message pointer='team.nav_title' />
                 </Link>
               </li>
-              <li className='sticky-nav__item'>
-                <Link to='jobs' className='sticky-nav__link'>
-                  <Message pointer='jobs.nav_title' />
-                </Link>
-              </li>
+              <LinkExists to='jobs'>
+                <li className='sticky-nav__item'>
+                  <Link to='jobs' className='sticky-nav__link'>
+                    <Message pointer='jobs.nav_title' />
+                  </Link>
+                </li>
+              </LinkExists>
             </ul>
             <a href='https://gocardless.com/blog'
               className={

@@ -4,6 +4,7 @@ import Message from '../../components/message/message';
 import InlineMessage from '../../components/inline-message/inline-message';
 import HomeEn from './home.en';
 import HomeFr from './home.fr';
+import HomeDe from './home.de';
 import Translation from '../../components/translation/translation';
 
 export default class Home extends React.Component {
@@ -49,6 +50,7 @@ export default class Home extends React.Component {
         </div>
         <HomeFr />
         <HomeEn />
+        <HomeDe />
       </Page>
     );
   }
