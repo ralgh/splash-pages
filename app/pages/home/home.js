@@ -24,24 +24,21 @@ export default class Home extends React.Component {
                   <Message message='hero.desc' />
                 </div>
                 <div className='u-text-center u-margin-Tl'>
-                  <Translation locales='en'>
-                    <a href='#learn-more' id='track-hero-learn-more' className='btn btn--invert btn--move u-size-2of12'>
+                  <Translation locales={['en','fr','de']} exclude={['en-GB']}>
+                    <a href='#learn-more' id='track-hero-learn-more' className='btn btn--invert btn--move u-size-3of12'>
                       <Message message='cta.more' />
                     </a>
-                    <Translation locales='en-GB'>
+                  </Translation>
+                  <Translation locales='en-GB'>
+                      <a href='#learn-more' id='track-hero-learn-more' className='btn btn--invert btn--move u-size-2of12'>
+                        <Message message='cta.more' />
+                      </a>
                       <a href='/merchants/new'
                         className='btn btn--invert-hollow btn-move u-size-2of12 u-margin-Lm'
                         id='track-hero-merchants-new'>
                         <Message message='cta.pro_signup' />
                       </a>
                     </Translation>
-                  </Translation>
-
-                  <Translation locales='fr'>
-                    <a href='#learn-more' id='track-hero-learn-more' className='btn btn--invert btn--move u-size-3of12'>
-                      <Message message='cta.more' />
-                    </a>
-                  </Translation>
                 </div>
               </div>
             </div>
