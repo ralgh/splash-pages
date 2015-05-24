@@ -68,52 +68,6 @@ export default class HomeDe extends React.Component {
             </div>
           </div>
         </div>
-        <Translation locales={['en-GB','en-IE']}>
-          <hr className='u-margin-An' />
-          <div className='site-container u-text-center u-padding-Vxxl'>
-            <h2 className='u-text-l u-text-heading u-colo-heading u-text-light u-margin-Tl'>
-              What are you looking for?
-            </h2>
-            <div className='product-grid grid u-margin-Vxxl'>
-              <Link to='features' id='track-cta-features' className='u-link-clean u-text-center grid__cell u-size-1of3'>
-                <div className='product-grid__container u-padding-Vl'>
-                  <figure className='svg-icon u-center'>
-                    <ShopIcon className='svg-icon__image svg-icon__image--shadow u-fill-green' />
-                    <ShopIcon className='svg-icon__image u-fill-dark-gray' />
-                  </figure>
-                  <p className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
-                    Super simple<br />online payments
-                  </p>
-                </div>
-                <div className='product-grid__btn btn u-size-full'>Discover GoCardless</div>
-              </Link>
-              <Link to='pro' id='track-cta-pro' className='u-link-clean u-text-center grid__cell u-size-1of3'>
-                <div className='product-grid__container u-padding-Vl'>
-                  <figure className='svg-icon u-center'>
-                    <ProIcon className='svg-icon__image svg-icon__image--shadow u-fill-yellow' />
-                    <ProIcon className='svg-icon__image u-fill-dark-gray' />
-                  </figure>
-                  <p className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
-                    Complete control<br />over Direct Debit
-                  </p>
-                </div>
-                <div className='product-grid__btn btn u-size-full'>Discover GoCardless Pro</div>
-              </Link>
-              <Link to='partners' id='track-cta-partners' className='u-link-clean u-text-center grid__cell u-size-1of3'>
-                <div className='product-grid__container u-padding-Vl'>
-                  <figure className='svg-icon u-center'>
-                    <IntegrationsIcon className='svg-icon__image svg-icon__image--shadow u-fill-blue' />
-                    <IntegrationsIcon className='svg-icon__image u-fill-dark-gray' />
-                  </figure>
-                  <p className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
-                    Help your customers<br />collect payments
-                  </p>
-                </div>
-                <div className='product-grid__btn btn u-size-full'>Discover our partners</div>
-              </Link>
-            </div>
-          </div>
-        </Translation>
         <hr className='u-margin-An' />
         <div className='site-container u-text-center u-padding-Vxxl'>
           <div className='u-padding-Txl'>
@@ -148,15 +102,6 @@ export default class HomeDe extends React.Component {
             </div>
           </div>
         </div>
-        <Translation locales='en-GB'>
-          <hr className='u-margin-An' />
-          <div className='site-container u-text-center u-padding-Vxxl'>
-            <div className='u-padding-Vxl'>
-              <a href='/merchants/new' id='track-cta-sign-up' className='btn'>Start taking payments</a>
-              <p className='u-color-p u-margin-Ts'>No set up costs, no hidden charges, no commitments</p>
-            </div>
-          </div>
-        </Translation>
       </Translation>
     );
   }
