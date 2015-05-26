@@ -1,6 +1,7 @@
 import React from 'react';
 import Translation from '../../components/translation/translation';
 import Message from '../../components/message/message';
+import Link from '../../components/link/link';
 
 export default class SecurityEn extends React.Component {
   displayName = 'SecurityEn'
@@ -15,7 +16,7 @@ export default class SecurityEn extends React.Component {
                 Authorised by the FCA
               </h2>
               <p className='u-size-2of3 u-center u-color-p u-margin-Txs'>
-                GoCardless is an Authorised Payment Institution regulated by the Financial Conduct Authority.
+                <Message message='security.fca_authorised_byline' />
               </p>
             </div>
             <div className='grid__cell u-text-center u-size-1of2 u-padding-Vxl'>
@@ -23,7 +24,7 @@ export default class SecurityEn extends React.Component {
                 Trusted by thousands
               </h2>
               <p className='u-size-2of3 u-center u-color-p u-margin-Txs'>
-                GoCardless provides access to the Direct Debit network to thousands of businesses in the United Kingdom.
+                <Message message='security.trusted_by_thousands_byline' />
               </p>
             </div>
             <div className='grid__cell u-text-center u-size-1of2 u-padding-Vxl'>
@@ -36,7 +37,7 @@ export default class SecurityEn extends React.Component {
             </div>
             <div className='grid__cell u-text-center u-size-1of2 u-padding-Vxl'>
               <h2 className='u-text-heading-light u-text-m u-color-heading'>
-                Direct Debit Guarantee
+                <Message message='security.consumer_protection_title' />
               </h2>
               <p className='u-size-2of3 u-center u-color-p u-margin-Txs'>
                 If anything goes wrong with a transaction, payers are entitled to an instant refund.
@@ -60,8 +61,17 @@ export default class SecurityEn extends React.Component {
             </div>
           </div>
         </div>
+        <hr className='u-margin-An' />
+        <Translation locales={['en']} exclude={['en-GB']}>
+          <div className='site-container u-text-center u-padding-Tm u-padding-Bxxl'>
+            <div className='u-padding-Vxl'>
+              <h2 className='u-text-heading u-text-l u-color-heading u-text-light'>Got any questions?</h2>
+              <p className='u-color-p u-margin-Ts'>Speak with one of our experts on <Message message='phone_full' /></p>
+              <Link to='contact_sales' query={{ s: 'security' }} className='btn btn--hollow u-margin-Tm'>Contact sales</Link>
+            </div>
+          </div>
+        </Translation>
         <Translation locales='en-GB'>
-          <hr className='u-margin-An' />
           <div className='site-container u-text-center u-padding-Vxxl'>
             <div className='u-padding-Vxl'>
               <a href='/merchants/new' className='btn'>

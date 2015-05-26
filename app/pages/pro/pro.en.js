@@ -149,7 +149,7 @@ export default class ProEn extends React.Component {
                   </h2>
                   <p className='u-text-s u-color-p u-margin-Txs'>
                     Every day, some of the biggest and most respected businesses
-                    in the UK trust GoCardless to power their payments
+                    trust GoCardless to power their payments
                   </p>
                 </div>
                 <div className='u-text-center u-margin-Vl u-padding-Vs u-center'>
@@ -171,23 +171,45 @@ export default class ProEn extends React.Component {
               </div>
               <hr className='u-margin-An' />
             </div>
-            <div className='site-container u-text-center u-padding-Vxxl'>
-              <div className='u-padding-Vxl'>
-                <div className='u-size-1of2 u-center'>
-                  <i className='europe-icon u-margin-Bs' />
-                  <h2 className='u-text-heading u-color-heading u-text-l u-text-light'>
-                    Want to take payments in Europe?
-                  </h2>
-                  <div className='u-center'>
-                    <p className='u-text-s u-color-p u-margin-Ts'>
-                      GoCardless Pro is the only product that enables you to collect
-                      Direct Debit payments from the UK and SEPA via one integration.
-                      With our API, your business can take payments from over 500 million people.
-                    </p>
+            <Translation locales={['en-GB', 'en-IE']}>
+              <div className='site-container u-text-center u-padding-Vxxl'>
+                <div className='u-padding-Vxl'>
+                  <div className='u-size-1of2 u-center'>
+                    <i className='europe-icon u-margin-Bs' />
+                    <h2 className='u-text-heading u-color-heading u-text-l u-text-light'>
+                      Want to take payments in Europe?
+                    </h2>
+                    <div className='u-center'>
+                      <p className='u-text-s u-color-p u-margin-Ts'>
+                        GoCardless Pro is the only product that enables you to collect
+                        Direct Debit payments from the UK and SEPA via one integration.
+                        With our API, your business can take payments from over 500 million people.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Translation>
+            <Translation locales='en-EU'>
+              <div className='site-container u-text-center u-padding-Vxxl'>
+                <div className='u-padding-Vxl'>
+                  <div className='u-size-1of2 u-center'>
+                    <i className='europe-icon u-margin-Bs' />
+                    <h2 className='u-text-heading u-color-heading u-text-l u-text-light'>
+                      Want to take payments in Europe?
+                    </h2>
+                    <div className='u-center'>
+                      <p className='u-text-s u-color-p u-margin-Ts'>
+                        GoCardless Pro is the only product that enables you to collect
+                        Direct Debit payments from the UK and Eurozone via one integration.
+                        With our API, your business can take payments from over 500 million people
+                        in 22 European countries
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Translation>
             <hr className='u-margin-An' />
             <div className='site-container u-text-center u-padding-Vxxl'>
               <div className='u-padding-Vxl'>
@@ -259,35 +281,37 @@ export default class ProEn extends React.Component {
               </div>
             </div>
             <hr className='u-margin-An' />
-            <div id='forOptimizely-Table'>
-              <div className='u-text-center u-padding-Vxxl u-background-light-gray'>
-                <div className='site-container u-padding-Vxl'>
-                  <ProductComparison />
-                  <table className='u-size-full'>
-                    <tfoot>
-                      <tr className='comparison-table__row'>
-                        <td />
-                        <td className='u-size-1of3 u-padding-As'>
-                          <Link to='features' id='track-comparison-table-features'
-                          className='u-color-primary'>
-                            Learn more about GoCardless
-                          </Link>
-                        </td>
-                        <td />
-                      </tr>
-                    </tfoot>
-                  </table>
+            <Translation locales={['en-GB','en-IE']}>
+              <div id='forOptimizely-Table'>
+                <div className='u-text-center u-padding-Vxxl u-background-light-gray'>
+                  <div className='site-container u-padding-Vxl'>
+                    <ProductComparison />
+                    <table className='u-size-full'>
+                      <tfoot>
+                        <tr className='comparison-table__row'>
+                          <td />
+                          <td className='u-size-1of3 u-padding-As'>
+                            <Link to='features' id='track-comparison-table-features'
+                            className='u-color-primary'>
+                              Learn more about GoCardless
+                            </Link>
+                          </td>
+                          <td />
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
                 </div>
+                <hr className='u-margin-An' />
               </div>
-              <hr className='u-margin-An' />
-            </div>
+            </Translation>
           </div>
           <div className='section-scroll-target' id='pricing'>
             <div className='u-text-center u-padding-Vxxl'>
               <div className='site-container u-padding-Vxl'>
                 <div className='u-size-2of3 u-center'>
                   <h2 className='u-text-heading u-color-heading u-text-light u-text-xl'>
-                    1p — 60p per transaction
+                    <Message message='pricing.pro_cost_per_transaction' /> per transaction
                   </h2>
                   <p className='u-text-s u-color-p u-margin-Vxs'>
                     Competitive rates for businesses of any size.<br />

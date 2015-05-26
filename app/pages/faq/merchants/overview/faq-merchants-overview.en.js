@@ -12,35 +12,59 @@ export default class FaqMerchantsEn extends React.Component {
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
           How can I use GoCardless?
         </h3>
-        <p className='para'>
-          There are three ways to use GoCardless:
-        </p>
-        <ul className='list'>
-          <li>
-            <strong>Our dashboards</strong> - Set up and manage Direct Debit payments
-            with your customers using our simple online dashboard.
-          </li>
-          <li>
-            <strong>Our account software partnerships</strong> - We work with a growing list of <Link to='partners'
-            className='u-link-color-p u-text-underline'>partners</Link>, so you can take payments within the online
-            services you already use.
-          </li>
-          <li>
-            <strong>Our clean, RESTful API</strong> - Integrate GoCardless into your website using
-            our <a href='https://developer.gocardless.com/' className='u-link-color-p u-text-underline'>REST API</a>.
-          </li>
-        </ul>
+        <Translation locales={['en']} exclude={['en-GB']}>
+          <p className='para'>
+            There are two ways to use GoCardless:
+          </p>
+          <ul className='list'>
+            <li>
+              <strong>Our dashboards</strong> - Set up and manage Direct Debit payments
+              with your customers using our simple online dashboard.
+            </li>
+            <li>
+              <strong>Our clean, RESTful API</strong> - Integrate GoCardless into your website using
+              our <a href='https://developer.gocardless.com/pro' className='u-link-color-p u-text-underline'>REST API</a>.
+            </li>
+          </ul>
+        </Translation>
+        <Translation locales='en-GB'>
+          <p className='para'>
+            There are three ways to use GoCardless:
+          </p>
+          <ul className='list'>
+            <li>
+              <strong>Our dashboards</strong> - Set up and manage Direct Debit payments
+              with your customers using our simple online dashboard.
+            </li>
+            <li>
+              <strong>Our account software partnerships</strong> - We work with a growing list of <Link to='partners'
+              className='u-link-color-p u-text-underline'>partners</Link>, so you can take payments within the online
+              services you already use.
+            </li>
+            <li>
+              <strong>Our clean, RESTful API</strong> - Integrate GoCardless into your website using
+              our <a href='https://developer.gocardless.com/' className='u-link-color-p u-text-underline'>REST API</a>.
+            </li>
+          </ul>
+        </Translation>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
           Who is GoCardless for?
         </h3>
         <p className='para'>
-          Anyone can use GoCardless, but it is particularly great for B2B (business-to-business) and recurring payments.
+          GoCardless is for anyone who wants to take payments directly from the bank account of customers in the UK and the Eurozone.
+          It's particularly suited for B2B (business-to-business) and recurring payments.
         </p>
         <p className='para'>
-          We have integrated with many of the most popular accounting packages to enable easy invoicing and payment reconciliation.<br />
-          Find out more <Link to='features' className='u-link-color-p u-text-underline'>here</Link>.
+          Our easy-to-use dashboards and powerful API make GoCardless a powerful platform for
+          everyone from innovative start-ups to multi-national corporations.
         </p>
+        <Translation locales='en-GB'>
+          <p className='para'>
+            In the UK, we've integrated with many of the most popular accounting packages to enable easy invoicing
+            and payment reconciliation. Find out more <Link to='features' className='u-link-color-p u-text-underline'>here</Link>.
+          </p>
+        </Translation>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
           What can I not use GoCardless for?
@@ -57,10 +81,6 @@ export default class FaqMerchantsEn extends React.Component {
             <strong>Let you accept instant payments</strong> - Direct Debit payments take 3-5 working
             days to clear, so they're not ideal for goods that need to be shipped quickly.
           </li>
-          <li>
-            <strong>Let you accept payments from non-UK bank accounts</strong> - Soon, we'll
-            be available across the EU, and then further afield.
-          </li>
         </ul>
         <p className='para'>
           We're able to accept most kinds of customers but there are some exceptions - for
@@ -75,16 +95,28 @@ export default class FaqMerchantsEn extends React.Component {
           There are no limits on how many transactions you can make.
         </p>
         <p className='para'>
-          For a single transaction, the minimum amount is £1 and the maximum is £5,000.
-          We may be able to increase this with additional verification checks.
+          In the UK, the minimum amount for a single transaction is £1 and the maximum amount is £5,000.
+          We may be able to increase this limit with additional verification checks.
+        </p>
+        <p className='para'>
+          In the Eurozone, the maximum amount for a single transaction is €5,000.
         </p>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
           How do I receive funds I have collected with GoCardless?
         </h3>
         <p className='para'>
-          Funds you have collected are paid directly into your UK bank account, minus
-          our <Link to='pricing' title='Pricing' className='u-link-color-p u-text-underline'>fee</Link>.
+          The funds collected are paid directly into your bank account.
+        </p>
+        <Translation locales='en-GB'>
+          <p className='para'>
+            With GoCardless, our <Link to='pricing' title='Pricing' className='u-link-color-p u-text-underline'>fees</Link> are
+            deducted automatically.
+          </p>
+        </Translation>
+        <p className='para'>
+          With GoCardless Pro, we'll send you an invoice for
+          your <Link to='pricing' title='Pricing' className='u-link-color-p u-text-underline'>fees</Link>.
         </p>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
@@ -116,11 +148,13 @@ export default class FaqMerchantsEn extends React.Component {
             <strong>Reduced administration</strong> - Collect recurring and one-off payments automatically,
             or at the click of a button. We manage everything else for you.
           </li>
-          <li>
-             <strong>Simple, low pricing </strong> - We charge <Link to='pricing'
-             className='u-link-color-p u-text-underline'>1% per transaction</Link>, and never more
-             than £2. Scale pricing is available.
-          </li>
+          <Translation locales='en-GB'>
+            <li>
+               <strong>Simple, low pricing</strong> - We charge <Link to='pricing'
+               className='u-link-color-p u-text-underline'>1% per transaction</Link>, and never more
+               than £2. Scale pricing is available.
+            </li>
+          </Translation>
           <li>
             <strong>Powerful tools that suit you</strong> - Everything you need to set up, collect
             and manage Direct Debit payments with our simple online tool or <a href='https://developer.gocardless.com/'
@@ -131,13 +165,15 @@ export default class FaqMerchantsEn extends React.Component {
           </li>
         </ul>
 
-        <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
-          Is GoCardless a Bacs-approved bureau?
-        </h3>
-        <p className='para'>
-          Yes, GoCardless is a <a href='http://www.bacs.co.uk/Bacs/Bureaux/Resources/Pages/ApprovedBureaux.aspx'
-          className='u-link-color-p u-text-underline'>Bacs-approved bureau</a>.
-        </p>
+        <Translation locales='en-GB'>
+          <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
+            Is GoCardless a Bacs-approved bureau?
+          </h3>
+          <p className='para'>
+            Yes, GoCardless is a <a href='http://www.bacs.co.uk/Bacs/Bureaux/Resources/Pages/ApprovedBureaux.aspx'
+            className='u-link-color-p u-text-underline'>Bacs-approved bureau</a>.
+          </p>
+        </Translation>
       </Translation>
     );
   }
