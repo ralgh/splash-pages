@@ -21,11 +21,11 @@ export default class HomeDe extends React.Component {
           <div className='u-padding-Vxl'>
             <div className='u-size-2of3 u-center'>
               <h2 className='u-text-heading u-color-heading u-text-l u-text-light'>
-                Bringing Direct Debit into the 21st century
+                Die neue bessere Art des Lastschriftverfahrens
               </h2>
               <p className='u-text-s u-color-p u-margin-Txs'>
-                GoCardless allows you to benefit from the great fees and low failure rates of Direct Debit,
-                without the operational complexity associated with traditional providers.
+                GoCardless macht es möglich, von den günstigen Gebühren und kleinen Fehlerraten des Lastschriftverfahrens zu profitieren,
+                ganz ohne den konventionellen operativen Mehraufwand.
               </p>
             </div>
             <div className='grid u-margin-Tl u-padding-Tm'>
@@ -35,10 +35,10 @@ export default class HomeDe extends React.Component {
                   <MobileIcon className='svg-icon__image u-fill-dark-gray' />
                 </figure>
                 <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
-                  Built for online
+                  Gemacht für online
                 </div>
                 <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
-                  Whether it's our simple dashboard or our API, you're in control
+                 Ob durch unsere Online-Übersicht oder mittels unserer API, Sie haben volle Kontrolle
                 </p>
               </div>
               <div className='grid__cell u-size-1of3 u-text-center'>
@@ -47,10 +47,10 @@ export default class HomeDe extends React.Component {
                   <CheckListIcon className='svg-icon__image u-fill-dark-gray' />
                 </figure>
                 <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
-                  Fully automated
+                  Voll automatisiert
                 </div>
                 <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
-                  Save time, stop human errors and avoid failed payments
+                  Zeit sparen, menschliche Fehler eliminieren und fehlgeschlagene Zahlungen minimieren
                 </p>
               </div>
               <div className='grid__cell u-size-1of3 u-text-center'>
@@ -59,10 +59,10 @@ export default class HomeDe extends React.Component {
                   <TickSquareIcon className='svg-icon__image u-fill-dark-gray' />
                 </figure>
                 <div className='u-text-heading u-color-heading u-text-light u-text-no-smoothing u-text-m u-margin-Tm'>
-                  UK &amp; Eurozone
+                  Deutschland &amp; Europa
                 </div>
                 <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
-                  Accept payments with Bacs Direct Debit and SEPA Direct Debit
+                  Akzeptieren Sie SEPA Lastschriften in Deutschland sowie in der gesamten Eurozone
                 </p>
               </div>
             </div>
@@ -73,12 +73,12 @@ export default class HomeDe extends React.Component {
           <div className='u-padding-Txl'>
             <div className='u-size-1of2 u-center'>
               <h2 className='u-text-heading u-color-heading u-text-light u-text-l'>
-                Trusted by thousands of businesses
+                Tausende Händler vertrauen uns
               </h2>
               <p className='u-text-s u-color-p u-margin-Txs'>
                 <Message message="home.trusted_message_scale" />
                 <br />
-                Whatever your scale, GoCardless works for you.
+                Egal, wie groß Ihr Unternehmen ist, GoCardless funktioniert für Sie.
               </p>
             </div>
             <div className='u-text-center u-margin-Vl u-padding-Vs u-center'>
@@ -91,13 +91,13 @@ export default class HomeDe extends React.Component {
           <div className='site-container u-padding-Vxl'>
             <div className='u-size-2of3 u-center'>
               <h2 className='u-text-heading u-color-heading u-text-light u-text-l'>
-                Simple, transparent pricing for everyone
+                Einfache transparente Preise für alle
               </h2>
               <p className='u-text-s u-color-p u-margin-Vxs'>
-                Competitive rates for everyone from individuals through to large corporations
+                Wettbewerbsfähige Preise für jeden: von Einzelpersonen bis zu Großunternehmen.
               </p>
               <Link to='pricing' id='track-cta-pricing' className='btn btn--hollow u-margin-Tm'>
-                Learn about our pricing
+                Unsere Preise
               </Link>
             </div>
           </div>
