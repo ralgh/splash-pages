@@ -3,12 +3,12 @@
 export default {
   country: 'Deutschland',
   hero: {
-    header: 'Recurring payments made simple',
-    desc: 'GoCardless makes it easy to collect Direct Debit payments across Europe, for everyone from small businesses to multi-national corporations',
+    header: 'Wiederkehrende Zahlungen einfach gemacht',
+    desc: 'GoCardless macht das Einziehen von Lastschriften innerhalb ganz Europa zum Kinderspiel, für den Kleinbetrieb sowie für internationale Großunternehmen.',
   },
   pricing: {
     cost_cap: '€2',
-    description: 'Collect Direct Debit payments online with fees of just 1%, capped at €2. Scale pricing is available for larger organisations.',
+    description: 'Ziehen Sie Lastschriften online ein, und zahlen Sie nur 1% Gebühren, gedeckelt bei €2. Für große Unternehmen behalten wir es uns vor, Preisnachlässe anzubieten.',
     pro_cost_per_transaction: '0,01 — 0,60 €',
     per_transaction_amount_normal: '1%',
     pro_monthly_fee: '€250',

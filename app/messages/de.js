@@ -16,7 +16,7 @@ export default {
     basic: 'Beginnen Sie Zahlungen zu empfangen',
     pro: 'Kontakt',
     pro_signup: 'Jetzt anmelden',
-    more: 'Lernen Sie mehr',
+    more: 'Erfahren Sie mehr',
   },
   signup_cta: {
     main: 'Zahlen Sie 1%',
@@ -94,14 +94,14 @@ export default {
     title: 'GoCardless Pro: Komplette Kontrolle über Ihre Lastschriften',
     nav_title: 'GoCardless Pro',
     description: 'GoCardless Pro lässt Sie Lastschriften einziehen und ermöglicht Ihnen komplette Kontrolle über den Prozess. 100% werbefrei und mit einer sehr einfach zu integrierenden API.',
-    explainer: 'Komplette Kontrolle über Lastschriften',
+    explainer: 'Volle Kontrolle über Lastschriften',
   },
   partners: {
     title: 'Partner Apps & Software Integration',
     nav_title: 'Werden Sie Partner',
     link_title: 'Partners',
     description: 'Werden Sie Partner von GoCardless und lassen Sie Händler Zahlungen über Ihre Software einziehen. Wir arbeiten mit FreeAgent, Xero, Sage, Kashflow, Pitchero, ClearBooks, CrowdCube und vielen weiteren Partnern.',
-    explainer: 'Bieten Sie Ihren Nutzern GoCardless an',
+    explainer: 'GoCardless für Ihre Kunden',
   },
   team: {
     title: 'Team',
