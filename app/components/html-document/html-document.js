@@ -35,7 +35,7 @@ class HtmlDocument extends React.Component {
   displayName = 'HtmlDocument'
 
   static propTypes = {
-    locales: PropTypes.locale,
+    currentLocale: PropTypes.locale,
     messages: PropTypes.object.isRequired,
     formats: PropTypes.object.isRequired,
     routeName: PropTypes.string.isRequired,
@@ -57,7 +57,7 @@ class HtmlDocument extends React.Component {
   }
 
   static childContextTypes = {
-    locales: PropTypes.locale,
+    currentLocale: PropTypes.locale,
     messages: PropTypes.object.isRequired,
     formats: PropTypes.object.isRequired,
     routeName: PropTypes.string.isRequired,
@@ -70,11 +70,11 @@ class HtmlDocument extends React.Component {
   };
 
   getChildContext() {
-    const { locales, messages, formats, routeName, availableLocales,
+    const { currentLocale, messages, formats, routeName, availableLocales,
             availableCountryNames, routeLocales, router, pathname, config } = this.props;
 
     return {
-      locales: locales,
+      currentLocale: currentLocale,
       messages: messages,
       formats: formats,
       routeName: routeName,
@@ -88,13 +88,13 @@ class HtmlDocument extends React.Component {
   }
 
   render() {
-    const { messages, routeName, locales, config, pathname, availableLocales, markup, script, css } = this.props;
+    const { messages, routeName, currentLocale, config, pathname, availableLocales, markup, script, css } = this.props;
     const isHome = routeName === homeRoute;
     const schemaDotOrgOrganisation = buildSchemaDotOrgForOrganization(localeMessages, availableLocales, config);
     const routeLocales = getLocalesForRouteName(routeName, availableLocales);
     const pageHref = config.siteRoot + pathname;
     const title = getSiteTitle({ messages, routeName, config });
-    const language = localeToLanguage(locales);
+    const language = localeToLanguage(currentLocale);
     const description = getMessage(messages, `${routeName}.description`);
 
     return (

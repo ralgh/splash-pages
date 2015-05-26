@@ -15,13 +15,13 @@ export default class JobsPage extends React.Component {
   }
 
   static contextTypes = {
-    locales: PropTypes.locale,
+    currentLocale: PropTypes.locale,
     availableLocales: PropTypes.array.isRequired,
   }
 
   render() {
-    const { locales, availableLocales } = this.context;
-    const pages = filterRouteByCategory('jobs', locales, availableLocales);
+    const { currentLocale, availableLocales } = this.context;
+    const pages = filterRouteByCategory('jobs', currentLocale, availableLocales);
 
     const categories = pages.reduce(function(memo, job) {
       const category = rest(job.routeConfig.category.split('.')).join('.');

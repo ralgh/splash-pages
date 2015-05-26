@@ -13,13 +13,13 @@ export default class LegalPage extends React.Component {
   };
 
   static contextTypes = {
-    locales: PropTypes.locale,
+    currentLocale: PropTypes.locale,
     availableLocales: PropTypes.array.isRequired,
   }
 
   render() {
-    const { locales, availableLocales } = this.context;
-    const pages = filterRouteByCategory('legal', locales, availableLocales);
+    const { currentLocale, availableLocales } = this.context;
+    const pages = filterRouteByCategory('legal', currentLocale, availableLocales);
 
 
     const legalNav = pages.map(function(page) {
