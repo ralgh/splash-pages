@@ -99,7 +99,7 @@ export default {
   partners: {
     title: 'Partner Apps & Software Integration',
     nav_title: 'Werden Sie Partner',
-    link_title: 'Partners',
+    link_title: 'Partner',
     description: 'Werden Sie Partner von GoCardless und lassen Sie Händler Zahlungen über Ihre Software einziehen. Wir arbeiten mit FreeAgent, Xero, Sage, Kashflow, Pitchero, ClearBooks, CrowdCube und vielen weiteren Partnern.',
     explainer: 'GoCardless für Ihre Kunden',
   },
