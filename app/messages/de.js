@@ -82,8 +82,7 @@ export default {
   contact_sales: {
     title: 'Anfrage',
     nav_title: 'Kontakt',
-    description: 'Finden Sie heraus, wie viel Sie sparen können, wenn Sie GoCardless benutzen, um Lastschriften online einzuziehen.
-    Geben Sie hier Ihre Kontaktdaten an und wir schicken Ihnen innerhalb von 24 Stunden ein Angebot zu.',
+    description: 'Finden Sie heraus, wie viel Sie sparen können, wenn Sie GoCardless benutzen, um Lastschriften online einzuziehen. Geben Sie hier Ihre Kontaktdaten an und wir schicken Ihnen innerhalb von 24 Stunden ein Angebot zu.',
     page_title: 'Kontakt',
     page_description: 'Um mehr darüber zu erfahren, wie GoCardless Ihnen helfen kann, füllen Sie bitte folgendes Formular aus. Ein Mitarbeiter wird sich so schnell es geht bei Ihnen melden.',
     talk_to_us: 'Sie würden gerne sofort mit einem Experten sprechen?',
