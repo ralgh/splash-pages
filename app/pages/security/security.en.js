@@ -16,7 +16,7 @@ export default class SecurityEn extends React.Component {
                 Authorised by the FCA
               </h2>
               <p className='u-size-2of3 u-center u-color-p u-margin-Txs'>
-                <Message message='security.fca_authorised_byline' />
+                <Message pointer='security.fca_authorised_byline' />
               </p>
             </div>
             <div className='grid__cell u-text-center u-size-1of2 u-padding-Vxl'>
@@ -24,7 +24,7 @@ export default class SecurityEn extends React.Component {
                 Trusted by thousands
               </h2>
               <p className='u-size-2of3 u-center u-color-p u-margin-Txs'>
-                <Message message='security.trusted_by_thousands_byline' />
+                <Message pointer='security.trusted_by_thousands_byline' />
               </p>
             </div>
             <div className='grid__cell u-text-center u-size-1of2 u-padding-Vxl'>
@@ -37,7 +37,7 @@ export default class SecurityEn extends React.Component {
             </div>
             <div className='grid__cell u-text-center u-size-1of2 u-padding-Vxl'>
               <h2 className='u-text-heading-light u-text-m u-color-heading'>
-                <Message message='security.consumer_protection_title' />
+                <Message pointer='security.consumer_protection_title' />
               </h2>
               <p className='u-size-2of3 u-center u-color-p u-margin-Txs'>
                 If anything goes wrong with a transaction, payers are entitled to an instant refund.
@@ -66,7 +66,7 @@ export default class SecurityEn extends React.Component {
           <div className='site-container u-text-center u-padding-Tm u-padding-Bxxl'>
             <div className='u-padding-Vxl'>
               <h2 className='u-text-heading u-text-l u-color-heading u-text-light'>Got any questions?</h2>
-              <p className='u-color-p u-margin-Ts'>Speak with one of our experts on <Message message='phone_full' /></p>
+              <p className='u-color-p u-margin-Ts'>Speak with one of our experts on <Message pointer='phone_full' /></p>
               <Link to='contact_sales' query={{ s: 'security' }} className='btn btn--hollow u-margin-Tm'>Contact sales</Link>
             </div>
           </div>
@@ -75,7 +75,7 @@ export default class SecurityEn extends React.Component {
           <div className='site-container u-text-center u-padding-Vxxl'>
             <div className='u-padding-Vxl'>
               <a href='/merchants/new' className='btn'>
-                <Message message='cta.basic' />
+                <Message pointer='cta.basic' />
               </a>
               <p className='u-color-p u-margin-Ts'>No set up costs, no hidden charges, no commitments</p>
             </div>

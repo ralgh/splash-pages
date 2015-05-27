@@ -34,7 +34,7 @@ export default class FeaturesEn extends React.Component {
                     </h1>
                     <p className='u-text-heading u-text-center u-color-invert u-text-m u-text-light u-margin-Txxs u-text-no-smoothing'>
                       GoCardless is the quickest and easiest way to take one-off and <br />recurring payments
-                      online in <Message message='country' />.
+                      online in <Message pointer='country' />.
                     </p>
                   </div>
                 </div>
@@ -93,7 +93,7 @@ export default class FeaturesEn extends React.Component {
                       'sticky-nav__cta btn btn--small btn--hollow u-pull-end ' +
                       'u-text-transform-none u-text-light u-text-xxs u-text-no-smoothing'
                     }>
-                    <Message message='cta.basic' />
+                    <Message pointer='cta.basic' />
                   </a>
                 </Translation>
                 <Link to='contact_sales' id='track-sticky-nav-contact-sales'
@@ -101,7 +101,7 @@ export default class FeaturesEn extends React.Component {
                     'btn btn--small btn--hollow u-pull-end u-text-transform-none ' +
                     'u-text-light u-text-xxs u-text-no-smoothing u-margin-Rs'
                   }>
-                  <Message message='cta.pro' />
+                  <Message pointer='cta.pro' />
                 </Link>
               </div>
               <hr className='u-margin-An' />
@@ -122,7 +122,7 @@ export default class FeaturesEn extends React.Component {
                         Get started in 24 hours
                       </div>
                       <p className='u-color-p u-margin-Txs'>
-                        All you need is a bank account in <Message message='country' />. <Link to='contact_sales'>Contact us</Link> in
+                        All you need is a bank account in <Message pointer='country' />. <Link to='contact_sales'>Contact us</Link> in
                         order to get started.
                       </p>
                     </Translation>
@@ -144,8 +144,8 @@ export default class FeaturesEn extends React.Component {
                       No setup fees
                     </div>
                     <p className='u-color-p u-margin-Txs'>
-                      GoCardless costs just <Message message='pricing.per_transaction_amount_normal' /> per transaction
-                      (capped at <Message message="pricing.cost_cap" />) with no monthly or setup fees.
+                      GoCardless costs just <Message pointer='pricing.per_transaction_amount_normal' /> per transaction
+                      (capped at <Message pointer="pricing.cost_cap" />) with no monthly or setup fees.
                       Scale pricing is also available.
                     </p>
                   </div>
@@ -371,7 +371,7 @@ export default class FeaturesEn extends React.Component {
                     <PhoneIcon className='svg-icon__image u-fill-dark-gray' />
                   </figure>
                   <h2 className='u-text-heading u-color-heading u-text-l u-text-light u-margin-Tm'>
-                    <Message message="phone_full" />
+                    <Message pointer="phone_full" />
                   </h2>
                   <div className='u-center'>
                     <p className='u-text-s u-color-p u-margin-Ts'>
@@ -379,7 +379,7 @@ export default class FeaturesEn extends React.Component {
                     </p>
                   </div>
                   <Link to='contact_sales' id='track-cta-contact-sales' className='btn btn--hollow u-margin-Tm'>
-                    <Message message='cta.pro' />
+                    <Message pointer='cta.pro' />
                   </Link>
                 </div>
               </div>

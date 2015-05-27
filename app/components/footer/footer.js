@@ -52,66 +52,66 @@ class Footer extends React.Component {
               <div className='grid__cell u-size-1of3 u-text-xxs'>
                 <LinkExists to='features'>
                   <li>
-                    <Link to='features' message='features.nav_title'
+                    <Link to='features' pointer='features.nav_title'
                       id='track-footer-features' className='page-footer__link u-link-invert' />
                   </li>
                 </LinkExists>
                 <LinkExists to='pro'>
                   <li>
-                    <Link to='pro' message='pro.nav_title'
+                    <Link to='pro' pointer='pro.nav_title'
                       id='track-footer-pro' className='page-footer__link u-link-invert' />
                   </li>
                 </LinkExists>
                 <LinkExists to='partners'>
                   <li>
-                    <Link to='partners' message='partners.link_title'
+                    <Link to='partners' pointer='partners.link_title'
                       id='track-footer-partners' className='page-footer__link u-link-invert' />
                   </li>
                 </LinkExists>
                 <LinkExists to='pricing'>
                   <li>
-                    <Link to='pricing' message='pricing.nav_title'
+                    <Link to='pricing' pointer='pricing.nav_title'
                       id='track-footer-pricing' className='page-footer__link u-link-invert' />
                   </li>
                 </LinkExists>
                 <LinkExists to='stories'>
                   <li>
-                    <Link to='stories' message='stories.title'
+                    <Link to='stories' pointer='stories.title'
                       id='track-footer-stories' className='page-footer__link u-link-invert' />
                   </li>
                 </LinkExists>
                 <li>
-                  <Href to='guides.path' id='track-footer-guides' className='u-link-invert' message='guides.nav_title' />
+                  <Href to='guides.path' id='track-footer-guides' className='u-link-invert' pointer='guides.nav_title' />
                 </li>
               </div>
               <div className='grid__cell u-size-1of3 u-text-xxs'>
                 <Translation locales='en-GB'>
                   <li>
                     <a href='https://help.gocardless.com' id='track-footer-help' className='u-link-invert'>
-                      <Message message='help.nav_title' />
+                      <Message pointer='help.nav_title' />
                     </a>
                   </li>
                 </Translation>
                 <LinkExists to='faq_merchants'>
                   <li>
-                    <Link to='faq_merchants' message='faq_merchants.link_title'
+                    <Link to='faq_merchants' pointer='faq_merchants.link_title'
                       id='track-footer-faq' className='u-link-clean u-link-invert' />
                   </li>
                 </LinkExists>
                 <LinkExists to='features_api'>
                   <li>
-                    <Link to='features_api' message='features_api.nav_title'
+                    <Link to='features_api' pointer='features_api.nav_title'
                       id='track-footer-api' className='page-footer__link u-link-invert' />
                   </li>
                 </LinkExists>
                 <li>
                   <a href='https://developer.gocardless.com/pro' id='track-footer-pro-api' className='u-link-invert'>
-                    <Message message='pro_docs.nav_title' />
+                    <Message pointer='pro_docs.nav_title' />
                   </a>
                 </li>
                 <LinkExists to='security'>
                   <li>
-                    <Link to='security' message='security.nav_title'
+                    <Link to='security' pointer='security.nav_title'
                       id='track-footer-security' className='page-footer__link u-link-invert' />
                   </li>
                 </LinkExists>
@@ -119,31 +119,31 @@ class Footer extends React.Component {
               <div className='grid__cell u-size-1of3 u-text-xxs'>
                 <LinkExists to='europe'>
                   <li>
-                    <Link to='europe' message='europe.nav_title'
+                    <Link to='europe' pointer='europe.nav_title'
                       id='track-footer-europe' className='page-footer__link u-link-invert' />
                   </li>
                 </LinkExists>
                 <LinkExists to='legal'>
                   <li>
                     { /** We special case legal's footer link text, since it appears in the legal page's nav with another name  */ }
-                    <Link to='legal' message='legal.footer_nav_title'
+                    <Link to='legal' pointer='legal.footer_nav_title'
                       id='track-footer-legal' className='page-footer__link u-link-invert' />
                   </li>
                 </LinkExists>
                 <li>
                   <a href='https://blog.gocardless.com' id='track-footer-blog' className='u-link-invert'>
-                    <Message message='blog.nav_title' />
+                    <Message pointer='blog.nav_title' />
                   </a>
                 </li>
                 <LinkExists to='about'>
                   <li>
-                    <Link to='about' message='about.nav_title'
+                    <Link to='about' pointer='about.nav_title'
                       id='track-footer-about' className='page-footer__link u-link-invert' />
                   </li>
                 </LinkExists>
                 <LinkExists to='jobs'>
                   <li>
-                    <Link to='jobs' message='jobs.nav_title'
+                    <Link to='jobs' pointer='jobs.nav_title'
                       id='track-footer-jobs' className='page-footer__link u-link-invert' />
                   </li>
                 </LinkExists>
@@ -156,23 +156,23 @@ class Footer extends React.Component {
                 <SchemaItemProp itemProp='name' content='GoCardless Ltd.' />&nbsp;
                 <SchemaItemProp itemProp='url' tagName='meta' content={config.siteRoot} />
                 <SchemaItemProp itemProp='address' itemScope='itemScope' itemType='http://schema.org/PostalAddress'>
-                  <SchemaItemProp itemProp='streetAddress' message='postal_address.street_address' />,&nbsp;
-                  <SchemaItemProp itemProp='addressLocality' message='postal_address.address_locality' />,&nbsp;
-                  <SchemaItemProp itemProp='postalCode' message='postal_address.postal_code' />,&nbsp;
-                  <SchemaItemProp itemProp='addressCountry' message='postal_address.address_country_iso'>
-                    <Message message='postal_address.address_country' />
+                  <SchemaItemProp itemProp='streetAddress' pointer='postal_address.street_address' />,&nbsp;
+                  <SchemaItemProp itemProp='addressLocality' pointer='postal_address.address_locality' />,&nbsp;
+                  <SchemaItemProp itemProp='postalCode' pointer='postal_address.postal_code' />,&nbsp;
+                  <SchemaItemProp itemProp='addressCountry' pointer='postal_address.address_country_iso'>
+                    <Message pointer='postal_address.address_country' />
                   </SchemaItemProp>.
                 </SchemaItemProp><br />
-                <SchemaItemProp itemProp='telephone' message='phone_full' />,&nbsp;
+                <SchemaItemProp itemProp='telephone' pointer='phone_full' />,&nbsp;
                 <Href to='email' className='u-link-invert' itemProp='email' />
               </p>
               <p className='u-text-heading u-text-xxs u-color-invert u-margin-Bm'>
-                <Message message='footer.description' />
+                <Message pointer='footer.description' />
               </p>
               <LinkExists to='legal_privacy'>
                 <p className='u-text-heading u-text-xxs u-color-invert'>
-                  <Message message='footer.cookies_message' />&nbsp;
-                  <Link to='legal_privacy' className='u-link-clean u-link-invert u-text-heavy' message='footer.cookies_link_text' />.
+                  <Message pointer='footer.cookies_message' />&nbsp;
+                  <Link to='legal_privacy' className='u-link-clean u-link-invert u-text-heavy' pointer='footer.cookies_link_text' />.
                 </p>
               </LinkExists>
             </div>
@@ -183,13 +183,13 @@ class Footer extends React.Component {
           id='track-footer-end-links'>
           <div className='u-padding-Vl'>
             <span className='u-relative'>
-              <Message message='footer.currently_viewing'
+              <Message pointer='footer.currently_viewing'
               className='u-text-light u-text-no-smoothing u-inline-block' />
               <Popover className='popover--country-select' toggle={
                   (<a href='#' className='u-text-semi u-link-invert'>
                     <Flag viewBox="0 0 640 480" width="64" height="48" country={region} className='flag-icon u-margin-Hs' alt={ region } />
                     <span className='popover-link popover-link--invert'>
-                      <Message message='country' />
+                      <Message pointer='country' />
                     </span>
                   </a>)
                 }>
@@ -222,9 +222,9 @@ class Footer extends React.Component {
                   <LinkExists to='europe'>
                     <hr className='u-margin-Vs' />
                     <div className='u-padding-Vxs u-padding-Hm'>
-                      <p className='u-color-p'><Message message='footer.europe_cta' />,&nbsp;</p>
-                      <p className='u-color-p'><Link to='europe'><Message message='footer.europe_link' /></Link>&nbsp;
-                        <Message message='footer.europe_description' /></p>
+                      <p className='u-color-p'><Message pointer='footer.europe_cta' />,&nbsp;</p>
+                      <p className='u-color-p'><Link to='europe'><Message pointer='footer.europe_link' /></Link>&nbsp;
+                        <Message pointer='footer.europe_description' /></p>
                     </div>
                   </LinkExists>
                 </ul>

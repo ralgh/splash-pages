@@ -11,8 +11,8 @@ export default class NotFound extends React.Component {
           <div className='not-found__container__center'>
             <div className='not-found__container__center__inner'>
               <div className='not-found__container__center__inner__container'>
-                <h1 className='not-found-header'><Message message='not_found.header' /></h1>
-                <p><Message message='not_found.explainer' /></p>
+                <h1 className='not-found-header'><Message pointer='not_found.header' /></h1>
+                <p><Message pointer='not_found.explainer' /></p>
               </div>
             </div>
           </div>
