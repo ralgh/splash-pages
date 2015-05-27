@@ -41,7 +41,7 @@ export default class ProspectForm extends React.Component {
   }
 
   static contextTypes = {
-    locales: PropTypes.locale,
+    currentLocale: PropTypes.locale,
     messages: React.PropTypes.object.isRequired,
   }
 
@@ -108,10 +108,10 @@ export default class ProspectForm extends React.Component {
   }
 
   render() {
-    const { messages, locales } = this.context;
+    const { messages, currentLocale } = this.context;
     const { prospectType } = this.props;
     const endpoints = prospectTypes[prospectType].endpoints;
-    const action = locales in endpoints ? endpoints[locales].action : endpoints.default.action;
+    const action = currentLocale in endpoints ? endpoints[currentLocale].action : endpoints.default.action;
     const size = this.state.responseData && this.state.responseData.size || 'default';
 
     return (

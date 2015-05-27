@@ -33,16 +33,16 @@ class Footer extends React.Component {
 
   static contextTypes = {
     routeName: PropTypes.string.isRequired,
-    locales: PropTypes.locale,
+    currentLocale: PropTypes.locale,
     config: PropTypes.object.isRequired,
     availableLocales: PropTypes.array.isRequired,
     availableCountryNames: PropTypes.object.isRequired,
   }
 
   render() {
-    const { routeName, locales, config, availableLocales, availableCountryNames } = this.context;
-    const availableLocalePages = buildAvailableLocalePages(locales, routeName, availableLocales, availableCountryNames);
-    const region = localeToRegion(locales);
+    const { routeName, currentLocale, config, availableLocales, availableCountryNames } = this.context;
+    const availableLocalePages = buildAvailableLocalePages(currentLocale, routeName, availableLocales, availableCountryNames);
+    const region = localeToRegion(currentLocale);
 
     return (
       <div className='page-footer u-color-invert u-padding-Tl'>
