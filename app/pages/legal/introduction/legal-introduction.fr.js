@@ -25,7 +25,7 @@ export default class LegalIntroductionFr extends React.Component {
             TVA non applicable.
           </p>
           <p className='para'>
-            Téléphone : <Message message='phone_full' /> et email : <Href to='email' className='u-link-color-p u-text-underline' />
+            Téléphone : <Message pointer='phone_full' /> et email : <Href to='email' className='u-link-color-p u-text-underline' />
           </p>
           <p className='para'>
             Les directeurs de la publication sont : Matt Robinson et Hiroki Takeuchi.

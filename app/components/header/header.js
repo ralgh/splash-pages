@@ -31,8 +31,8 @@ class Header extends React.Component {
         <LinkExists to='features'>
           <li>
             <Link to='features' id='track-nav-features' className='site-header__product-link u-link-clean'>
-              <span className='site-header__product-link-title u-text-semi'><Message message='features.nav_title' /></span>
-              <p className='u-color-p'><Message message='features.explainer' /></p>
+              <span className='site-header__product-link-title u-text-semi'><Message pointer='features.nav_title' /></span>
+              <p className='u-color-p'><Message pointer='features.explainer' /></p>
             </Link>
           </li>
           <hr className='u-margin-Vxs' />
@@ -40,8 +40,8 @@ class Header extends React.Component {
         <LinkExists to='pro'>
           <li>
             <Link to='pro' id='track-nav-pro' className='site-header__product-link u-link-clean'>
-              <span className='site-header__product-link-title u-text-semi'><Message message='pro.nav_title' /></span>
-              <p className='u-color-p'><Message message='pro.explainer' /></p>
+              <span className='site-header__product-link-title u-text-semi'><Message pointer='pro.nav_title' /></span>
+              <p className='u-color-p'><Message pointer='pro.explainer' /></p>
             </Link>
           </li>
         </LinkExists>
@@ -49,8 +49,8 @@ class Header extends React.Component {
           <hr className='u-margin-Vxs' />
           <li>
             <Link to='partners' id='track-nav-partners' className='site-header__product-link u-link-clean'>
-              <span className='site-header__product-link-title u-text-semi'><Message message='partners.nav_title' /></span>
-              <p className='u-color-p'><Message message='partners.explainer' /></p>
+              <span className='site-header__product-link-title u-text-semi'><Message pointer='partners.nav_title' /></span>
+              <p className='u-color-p'><Message pointer='partners.explainer' /></p>
             </Link>
           </li>
         </LinkExists>
@@ -76,7 +76,7 @@ class Header extends React.Component {
                       <div className={classNames('nav__item-link popover-link', {
                         'popover-link--invert': isInverted,
                       })}>
-                        <Message message='header.our_products' />
+                        <Message pointer='header.our_products' />
                       </div>
                     </a>)
                  }>
@@ -87,7 +87,7 @@ class Header extends React.Component {
                 <LinkExists to='pricing'>
                   <Link to='pricing' id='track-nav-pricing' className={linkClass}>
                     <div className='nav__item-link'>
-                      <Message message='pricing.nav_title' />
+                      <Message pointer='pricing.nav_title' />
                     </div>
                   </Link>
                 </LinkExists>
@@ -96,7 +96,7 @@ class Header extends React.Component {
                 <LinkExists to='stories'>
                   <Link to='stories' id='track-nav-stories' className={linkClass}>
                     <div className='nav__item-link'>
-                      <Message message='stories.nav_title' />
+                      <Message pointer='stories.nav_title' />
                     </div>
                   </Link>
                 </LinkExists>
@@ -107,7 +107,7 @@ class Header extends React.Component {
                     <div className={classNames('nav__item-link popover-link', {
                       'popover-link--invert': isInverted,
                     })}>
-                      <Message message='header.more' />
+                      <Message pointer='header.more' />
                     </div>
                   </a>)
                 }>
@@ -115,36 +115,36 @@ class Header extends React.Component {
                     <li className='u-text-semi'>
                      <LinkExists to='security'>
                        <Link to='security' id='track-nav-security' className='u-padding-Vxs u-padding-Hm u-block'
-                         message='security.nav_title' />
+                         pointer='security.nav_title' />
                      </LinkExists>
                     </li>
                     <li className='u-text-semi'>
                       <Href to='guides.path' id='track-nav-guides' className='u-padding-Vxs u-padding-Hm u-block'
-                        message='guides.nav_title' />
+                        pointer='guides.nav_title' />
                     </li>
                     <Translation locales='en-GB'>
                       <li className='u-text-semi'>
                         <a href='http://help.gocardless.com' id='track-nav-help' className='u-padding-Vxs u-padding-Hm u-block'>
-                          <Message message='help.nav_title' />
+                          <Message pointer='help.nav_title' />
                         </a>
                       </li>
                     </Translation>
                     <li className='u-text-semi'>
                      <LinkExists to='faq_merchants'>
-                       <Link to='faq_merchants' message='faq_merchants.link_title'
+                       <Link to='faq_merchants' pointer='faq_merchants.link_title'
                          id='track-nav-faq' className='u-padding-Vxs u-padding-Hm u-block' />
                      </LinkExists>
                     </li>
                     <hr className='u-margin-Vs' />
                     <li>
                       <LinkExists to='about'>
-                        <Link to='about' message='about.nav_title'
+                        <Link to='about' pointer='about.nav_title'
                           id='track-nav-about' className='u-padding-Vxs u-padding-Hm u-block' />
                       </LinkExists>
                     </li>
                     <li>
                       <LinkExists to='jobs'>
-                        <Link to='jobs' message='jobs.nav_title'
+                        <Link to='jobs' pointer='jobs.nav_title'
                           id='track-nav-jobs' className='u-padding-Vxs u-padding-Hm u-block' />
                       </LinkExists>
                     </li>
@@ -161,7 +161,7 @@ class Header extends React.Component {
                     'btn--invert-hollow': isInverted,
                     'btn--hollow': !isInverted,
                   })}>
-                    <Message message='header.login_btn' />
+                    <Message pointer='header.login_btn' />
                   </a>
                 </li>
               </Translation>

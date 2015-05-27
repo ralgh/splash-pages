@@ -15,8 +15,8 @@ export default class FaqSidebar extends React.Component {
           {this.props.children}
           <hr className='u-size-11of12' />
           <p className='para u-padding-Txs'>
-            <Message message='faq.sidebar' />&nbsp;
-            <Message message='phone_full' />
+            <Message pointer='faq.sidebar' />&nbsp;
+            <Message pointer='phone_full' />
           </p>
         </div>
       </div>

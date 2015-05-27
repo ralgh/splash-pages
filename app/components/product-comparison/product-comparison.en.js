@@ -101,7 +101,7 @@ export default class ProductComparisonEn extends React.Component {
             </Translation>
             <tr className='comparison-table__row'>
               <td className='comparison-table__cell u-text-end'>Supports businesses in...</td>
-              <td className='comparison-table__cell'><Message message='country' /></td>
+              <td className='comparison-table__cell'><Message pointer='country' /></td>
               <td className='comparison-table__cell'>Worldwide</td>
             </tr>
             <Translation locales={['en']} exclude={['en-GB']}>
@@ -131,13 +131,13 @@ export default class ProductComparisonEn extends React.Component {
             <tr className='comparison-table__row'>
               <td className='comparison-table__cell u-text-end'>Monthly fee</td>
               <td className='comparison-table__cell'>None</td>
-              <td className='comparison-table__cell'><Message message='pricing.pro_monthly_fee' /></td>
+              <td className='comparison-table__cell'><Message pointer='pricing.pro_monthly_fee' /></td>
             </tr>
             <tr className='comparison-table__row'>
               <td className='comparison-table__cell u-text-end'>Transaction fees</td>
-              <td className='comparison-table__cell'><Message message='pricing.per_transaction_amount_normal' /> up
-              to a maximum of <Message message="pricing.cost_cap" /></td>
-              <td className='comparison-table__cell'><Message message='pricing.pro_cost_per_transaction' /> depending on volume</td>
+              <td className='comparison-table__cell'><Message pointer='pricing.per_transaction_amount_normal' /> up
+              to a maximum of <Message pointer="pricing.cost_cap" /></td>
+              <td className='comparison-table__cell'><Message pointer='pricing.pro_cost_per_transaction' /> depending on volume</td>
             </tr>
           </tbody>
         </table>

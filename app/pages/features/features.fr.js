@@ -66,7 +66,7 @@ export default class FeaturesFr extends React.Component {
                     'btn btn--small btn--hollow u-pull-end u-text-transform-none ' +
                     'u-text-light u-text-xxs u-text-no-smoothing u-margin-Rs'
                   }>
-                  <Message message='cta.pro' />
+                  <Message pointer='cta.pro' />
                 </Link>
               </div>
               <hr className='u-margin-An' />

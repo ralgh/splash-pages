@@ -27,7 +27,7 @@ export default class FaqCustomersPage extends React.Component {
     const faqNav = pages.map(function(page) {
       return (<li key={page.routeConfig.name}>
         <Link to={page.localeConfig.path} className='nav-tabs__link u-text-no-smoothing'>
-          <Message message={`${page.routeConfig.name}.nav_title`} />
+          <Message pointer={`${page.routeConfig.name}.nav_title`} />
         </Link>
       </li>);
     });

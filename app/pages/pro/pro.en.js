@@ -55,7 +55,7 @@ export default class ProEn extends React.Component {
                 'sticky-nav__cta btn btn--small btn--hollow u-pull-end ' +
                 'u-text-transform-none u-text-light u-text-xxs u-text-no-smoothing'
               }>
-                <Message message='cta.pro' />
+                <Message pointer='cta.pro' />
               </Link>
               <a href='https://developer.gocardless.com/pro/' id='track-sticky-nav-docs'
               className='u-pull-end u-margin-Txxs u-margin-Rm'>
@@ -219,7 +219,7 @@ export default class ProEn extends React.Component {
                     <PhoneIcon className='svg-icon__image u-fill-dark-gray' />
                   </figure>
                   <h2 className='u-text-heading u-color-heading u-text-l u-text-light u-margin-Tm'>
-                    <Message message='phone_full' />
+                    <Message pointer='phone_full' />
                   </h2>
                   <div className='u-center'>
                     <p className='u-text-s u-color-p u-margin-Ts'>
@@ -228,7 +228,7 @@ export default class ProEn extends React.Component {
                   </div>
                   <Link to='contact_sales' query={{ s: 'pro' }} id='track-cta-contact-sales'
                   className='btn btn--hollow u-margin-Tm'>
-                    <Message message='cta.pro' />
+                    <Message pointer='cta.pro' />
                   </Link>
                 </div>
               </div>
@@ -311,7 +311,7 @@ export default class ProEn extends React.Component {
               <div className='site-container u-padding-Vxl'>
                 <div className='u-size-2of3 u-center'>
                   <h2 className='u-text-heading u-color-heading u-text-light u-text-xl'>
-                    <Message message='pricing.pro_cost_per_transaction' /> per transaction
+                    <Message pointer='pricing.pro_cost_per_transaction' /> per transaction
                   </h2>
                   <p className='u-text-s u-color-p u-margin-Vxs'>
                     Competitive rates for businesses of any size.<br />
@@ -330,14 +330,14 @@ export default class ProEn extends React.Component {
                 </h2>
                 <Link to='contact_sales' query={{ s: 'pro' }}
                 id='track-cta-contact-sales' className='btn u-margin-Rm'>
-                  <Message message='cta.pro' />
+                  <Message pointer='cta.pro' />
                 </Link>
                 <a href='https://manage-sandbox.gocardless.com/registrations/create'
                 id='track-cta-try-pro-dash' className='btn btn--hollow'>Try Pro for free</a>
                 <hr className='u-margin-Vxxl' />
                 <p className='u-color-p'>
                   <strong>Want to talk to someone first?</strong><br />
-                  Call our payments experts on <Message message='phone_full' /><br />
+                  Call our payments experts on <Message pointer='phone_full' /><br />
                   We're available 9am - 6pm Monday to Friday
                 </p>
               </div>
