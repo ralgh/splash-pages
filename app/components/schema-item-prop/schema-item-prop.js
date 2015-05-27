@@ -7,7 +7,7 @@ export default class SchemaItemProp extends React.Component {
   displayName = 'SchemaItemProp'
 
   static propTypes = {
-    message: PropTypes.string,
+    pointer: PropTypes.string,
     itemProp: PropTypes.string.isRequired,
     tagName: PropTypes.string,
     content: PropTypes.string,
@@ -24,12 +24,12 @@ export default class SchemaItemProp extends React.Component {
 
   render() {
     const { messages } = this.context;
-    var message;
-    if (this.props.message) {
-      message = getMessage(messages, this.props.message);
+    var pointer;
+    if (this.props.pointer) {
+      pointer = getMessage(messages, this.props.pointer);
     }
     const tagName = this.props.tagName;
-    const content = message || this.props.content;
+    const content = pointer || this.props.content;
     const props = assign({}, this.props, {
       content: content,
       tagName: null,
