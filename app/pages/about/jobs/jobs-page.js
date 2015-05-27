@@ -15,13 +15,13 @@ export default class JobsPage extends React.Component {
   }
 
   static contextTypes = {
-    locales: PropTypes.locale,
+    currentLocale: PropTypes.locale,
     availableLocales: PropTypes.array.isRequired,
   }
 
   render() {
-    const { locales, availableLocales } = this.context;
-    const pages = filterRouteByCategory('jobs', locales, availableLocales);
+    const { currentLocale, availableLocales } = this.context;
+    const pages = filterRouteByCategory('jobs', currentLocale, availableLocales);
 
     const categories = pages.reduce(function(memo, job) {
       const category = rest(job.routeConfig.category.split('.')).join('.');
@@ -33,12 +33,12 @@ export default class JobsPage extends React.Component {
     const jobsNav = Object.keys(categories).map(function(category) {
       return [
         (<li key={category} className='u-text-heading u-text-xs u-text-upcase u-color-p u-padding-Tm u-padding-Bs'>
-          <Message message={`jobs.${category}`} />
+          <Message pointer={`jobs.${category}`} />
         </li>),
         categories[category].map(function(job) {
           return (<li key={job.routeConfig.name}>
             <Link to={job.localeConfig.path} className='nav-tabs__link u-text-no-smoothing'>
-              <Message message={`${job.routeConfig.name}.title`} />
+              <Message pointer={`${job.routeConfig.name}.title`} />
             </Link>
           </li>);
         }),
@@ -52,7 +52,7 @@ export default class JobsPage extends React.Component {
         <div className='site-container u-padding-Vxxl u-relative'>
           <div className='u-padding-Vxl'>
             <h2 className='u-text-heading u-color-heading u-text-l u-text-light'>
-              <Message message='jobs.open_positions' />
+              <Message pointer='jobs.open_positions' />
             </h2>
             <div className='grid'>
               <div className='grid__cell u-size-1of3'>

@@ -27,8 +27,8 @@ export default class PartnersEn extends React.Component {
           <div className='u-padding-Vxl'>
             <h2 className='u-text-heading u-color-heading u-text-light'>
               No complex bureaucracy or special charges, just our usual
-              pricing:<br /> <Message message='pricing.per_transaction_amount_normal' /> per transaction,
-              capped at <Message message="pricing.cost_cap" />.
+              pricing:<br /> <Message pointer='pricing.per_transaction_amount_normal' /> per transaction,
+              capped at <Message pointer="pricing.cost_cap" />.
             </h2>
             <div className='site-container u-padding-Txxl'>
               <div className='grid u-padding-Txl'>

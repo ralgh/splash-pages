@@ -5,7 +5,7 @@ export default class Message extends React.Component {
   displayName = 'Message'
 
   static propTypes = {
-    message: React.PropTypes.string.isRequired,
+    pointer: React.PropTypes.string.isRequired,
   }
 
   static contextTypes = {
@@ -15,7 +15,7 @@ export default class Message extends React.Component {
   render() {
     return (
       <span>
-        { getMessage(this.context.messages, this.props.message) }
+        { getMessage(this.context.messages, this.props.pointer) }
       </span>
     );
   }

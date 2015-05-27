@@ -7,7 +7,7 @@ export default class Link extends Component {
   displayName = 'Link'
 
   static propTypes = {
-    message: PropTypes.string,
+    pointer: PropTypes.string,
     children: PropTypes.node,
     to: PropTypes.string.isRequired,
     activeClassName: PropTypes.string,
@@ -20,8 +20,8 @@ export default class Link extends Component {
   render() {
     return (
       <RouterLink {...this.props} activeClassName='is-active'>
-        { this.props.message &&
-          (<Message message={this.props.message} />) || this.props.children }
+        { this.props.pointer &&
+          (<Message pointer={this.props.pointer} />) || this.props.children }
       </RouterLink>
     );
   }

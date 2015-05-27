@@ -16,18 +16,18 @@ export default class FaqMerchantsPage extends React.Component {
   };
 
   static contextTypes = {
-    locales: PropTypes.locale,
+    currentLocale: PropTypes.locale,
     availableLocales: PropTypes.array.isRequired,
   }
 
   render() {
-    const { locales, availableLocales } = this.context;
-    const pages = filterRouteByCategory('faq.merchants', locales, availableLocales);
+    const { currentLocale, availableLocales } = this.context;
+    const pages = filterRouteByCategory('faq.merchants', currentLocale, availableLocales);
 
     const faqNav = pages.map(function(page) {
       return (<li key={page.routeConfig.name}>
         <Link to={page.localeConfig.path} className='nav-tabs__link u-text-no-smoothing'>
-          <Message message={`${page.routeConfig.name}.nav_title`} />
+          <Message pointer={`${page.routeConfig.name}.nav_title`} />
         </Link>
       </li>);
     });

@@ -29,7 +29,7 @@ export default class Translation extends React.Component {
   }
 
   static contextTypes = {
-    locales: PropTypes.locale,
+    currentLocale: PropTypes.locale,
     routeLocales: PropTypes.array.isRequired,
     routeName: PropTypes.string.isRequired,
   }
@@ -37,7 +37,7 @@ export default class Translation extends React.Component {
   render() {
     const locales = flatten([this.props.locales]);
     const exclude = flatten([this.props.exclude]);
-    const { locales: currentLocale, routeLocales, routeName } = this.context;
+    const { currentLocale, routeLocales, routeName } = this.context;
     const translationLocales = expandLangLocales(locales, routeLocales);
     validateLocale(translationLocales, routeLocales, routeName);
 

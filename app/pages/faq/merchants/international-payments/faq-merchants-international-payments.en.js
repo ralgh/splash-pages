@@ -84,7 +84,7 @@ export default class FaqMerchantsInternationalPayments extends React.Component {
 
         <Translation locales='en-IE'>
           <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
-            Will international payments cost the same as in <Message message='country' />?
+            Will international payments cost the same as in <Message pointer='country' />?
           </h3>
           <p className='para'>
             In Eurozone countries, we charge 1% per transaction, capped at €2. In the UK, we charge 1% per transaction (capped at £2).

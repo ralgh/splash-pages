@@ -34,7 +34,7 @@ export default class FaqCustomersRefunds extends React.Component {
         <p className='para'>
           Let us know immediately by emailing&nbsp;
           <Href to='email' className='u-link-color-p u-text-underline' itemProp='email' /> or
-          calling <Message message='phone_local' />.
+          calling <Message pointer='phone_local' />.
         </p>
         <p className='para'>
           We can investigate the matter further and arrange for a full refund under the&nbsp;
@@ -46,7 +46,7 @@ export default class FaqCustomersRefunds extends React.Component {
         </h3>
         <p className='para'>
           Email us at <Href to='email' className='u-link-color-p u-text-underline' itemProp='email' /> or
-          call on <Message message='phone_local' /> and we can cancel your Direct Debit immediately.
+          call on <Message pointer='phone_local' /> and we can cancel your Direct Debit immediately.
         </p>
         <p className='para'>
           You can also cancel your Direct Debit directly with your bank or building society.

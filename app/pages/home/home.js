@@ -16,29 +16,29 @@ export default class Home extends React.Component {
             <div className='page-hero__inner'>
               <div className='page-hero__text'>
                 <h1 className='u-text-heading u-color-invert u-text-center u-text-xl u-text-light'>
-                  <Message message='hero.header' />
+                  <Message pointer='hero.header' />
                 </h1>
                 <div className={'u-text-heading u-text-center u-color-invert ' +
                                 'u-text-m u-text-light u-margin-Txxs u-text-no-smoothing page-hero__text__desc'}>
-                  <Message message='hero.desc' />
+                  <Message pointer='hero.desc' />
                 </div>
                 <div className='u-text-center u-margin-Tl'>
                   <Translation locales='en'>
                     <a href='#learn-more' id='track-hero-learn-more' className='btn btn--invert btn--move u-size-2of12'>
-                      <Message message='cta.more' />
+                      <Message pointer='cta.more' />
                     </a>
                     <Translation locales='en-GB'>
                       <a href='/merchants/new'
                         className='btn btn--invert-hollow btn-move u-size-2of12 u-margin-Lm'
                         id='track-hero-merchants-new'>
-                        <Message message='cta.pro_signup' />
+                        <Message pointer='cta.pro_signup' />
                       </a>
                     </Translation>
                   </Translation>
 
                   <Translation locales='fr'>
                     <a href='#learn-more' id='track-hero-learn-more' className='btn btn--invert btn--move u-size-3of12'>
-                      <Message message='cta.more' />
+                      <Message pointer='cta.more' />
                     </a>
                   </Translation>
                 </div>

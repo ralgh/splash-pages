@@ -16,7 +16,7 @@ if (process.env.BROWSER) {
 
 function renderApp() {
   const appState = window.app;
-  const routes = getRoutes(appState.locales, appState.availableLocales);
+  const routes = getRoutes(appState.currentLocale, appState.availableLocales);
   const router = Router.create({
     routes: routes,
     location: Router.HistoryLocation,

@@ -24,7 +24,7 @@ export default class FaqCustomers extends React.Component {
         <p className='para'>
           If you cannot find this or do not recognise the name email us at&nbsp;
           <Href to='email' className='u-link-color-p u-text-underline' itemProp='email' />
-          &nbsp;or call us on <Message message='phone_local' /> and we will help you identify the transaction.
+          &nbsp;or call us on <Message pointer='phone_local' /> and we will help you identify the transaction.
         </p>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
@@ -63,7 +63,7 @@ export default class FaqCustomers extends React.Component {
         <p className='para'>
           For further assistance you can also email us at&nbsp;
           <Href to='email' className='u-link-color-p u-text-underline' itemProp='email' />
-          &nbsp;or call on <Message message='phone_local' />.
+          &nbsp;or call on <Message pointer='phone_local' />.
         </p>
       </FaqCustomersPage>
     );
