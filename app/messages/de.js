@@ -122,4 +122,16 @@ export default {
     nav_title: 'Handbuch',
     path: '/handbuch',
   },
+  legal: {
+    title: 'Legal',
+    nav_title: 'Impressum',
+    footer_nav_title: 'Impressum',
+    description: 'Legal',
+    sidebar_text: 'Got a question? Call our support team on',
+  },
+  legal_privacy: {
+    title: 'Datenschutzerklärung',
+    nav_title: 'Datenschutzerklärung',
+    description: 'Datenschutzerklärung',
+  },
 };

@@ -319,6 +319,9 @@ export const config = Immutable.fromJS([
       fr: {
         path: '/legal',
       },
+      de: {
+        path: '/legal',
+      },
     },
   ],
   [LegalCustomers, { name: 'legal_customers', category: 'legal' }, {
@@ -372,6 +375,9 @@ export const config = Immutable.fromJS([
       },
       fr: {
         path: '/legal/politique-de-confidentialite',
+      },
+      de: {
+        path: '/legal/privacy',
       },
     },
   ],
