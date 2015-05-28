@@ -26,8 +26,7 @@ export default class PartnersDe extends React.Component {
         <div className='site-container u-padding-Vxxl u-text-center'>
           <div className='u-padding-Vxl'>
             <h2 className='u-text-heading u-color-heading u-text-light'>
-              Keine Bürokratie oder extra Gebühren, nur unsere einfachen Preise:<br /> <Message pointer='pricing.per_transaction_amount_normal' /> pro Zahlung,
-              gedeckelt bei <Message pointer="pricing.cost_cap" />.
+              Keine Bürokratie oder extra Gebühren, nur unsere einfachen Preise.<br />
             </h2>
             <div className='site-container u-padding-Txxl'>
               <div className='grid u-padding-Txl'>

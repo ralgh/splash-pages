@@ -21,7 +21,7 @@ export default class LegalIntroductionDe extends React.Component {
             Vereinigtes Königreich
           </p>
           <p className='para'>
-            Telefon: <Message pointer='phone_full' /> <br/>
+            Telefon: <Message message='phone_full' /> <br/>
             E-Mail : <Href to='email' className='u-link-color-p u-text-underline' />
           </p>
           <p className='para'>
@@ -31,7 +31,7 @@ export default class LegalIntroductionDe extends React.Component {
             GoCardless ist registriert im britischen Handelsregister Companies House mit der Nummer 07495895.
             GoCardless ist eingetragen im Register der britischen Finanzaufsicht FCA unter der Registrierungsnummer 597190, und authorisiert als Zahlungsdienst innerhalb der Europäischen Union.
           GoCardless ist in der britischen Steuerbehörde HMRC mit der Registrierungsnummer 12642480 eingetragen. 
-          </p>
+          </p>  
       </Translation>
     );
   }
