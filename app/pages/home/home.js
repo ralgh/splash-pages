@@ -4,6 +4,7 @@ import Message from '../../components/message/message';
 import InlineMessage from '../../components/inline-message/inline-message';
 import HomeEn from './home.en';
 import HomeFr from './home.fr';
+import HomeDe from './home.de';
 import Translation from '../../components/translation/translation';
 
 export default class Home extends React.Component {
@@ -24,22 +25,19 @@ export default class Home extends React.Component {
                   <Message pointer='hero.desc' />
                 </div>
                 <div className='u-text-center u-margin-Tl'>
-                  <Translation locales='en'>
+                  <Translation locales={['en','fr','de']} exclude={['en-GB']}>
+                    <a href='#learn-more' id='track-hero-learn-more' className='btn btn--invert btn--move u-size-3of12'>
+                      <Message pointer='cta.more' />
+                    </a>
+                  </Translation>
+                  <Translation locales='en-GB'>
                     <a href='#learn-more' id='track-hero-learn-more' className='btn btn--invert btn--move u-size-2of12'>
                       <Message pointer='cta.more' />
                     </a>
-                    <Translation locales='en-GB'>
-                      <a href='/merchants/new'
-                        className='btn btn--invert-hollow btn-move u-size-2of12 u-margin-Lm'
-                        id='track-hero-merchants-new'>
-                        <Message pointer='cta.pro_signup' />
-                      </a>
-                    </Translation>
-                  </Translation>
-
-                  <Translation locales='fr'>
-                    <a href='#learn-more' id='track-hero-learn-more' className='btn btn--invert btn--move u-size-3of12'>
-                      <Message pointer='cta.more' />
+                    <a href='/merchants/new'
+                      className='btn btn--invert-hollow btn-move u-size-2of12 u-margin-Lm'
+                      id='track-hero-merchants-new'>
+                      <Message pointer='cta.pro_signup' />
                     </a>
                   </Translation>
                 </div>
@@ -49,6 +47,7 @@ export default class Home extends React.Component {
         </div>
         <HomeFr />
         <HomeEn />
+        <HomeDe />
       </Page>
     );
   }
