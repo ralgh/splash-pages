@@ -76,7 +76,7 @@ export default class HomeDe extends React.Component {
                 Tausende Händler vertrauen uns
               </h2>
               <p className='u-text-s u-color-p u-margin-Txs'>
-                <Message message="home.trusted_message_scale" />
+                <Message pointer="home.trusted_message_scale" />
                 <br />
                 Egal, wie groß Ihr Unternehmen ist, GoCardless funktioniert für Sie.
               </p>

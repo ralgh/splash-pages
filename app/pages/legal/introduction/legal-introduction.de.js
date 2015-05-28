@@ -21,7 +21,7 @@ export default class LegalIntroductionDe extends React.Component {
             Vereinigtes Königreich
           </p>
           <p className='para'>
-            Telefon: <Message message='phone_full' /> <br/>
+            Telefon: <Message pointer='phone_full' /> <br/>
             E-Mail : <Href to='email' className='u-link-color-p u-text-underline' />
           </p>
           <p className='para'>

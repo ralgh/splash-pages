@@ -55,7 +55,7 @@ export default class ProDe extends React.Component {
                 'sticky-nav__cta btn btn--small btn--hollow u-pull-end ' +
                 'u-text-transform-none u-text-light u-text-xxs u-text-no-smoothing'
               }>
-                <Message message='cta.pro' />
+                <Message pointer='cta.pro' />
               </Link>
               <a href='https://developer.gocardless.com/pro/' id='track-sticky-nav-docs'
               className='u-pull-end u-margin-Txxs u-margin-Rm'>
@@ -191,7 +191,7 @@ export default class ProDe extends React.Component {
                     <PhoneIcon className='svg-icon__image u-fill-dark-gray' />
                   </figure>
                   <h2 className='u-text-heading u-color-heading u-text-l u-text-light u-margin-Tm'>
-                    <Message message='phone_full' />
+                    <Message pointer='phone_full' />
                   </h2>
                   <div className='u-center'>
                     <p className='u-text-s u-color-p u-margin-Ts'>
@@ -200,7 +200,7 @@ export default class ProDe extends React.Component {
                   </div>
                   <Link to='contact_sales' query={{ s: 'pro' }} id='track-cta-contact-sales'
                   className='btn btn--hollow u-margin-Tm'>
-                    <Message message='cta.pro' />
+                    <Message pointer='cta.pro' />
                   </Link>
                 </div>
               </div>
@@ -259,7 +259,7 @@ export default class ProDe extends React.Component {
               <div className='site-container u-padding-Vxl'>
                 <div className='u-size-2of3 u-center'>
                   <h2 className='u-text-heading u-color-heading u-text-light u-text-xl'>
-                    <Message message='pricing.pro_cost_per_transaction' /> pro Zahlung                  </h2>
+                    <Message pointer='pricing.pro_cost_per_transaction' /> pro Zahlung                  </h2>
                   <p className='u-text-s u-color-p u-margin-Vxs'>
                     Wettbewerbsfähige Preise für Unternehmen aller Größen.<br />
                   </p>
@@ -277,14 +277,14 @@ export default class ProDe extends React.Component {
                 </h2>
                 <Link to='contact_sales' query={{ s: 'pro' }}
                 id='track-cta-contact-sales' className='btn u-margin-Rm'>
-                  <Message message='cta.pro' />
+                  <Message pointer='cta.pro' />
                 </Link>
                 <a href='https://manage-sandbox.gocardless.com/registrations/create'
                 id='track-cta-try-pro-dash' className='btn btn--hollow'>Testen Sie Pro gratis</a>
                 <hr className='u-margin-Vxxl' />
                 <p className='u-color-p'>
                   <strong>Sie möchten mit jemandem sprechen?</strong><br />
-                  Rufen Sie unsere Experten an unter <Message message='phone_full' /><br />
+                  Rufen Sie unsere Experten an unter <Message pointer='phone_full' /><br />
                   Wir sind zwischen 10.00 und 19.00 Uhr für Sie da, Montag bis Freitag.
                 </p>
               </div>
