@@ -259,7 +259,8 @@ export default class ProDe extends React.Component {
               <div className='site-container u-padding-Vxl'>
                 <div className='u-size-2of3 u-center'>
                   <h2 className='u-text-heading u-color-heading u-text-light u-text-xl'>
-                    <Message pointer='pricing.pro_cost_per_transaction' /> pro Zahlung                  </h2>
+                    <Message pointer='pricing.pro_cost_per_transaction' /> pro Zahlung
+                  </h2>
                   <p className='u-text-s u-color-p u-margin-Vxs'>
                     Wettbewerbsfähige Preise für Unternehmen aller Größen.<br />
                   </p>
