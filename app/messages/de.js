@@ -37,7 +37,7 @@ export default {
   },
   phone_full: '+44 20 7183 8674',
   phone_local: '+44 20 7183 8674',
-  email: 'help@gocardless.com',
+  email: 'deutschland@gocardless.com',
   documentation_link: 'https://developer.gocardless.com/pro',
   prospect_form: {
     name_label: 'Ihr Name',

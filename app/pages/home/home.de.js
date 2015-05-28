@@ -2,14 +2,10 @@ import React from 'react';
 import Translation from '../../components/translation/translation';
 import Message from '../../components/message/message';
 import Link from '../../components/link/link';
-
 import MobileIcon from '../../icons/svg/mobile';
 import CheckListIcon from '../../icons/svg/checklist';
-import MoneyFlowerIcon from '../../icons/svg/money-flower';
 import TickSquareIcon from '../../icons/svg/tick-square';
-import ProIcon from '../../icons/svg/pro';
-import ShopIcon from '../../icons/svg/shop';
-import IntegrationsIcon from '../../icons/svg/integrations';
+
 
 export default class HomeDe extends React.Component {
   displayName = 'HomeDe'

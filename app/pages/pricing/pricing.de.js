@@ -66,7 +66,8 @@ export default class PricingDe extends React.Component {
               </div>
               <p className='u-color-p'>
                 Ja, die Gebühr pro Zahlung verringert sich ab 1000 Zahlungen im Monat.
-                Um mehr darüber zu erfahren, kontaktieren Sie uns bitte <Link to='contact_sales' className='u-link-color-p u-text-underline'>hier</Link>.
+                Um mehr darüber zu erfahren, kontaktieren Sie uns
+                bitte <Link to='contact_sales' className='u-link-color-p u-text-underline'>hier</Link>.
               </p>
             </div>
             <div className='grid__cell u-size-1of2 u-padding-Bm u-padding-Rm'>

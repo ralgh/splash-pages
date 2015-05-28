@@ -14,7 +14,8 @@ export default class LegalPrivacyDe extends React.Component {
             <strong>Zuletzt geändert:</strong> 30. November 2012
           </p>
           <p className='para'>
-            Es kann passieren, dass wir unsere Datenschutzerklärung von Zeit zu Zeit abändern. Bitte besuchen Sie diese Seite regelmäßig, um über signifikante Änderungen im Umgang mit Ihren persönlichen Daten informiert zu bleiben. 
+            Es kann passieren, dass wir unsere Datenschutzerklärung von Zeit zu Zeit abändern. Bitte besuchen Sie diese Seite regelmäßig,
+            um über signifikante Änderungen im Umgang mit Ihren persönlichen Daten informiert zu bleiben.
             Wir versuchen unsere Kunden frühzeitig über geplante Änderungen zu informieren.
           </p>
         </div>

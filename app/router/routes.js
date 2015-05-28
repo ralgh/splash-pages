@@ -89,7 +89,7 @@ export const config = Immutable.fromJS([
       },
       de: {
         path: '/',
-      }
+      },
     },
   ],
   [Pricing, { name: 'pricing' }, {
@@ -189,7 +189,7 @@ export const config = Immutable.fromJS([
       },
       de: {
         path: '/ueber-uns',
-      }
+      },
     },
   ],
   [Team, { name: 'team' }, {
@@ -396,7 +396,7 @@ export const config = Immutable.fromJS([
       },
       de: {
         path: '/partner',
-      }
+      },
     },
   ],
   [PartnersClearBooks, { name: 'partners_clearbooks' }, {

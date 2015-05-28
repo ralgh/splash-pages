@@ -1,6 +1,5 @@
 import React from 'react';
 import Translation from '../../../components/translation/translation';
-import Link from '../../../components/link/link';
 import { team } from '../../../constants/team';
 
 export default class TeamDe extends React.Component {

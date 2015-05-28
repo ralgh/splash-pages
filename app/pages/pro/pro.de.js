@@ -1,7 +1,6 @@
 import React from 'react';
 import Translation from '../../components/translation/translation';
 import Message from '../../components/message/message';
-import ProductComparison from '../../components/product-comparison/product-comparison';
 import StickyNav from '../../components/sticky-nav/sticky-nav';
 import Tabs from '../../components/tabs/tabs';
 import SecurityIcon from '../../icons/svg/security';
@@ -22,7 +21,8 @@ export default class ProDe extends React.Component {
             <div className='site-container page-hero__container'>
               <div className='page-hero__inner'>
                 <div className='page-hero__text'>
-                  <h1 className='u-text-heading u-color-invert u-text-center u-text-xl u-text-light'>100% Kontrolle über Ihre Lastschriften</h1>
+                  <h1 className='u-text-heading u-color-invert u-text-center u-text-xl u-text-light'>100% Kontrolle über
+                  Ihre Lastschriften</h1>
                   <p className='u-text-heading u-text-center u-color-invert u-text-m u-text-light u-margin-Txxs u-text-no-smoothing'>
                     Eine bahnbrechende Platform, um Ihr Netzwerk<br />für wiederkehrende Zahlungen zu bauen
                   </p>
@@ -99,7 +99,8 @@ export default class ProDe extends React.Component {
                       Eine einfache, moderne API
                     </div>
                     <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
-                      Die komplette Dokumentation zu GoCardless Pro ist kostenlos in unseren <a href='https://developer.gocardless.com/pro' id='track-overview-docs'>API docs</a> verfügbar.
+                      Die komplette Dokumentation zu GoCardless Pro ist kostenlos in
+                      unseren <a href='https://developer.gocardless.com/pro' id='track-overview-docs'>API docs</a> verfügbar.
                       Wir haben hart daran gearbeitet, die Integration für Sie so einfach wie möglich zu gestalten.
                     </p>
                   </div>
@@ -112,7 +113,8 @@ export default class ProDe extends React.Component {
                       Funktioniert überall
                     </div>
                     <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
-                      Wir machen es unglaublich einfach auf der Basis von GoCardless Pro zu entwickeln, sodass Sie die nächste Generation Ihrer Webseite oder App kreieren können.
+                      Wir machen es unglaublich einfach auf der Basis von GoCardless Pro zu entwickeln,
+                      sodass Sie die nächste Generation Ihrer Webseite oder App kreieren können.
                     </p>
                   </div>
                   <div className='grid__cell u-size-1of2 u-text-center u-margin-Txxl u-padding-Txxl'>
@@ -130,8 +132,9 @@ export default class ProDe extends React.Component {
                   </div>
                 </div>
                 <p className='u-color-p u-margin-Txxl u-padding-Tm'>
-                  Sie möchten die API und unser Online Dashboard ausprobieren? <a href='https://manage-sandbox.gocardless.com/registrations/create'>
-                    Registrieren Sie sich für einen gratis Testaccount.
+                  Sie möchten die API und unser Online Dashboard
+                  ausprobieren? <a href='https://manage-sandbox.gocardless.com/registrations/create'>
+                  Registrieren Sie sich für einen gratis Testaccount.
                   </a>
                 </p>
               </div>
@@ -175,7 +178,8 @@ export default class ProDe extends React.Component {
                   </h2>
                   <div className='u-center'>
                     <p className='u-text-s u-color-p u-margin-Ts'>
-                      GoCardless Pro ist der einzige Service, der es Ihnen ermöglicht Lastschrift Zahlungen in Deutschland und innerhalb der Eurozone mit nur einer einzigen Integration zu empfangen.
+                      GoCardless Pro ist der einzige Service, der es Ihnen ermöglicht Lastschrift
+                      Zahlungen in Deutschland und innerhalb der Eurozone mit nur einer einzigen Integration zu empfangen.
                       Mit unserer API können Sie Zahlungen von über 500 Millionen Menschen in 22 europäischen Ländern annehmen.
                     </p>
                   </div>

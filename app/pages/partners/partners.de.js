@@ -1,12 +1,9 @@
 import React from 'react';
 import Translation from '../../components/translation/translation';
-import Message from '../../components/message/message';
 import ProIcon from '../../icons/svg/pro';
 import CustomerIcon from '../../icons/svg/customer';
 import AddPartnerIcon from '../../icons/svg/add-partner';
-import Link from '../../components/link/link';
 import Href from '../../components/href/href';
-import PartnersLink from './partners-link';
 
 export default class PartnersDe extends React.Component {
   displayName = 'PartnersDe'
@@ -19,7 +16,7 @@ export default class PartnersDe extends React.Component {
             <h1 className='u-text-heading u-color-invert u-text-light u-padding-Tm'>Helfen Sie Ihren Kunden Zahlungen zu empfangen</h1>
             <p className='u-text-heading-light u-text-m u-color-invert u-padding-Vs'>
               Wir ermöglichen Zahlungen für große und kleine Software Anbieter.<br />
-              Wenn Ihre Kunden wiederkehrende Zahlungen einsammeln, dann sollten Sie mit uns arbeiten. 
+              Wenn Ihre Kunden wiederkehrende Zahlungen einsammeln, dann sollten Sie mit uns arbeiten.
             </p>
           </div>
         </div>
@@ -39,7 +36,7 @@ export default class PartnersDe extends React.Component {
                     Unterscheiden Sie sich
                   </h2>
                   <p className='u-size-2of3 u-center u-color-p u-margin-Vxs'>
-                    Stechen Sie aus der Konkurrenz heraus und bieten Sie Ihren Kunden ein nahtloses Lastschrift Erlebnis. 
+                    Stechen Sie aus der Konkurrenz heraus und bieten Sie Ihren Kunden ein nahtloses Lastschrift Erlebnis.
                   </p>
                 </div>
                 <div className='grid__cell u-text-center u-size-1of3'>
@@ -51,7 +48,8 @@ export default class PartnersDe extends React.Component {
                     Begeistern Sie Ihre Kunden
                   </h2>
                   <p className='u-size-2of3 u-center u-color-p u-margin-Vxs'>
-                    Vereinfachen Sie das Leben Ihrer Kunden und erhöhen Sie deren Loyalität, indem Sie Zahlungen über Ihre Software vermehren.
+                    Vereinfachen Sie das Leben Ihrer Kunden und erhöhen Sie deren Loyalität,
+                    indem Sie Zahlungen über Ihre Software vermehren.
                   </p>
                 </div>
                 <div className='grid__cell u-text-center u-size-1of3'>
@@ -63,7 +61,7 @@ export default class PartnersDe extends React.Component {
                     Vergrößern Sie Ihr Business
                   </h2>
                   <p className='u-size-2of3 u-center u-color-p u-margin-Vxs'>
-                    Als GoCardless Partner verdienen Sie Kommission auf alle Zahlungen oder ziehen Zahlungen nahtlos über uns ein. 
+                    Als GoCardless Partner verdienen Sie Kommission auf alle Zahlungen oder ziehen Zahlungen nahtlos über uns ein.
                   </p>
                 </div>
               </div>
