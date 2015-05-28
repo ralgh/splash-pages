@@ -8,7 +8,7 @@ export default class Link extends Component {
   displayName = 'Link'
 
   static propTypes = {
-    message: PropTypes.string,
+    pointer: PropTypes.string,
     children: PropTypes.node,
     to: PropTypes.string.isRequired,
   }
@@ -28,8 +28,8 @@ export default class Link extends Component {
 
     return (
       <a {...props}>
-        { this.props.message &&
-          (<Message message={this.props.message} />) || this.props.children || link }
+        { this.props.pointer &&
+          (<Message pointer={this.props.pointer} />) || this.props.children || link }
       </a>
     );
   }

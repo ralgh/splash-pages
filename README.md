@@ -180,7 +180,7 @@ export default class Home extends React.Component {
   render() {
     return (
       {/* Renders `Simple recurring payments` */}
-      <Message message='features.explainer' />
+      <Message pointer='features.explainer' />
     );
   }
 }

@@ -14,7 +14,7 @@ export default class FaqHeader extends React.Component {
         <div className='page-hero u-padding-Vxxl'>
           <div className='u-margin-Vxm u-text-center'>
             <h1 className='u-text-heading u-color-invert u-text-xl u-text-light'>
-              <Message message='faq.title' />
+              <Message pointer='faq.title' />
             </h1>
             {this.props.children}
           </div>

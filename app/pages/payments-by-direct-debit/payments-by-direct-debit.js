@@ -106,7 +106,7 @@ export default class PaymentsByDirectDebit extends React.Component {
             <p className='u-color-p u-margin-Ts'>No set up costs, no monthly fees, no hidden charges</p>
             <hr className='u-size-1of2 u-center u-margin-Vxxl' />
             <p className='u-color-p'><strong>Want to talk to someone first?</strong><br />
-              Call our payments experts on <Message message='phone_local' /><br />
+              Call our payments experts on <Message pointer='phone_local' /><br />
               We're available 9am - 6pm Monday to Friday
             </p>
           </div>

@@ -16,7 +16,7 @@ export default class PricingDe extends React.Component {
                 <h1 className='u-text-heading-light u-text-center u-color-invert u-text-l u-padding-Bs'>GoCardless</h1>
                 <div className='u-background-dark-gray-darken u-padding-Vxl'>
                   <h2 className='u-text-heading-light u-text-center u-color-invert u-text-xl'>
-                    <Message message='pricing.pro_cost_per_transaction' />
+                    <Message pointer='pricing.pro_cost_per_transaction' />
                   </h2>
                   <p className='u-text-heading-light u-text-center u-color-invert u-text-s u-margin-Txxs'>
                     Pro Zahlung
@@ -27,10 +27,10 @@ export default class PricingDe extends React.Component {
                     <b>Für Unternehmen, die volle Kontrolle suchen</b>
                   </li>
                   <li className='pricing-options__list-item'>
-                    <b><Message message='pricing.pro_monthly_fee' /> monatliche Gebühr</b>, keine versteckten Gebühren
+                    <b><Message pointer='pricing.pro_monthly_fee' /> monatliche Gebühr</b>, keine versteckten Gebühren
                   </li>
                   <li className='pricing-options__list-item'>
-                    Für Unternehmen mit <b><Message message='pricing.pro_number_of_monthly_payments' /></b> Zahlungen im Monat
+                    Für Unternehmen mit <b><Message pointer='pricing.pro_number_of_monthly_payments' /></b> Zahlungen im Monat
                   </li>
                   <li className='pricing-options__list-item'>
                     <Link to='pro'>Erfahren Sie mehr über Pro</Link>
@@ -56,7 +56,7 @@ export default class PricingDe extends React.Component {
                 </b>
               </div>
               <p className='u-color-p'>
-                Richtig, wir berechnen Ihnen nur <Message message='pricing.pro_monthly_fee' /> pro Monat und eine Gebühr für jede Zahlung.
+                Richtig, wir berechnen Ihnen nur <Message pointer='pricing.pro_monthly_fee' /> pro Monat und eine Gebühr für jede Zahlung.
                 Wir erheben keine Gebühren für Rücklastschriften oder misslungene Zahlungen.
               </p>
             </div>
@@ -90,7 +90,7 @@ export default class PricingDe extends React.Component {
         <div className='site-container u-text-center u-padding-Tm u-padding-Bxxl'>
           <div className='u-padding-Vxl'>
             <h2 className='u-text-heading u-text-l u-color-heading u-text-light'>Haben Sie Fragen?</h2>
-            <p className='u-color-p u-margin-Ts'>Sprechen Sie mit einem unserer Zahlungsexperten: <Message message='phone_full' /></p>
+            <p className='u-color-p u-margin-Ts'>Sprechen Sie mit einem unserer Zahlungsexperten: <Message pointer='phone_full' /></p>
             <Link to='contact_sales' query={{ s: 'pricing' }} className='btn btn--hollow u-margin-Tm'>Kontakt</Link>
           </div>
         </div>

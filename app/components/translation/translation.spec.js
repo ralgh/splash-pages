@@ -8,7 +8,7 @@ describe('Translation Component', function() {
     it('renders the content', function() {
       var TranslationStub = stubContext(Translation, {
         props: { locales: 'en-GB' },
-        context: { locales: 'en-GB', routeLocales: ['en-GB'], routeName: 'test' },
+        context: { currentLocale: 'en-GB', routeLocales: ['en-GB'], routeName: 'test' },
       });
 
       var result = ReactTestUtils.renderIntoDocument(
@@ -26,7 +26,7 @@ describe('Translation Component', function() {
     it('renders the content', function() {
       var TranslationStub = stubContext(Translation, {
         props: { locales: 'en' },
-        context: { locales: 'en-GB', routeLocales: ['en-GB'], routeName: 'test' },
+        context: { currentLocale: 'en-GB', routeLocales: ['en-GB'], routeName: 'test' },
       });
 
       var result = ReactTestUtils.renderIntoDocument(
@@ -44,7 +44,7 @@ describe('Translation Component', function() {
     it('returns an empty element', function() {
       var TranslationStub = stubContext(Translation, {
         props: { locales: 'fr' },
-        context: { locales: 'en-GB', routeLocales: ['en-GB', 'fr-BE'], routeName: 'test' },
+        context: { currentLocale: 'en-GB', routeLocales: ['en-GB', 'fr-BE'], routeName: 'test' },
       });
 
       var result = ReactTestUtils.renderIntoDocument(
@@ -62,7 +62,7 @@ describe('Translation Component', function() {
     it('returns an empty element', function() {
       var TranslationStub = stubContext(Translation, {
         props: { locales: 'en-FR' },
-        context: { locales: 'en-GB', routeLocales: ['en-GB', 'en-FR'], routeName: 'test' },
+        context: { currentLocale: 'en-GB', routeLocales: ['en-GB', 'en-FR'], routeName: 'test' },
       });
 
       var result = ReactTestUtils.renderIntoDocument(
@@ -80,7 +80,7 @@ describe('Translation Component', function() {
     it('throws error rendering', function() {
       var TranslationStub = stubContext(Translation, {
         props: { locales: 'en-GB' },
-        context: { locales: 'en-GB', routeLocales: ['fr-FR'], routeName: 'test' },
+        context: { currentLocale: 'en-GB', routeLocales: ['fr-FR'], routeName: 'test' },
       });
 
       expect(function() {
@@ -97,7 +97,7 @@ describe('Translation Component', function() {
     it('returns an empty element', function() {
       var TranslationStub = stubContext(Translation, {
         props: { locales: 'en', exclude: ['en-IE'] },
-        context: { locales: 'en-IE', routeLocales: ['en-IE', 'en-GB'], routeName: 'test' },
+        context: { currentLocale: 'en-IE', routeLocales: ['en-IE', 'en-GB'], routeName: 'test' },
       });
 
       var result = ReactTestUtils.renderIntoDocument(
@@ -115,7 +115,7 @@ describe('Translation Component', function() {
     it('renders the content', function() {
       var TranslationStub = stubContext(Translation, {
         props: { locales: 'en', exclude: ['en-GB'] },
-        context: { locales: 'en-IE', routeLocales: ['en-IE', 'en-GB'], routeName: 'test' },
+        context: { currentLocale: 'en-IE', routeLocales: ['en-IE', 'en-GB'], routeName: 'test' },
       });
 
       var result = ReactTestUtils.renderIntoDocument(

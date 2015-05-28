@@ -47,7 +47,7 @@ export function render(req, res, next) {
 
   function appProps(props) {
     return assign({
-      locales: reqLocale.normalized,
+      currentLocale: reqLocale.normalized,
       language: reqLocale.language,
       messages: messages,
       formats: formats,

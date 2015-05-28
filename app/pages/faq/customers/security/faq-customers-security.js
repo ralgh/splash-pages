@@ -27,7 +27,7 @@ export default class FaqCustomersSecurity extends React.Component {
         <p className='para'>
           Let us know immediately by emailing&nbsp;
           <Href to='email' className='u-link-color-p u-text-underline' itemProp='email' /> or
-          calling <Message message='phone_local' />.
+          calling <Message pointer='phone_local' />.
         </p>
         <p className='para'>
           We can investigate the matter further and arrange for a full refund under the&nbsp;

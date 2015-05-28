@@ -7,7 +7,7 @@ export default {
     more: 'More',
   },
   footer: {
-    description: 'GoCardless is a Bacs approved bureau and is regulated by the Financial Conduct Authority as an Authorised Payment Institution.',
+    description: 'GoCardless is regulated by the Financial Conduct Authority in the United Kingdom as an Authorised Payment Institution to collect payments across Europe.',
     currently_viewing: 'Currently viewing',
     europe_cta: 'GoCardless is expanding',
     europe_link: 'learn more',
@@ -23,11 +23,10 @@ export default {
   },
   signup_cta: {
     main: 'Pay 1%',
-    description: 'Just 1% per transaction, capped at £2.',
+    description: 'Just 1% per transaction, capped at €2.',
     learn_more: 'Learn about our pricing',
   },
   hero: {
-    header: 'Recurring payments made simple',
     desc: 'GoCardless makes collecting by Direct Debit easy for everyone from individuals to multi-national corporations',
   },
   contact_types: ['customer support', 'sales'],
@@ -41,6 +40,7 @@ export default {
   phone_full: '+44 20 7183 8674',
   phone_local: '020 7183 8674',
   email: 'help@gocardless.com',
+  documentation_link: 'https://developer.gocardless.com/pro',
   prospect_form: {
     name_label: 'Your name',
     name_placeholder: 'John Smith',
@@ -65,13 +65,6 @@ export default {
   pricing: {
     title: 'Pricing',
     nav_title: 'Pricing',
-    cost_cap: '£2',
-    description: 'Collect Direct Debit payments online with fees of just 1%, capped at £2. Scale pricing is available for larger organisations.',
-    pro_cost_per_transaction: '1p - 60p',
-    per_transaction_amount_normal: '1%',
-    pro_monthly_fee: '£200',
-    normal_capped_at_amount: '£200',
-    pro_number_of_monthly_payments: '> 500',
   },
   about: {
     title: 'Company Info & Job Openings',
@@ -82,11 +75,11 @@ export default {
     header2: 'network for the internet',
   },
   home: {
-    title: 'The UK’s #1 for online Direct Debit',
+    title: 'The easy way to collect recurring payments',
     nav_title: 'Home',
     description: 'GoCardless',
     link: 'home page',
-    trusted_message_scale: 'We’re a Bacs approved bureau that collects millions of pounds for our merchants every day.',
+    trusted_message_scale: 'We collects millions of pounds for our merchants every day.',
   },
   contact_sales: {
     title: 'Get a Quote',
@@ -195,6 +188,9 @@ export default {
     description: 'GoCardless is built securely from the ground up and uses military grade encryption to keep your details safe. Regulated by the Financial Conduct Authority.',
     header1: 'Built securely from the ground up',
     header2: 'GoCardless uses military grade encryption to keep you safe, and is approved by the biggest names in payments',
+    fca_authorised_byline: 'GoCardless is regulated by the Financial Conduct Authority in the United Kingdom as an Authorised Payment Institution to collect payments across Europe.',
+    consumer_protection_title: 'Consumer protection',
+    trusted_by_thousands_byline: 'GoCardless provides access to the Direct Debit network to thousands of businesses across Europe.',
   },
   stories: {
     title: 'Stories',

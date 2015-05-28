@@ -61,7 +61,7 @@ export default class EngineeringInterships extends React.Component {
         </p>
 
         <h4 className='u-text-s u-margin-Bxs u-margin-Tm'>You should apply if:</h4>
-        <ul className='list'>
+        <ul className='list u-margin-Tm'>
           <li>You’re passionate about technology</li>
           <li>You care deeply about doing work you can be proud of</li>
           <li>You’re constantly looking for ways to improve</li>

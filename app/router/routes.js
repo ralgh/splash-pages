@@ -127,7 +127,10 @@ export const config = Immutable.fromJS([
     },
   ],
   [Features, { name: 'features' }, {
-      en: {
+      'en-GB': {
+        path: '/features',
+      },
+      'en-IE': {
         path: '/features',
       },
       fr: {
@@ -136,7 +139,7 @@ export const config = Immutable.fromJS([
     },
   ],
   [FeaturesApi, { name: 'features_api' }, {
-      en: {
+      'en-GB': {
         path: '/features/api',
       },
     },
@@ -154,25 +157,25 @@ export const config = Immutable.fromJS([
     },
   ],
   [PaymentsByDirectDebit, { name: 'payments_by_direct_debit' }, {
-      en: {
+      'en-GB': {
         path: '/payments-by-direct-debit',
       },
     },
   ],
   [Europe, { name: 'europe' }, {
-      en: {
+      'en-GB': {
         path: '/europe',
       },
     },
   ],
   [Refer, { name: 'refer' }, {
-      en: {
+      'en-GB': {
         path: '/refer',
       },
     },
   ],
   [ExampleCheckout, { name: 'example_checkout' }, {
-      en: {
+      'en-GB': {
         path: '/example-checkout',
       },
     },
@@ -382,7 +385,10 @@ export const config = Immutable.fromJS([
     },
   ],
   [Partners, { name: 'partners' }, {
-      en: {
+      'en-GB': {
+        path: '/partners',
+      },
+      'en-IE': {
         path: '/partners',
       },
       fr: {
@@ -394,37 +400,37 @@ export const config = Immutable.fromJS([
     },
   ],
   [PartnersClearBooks, { name: 'partners_clearbooks' }, {
-      en: {
+      'en-GB': {
         path: '/partners/clearbooks',
       },
     },
   ],
   [PartnersFreeagent, { name: 'partners_freeagent' }, {
-      en: {
+      'en-GB': {
         path: '/partners/freeagent',
       },
     },
   ],
   [PartnersKashflow, { name: 'partners_kashflow' }, {
-      en: {
+      'en-GB': {
         path: '/partners/kashflow',
       },
     },
   ],
   [PartnersPitchero, { name: 'partners_pitchero' }, {
-      en: {
+      'en-GB': {
         path: '/partners/pitchero',
       },
     },
   ],
   [PartnersSage, { name: 'partners_sage' }, {
-      en: {
+      'en-GB': {
         path: '/partners/sage',
       },
     },
   ],
   [PartnersXero, { name: 'partners_xero' }, {
-      en: {
+      'en-GB': {
         path: '/partners/xero',
       },
     },
@@ -526,7 +532,7 @@ export const config = Immutable.fromJS([
     },
   ],
   [FaqMerchantsPartners, { name: 'faq_merchants_partners', category: 'faq.merchants' }, {
-      en: {
+      'en-GB': {
         path: '/faq/merchants/partners',
       },
       fr: {
@@ -535,61 +541,61 @@ export const config = Immutable.fromJS([
     },
   ],
   [FaqMerchantsReferrals, { name: 'faq_merchants_referrals', category: 'faq.merchants' }, {
-      en: {
+      'en-GB': {
         path: '/faq/merchants/referrals',
       },
     },
   ],
   [Stories, { name: 'stories' }, {
-      en: {
+      'en-GB': {
         path: '/stories',
       },
     },
   ],
   [StoriesHasBeanCoffee, { name: 'stories_has_bean_coffee', category: 'stories' }, {
-      en: {
+      'en-GB': {
         path: '/stories/has-bean-coffee',
       },
     },
   ],
   [StoriesBlueskyBusiness, { name: 'stories_bluesky_business', category: 'stories' }, {
-      en: {
+      'en-GB': {
         path: '/stories/bluesky-business',
       },
     },
   ],
   [StoriesCrowdCube, { name: 'stories_crowdcube', category: 'stories' }, {
-      en: {
+      'en-GB': {
         path: '/stories/crowdcube',
       },
     },
   ],
   [StoriesMomentum, { name: 'stories_momentum', category: 'stories' }, {
-      en: {
+      'en-GB': {
         path: '/stories/momentum',
       },
     },
   ],
   [StoriesRockChoir, { name: 'stories_rock_choir', category: 'stories' }, {
-      en: {
+      'en-GB': {
         path: '/stories/rock-choir',
       },
     },
   ],
   [StoriesSpencerHockey, { name: 'stories_spencer_hockey', category: 'stories' }, {
-      en: {
+      'en-GB': {
         path: '/stories/spencer-hockey',
       },
     },
   ],
   [StoriesFoundationOfHearts, { name: 'stories_foundation_of_hearts', category: 'stories' }, {
-      en: {
+      'en-GB': {
         path: '/stories/foundation-of-hearts',
       },
     },
   ],
   [StoriesGreaterAnglia, { name: 'stories_greater_anglia', category: 'stories' }, {
-      en: {
+      'en-GB': {
         path: '/stories/greater-anglia',
       },
     },

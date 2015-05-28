@@ -8,27 +8,37 @@ export default class FaqMerchantsCustomerExperienceEn extends React.Component {
     return (
       <Translation locales='en'>
         <h2 className='u-text-heading-light u-text-m u-color-heading'>Customer Experience</h2>
-        <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
-          Can I fill in the payment pages on my customer's behalf?
-        </h3>
-        <p className='para'>
-          No - due to strict rules around Direct Debit, customers must fill in their payment details
-          and go through the signup process themselves. However, we can prepopulate some of their details
-          for them to make signup as easy as possible. See *Can information on the sign-up and payment
-          pages be pre-populated?* below for further details.
-        </p>
+        <Translation locales='en-GB'>
+          <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
+            Can I fill in the payment pages on my customer's behalf?
+          </h3>
+          <p className='para'>
+            No - due to strict rules around Direct Debit, customers must fill in their payment details
+            and go through the signup process themselves. However, we can prepopulate some of their details
+            for them to make signup as easy as possible. See *Can information on the sign-up and payment
+            pages be pre-populated?* below for further details.
+          </p>
+
+          <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
+            Will my name appear on my customer's bank statement?
+          </h3>
+          <p className='para'>
+            This depends on which of our products you're using. With GoCardless, your business will
+            appear as the reference for the Direct Debit, with GoCardless as the recipient. However,
+            with GoCardless Basic only your name and reference will appear.
+          </p>
+          <p className='para'>
+            You can customise how we display your business name on customer bank statements from the
+            Settings page of your merchant dashboard.
+          </p>
+        </Translation>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
-          Will my name appear on my customer's bank statement?
+          How can my customer pay me?
         </h3>
         <p className='para'>
-          This depends on which of our products you're using. With GoCardless, your business will
-          appear as the reference for the Direct Debit, with GoCardless as the recipient. However,
-          with GoCardless Basic only your name and reference will appear.
-        </p>
-        <p className='para'>
-          You can customise how we display your business name on customer bank statements from the
-          Settings page of your merchant dashboard.
+          Your customer can enter their bank details online via GoCardless; if you use GoCardless Pro they can also
+          do so by phone or paper.
         </p>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
@@ -48,7 +58,8 @@ export default class FaqMerchantsCustomerExperienceEn extends React.Component {
           Do you offer iFrames?
         </h3>
         <p className='para'>
-          No - we do not offer iFraming of our payment pages.
+          No - we do not offer iFraming of our payment pages. If you use GoCardless Pro, we offer a Flow JS which
+          lets you avoid having any bank data on your server.
         </p>
 
         <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
@@ -84,15 +95,17 @@ export default class FaqMerchantsCustomerExperienceEn extends React.Component {
           Yes - GoCardless is compatible with mobiles and tablets. Our payment pages will work in any Internet browser.
         </p>
 
-        <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
-          How can customers keep track of their payment history?
-        </h3>
-        <p className='para'>
-          As part of setting up a payment, your customer will create a
-          GoCardless account. From then on, they can <a href='/users/sign_in'
-          className='u-link-color-p u-text-underline'>log in</a> to view their dashboard, including details
-          of all their transactions.
-        </p>
+        <Translation locales='en-GB'>
+          <h3 className='section-heading u-text-heading-light u-color-heading u-margin-Vm u-text-s'>
+            How can customers keep track of their payment history?
+          </h3>
+          <p className='para'>
+            As part of setting up a payment, your customer will create a
+            GoCardless account. From then on, they can <a href='/users/sign_in'
+            className='u-link-color-p u-text-underline'>log in</a> to view their dashboard, including details
+            of all their transactions.
+          </p>
+        </Translation>
       </Translation>
     );
   }
