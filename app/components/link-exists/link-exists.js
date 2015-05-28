@@ -24,8 +24,10 @@ class LinkExists extends React.Component {
       hasLink = false;
     }
 
+    if (!hasLink) { return null; }
+
     return (
-      <div>{ hasLink && this.props.children }</div>
+      <span>{ this.props.children }</span>
     );
   }
 }
