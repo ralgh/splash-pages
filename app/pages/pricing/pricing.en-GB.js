@@ -42,7 +42,7 @@ export default class PricingEnGb extends React.Component {
                       <Link to='features'>Find out more about GoCardless</Link>
                     </li>
                   </LinkExists>
-                  <Translation locales={['en']} exclude="en-GB">
+                  <Translation locales={['en']} exclude={['en-GB']}>
                     <li className='pricing-options__list-button'>
                       <Link to='contact_sales' query={{ s: 'pricing' }} className='btn u-size-full'>Contact sales</Link>
                     </li>
