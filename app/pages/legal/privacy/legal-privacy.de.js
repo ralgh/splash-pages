@@ -8,16 +8,14 @@ export default class LegalPrivacyDe extends React.Component {
   render() {
     return (
       <Translation locales='de'>
-        <h2 className='u-text-heading-light u-text-m u-color-heading'>Privacy policy</h2>
+        <h2 className='u-text-heading-light u-text-m u-color-heading'>Datenschutzerklärung</h2>
         <div className='well u-margin-Tm'>
           <p className='para'>
-            <strong>Last Updated:</strong> 30th November 2012
+            <strong>Zuletzt geändert:</strong> 30. November 2012
           </p>
           <p className='para'>
-            We may update this policy from time to time. Please check this page
-            regularly for notification of any significant changes in the way we treat
-            your personal information. We will try to provide Consumers with reasonable
-            advance notice of any proposed changes.
+            Es kann passieren, dass wir unsere Datenschutzerklärung von Zeit zu Zeit abändern. Bitte besuchen Sie diese Seite regelmäßig, um über signifikante Änderungen im Umgang mit Ihren persönlichen Daten informiert zu bleiben. 
+            Wir versuchen unsere Kunden frühzeitig über geplante Änderungen zu informieren.
           </p>
         </div>
 

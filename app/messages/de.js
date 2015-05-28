@@ -123,11 +123,11 @@ export default {
     path: '/handbuch',
   },
   legal: {
-    title: 'Legal',
+    title: 'Rechtliche Hinweise',
     nav_title: 'Impressum',
     footer_nav_title: 'Impressum',
-    description: 'Legal',
-    sidebar_text: 'Got a question? Call our support team on',
+    description: 'Rechtliche Hinweise',
+    sidebar_text: 'Haben Sie Fragen? Rufen Sie uns an unter',
   },
   legal_privacy: {
     title: 'Datenschutzerklärung',
