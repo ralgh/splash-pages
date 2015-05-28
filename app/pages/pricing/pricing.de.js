@@ -75,7 +75,7 @@ export default class PricingDe extends React.Component {
                 <b>Muss ich für die Implementierung zahlen?</b>
               </div>
               <p className='u-color-p'>
-                Nein, die Implementierung sowie unser Kundenservice ist gratis.</p>
+                Nein, die Nutzung unserer API für eine Implementierung mit Ihren Systemen ist kostenfrei.</p>
             </div>
             <div className='grid__cell u-size-1of2 u-padding-Bm u-padding-Lm'>
               <div className='u-color-heading'>

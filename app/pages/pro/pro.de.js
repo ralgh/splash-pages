@@ -127,14 +127,14 @@ export default class ProDe extends React.Component {
                     </div>
                     <p className='u-size-4of5 u-center u-color-p u-margin-Txs'>
                       Wir haben alles für Sicherheit gegeben.
-                      Wir speichern alle Bank Details mittels RSA Verschlüsselung und kommunizieren ausschließlich über sichere Kanäle.
+                      Wir speichern alle Bankverbindungen mittels RSA Verschlüsselung und kommunizieren ausschließlich über sichere Kanäle.
                     </p>
                   </div>
                 </div>
                 <p className='u-color-p u-margin-Txxl u-padding-Tm'>
                   Sie möchten die API und unser Online Dashboard
                   ausprobieren? <a href='https://manage-sandbox.gocardless.com/registrations/create'>
-                  Registrieren Sie sich für einen gratis Testaccount.
+                  Erstellen Sie hier einen gratis Testaccount.
                   </a>
                 </p>
               </div>
@@ -289,7 +289,7 @@ export default class ProDe extends React.Component {
                 <hr className='u-margin-Vxxl' />
                 <p className='u-color-p'>
                   <strong>Sie möchten mit jemandem sprechen?</strong><br />
-                  Rufen Sie unsere Experten an unter <Message pointer='phone_full' />.<br />
+                  Rufen Sie unsere Experten an unter <Message pointer='phone_full' />.git <br />
                   Wir sind zwischen 10.00 und 19.00 Uhr für Sie da, Montag bis Freitag.
                 </p>
               </div>
