@@ -120,7 +120,7 @@ export default {
   guides: {
     title: 'Handbuch',
     nav_title: 'Handbuch',
-    path: '/handbuch',
+    path: '/guides/sepa/',
   },
   legal: {
     title: 'Legal',
