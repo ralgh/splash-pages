@@ -147,7 +147,7 @@ export default class ProDe extends React.Component {
                     Sie sind in guter Gesellschaft
                   </h2>
                   <p className='u-text-s u-color-p u-margin-Txs'>
-                    Jeden Tag vertrauen manche der größten und respektiertesten Unternehmen GoCardless mit ihren Zahlungen
+                    Jeden Tag vertrauen zahlreiche der größten und respektiertesten Unternehmen der Welt GoCardless mit ihren Zahlungen.
                   </p>
                 </div>
                 <div className='u-text-center u-margin-Vl u-padding-Vs u-center'>
@@ -289,7 +289,7 @@ export default class ProDe extends React.Component {
                 <hr className='u-margin-Vxxl' />
                 <p className='u-color-p'>
                   <strong>Sie möchten mit jemandem sprechen?</strong><br />
-                  Rufen Sie unsere Experten an unter <Message pointer='phone_full' /><br />
+                  Rufen Sie unsere Experten an unter <Message pointer='phone_full' />.<br />
                   Wir sind zwischen 10.00 und 19.00 Uhr für Sie da, Montag bis Freitag.
                 </p>
               </div>
