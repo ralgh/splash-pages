@@ -5,10 +5,10 @@ import findLast from 'lodash/collection/findLast';
 import assign from 'lodash/object/assign';
 import React from 'react';
 import Router from 'react-router';
-import {getRoutes} from '../router/route-helpers';
-import {pushDataLayer} from '../helpers/gtm-tracker/gtm-tracker';
+import { getRoutes } from '../router/route-helpers';
+import { pushDataLayer } from '../helpers/gtm-tracker/gtm-tracker';
+import { isHostBlacklisted } from '../../config/blacklisted-origins';
 
-// Load CSS in dev mode dynamically.
 if (process.env.BROWSER) {
   require('../css/main.scss');
   require('../css/fonts.css');
@@ -53,5 +53,8 @@ function renderApp() {
   });
 }
 
-renderApp();
-
+// Prevent sites running JS that don't have the right location for routing
+// e.g. http://webcache.googleusercontent.com/search?q=cache:pBJh1a9mKTMJ:https://gocardless.com/
+if (!isHostBlacklisted(document.location.hostname)) {
+  renderApp();
+}
