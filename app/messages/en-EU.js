@@ -2,6 +2,7 @@
 
 export default {
   country: 'Europe',
+  phone_local: '020 7183 8674',
   hero: {
     header: 'Accept recurring payments across Europe',
     desc: 'GoCardless allows you to collect Direct Debit payments from the UK and the Eurozone in a single integration.',
