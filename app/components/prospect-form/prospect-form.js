@@ -8,17 +8,9 @@ import {PropTypes} from '../../helpers/prop-types/prop-types';
 import classNames from 'classnames';
 import {trackEvent} from '../../helpers/gtm-tracker/gtm-tracker';
 
-// TODO kill the fr endpoint!
 const prospectTypes = {
   sales: {
-    endpoints: {
-      default: {
-        action: '/api/v1/prospects/sales',
-      },
-      'fr-FR': {
-        action: '/api/v1/prospects/sales_fr',
-      },
-    },
+    endpoint: '/api/v1/prospects/sales',
     trackingLabel: 'ContactSales',
   },
 };
@@ -42,7 +34,8 @@ export default class ProspectForm extends React.Component {
 
   static contextTypes = {
     currentLocale: PropTypes.locale,
-    messages: React.PropTypes.object.isRequired,
+    messages: PropTypes.object.isRequired,
+    pathname: PropTypes.string.isRequired,
   }
 
   constructor(props) {
@@ -75,7 +68,13 @@ export default class ProspectForm extends React.Component {
 
   onSubmit(event) {
     const { prospectType } = this.props;
+    const { currentLocale, pathname } = this.context;
     const { trackingLabel } = prospectTypes[prospectType];
+
+    const formData = assign({}, this.state.formData, {
+      'prospect[metadata][locale]': currentLocale,
+      'prospect[metadata][path]': pathname,
+    });
 
     const oldTitle = window.document.title;
     document.title = 'Saving...';
@@ -85,7 +84,7 @@ export default class ProspectForm extends React.Component {
       .post(event.target.action)
       .type('form')
       .accept('application/json')
-      .send(this.state.formData)
+      .send(formData)
       .end((err, response) => {
         trackEvent(trackingLabel);
         document.title = oldTitle;
@@ -108,15 +107,14 @@ export default class ProspectForm extends React.Component {
   }
 
   render() {
-    const { messages, currentLocale } = this.context;
+    const { messages } = this.context;
     const { prospectType } = this.props;
-    const endpoints = prospectTypes[prospectType].endpoints;
-    const action = currentLocale in endpoints ? endpoints[currentLocale].action : endpoints.default.action;
+    const { endpoint } = prospectTypes[prospectType];
     const size = this.state.responseData && this.state.responseData.size || 'default';
 
     return (
       <div>
-        <form acceptCharset='UTF-8' action={action} method='post' onChange={this.handleChange} onSubmit={this.onSubmit}>
+        <form acceptCharset='UTF-8' action={endpoint} method='post' onChange={this.handleChange} onSubmit={this.onSubmit}>
           <input className='u-is-hidden' id='prospect_nofill' name='prospect[nofill]' placeholder='Do not fill me in' type='email' />
 
           <div className={classNames({
